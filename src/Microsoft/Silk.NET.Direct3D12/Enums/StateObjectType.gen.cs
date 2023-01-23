@@ -12,9 +12,15 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_STATE_OBJECT_TYPE")]
     public enum StateObjectType : int
     {
+        [Obsolete("Deprecated in favour of \"Collection\"")]
         [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_COLLECTION")]
         StateObjectTypeCollection = 0x0,
+        [Obsolete("Deprecated in favour of \"RaytracingPipeline\"")]
         [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE")]
         StateObjectTypeRaytracingPipeline = 0x3,
+        [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_COLLECTION")]
+        Collection = 0x0,
+        [NativeName("Name", "D3D12_STATE_OBJECT_TYPE_RAYTRACING_PIPELINE")]
+        RaytracingPipeline = 0x3,
     }
 }

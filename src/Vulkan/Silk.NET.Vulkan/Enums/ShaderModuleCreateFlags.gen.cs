@@ -9,11 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkShaderModuleCreateFlags")]
     public enum ShaderModuleCreateFlags : int
     {
-        [NativeName("Name", "VK_SHADER_MODULE_CREATE_RESERVED_0_BIT_NV")]
-        ShaderModuleCreateReserved0BitNV = 1,
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

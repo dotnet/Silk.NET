@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionCreateInfoKHR")]
-    public unsafe partial struct SamplerYcbcrConversionCreateInfoKHR
+    [NativeName("AliasOf", "VkSamplerYcbcrConversionCreateInfo")]
+    public unsafe partial struct SamplerYcbcrConversionCreateInfoKHR : IChainStart
     {
         public SamplerYcbcrConversionCreateInfoKHR
         (
@@ -134,5 +135,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "forceExplicitReconstruction")]
         public Bool32 ForceExplicitReconstruction;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SamplerYcbcrConversionCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SamplerYcbcrConversionCreateInfoKHR Chain(
+            out SamplerYcbcrConversionCreateInfoKHR capture)
+        {
+            capture = new SamplerYcbcrConversionCreateInfoKHR(StructureType.SamplerYcbcrConversionCreateInfo);
+            return ref capture;
+        }
     }
 }

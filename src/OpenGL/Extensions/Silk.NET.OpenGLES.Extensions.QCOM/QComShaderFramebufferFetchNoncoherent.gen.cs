@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComShaderFramebufferFetchNoncoherent : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_shader_framebuffer_fetch_noncoherent";
-        [NativeApi(EntryPoint = "glFramebufferFetchBarrierQCOM")]
+        [NativeApi(EntryPoint = "glFramebufferFetchBarrierQCOM", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFetchBarrier();
 
         public QComShaderFramebufferFetchNoncoherent(INativeContext ctx)

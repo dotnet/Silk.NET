@@ -21,20 +21,22 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_tooling_info";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
-        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolPropertiesEXT* pToolProperties);
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
-        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolPropertiesEXT pToolProperties);
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
-        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolPropertiesEXT* pToolProperties);
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
-        public partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolPropertiesEXT pToolProperties);
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT", Convention = CallingConvention.Winapi)]
+        public partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
 
         public ExtToolingInfo(INativeContext ctx)
             : base(ctx)

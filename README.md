@@ -1,5 +1,6 @@
+<!-- Begin exclude from NuGet readme. -->
 <h1 align="center">
-    <a href="#"><img align="center" src="documentation/readme/wordmark480.png" height="96"></a>
+    <a href="#"><img align="center" src="documentation/readme/silkdotnet_v3_horizontal_96.svg"></a>
     <br />
 </h1>
 <div align="center">
@@ -12,43 +13,61 @@
 </div>
 
 <div> 
+<!-- End exclude from NuGet readme. -->
+<!-- Begin include in NuGet readme.
+![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
+End include in NuGet readme. -->
 
-Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
+Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX.
 
 Use Silk.NET to spruce up applications with cross-platform 3D graphics, audio, compute and haptics!
 
-Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.
+Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.
 
 </div>
 <br />
 <div>
-    <a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
-    <a><br/>
-        Proud to be an official project under the benevolent <a href="https://dotnetfoundation.org">.NET Foundation</a> umbrella. </a>
+<!-- Begin exclude from NuGet readme. -->
+<a href="https://dotnetfoundation.org" align="right"><img src="https://github.com/dotnet-foundation/swag/blob/main/logo/dotnetfoundation_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
+<!-- End exclude from NuGet readme. -->
+<!-- Begin include in NuGet readme.
+![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)
+End include in NuGet readme. -->
+</a>
+<br />
+
+Proud to be an official project under the benevolent [.NET Foundation](https://dotnetfoundation.org) umbrella.
+
 </div>
 
-<br />
+<!-- Package description inserted here automatically. -->
 
 <h1 align="center">Features</h1>
 
 ### Performance
+
 Having poured lots of hours into examining generated C# code and its JIT assembly, you can count on us to deliver blazing fast bindings with negligible overhead induced by Silk.NET!
 
 ### Up-to-date
-With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with monthly updates generated straight from the upstream sources.
+
+With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with frequent updates generated straight from the upstream sources.
 
 ### High-level utilities
+
 In addition to providing high-speed, direct, and transparent bindings, we provide high-level utilities and wrappers to maximise productivity in common workloads such as platform-agnostic abstractions around Windowing and Input, bringing your apps to a vast number of platforms without changing a single line!
 
 ### Good-to-go
+
 Silk.NET caters for anything you could need in swift development of multimedia, graphics, compute applications. Silk.NET is an all-in-one solution, complete with Graphics, Compute, Audio, Input, and Windowing.
+
+<!-- Begin exclude from NuGet readme. -->
 
 <h1 align="center">The team</h1>
 
 We currently have the following maintainers:
-- [Dylan Perks](https://github.com/Perksey) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=Dylan_Perks)
-- [Kai Jellinghaus](https://github.com/HurricanKai)
+- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Kai on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
 - [Thomas Mizrahi](https://github.com/ThomasMiz)
+- [Beyley Thomas](https://github.com/Beyley)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
 
@@ -56,19 +75,20 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 Prerequisites
 - **Must**: .NET 6 SDK
-- **Should**: Android (w/ AOT), iOS, and MAUI .NET 6 workloads (use `dotnet workload install android android-aot ios maui` to install them)
-- **Should**: Android SDK version 30 with NDK tools installed
+- **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
+- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
+- **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
-- **Could**: Visual Studio 2019 Community version 16.10 or later
+- **Could**: Visual Studio 2022 Community version 17.0 or later
 
 Instructions
 - Clone the repository (recursively)
-- Run build.sh, build.cmd, build.ps1, or `nuke compile`. By default all packages targeting .NET Core, Standard, or .NET 6 are built. To build our older Xamarin iOS and Android packages, add the `--feature-sets legacy-ios legacy-android` arguments.
+- Run build.sh, build.cmd, build.ps1, or `nuke compile`.
 - Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
 
 There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
 
-The older Xamarin projects will not build properly without being configured to use Desktop MSBuild (i.e. the MSBuild shipped with Visual Studio). As a result, you will ideally need to be on Windows and have Visual Studio 2019 Community (v16.10 or greater) installed with .NET Core and Xamarin workloads. If you don't have this (i.e. because you're on Linux or Mac), you won't be able to build the older Xamarin packages.
+Note: Some .NET 6 workloads are only supported on Windows and macOS today.
 
 <h1 align="center">Contributing</h1>
 
@@ -79,11 +99,15 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
-    
+
+The Silk.NET solution is **very large**. Learn about how you can combat this using our build process in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- End exclude from NuGet readme. -->
+
 <h2 align="center">Funding</h2>
 Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
 
-This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Dylan](https://github.com/sponsors/Perksey) and [Kai](https://github.com/sponsors/HurricanKai) are accepting GitHub Sponsorships.
+This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Kai](https://github.com/sponsors/HurricanKai) is accepting GitHub Sponsorships.
 
 <h1 align="center">Further resources</h1>
 
@@ -96,11 +120,16 @@ Silk.NET is distributed under the very permissive MIT/X11 license and all depend
 
 Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) project, and has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) to clarify expected behavior in our community. For more information, see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
+<!-- Begin exclude from NuGet readme. -->
+
 ---
 
 <div>
-    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
+    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
     <a><br/>
         
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
+
+<!-- End exclude from NuGet readme. -->
+

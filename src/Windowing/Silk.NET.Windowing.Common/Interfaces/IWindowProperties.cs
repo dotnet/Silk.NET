@@ -1,7 +1,5 @@
-// This file is part of Silk.NET.
-//
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
@@ -59,8 +57,24 @@ namespace Silk.NET.Windowing
         bool TransparentFramebuffer { get; }
         
         /// <summary>
+        /// Whether or not the window will be on the top of all the other windows.
+        /// </summary>
+        bool TopMost { get; set; }
+
+        /// <summary>
         /// The context with which this window's context's resources are shared.
         /// </summary>
         IGLContext? SharedContext { get; }
+
+        /// <summary>
+        /// Window class name used in systems like X11.
+        /// Also known as WM_CLASS.
+        /// </summary>
+        /// <remarks>
+        /// If omitted the following default values are used:
+        /// - The name of the main assembly without extension
+        /// - "Silk.NET" if the name of the main assembly could not be determined
+        /// </remarks>
+        string? WindowClass { get; }
     }
 }

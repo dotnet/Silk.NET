@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_framezoom";
-        [NativeApi(EntryPoint = "glFrameZoomSGIX")]
+        [NativeApi(EntryPoint = "glFrameZoomSGIX", Convention = CallingConvention.Winapi)]
         public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
 
         public SgixFramezoom(INativeContext ctx)

@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Functions
@@ -26,8 +26,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets size information for this parameter.
         /// </summary>
-        [CanBeNull]
-        public Count Count { get; set; }
+        public Count? Count { get; set; }
 
         /// <summary>
         /// Gets or sets the flow of the pointer.

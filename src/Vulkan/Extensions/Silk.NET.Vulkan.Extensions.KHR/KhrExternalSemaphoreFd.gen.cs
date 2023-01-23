@@ -21,27 +21,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_external_semaphore_fd";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR")]
+        [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
         public partial Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImportSemaphoreFdInfoKHR pImportSemaphoreFdInfo);
 
         public KhrExternalSemaphoreFd(INativeContext ctx)

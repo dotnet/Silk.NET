@@ -42,8 +42,14 @@ namespace Silk.NET.OpenGL
         CmykaExt = 0x800D,
         [NativeName("Name", "GL_BGR")]
         Bgr = 0x80E0,
+        [NativeName("Name", "GL_BGR_EXT")]
+        BgrExt = 0x80E0,
         [NativeName("Name", "GL_BGRA")]
         Bgra = 0x80E1,
+        [NativeName("Name", "GL_BGRA_EXT")]
+        BgraExt = 0x80E1,
+        [NativeName("Name", "GL_BGRA_IMG")]
+        BgraImg = 0x80E1,
         [NativeName("Name", "GL_YCRCB_422_SGIX")]
         Ycrcb422Sgix = 0x81BB,
         [NativeName("Name", "GL_YCRCB_444_SGIX")]

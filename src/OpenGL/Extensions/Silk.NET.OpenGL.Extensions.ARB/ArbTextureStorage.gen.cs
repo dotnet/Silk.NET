@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbTextureStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_storage";
-        [NativeApi(EntryPoint = "glTexStorage1D")]
+        [NativeApi(EntryPoint = "glTexStorage1D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage1D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width);
 
-        [NativeApi(EntryPoint = "glTexStorage1D")]
+        [NativeApi(EntryPoint = "glTexStorage1D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage1D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
 
-        [NativeApi(EntryPoint = "glTexStorage1D")]
+        [NativeApi(EntryPoint = "glTexStorage1D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width);
 
-        [NativeApi(EntryPoint = "glTexStorage1D")]
+        [NativeApi(EntryPoint = "glTexStorage1D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
 
-        [NativeApi(EntryPoint = "glTexStorage2D")]
+        [NativeApi(EntryPoint = "glTexStorage2D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glTexStorage2D")]
+        [NativeApi(EntryPoint = "glTexStorage2D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glTexStorage2D")]
+        [NativeApi(EntryPoint = "glTexStorage2D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glTexStorage2D")]
+        [NativeApi(EntryPoint = "glTexStorage2D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glTexStorage3D")]
+        [NativeApi(EntryPoint = "glTexStorage3D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        [NativeApi(EntryPoint = "glTexStorage3D")]
+        [NativeApi(EntryPoint = "glTexStorage3D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        [NativeApi(EntryPoint = "glTexStorage3D")]
+        [NativeApi(EntryPoint = "glTexStorage3D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        [NativeApi(EntryPoint = "glTexStorage3D")]
+        [NativeApi(EntryPoint = "glTexStorage3D", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
         public ArbTextureStorage(INativeContext ctx)

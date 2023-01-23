@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_host_query_reset";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetQueryPoolEXT")]
+        [NativeApi(EntryPoint = "vkResetQueryPoolEXT", Convention = CallingConvention.Winapi)]
         public partial void ResetQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
 
         public ExtHostQueryReset(INativeContext ctx)

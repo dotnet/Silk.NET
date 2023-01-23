@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_geometry_shader4";
-        [NativeApi(EntryPoint = "glProgramParameteriEXT")]
+        [NativeApi(EntryPoint = "glProgramParameteriEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glProgramParameteriEXT")]
+        [NativeApi(EntryPoint = "glProgramParameteriEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 
         public ExtGeometryShader4(INativeContext ctx)

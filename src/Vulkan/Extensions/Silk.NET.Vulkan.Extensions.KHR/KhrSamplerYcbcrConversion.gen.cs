@@ -21,43 +21,43 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_sampler_ycbcr_conversion";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR")]
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR", Convention = CallingConvention.Winapi)]
         public partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         public KhrSamplerYcbcrConversion(INativeContext ctx)

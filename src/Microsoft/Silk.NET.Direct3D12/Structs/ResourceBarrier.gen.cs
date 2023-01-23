@@ -72,14 +72,14 @@ namespace Silk.NET.Direct3D12
         public ResourceBarrierFlags Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2754_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2920_C5")]
         [NativeName("Name", "anonymous1")]
         public ResourceBarrierUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ResourceTransitionBarrier Transition
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Transition;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Transition;
         }
 #else
         public ResourceTransitionBarrier Transition
@@ -89,11 +89,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ResourceAliasingBarrier Aliasing
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Aliasing;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Aliasing;
         }
 #else
         public ResourceAliasingBarrier Aliasing
@@ -103,11 +103,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ResourceUavBarrier UAV
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.UAV;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].UAV;
         }
 #else
         public ResourceUavBarrier UAV

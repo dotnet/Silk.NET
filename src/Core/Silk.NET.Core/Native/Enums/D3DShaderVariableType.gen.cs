@@ -128,6 +128,16 @@ namespace Silk.NET.Core.Native
         D3DSvtMin16int = 0x38,
         [NativeName("Name", "D3D_SVT_MIN16UINT")]
         D3DSvtMin16Uint = 0x39,
+        [NativeName("Name", "D3D_SVT_INT16")]
+        D3DSvtInt16 = 0x3A,
+        [NativeName("Name", "D3D_SVT_UINT16")]
+        D3DSvtUint16 = 0x3B,
+        [NativeName("Name", "D3D_SVT_FLOAT16")]
+        D3DSvtFloat16 = 0x3C,
+        [NativeName("Name", "D3D_SVT_INT64")]
+        D3DSvtInt64 = 0x3D,
+        [NativeName("Name", "D3D_SVT_UINT64")]
+        D3DSvtUint64 = 0x3E,
         [NativeName("Name", "D3D10_SVT_VOID")]
         D3D10SvtVoid = 0x0,
         [NativeName("Name", "D3D10_SVT_BOOL")]

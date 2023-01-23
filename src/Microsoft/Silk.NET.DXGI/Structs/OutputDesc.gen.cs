@@ -16,13 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "DXGI_OUTPUT_DESC")]
     public unsafe partial struct OutputDesc
     {
         public OutputDesc
         (
-            Silk.NET.Maths.Rectangle<int>? desktopCoordinates = null,
-            int? attachedToDesktop = null,
+            Silk.NET.Maths.Box2D<int>? desktopCoordinates = null,
+            Silk.NET.Core.Bool32? attachedToDesktop = null,
             ModeRotation? rotation = null,
             nint? monitor = null
         ) : this()
@@ -48,20 +49,20 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "WCHAR [32]")]
-        [NativeName("Type.Name", "WCHAR [32]")]
+        [NativeName("Type", "WCHAR[32]")]
+        [NativeName("Type.Name", "WCHAR[32]")]
         [NativeName("Name", "DeviceName")]
         public fixed char DeviceName[32];
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DesktopCoordinates")]
-        public Silk.NET.Maths.Rectangle<int> DesktopCoordinates;
+        public Silk.NET.Maths.Box2D<int> DesktopCoordinates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AttachedToDesktop")]
-        public int AttachedToDesktop;
+        public Silk.NET.Core.Bool32 AttachedToDesktop;
 
         [NativeName("Type", "DXGI_MODE_ROTATION")]
         [NativeName("Type.Name", "DXGI_MODE_ROTATION")]

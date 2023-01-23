@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVReadBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_read_buffer";
-        [NativeApi(EntryPoint = "glReadBufferNV")]
+        [NativeApi(EntryPoint = "glReadBufferNV", Convention = CallingConvention.Winapi)]
         public partial void ReadBuffer([Flow(FlowDirection.In)] NV mode);
 
         public NVReadBuffer(INativeContext ctx)

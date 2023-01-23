@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
     public unsafe partial class AngleFramebufferMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "ANGLE_framebuffer_multisample";
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] ANGLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] ANGLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] ANGLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] ANGLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         public AngleFramebufferMultisample(INativeContext ctx)

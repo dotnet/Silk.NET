@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageFormatProperties2KHR")]
-    public unsafe partial struct SparseImageFormatProperties2KHR
+    [NativeName("AliasOf", "VkSparseImageFormatProperties2")]
+    public unsafe partial struct SparseImageFormatProperties2KHR : IChainable
     {
         public SparseImageFormatProperties2KHR
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSparseImageFormatProperties")]
         [NativeName("Name", "properties")]
         public SparseImageFormatProperties Properties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SparseImageFormatProperties2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

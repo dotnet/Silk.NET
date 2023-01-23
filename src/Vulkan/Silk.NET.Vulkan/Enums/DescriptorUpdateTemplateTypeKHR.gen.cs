@@ -12,7 +12,10 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDescriptorUpdateTemplateTypeKHR")]
     public enum DescriptorUpdateTemplateTypeKHR : int
     {
+        [Obsolete("Deprecated in favour of \"DescriptorSet\"")]
         [NativeName("Name", "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
         DescriptorUpdateTemplateTypeDescriptorSet = 0,
+        [NativeName("Name", "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
+        DescriptorSet = 0,
     }
 }

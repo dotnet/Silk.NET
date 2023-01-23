@@ -23,7 +23,7 @@ namespace Silk.NET.DXGI
         (
             ModeDesc? modeDesc = null,
             ModeRotation? rotation = null,
-            int? desktopImageInSystemMemory = null
+            Silk.NET.Core.Bool32? desktopImageInSystemMemory = null
         ) : this()
         {
             if (modeDesc is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DesktopImageInSystemMemory")]
-        public int DesktopImageInSystemMemory;
+        public Silk.NET.Core.Bool32 DesktopImageInSystemMemory;
     }
 }

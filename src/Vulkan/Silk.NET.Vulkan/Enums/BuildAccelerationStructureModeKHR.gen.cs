@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkBuildAccelerationStructureModeKHR")]
     public enum BuildAccelerationStructureModeKHR : int
     {
+        [Obsolete("Deprecated in favour of \"BuildKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
         BuildAccelerationStructureModeBuildKhr = 0,
+        [Obsolete("Deprecated in favour of \"UpdateKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
         BuildAccelerationStructureModeUpdateKhr = 1,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
+        BuildKhr = 0,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
+        UpdateKhr = 1,
     }
 }

@@ -20,124 +20,124 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdPerformanceMonitor : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_performance_monitor";
-        [NativeApi(EntryPoint = "glBeginPerfMonitorAMD")]
+        [NativeApi(EntryPoint = "glBeginPerfMonitorAMD", Convention = CallingConvention.Winapi)]
         public partial void BeginPerfMonitor([Flow(FlowDirection.In)] uint monitor);
 
-        [NativeApi(EntryPoint = "glDeletePerfMonitorsAMD")]
+        [NativeApi(EntryPoint = "glDeletePerfMonitorsAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeletePerfMonitors([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* monitors);
 
-        [NativeApi(EntryPoint = "glDeletePerfMonitorsAMD")]
+        [NativeApi(EntryPoint = "glDeletePerfMonitorsAMD", Convention = CallingConvention.Winapi)]
         public partial void DeletePerfMonitors([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint monitors);
 
-        [NativeApi(EntryPoint = "glEndPerfMonitorAMD")]
+        [NativeApi(EntryPoint = "glEndPerfMonitorAMD", Convention = CallingConvention.Winapi)]
         public partial void EndPerfMonitor([Flow(FlowDirection.In)] uint monitor);
 
-        [NativeApi(EntryPoint = "glGenPerfMonitorsAMD")]
+        [NativeApi(EntryPoint = "glGenPerfMonitorsAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenPerfMonitors([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* monitors);
 
-        [NativeApi(EntryPoint = "glGenPerfMonitorsAMD")]
+        [NativeApi(EntryPoint = "glGenPerfMonitorsAMD", Convention = CallingConvention.Winapi)]
         public partial void GenPerfMonitors([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint monitors);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] uint* data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] uint* data, [Count(Count = 1), Flow(FlowDirection.Out)] out int bytesWritten);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] out uint data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterDataAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] out uint data, [Count(Count = 1), Flow(FlowDirection.Out)] out int bytesWritten);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterInfo([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] uint* counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] out uint counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] uint* counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] out uint counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] uint* counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] out uint counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] uint* counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] out uint counters);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
-        public unsafe partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string counterString);
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD")]
-        public partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string counterString);
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterStringAMD", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string counterString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Flow(FlowDirection.In)] uint groupsSize, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] uint* groups);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Flow(FlowDirection.In)] uint groupsSize, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] out uint groups);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] out int numGroups, [Flow(FlowDirection.In)] uint groupsSize, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] uint* groups);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupsAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] out int numGroups, [Flow(FlowDirection.In)] uint groupsSize, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] out uint groups);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* groupString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte groupString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
-        public unsafe partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string groupString);
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string groupString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* groupString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte groupString);
 
-        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD")]
-        public partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string groupString);
+        [NativeApi(EntryPoint = "glGetPerfMonitorGroupStringAMD", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string groupString);
 
-        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] uint* counterList);
 
-        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
 
-        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] uint* counterList);
 
-        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
 
         public unsafe void DeletePerfMonitors([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> monitors)
@@ -267,6 +267,132 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         {
             // ImplicitCountSpanOverloader
             SelectPerfMonitorCounters(monitor, enable, group, (int) counterList.Length, out counterList.GetPinnableReference());
+        }
+
+        public unsafe uint DeletePerfMonitors([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            DeletePerfMonitors(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GenPerfMonitors([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenPerfMonitors(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] uint* data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, dataSize, data, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] out uint data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, dataSize, out data, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterInfo(group, counter, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, numCounters, maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, numCounters, out maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, out numCounters, maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounters(group, out numCounters, out maxActiveCounters, counterSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterString(group, counter, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterString(group, counter, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Flow(FlowDirection.In)] uint groupsSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroups(numGroups, groupsSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] out int numGroups, [Flow(FlowDirection.In)] uint groupsSize)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroups(out numGroups, groupsSize, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroupString(group, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorGroupString(group, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters)
+        {
+            // NonKhrReturnTypeOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, numCounters, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters)
+        {
+            // NonKhrReturnTypeOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, numCounters, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterData(monitor, pname, data, out int silkRet);
+            return silkRet;
         }
 
         public AmdPerformanceMonitor(INativeContext ctx)

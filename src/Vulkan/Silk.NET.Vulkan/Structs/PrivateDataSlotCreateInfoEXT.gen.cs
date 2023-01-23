@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPrivateDataSlotCreateInfoEXT")]
-    public unsafe partial struct PrivateDataSlotCreateInfoEXT
+    [NativeName("AliasOf", "VkPrivateDataSlotCreateInfo")]
+    public unsafe partial struct PrivateDataSlotCreateInfoEXT : IChainable
     {
         public PrivateDataSlotCreateInfoEXT
         (
-            StructureType? sType = StructureType.PrivateDataSlotCreateInfoExt,
+            StructureType? sType = StructureType.PrivateDataSlotCreateInfo,
             void* pNext = null,
-            PrivateDataSlotCreateFlagsEXT? flags = null
+            uint? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -53,9 +54,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPrivateDataSlotCreateFlagsEXT")]
-        [NativeName("Type.Name", "VkPrivateDataSlotCreateFlagsEXT")]
+        [NativeName("Type", "VkPrivateDataSlotCreateFlags")]
+        [NativeName("Type.Name", "VkPrivateDataSlotCreateFlags")]
         [NativeName("Name", "flags")]
-        public PrivateDataSlotCreateFlagsEXT Flags;
+        public uint Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PrivateDataSlotCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -20,208 +20,208 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbMultiBind : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_multi_bind";
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        [NativeApi(EntryPoint = "glBindBuffersBase", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes);
 
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        [NativeApi(EntryPoint = "glBindBuffersRange", Convention = CallingConvention.Winapi)]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nuint sizes);
 
-        [NativeApi(EntryPoint = "glBindImageTextures")]
+        [NativeApi(EntryPoint = "glBindImageTextures", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
-        [NativeApi(EntryPoint = "glBindImageTextures")]
+        [NativeApi(EntryPoint = "glBindImageTextures", Convention = CallingConvention.Winapi)]
         public partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint textures);
 
-        [NativeApi(EntryPoint = "glBindImageTextures")]
+        [NativeApi(EntryPoint = "glBindImageTextures", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Texture* textures);
 
-        [NativeApi(EntryPoint = "glBindImageTextures")]
+        [NativeApi(EntryPoint = "glBindImageTextures", Convention = CallingConvention.Winapi)]
         public partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Texture textures);
 
-        [NativeApi(EntryPoint = "glBindSamplers")]
+        [NativeApi(EntryPoint = "glBindSamplers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
 
-        [NativeApi(EntryPoint = "glBindSamplers")]
+        [NativeApi(EntryPoint = "glBindSamplers", Convention = CallingConvention.Winapi)]
         public partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint samplers);
 
-        [NativeApi(EntryPoint = "glBindSamplers")]
+        [NativeApi(EntryPoint = "glBindSamplers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Sampler* samplers);
 
-        [NativeApi(EntryPoint = "glBindSamplers")]
+        [NativeApi(EntryPoint = "glBindSamplers", Convention = CallingConvention.Winapi)]
         public partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Sampler samplers);
 
-        [NativeApi(EntryPoint = "glBindTextures")]
+        [NativeApi(EntryPoint = "glBindTextures", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
-        [NativeApi(EntryPoint = "glBindTextures")]
+        [NativeApi(EntryPoint = "glBindTextures", Convention = CallingConvention.Winapi)]
         public partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint textures);
 
-        [NativeApi(EntryPoint = "glBindTextures")]
+        [NativeApi(EntryPoint = "glBindTextures", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Texture* textures);
 
-        [NativeApi(EntryPoint = "glBindTextures")]
+        [NativeApi(EntryPoint = "glBindTextures", Convention = CallingConvention.Winapi)]
         public partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Texture textures);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        [NativeApi(EntryPoint = "glBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
         public unsafe void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)

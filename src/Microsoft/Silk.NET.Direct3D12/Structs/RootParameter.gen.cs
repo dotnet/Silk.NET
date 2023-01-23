@@ -67,7 +67,7 @@ namespace Silk.NET.Direct3D12
         public RootParameterType ParameterType;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3451_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3617_C5")]
         [NativeName("Name", "anonymous1")]
         public RootParameterUnion Anonymous;
 
@@ -75,11 +75,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_SHADER_VISIBILITY")]
         [NativeName("Name", "ShaderVisibility")]
         public ShaderVisibility ShaderVisibility;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RootDescriptorTable DescriptorTable
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.DescriptorTable;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].DescriptorTable;
         }
 #else
         public RootDescriptorTable DescriptorTable
@@ -89,11 +89,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RootConstants Constants
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Constants;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Constants;
         }
 #else
         public RootConstants Constants
@@ -103,11 +103,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RootDescriptor Descriptor
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Descriptor;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Descriptor;
         }
 #else
         public RootDescriptor Descriptor

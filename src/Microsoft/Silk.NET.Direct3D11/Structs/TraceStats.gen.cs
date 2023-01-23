@@ -28,10 +28,10 @@ namespace Silk.NET.Direct3D11
             ushort? numTemps = null,
             ushort? maxIndexableTempIndex = null,
             ushort? immediateConstantBufferSize = null,
-            int? pSOutputsDepth = null,
-            int? pSOutputsMask = null,
+            Silk.NET.Core.Bool32? pSOutputsDepth = null,
+            Silk.NET.Core.Bool32? pSOutputsMask = null,
             TraceGSInputPrimitive? gSInputPrimitive = null,
-            int? gSInputsPrimitiveID = null
+            Silk.NET.Core.Bool32? gSInputsPrimitiveID = null
         ) : this()
         {
             if (traceDesc is not null)
@@ -110,12 +110,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "NumTraceSteps")]
         public uint NumTraceSteps;
-        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK [32]")]
-        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK [32]")]
+        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK[32]")]
+        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK[32]")]
         [NativeName("Name", "InputMask")]
         public fixed byte InputMask[32];
-        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK [32]")]
-        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK [32]")]
+        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK[32]")]
+        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK[32]")]
         [NativeName("Name", "OutputMask")]
         public fixed byte OutputMask[32];
 
@@ -128,8 +128,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT16")]
         [NativeName("Name", "MaxIndexableTempIndex")]
         public ushort MaxIndexableTempIndex;
-        [NativeName("Type", "UINT16 [4096]")]
-        [NativeName("Type.Name", "UINT16 [4096]")]
+        [NativeName("Type", "UINT16[4096]")]
+        [NativeName("Type.Name", "UINT16[4096]")]
         [NativeName("Name", "IndexableTempSize")]
         public fixed ushort IndexableTempSize[4096];
 
@@ -137,44 +137,44 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT16")]
         [NativeName("Name", "ImmediateConstantBufferSize")]
         public ushort ImmediateConstantBufferSize;
-        [NativeName("Type", "UINT [4][2]")]
-        [NativeName("Type.Name", "UINT [4][2]")]
+        [NativeName("Type", "UINT[4][2]")]
+        [NativeName("Type.Name", "UINT[4][2]")]
         [NativeName("Name", "PixelPosition")]
         public fixed uint PixelPosition[8];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelCoverageMask")]
         public fixed ulong PixelCoverageMask[4];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelDiscardedMask")]
         public fixed ulong PixelDiscardedMask[4];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelCoverageMaskAfterShader")]
         public fixed ulong PixelCoverageMaskAfterShader[4];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelCoverageMaskAfterA2CSampleMask")]
         public fixed ulong PixelCoverageMaskAfterA2CSampleMask[4];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelCoverageMaskAfterA2CSampleMaskDepth")]
         public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepth[4];
-        [NativeName("Type", "UINT64 [4]")]
-        [NativeName("Type.Name", "UINT64 [4]")]
+        [NativeName("Type", "UINT64[4]")]
+        [NativeName("Type.Name", "UINT64[4]")]
         [NativeName("Name", "PixelCoverageMaskAfterA2CSampleMaskDepthStencil")]
         public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil[4];
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSOutputsDepth")]
-        public int PSOutputsDepth;
+        public Silk.NET.Core.Bool32 PSOutputsDepth;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSOutputsMask")]
-        public int PSOutputsMask;
+        public Silk.NET.Core.Bool32 PSOutputsMask;
 
         [NativeName("Type", "D3D11_TRACE_GS_INPUT_PRIMITIVE")]
         [NativeName("Type.Name", "D3D11_TRACE_GS_INPUT_PRIMITIVE")]
@@ -184,13 +184,13 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "GSInputsPrimitiveID")]
-        public int GSInputsPrimitiveID;
-        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK [32]")]
-        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK [32]")]
+        public Silk.NET.Core.Bool32 GSInputsPrimitiveID;
+        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK[32]")]
+        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK[32]")]
         [NativeName("Name", "HSOutputPatchConstantMask")]
         public fixed byte HSOutputPatchConstantMask[32];
-        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK [32]")]
-        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK [32]")]
+        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK[32]")]
+        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK[32]")]
         [NativeName("Name", "DSInputPatchConstantMask")]
         public fixed byte DSInputPatchConstantMask[32];
     }

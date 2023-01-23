@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageDrmFormatModifierExplicitCreateInfoEXT")]
-    public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
+    public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT : IExtendsChain<ImageCreateInfo>
     {
         public ImageDrmFormatModifierExplicitCreateInfoEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSubresourceLayout")]
         [NativeName("Name", "pPlaneLayouts")]
         public SubresourceLayout* PPlaneLayouts;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageDrmFormatModifierExplicitCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

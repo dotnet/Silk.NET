@@ -12,11 +12,20 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureBuildTypeKHR")]
     public enum AccelerationStructureBuildTypeKHR : int
     {
+        [Obsolete("Deprecated in favour of \"HostKhr\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_KHR")]
         AccelerationStructureBuildTypeHostKhr = 0,
+        [Obsolete("Deprecated in favour of \"DeviceKhr\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_DEVICE_KHR")]
         AccelerationStructureBuildTypeDeviceKhr = 1,
+        [Obsolete("Deprecated in favour of \"HostOrDeviceKhr\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_OR_DEVICE_KHR")]
         AccelerationStructureBuildTypeHostOrDeviceKhr = 2,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_KHR")]
+        HostKhr = 0,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_DEVICE_KHR")]
+        DeviceKhr = 1,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_OR_DEVICE_KHR")]
+        HostOrDeviceKhr = 2,
     }
 }

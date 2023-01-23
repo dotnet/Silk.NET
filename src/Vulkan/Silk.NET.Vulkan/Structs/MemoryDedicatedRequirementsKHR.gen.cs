@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedRequirementsKHR")]
-    public unsafe partial struct MemoryDedicatedRequirementsKHR
+    [NativeName("AliasOf", "VkMemoryDedicatedRequirements")]
+    public unsafe partial struct MemoryDedicatedRequirementsKHR : IExtendsChain<MemoryRequirements2>, IExtendsChain<MemoryRequirements2KHR>
     {
         public MemoryDedicatedRequirementsKHR
         (
@@ -68,5 +69,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "requiresDedicatedAllocation")]
         public Bool32 RequiresDedicatedAllocation;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryDedicatedRequirements;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

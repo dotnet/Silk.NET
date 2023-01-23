@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options5
         (
-            int? sRVOnlyTiledResourceTier3 = null,
+            Silk.NET.Core.Bool32? sRVOnlyTiledResourceTier3 = null,
             RenderPassTier? renderPassesTier = null,
             RaytracingTier? raytracingTier = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SRVOnlyTiledResourceTier3")]
-        public int SRVOnlyTiledResourceTier3;
+        public Silk.NET.Core.Bool32 SRVOnlyTiledResourceTier3;
 
         [NativeName("Type", "D3D12_RENDER_PASS_TIER")]
         [NativeName("Type.Name", "D3D12_RENDER_PASS_TIER")]

@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public CD3D11BlendDesc
         (
-            int? alphaToCoverageEnable = null,
-            int? independentBlendEnable = null
+            Silk.NET.Core.Bool32? alphaToCoverageEnable = null,
+            Silk.NET.Core.Bool32? independentBlendEnable = null
         ) : this()
         {
             if (alphaToCoverageEnable is not null)
@@ -40,15 +40,15 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AlphaToCoverageEnable")]
-        public int AlphaToCoverageEnable;
+        public Silk.NET.Core.Bool32 AlphaToCoverageEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IndependentBlendEnable")]
-        public int IndependentBlendEnable;
+        public Silk.NET.Core.Bool32 IndependentBlendEnable;
         
-        [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
-        [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
+        [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC[8]")]
+        [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC[8]")]
         [NativeName("Name", "RenderTarget")]
         public RenderTargetBuffer RenderTarget;
 
@@ -78,7 +78,7 @@ namespace Silk.NET.Direct3D11
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<RenderTargetBlendDesc> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
 #endif

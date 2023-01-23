@@ -29,8 +29,8 @@ namespace Silk.NET.Direct3D9
             uint? multiSampleQuality = null,
             Swapeffect? swapEffect = null,
             nint? hDeviceWindow = null,
-            int? windowed = null,
-            int? enableAutoDepthStencil = null,
+            Silk.NET.Core.Bool32? windowed = null,
+            Silk.NET.Core.Bool32? enableAutoDepthStencil = null,
             Format? autoDepthStencilFormat = null,
             uint? flags = null,
             uint? fullScreenRefreshRateInHz = null,
@@ -152,12 +152,12 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Windowed")]
-        public int Windowed;
+        public Silk.NET.Core.Bool32 Windowed;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAutoDepthStencil")]
-        public int EnableAutoDepthStencil;
+        public Silk.NET.Core.Bool32 EnableAutoDepthStencil;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]

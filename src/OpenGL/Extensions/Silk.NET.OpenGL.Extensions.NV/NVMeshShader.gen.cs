@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Extensions.NV
     public unsafe partial class NVMeshShader : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_mesh_shader";
-        [NativeApi(EntryPoint = "glDrawMeshTasksNV")]
+        [NativeApi(EntryPoint = "glDrawMeshTasksNV", Convention = CallingConvention.Winapi)]
         public partial void DrawMeshTask([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV")]
+        [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV", Convention = CallingConvention.Winapi)]
         public partial void DrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect);
 
-        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
+        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
+        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         public NVMeshShader(INativeContext ctx)

@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtWin32KeyedMutex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_win32_keyed_mutex";
-        [NativeApi(EntryPoint = "glAcquireKeyedMutexWin32EXT")]
+        [NativeApi(EntryPoint = "glAcquireKeyedMutexWin32EXT", Convention = CallingConvention.Winapi)]
         public partial bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout);
 
-        [NativeApi(EntryPoint = "glReleaseKeyedMutexWin32EXT")]
+        [NativeApi(EntryPoint = "glReleaseKeyedMutexWin32EXT", Convention = CallingConvention.Winapi)]
         public partial bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key);
 
         public ExtWin32KeyedMutex(INativeContext ctx)

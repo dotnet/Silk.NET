@@ -36,7 +36,8 @@ namespace Silk.NET.Assimp
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
-            Silk.NET.Maths.Box3D<float>? mAABB = null
+            Silk.NET.Maths.Box3D<float>? mAABB = null,
+            AssimpString** mTextureCoordsNames = null
         ) : this()
         {
             if (mPrimitiveTypes is not null)
@@ -117,6 +118,11 @@ namespace Silk.NET.Assimp
             if (mAABB is not null)
             {
                 MAABB = mAABB.Value;
+            }
+
+            if (mTextureCoordsNames is not null)
+            {
+                MTextureCoordsNames = mTextureCoordsNames;
             }
         }
 
@@ -221,8 +227,8 @@ namespace Silk.NET.Assimp
             }
         }
 
-        [NativeName("Type", "unsigned int [8]")]
-        [NativeName("Type.Name", "unsigned int [8]")]
+        [NativeName("Type", "unsigned int[8]")]
+        [NativeName("Type.Name", "unsigned int[8]")]
         [NativeName("Name", "mNumUVComponents")]
         public fixed uint MNumUVComponents[8];
 
@@ -270,5 +276,10 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "aiAABB")]
         [NativeName("Name", "mAABB")]
         public Silk.NET.Maths.Box3D<float> MAABB;
+
+        [NativeName("Type", "aiString **")]
+        [NativeName("Type.Name", "aiString **")]
+        [NativeName("Name", "mTextureCoordsNames")]
+        public AssimpString** MTextureCoordsNames;
     }
 }

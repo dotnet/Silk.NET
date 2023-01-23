@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndirectCommandsLayoutCreateInfoNV")]
-    public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
+    public unsafe partial struct IndirectCommandsLayoutCreateInfoNV : IChainable
     {
         public IndirectCommandsLayoutCreateInfoNV
         (
@@ -112,5 +112,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pStreamStrides")]
         public uint* PStreamStrides;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.IndirectCommandsLayoutCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -20,76 +20,76 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbWindowPos : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_window_pos";
-        [NativeApi(EntryPoint = "glWindowPos2dARB")]
+        [NativeApi(EntryPoint = "glWindowPos2dARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
-        [NativeApi(EntryPoint = "glWindowPos2dvARB")]
+        [NativeApi(EntryPoint = "glWindowPos2dvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2dvARB")]
+        [NativeApi(EntryPoint = "glWindowPos2dvARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glWindowPos2fARB")]
+        [NativeApi(EntryPoint = "glWindowPos2fARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
-        [NativeApi(EntryPoint = "glWindowPos2fvARB")]
+        [NativeApi(EntryPoint = "glWindowPos2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2fvARB")]
+        [NativeApi(EntryPoint = "glWindowPos2fvARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glWindowPos2iARB")]
+        [NativeApi(EntryPoint = "glWindowPos2iARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
-        [NativeApi(EntryPoint = "glWindowPos2ivARB")]
+        [NativeApi(EntryPoint = "glWindowPos2ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2ivARB")]
+        [NativeApi(EntryPoint = "glWindowPos2ivARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glWindowPos2sARB")]
+        [NativeApi(EntryPoint = "glWindowPos2sARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
-        [NativeApi(EntryPoint = "glWindowPos2svARB")]
+        [NativeApi(EntryPoint = "glWindowPos2svARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2svARB")]
+        [NativeApi(EntryPoint = "glWindowPos2svARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in short v);
 
-        [NativeApi(EntryPoint = "glWindowPos3dARB")]
+        [NativeApi(EntryPoint = "glWindowPos3dARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
-        [NativeApi(EntryPoint = "glWindowPos3dvARB")]
+        [NativeApi(EntryPoint = "glWindowPos3dvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3dvARB")]
+        [NativeApi(EntryPoint = "glWindowPos3dvARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glWindowPos3fARB")]
+        [NativeApi(EntryPoint = "glWindowPos3fARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
-        [NativeApi(EntryPoint = "glWindowPos3fvARB")]
+        [NativeApi(EntryPoint = "glWindowPos3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3fvARB")]
+        [NativeApi(EntryPoint = "glWindowPos3fvARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glWindowPos3iARB")]
+        [NativeApi(EntryPoint = "glWindowPos3iARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
-        [NativeApi(EntryPoint = "glWindowPos3ivARB")]
+        [NativeApi(EntryPoint = "glWindowPos3ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3ivARB")]
+        [NativeApi(EntryPoint = "glWindowPos3ivARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glWindowPos3sARB")]
+        [NativeApi(EntryPoint = "glWindowPos3sARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
-        [NativeApi(EntryPoint = "glWindowPos3svARB")]
+        [NativeApi(EntryPoint = "glWindowPos3svARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3svARB")]
+        [NativeApi(EntryPoint = "glWindowPos3svARB", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in short v);
 
         public ArbWindowPos(INativeContext ctx)

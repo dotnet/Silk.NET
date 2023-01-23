@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtExternalBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_external_buffer";
-        [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
+        [NativeApi(EntryPoint = "glBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
+        [NativeApi(EntryPoint = "glBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] BufferStorageMask flags);
 
-        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
+        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
+        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] BufferStorageMask flags);
 
         public ExtExternalBuffer(INativeContext ctx)

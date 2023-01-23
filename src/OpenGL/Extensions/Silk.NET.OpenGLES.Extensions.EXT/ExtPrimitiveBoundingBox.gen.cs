@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtPrimitiveBoundingBox : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_primitive_bounding_box";
-        [NativeApi(EntryPoint = "glPrimitiveBoundingBoxEXT")]
+        [NativeApi(EntryPoint = "glPrimitiveBoundingBoxEXT", Convention = CallingConvention.Winapi)]
         public partial void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
 
         public ExtPrimitiveBoundingBox(INativeContext ctx)

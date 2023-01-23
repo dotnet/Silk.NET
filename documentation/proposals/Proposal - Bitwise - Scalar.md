@@ -9,7 +9,7 @@ Bitwise operations in `Scalar[<T>]`
 - [x] Proposed
 - [x] Discussed with API Review Board (ARB)
 - [x] Approved
-- [ ] Implemented
+- [x] [Implemented](https://github.com/dotnet/Silk.NET/pull/667)
 
 # Design Decisions
 

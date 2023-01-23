@@ -26,5 +26,7 @@ namespace Silk.NET.OpenGL.Legacy
         EighthBitAti = 0x20,
         [NativeName("Name", "GL_SATURATE_BIT_ATI")]
         SaturateBitAti = 0x40,
+        [NativeName("Name", "GL_NONE")]
+        None = 0x0,
     }
 }

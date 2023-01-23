@@ -1,0 +1,17 @@
+name: Codeowners
+on:
+  push:
+    paths:
+      - "CODEOWNERS"
+  pull_request:
+    paths:
+      - "CODEOWNERS"
+jobs:
+  Validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mszostok/codeowners-validator@v0.6.0
+        with:
+          checks: "files,duppatterns"
+          experimental_checks: "notowned"

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDedicatedAllocationImageCreateInfoNV")]
-    public unsafe partial struct DedicatedAllocationImageCreateInfoNV
+    public unsafe partial struct DedicatedAllocationImageCreateInfoNV : IExtendsChain<ImageCreateInfo>
     {
         public DedicatedAllocationImageCreateInfoNV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "dedicatedAllocation")]
         public Bool32 DedicatedAllocation;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DedicatedAllocationImageCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

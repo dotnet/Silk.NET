@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbES32Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES3_2_compatibility";
-        [NativeApi(EntryPoint = "glPrimitiveBoundingBoxARB")]
+        [NativeApi(EntryPoint = "glPrimitiveBoundingBoxARB", Convention = CallingConvention.Winapi)]
         public partial void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
 
         public ArbES32Compatibility(INativeContext ctx)

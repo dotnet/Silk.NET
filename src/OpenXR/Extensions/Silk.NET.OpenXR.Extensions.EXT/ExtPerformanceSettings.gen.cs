@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     {
         public const string ExtensionName = "XR_EXT_performance_settings";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPerfSettingsSetPerformanceLevelEXT")]
+        [NativeApi(EntryPoint = "xrPerfSettingsSetPerformanceLevelEXT", Convention = CallingConvention.Winapi)]
         public partial Result PerfSettingsSetPerformanceLevel([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsLevelEXT level);
 
         public ExtPerformanceSettings(INativeContext ctx)

@@ -20,11 +20,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_two_side";
-        [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
+        [NativeApi(EntryPoint = "glActiveStencilFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
 
-        [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
+        [NativeApi(EntryPoint = "glActiveStencilFaceEXT", Convention = CallingConvention.Winapi)]
+        public partial void ActiveStencilFace([Flow(FlowDirection.In)] TriangleFace face);
 
         public ExtStencilTwoSide(INativeContext ctx)
             : base(ctx)

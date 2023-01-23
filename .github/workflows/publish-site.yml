@@ -1,0 +1,35 @@
+name: Website Build
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+        token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+    - name: Setup .NET 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.401
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.201
+    - name: Checkout Website Branch
+      run: |
+        git fetch --all
+        git checkout ci/github-pages
+        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+        git config --local user.name "The Silk.NET Automaton"
+        git merge --allow-unrelated-histories -X theirs main
+    - name: Run Statiq
+      run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
+    - name: Push to Website Branch
+      run: |
+        git add -f docs/
+        git commit -am "Push latest built GitHub Pages site"
+        git push

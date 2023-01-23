@@ -55,14 +55,14 @@ namespace Silk.NET.Direct3D11
         public VpovDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11546_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L12003_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoProcessorOutputViewDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex2DVpov Texture2D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2D;
         }
 #else
         public Tex2DVpov Texture2D
@@ -72,11 +72,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex2DArrayVpov Texture2DArray
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DArray;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2DArray;
         }
 #else
         public Tex2DArrayVpov Texture2DArray

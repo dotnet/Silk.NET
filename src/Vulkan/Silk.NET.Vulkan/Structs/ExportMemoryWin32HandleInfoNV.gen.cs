@@ -17,14 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportMemoryWin32HandleInfoNV")]
-    public unsafe partial struct ExportMemoryWin32HandleInfoNV
+    public unsafe partial struct ExportMemoryWin32HandleInfoNV : IExtendsChain<MemoryAllocateInfo>
     {
         public ExportMemoryWin32HandleInfoNV
         (
             StructureType? sType = StructureType.ExportMemoryWin32HandleInfoNV,
             void* pNext = null,
             nint* pAttributes = null,
-            int? dwAccess = null
+            uint? dwAccess = null
         ) : this()
         {
             if (sType is not null)
@@ -67,6 +67,19 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAccess")]
-        public int DwAccess;
+        public uint DwAccess;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExportMemoryWin32HandleInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

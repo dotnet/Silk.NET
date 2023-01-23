@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_buffer_device_address";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT", Convention = CallingConvention.Winapi)]
         public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         public ExtBufferDeviceAddress(INativeContext ctx)

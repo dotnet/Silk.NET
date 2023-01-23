@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryBufferCreateInfoKHR")]
-    public unsafe partial struct ExternalMemoryBufferCreateInfoKHR
+    [NativeName("AliasOf", "VkExternalMemoryBufferCreateInfo")]
+    public unsafe partial struct ExternalMemoryBufferCreateInfoKHR : IExtendsChain<BufferCreateInfo>
     {
         public ExternalMemoryBufferCreateInfoKHR
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
         [NativeName("Name", "handleTypes")]
         public ExternalMemoryHandleTypeFlags HandleTypes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalMemoryBufferCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrTerminateContext : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_terminate_context";
-        [NativeApi(EntryPoint = "clTerminateContextKHR")]
+        [NativeApi(EntryPoint = "clTerminateContextKHR", Convention = CallingConvention.Winapi)]
         public partial int TerminateContext([Flow(FlowDirection.In)] nint context);
 
         public KhrTerminateContext(INativeContext ctx)

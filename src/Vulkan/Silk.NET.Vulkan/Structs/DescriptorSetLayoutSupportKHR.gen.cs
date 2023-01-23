@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutSupportKHR")]
-    public unsafe partial struct DescriptorSetLayoutSupportKHR
+    [NativeName("AliasOf", "VkDescriptorSetLayoutSupport")]
+    public unsafe partial struct DescriptorSetLayoutSupportKHR : IChainStart
     {
         public DescriptorSetLayoutSupportKHR
         (
@@ -57,5 +58,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "supported")]
         public Bool32 Supported;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetLayoutSupport;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DescriptorSetLayoutSupportKHR Chain(
+            out DescriptorSetLayoutSupportKHR capture)
+        {
+            capture = new DescriptorSetLayoutSupportKHR(StructureType.DescriptorSetLayoutSupport);
+            return ref capture;
+        }
     }
 }

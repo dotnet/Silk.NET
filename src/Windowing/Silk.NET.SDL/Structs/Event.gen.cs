@@ -28,6 +28,7 @@ namespace Silk.NET.SDL
             WindowEvent? window = null,
             KeyboardEvent? key = null,
             TextEditingEvent? edit = null,
+            TextEditingExtEvent? editExt = null,
             TextInputEvent? text = null,
             MouseMotionEvent? motion = null,
             MouseButtonEvent? button = null,
@@ -37,6 +38,7 @@ namespace Silk.NET.SDL
             JoyHatEvent? jhat = null,
             JoyButtonEvent? jbutton = null,
             JoyDeviceEvent? jdevice = null,
+            JoyBatteryEvent? jbattery = null,
             ControllerAxisEvent? caxis = null,
             ControllerButtonEvent? cbutton = null,
             ControllerDeviceEvent? cdevice = null,
@@ -83,6 +85,11 @@ namespace Silk.NET.SDL
                 Edit = edit.Value;
             }
 
+            if (editExt is not null)
+            {
+                EditExt = editExt.Value;
+            }
+
             if (text is not null)
             {
                 Text = text.Value;
@@ -126,6 +133,11 @@ namespace Silk.NET.SDL
             if (jdevice is not null)
             {
                 Jdevice = jdevice.Value;
+            }
+
+            if (jbattery is not null)
+            {
+                Jbattery = jbattery.Value;
             }
 
             if (caxis is not null)
@@ -237,6 +249,12 @@ namespace Silk.NET.SDL
         public TextEditingEvent Edit;
 
         [FieldOffset(0)]
+        [NativeName("Type", "SDL_TextEditingExtEvent")]
+        [NativeName("Type.Name", "SDL_TextEditingExtEvent")]
+        [NativeName("Name", "editExt")]
+        public TextEditingExtEvent EditExt;
+
+        [FieldOffset(0)]
         [NativeName("Type", "SDL_TextInputEvent")]
         [NativeName("Type.Name", "SDL_TextInputEvent")]
         [NativeName("Name", "text")]
@@ -289,6 +307,12 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "SDL_JoyDeviceEvent")]
         [NativeName("Name", "jdevice")]
         public JoyDeviceEvent Jdevice;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "SDL_JoyBatteryEvent")]
+        [NativeName("Type.Name", "SDL_JoyBatteryEvent")]
+        [NativeName("Name", "jbattery")]
+        public JoyBatteryEvent Jbattery;
 
         [FieldOffset(0)]
         [NativeName("Type", "SDL_ControllerAxisEvent")]
@@ -374,8 +398,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "drop")]
         public DropEvent Drop;
         [FieldOffset(0)]
-        [NativeName("Type", "Uint8 [56]")]
-        [NativeName("Type.Name", "Uint8 [56]")]
+        [NativeName("Type", "Uint8[56]")]
+        [NativeName("Type.Name", "Uint8[56]")]
         [NativeName("Name", "padding")]
         public fixed byte Padding[56];
     }

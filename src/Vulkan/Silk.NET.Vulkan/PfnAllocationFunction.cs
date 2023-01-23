@@ -3,7 +3,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Vulkan
 {
-    public readonly unsafe struct PfnAllocationFunction
+    public readonly unsafe struct PfnAllocationFunction : IDisposable
     {
         private readonly void* _handle;
 
@@ -13,6 +13,7 @@ namespace Silk.NET.Vulkan
         public PfnAllocationFunction
             (delegate* unmanaged[Cdecl]<void*, nuint, nuint, SystemAllocationScope, void*> ptr) => _handle = ptr;
 
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
         public static implicit operator nint(PfnAllocationFunction pfn) => (nint) pfn.Handle;
 
         public PfnAllocationFunction

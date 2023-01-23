@@ -202,6 +202,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.TransformFeedbackVaryings(program, count, in locations.GetPinnableReference(), bufferMode);
         }
 
+        public static unsafe void TransformFeedbackVaryings(this NVTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
+        {
+            // SpanOverloader
+            thisApi.TransformFeedbackVaryings(program, count, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public static unsafe void TransformFeedbackVaryings(this NVTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedbackTokenNV> locations, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // SpanOverloader
+            thisApi.TransformFeedbackVaryings(program, count, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public static unsafe void TransformFeedbackVaryings(this NVTransformFeedback thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedbackTokenNV> locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
+        {
+            // SpanOverloader
+            thisApi.TransformFeedbackVaryings(program, count, in locations.GetPinnableReference(), bufferMode);
+        }
+
     }
 }
 

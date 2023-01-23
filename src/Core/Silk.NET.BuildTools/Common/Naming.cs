@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Humanizer;
-using JetBrains.Annotations;
+
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -95,8 +95,7 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="name">The name to translate.</param>
         /// <param name="prefix">The name prefix.</param>
         /// <returns>The translated name.</returns>
-        [NotNull]
-        public static string Translate([NotNull] string name, string prefix)
+        public static string Translate(string name, string prefix)
         {
             var builder = new StringBuilder(name);
 
@@ -144,7 +143,7 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="name">The name to translate.</param>
         /// <param name="prefix">The name prefix.</param>
         /// <returns>The translated name.</returns>
-        public static string TranslateLite([NotNull] string name, string prefix)
+        public static string TranslateLite(string name, string prefix)
         {
             var builder = new StringBuilder(name);
 

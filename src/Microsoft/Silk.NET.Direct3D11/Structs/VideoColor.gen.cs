@@ -44,14 +44,14 @@ namespace Silk.NET.Direct3D11
 
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L10354_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L10762_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoColorUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref VIDEOCOLORYCbCrA YCbCr
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.YCbCr;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].YCbCr;
         }
 #else
         public VIDEOCOLORYCbCrA YCbCr
@@ -61,11 +61,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref VideoColorRgba RGBA
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.RGBA;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].RGBA;
         }
 #else
         public VideoColorRgba RGBA

@@ -2,7 +2,6 @@ using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System;
-using System.Drawing;
 using Silk.NET.Maths;
 
 namespace Tutorial

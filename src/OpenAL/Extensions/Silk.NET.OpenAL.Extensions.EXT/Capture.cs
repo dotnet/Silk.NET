@@ -17,7 +17,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class Capture : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Capture(INativeContext ctx)
+        public Capture(INativeContext ctx)
             : base(ctx)
         {
         }

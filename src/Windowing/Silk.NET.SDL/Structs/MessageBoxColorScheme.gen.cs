@@ -16,12 +16,13 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousRecord_SDL_messagebox_L86_C9")]
     [NativeName("Name", "SDL_MessageBoxColorScheme")]
     public unsafe partial struct MessageBoxColorScheme
     {
         
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
+        [NativeName("Type", "SDL_MessageBoxColor[5]")]
+        [NativeName("Type.Name", "SDL_MessageBoxColor[5]")]
         [NativeName("Name", "colors")]
         public ColorsBuffer Colors;
 
@@ -48,7 +49,7 @@ namespace Silk.NET.SDL
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<MessageBoxColor> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 5);
 #endif

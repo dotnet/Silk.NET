@@ -21,43 +21,43 @@ namespace Silk.NET.Vulkan.Extensions.QNX
     {
         public const string ExtensionName = "VK_QNX_screen_surface";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ScreenSurfaceCreateInfoQNX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ScreenSurfaceCreateInfoQNX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ScreenSurfaceCreateInfoQNX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ScreenSurfaceCreateInfoQNX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ScreenSurfaceCreateInfoQNX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ScreenSurfaceCreateInfoQNX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ScreenSurfaceCreateInfoQNX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX")]
+        [NativeApi(EntryPoint = "vkCreateScreenSurfaceQNX", Convention = CallingConvention.Winapi)]
         public partial Result CreateScreenSurfaceQnx([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ScreenSurfaceCreateInfoQNX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX", Convention = CallingConvention.Winapi)]
         public unsafe partial Bool32 GetPhysicalDeviceScreenPresentationSupportQnx([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] void* window);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX", Convention = CallingConvention.Winapi)]
         public partial Bool32 GetPhysicalDeviceScreenPresentationSupportQnx<T0>([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 window) where T0 : unmanaged;
 
         public QnxScreenSurface(INativeContext ctx)

@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrSwapchainStateFoveationFlagsFB")]
     public enum SwapchainStateFoveationFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

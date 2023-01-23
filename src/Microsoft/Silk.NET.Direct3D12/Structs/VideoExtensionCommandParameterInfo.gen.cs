@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_INFO")]
     public unsafe partial struct VideoExtensionCommandParameterInfo
     {

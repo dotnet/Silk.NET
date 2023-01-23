@@ -21,8 +21,8 @@ namespace Silk.NET.OpenCL
     {
         public ImageFormat
         (
-            uint? imageChannelOrder = null,
-            uint? imageChannelDataType = null
+            ChannelOrder? imageChannelOrder = null,
+            ChannelType? imageChannelDataType = null
         ) : this()
         {
             if (imageChannelOrder is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "cl_channel_order")]
         [NativeName("Type.Name", "cl_channel_order")]
         [NativeName("Name", "image_channel_order")]
-        public uint ImageChannelOrder;
+        public ChannelOrder ImageChannelOrder;
 /// <summary></summary>
         [NativeName("Type", "cl_channel_type")]
         [NativeName("Type.Name", "cl_channel_type")]
         [NativeName("Name", "image_channel_data_type")]
-        public uint ImageChannelDataType;
+        public ChannelType ImageChannelDataType;
     }
 }

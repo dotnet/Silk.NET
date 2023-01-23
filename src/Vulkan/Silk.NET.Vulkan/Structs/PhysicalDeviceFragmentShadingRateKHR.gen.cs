@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShadingRateKHR")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
+    public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR : IChainable
     {
         public PhysicalDeviceFragmentShadingRateKHR
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "fragmentSize")]
         public Extent2D FragmentSize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShadingRateKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

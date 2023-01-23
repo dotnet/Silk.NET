@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
     public unsafe partial class SunGlobalAlpha : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_global_alpha";
-        [NativeApi(EntryPoint = "glGlobalAlphaFactorbSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactorbSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactoriSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactoriSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] int factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactorfSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactorfSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] float factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactordSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactordSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] double factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactorubSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactorubSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactorusSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactorusSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactoruiSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactoruiSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor);
 
-        [NativeApi(EntryPoint = "glGlobalAlphaFactorsSUN")]
+        [NativeApi(EntryPoint = "glGlobalAlphaFactorsSUN", Convention = CallingConvention.Winapi)]
         public partial void ObalAlphaFactors([Flow(FlowDirection.In)] short factor);
 
         public SunGlobalAlpha(INativeContext ctx)

@@ -9,13 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSurfaceCounterFlagsEXT")]
     public enum SurfaceCounterFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"BitExt\"")]
         [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_BIT_EXT")]
         SurfaceCounterVblankBitExt = 1,
+        [Obsolete("Deprecated in favour of \"Ext\"")]
         [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_EXT")]
         SurfaceCounterVblankExt = 1,
+        [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_BIT_EXT")]
+        BitExt = 1,
+        [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_EXT")]
+        Ext = 1,
     }
 }

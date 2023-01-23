@@ -100,31 +100,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetNamedString(namelen, in name.GetPinnableReference(), bufSize, out stringlen.GetPinnableReference(), out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, bufSize, stringlen, out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, bufSize, stringlen, out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, bufSize, out stringlen.GetPinnableReference(), @string);
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, bufSize, out stringlen.GetPinnableReference(), out @string.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, bufSize, out stringlen.GetPinnableReference(), out @string.GetPinnableReference());
@@ -148,7 +148,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetNamedString(namelen, in name.GetPinnableReference(), pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetNamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetNamedString(namelen, name, pname, out @params.GetPinnableReference());
@@ -178,13 +178,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.NamedString(type, namelen, in name.GetPinnableReference(), stringlen, in @string.GetPinnableReference());
         }
 
-        public static unsafe void NamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string)
+        public static unsafe void NamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string)
         {
             // SpanOverloader
             thisApi.NamedString(type, namelen, in name.GetPinnableReference(), stringlen, @string);
         }
 
-        public static unsafe void NamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+        public static unsafe void NamedString(this ArbShadingLanguageInclude thisApi, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
         {
             // SpanOverloader
             thisApi.NamedString(type, namelen, name, stringlen, in @string.GetPinnableReference());

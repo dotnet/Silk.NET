@@ -21,51 +21,51 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_calibrated_timestamps";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
+        [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT", Convention = CallingConvention.Winapi)]
         public partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] in CalibratedTimestampInfoEXT pTimestampInfos, [Count(Parameter = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
 
         /// <summary>To be documented.</summary>

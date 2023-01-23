@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "ContextProfileMask")]
     public enum ContextProfileMask : int
     {
+        [Obsolete("Deprecated in favour of \"CoreProfileBit\"")]
         [NativeName("Name", "GL_CONTEXT_CORE_PROFILE_BIT")]
         ContextCoreProfileBit = 0x1,
+        [Obsolete("Deprecated in favour of \"CompatibilityProfileBit\"")]
         [NativeName("Name", "GL_CONTEXT_COMPATIBILITY_PROFILE_BIT")]
         ContextCompatibilityProfileBit = 0x2,
+        [NativeName("Name", "GL_CONTEXT_CORE_PROFILE_BIT")]
+        CoreProfileBit = 0x1,
+        [NativeName("Name", "GL_CONTEXT_COMPATIBILITY_PROFILE_BIT")]
+        CompatibilityProfileBit = 0x2,
     }
 }

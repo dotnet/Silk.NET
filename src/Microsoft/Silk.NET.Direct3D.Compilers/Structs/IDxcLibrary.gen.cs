@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D.Compilers
 {
     [Guid("e5204dc7-d18c-4c3c-bdfb-851673980fe7")]
     [NativeName("Name", "IDxcLibrary")]
-    public unsafe partial struct IDxcLibrary
+    public unsafe partial struct IDxcLibrary : IComVtbl<IDxcLibrary>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("e5204dc7-d18c-4c3c-bdfb-851673980fe7");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcLibrary val)
             => Unsafe.As<IDxcLibrary, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMalloc);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)@this->LpVtbl[3])(@this, pMalloc);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IMalloc* pMallocPtr = &pMalloc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IMalloc*, int>)LpVtbl[3])(@this, pMallocPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IMalloc*, int>)@this->LpVtbl[3])(@this, pMallocPtr);
             }
             return ret;
         }
@@ -133,7 +136,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pBlob, offset, length, ppResult);
             return ret;
         }
 
@@ -144,7 +147,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pBlob, offset, length, ppResultPtr);
             }
             return ret;
         }
@@ -156,7 +159,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pBlobPtr, offset, length, ppResult);
             }
             return ret;
         }
@@ -170,47 +173,47 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlob** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)@this->LpVtbl[4])(@this, pBlobPtr, offset, length, ppResultPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(char* pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] char* pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileName, codePage, pBlobEncoding);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(char* pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] char* pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileName, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(char* pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] char* pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* codePagePtr = &codePage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(char* pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] char* pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -218,26 +221,26 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileName, codePagePtr, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(ref char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] in char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pFileNamePtr = &pFileName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(ref char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] in char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -245,14 +248,14 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(ref char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] in char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -260,14 +263,14 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (uint* codePagePtr = &codePage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(ref char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In)] in char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -277,7 +280,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                     }
                 }
             }
@@ -285,192 +288,192 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (uint* codePagePtr = &codePage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (uint* codePagePtr = &codePage)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned(void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingFromPinned([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pText, size, codePage, pBlobEncoding);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned(void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingFromPinned([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pText, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>(ref T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>(ref T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy(void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pText, size, codePage, pBlobEncoding);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy(void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pText, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(ref T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(ref T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[7])(@this, pTextPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc([Flow(FlowDirection.In)] void* pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncoding);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc([Flow(FlowDirection.In)] void* pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pText, pIMalloc, size, codePage, pBlobEncodingPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc([Flow(FlowDirection.In)] void* pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IMalloc* pIMallocPtr = &pIMalloc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc([Flow(FlowDirection.In)] void* pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -478,66 +481,66 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pText, pIMallocPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(FlowDirection.In)] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncoding);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(FlowDirection.In)] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pTextPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(FlowDirection.In)] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
                 fixed (IMalloc* pIMallocPtr = &pIMalloc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncoding);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(FlowDirection.In)] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pTextPtr = &pText)
+            fixed (void* pTextPtr = &pText)
             {
                 fixed (IMalloc* pIMallocPtr = &pIMalloc)
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[8])(@this, pTextPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
                     }
                 }
             }
@@ -549,7 +552,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)@this->LpVtbl[9])(@this, ppResult);
             return ret;
         }
 
@@ -560,7 +563,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcIncludeHandler** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcIncludeHandler**, int>)LpVtbl[9])(@this, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcIncludeHandler**, int>)@this->LpVtbl[9])(@this, ppResultPtr);
             }
             return ret;
         }
@@ -570,7 +573,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStream);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)@this->LpVtbl[10])(@this, pBlob, ppStream);
             return ret;
         }
 
@@ -581,7 +584,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppStreamPtr = &ppStream)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlob, ppStreamPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)@this->LpVtbl[10])(@this, pBlob, ppStreamPtr);
             }
             return ret;
         }
@@ -593,7 +596,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStream);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)@this->LpVtbl[10])(@this, pBlobPtr, ppStream);
             }
             return ret;
         }
@@ -607,7 +610,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppStreamPtr = &ppStream)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, void**, int>)LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, void**, int>)@this->LpVtbl[10])(@this, pBlobPtr, ppStreamPtr);
                 }
             }
             return ret;
@@ -618,7 +621,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[11])(@this, pBlob, pBlobEncoding);
             return ret;
         }
 
@@ -629,7 +632,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[11])(@this, pBlob, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -641,7 +644,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[11])(@this, pBlobPtr, pBlobEncoding);
             }
             return ret;
         }
@@ -655,7 +658,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[11])(@this, pBlobPtr, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -666,7 +669,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncoding);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[12])(@this, pBlob, pBlobEncoding);
             return ret;
         }
 
@@ -677,7 +680,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[12])(@this, pBlob, pBlobEncodingPtr);
             }
             return ret;
         }
@@ -689,7 +692,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pBlobPtr = &pBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[12])(@this, pBlobPtr, pBlobEncoding);
             }
             return ret;
         }
@@ -703,10 +706,260 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)@this->LpVtbl[12])(@this, pBlobPtr, pBlobEncodingPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMalloc<TI0>(ComPtr<TI0> pMalloc) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetMalloc((IMalloc*) pMalloc.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobFromBlob<TI0, TI1>(ComPtr<TI0> pBlob, uint offset, uint length, ref ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromBlob((IDxcBlob*) pBlob.Handle, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobFromBlob<TI0>(ComPtr<TI0> pBlob, uint offset, uint length, ref IDxcBlob* ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromBlob((IDxcBlob*) pBlob.Handle, offset, length, ref ppResult);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobFromBlob<TI0>(ref IDxcBlob pBlob, uint offset, uint length, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromBlob(ref pBlob, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(FlowDirection.In)] char* pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(pFileName, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(FlowDirection.In)] char* pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(pFileName, ref codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(FlowDirection.In)] in char pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(in pFileName, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobFromFile<TI0>([Flow(FlowDirection.In)] in char pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(in pFileName, ref codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(pFileName, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobFromFile<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobFromFile(pFileName, ref codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingFromPinned<TI0>([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingFromPinned(pText, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobWithEncodingFromPinned<T0, TI0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingFromPinned(in pText, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<TI0>([Flow(FlowDirection.In)] void* pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnHeapCopy(pText, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobWithEncodingOnHeapCopy<T0, TI0>([Flow(FlowDirection.In)] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnHeapCopy(in pText, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<TI0, TI1>([Flow(FlowDirection.In)] void* pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(pText, (IMalloc*) pIMalloc.Handle, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<TI0>([Flow(FlowDirection.In)] void* pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(pText, (IMalloc*) pIMalloc.Handle, size, codePage, ref pBlobEncoding);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<TI0>([Flow(FlowDirection.In)] void* pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(pText, ref pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(in pText, (IMalloc*) pIMalloc.Handle, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(FlowDirection.In)] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(in pText, (IMalloc*) pIMalloc.Handle, size, codePage, ref pBlobEncoding);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(FlowDirection.In)] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateBlobWithEncodingOnMalloc(in pText, ref pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateIncludeHandler<TI0>(ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateIncludeHandler((IDxcIncludeHandler**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStreamFromBlobReadOnly<TI0>(ComPtr<TI0> pBlob, void** ppStream) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateStreamFromBlobReadOnly((IDxcBlob*) pBlob.Handle, ppStream);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStreamFromBlobReadOnly<TI0>(ComPtr<TI0> pBlob, ref void* ppStream) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateStreamFromBlobReadOnly((IDxcBlob*) pBlob.Handle, ref ppStream);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBlobAsUtf8<TI0, TI1>(ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf8((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBlobAsUtf8<TI0>(ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf8((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBlobAsUtf8<TI0>(ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf8(ref pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBlobAsUtf16<TI0, TI1>(ComPtr<TI0> pBlob, ref ComPtr<TI1> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBlobAsUtf16<TI0>(ComPtr<TI0> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf16((IDxcBlob*) pBlob.Handle, ref pBlobEncoding);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBlobAsUtf16<TI0>(ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBlobAsUtf16(ref pBlob, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

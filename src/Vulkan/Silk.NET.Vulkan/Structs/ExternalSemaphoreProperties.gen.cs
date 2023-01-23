@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalSemaphoreProperties")]
-    public unsafe partial struct ExternalSemaphoreProperties
+    [NativeName("Aliases", "VkExternalSemaphorePropertiesKHR")]
+    public unsafe partial struct ExternalSemaphoreProperties : IChainable
     {
         public ExternalSemaphoreProperties
         (
@@ -79,5 +80,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalSemaphoreFeatureFlags")]
         [NativeName("Name", "externalSemaphoreFeatures")]
         public ExternalSemaphoreFeatureFlags ExternalSemaphoreFeatures;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalSemaphoreProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -154,6 +154,20 @@ namespace Silk.NET.OpenGL
         FragmentLight6Sgix = 0x8412,
         [NativeName("Name", "GL_FRAGMENT_LIGHT7_SGIX")]
         FragmentLight7Sgix = 0x8413,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE")]
+        TextureRectangle = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_ARB")]
+        TextureRectangleArb = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_NV")]
+        TextureRectangleNV = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP")]
+        TextureCubeMap = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARB")]
+        TextureCubeMapArb = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_EXT")]
+        TextureCubeMapExt = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_OES")]
+        TextureCubeMapOes = 0x8513,
         [NativeName("Name", "GL_PROGRAM_POINT_SIZE")]
         ProgramPointSize = 0x8642,
         [NativeName("Name", "GL_DEPTH_CLAMP")]
@@ -164,18 +178,24 @@ namespace Silk.NET.OpenGL
         SampleShading = 0x8C36,
         [NativeName("Name", "GL_RASTERIZER_DISCARD")]
         RasterizerDiscard = 0x8C89,
+        [NativeName("Name", "GL_TEXTURE_GEN_STR_OES")]
+        TextureGenStrOes = 0x8D60,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_FIXED_INDEX")]
         PrimitiveRestartFixedIndex = 0x8D69,
         [NativeName("Name", "GL_FRAMEBUFFER_SRGB")]
         FramebufferSrgb = 0x8DB9,
         [NativeName("Name", "GL_SAMPLE_MASK")]
         SampleMask = 0x8E51,
+        [NativeName("Name", "GL_FETCH_PER_SAMPLE_ARM")]
+        FetchPerSampleArm = 0x8F65,
         [NativeName("Name", "GL_PRIMITIVE_RESTART")]
         PrimitiveRestart = 0x8F9D,
         [NativeName("Name", "GL_DEBUG_OUTPUT")]
         DebugOutput = 0x92E0,
         [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
         ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+        FramebufferFetchNoncoherentQCom = 0x96A2,
         [NativeName("Name", "GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
         ShadingRatePreserveAspectRatioQCom = 0x96A5,
     }

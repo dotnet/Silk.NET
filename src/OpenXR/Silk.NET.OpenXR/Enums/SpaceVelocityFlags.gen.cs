@@ -9,13 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrSpaceVelocityFlags")]
     public enum SpaceVelocityFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"LinearValidBit\"")]
         [NativeName("Name", "XR_SPACE_VELOCITY_LINEAR_VALID_BIT")]
         SpaceVelocityLinearValidBit = 1,
+        [Obsolete("Deprecated in favour of \"AngularValidBit\"")]
         [NativeName("Name", "XR_SPACE_VELOCITY_ANGULAR_VALID_BIT")]
         SpaceVelocityAngularValidBit = 2,
+        [NativeName("Name", "XR_SPACE_VELOCITY_LINEAR_VALID_BIT")]
+        LinearValidBit = 1,
+        [NativeName("Name", "XR_SPACE_VELOCITY_ANGULAR_VALID_BIT")]
+        AngularValidBit = 2,
     }
 }

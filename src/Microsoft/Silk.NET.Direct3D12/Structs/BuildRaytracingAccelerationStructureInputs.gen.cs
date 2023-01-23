@@ -94,14 +94,14 @@ namespace Silk.NET.Direct3D12
         public ElementsLayout DescsLayout;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L12497_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13369_C5")]
         [NativeName("Name", "anonymous1")]
         public BuildRaytracingAccelerationStructureInputsUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ulong InstanceDescs
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.InstanceDescs;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].InstanceDescs;
         }
 #else
         public ulong InstanceDescs
@@ -111,11 +111,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RaytracingGeometryDesc* PGeometryDescs
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.PGeometryDescs;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PGeometryDescs;
         }
 #else
         public RaytracingGeometryDesc* PGeometryDescs
@@ -125,11 +125,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RaytracingGeometryDesc** PpGeometryDescs
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.PpGeometryDescs;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PpGeometryDescs;
         }
 #else
         public RaytracingGeometryDesc** PpGeometryDescs

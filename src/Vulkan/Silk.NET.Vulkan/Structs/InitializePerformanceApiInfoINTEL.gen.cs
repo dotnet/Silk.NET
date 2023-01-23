@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInitializePerformanceApiInfoINTEL")]
-    public unsafe partial struct InitializePerformanceApiInfoINTEL
+    public unsafe partial struct InitializePerformanceApiInfoINTEL : IChainable
     {
         public InitializePerformanceApiInfoINTEL
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pUserData")]
         public void* PUserData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.InitializePerformanceApiInfoIntel;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

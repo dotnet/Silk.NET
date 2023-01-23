@@ -21,11 +21,16 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoDecodeH264ReferenceInfo
         (
+            StdVideoDecodeH264ReferenceInfoFlags? flags = null,
             ushort? frameNum = null,
-            ushort? reserved = null,
-            StdVideoDecodeH264ReferenceInfoFlags? flags = null
+            ushort? reserved = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (frameNum is not null)
             {
                 FrameNum = frameNum.Value;
@@ -35,13 +40,13 @@ namespace Silk.NET.Vulkan.Video
             {
                 Reserved = reserved.Value;
             }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
         }
 
+
+        [NativeName("Type", "StdVideoDecodeH264ReferenceInfoFlags")]
+        [NativeName("Type.Name", "StdVideoDecodeH264ReferenceInfoFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoDecodeH264ReferenceInfoFlags Flags;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]
@@ -52,14 +57,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "reserved")]
         public ushort Reserved;
-        [NativeName("Type", "int32_t [2]")]
-        [NativeName("Type.Name", "int32_t [2]")]
+        [NativeName("Type", "int32_t[2]")]
+        [NativeName("Type.Name", "int32_t[2]")]
         [NativeName("Name", "PicOrderCnt")]
         public fixed int PicOrderCnt[2];
-
-        [NativeName("Type", "StdVideoDecodeH264ReferenceInfoFlags")]
-        [NativeName("Type.Name", "StdVideoDecodeH264ReferenceInfoFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoDecodeH264ReferenceInfoFlags Flags;
     }
 }

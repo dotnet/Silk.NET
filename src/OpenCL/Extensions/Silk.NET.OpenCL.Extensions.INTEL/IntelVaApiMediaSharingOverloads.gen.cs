@@ -16,7 +16,14 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     public static class IntelVaApiMediaSharingOverloads
     {
-        public static unsafe nint CreateFromVAApimediaSurface(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] nint surface, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateFromVAApimediaSurface(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.Out)] nint surface, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromVAApimediaSurface(context, flags, surface, plane, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromVAApimediaSurface(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] nint surface, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromVAApimediaSurface(context, flags, surface, plane, out errcode_ret.GetPinnableReference());
@@ -106,42 +113,189 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
             return thisApi.EnqueueReleaseVAApimediaSurfaces(command_queue, num_objects, in mem_objects.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, num_devices);
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] VaApiDeviceSource media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] VaApiDeviceSet media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, media_adapter, media_adapter_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, num_devices);
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromVAApimediaAdapter(platform, media_adapter_type, out media_adapter.GetPinnableReference(), media_adapter_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
+        [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (VaApiDeviceSource, VaApiDeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromVAApimediaAdapter<T0>(this IntelVaApiMediaSharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint media_adapter_type, [Flow(FlowDirection.Out)] Span<T0> media_adapter, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
         {
             // SpanOverloader

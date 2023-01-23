@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInputAttachmentAspectReferenceKHR")]
+    [NativeName("AliasOf", "VkInputAttachmentAspectReference")]
     public unsafe partial struct InputAttachmentAspectReferenceKHR
     {
         public InputAttachmentAspectReferenceKHR

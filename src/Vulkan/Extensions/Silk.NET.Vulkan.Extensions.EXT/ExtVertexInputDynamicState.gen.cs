@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_vertex_input_dynamic_state";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetVertexInput([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] VertexInputBindingDescription2EXT* pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetVertexInput([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] VertexInputBindingDescription2EXT* pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] in VertexInputAttributeDescription2EXT pVertexAttributeDescriptions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetVertexInput([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] in VertexInputBindingDescription2EXT pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetVertexInputEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetVertexInput([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] in VertexInputBindingDescription2EXT pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] in VertexInputAttributeDescription2EXT pVertexAttributeDescriptions);
 
         /// <summary>To be documented.</summary>

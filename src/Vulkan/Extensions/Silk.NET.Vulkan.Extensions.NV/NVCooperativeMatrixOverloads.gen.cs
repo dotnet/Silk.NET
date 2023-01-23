@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVCooperativeMatrixOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
         public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
         public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader

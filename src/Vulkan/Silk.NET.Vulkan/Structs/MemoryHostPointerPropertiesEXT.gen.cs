@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryHostPointerPropertiesEXT")]
-    public unsafe partial struct MemoryHostPointerPropertiesEXT
+    public unsafe partial struct MemoryHostPointerPropertiesEXT : IChainable
     {
         public MemoryHostPointerPropertiesEXT
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "memoryTypeBits")]
         public uint MemoryTypeBits;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryHostPointerPropertiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

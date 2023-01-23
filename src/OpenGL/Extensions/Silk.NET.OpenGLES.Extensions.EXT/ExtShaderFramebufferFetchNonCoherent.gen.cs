@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtShaderFramebufferFetchNonCoherent : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_shader_framebuffer_fetch_non_coherent";
-        [NativeApi(EntryPoint = "glFramebufferFetchBarrierEXT")]
+        [NativeApi(EntryPoint = "glFramebufferFetchBarrierEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFetchBarrier();
 
         public ExtShaderFramebufferFetchNonCoherent(INativeContext ctx)

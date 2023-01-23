@@ -20,28 +20,28 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrSuggestedLocalWorkSize : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_suggested_local_work_size";
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.Out)] nuint* suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.Out)] out nuint suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.Out)] nuint* suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.Out)] out nuint suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.Out)] nuint* suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.Out)] out nuint suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.Out)] nuint* suggested_local_work_size);
 
-        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [NativeApi(EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR", Convention = CallingConvention.Winapi)]
         public partial int GetKernelSuggestedLocalWorkSize([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.Out)] out nuint suggested_local_work_size);
 
         public KhrSuggestedLocalWorkSize(INativeContext ctx)

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("aeb575cf-4e06-48be-ba3b-c450fc96652e")]
     [NativeName("Name", "ID3D12DebugCommandList2")]
-    public unsafe partial struct ID3D12DebugCommandList2
+    public unsafe partial struct ID3D12DebugCommandList2 : IComVtbl<ID3D12DebugCommandList2>, IComVtbl<ID3D12DebugCommandList>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("aeb575cf-4e06-48be-ba3b-c450fc96652e");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D12DebugCommandList(ID3D12DebugCommandList2 val)
             => Unsafe.As<ID3D12DebugCommandList2, ID3D12DebugCommandList>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,27 +109,27 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
+        public readonly unsafe Silk.NET.Core.Bool32 AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResource, Subresource, State);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AssertResourceState(ref ID3D12Resource pResource, uint Subresource, uint State)
+        public readonly Silk.NET.Core.Bool32 AssertResourceState(ref ID3D12Resource pResource, uint Subresource, uint State)
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResourcePtr, Subresource, State);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, State);
             }
             return ret;
         }
@@ -136,7 +139,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugFeature, int>)LpVtbl[4])(@this, Mask);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature, int>)@this->LpVtbl[4])(@this, Mask);
             return ret;
         }
 
@@ -145,27 +148,27 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             DebugFeature ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature>)@this->LpVtbl[5])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetDebugParameter(DebugCommandListParameterType Type, void* pData, uint DataSize)
+        public readonly unsafe int SetDebugParameter(DebugCommandListParameterType Type, [Flow(FlowDirection.In)] void* pData, uint DataSize)
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)LpVtbl[6])(@this, Type, pData, DataSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[6])(@this, Type, pData, DataSize);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDebugParameter<T0>(DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        public readonly int SetDebugParameter<T0>(DebugCommandListParameterType Type, [Flow(FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, T0*, uint, int>)LpVtbl[6])(@this, Type, pDataPtr, DataSize);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[6])(@this, Type, pDataPtr, DataSize);
             }
             return ret;
         }
@@ -175,7 +178,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)LpVtbl[7])(@this, Type, pData, DataSize);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pData, DataSize);
             return ret;
         }
 
@@ -184,11 +187,37 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, T0*, uint, int>)LpVtbl[7])(@this, Type, pDataPtr, DataSize);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pDataPtr, DataSize);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly Silk.NET.Core.Bool32 AssertResourceState<TI0>(ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AssertResourceState((ID3D12Resource*) pResource.Handle, Subresource, State);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

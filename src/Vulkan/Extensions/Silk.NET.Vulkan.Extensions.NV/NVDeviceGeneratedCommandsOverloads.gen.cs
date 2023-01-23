@@ -87,6 +87,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetGeneratedCommandsMemoryRequirements(this NVDeviceGeneratedCommands thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -101,6 +102,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetGeneratedCommandsMemoryRequirements(this NVDeviceGeneratedCommands thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<GeneratedCommandsMemoryRequirementsInfoNV> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D9
     {
         public Resourcestats
         (
-            int? bThrashing = null,
+            Silk.NET.Core.Bool32? bThrashing = null,
             uint? approxBytesDownloaded = null,
             uint? numEvicts = null,
             uint? numVidCreates = null,
@@ -94,7 +94,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "bThrashing")]
-        public int BThrashing;
+        public Silk.NET.Core.Bool32 BThrashing;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]

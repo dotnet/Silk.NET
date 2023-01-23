@@ -14,7 +14,7 @@ namespace Silk.NET.Core.Native
         public INativeContext Context { get; }
 
         /// <inheritdoc />
-        protected NativeAPI(INativeContext ctx)
+        public NativeAPI(INativeContext ctx)
             : base(ctx)
         {
             Context = ctx;

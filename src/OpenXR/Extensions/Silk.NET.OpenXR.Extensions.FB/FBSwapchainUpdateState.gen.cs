@@ -21,19 +21,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_swapchain_update_state";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+        [NativeApi(EntryPoint = "xrGetSwapchainStateFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] SwapchainStateBaseHeaderFB* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+        [NativeApi(EntryPoint = "xrGetSwapchainStateFB", Convention = CallingConvention.Winapi)]
         public partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] ref SwapchainStateBaseHeaderFB state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
+        [NativeApi(EntryPoint = "xrUpdateSwapchainFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainStateBaseHeaderFB* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
+        [NativeApi(EntryPoint = "xrUpdateSwapchainFB", Convention = CallingConvention.Winapi)]
         public partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainStateBaseHeaderFB state);
 
         public FBSwapchainUpdateState(INativeContext ctx)

@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INGR
     public unsafe partial class IngrBlendFuncSeparate : NativeExtension<GL>
     {
         public const string ExtensionName = "INGR_blend_func_separate";
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateINGR", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
         public IngrBlendFuncSeparate(INativeContext ctx)

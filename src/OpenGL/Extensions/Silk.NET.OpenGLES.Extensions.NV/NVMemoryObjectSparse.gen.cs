@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVMemoryObjectSparse : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_memory_object_sparse";
-        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void BufferPageCommitmentMem([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void BufferPageCommitmentMem([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] Boolean commit);
 
-        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void BufferPageCommitmentMem([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void BufferPageCommitmentMem([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] Boolean commit);
 
-        [NativeApi(EntryPoint = "glNamedBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glNamedBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferPageCommitmentMem([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glNamedBufferPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glNamedBufferPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferPageCommitmentMem([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong memOffset, [Flow(FlowDirection.In)] Boolean commit);
 
-        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexPageCommitmentMem([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexPageCommitmentMem([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] Boolean commit);
 
-        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexPageCommitmentMem([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexPageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexPageCommitmentMem([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] Boolean commit);
 
-        [NativeApi(EntryPoint = "glTexturePageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexturePageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexturePageCommitmentMem([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glTexturePageCommitmentMemNV")]
+        [NativeApi(EntryPoint = "glTexturePageCommitmentMemNV", Convention = CallingConvention.Winapi)]
         public partial void TexturePageCommitmentMem([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset, [Flow(FlowDirection.In)] Boolean commit);
 
         public NVMemoryObjectSparse(INativeContext ctx)

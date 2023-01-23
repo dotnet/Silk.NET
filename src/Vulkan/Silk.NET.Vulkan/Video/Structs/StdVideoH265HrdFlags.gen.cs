@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan.Video
             uint? vclHrdParametersPresentFlag = null,
             uint? subPicHrdParamsPresentFlag = null,
             uint? subPicCpbParamsInPicTimingSeiFlag = null,
-            byte? fixedPicRateGeneralFlag = null,
-            byte? fixedPicRateWithinCvsFlag = null,
-            byte? lowDelayHrdFlag = null
+            uint? fixedPicRateGeneralFlag = null,
+            uint? fixedPicRateWithinCvsFlag = null,
+            uint? lowDelayHrdFlag = null
         ) : this()
         {
             if (nalHrdParametersPresentFlag is not null)
@@ -101,19 +101,28 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "fixed_pic_rate_general_flag")]
-        public byte FixedPicRateGeneralFlag;
+        public uint FixedPicRateGeneralFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0xFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFu << 4)) | (uint)(((uint)(value) & 0xFFu) << 4));
+        }
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "fixed_pic_rate_within_cvs_flag")]
-        public byte FixedPicRateWithinCvsFlag;
+        public uint FixedPicRateWithinCvsFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 12) & 0xFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFu << 12)) | (uint)(((uint)(value) & 0xFFu) << 12));
+        }
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "low_delay_hrd_flag")]
-        public byte LowDelayHrdFlag;
+        public uint LowDelayHrdFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 20) & 0xFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFu << 20)) | (uint)(((uint)(value) & 0xFFu) << 20));
+        }
     }
 }

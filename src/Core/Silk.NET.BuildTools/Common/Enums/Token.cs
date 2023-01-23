@@ -9,7 +9,7 @@ namespace Silk.NET.BuildTools.Common.Enums
     /// <summary>
     /// Represents an enum token.
     /// </summary>
-    public class Token
+    public class Token : IProfileConstituent
     {
         /// <summary>
         /// Gets or sets the name of this token.

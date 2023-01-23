@@ -20,184 +20,184 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbShaderSubroutine : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_subroutine";
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
+        public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineName", Convention = CallingConvention.Winapi)]
+        public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
+        public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
         public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+        [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName", Convention = CallingConvention.Winapi)]
+        public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetProgramStageiv")]
+        [NativeApi(EntryPoint = "glGetProgramStageiv", Convention = CallingConvention.Winapi)]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
         public unsafe partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
         public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
-        public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
+        public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
         public unsafe partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
         public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineIndex")]
-        public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glGetSubroutineIndex", Convention = CallingConvention.Winapi)]
+        public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
         public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
-        public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
+        public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
         public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
-        public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glGetSubroutineUniformLocation", Convention = CallingConvention.Winapi)]
+        public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
+        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniformSubroutine([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
+        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv", Convention = CallingConvention.Winapi)]
         public partial void GetUniformSubroutine([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
+        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
+        [NativeApi(EntryPoint = "glGetUniformSubroutineuiv", Convention = CallingConvention.Winapi)]
         public partial void GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
+        [NativeApi(EntryPoint = "glUniformSubroutinesuiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformSubroutines([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
 
-        [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
+        [NativeApi(EntryPoint = "glUniformSubroutinesuiv", Convention = CallingConvention.Winapi)]
         public partial void UniformSubroutines([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint indices);
 
-        [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
+        [NativeApi(EntryPoint = "glUniformSubroutinesuiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
 
-        [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
+        [NativeApi(EntryPoint = "glUniformSubroutinesuiv", Convention = CallingConvention.Winapi)]
         public partial void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint indices);
 
         public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
@@ -306,6 +306,132 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         {
             // ImplicitCountSpanOverloader
             UniformSubroutines(shadertype, (uint) indices.Length, in indices.GetPinnableReference());
+        }
+
+        public unsafe byte GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineName(program, shadertype, index, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineName(program, shadertype, index, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineName(program, shadertype, index, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineName(program, shadertype, index, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniform(program, shadertype, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniform(program, shadertype, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniform(program, shadertype, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniform(program, shadertype, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramStage(program, shadertype, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramStage(program, shadertype, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramStage(program, shadertype, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramStage(program, shadertype, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetUniformSubroutine([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniformSubroutine(shadertype, location, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniformSubroutine(shadertype, location, out uint silkRet);
+            return silkRet;
         }
 
         public ArbShaderSubroutine(INativeContext ctx)

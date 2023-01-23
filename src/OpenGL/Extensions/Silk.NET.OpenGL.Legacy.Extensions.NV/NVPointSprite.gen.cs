@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVPointSprite : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_point_sprite";
-        [NativeApi(EntryPoint = "glPointParameteriNV")]
+        [NativeApi(EntryPoint = "glPointParameteriNV", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPointParameteriNV")]
+        [NativeApi(EntryPoint = "glPointParameteriNV", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPointParameterivNV")]
+        [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterivNV")]
+        [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glPointParameterivNV")]
+        [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterivNV")]
+        [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         public NVPointSprite(INativeContext ctx)

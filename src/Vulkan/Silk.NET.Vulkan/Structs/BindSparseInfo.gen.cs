@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindSparseInfo")]
-    public unsafe partial struct BindSparseInfo
+    public unsafe partial struct BindSparseInfo : IChainStart
     {
         public BindSparseInfo
         (
@@ -156,5 +156,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphore")]
         [NativeName("Name", "pSignalSemaphores")]
         public Semaphore* PSignalSemaphores;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindSparseInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BindSparseInfo Chain(
+            out BindSparseInfo capture)
+        {
+            capture = new BindSparseInfo(StructureType.BindSparseInfo);
+            return ref capture;
+        }
     }
 }

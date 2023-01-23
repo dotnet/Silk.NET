@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceConditionalRenderingInfoEXT")]
-    public unsafe partial struct CommandBufferInheritanceConditionalRenderingInfoEXT
+    public unsafe partial struct CommandBufferInheritanceConditionalRenderingInfoEXT : IExtendsChain<CommandBufferInheritanceInfo>
     {
         public CommandBufferInheritanceConditionalRenderingInfoEXT
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "conditionalRenderingEnable")]
         public Bool32 ConditionalRenderingEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferInheritanceConditionalRenderingInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

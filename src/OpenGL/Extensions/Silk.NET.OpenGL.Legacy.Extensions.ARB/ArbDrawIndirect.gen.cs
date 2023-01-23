@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbDrawIndirect : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_draw_indirect";
-        [NativeApi(EntryPoint = "glDrawArraysIndirect")]
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawArraysIndirect")]
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawArraysIndirect")]
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawArraysIndirect")]
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
 
-        [NativeApi(EntryPoint = "glDrawElementsIndirect")]
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
         public ArbDrawIndirect(INativeContext ctx)

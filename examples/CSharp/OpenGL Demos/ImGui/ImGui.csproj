@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ImGui\Silk.NET.OpenGL.Extensions.ImGui.csproj" />
+      <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+    </ItemGroup>
+
+</Project>

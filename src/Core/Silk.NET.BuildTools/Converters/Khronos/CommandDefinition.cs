@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Xml.Linq;
-using JetBrains.Annotations;
+
+using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
@@ -128,9 +130,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                             param.IsConst
                         );
                     }
-                    else if ((name.StartsWith("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
-                                 ("vkGet")) &&
-                             i == p.Length - 1)
+                    else if (name.ConstitutesVulkanOutOverload() && i == p.Length - 1)
                     {
                         // DO NOT CHANGE THE TYPE HERE, it will be done by the FlowPointerOverloader.
                         p[i] = new ParameterDefinition

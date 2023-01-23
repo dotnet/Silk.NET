@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -29,7 +32,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The element to fill the vector with.</param>
         public Vector3D(T value) => (X, Y, Z) = (value, value, value);
 
-        /// <summary>Constructs a Vector3D from the given Vector2D and a third value.</summary>
+        /// <summary>Constructs a <see cref="Vector3D{T}"/> from the given <see cref="Vector2D{T}"/> and a third value.</summary>
         /// <param name="value">The Vector to extract X and Y components from.</param>
         /// <param name="z">The Z component.</param>
         public Vector3D(Vector2D<T> value, T z) => (X, Y, Z) = (value.X, value.Y, z);
@@ -194,7 +197,7 @@ namespace Silk.NET.Maths
             array[index + 2] = Z;
         }
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector3D instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector3D{T}"/> instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Vector3D; False otherwise.</returns>
         [MethodImpl((MethodImplOptions) 768)]
@@ -203,9 +206,9 @@ namespace Silk.NET.Maths
             return (obj is Vector3D<T> other) && Equals(other);
         }
 
-        /// <summary>Returns a boolean indicating whether the given Vector3D is equal to this Vector3D instance.</summary>
-        /// <param name="other">The Vector3D to compare this instance to.</param>
-        /// <returns>True if the other Vector3D is equal to this instance; False otherwise.</returns>
+        /// <summary>Returns a boolean indicating whether the given <see cref="Vector3D{T}"/> is equal to this <see cref="Vector3D{T}"/> instance.</summary>
+        /// <param name="other">The <see cref="Vector3D{T}"/> to compare this instance to.</param>
+        /// <returns>True if the other <see cref="Vector3D{T}"/> is equal to this instance; False otherwise.</returns>
         public readonly bool Equals(Vector3D<T> other)
         {
             return this == other;
@@ -234,16 +237,16 @@ namespace Silk.NET.Maths
             get => Vector3D.Dot(this, this);
         }
 
-        /// <summary>Returns a String representing this Vector3D instance.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector3D{T}"/> instance.</summary>
         /// <returns>The string representation.</returns>
         public override readonly string ToString() => ToString("G", CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector3D instance, using the specified format to format individual elements.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector3D{T}"/> instance, using the specified format to format individual elements.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <returns>The string representation.</returns>
         public readonly string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector3D instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector3D{T}"/> instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>
         /// <returns>The string representation.</returns>

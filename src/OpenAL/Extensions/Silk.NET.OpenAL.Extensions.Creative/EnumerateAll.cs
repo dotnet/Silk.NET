@@ -18,7 +18,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     public partial class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(INativeContext ctx)
+        public EnumerateAll(INativeContext ctx)
             : base(ctx)
         {
         }
@@ -27,6 +27,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public unsafe partial string GetString(Device* device, GetEnumerateAllContextString param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetString")]
         public unsafe partial byte* GetStringList(Device* device, GetEnumerateAllContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />

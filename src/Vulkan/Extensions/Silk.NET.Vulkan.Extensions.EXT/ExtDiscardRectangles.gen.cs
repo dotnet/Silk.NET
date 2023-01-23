@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_discard_rectangles";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] Rect2D* pDiscardRectangles);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] in Rect2D pDiscardRectangles);
 
         /// <summary>To be documented.</summary>

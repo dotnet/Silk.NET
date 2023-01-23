@@ -17,12 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionParametersCreateInfoKHR")]
-    public unsafe partial struct VideoSessionParametersCreateInfoKHR
+    public unsafe partial struct VideoSessionParametersCreateInfoKHR : IChainStart
     {
         public VideoSessionParametersCreateInfoKHR
         (
             StructureType? sType = StructureType.VideoSessionParametersCreateInfoKhr,
             void* pNext = null,
+            uint? flags = null,
             VideoSessionParametersKHR? videoSessionParametersTemplate = null,
             VideoSessionKHR? videoSession = null
         ) : this()
@@ -35,6 +36,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
             }
 
             if (videoSessionParametersTemplate is not null)
@@ -59,6 +65,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkVideoSessionParametersCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkVideoSessionParametersCreateFlagsKHR")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
+/// <summary></summary>
         [NativeName("Type", "VkVideoSessionParametersKHR")]
         [NativeName("Type.Name", "VkVideoSessionParametersKHR")]
         [NativeName("Name", "videoSessionParametersTemplate")]
@@ -68,5 +79,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoSessionKHR")]
         [NativeName("Name", "videoSession")]
         public VideoSessionKHR VideoSession;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionParametersCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoSessionParametersCreateInfoKHR Chain(
+            out VideoSessionParametersCreateInfoKHR capture)
+        {
+            capture = new VideoSessionParametersCreateInfoKHR(StructureType.VideoSessionParametersCreateInfoKhr);
+            return ref capture;
+        }
     }
 }

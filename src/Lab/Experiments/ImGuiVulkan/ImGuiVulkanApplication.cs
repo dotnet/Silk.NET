@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -75,8 +76,8 @@ namespace ImGuiVulkan
 		private KhrSwapchain _vkSwapchain;
 		private ExtDebugUtils _debugUtils;
 		private string[] _validationLayers = { "VK_LAYER_KHRONOS_validation" };
-		private string[] _instanceExtensions = { ExtDebugUtils.ExtensionName };
-		private string[] _deviceExtensions = { KhrSwapchain.ExtensionName };
+        private List<string> _instanceExtensions = new () { ExtDebugUtils.ExtensionName };
+		private List<string> _deviceExtensions = new () { KhrSwapchain.ExtensionName };
 
 		private void InitWindow()
 		{
@@ -170,7 +171,7 @@ namespace ImGuiVulkan
 			// Render
 			var beginInfo = new CommandBufferBeginInfo();
 			beginInfo.SType = StructureType.CommandBufferBeginInfo;
-			beginInfo.Flags = CommandBufferUsageFlags.CommandBufferUsageSimultaneousUseBit; //
+			beginInfo.Flags = CommandBufferUsageFlags.SimultaneousUseBit; //
 
 			if (_vk.BeginCommandBuffer(_commandBuffers[imageIndex], &beginInfo) != Result.Success)
 			{
@@ -210,7 +211,7 @@ namespace ImGuiVulkan
 			SubmitInfo submitInfo = new SubmitInfo { SType = StructureType.SubmitInfo };
 
 			Semaphore[] waitSemaphores = { _imageAvailableSemaphores[_currentFrame] };
-			PipelineStageFlags[] waitStages = { PipelineStageFlags.PipelineStageColorAttachmentOutputBit };
+			PipelineStageFlags[] waitStages = { PipelineStageFlags.ColorAttachmentOutputBit };
 			submitInfo.WaitSemaphoreCount = 1;
 			var signalSemaphore = _renderFinishedSemaphores[_currentFrame];
 			fixed (Semaphore* waitSemaphoresPtr = waitSemaphores)
@@ -319,13 +320,21 @@ namespace ImGuiVulkan
 		private unsafe void CreateInstance()
 		{
 			_vk = Vk.GetApi();
-
+            
+            var isMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX); 
+            
+            if (isMacOs)
+            {
+                _instanceExtensions.Add("VK_KHR_portability_enumeration");
+                _deviceExtensions.Add("VK_KHR_portability_subset");
+            }
+            
 			if (EnableValidationLayers && !CheckValidationLayerSupport())
 			{
 				throw new NotSupportedException("Validation layers requested, but not available!");
 			}
 
-			var appInfo = new ApplicationInfo
+            var appInfo = new ApplicationInfo
 			{
 				SType = StructureType.ApplicationInfo,
 				PApplicationName = (byte*)Marshal.StringToHGlobalAnsi("Hello Triangle"),
@@ -340,22 +349,27 @@ namespace ImGuiVulkan
 				SType = StructureType.InstanceCreateInfo,
 				PApplicationInfo = &appInfo
 			};
-
+            
+            if (isMacOs)
+            {
+                createInfo.Flags = InstanceCreateFlags.EnumeratePortabilityBitKhr;
+            }
+            
 			var extensions = _window.VkSurface!.GetRequiredExtensions(out var extCount);
 			// TODO Review that this count doesn't realistically exceed 1k (recommended max for stackalloc)
 			// Should probably be allocated on heap anyway as this isn't super performance critical.
-			var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
+			var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Count)];
 			for (var i = 0; i < extCount; i++)
 			{
 				newExtensions[i] = extensions[i];
 			}
 
-			for (var i = 0; i < _instanceExtensions.Length; i++)
+			for (var i = 0; i < _instanceExtensions.Count; i++)
 			{
 				newExtensions[extCount + i] = (byte*)SilkMarshal.StringToPtr(_instanceExtensions[i]);
 			}
 
-			extCount += (uint)_instanceExtensions.Length;
+			extCount += (uint)_instanceExtensions.Count;
 			createInfo.EnabledExtensionCount = extCount;
 			createInfo.PpEnabledExtensionNames = newExtensions;
 
@@ -415,12 +429,12 @@ namespace ImGuiVulkan
 		private unsafe void PopulateDebugMessengerCreateInfo(ref DebugUtilsMessengerCreateInfoEXT createInfo)
 		{
 			createInfo.SType = StructureType.DebugUtilsMessengerCreateInfoExt;
-			createInfo.MessageSeverity = DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt |
-										 DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityWarningBitExt |
-										 DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityErrorBitExt;
-			createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeGeneralBitExt |
-									 DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypePerformanceBitExt |
-									 DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeValidationBitExt;
+			createInfo.MessageSeverity = DebugUtilsMessageSeverityFlagsEXT.VerboseBitExt |
+										 DebugUtilsMessageSeverityFlagsEXT.WarningBitExt |
+										 DebugUtilsMessageSeverityFlagsEXT.ErrorBitExt;
+			createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.GeneralBitExt |
+									 DebugUtilsMessageTypeFlagsEXT.PerformanceBitExt |
+									 DebugUtilsMessageTypeFlagsEXT.ValidationBitExt;
 			createInfo.PfnUserCallback = (DebugUtilsMessengerCallbackFunctionEXT)DebugCallback;
 		}
 
@@ -432,7 +446,7 @@ namespace ImGuiVulkan
 			void* pUserData
 		)
 		{
-			if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt)
+			if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.VerboseBitExt)
 			{
 				Console.WriteLine
 					($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint)pCallbackData->PMessage));
@@ -544,7 +558,7 @@ namespace ImGuiVulkan
 				var queueFamily = queueFamilies[i];
 				// note: HasFlag is slow on .NET Core 2.1 and below.
 				// if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
-				if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
+				if (queueFamily.QueueFlags.HasFlag(QueueFlags.GraphicsBit))
 				{
 					indices.GraphicsFamily = i;
 				}
@@ -615,7 +629,7 @@ namespace ImGuiVulkan
 			createInfo.QueueCreateInfoCount = (uint)uniqueQueueFamilies.Length;
 			createInfo.PQueueCreateInfos = queueCreateInfos;
 			createInfo.PEnabledFeatures = &deviceFeatures;
-			createInfo.EnabledExtensionCount = (uint)_deviceExtensions.Length;
+			createInfo.EnabledExtensionCount = (uint)_deviceExtensions.Count;
 
 			var enabledExtensionNames = SilkMarshal.StringArrayToPtr(_deviceExtensions);
 			createInfo.PpEnabledExtensionNames = (byte**)enabledExtensionNames;
@@ -682,7 +696,7 @@ namespace ImGuiVulkan
 				ImageColorSpace = surfaceFormat.ColorSpace,
 				ImageExtent = extent,
 				ImageArrayLayers = 1,
-				ImageUsage = ImageUsageFlags.ImageUsageColorAttachmentBit
+				ImageUsage = ImageUsageFlags.ColorAttachmentBit
 			};
 
 			var indices = FindQueueFamilies(_physicalDevice);
@@ -702,7 +716,7 @@ namespace ImGuiVulkan
 				}
 
 				createInfo.PreTransform = swapChainSupport.Capabilities.CurrentTransform;
-				createInfo.CompositeAlpha = CompositeAlphaFlagsKHR.CompositeAlphaOpaqueBitKhr;
+				createInfo.CompositeAlpha = CompositeAlphaFlagsKHR.OpaqueBitKhr;
 				createInfo.PresentMode = presentMode;
 				createInfo.Clipped = Vk.True;
 
@@ -784,13 +798,13 @@ namespace ImGuiVulkan
 		{
 			foreach (var availablePresentMode in presentModes)
 			{
-				if (availablePresentMode == PresentModeKHR.PresentModeMailboxKhr)
+				if (availablePresentMode == PresentModeKHR.MailboxKhr)
 				{
 					return availablePresentMode;
 				}
 			}
 
-			return PresentModeKHR.PresentModeFifoKhr;
+			return PresentModeKHR.FifoKhr;
 		}
 
 		private SurfaceFormatKHR ChooseSwapSurfaceFormat(SurfaceFormatKHR[] formats)
@@ -816,7 +830,7 @@ namespace ImGuiVulkan
 				{
 					SType = StructureType.ImageViewCreateInfo,
 					Image = _swapchainImages[i],
-					ViewType = ImageViewType.ImageViewType2D,
+					ViewType = ImageViewType.Type2D,
 					Format = _swapchainImageFormat,
 					Components =
 					{
@@ -827,7 +841,7 @@ namespace ImGuiVulkan
 					},
 					SubresourceRange =
 					{
-						AspectMask = ImageAspectFlags.ImageAspectColorBit,
+						AspectMask = ImageAspectFlags.ColorBit,
 						BaseMipLevel = 0,
 						LevelCount = 1,
 						BaseArrayLayer = 0,
@@ -850,7 +864,7 @@ namespace ImGuiVulkan
 			var colorAttachment = new AttachmentDescription
 			{
 				Format = _swapchainImageFormat,
-				Samples = SampleCountFlags.SampleCount1Bit,
+				Samples = SampleCountFlags.Count1Bit,
 				LoadOp = AttachmentLoadOp.Clear,
 				StoreOp = AttachmentStoreOp.Store,
 				StencilLoadOp = AttachmentLoadOp.DontCare,
@@ -876,10 +890,10 @@ namespace ImGuiVulkan
 			{
 				SrcSubpass = Vk.SubpassExternal,
 				DstSubpass = 0,
-				SrcStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit,
+				SrcStageMask = PipelineStageFlags.ColorAttachmentOutputBit,
 				SrcAccessMask = 0,
-				DstStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit,
-				DstAccessMask = AccessFlags.AccessColorAttachmentReadBit | AccessFlags.AccessColorAttachmentWriteBit
+				DstStageMask = PipelineStageFlags.ColorAttachmentOutputBit,
+				DstAccessMask = AccessFlags.ColorAttachmentReadBit | AccessFlags.ColorAttachmentWriteBit
 			};
 
 			var renderPassInfo = new RenderPassCreateInfo
@@ -913,7 +927,7 @@ namespace ImGuiVulkan
 			var vertShaderStageInfo = new PipelineShaderStageCreateInfo
 			{
 				SType = StructureType.PipelineShaderStageCreateInfo,
-				Stage = ShaderStageFlags.ShaderStageVertexBit,
+				Stage = ShaderStageFlags.VertexBit,
 				Module = vertShaderModule,
 				PName = (byte*)SilkMarshal.StringToPtr("main")
 			};
@@ -921,7 +935,7 @@ namespace ImGuiVulkan
 			var fragShaderStageInfo = new PipelineShaderStageCreateInfo
 			{
 				SType = StructureType.PipelineShaderStageCreateInfo,
-				Stage = ShaderStageFlags.ShaderStageFragmentBit,
+				Stage = ShaderStageFlags.FragmentBit,
 				Module = fragShaderModule,
 				PName = (byte*)SilkMarshal.StringToPtr("main")
 			};
@@ -972,7 +986,7 @@ namespace ImGuiVulkan
 				RasterizerDiscardEnable = Vk.False,
 				PolygonMode = PolygonMode.Fill,
 				LineWidth = 1.0f,
-				CullMode = CullModeFlags.CullModeBackBit,
+				CullMode = CullModeFlags.BackBit,
 				FrontFace = FrontFace.Clockwise,
 				DepthBiasEnable = Vk.False
 			};
@@ -981,15 +995,15 @@ namespace ImGuiVulkan
 			{
 				SType = StructureType.PipelineMultisampleStateCreateInfo,
 				SampleShadingEnable = Vk.False,
-				RasterizationSamples = SampleCountFlags.SampleCount1Bit
+				RasterizationSamples = SampleCountFlags.Count1Bit
 			};
 
 			var colorBlendAttachment = new PipelineColorBlendAttachmentState
 			{
-				ColorWriteMask = ColorComponentFlags.ColorComponentRBit |
-								 ColorComponentFlags.ColorComponentGBit |
-								 ColorComponentFlags.ColorComponentBBit |
-								 ColorComponentFlags.ColorComponentABit,
+				ColorWriteMask = ColorComponentFlags.RBit |
+								 ColorComponentFlags.GBit |
+								 ColorComponentFlags.BBit |
+								 ColorComponentFlags.ABit,
 				BlendEnable = Vk.False
 			};
 
@@ -1109,7 +1123,7 @@ namespace ImGuiVulkan
 			{
 				SType = StructureType.CommandPoolCreateInfo,
 				QueueFamilyIndex = queueFamilyIndices.GraphicsFamily.Value,
-				Flags = CommandPoolCreateFlags.CommandPoolCreateResetCommandBufferBit
+				Flags = CommandPoolCreateFlags.ResetCommandBufferBit
 			};
 
 			fixed (CommandPool* commandPool = &_commandPool)
@@ -1154,7 +1168,7 @@ namespace ImGuiVulkan
 
 			FenceCreateInfo fenceInfo = new FenceCreateInfo();
 			fenceInfo.SType = StructureType.FenceCreateInfo;
-			fenceInfo.Flags = FenceCreateFlags.FenceCreateSignaledBit;
+			fenceInfo.Flags = FenceCreateFlags.SignaledBit;
 
 			for (var i = 0; i < MaxFramesInFlight; i++)
 			{

@@ -10,9 +10,9 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class GroupOverloader : ISimpleParameterOverloader
     {
-        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Project core)
+        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Profile profile)
         {
-            if (parameter.Type.OriginalGroup is null || core.Enums.All
+            if (parameter.Type.OriginalGroup is null || profile.Projects["Core"].Enums.All
                 (x => x.Name != parameter.Type.OriginalGroup)/* || (parameter.Type.OriginalName != "GLenum" &&
                                                                   parameter.Type.OriginalName != "CLenum")*/)
             {

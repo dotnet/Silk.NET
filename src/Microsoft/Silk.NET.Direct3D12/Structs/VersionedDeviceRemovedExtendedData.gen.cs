@@ -25,7 +25,8 @@ namespace Silk.NET.Direct3D12
             VersionedDeviceRemovedExtendedDataUnion? anonymous = null,
             DeviceRemovedExtendedData? dred10 = null,
             DeviceRemovedExtendedData1? dred11 = null,
-            DeviceRemovedExtendedData2? dred12 = null
+            DeviceRemovedExtendedData2? dred12 = null,
+            DeviceRemovedExtendedData3? dred13 = null
         ) : this()
         {
             if (version is not null)
@@ -52,6 +53,11 @@ namespace Silk.NET.Direct3D12
             {
                 Dred12 = dred12.Value;
             }
+
+            if (dred13 is not null)
+            {
+                Dred13 = dred13.Value;
+            }
         }
 
 
@@ -61,14 +67,14 @@ namespace Silk.NET.Direct3D12
         public DredVersion Version;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13459_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L14437_C5")]
         [NativeName("Name", "anonymous1")]
         public VersionedDeviceRemovedExtendedDataUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData Dred10
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred10;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred10;
         }
 #else
         public DeviceRemovedExtendedData Dred10
@@ -78,11 +84,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData1 Dred11
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred11;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred11;
         }
 #else
         public DeviceRemovedExtendedData1 Dred11
@@ -92,17 +98,31 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData2 Dred12
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred12;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred12;
         }
 #else
         public DeviceRemovedExtendedData2 Dred12
         {
             get => Anonymous.Dred12;
             set => Anonymous.Dred12 = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref DeviceRemovedExtendedData3 Dred13
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred13;
+        }
+#else
+        public DeviceRemovedExtendedData3 Dred13
+        {
+            get => Anonymous.Dred13;
+            set => Anonymous.Dred13 = value;
         }
 #endif
 

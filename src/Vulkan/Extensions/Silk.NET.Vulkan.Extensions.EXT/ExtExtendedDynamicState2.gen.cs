@@ -21,23 +21,23 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_extended_dynamic_state2";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthBiasEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthBiasEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBiasEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetLogicOpEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetLogicOpEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetLogicOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] LogicOp logicOp);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetPatchControlPointsEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetPatchControlPointsEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetPatchControlPoints([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint patchControlPoints);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetPrimitiveRestartEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 primitiveRestartEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetRasterizerDiscardEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 rasterizerDiscardEnable);
 
         public ExtExtendedDynamicState2(INativeContext ctx)

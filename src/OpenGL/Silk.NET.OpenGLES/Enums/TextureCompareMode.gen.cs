@@ -14,6 +14,7 @@ namespace Silk.NET.OpenGLES
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,
+        [System.Obsolete]
         [NativeName("Name", "GL_COMPARE_R_TO_TEXTURE")]
         CompareRToTexture = 0x884E,
         [NativeName("Name", "GL_COMPARE_REF_TO_TEXTURE")]

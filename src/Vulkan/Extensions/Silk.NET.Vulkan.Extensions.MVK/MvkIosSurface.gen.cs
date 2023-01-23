@@ -21,35 +21,35 @@ namespace Silk.NET.Vulkan.Extensions.MVK
     {
         public const string ExtensionName = "VK_MVK_ios_surface";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         public MvkIosSurface(INativeContext ctx)

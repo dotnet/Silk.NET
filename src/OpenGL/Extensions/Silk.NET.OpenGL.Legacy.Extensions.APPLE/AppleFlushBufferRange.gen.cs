@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     public unsafe partial class AppleFlushBufferRange : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_flush_buffer_range";
-        [NativeApi(EntryPoint = "glBufferParameteriAPPLE")]
+        [NativeApi(EntryPoint = "glBufferParameteriAPPLE", Convention = CallingConvention.Winapi)]
         public partial void BufferParameter([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
+        [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
+        [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         public AppleFlushBufferRange(INativeContext ctx)

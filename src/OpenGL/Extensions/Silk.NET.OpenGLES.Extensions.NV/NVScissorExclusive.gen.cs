@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVScissorExclusive : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_scissor_exclusive";
-        [NativeApi(EntryPoint = "glScissorExclusiveNV")]
+        [NativeApi(EntryPoint = "glScissorExclusiveNV", Convention = CallingConvention.Winapi)]
         public partial void ScissorExclusive([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
+        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
+        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV", Convention = CallingConvention.Winapi)]
         public partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
 
         public NVScissorExclusive(INativeContext ctx)

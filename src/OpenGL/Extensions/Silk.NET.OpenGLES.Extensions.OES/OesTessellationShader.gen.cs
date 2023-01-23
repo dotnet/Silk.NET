@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesTessellationShader : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_tessellation_shader";
-        [NativeApi(EntryPoint = "glPatchParameteriOES")]
+        [NativeApi(EntryPoint = "glPatchParameteriOES", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glPatchParameteriOES")]
+        [NativeApi(EntryPoint = "glPatchParameteriOES", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
         public OesTessellationShader(INativeContext ctx)

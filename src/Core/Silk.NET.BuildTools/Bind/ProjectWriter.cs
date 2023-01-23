@@ -1,6 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
@@ -9,6 +11,30 @@ namespace Silk.NET.BuildTools.Bind
 {
     public static class ProjectWriter
     {
+        /// <summary>
+        /// Creates a unique file name (that doesn't already exist), preventing clashes of names with different cases on
+        /// case insensitive filesystems.
+        /// </summary>
+        /// <param name="name">The name (goes before any disambiguator)</param>
+        /// <param name="ext">The extension (goes after any disambiguator)</param>
+        /// <param name="directories">Any number of directory segements</param>
+        /// <returns>A unique filename.</returns>
+        private static string GetFileName(string name, string ext, params string[] directories)
+        {
+            var count = 1;
+            string filename;
+            Array.Resize(ref directories, directories.Length + 1);
+            var nameIndex = directories.Length - 1;
+            do
+            {
+                directories[nameIndex] = $"{name}{(count > 1 ? count.ToString() : "")}{ext}";
+                filename = Path.Combine(directories);
+                count++;
+            } while (File.Exists(filename));
+
+            return filename;
+        }
+
         /// <summary>
         /// Writes this project in the given folder, with the given settings and parent subsystem.
         /// </summary>
@@ -34,19 +60,39 @@ namespace Silk.NET.BuildTools.Bind
 
             project.WriteProjectFile(folder, profile, task);
 
+            Project coreProject = profile.Projects["Core"];
+
             project.Structs.ForEach
             (
-                x => x.WriteStruct
-                (
-                    Path.Combine(folder, ProfileWriter.StructsSubfolder, $"{x.Name}.gen.cs"), profile, project, task
-                )
-            );
+                x =>
+                {
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
+                        coreProject.Structs.Any(y => y.NativeName == x.NativeName)))
+                    {
+                        return;
+                    }
+
+                    x.WriteStruct
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
+                    );
+                });
 
             project.Enums.ForEach
             (
-                x => x.WriteEnum
-                    (Path.Combine(folder, ProfileWriter.EnumsSubfolder, $"{x.Name}.gen.cs"), profile, project, task)
-            );
+                x =>
+                {
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
+                        coreProject.Enums.Any(y => y.NativeName == x.NativeName)))
+                    {
+                        return;
+                    }
+
+                    x.WriteEnum
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
+                    );
+                });
 
             project.WriteMixedModeClasses(profile, folder, task);
         }
@@ -73,7 +119,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine
                 ("    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            csproj.WriteLine("    <LangVersion>preview</LangVersion>");
+            csproj.WriteLine("    <LangVersion>10</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");

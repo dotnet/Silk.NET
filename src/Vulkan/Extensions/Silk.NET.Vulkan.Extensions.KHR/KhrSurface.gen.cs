@@ -21,59 +21,59 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_surface";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySurfaceKHR")]
+        [NativeApi(EntryPoint = "vkDestroySurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySurface([Count(Count = 0)] Instance instance, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySurfaceKHR")]
+        [NativeApi(EntryPoint = "vkDestroySurfaceKHR", Convention = CallingConvention.Winapi)]
         public partial void DestroySurface([Count(Count = 0)] Instance instance, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilitiesKHR* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilitiesKHR pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormatKHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormatKHR pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormatKHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormatKHR pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfacePresentModes([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] PresentModeKHR* pPresentModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfacePresentModes([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] out PresentModeKHR pPresentModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfacePresentModes([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] PresentModeKHR* pPresentModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfacePresentModes([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] out PresentModeKHR pPresentModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] Bool32* pSupported);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] out Bool32 pSupported);
 
         public KhrSurface(INativeContext ctx)

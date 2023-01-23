@@ -20,32 +20,32 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtDebugLabel : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_debug_label";
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label);
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
+        [NativeApi(EntryPoint = "glGetObjectLabelEXT", Convention = CallingConvention.Winapi)]
+        public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label);
 
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
+        [NativeApi(EntryPoint = "glLabelObjectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label);
 
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
+        [NativeApi(EntryPoint = "glLabelObjectEXT", Convention = CallingConvention.Winapi)]
         public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte label);
 
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
-        public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        [NativeApi(EntryPoint = "glLabelObjectEXT", Convention = CallingConvention.Winapi)]
+        public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
         {
@@ -69,6 +69,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // ImplicitCountSpanOverloader
             GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(type, @object, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectLabel(type, @object, bufSize, out length, out byte silkRet);
+            return silkRet;
         }
 
         public ExtDebugLabel(INativeContext ctx)

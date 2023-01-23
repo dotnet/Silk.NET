@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtDiscardFramebuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_discard_framebuffer";
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] EXT* attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in EXT attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] EXT* attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in EXT attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
 
-        [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
+        [NativeApi(EntryPoint = "glDiscardFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
 
         public unsafe void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> attachments)

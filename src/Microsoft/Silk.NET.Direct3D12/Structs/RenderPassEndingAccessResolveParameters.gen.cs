@@ -27,7 +27,7 @@ namespace Silk.NET.Direct3D12
             RenderPassEndingAccessResolveSubresourceParameters* pSubresourceParameters = null,
             Silk.NET.DXGI.Format? format = null,
             ResolveMode? resolveMode = null,
-            int? preserveResolveSource = null
+            Silk.NET.Core.Bool32? preserveResolveSource = null
         ) : this()
         {
             if (pSrcResource is not null)
@@ -100,6 +100,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PreserveResolveSource")]
-        public int PreserveResolveSource;
+        public Silk.NET.Core.Bool32 PreserveResolveSource;
     }
 }

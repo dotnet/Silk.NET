@@ -90,14 +90,14 @@ namespace Silk.NET.Direct3D11
         public uint Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L126_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L134_C5")]
         [NativeName("Name", "anonymous1")]
         public ShaderTraceDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref VertexShaderTraceDesc VertexShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VertexShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].VertexShaderTraceDesc;
         }
 #else
         public VertexShaderTraceDesc VertexShaderTraceDesc
@@ -107,11 +107,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref HullShaderTraceDesc HullShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.HullShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].HullShaderTraceDesc;
         }
 #else
         public HullShaderTraceDesc HullShaderTraceDesc
@@ -121,11 +121,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DomainShaderTraceDesc DomainShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.DomainShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].DomainShaderTraceDesc;
         }
 #else
         public DomainShaderTraceDesc DomainShaderTraceDesc
@@ -135,11 +135,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref GeometryShaderTraceDesc GeometryShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.GeometryShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].GeometryShaderTraceDesc;
         }
 #else
         public GeometryShaderTraceDesc GeometryShaderTraceDesc
@@ -149,11 +149,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref PixelShaderTraceDesc PixelShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.PixelShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PixelShaderTraceDesc;
         }
 #else
         public PixelShaderTraceDesc PixelShaderTraceDesc
@@ -163,11 +163,11 @@ namespace Silk.NET.Direct3D11
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ComputeShaderTraceDesc ComputeShaderTraceDesc
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.ComputeShaderTraceDesc;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].ComputeShaderTraceDesc;
         }
 #else
         public ComputeShaderTraceDesc ComputeShaderTraceDesc

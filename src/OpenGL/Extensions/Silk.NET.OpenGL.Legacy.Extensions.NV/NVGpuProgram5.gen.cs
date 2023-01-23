@@ -20,22 +20,29 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVGpuProgram5 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_gpu_program5";
-        [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
+        [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] uint* param);
 
-        [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
+        [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out uint param);
 
-        [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
+        [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
+        [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
         public unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // ImplicitCountSpanOverloader
             ProgramSubroutineParameters(target, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe uint GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramSubroutineParameter(target, index, out uint silkRet);
+            return silkRet;
         }
 
         public NVGpuProgram5(INativeContext ctx)

@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ClangSharp.Interop;
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
@@ -22,8 +22,7 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets a list of keywords in the C# language.
         /// </summary>
-        [NotNull]
-        public static List<string> CSharpKeywords => new List<string>
+        public static readonly HashSet<string> CSharpKeywords = new HashSet<string>
         {
             "abstract",
             "event",
@@ -103,6 +102,14 @@ namespace Silk.NET.BuildTools.Common
             "namespace",
             "string"
         };
+        
+        /// <summary>
+        /// Escapes the given string using an at symbol if needed.
+        /// </summary>
+        /// <param name="s">String to escape.</param>
+        /// <returns>Escaped string.</returns>
+        public static string AtEscape(this string s)
+            => CSharpKeywords.Contains(s) ? $"@{s}" : s;
 
         /// <summary>
         /// An extension method which returns the given enumerable without duplicate elements.
@@ -120,6 +127,36 @@ namespace Silk.NET.BuildTools.Common
                 {
                     ret.Add(item);
                 }
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// An extension method which returns the given enumerable without duplicate elements.
+        /// This uses .ToString() to sort faster through the duplicate entries
+        /// </summary>
+        /// <param name="enumerable">The enumerable to process.</param>
+        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
+        /// <returns>An enumerable with no duplicates.</returns>
+        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, string> GetSignature)
+        {
+            // note: this is required because ApiProfile.GetCategories() returns duplicates.
+            var ret = new List<T>();
+            var checker = new Dictionary<string, List<T>>();
+            foreach (var item in enumerable)
+            {
+                var signature = GetSignature(item);
+                if (checker.ContainsKey(signature))
+                {
+                    if (checker[signature].Any(x => x.Equals(item))) continue;
+                    checker[signature].Add(item);
+                }
+                else
+                {
+                    checker.Add(signature, new List<T>() { item });
+                }
+                ret.Add(item);
             }
 
             return ret;
@@ -148,11 +185,39 @@ namespace Silk.NET.BuildTools.Common
         }
 
         /// <summary>
+        /// An extension method which returns the given enumerable without duplicate elements.
+        /// </summary>
+        /// <param name="enumerable">The enumerable to process.</param>
+        /// <param name="isDuplicate">A function that checks whether or not items are duplicates.</param>
+        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
+        /// <returns>An enumerable with no duplicates.</returns>
+        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, T, bool> isDuplicate, Func<T, string> GetSignature)
+        {
+            // note: this is required because ApiProfile.GetCategories() returns duplicates.
+            var ret = new List<T>();
+            var checker = new Dictionary<string, List<T>>();
+            foreach (var item in enumerable)
+            {
+                var signature = GetSignature(item);
+                if (checker.ContainsKey(signature))
+                {
+                    if (checker[signature].Any(x => isDuplicate(x, item))) continue;
+                    checker[signature].Add(item);
+                }
+                else
+                {
+                    checker.Add(signature, new List<T>() { item });
+                }
+                ret.Add(item);
+            }
+            return ret;
+        }
+
+        /// <summary>
         /// Gets an array declaration string that matches the given level of array dimensions.
         /// </summary>
         /// <param name="arrayDimensions">The dimension.</param>
         /// <returns>The string.</returns>
-        [NotNull]
         public static string GetArrayDimensionString(int arrayDimensions)
         {
             if (arrayDimensions == 0)
@@ -419,5 +484,107 @@ namespace Silk.NET.BuildTools.Common
             Accessibility.Private => "private" + (s ? " " : string.Empty),
             _ => string.Empty
         };
+
+        public static bool ConstitutesVulkanOutOverload(this string name) => name.StartsWith
+            ("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
+            ("vkGet");
+
+        public static string MapNativeString(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "NativeStringEncoding.BStr",
+            "LPSTR" or "LPCSTR" => "NativeStringEncoding.LPStr",
+            "LPTSTR" or "LPCTSTR" => "NativeStringEncoding.LPTStr",
+            "LPUTF8STR" => "NativeStringEncoding.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "NativeStringEncoding.LPWStr",
+            _ => "NativeStringEncoding.UTF8"
+        };
+
+        public static string MapUnmanagedType(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "Silk.NET.Core.Native.UnmanagedType.BStr",
+            "LPSTR" or "LPCSTR" => "Silk.NET.Core.Native.UnmanagedType.LPStr",
+            "LPTSTR" or "LPCTSTR" => "Silk.NET.Core.Native.UnmanagedType.LPTStr",
+            "LPUTF8STR" => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "Silk.NET.Core.Native.UnmanagedType.LPWStr",
+            _ => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str"
+        };
+
+        /// <summary>
+        /// Finds a common prefix in a set of names with respect to the word boundaries
+        /// </summary>
+        /// <param name="names">Set of names, snake_case</param>
+        /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+        /// <param name="allowLeadingDigits">Allows remainder tokens to start with a digit</param>
+        /// <returns>String that is common between all provided names</returns>
+        public static string FindCommonPrefix(List<string> names, bool allowFullMatch, bool allowLeadingDigits)
+        {
+            var commonPrefixFirstPass = FindCommonPrefix(names, allowFullMatch, names.Max(x => x.Length));
+            if (allowLeadingDigits)
+            {
+                return commonPrefixFirstPass;
+            }
+
+            var tgtPos = commonPrefixFirstPass.Length;
+
+            var startingWithDigit = names.Where(n => n.Length > tgtPos && char.IsDigit(n[tgtPos]));
+            if (startingWithDigit.Any())
+            {
+                return FindCommonPrefix(names, allowFullMatch, tgtPos - 1);
+            }
+
+            return commonPrefixFirstPass;
+        }
+
+        /// <summary>
+        /// Finds a common prefix in a set of names with respect to the word boundaries
+        /// </summary>
+        /// <param name="names">Set of names, snake_case</param>
+        /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+        /// <param name="maxLen">Match length limit</param>
+        /// <returns>String that is common between all provided names</returns>
+        public static string FindCommonPrefix(List<string> names, bool allowFullMatch, int maxLen)
+        {
+            var pos = 0;
+            var foundPrefix = "";
+            var minLen = names.Min(x => x.Length);
+            var found = false;
+            while (!found)
+            {
+                pos++;
+                if (pos >= maxLen || pos > names[0].Length)
+                {
+                    break;
+                }
+                var prefix = names[0].Substring(0, pos);
+                foreach (var name in names.Skip(1))
+                {
+                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                foundPrefix = prefix;
+            }
+
+            if (!foundPrefix.Contains('_'))
+            {
+                return "";
+            }
+
+            if (foundPrefix.Length == minLen && allowFullMatch)
+            {
+                return foundPrefix;
+            }
+            return foundPrefix.Substring(0, foundPrefix.LastIndexOf('_') + 1);
+        }
+
+        /// <summary>
+        /// Replaces any temporary folder names from the given string containing a file path with &gt;...&lt;
+        /// </summary>
+        /// <param name="s">The string.</param>
+        /// <returns>The edited string.</returns>
+        public static string RemoveTempNames(this string s)
+            => Generator.TempFolders.Aggregate(s, (now, tmp) => now.Replace(tmp, "<...>"));
     }
 }

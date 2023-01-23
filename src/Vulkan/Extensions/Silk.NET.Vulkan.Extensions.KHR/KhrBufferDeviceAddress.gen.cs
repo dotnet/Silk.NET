@@ -21,27 +21,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_buffer_device_address";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR", Convention = CallingConvention.Winapi)]
         public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
         public partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
         public partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceMemoryOpaqueCaptureAddressInfo pInfo);
 
         public KhrBufferDeviceAddress(INativeContext ctx)

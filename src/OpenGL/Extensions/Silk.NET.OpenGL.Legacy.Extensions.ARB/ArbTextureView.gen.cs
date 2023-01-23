@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbTextureView : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_view";
-        [NativeApi(EntryPoint = "glTextureView")]
+        [NativeApi(EntryPoint = "glTextureView", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureView")]
+        [NativeApi(EntryPoint = "glTextureView", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureView")]
+        [NativeApi(EntryPoint = "glTextureView", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureView")]
+        [NativeApi(EntryPoint = "glTextureView", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         public ArbTextureView(INativeContext ctx)

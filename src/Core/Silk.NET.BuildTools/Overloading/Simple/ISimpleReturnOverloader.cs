@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Generic;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 
@@ -16,10 +17,11 @@ namespace Silk.NET.BuildTools.Overloading
         /// </summary>
         /// <param name="returnType">The input return type.</param>
         /// <param name="varied">The varied/overloaded return type, or null if this overloader is not applicable.</param>
-        /// <param name="core">The core project for this profile, should the overloader need it.</param>
+        /// <param name="attrs"></param>
+        /// <param name="profile">The profile, should the overloader need it.</param>
         /// <returns>
         /// True if this overloader is applicable and a return type overload was successfully generated, false otherwise.
         /// </returns>
-        bool TryGetReturnTypeVariant(Type returnType, out Type varied, Project core);
+        bool TryGetReturnTypeVariant(Type returnType, out Type varied, List<Attribute> attrs, Profile profile);
     }
 }

@@ -17,14 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264SessionParametersCreateInfoEXT")]
-    public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoEXT
+    public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoEXT : IExtendsChain<VideoSessionParametersCreateInfoKHR>
     {
         public VideoEncodeH264SessionParametersCreateInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH264SessionParametersCreateInfoExt,
             void* pNext = null,
-            uint? maxSpsStdCount = null,
-            uint? maxPpsStdCount = null,
+            uint? maxStdSpscount = null,
+            uint? maxStdPpscount = null,
             VideoEncodeH264SessionParametersAddInfoEXT* pParametersAddInfo = null
         ) : this()
         {
@@ -38,14 +38,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxSpsStdCount is not null)
+            if (maxStdSpscount is not null)
             {
-                MaxSpsStdCount = maxSpsStdCount.Value;
+                MaxStdSpscount = maxStdSpscount.Value;
             }
 
-            if (maxPpsStdCount is not null)
+            if (maxStdPpscount is not null)
             {
-                MaxPpsStdCount = maxPpsStdCount.Value;
+                MaxStdPpscount = maxStdPpscount.Value;
             }
 
             if (pParametersAddInfo is not null)
@@ -67,17 +67,30 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSpsStdCount")]
-        public uint MaxSpsStdCount;
+        [NativeName("Name", "maxStdSPSCount")]
+        public uint MaxStdSpscount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPpsStdCount")]
-        public uint MaxPpsStdCount;
+        [NativeName("Name", "maxStdPPSCount")]
+        public uint MaxStdPpscount;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeH264SessionParametersAddInfoEXT*")]
         [NativeName("Type.Name", "VkVideoEncodeH264SessionParametersAddInfoEXT")]
         [NativeName("Name", "pParametersAddInfo")]
         public VideoEncodeH264SessionParametersAddInfoEXT* PParametersAddInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264SessionParametersCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

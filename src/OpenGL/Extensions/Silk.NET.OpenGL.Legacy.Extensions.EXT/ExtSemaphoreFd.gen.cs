@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtSemaphoreFd : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_semaphore_fd";
-        [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
+        [NativeApi(EntryPoint = "glImportSemaphoreFdEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
 
-        [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
+        [NativeApi(EntryPoint = "glImportSemaphoreFdEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
 
         public ExtSemaphoreFd(INativeContext ctx)

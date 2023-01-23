@@ -22,11 +22,11 @@ namespace Silk.NET.DXGI
         public SwapChainDesc
         (
             ModeDesc? bufferDesc = null,
-            SampleDesc? sampleDesc = null,
+            Silk.NET.DXGI.SampleDesc? sampleDesc = null,
             uint? bufferUsage = null,
             uint? bufferCount = null,
             nint? outputWindow = null,
-            int? windowed = null,
+            Silk.NET.Core.Bool32? windowed = null,
             SwapEffect? swapEffect = null,
             uint? flags = null
         ) : this()
@@ -81,7 +81,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_SAMPLE_DESC")]
         [NativeName("Type.Name", "DXGI_SAMPLE_DESC")]
         [NativeName("Name", "SampleDesc")]
-        public SampleDesc SampleDesc;
+        public Silk.NET.DXGI.SampleDesc SampleDesc;
 
         [NativeName("Type", "DXGI_USAGE")]
         [NativeName("Type.Name", "DXGI_USAGE")]
@@ -101,7 +101,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Windowed")]
-        public int Windowed;
+        public Silk.NET.Core.Bool32 Windowed;
 
         [NativeName("Type", "DXGI_SWAP_EFFECT")]
         [NativeName("Type.Name", "DXGI_SWAP_EFFECT")]

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsLabelEXT")]
-    public unsafe partial struct DebugUtilsLabelEXT
+    public unsafe partial struct DebugUtilsLabelEXT : IChainable
     {
         public DebugUtilsLabelEXT
         (
@@ -62,5 +62,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "color")]
         public fixed float Color[4];
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DebugUtilsLabelExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

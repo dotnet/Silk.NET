@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayoutCreateInfo")]
-    public unsafe partial struct PipelineLayoutCreateInfo
+    public unsafe partial struct PipelineLayoutCreateInfo : IChainable
     {
         public PipelineLayoutCreateInfo
         (
             StructureType? sType = StructureType.PipelineLayoutCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            PipelineLayoutCreateFlags? flags = null,
             uint? setLayoutCount = null,
             DescriptorSetLayout* pSetLayouts = null,
             uint? pushConstantRangeCount = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPipelineLayoutCreateFlags")]
         [NativeName("Type.Name", "VkPipelineLayoutCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public PipelineLayoutCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -101,5 +101,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPushConstantRange")]
         [NativeName("Name", "pPushConstantRanges")]
         public PushConstantRange* PPushConstantRanges;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineLayoutCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

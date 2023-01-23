@@ -6,7 +6,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Vulkan
 {
-    public readonly unsafe struct PfnInternalAllocationNotification
+    public readonly unsafe struct PfnInternalAllocationNotification : IDisposable
     {
         private readonly void* _handle;
 
@@ -23,6 +23,7 @@ namespace Silk.NET.Vulkan
             (delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void>) SilkMarshal
                 .DelegateToPtr(func);
 
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
         public static implicit operator delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType,
             SystemAllocationScope, void>(PfnInternalAllocationNotification pfn) => pfn.Handle;
 

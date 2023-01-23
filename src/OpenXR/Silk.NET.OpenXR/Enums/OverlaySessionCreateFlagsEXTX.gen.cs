@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrOverlaySessionCreateFlagsEXTX")]
     public enum OverlaySessionCreateFlagsEXTX : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

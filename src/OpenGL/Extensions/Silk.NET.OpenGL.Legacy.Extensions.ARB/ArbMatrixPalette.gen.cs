@@ -20,41 +20,35 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbMatrixPalette : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_matrix_palette";
-        [NativeApi(EntryPoint = "glCurrentPaletteMatrixARB")]
+        [NativeApi(EntryPoint = "glCurrentPaletteMatrixARB", Convention = CallingConvention.Winapi)]
         public partial void CurrentPaletteMatrix([Flow(FlowDirection.In)] int index);
 
-        [NativeApi(EntryPoint = "glMatrixIndexubvARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexubvARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
         public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in byte indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexubvARB")]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string indices);
+        [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
+        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexusvARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexusvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexusvARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexusvARB", Convention = CallingConvention.Winapi)]
         public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in ushort indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexuivARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexuivARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
         public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in uint indices);
 
-        [NativeApi(EntryPoint = "glMatrixIndexPointerARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexPointerARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glMatrixIndexPointerARB")]
-        public partial void MatrixIndexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glMatrixIndexPointerARB")]
+        [NativeApi(EntryPoint = "glMatrixIndexPointerARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] MatrixIndexPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glMatrixIndexPointerARB")]
-        public partial void MatrixIndexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] MatrixIndexPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<byte> indices)
         {

@@ -24,6 +24,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMultisampleProperties = new(StructureType.MultisamplePropertiesExt);")]
         public static unsafe void GetPhysicalDeviceMultisampleProperties(this ExtSampleLocations thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MultisamplePropertiesEXT> pMultisampleProperties)
         {
             // SpanOverloader

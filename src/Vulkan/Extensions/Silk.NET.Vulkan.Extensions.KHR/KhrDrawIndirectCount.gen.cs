@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_draw_indirect_count";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCountKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndexedIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirectCountKHR")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndirectCountKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
 
         public KhrDrawIndirectCount(INativeContext ctx)

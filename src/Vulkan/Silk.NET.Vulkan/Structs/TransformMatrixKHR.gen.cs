@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTransformMatrixKHR")]
+    [NativeName("Aliases", "VkTransformMatrixNV")]
     public unsafe partial struct TransformMatrixKHR
     {
         /// <summary></summary>

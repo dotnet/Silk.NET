@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
+    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
         (
@@ -145,5 +145,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "minIndirectCommandsBufferOffsetAlignment")]
         public uint MinIndirectCommandsBufferOffsetAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDeviceGeneratedCommandsPropertiesNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

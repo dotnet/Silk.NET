@@ -17,16 +17,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyBufferInfo2KHR")]
-    public unsafe partial struct CopyBufferInfo2KHR
+    [NativeName("AliasOf", "VkCopyBufferInfo2")]
+    public unsafe partial struct CopyBufferInfo2KHR : IChainable
     {
         public CopyBufferInfo2KHR
         (
-            StructureType? sType = StructureType.CopyBufferInfo2Khr,
+            StructureType? sType = StructureType.CopyBufferInfo2,
             void* pNext = null,
             Buffer? srcBuffer = null,
             Buffer? dstBuffer = null,
             uint? regionCount = null,
-            BufferCopy2KHR* pRegions = null
+            BufferCopy2* pRegions = null
         ) : this()
         {
             if (sType is not null)
@@ -86,9 +87,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "regionCount")]
         public uint RegionCount;
 /// <summary></summary>
-        [NativeName("Type", "VkBufferCopy2KHR*")]
-        [NativeName("Type.Name", "VkBufferCopy2KHR")]
+        [NativeName("Type", "VkBufferCopy2*")]
+        [NativeName("Type.Name", "VkBufferCopy2")]
         [NativeName("Name", "pRegions")]
-        public BufferCopy2KHR* PRegions;
+        public BufferCopy2* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyBufferInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

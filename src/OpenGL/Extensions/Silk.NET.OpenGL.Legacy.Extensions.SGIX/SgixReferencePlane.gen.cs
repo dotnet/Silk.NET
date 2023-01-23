@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixReferencePlane : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_reference_plane";
-        [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
+        [NativeApi(EntryPoint = "glReferencePlaneSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
-        [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
+        [NativeApi(EntryPoint = "glReferencePlaneSGIX", Convention = CallingConvention.Winapi)]
         public partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] in double equation);
 
         public SgixReferencePlane(INativeContext ctx)

@@ -77,8 +77,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "refList0ModOpCount")]
         public byte RefList0ModOpCount;
 
-        [NativeName("Type", "StdVideoEncodeH264RefListModEntry *")]
-        [NativeName("Type.Name", "StdVideoEncodeH264RefListModEntry *")]
+        [NativeName("Type", "const StdVideoEncodeH264RefListModEntry *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH264RefListModEntry *")]
         [NativeName("Name", "pRefList0ModOperations")]
         public StdVideoEncodeH264RefListModEntry* PRefList0ModOperations;
 
@@ -87,8 +87,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "refList1ModOpCount")]
         public byte RefList1ModOpCount;
 
-        [NativeName("Type", "StdVideoEncodeH264RefListModEntry *")]
-        [NativeName("Type.Name", "StdVideoEncodeH264RefListModEntry *")]
+        [NativeName("Type", "const StdVideoEncodeH264RefListModEntry *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH264RefListModEntry *")]
         [NativeName("Name", "pRefList1ModOperations")]
         public StdVideoEncodeH264RefListModEntry* PRefList1ModOperations;
 
@@ -97,8 +97,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "refPicMarkingOpCount")]
         public byte RefPicMarkingOpCount;
 
-        [NativeName("Type", "StdVideoEncodeH264RefPicMarkingEntry *")]
-        [NativeName("Type.Name", "StdVideoEncodeH264RefPicMarkingEntry *")]
+        [NativeName("Type", "const StdVideoEncodeH264RefPicMarkingEntry *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH264RefPicMarkingEntry *")]
         [NativeName("Name", "pRefPicMarkingOperations")]
         public StdVideoEncodeH264RefPicMarkingEntry* PRefPicMarkingOperations;
     }

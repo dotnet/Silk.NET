@@ -115,7 +115,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         EaxReverbDecayHFLimit = 0x0017,
 
         /// <summary>
-        /// Used with the enum EfxEffectType as it's parameter.
+        /// Used with the enum EfxEffectType as its parameter.
         /// </summary>
         EffectType = 0x8001
     }

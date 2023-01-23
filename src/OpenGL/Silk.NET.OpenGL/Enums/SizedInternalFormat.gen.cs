@@ -306,6 +306,12 @@ namespace Silk.NET.OpenGL
         StencilIndex16 = 0x8D49,
         [NativeName("Name", "GL_STENCIL_INDEX16_EXT")]
         StencilIndex16Ext = 0x8D49,
+        [NativeName("Name", "GL_RGB565_OES")]
+        Rgb565Oes = 0x8D62,
+        [NativeName("Name", "GL_RGB565")]
+        Rgb565 = 0x8D62,
+        [NativeName("Name", "GL_ETC1_RGB8_OES")]
+        Etc1Rgb8Oes = 0x8D64,
         [NativeName("Name", "GL_RGBA32UI")]
         Rgba32ui = 0x8D70,
         [NativeName("Name", "GL_RGBA32UI_EXT")]

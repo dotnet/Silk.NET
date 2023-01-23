@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtX11SyncObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_x11_sync_object";
-        [NativeApi(EntryPoint = "glImportSyncEXT")]
+        [NativeApi(EntryPoint = "glImportSyncEXT", Convention = CallingConvention.Winapi)]
         public partial nint ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] nint external_sync, [Flow(FlowDirection.In)] uint flags);
 
         public ExtX11SyncObject(INativeContext ctx)

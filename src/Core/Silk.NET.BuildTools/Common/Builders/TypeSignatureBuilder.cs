@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
-using JetBrains.Annotations;
+using System.Linq;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
@@ -32,15 +32,17 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private readonly string _newOriginalClass;
 
-        [NotNull] private string _newName;
+        private string _newName;
         
         private Function _newFunctionPointerSignature;
+
+        private List<Type> _newGenericParams;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
         /// </summary>
         /// <param name="typeSignature">The signature.</param>
-        public TypeSignatureBuilder([NotNull] Type typeSignature)
+        public TypeSignatureBuilder(Type typeSignature)
         {
             _newName = typeSignature.Name;
             _newIndirectionLevel = typeSignature.IndirectionLevels;
@@ -53,6 +55,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newOriginalClass = typeSignature.OriginalClass;
             _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
             _newFunctionPointerSignature = typeSignature.FunctionPointerSignature;
+            _newGenericParams = typeSignature.GenericTypes;
         }
 
         /// <summary>
@@ -60,8 +63,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>The builder, with the name.</returns>
-        [NotNull]
-        public TypeSignatureBuilder WithName([NotNull] string newName)
+        public TypeSignatureBuilder WithName(string newName)
         {
             _newName = newName;
             return this;
@@ -72,7 +74,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newIndirectionLevel">The new indirection level.</param>
         /// <returns>The builder, with the level.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithIndirectionLevel(int newIndirectionLevel)
         {
             _newIndirectionLevel = newIndirectionLevel;
@@ -84,7 +85,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newArrayDimensions">The new array dimension.</param>
         /// <returns>The builder, with the name.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithArrayDimensions(int newArrayDimensions)
         {
             _newArrayDimensions = newArrayDimensions;
@@ -96,7 +96,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="isByRef">The new by-ref value.</param>
         /// <returns>The builder, with the by-ref value.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithByRef(bool isByRef)
         {
             _newIsByRef = isByRef;
@@ -108,7 +107,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="isOut">The new is-out value.</param>
         /// <returns>The builder, with the is-out value.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithIsOut(bool isOut)
         {
             _newIsOut = isOut;
@@ -120,7 +118,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="isGenericType">The new IsGenericType value.</param>
         /// <returns>The builder, with the IsGenericType value.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithIsGenericType(bool isGenericType)
         {
             _newIsGenericType = isGenericType;
@@ -131,7 +128,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
-        [NotNull]
         public Type Build()
         {
             return new Type
@@ -145,7 +141,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 OriginalName = _newOriginalName,
                 OriginalGroup = _newOriginalGroup,
                 OriginalClass = _newOriginalClass,
-                IsGenericTypeParameterReference = _newIsGenericType
+                IsGenericTypeParameterReference = _newIsGenericType,
+                GenericTypes = _newGenericParams
             };
         }
 
@@ -180,6 +177,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(List<Type> parameters)
         {
+            _newGenericParams = parameters;
             return this;
         }
 
@@ -190,6 +188,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(params Type[] parameters)
         {
+            _newGenericParams = parameters.ToList();
             return this;
         }
         // ReSharper restore UnusedParameter.Global

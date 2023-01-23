@@ -24,6 +24,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader
@@ -38,6 +39,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader

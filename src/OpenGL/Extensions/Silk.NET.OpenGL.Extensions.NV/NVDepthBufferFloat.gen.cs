@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Extensions.NV
     public unsafe partial class NVDepthBufferFloat : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_depth_buffer_float";
-        [NativeApi(EntryPoint = "glClearDepthdNV")]
+        [NativeApi(EntryPoint = "glClearDepthdNV", Convention = CallingConvention.Winapi)]
         public partial void ClearDepth([Flow(FlowDirection.In)] double depth);
 
-        [NativeApi(EntryPoint = "glDepthBoundsdNV")]
+        [NativeApi(EntryPoint = "glDepthBoundsdNV", Convention = CallingConvention.Winapi)]
         public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
 
-        [NativeApi(EntryPoint = "glDepthRangedNV")]
+        [NativeApi(EntryPoint = "glDepthRangedNV", Convention = CallingConvention.Winapi)]
         public partial void DepthRange([Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
 
         public NVDepthBufferFloat(INativeContext ctx)

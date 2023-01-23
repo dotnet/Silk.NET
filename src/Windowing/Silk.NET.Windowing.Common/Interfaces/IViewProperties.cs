@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 
+using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
@@ -11,7 +12,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// If true, SwapBuffers will be called automatically at the end of each Render event.
         /// </summary>
-        bool ShouldSwapAutomatically { get; }
+        bool ShouldSwapAutomatically { get; set; }
 
         /// <summary>
         /// If true, instead of executing the Update and Render events at a fixed interval, they will only be executed
@@ -23,6 +24,20 @@ namespace Silk.NET.Windowing
         /// period, however.
         /// </remarks>
         bool IsEventDriven { get; set; }
+
+        /// <summary>
+        /// If true, disables automatically controlling the OpenGL context on the thread on which the
+        /// <see cref="IView.Render"/> event is called i.e. disables moving the OpenGL context to that thread, or
+        /// updating the <see cref="IGLContext.SwapInterval"/> in response to the <see cref="VSync"/> property. This
+        /// property will also disable automatic buffer swapping regardless of whether
+        /// <see cref="ShouldSwapAutomatically" /> is true or not.
+        /// </summary>
+        /// <remarks>
+        /// This is useful for scenarios where you are temporarily moving the OpenGL context to a separate thread to
+        /// load resources in the background, for instance. You can toggle this on and off as many times as you want
+        /// throughout the window/view's lifetime.
+        /// </remarks>
+        bool IsContextControlDisabled { get; set; }
 
         /// <summary>
         /// The size of the window in pixels.
@@ -74,7 +89,7 @@ namespace Silk.NET.Windowing
         /// Pass <c>null</c> or <c>-1</c> to use the system default. 
         /// </remarks>
         int? PreferredStencilBufferBits { get; }
-        
+
         /// <summary>
         /// Preferred red, green, blue, and alpha bits of the window's framebuffer.
         /// </summary>
@@ -82,5 +97,13 @@ namespace Silk.NET.Windowing
         /// Pass <c>null</c> or <c>-1</c> for any of the axes to use the system default. 
         /// </remarks>
         Vector4D<int>? PreferredBitDepth { get; }
+
+        /// <summary>
+        /// The number of samples per pixel to use for multisampling on the window's framebuffer.
+        /// </summary>
+        /// <remarks>
+        /// Pass <c>null</c> or <c>-1</c> to use the system default.
+        /// </remarks>
+        int? Samples { get; }
     }
 }

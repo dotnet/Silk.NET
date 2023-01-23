@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public QueryDataTimestampDisjoint
         (
             ulong? frequency = null,
-            int? disjoint = null
+            Silk.NET.Core.Bool32? disjoint = null
         ) : this()
         {
             if (frequency is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Disjoint")]
-        public int Disjoint;
+        public Silk.NET.Core.Bool32 Disjoint;
     }
 }

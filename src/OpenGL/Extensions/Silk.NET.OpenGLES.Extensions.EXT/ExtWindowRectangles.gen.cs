@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtWindowRectangles : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_window_rectangles";
-        [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
+        [NativeApi(EntryPoint = "glWindowRectanglesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box);
 
-        [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
+        [NativeApi(EntryPoint = "glWindowRectanglesEXT", Convention = CallingConvention.Winapi)]
         public partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int box);
 
         public ExtWindowRectangles(INativeContext ctx)

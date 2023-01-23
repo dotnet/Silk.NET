@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingPipelineCreateInfoKHR")]
-    public unsafe partial struct RayTracingPipelineCreateInfoKHR
+    public unsafe partial struct RayTracingPipelineCreateInfoKHR : IChainStart
     {
         public RayTracingPipelineCreateInfoKHR
         (
@@ -178,5 +178,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int32_t")]
         [NativeName("Name", "basePipelineIndex")]
         public int BasePipelineIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RayTracingPipelineCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref RayTracingPipelineCreateInfoKHR Chain(
+            out RayTracingPipelineCreateInfoKHR capture)
+        {
+            capture = new RayTracingPipelineCreateInfoKHR(StructureType.RayTracingPipelineCreateInfoKhr);
+            return ref capture;
+        }
     }
 }

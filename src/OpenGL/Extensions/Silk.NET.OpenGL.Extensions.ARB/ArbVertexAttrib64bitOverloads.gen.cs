@@ -52,18 +52,6 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             thisApi.VertexAttribL4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribLPointer<T0>(this ArbVertexAttrib64bit thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribLPointer<T0>(this ArbVertexAttrib64bit thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

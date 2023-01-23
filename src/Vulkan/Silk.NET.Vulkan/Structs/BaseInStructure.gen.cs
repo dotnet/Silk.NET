@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBaseInStructure")]
-    public unsafe partial struct BaseInStructure
+    public unsafe partial struct BaseInStructure : IChainable
     {
         public BaseInStructure
         (
@@ -46,5 +46,19 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBaseInStructure")]
         [NativeName("Name", "pNext")]
         public BaseInStructure* PNext;
+
+        /// <inheritdoc />
+        /// <remarks>Note, there is no fixed value for this type.</remarks>
+        StructureType IStructuredType.StructureType()
+        {
+            return SType;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -3,10 +3,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing
 {
@@ -19,12 +19,53 @@ namespace Silk.NET.Windowing
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
+        private const string FallbackWindowClass = "Silk.NET";
 
         private static List<Type> _platformsKeys = new List<Type>();
         private static List<IWindowPlatform> _platformsValues = new List<IWindowPlatform>();
 
         private static bool _initializedFirstPartyPlatforms = false;
-        
+
+        public static string DefaultWindowClass { get; }
+
+        private static string PlatformsStr
+        {
+            get
+            {
+                var thePlatforms = string.Join
+                (
+                    ", ",
+                    Platforms.Select
+                    (
+                        x => x.GetType().Name + (x.IsViewOnly ? " - view only" :
+                            !x.IsApplicable ? " - not applicable" : string.Empty)
+                    )
+                );
+                return Platforms.Count == 0
+                    ? "(none registered) "
+                    : $"({thePlatforms}) ";
+            }
+        }
+
+        static Window()
+        {
+            try
+            {
+                var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
+                if (defaultWindowClassName is not null)
+                {
+                    DefaultWindowClass = Path.GetFileNameWithoutExtension(defaultWindowClassName);
+                    return;
+                }
+            }
+            catch
+            {
+                // System.Diagnostics.Process is not supported on the WASI-SDK
+            }
+
+            DefaultWindowClass = Assembly.GetEntryAssembly()?.GetName()?.Name ?? FallbackWindowClass;
+        }
+
         public static IReadOnlyCollection<IWindowPlatform> Platforms
         {
             get
@@ -46,7 +87,7 @@ namespace Silk.NET.Windowing
 
             _initializedFirstPartyPlatforms = !shouldLoad;
         }
-        
+
         private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             // Try add the first-party backends
@@ -57,7 +98,8 @@ namespace Silk.NET.Windowing
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
-            "https://docs.ultz.co.uk/silk.net/windowing/troubleshooting.html"
+            PlatformsStr +
+            "https://dotnet.github.io/Silk.NET/docs/hlu/troubleshooting.html"
         );
 
         /// <summary>
@@ -81,6 +123,8 @@ namespace Silk.NET.Windowing
         /// Gets whether this platform only supports window views. If false, this means that you may use desktop
         /// functionality with your applications.
         /// </summary>
+        // NOTE: Making this a scalar boolean was a mistake, as there's no good way to say "well there's no platforms so
+        // I don't know what to tell you". Next time a blue moon rolls around this should be a bool?.
         public static bool IsViewOnly
         {
             get
@@ -109,11 +153,16 @@ namespace Silk.NET.Windowing
                 throw NoPlatformException;
             }
 
+            if (!Platforms.Any(x => x.IsApplicable))
+            {
+                throw NoPlatformException;
+            }
+
             if (IsViewOnly)
             {
                 throw new NotSupportedException
                 (
-                    "The currently bound window platform(s) only support views, " +
+                    $"The currently bound window platform(s) {PlatformsStr}only support views, " +
                     "instead of windows. Use the view APIs instead."
                 );
             }
@@ -274,6 +323,6 @@ namespace Silk.NET.Windowing
         /// <typeparam name="T">The type of the window platform to get.</typeparam>
         /// <returns>The instance of the window platform type or <c>default</c></returns>
         public static T? GetOrDefault<T>() where T : class, IWindowPlatform
-            => _platformsKeys.Contains(typeof(T)) ? (T)_platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
+            => _platformsKeys.Contains(typeof(T)) ? (T) _platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
     }
 }

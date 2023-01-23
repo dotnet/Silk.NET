@@ -21,12 +21,12 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options1
         (
-            int? waveOps = null,
+            Silk.NET.Core.Bool32? waveOps = null,
             uint? waveLaneCountMin = null,
             uint? waveLaneCountMax = null,
             uint? totalLaneCount = null,
-            int? expandedComputeResourceStates = null,
-            int? int64ShaderOps = null
+            Silk.NET.Core.Bool32? expandedComputeResourceStates = null,
+            Silk.NET.Core.Bool32? int64ShaderOps = null
         ) : this()
         {
             if (waveOps is not null)
@@ -64,7 +64,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "WaveOps")]
-        public int WaveOps;
+        public Silk.NET.Core.Bool32 WaveOps;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -84,11 +84,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExpandedComputeResourceStates")]
-        public int ExpandedComputeResourceStates;
+        public Silk.NET.Core.Bool32 ExpandedComputeResourceStates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Int64ShaderOps")]
-        public int Int64ShaderOps;
+        public Silk.NET.Core.Bool32 Int64ShaderOps;
     }
 }

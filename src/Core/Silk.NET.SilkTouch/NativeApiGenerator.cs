@@ -100,7 +100,7 @@ namespace Silk.NET.SilkTouch
                     context.ReportDiagnostic
                     (
                         Diagnostic.Create
-                            (Diagnostics.ProcessClassFailure, group.First().Item1.GetLocation(), ex.ToString())
+                            (Diagnostics.ProcessClassFailure, group.First().Item1.GetLocation(), ex.ToString().Replace("\n", " | "))
                     );
                 }
             }

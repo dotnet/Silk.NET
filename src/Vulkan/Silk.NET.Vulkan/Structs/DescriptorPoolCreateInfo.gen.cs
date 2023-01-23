@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolCreateInfo")]
-    public unsafe partial struct DescriptorPoolCreateInfo
+    public unsafe partial struct DescriptorPoolCreateInfo : IChainStart
     {
         public DescriptorPoolCreateInfo
         (
@@ -90,5 +90,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorPoolSize")]
         [NativeName("Name", "pPoolSizes")]
         public DescriptorPoolSize* PPoolSizes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorPoolCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DescriptorPoolCreateInfo Chain(
+            out DescriptorPoolCreateInfo capture)
+        {
+            capture = new DescriptorPoolCreateInfo(StructureType.DescriptorPoolCreateInfo);
+            return ref capture;
+        }
     }
 }

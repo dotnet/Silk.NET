@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVInternalformatSampleQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_internalformat_sample_query";
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
+        [NativeApi(EntryPoint = "glGetInternalformatSampleivNV", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
         public unsafe void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
@@ -114,6 +114,62 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         {
             // ImplicitCountSpanOverloader
             GetInternalformatSample(target, internalformat, samples, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInternalformatSample(target, internalformat, samples, pname, count, out int silkRet);
+            return silkRet;
         }
 
         public NVInternalformatSampleQuery(INativeContext ctx)

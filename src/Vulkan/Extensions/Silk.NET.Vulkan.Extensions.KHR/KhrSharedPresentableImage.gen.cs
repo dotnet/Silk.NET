@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_shared_presentable_image";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSwapchainStatusKHR")]
+        [NativeApi(EntryPoint = "vkGetSwapchainStatusKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetSwapchainStatus([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain);
 
         public KhrSharedPresentableImage(INativeContext ctx)

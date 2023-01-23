@@ -6,12 +6,20 @@
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DefineConstants>$(DefineConstants);GL</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DefineConstants>$(DefineConstants);GL</DefineConstants>
+    </PropertyGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\..\..\Input\Extensions\Silk.NET.Input.Extensions\Silk.NET.Input.Extensions.csproj" />
         <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
         <ProjectReference Include="..\..\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
-        <PackageReference Include="ImGui.NET" Version="1.78.0" />
+        <PackageReference Include="ImGui.NET" Version="1.88.0" />
     </ItemGroup>
 
     <Import Project="..\..\..\..\build\props\common.props" />

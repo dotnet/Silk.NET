@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbDrawBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_draw_buffers";
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
+        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ARB* bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
+        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in ARB bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
+        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
+        [NativeApi(EntryPoint = "glDrawBuffersARB", Convention = CallingConvention.Winapi)]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in DrawBufferMode bufs);
 
         public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)

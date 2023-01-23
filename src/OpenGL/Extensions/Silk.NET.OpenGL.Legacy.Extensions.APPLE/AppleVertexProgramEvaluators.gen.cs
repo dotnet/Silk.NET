@@ -20,37 +20,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     public unsafe partial class AppleVertexProgramEvaluators : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_vertex_program_evaluators";
-        [NativeApi(EntryPoint = "glDisableVertexAttribAPPLE")]
+        [NativeApi(EntryPoint = "glDisableVertexAttribAPPLE", Convention = CallingConvention.Winapi)]
         public partial void DisableVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] APPLE pname);
 
-        [NativeApi(EntryPoint = "glEnableVertexAttribAPPLE")]
+        [NativeApi(EntryPoint = "glEnableVertexAttribAPPLE", Convention = CallingConvention.Winapi)]
         public partial void EnableVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] APPLE pname);
 
-        [NativeApi(EntryPoint = "glIsVertexAttribEnabledAPPLE")]
+        [NativeApi(EntryPoint = "glIsVertexAttribEnabledAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool IsVertexAttribEnabled([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] APPLE pname);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib1dAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib1dAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapVertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "size, stride, order"), Flow(FlowDirection.In)] double* points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib1dAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib1dAPPLE", Convention = CallingConvention.Winapi)]
         public partial void MapVertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "size, stride, order"), Flow(FlowDirection.In)] in double points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib1fAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib1fAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapVertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "size, stride, order"), Flow(FlowDirection.In)] float* points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib1fAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib1fAPPLE", Convention = CallingConvention.Winapi)]
         public partial void MapVertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "size, stride, order"), Flow(FlowDirection.In)] in float points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib2dAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib2dAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapVertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "size, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib2dAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib2dAPPLE", Convention = CallingConvention.Winapi)]
         public partial void MapVertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "size, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] in double points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib2fAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib2fAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapVertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "size, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
 
-        [NativeApi(EntryPoint = "glMapVertexAttrib2fAPPLE")]
+        [NativeApi(EntryPoint = "glMapVertexAttrib2fAPPLE", Convention = CallingConvention.Winapi)]
         public partial void MapVertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "size, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] in float points);
 
         public AppleVertexProgramEvaluators(INativeContext ctx)

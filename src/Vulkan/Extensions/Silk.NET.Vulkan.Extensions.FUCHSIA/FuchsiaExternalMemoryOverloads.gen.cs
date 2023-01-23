@@ -38,6 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryZirconHandleProperties = new(StructureType.MemoryZirconHandlePropertiesFuchsia);")]
         public static unsafe Result GetMemoryZirconHandlePropertiesFuchsia(this FuchsiaExternalMemory thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryZirconHandlePropertiesFUCHSIA> pMemoryZirconHandleProperties)
         {
             // SpanOverloader

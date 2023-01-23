@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
     public unsafe partial class NvxLinkedGpuMulticast : NativeExtension<GL>
     {
         public const string ExtensionName = "NVX_linked_gpu_multicast";
-        [NativeApi(EntryPoint = "glLGPUCopyImageSubDataNVX")]
+        [NativeApi(EntryPoint = "glLGPUCopyImageSubDataNVX", Convention = CallingConvention.Winapi)]
         public partial void LgpucopyImageSubData([Flow(FlowDirection.In)] uint sourceGpu, [Flow(FlowDirection.In)] uint destinationGpuMask, [Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] NVX srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srxY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] NVX dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        [NativeApi(EntryPoint = "glLGPUInterlockNVX")]
+        [NativeApi(EntryPoint = "glLGPUInterlockNVX", Convention = CallingConvention.Winapi)]
         public partial void Lgpuinterlock();
 
-        [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX")]
+        [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial void LgpunamedBufferSubData([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] void* data);
 
-        [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX")]
+        [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX", Convention = CallingConvention.Winapi)]
         public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         public NvxLinkedGpuMulticast(INativeContext ctx)

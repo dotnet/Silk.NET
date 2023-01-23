@@ -21,15 +21,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_acquire_drm_display";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireDrmDisplayEXT")]
+        [NativeApi(EntryPoint = "vkAcquireDrmDisplayEXT", Convention = CallingConvention.Winapi)]
         public partial Result AcquireDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] DisplayKHR display);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
+        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* display);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
+        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT", Convention = CallingConvention.Winapi)]
         public partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR display);
 
         public ExtAcquireDrmDisplay(INativeContext ctx)

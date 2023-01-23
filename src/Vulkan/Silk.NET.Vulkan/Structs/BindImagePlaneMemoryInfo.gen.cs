@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImagePlaneMemoryInfo")]
-    public unsafe partial struct BindImagePlaneMemoryInfo
+    [NativeName("Aliases", "VkBindImagePlaneMemoryInfoKHR")]
+    public unsafe partial struct BindImagePlaneMemoryInfo : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKHR>
     {
         public BindImagePlaneMemoryInfo
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageAspectFlagBits")]
         [NativeName("Name", "planeAspect")]
         public ImageAspectFlags PlaneAspect;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindImagePlaneMemoryInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

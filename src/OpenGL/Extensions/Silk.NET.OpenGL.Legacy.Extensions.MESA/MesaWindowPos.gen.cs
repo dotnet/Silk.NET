@@ -20,112 +20,112 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
     public unsafe partial class MesaWindowPos : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_window_pos";
-        [NativeApi(EntryPoint = "glWindowPos2dMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2dMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
-        [NativeApi(EntryPoint = "glWindowPos2dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2dvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2dvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glWindowPos2fMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2fMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
-        [NativeApi(EntryPoint = "glWindowPos2fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2fvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2fvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glWindowPos2iMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2iMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
-        [NativeApi(EntryPoint = "glWindowPos2ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2ivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2ivMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glWindowPos2sMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2sMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
-        [NativeApi(EntryPoint = "glWindowPos2svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2svMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glWindowPos2svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos2svMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in short v);
 
-        [NativeApi(EntryPoint = "glWindowPos3dMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3dMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
-        [NativeApi(EntryPoint = "glWindowPos3dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3dvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3dvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glWindowPos3fMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3fMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
-        [NativeApi(EntryPoint = "glWindowPos3fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3fvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3fvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glWindowPos3iMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3iMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
-        [NativeApi(EntryPoint = "glWindowPos3ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3ivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3ivMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glWindowPos3sMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3sMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
-        [NativeApi(EntryPoint = "glWindowPos3svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3svMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glWindowPos3svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos3svMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in short v);
 
-        [NativeApi(EntryPoint = "glWindowPos4dMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4dMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
-        [NativeApi(EntryPoint = "glWindowPos4dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4dvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glWindowPos4dvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4dvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glWindowPos4fMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4fMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
-        [NativeApi(EntryPoint = "glWindowPos4fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4fvMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glWindowPos4fvMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4fvMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glWindowPos4iMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4iMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glWindowPos4ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4ivMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glWindowPos4ivMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4ivMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glWindowPos4sMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4sMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
-        [NativeApi(EntryPoint = "glWindowPos4svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4svMESA", Convention = CallingConvention.Winapi)]
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glWindowPos4svMESA")]
+        [NativeApi(EntryPoint = "glWindowPos4svMESA", Convention = CallingConvention.Winapi)]
         public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in short v);
 
         public MesaWindowPos(INativeContext ctx)

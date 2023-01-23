@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_func";
-        [NativeApi(EntryPoint = "glIndexFuncEXT")]
+        [NativeApi(EntryPoint = "glIndexFuncEXT", Convention = CallingConvention.Winapi)]
         public partial void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
 
-        [NativeApi(EntryPoint = "glIndexFuncEXT")]
+        [NativeApi(EntryPoint = "glIndexFuncEXT", Convention = CallingConvention.Winapi)]
         public partial void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
 
         public ExtIndexFunc(INativeContext ctx)

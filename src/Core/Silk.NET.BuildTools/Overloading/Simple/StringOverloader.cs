@@ -10,7 +10,7 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class StringOverloader : ISimpleParameterOverloader, ISimpleReturnOverloader
     {
-        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Project core)
+        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Profile _)
         {
             if (parameter.Type.ToString() == "char*" || parameter.Type.ToString() == "byte*" ||
                 parameter.Type.ToString() == "GLchar*" || parameter.Type.ToString() == "GLbyte*" ||
@@ -23,7 +23,8 @@ namespace Silk.NET.BuildTools.Overloading
                         {
                             Name = "string", IndirectionLevels = 0,
                             IsOut = parameter.Flow == FlowDirection.Out &&
-                                    ((parameter.Count?.IsStatic ?? false) || (parameter.Count?.IsReference ?? false))
+                                    ((parameter.Count?.IsStatic ?? false) || (parameter.Count?.IsReference ?? false)),
+                            OriginalName = parameter.Type.OriginalName
                         }
                     );
                 
@@ -34,6 +35,14 @@ namespace Silk.NET.BuildTools.Overloading
                 }
 
                 variant = variantBuilder.Build();
+                variant.Attributes.Add
+                (
+                    new()
+                    {
+                        Name = "UnmanagedType",
+                        Arguments = new() { variant.Type.MapUnmanagedType() }
+                    }
+                );
 
                 return true;
             }
@@ -42,13 +51,22 @@ namespace Silk.NET.BuildTools.Overloading
             return false;
         }
 
-        public bool TryGetReturnTypeVariant(Type returnType, out Type varied, Project core)
+        public bool TryGetReturnTypeVariant(Type returnType, out Type varied, List<Attribute> attrs, Profile _)
         {
             if (returnType.ToString() == "char*" || returnType.ToString() == "byte*" ||
                 returnType.ToString() == "GLchar*" || returnType.ToString() == "GLbyte*" ||
                 returnType.ToString() == "GLubyte*")
             {
-                varied = new Type {Name = "string", IndirectionLevels = 0};
+                varied = new Type {Name = "string", IndirectionLevels = 0, OriginalName = returnType.OriginalName};
+                attrs.Add
+                (
+                    new()
+                    {
+                        Name = "return: UnmanagedType",
+                        Arguments = new() { varied.MapUnmanagedType() }
+                    }
+                );
+
                 return true;
             }
 
