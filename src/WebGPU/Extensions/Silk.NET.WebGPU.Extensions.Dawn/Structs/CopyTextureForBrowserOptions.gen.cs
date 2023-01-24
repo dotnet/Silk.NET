@@ -22,14 +22,14 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public CopyTextureForBrowserOptions
         (
             ChainedStruct* nextInChain = null,
-            bool? flipY = null,
-            bool? needsColorSpaceConversion = null,
+            Silk.NET.Core.Bool32? flipY = null,
+            Silk.NET.Core.Bool32? needsColorSpaceConversion = null,
             AlphaMode? srcAlphaMode = null,
             float* srcTransferFunctionParameters = null,
             float* conversionMatrix = null,
             float* dstTransferFunctionParameters = null,
             AlphaMode? dstAlphaMode = null,
-            bool? internalUsage = null
+            Silk.NET.Core.Bool32? internalUsage = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -87,12 +87,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "flipY")]
-        public bool FlipY;
+        public Silk.NET.Core.Bool32 FlipY;
 
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "needsColorSpaceConversion")]
-        public bool NeedsColorSpaceConversion;
+        public Silk.NET.Core.Bool32 NeedsColorSpaceConversion;
 
         [NativeName("Type", "WGPUAlphaMode")]
         [NativeName("Type.Name", "WGPUAlphaMode")]
@@ -122,6 +122,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "internalUsage")]
-        public bool InternalUsage;
+        public Silk.NET.Core.Bool32 InternalUsage;
     }
 }

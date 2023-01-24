@@ -63,22 +63,22 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial bool DevicePoll(Device* device, bool wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial bool DevicePoll(Device* device, bool wait, [Flow(FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial bool DevicePoll(ref Device device, bool wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(ref Device device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public partial bool DevicePoll(ref Device device, bool wait, [Flow(FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
+        public partial Silk.NET.Core.Bool32 DevicePoll(ref Device device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 169, Column 6 in wgpu.h")]

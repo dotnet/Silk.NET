@@ -27,12 +27,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             TextureView* plane1 = null,
             Origin2D? visibleOrigin = null,
             Extent2D? visibleSize = null,
-            bool? doYuvToRgbConversionOnly = null,
+            Silk.NET.Core.Bool32? doYuvToRgbConversionOnly = null,
             float* yuvToRgbConversionMatrix = null,
             float* srcTransferFunctionParameters = null,
             float* dstTransferFunctionParameters = null,
             float* gamutConversionMatrix = null,
-            bool? flipY = null,
+            Silk.NET.Core.Bool32? flipY = null,
             ExternalTextureRotation? rotation = null
         ) : this()
         {
@@ -136,7 +136,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "doYuvToRgbConversionOnly")]
-        public bool DoYuvToRgbConversionOnly;
+        public Silk.NET.Core.Bool32 DoYuvToRgbConversionOnly;
 
         [NativeName("Type", "const float *")]
         [NativeName("Type.Name", "const float *")]
@@ -161,7 +161,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "flipY")]
-        public bool FlipY;
+        public Silk.NET.Core.Bool32 FlipY;
 
         [NativeName("Type", "WGPUExternalTextureRotation")]
         [NativeName("Type.Name", "WGPUExternalTextureRotation")]

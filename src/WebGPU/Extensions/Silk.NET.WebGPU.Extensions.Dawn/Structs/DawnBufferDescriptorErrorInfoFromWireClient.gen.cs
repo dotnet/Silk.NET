@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnBufferDescriptorErrorInfoFromWireClient
         (
             ChainedStruct? chain = null,
-            bool? outOfMemory = null
+            Silk.NET.Core.Bool32? outOfMemory = null
         ) : this()
         {
             if (chain is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "outOfMemory")]
-        public bool OutOfMemory;
+        public Silk.NET.Core.Bool32 OutOfMemory;
     }
 }

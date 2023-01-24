@@ -52,6 +52,7 @@
     "PROC": "nint",
     "COLORREF": "uint",
     "BOOL": "Silk.NET.Core.Bool32",
+    "bool": "Silk.NET.Core.Bool32",
     "DWORD": "uint",
     "FLOAT": "float",
     "HDC": "nint",

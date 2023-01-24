@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             Surface* compatibleSurface = null,
             PowerPreference? powerPreference = null,
-            bool? forceFallbackAdapter = null
+            Silk.NET.Core.Bool32? forceFallbackAdapter = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "forceFallbackAdapter")]
-        public bool ForceFallbackAdapter;
+        public Silk.NET.Core.Bool32 ForceFallbackAdapter;
     }
 }

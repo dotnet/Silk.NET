@@ -25,11 +25,11 @@ namespace Silk.NET.WebGPU
             LoadOp? depthLoadOp = null,
             StoreOp? depthStoreOp = null,
             float? depthClearValue = null,
-            bool? depthReadOnly = null,
+            Silk.NET.Core.Bool32? depthReadOnly = null,
             LoadOp? stencilLoadOp = null,
             StoreOp? stencilStoreOp = null,
             uint? stencilClearValue = null,
-            bool? stencilReadOnly = null
+            Silk.NET.Core.Bool32? stencilReadOnly = null
         ) : this()
         {
             if (view is not null)
@@ -102,7 +102,7 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "depthReadOnly")]
-        public bool DepthReadOnly;
+        public Silk.NET.Core.Bool32 DepthReadOnly;
 
         [NativeName("Type", "WGPULoadOp")]
         [NativeName("Type.Name", "WGPULoadOp")]
@@ -122,6 +122,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "stencilReadOnly")]
-        public bool StencilReadOnly;
+        public Silk.NET.Core.Bool32 StencilReadOnly;
     }
 }

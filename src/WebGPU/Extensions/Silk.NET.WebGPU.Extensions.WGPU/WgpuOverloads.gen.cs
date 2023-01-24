@@ -58,7 +58,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
-        public static unsafe bool DevicePoll(this Wgpu thisApi, Device* device, bool wait, [Flow(FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
+        public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Device* device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
         {
             // SpanOverloader
             return thisApi.DevicePoll(device, wait, in wrappedSubmissionIndex.GetPinnableReference());
@@ -66,7 +66,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
-        public static unsafe bool DevicePoll(this Wgpu thisApi, Span<Device> device, bool wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex)
+        public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Span<Device> device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex)
         {
             // SpanOverloader
             return thisApi.DevicePoll(ref device.GetPinnableReference(), wait, wrappedSubmissionIndex);
@@ -74,7 +74,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 6 in wgpu.h")]
-        public static unsafe bool DevicePoll(this Wgpu thisApi, Span<Device> device, bool wait, [Flow(FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
+        public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Span<Device> device, Silk.NET.Core.Bool32 wait, [Flow(FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
         {
             // SpanOverloader
             return thisApi.DevicePoll(ref device.GetPinnableReference(), wait, in wrappedSubmissionIndex.GetPinnableReference());
