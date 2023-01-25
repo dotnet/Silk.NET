@@ -33,4 +33,4 @@
 	url = https://github.com/doitsujin/dxvk/
 [submodule "build/submodules/vkd3d"]
 	path = build/submodules/vkd3d
-	url = https://source.winehq.org/git/vkd3d.git
+	url = https://gitlab.winehq.org/wine/vkd3d/
