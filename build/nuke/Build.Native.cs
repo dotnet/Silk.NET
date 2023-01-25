@@ -403,6 +403,52 @@ partial class Build
             )
     );
 
+    AbsolutePath Vkd3dPath => RootDirectory / "build" / "submodules" / "vkd3d";
+
+    Target Vkd3d => CommonTarget
+        (
+            x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    if(!RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                    {
+                        throw new PlatformNotSupportedException("This task only runs on Linux!");
+                    }
+
+                    //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
+                    InheritedShell("git apply ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
+
+                    var dest = Vkd3dPath / "dest";
+                    var @out = Vkd3dPath / "build";
+                    EnsureCleanDirectory(@out);
+                    EnsureCleanDirectory(dest);
+                    //Run autogen
+                    InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
+                    //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
+                    InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES\" --prefix=/usr --with-spirv-tools", Vkd3dPath).AssertZeroExitCode();
+                    //Build vkd3d
+                    InheritedShell($"make -j4", Vkd3dPath).AssertZeroExitCode();
+                    //Install vkd3d to the dest folder
+                    InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
+
+                    //NOTE: we copy these manually one by one to rename them to linker-friendly names
+                    //      (run `ldd` on all the files and you see they all reference the `*.so.1` instead of `*.so`)
+                    //Copy libvkd3d.so
+                    CopyFile(@dest / "usr" / "lib" / "libvkd3d.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d.so.1");
+                    //Copy libvkd3d-utils.so
+                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-utils.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d-utils.so.1");
+                    //Copy libvkd3d-shader.so
+                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d-shader.so.1");
+
+                    PrUpdatedNativeBinary("Vkd3d");
+                }
+            )
+        );
+
     AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
 
     Target VulkanLoader => CommonTarget
