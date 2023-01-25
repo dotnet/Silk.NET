@@ -8,6 +8,7 @@ on:
     paths:
       - "build/submodules/vkd3d"
       - "build/nuke/Build.Native.cs"
+      - ".github/workflows/vkd3d.yml"
 jobs:
   Build:
     strategy:
