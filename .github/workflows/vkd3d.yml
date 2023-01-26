@@ -21,7 +21,7 @@ jobs:
             nuke_invoke: ./build.sh
             extras: |
               sudo apt-get update
-              sudo apt-get install -y xorg-dev libvulkan-dev spirv-headers wine64-development-tools spirv-tools spirv-cross 
+              sudo apt-get install -y xorg-dev libvulkan-dev spirv-headers wine64-development-tools spirv-tools glslang-dev glslang-tools spirv-cross
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
