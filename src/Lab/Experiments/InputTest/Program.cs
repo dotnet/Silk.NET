@@ -36,6 +36,7 @@ namespace InputTest
 
         static Key[] _allKeys = Enum.GetValues(typeof(Key)).Cast<Key>().Where(x => x != Key.Unknown).ToArray();
         static List<Key> _keysDown = new List<Key>();
+        static List<int> _scancodesDown = new List<int>();
 
         public static Action OnLoad(IView window) =>
             () =>
@@ -84,6 +85,14 @@ namespace InputTest
                     if (_keysDown.Contains(k) != input.Keyboards.Any(x => x.IsKeyPressed(k)))
                     {
                         Console.WriteLine($"[ERROR] IsKeyPressed() and event mismatch! Key {k}");
+                    }
+                }
+
+                for (int s = 0; s < 256; s++)
+                {
+                    if (_scancodesDown.Contains(s) != input.Keyboards.Any(x => x.IsScancodePressed(s)))
+                    {
+                        Console.WriteLine($"[ERROR] IsScancodePressed() and event mismatch! Scancode {s}");
                     }
                 }
             };
@@ -274,12 +283,18 @@ namespace InputTest
 
             if (key != Key.Unknown)
             {
-                int index = _keysDown.IndexOf(key);
-                if (index < 0)
+                int keyIndex = _keysDown.IndexOf(key);
+                if (keyIndex < 0)
                     Console.WriteLine($"[ERROR] Double key up detected? K{keyboard.Index}> {key} up.");
                 else
-                    _keysDown.RemoveAt(index);
+                    _keysDown.RemoveAt(keyIndex);
             }
+
+            int scancodeIndex = _scancodesDown.IndexOf(scancode);
+            if (scancodeIndex < 0)
+                Console.WriteLine($"[ERROR] Double scancode up detected? K{keyboard.Index}> {scancode} up.");
+            else
+                _scancodesDown.RemoveAt(scancodeIndex);
         }
 
         private static void KeyboardOnKeyDown(IKeyboard keyboard, Key key, int scancode)
@@ -293,6 +308,11 @@ namespace InputTest
                 else
                     _keysDown.Add(key);
             }
+
+            if (_scancodesDown.Contains(scancode))
+                Console.WriteLine($"[ERROR] Double scancode down detected? K{keyboard.Index}> {scancode} down.");
+            else
+                _scancodesDown.Add(scancode);
         }
     }
 }
