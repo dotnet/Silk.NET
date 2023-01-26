@@ -1,1 +1,2 @@
 #nullable enable
+Silk.NET.Input.IKeyboard.IsScancodePressed(int scancode) -> bool
