@@ -23,7 +23,7 @@
         <PackageVersion Include="Nuke.Common" Version="6.0.1"/>
         <PackageVersion Include="Ultz.Bcl.Half" Version="1.0.0"/>
         <PackageVersion Include="Microsoft.Bcl.HashCode" Version="1.1.1"/>
-        <PackageVersion Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.1"/>
+        <PackageVersion Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4"/>
         <PackageVersion Include="Microsoft.Extensions.Hosting" Version="6.0.1"/>
         <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsExtensionNugetVersion)"/>
