@@ -38,7 +38,7 @@
         <PackageVersion Include="Statiq.App" Version="1.0.0-beta.65"/>
         <PackageVersion Include="Statiq.Feeds" Version="1.0.0-beta.65"/>
         <PackageVersion Include="Statiq.Markdown" Version="1.0.0-beta.65"/>
-        <PackageVersion Include="Statiq.Razor" Version="1.0.0-beta.48"/>
+        <PackageVersion Include="Statiq.Razor" Version="1.0.0-beta.66"/>
         <PackageVersion Include="Statiq.Yaml" Version="1.0.0-beta.62"/>
         <PackageVersion Include="Humanizer.Core" Version="2.14.1"/>
         <PackageVersion Include="Moq" Version="4.17.2"/>
