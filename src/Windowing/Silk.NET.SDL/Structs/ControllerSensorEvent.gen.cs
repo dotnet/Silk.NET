@@ -24,8 +24,7 @@ namespace Silk.NET.SDL
             uint? type = null,
             uint? timestamp = null,
             int? which = null,
-            int? sensor = null,
-            ulong? timestampUs = null
+            int? sensor = null
         ) : this()
         {
             if (type is not null)
@@ -46,11 +45,6 @@ namespace Silk.NET.SDL
             if (sensor is not null)
             {
                 Sensor = sensor.Value;
-            }
-
-            if (timestampUs is not null)
-            {
-                TimestampUs = timestampUs.Value;
             }
         }
 
@@ -78,10 +72,5 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "float[3]")]
         [NativeName("Name", "data")]
         public fixed float Data[3];
-
-        [NativeName("Type", "Uint64")]
-        [NativeName("Type.Name", "Uint64")]
-        [NativeName("Name", "timestamp_us")]
-        public ulong TimestampUs;
     }
 }

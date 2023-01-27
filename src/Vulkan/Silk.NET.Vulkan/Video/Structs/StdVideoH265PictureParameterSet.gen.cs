@@ -24,7 +24,6 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH265PpsFlags? flags = null,
             byte? ppsPicParameterSetId = null,
             byte? ppsSeqParameterSetId = null,
-            byte? spsVideoParameterSetId = null,
             byte? numExtraSliceHeaderBits = null,
             byte? numRefIdxL0DefaultActiveMinus1 = null,
             byte? numRefIdxL1DefaultActiveMinus1 = null,
@@ -32,9 +31,12 @@ namespace Silk.NET.Vulkan.Video
             byte? diffCuQpDeltaDepth = null,
             byte? ppsCbQpOffset = null,
             byte? ppsCrQpOffset = null,
+            byte? numTileColumnsMinus1 = null,
+            byte? numTileRowsMinus1 = null,
             byte? ppsBetaOffsetDiv2 = null,
             byte? ppsTcOffsetDiv2 = null,
             byte? log2ParallelMergeLevelMinus2 = null,
+            StdVideoH265ScalingLists* pScalingLists = null,
             byte? log2MaxTransformSkipBlockSizeMinus2 = null,
             byte? diffCuChromaQpOffsetDepth = null,
             byte? chromaQpOffsetListLenMinus1 = null,
@@ -42,16 +44,10 @@ namespace Silk.NET.Vulkan.Video
             byte? log2SaoOffsetScaleChroma = null,
             byte? ppsActYQpOffsetPlus5 = null,
             byte? ppsActCbQpOffsetPlus5 = null,
-            byte? ppsActCrQpOffsetPlus3 = null,
-            byte? ppsNumPalettePredictorInitializers = null,
+            byte? ppsActCrQpOffsetPlus5 = null,
+            byte? ppsNumPalettePredictorInitializer = null,
             byte? lumaBitDepthEntryMinus8 = null,
             byte? chromaBitDepthEntryMinus8 = null,
-            byte? numTileColumnsMinus1 = null,
-            byte? numTileRowsMinus1 = null,
-            byte? reserved1 = null,
-            byte? reserved2 = null,
-            uint? reserved3 = null,
-            StdVideoH265ScalingLists* pScalingLists = null,
             StdVideoH265PredictorPaletteEntries* pPredictorPaletteEntries = null
         ) : this()
         {
@@ -68,11 +64,6 @@ namespace Silk.NET.Vulkan.Video
             if (ppsSeqParameterSetId is not null)
             {
                 PpsSeqParameterSetId = ppsSeqParameterSetId.Value;
-            }
-
-            if (spsVideoParameterSetId is not null)
-            {
-                SpsVideoParameterSetId = spsVideoParameterSetId.Value;
             }
 
             if (numExtraSliceHeaderBits is not null)
@@ -110,6 +101,16 @@ namespace Silk.NET.Vulkan.Video
                 PpsCrQpOffset = ppsCrQpOffset.Value;
             }
 
+            if (numTileColumnsMinus1 is not null)
+            {
+                NumTileColumnsMinus1 = numTileColumnsMinus1.Value;
+            }
+
+            if (numTileRowsMinus1 is not null)
+            {
+                NumTileRowsMinus1 = numTileRowsMinus1.Value;
+            }
+
             if (ppsBetaOffsetDiv2 is not null)
             {
                 PpsBetaOffsetDiv2 = ppsBetaOffsetDiv2.Value;
@@ -123,6 +124,11 @@ namespace Silk.NET.Vulkan.Video
             if (log2ParallelMergeLevelMinus2 is not null)
             {
                 Log2ParallelMergeLevelMinus2 = log2ParallelMergeLevelMinus2.Value;
+            }
+
+            if (pScalingLists is not null)
+            {
+                PScalingLists = pScalingLists;
             }
 
             if (log2MaxTransformSkipBlockSizeMinus2 is not null)
@@ -160,14 +166,14 @@ namespace Silk.NET.Vulkan.Video
                 PpsActCbQpOffsetPlus5 = ppsActCbQpOffsetPlus5.Value;
             }
 
-            if (ppsActCrQpOffsetPlus3 is not null)
+            if (ppsActCrQpOffsetPlus5 is not null)
             {
-                PpsActCrQpOffsetPlus3 = ppsActCrQpOffsetPlus3.Value;
+                PpsActCrQpOffsetPlus5 = ppsActCrQpOffsetPlus5.Value;
             }
 
-            if (ppsNumPalettePredictorInitializers is not null)
+            if (ppsNumPalettePredictorInitializer is not null)
             {
-                PpsNumPalettePredictorInitializers = ppsNumPalettePredictorInitializers.Value;
+                PpsNumPalettePredictorInitializer = ppsNumPalettePredictorInitializer.Value;
             }
 
             if (lumaBitDepthEntryMinus8 is not null)
@@ -178,36 +184,6 @@ namespace Silk.NET.Vulkan.Video
             if (chromaBitDepthEntryMinus8 is not null)
             {
                 ChromaBitDepthEntryMinus8 = chromaBitDepthEntryMinus8.Value;
-            }
-
-            if (numTileColumnsMinus1 is not null)
-            {
-                NumTileColumnsMinus1 = numTileColumnsMinus1.Value;
-            }
-
-            if (numTileRowsMinus1 is not null)
-            {
-                NumTileRowsMinus1 = numTileRowsMinus1.Value;
-            }
-
-            if (reserved1 is not null)
-            {
-                Reserved1 = reserved1.Value;
-            }
-
-            if (reserved2 is not null)
-            {
-                Reserved2 = reserved2.Value;
-            }
-
-            if (reserved3 is not null)
-            {
-                Reserved3 = reserved3.Value;
-            }
-
-            if (pScalingLists is not null)
-            {
-                PScalingLists = pScalingLists;
             }
 
             if (pPredictorPaletteEntries is not null)
@@ -231,11 +207,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "pps_seq_parameter_set_id")]
         public byte PpsSeqParameterSetId;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "sps_video_parameter_set_id")]
-        public byte SpsVideoParameterSetId;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -272,6 +243,24 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "pps_cr_qp_offset")]
         public byte PpsCrQpOffset;
 
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "num_tile_columns_minus1")]
+        public byte NumTileColumnsMinus1;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "num_tile_rows_minus1")]
+        public byte NumTileRowsMinus1;
+        [NativeName("Type", "uint16_t[19]")]
+        [NativeName("Type.Name", "uint16_t[19]")]
+        [NativeName("Name", "column_width_minus1")]
+        public fixed ushort ColumnWidthMinus1[19];
+        [NativeName("Type", "uint16_t[21]")]
+        [NativeName("Type.Name", "uint16_t[21]")]
+        [NativeName("Name", "row_height_minus1")]
+        public fixed ushort RowHeightMinus1[21];
+
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_beta_offset_div2")]
@@ -286,6 +275,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "log2_parallel_merge_level_minus2")]
         public byte Log2ParallelMergeLevelMinus2;
+
+        [NativeName("Type", "const StdVideoH265ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH265ScalingLists *")]
+        [NativeName("Name", "pScalingLists")]
+        public StdVideoH265ScalingLists* PScalingLists;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -332,13 +326,13 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "pps_act_cr_qp_offset_plus3")]
-        public byte PpsActCrQpOffsetPlus3;
+        [NativeName("Name", "pps_act_cr_qp_offset_plus5")]
+        public byte PpsActCrQpOffsetPlus5;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "pps_num_palette_predictor_initializers")]
-        public byte PpsNumPalettePredictorInitializers;
+        [NativeName("Name", "pps_num_palette_predictor_initializer")]
+        public byte PpsNumPalettePredictorInitializer;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -349,44 +343,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "chroma_bit_depth_entry_minus8")]
         public byte ChromaBitDepthEntryMinus8;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_tile_columns_minus1")]
-        public byte NumTileColumnsMinus1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_tile_rows_minus1")]
-        public byte NumTileRowsMinus1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved1")]
-        public byte Reserved1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved2")]
-        public byte Reserved2;
-        [NativeName("Type", "uint16_t[19]")]
-        [NativeName("Type.Name", "uint16_t[19]")]
-        [NativeName("Name", "column_width_minus1")]
-        public fixed ushort ColumnWidthMinus1[19];
-        [NativeName("Type", "uint16_t[21]")]
-        [NativeName("Type.Name", "uint16_t[21]")]
-        [NativeName("Name", "row_height_minus1")]
-        public fixed ushort RowHeightMinus1[21];
-
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "reserved3")]
-        public uint Reserved3;
-
-        [NativeName("Type", "const StdVideoH265ScalingLists *")]
-        [NativeName("Type.Name", "const StdVideoH265ScalingLists *")]
-        [NativeName("Name", "pScalingLists")]
-        public StdVideoH265ScalingLists* PScalingLists;
 
         [NativeName("Type", "const StdVideoH265PredictorPaletteEntries *")]
         [NativeName("Type.Name", "const StdVideoH265PredictorPaletteEntries *")]

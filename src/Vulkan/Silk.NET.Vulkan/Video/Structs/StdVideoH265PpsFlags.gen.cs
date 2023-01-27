@@ -49,7 +49,7 @@ namespace Silk.NET.Vulkan.Video
             uint? ppsCurrPicRefEnabledFlag = null,
             uint? residualAdaptiveColourTransformEnabledFlag = null,
             uint? ppsSliceActQpOffsetsPresentFlag = null,
-            uint? ppsPalettePredictorInitializersPresentFlag = null,
+            uint? ppsPalettePredictorInitializerPresentFlag = null,
             uint? monochromePaletteFlag = null,
             uint? ppsRangeExtensionFlag = null
         ) : this()
@@ -194,9 +194,9 @@ namespace Silk.NET.Vulkan.Video
                 PpsSliceActQpOffsetsPresentFlag = ppsSliceActQpOffsetsPresentFlag.Value;
             }
 
-            if (ppsPalettePredictorInitializersPresentFlag is not null)
+            if (ppsPalettePredictorInitializerPresentFlag is not null)
             {
-                PpsPalettePredictorInitializersPresentFlag = ppsPalettePredictorInitializersPresentFlag.Value;
+                PpsPalettePredictorInitializerPresentFlag = ppsPalettePredictorInitializerPresentFlag.Value;
             }
 
             if (monochromePaletteFlag is not null)
@@ -437,7 +437,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 27)) | (uint)(((uint)(value) & 0x1u) << 27));
         }
 
-        public uint PpsPalettePredictorInitializersPresentFlag
+        public uint PpsPalettePredictorInitializerPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 28) & 0x1u);

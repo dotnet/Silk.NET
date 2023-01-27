@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_system_L499_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_system_L377_C9")]
     [NativeName("Name", "SDL_WinRT_DeviceFamily")]
     public enum WinRTDeviceFamily : int
     {

@@ -111,11 +111,11 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly bool IsComplete(uint index)
+        public readonly Silk.NET.Core.Bool32 IsComplete(uint index)
         {
             var @this = (IDStorageStatusArray*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            bool ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDStorageStatusArray*, uint, bool>)@this->LpVtbl[3])(@this, index);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageStatusArray*, uint, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, index);
             return ret;
         }
 

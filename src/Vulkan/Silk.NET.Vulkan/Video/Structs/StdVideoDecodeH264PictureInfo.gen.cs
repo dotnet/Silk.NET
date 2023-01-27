@@ -24,8 +24,7 @@ namespace Silk.NET.Vulkan.Video
             StdVideoDecodeH264PictureInfoFlags? flags = null,
             byte? seqParameterSetId = null,
             byte? picParameterSetId = null,
-            byte? reserved1 = null,
-            byte? reserved2 = null,
+            ushort? reserved = null,
             ushort? frameNum = null,
             ushort? idrPicId = null
         ) : this()
@@ -45,14 +44,9 @@ namespace Silk.NET.Vulkan.Video
                 PicParameterSetId = picParameterSetId.Value;
             }
 
-            if (reserved1 is not null)
+            if (reserved is not null)
             {
-                Reserved1 = reserved1.Value;
-            }
-
-            if (reserved2 is not null)
-            {
-                Reserved2 = reserved2.Value;
+                Reserved = reserved.Value;
             }
 
             if (frameNum is not null)
@@ -82,15 +76,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "pic_parameter_set_id")]
         public byte PicParameterSetId;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved1")]
-        public byte Reserved1;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "reserved2")]
-        public byte Reserved2;
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "reserved")]
+        public ushort Reserved;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]

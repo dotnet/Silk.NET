@@ -17,7 +17,7 @@ namespace Silk.NET.DirectStorage
     public static class DStorageOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1148, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 1148, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public static unsafe int SetConfiguration(this DStorage thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Configuration> configuration)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1158, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 1158, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public static unsafe int GetFactory(this DStorage thisApi, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1158, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 1158, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public static unsafe int GetFactory(this DStorage thisApi, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1173, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 1173, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public static unsafe int CreateCompressionCodec(this DStorage thisApi, CompressionFormat format, uint numThreads, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1173, Column 16 in C:\\Users\\perks\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
+        [NativeName("Src", "Line 1173, Column 16 in C:\\Users\\Administrator\\AppData\\Local\\Temp\\<...>\\native\\include\\dstorage.h")]
         public static unsafe int CreateCompressionCodec(this DStorage thisApi, CompressionFormat format, uint numThreads, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader

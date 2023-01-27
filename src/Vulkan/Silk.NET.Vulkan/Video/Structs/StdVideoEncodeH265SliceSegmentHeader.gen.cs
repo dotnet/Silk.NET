@@ -23,8 +23,11 @@ namespace Silk.NET.Vulkan.Video
         (
             StdVideoEncodeH265SliceSegmentHeaderFlags? flags = null,
             StdVideoH265SliceType? sliceType = null,
+            byte? numShortTermRefPicSets = null,
             uint? sliceSegmentAddress = null,
             byte? shortTermRefPicSetIdx = null,
+            byte? numLongTermSps = null,
+            byte? numLongTermPics = null,
             byte? collocatedRefIdx = null,
             byte? numRefIdxL0ActiveMinus1 = null,
             byte? numRefIdxL1ActiveMinus1 = null,
@@ -36,8 +39,6 @@ namespace Silk.NET.Vulkan.Video
             byte? sliceActYQpOffset = null,
             byte? sliceActCbQpOffset = null,
             byte? sliceActCrQpOffset = null,
-            StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet = null,
-            StdVideoEncodeH265SliceSegmentLongTermRefPics* pLongTermRefPics = null,
             StdVideoEncodeH265WeightTable* pWeightTable = null
         ) : this()
         {
@@ -51,6 +52,11 @@ namespace Silk.NET.Vulkan.Video
                 SliceType = sliceType.Value;
             }
 
+            if (numShortTermRefPicSets is not null)
+            {
+                NumShortTermRefPicSets = numShortTermRefPicSets.Value;
+            }
+
             if (sliceSegmentAddress is not null)
             {
                 SliceSegmentAddress = sliceSegmentAddress.Value;
@@ -59,6 +65,16 @@ namespace Silk.NET.Vulkan.Video
             if (shortTermRefPicSetIdx is not null)
             {
                 ShortTermRefPicSetIdx = shortTermRefPicSetIdx.Value;
+            }
+
+            if (numLongTermSps is not null)
+            {
+                NumLongTermSps = numLongTermSps.Value;
+            }
+
+            if (numLongTermPics is not null)
+            {
+                NumLongTermPics = numLongTermPics.Value;
             }
 
             if (collocatedRefIdx is not null)
@@ -116,16 +132,6 @@ namespace Silk.NET.Vulkan.Video
                 SliceActCrQpOffset = sliceActCrQpOffset.Value;
             }
 
-            if (pShortTermRefPicSet is not null)
-            {
-                PShortTermRefPicSet = pShortTermRefPicSet;
-            }
-
-            if (pLongTermRefPics is not null)
-            {
-                PLongTermRefPics = pLongTermRefPics;
-            }
-
             if (pWeightTable is not null)
             {
                 PWeightTable = pWeightTable;
@@ -143,6 +149,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_type")]
         public StdVideoH265SliceType SliceType;
 
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "num_short_term_ref_pic_sets")]
+        public byte NumShortTermRefPicSets;
+
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "slice_segment_address")]
@@ -152,6 +163,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "short_term_ref_pic_set_idx")]
         public byte ShortTermRefPicSetIdx;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "num_long_term_sps")]
+        public byte NumLongTermSps;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "num_long_term_pics")]
+        public byte NumLongTermPics;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -207,16 +228,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_act_cr_qp_offset")]
         public byte SliceActCrQpOffset;
-
-        [NativeName("Type", "const StdVideoH265ShortTermRefPicSet *")]
-        [NativeName("Type.Name", "const StdVideoH265ShortTermRefPicSet *")]
-        [NativeName("Name", "pShortTermRefPicSet")]
-        public StdVideoH265ShortTermRefPicSet* PShortTermRefPicSet;
-
-        [NativeName("Type", "const StdVideoEncodeH265SliceSegmentLongTermRefPics *")]
-        [NativeName("Type.Name", "const StdVideoEncodeH265SliceSegmentLongTermRefPics *")]
-        [NativeName("Name", "pLongTermRefPics")]
-        public StdVideoEncodeH265SliceSegmentLongTermRefPics* PLongTermRefPics;
 
         [NativeName("Type", "const StdVideoEncodeH265WeightTable *")]
         [NativeName("Type.Name", "const StdVideoEncodeH265WeightTable *")]

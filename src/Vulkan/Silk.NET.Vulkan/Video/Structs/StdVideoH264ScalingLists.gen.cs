@@ -21,8 +21,8 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH264ScalingLists
         (
-            ushort? scalingListPresentMask = null,
-            ushort? useDefaultScalingMatrixMask = null
+            byte? scalingListPresentMask = null,
+            byte? useDefaultScalingMatrixMask = null
         ) : this()
         {
             if (scalingListPresentMask is not null)
@@ -37,22 +37,22 @@ namespace Silk.NET.Vulkan.Video
         }
 
 
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "scaling_list_present_mask")]
-        public ushort ScalingListPresentMask;
+        public byte ScalingListPresentMask;
 
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "use_default_scaling_matrix_mask")]
-        public ushort UseDefaultScalingMatrixMask;
+        public byte UseDefaultScalingMatrixMask;
         [NativeName("Type", "uint8_t[6][16]")]
         [NativeName("Type.Name", "uint8_t[6][16]")]
         [NativeName("Name", "ScalingList4x4")]
         public fixed byte ScalingList4x4[96];
-        [NativeName("Type", "uint8_t[6][64]")]
-        [NativeName("Type.Name", "uint8_t[6][64]")]
+        [NativeName("Type", "uint8_t[2][64]")]
+        [NativeName("Type.Name", "uint8_t[2][64]")]
         [NativeName("Name", "ScalingList8x8")]
-        public fixed byte ScalingList8x8[384];
+        public fixed byte ScalingList8x8[128];
     }
 }

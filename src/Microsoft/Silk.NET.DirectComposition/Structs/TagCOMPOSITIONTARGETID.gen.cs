@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DirectComposition
 {
     [NativeName("Name", "tagCOMPOSITION_TARGET_ID")]
-    public unsafe partial struct CompositionTargetId
+    public unsafe partial struct TagCOMPOSITIONTARGETID
     {
-        public CompositionTargetId
+        public TagCOMPOSITIONTARGETID
         (
             Luid? displayAdapterLuid = null,
             Luid? renderAdapterLuid = null,

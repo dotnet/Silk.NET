@@ -2216,7 +2216,8 @@
                     "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
                 }
             ]
         },

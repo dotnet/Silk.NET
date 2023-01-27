@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DirectComposition
 {
     [NativeName("Name", "tagCOMPOSITION_FRAME_STATS")]
-    public unsafe partial struct CompositionFrameStats
+    public unsafe partial struct TagCOMPOSITIONFRAMESTATS
     {
-        public CompositionFrameStats
+        public TagCOMPOSITIONFRAMESTATS
         (
             ulong? startTime = null,
             ulong? targetTime = null,
