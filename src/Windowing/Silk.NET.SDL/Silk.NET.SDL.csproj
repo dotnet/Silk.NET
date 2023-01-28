@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ultz.Native.SDL" Version="2.24.3" />
+    <PackageReference Include="Ultz.Native.SDL" Version="2.24.2" />
   </ItemGroup>
 
   <ItemGroup>
