@@ -36,18 +36,18 @@ namespace VMASharp
     public abstract DeviceMemory DeviceMemory { get; }
     public abstract long Offset { get; internal set; }
     public object? UserData { get; set; }
-    public abstract IntPtr MappedData { get; }
+    public abstract nint MappedData { get; }
     public void Dispose();
     public Result BindBufferMemory(Buffer buffer);
-    public Result BindBufferMemory(Buffer buffer, long allocationLocalOffset, IntPtr pNext);
+    public Result BindBufferMemory(Buffer buffer, long allocationLocalOffset, nint pNext);
     public Result BindBufferMemory(Buffer buffer, long allocationLocalOffset, void* pNext = null);
     public Result BindImageMemory(Image image);
-    public Result BindImageMemory(Image image, long allocationLocalOffset, IntPtr pNext);
+    public Result BindImageMemory(Image image, long allocationLocalOffset, nint pNext);
     public Result BindImageMemory(Image image, long allocationLocalOffset, void* pNext = null);
     public bool TouchAllocation();
     public Result Flush(long offset, long size);
     public Result Invalidate(long offset, long size);
-    public abstract IntPtr Map();
+    public abstract nint Map();
     public abstract void Unmap();
     public bool TryGetMemory<T>(out Memory<T> memory) where T : unmanaged;
     public bool TryGetSpan<T>(out Span<T> span) where T : unmanaged;
@@ -176,8 +176,8 @@ namespace VMASharp
   {
     public override DeviceMemory DeviceMemory { get; }
     public override long Offset { get; internal set; }
-    public override IntPtr MappedData { get; }
-    public override IntPtr Map();
+    public override nint MappedData { get; }
+    public override nint Map();
     public override void Unmap();
   }
   public class MapMemoryException : VulkanResultException
