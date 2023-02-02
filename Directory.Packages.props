@@ -11,7 +11,7 @@
         <PackageVersion Include="BenchmarkDotNet" Version="0.13.3"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.Text.Json" Version="6.0.5"/>
-        <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="15.0.0"/>
+        <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="15.0.2"/>
         <PackageVersion Include="Microsoft.Build.Locator" Version="1.4.1"/>
         <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Build.Framework" Version="17.4.0"/>
