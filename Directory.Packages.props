@@ -12,7 +12,7 @@
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.Text.Json" Version="6.0.5"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="15.0.2"/>
-        <PackageVersion Include="Microsoft.Build.Locator" Version="1.4.1"/>
+        <PackageVersion Include="Microsoft.Build.Locator" Version="1.5.5"/>
         <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Build.Framework" Version="17.4.0"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="$(RoslynPackageVersion)"/>
@@ -24,7 +24,7 @@
         <PackageVersion Include="Ultz.Bcl.Half" Version="1.0.0"/>
         <PackageVersion Include="Microsoft.Bcl.HashCode" Version="1.1.1"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4"/>
-        <PackageVersion Include="Microsoft.Extensions.Hosting" Version="6.0.1"/>
+        <PackageVersion Include="Microsoft.Extensions.Hosting" Version="7.0.0"/>
         <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MsExtensionNugetVersion)"/>
@@ -35,7 +35,7 @@
         <PackageVersion Include="Statiq.Core" Version="1.0.0-beta.48"/>
         <PackageVersion Include="HtmlAgilityPack" Version="1.11.43"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.4.0"/>
-        <PackageVersion Include="Statiq.App" Version="1.0.0-beta.65"/>
+        <PackageVersion Include="Statiq.App" Version="1.0.0-beta.66"/>
         <PackageVersion Include="Statiq.Feeds" Version="1.0.0-beta.66"/>
         <PackageVersion Include="Statiq.Markdown" Version="1.0.0-beta.65"/>
         <PackageVersion Include="Statiq.Razor" Version="1.0.0-beta.66"/>
