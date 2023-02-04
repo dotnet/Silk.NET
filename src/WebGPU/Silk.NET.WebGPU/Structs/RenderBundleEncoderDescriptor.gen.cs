@@ -27,8 +27,8 @@ namespace Silk.NET.WebGPU
             TextureFormat* colorFormats = null,
             TextureFormat? depthStencilFormat = null,
             uint? sampleCount = null,
-            bool? depthReadOnly = null,
-            bool? stencilReadOnly = null
+            Silk.NET.Core.Bool32? depthReadOnly = null,
+            Silk.NET.Core.Bool32? stencilReadOnly = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -106,11 +106,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "depthReadOnly")]
-        public bool DepthReadOnly;
+        public Silk.NET.Core.Bool32 DepthReadOnly;
 
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "stencilReadOnly")]
-        public bool StencilReadOnly;
+        public Silk.NET.Core.Bool32 StencilReadOnly;
     }
 }

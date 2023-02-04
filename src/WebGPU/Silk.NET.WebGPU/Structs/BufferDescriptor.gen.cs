@@ -25,7 +25,7 @@ namespace Silk.NET.WebGPU
             byte* label = null,
             Silk.NET.WebGPU.BufferUsage? usage = null,
             ulong? size = null,
-            bool? mappedAtCreation = null
+            Silk.NET.Core.Bool32? mappedAtCreation = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -78,6 +78,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "mappedAtCreation")]
-        public bool MappedAtCreation;
+        public Silk.NET.Core.Bool32 MappedAtCreation;
     }
 }

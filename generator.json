@@ -1851,6 +1851,10 @@
                 "D3DMATRIX"
             ],
             "rename": {
+                "tagCOMPOSITION_FRAME_STATS": "CompositionFrameStats",
+                "tagCOMPOSITION_STATS": "CompositionStats",
+                "tagCOMPOSITION_TARGET_ID": "CompositionTargetId",
+                "tagCOMPOSITION_TARGET_STATS": "CompositionTargetStats"
             },
             "bakery": {
                 "profileNames": [
@@ -2216,7 +2220,8 @@
                     "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.dxTypeMap": "build/dx_typemap.json"
                 }
             ]
         },

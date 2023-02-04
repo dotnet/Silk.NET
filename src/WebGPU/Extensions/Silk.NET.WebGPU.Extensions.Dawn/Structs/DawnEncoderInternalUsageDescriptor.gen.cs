@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public DawnEncoderInternalUsageDescriptor
         (
             ChainedStruct? chain = null,
-            bool? useInternalUsages = null
+            Silk.NET.Core.Bool32? useInternalUsages = null
         ) : this()
         {
             if (chain is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "useInternalUsages")]
-        public bool UseInternalUsages;
+        public Silk.NET.Core.Bool32 UseInternalUsages;
     }
 }
