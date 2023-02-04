@@ -1851,6 +1851,10 @@
                 "D3DMATRIX"
             ],
             "rename": {
+                "tagCOMPOSITION_FRAME_STATS": "CompositionFrameStats",
+                "tagCOMPOSITION_STATS": "CompositionStats",
+                "tagCOMPOSITION_TARGET_ID": "CompositionTargetId",
+                "tagCOMPOSITION_TARGET_STATS": "CompositionTargetStats"
             },
             "bakery": {
                 "profileNames": [

@@ -2450,6 +2450,8 @@ namespace Silk.NET.OpenCL
         ApiVersion = 0x4240,
         [NativeName("Name", "CL_LAYER_API_VERSION")]
         LayerApiVersion = 0x4240,
+        [NativeName("Name", "CL_LAYER_NAME")]
+        LayerName = 0x4241,
         [NativeName("Name", "CL_DEPTH_STENCIL")]
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]

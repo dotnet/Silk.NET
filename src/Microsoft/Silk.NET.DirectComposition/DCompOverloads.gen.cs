@@ -202,7 +202,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, Span<uint> actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, CompositionTargetId* targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, frameStats, targetIdCount, targetIds, ref actualTargetIdCount.GetPinnableReference());
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, Span<TagCOMPOSITIONTARGETID> targetIds, uint* actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, frameStats, targetIdCount, ref targetIds.GetPinnableReference(), actualTargetIdCount);
@@ -218,7 +218,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, Span<TagCOMPOSITIONTARGETID> targetIds, Span<uint> actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, frameStats, targetIdCount, ref targetIds.GetPinnableReference(), ref actualTargetIdCount.GetPinnableReference());
@@ -226,7 +226,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<TagCOMPOSITIONFRAMESTATS> frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, uint* actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, CompositionTargetId* targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, ref frameStats.GetPinnableReference(), targetIdCount, targetIds, actualTargetIdCount);
@@ -234,7 +234,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<TagCOMPOSITIONFRAMESTATS> frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, Span<uint> actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, CompositionTargetId* targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, ref frameStats.GetPinnableReference(), targetIdCount, targetIds, ref actualTargetIdCount.GetPinnableReference());
@@ -242,7 +242,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<TagCOMPOSITIONFRAMESTATS> frameStats, uint targetIdCount, Span<TagCOMPOSITIONTARGETID> targetIds, uint* actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, ref frameStats.GetPinnableReference(), targetIdCount, ref targetIds.GetPinnableReference(), actualTargetIdCount);
@@ -250,7 +250,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<TagCOMPOSITIONFRAMESTATS> frameStats, uint targetIdCount, Span<TagCOMPOSITIONTARGETID> targetIds, Span<uint> actualTargetIdCount)
+        public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
             return thisApi.GetStatistics(frameId, ref frameStats.GetPinnableReference(), targetIdCount, ref targetIds.GetPinnableReference(), ref actualTargetIdCount.GetPinnableReference());
@@ -258,7 +258,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] TagCOMPOSITIONTARGETID* targetId, Span<TagCOMPOSITIONTARGETSTATS> targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] CompositionTargetId* targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, targetId, ref targetStats.GetPinnableReference());
@@ -266,7 +266,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<TagCOMPOSITIONTARGETID> targetId, TagCOMPOSITIONTARGETSTATS* targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, CompositionTargetStats* targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, in targetId.GetPinnableReference(), targetStats);
@@ -274,7 +274,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
-        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<TagCOMPOSITIONTARGETID> targetId, Span<TagCOMPOSITIONTARGETSTATS> targetStats)
+        public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader
             return thisApi.GetTargetStatistics(frameId, in targetId.GetPinnableReference(), ref targetStats.GetPinnableReference());

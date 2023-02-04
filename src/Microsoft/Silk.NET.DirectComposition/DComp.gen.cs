@@ -202,62 +202,62 @@ namespace Silk.NET.DirectComposition
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, uint* actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, CompositionTargetId* targetIds, uint* actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, ref uint actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, CompositionTargetId* targetIds, ref uint actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, ref TagCOMPOSITIONTARGETID targetIds, uint* actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, ref CompositionTargetId targetIds, uint* actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, TagCOMPOSITIONFRAMESTATS* frameStats, uint targetIdCount, ref TagCOMPOSITIONTARGETID targetIds, ref uint actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, ref CompositionTargetId targetIds, ref uint actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, ref TagCOMPOSITIONFRAMESTATS frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, uint* actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, ref CompositionFrameStats frameStats, uint targetIdCount, CompositionTargetId* targetIds, uint* actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, ref TagCOMPOSITIONFRAMESTATS frameStats, uint targetIdCount, TagCOMPOSITIONTARGETID* targetIds, ref uint actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, ref CompositionFrameStats frameStats, uint targetIdCount, CompositionTargetId* targetIds, ref uint actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetStatistics(ulong frameId, ref TagCOMPOSITIONFRAMESTATS frameStats, uint targetIdCount, ref TagCOMPOSITIONTARGETID targetIds, uint* actualTargetIdCount);
+        public unsafe partial int GetStatistics(ulong frameId, ref CompositionFrameStats frameStats, uint targetIdCount, ref CompositionTargetId targetIds, uint* actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetStatistics", Convention = CallingConvention.StdCall)]
-        public partial int GetStatistics(ulong frameId, ref TagCOMPOSITIONFRAMESTATS frameStats, uint targetIdCount, ref TagCOMPOSITIONTARGETID targetIds, ref uint actualTargetIdCount);
+        public partial int GetStatistics(ulong frameId, ref CompositionFrameStats frameStats, uint targetIdCount, ref CompositionTargetId targetIds, ref uint actualTargetIdCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] TagCOMPOSITIONTARGETID* targetId, TagCOMPOSITIONTARGETSTATS* targetStats);
+        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] CompositionTargetId* targetId, CompositionTargetStats* targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] TagCOMPOSITIONTARGETID* targetId, ref TagCOMPOSITIONTARGETSTATS targetStats);
+        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] CompositionTargetId* targetId, ref CompositionTargetStats targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] in TagCOMPOSITIONTARGETID targetId, TagCOMPOSITIONTARGETSTATS* targetStats);
+        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] in CompositionTargetId targetId, CompositionTargetStats* targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] in TagCOMPOSITIONTARGETID targetId, ref TagCOMPOSITIONTARGETSTATS targetStats);
+        public partial int GetTargetStatistics(ulong frameId, [Flow(FlowDirection.In)] in CompositionTargetId targetId, ref CompositionTargetStats targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 219, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
