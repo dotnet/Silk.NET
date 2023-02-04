@@ -16,16 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_ControllerSensorEvent")]
-    public unsafe partial struct ControllerSensorEvent
+    [NativeName("Name", "SDL_JoyBatteryEvent")]
+    public unsafe partial struct JoyBatteryEvent
     {
-        public ControllerSensorEvent
+        public JoyBatteryEvent
         (
             uint? type = null,
             uint? timestamp = null,
             int? which = null,
-            int? sensor = null,
-            ulong? timestampUs = null
+            JoystickPowerLevel? level = null
         ) : this()
         {
             if (type is not null)
@@ -43,14 +42,9 @@ namespace Silk.NET.SDL
                 Which = which.Value;
             }
 
-            if (sensor is not null)
+            if (level is not null)
             {
-                Sensor = sensor.Value;
-            }
-
-            if (timestampUs is not null)
-            {
-                TimestampUs = timestampUs.Value;
+                Level = level.Value;
             }
         }
 
@@ -70,18 +64,9 @@ namespace Silk.NET.SDL
         [NativeName("Name", "which")]
         public int Which;
 
-        [NativeName("Type", "Sint32")]
-        [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "sensor")]
-        public int Sensor;
-        [NativeName("Type", "float[3]")]
-        [NativeName("Type.Name", "float[3]")]
-        [NativeName("Name", "data")]
-        public fixed float Data[3];
-
-        [NativeName("Type", "Uint64")]
-        [NativeName("Type.Name", "Uint64")]
-        [NativeName("Name", "timestamp_us")]
-        public ulong TimestampUs;
+        [NativeName("Type", "SDL_JoystickPowerLevel")]
+        [NativeName("Type.Name", "SDL_JoystickPowerLevel")]
+        [NativeName("Name", "level")]
+        public JoystickPowerLevel Level;
     }
 }

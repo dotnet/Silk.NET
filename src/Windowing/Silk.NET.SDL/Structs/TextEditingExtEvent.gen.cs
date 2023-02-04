@@ -16,16 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_ControllerSensorEvent")]
-    public unsafe partial struct ControllerSensorEvent
+    [NativeName("Name", "SDL_TextEditingExtEvent")]
+    public unsafe partial struct TextEditingExtEvent
     {
-        public ControllerSensorEvent
+        public TextEditingExtEvent
         (
             uint? type = null,
             uint? timestamp = null,
-            int? which = null,
-            int? sensor = null,
-            ulong? timestampUs = null
+            uint? windowID = null,
+            byte* text = null,
+            int? start = null,
+            int? length = null
         ) : this()
         {
             if (type is not null)
@@ -38,19 +39,24 @@ namespace Silk.NET.SDL
                 Timestamp = timestamp.Value;
             }
 
-            if (which is not null)
+            if (windowID is not null)
             {
-                Which = which.Value;
+                WindowID = windowID.Value;
             }
 
-            if (sensor is not null)
+            if (text is not null)
             {
-                Sensor = sensor.Value;
+                Text = text;
             }
 
-            if (timestampUs is not null)
+            if (start is not null)
             {
-                TimestampUs = timestampUs.Value;
+                Start = start.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
             }
         }
 
@@ -65,23 +71,24 @@ namespace Silk.NET.SDL
         [NativeName("Name", "timestamp")]
         public uint Timestamp;
 
-        [NativeName("Type", "SDL_JoystickID")]
-        [NativeName("Type.Name", "SDL_JoystickID")]
-        [NativeName("Name", "which")]
-        public int Which;
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "windowID")]
+        public uint WindowID;
+
+        [NativeName("Type", "char *")]
+        [NativeName("Type.Name", "char *")]
+        [NativeName("Name", "text")]
+        public byte* Text;
 
         [NativeName("Type", "Sint32")]
         [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "sensor")]
-        public int Sensor;
-        [NativeName("Type", "float[3]")]
-        [NativeName("Type.Name", "float[3]")]
-        [NativeName("Name", "data")]
-        public fixed float Data[3];
+        [NativeName("Name", "start")]
+        public int Start;
 
-        [NativeName("Type", "Uint64")]
-        [NativeName("Type.Name", "Uint64")]
-        [NativeName("Name", "timestamp_us")]
-        public ulong TimestampUs;
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "length")]
+        public int Length;
     }
 }

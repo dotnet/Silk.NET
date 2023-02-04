@@ -16,9 +16,9 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousRecord_SDL_joystick_L72_C9")]
-    [NativeName("Name", "SDL_JoystickGUID")]
-    public unsafe partial struct JoystickGUID
+    [NativeName("AnonymousName", "__AnonymousRecord_SDL_guid_L55_C9")]
+    [NativeName("Name", "SDL_GUID")]
+    public unsafe partial struct GUID
     {
         [NativeName("Type", "Uint8[16]")]
         [NativeName("Type.Name", "Uint8[16]")]
