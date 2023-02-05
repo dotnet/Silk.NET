@@ -39,7 +39,7 @@ jobs:
                       ~/.nuget/packages
                   key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
             - name: Setup .NET 6.0 and .NET 7.0
-              uses: actions/setup-dotnet@v1
+              uses: actions/setup-dotnet@v3.0.3
               with:
                   dotnet-version: |
                     6.0.201
@@ -71,7 +71,7 @@ jobs:
                       ~/.nuget/packages
                   key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
             - name: Setup .NET 6.0 and .NET 7.0
-              uses: actions/setup-dotnet@v1
+              uses: actions/setup-dotnet@v3.0.3
               with:
                   dotnet-version: |
                     6.0.201

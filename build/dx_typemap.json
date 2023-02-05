@@ -63,5 +63,6 @@
 	"D2D1_RECT_L": "Silk.NET.Maths.Box2D<int>",
 	"D2D1_SIZE_F": "Silk.NET.Maths.Vector2D<float>",
 	"D2D1_SIZE_U": "Silk.NET.Maths.Vector2D<uint>",
-    "D3D12_RAYTRACING_AABB": "Silk.NET.Maths.Box3D<float>"
+    "D3D12_RAYTRACING_AABB": "Silk.NET.Maths.Box3D<float>",
+    "bool": "Silk.NET.Core.Bool32"
 }
