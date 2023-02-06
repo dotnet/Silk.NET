@@ -440,9 +440,9 @@ partial class Build
                     //Copy libvkd3d.so
                     CopyFile(@dest / "usr" / "lib" / "libvkd3d.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d.so.1");
                     //Copy libvkd3d-utils.so
-                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-utils.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d-utils.so.1");
+                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-utils.so.1.3.2", runtimes / "linux-x64" / "native" / "libvkd3d-utils.so.1");
                     //Copy libvkd3d-shader.so
-                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.so.1.6.0", runtimes / "linux-x64" / "native" / "libvkd3d-shader.so.1");
+                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.so.1.4.0", runtimes / "linux-x64" / "native" / "libvkd3d-shader.so.1");
 
                     PrUpdatedNativeBinary("Vkd3d");
                 }
