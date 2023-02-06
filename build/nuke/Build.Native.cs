@@ -366,7 +366,7 @@ partial class Build
                     }
 
                     //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
-                    InheritedShell("git apply ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
+                    InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
 
                     var dest = Vkd3dPath / "dest";
                     var @out = Vkd3dPath / "build";
