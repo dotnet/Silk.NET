@@ -17,3 +17,4 @@ compatibility with the rest of your solution:
 - Silk.NET.SDL.Native and Silk.NET.GLFW.Native: Zlib
 - Silk.NET.OpenAL.Soft.Native: LGPL-2.0-or-later
 - Silk.NET.DXVK.Native: Zlib
+- Silk.NET.Vkd3d.Native: [GPL-2.1](https://gitlab.winehq.org/wine/vkd3d/-/raw/master/LICENSE)
