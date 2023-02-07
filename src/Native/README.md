@@ -18,3 +18,4 @@ compatibility with the rest of your solution:
 - Silk.NET.OpenAL.Soft.Native: LGPL-2.0-or-later
 - Silk.NET.WebGPU.Native.WGPU: MIT/Apache-2.0
 - Silk.NET.DXVK.Native: Zlib
+- Silk.NET.Vkd3d.Native: [GPL-2.1](https://gitlab.winehq.org/wine/vkd3d/-/raw/master/LICENSE)
