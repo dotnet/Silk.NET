@@ -14,7 +14,14 @@ on:
       - 'documentation/**'
 jobs:
   Build:
-    runs-on: windows-latest
+    # This will:
+    # - use windows-quick (self-hosted only) for release tags on this repo
+    # - use windows-2022 (self-hosted or GitHub-hosted depending on what's available) for development in this repo
+    # - use windows-latest (GitHub-hosted only) in all other cases (i.e. community contributions)
+    # Note: the reason we use windows-2022 instead of windows-latest is so that both the self-hosted runner
+    # (which has the windows-2022 label but NOT the windows-latest label) and the GitHub hosted runner are
+    # treated as candidates. We will never have a windows-latest self-hosted runner even if it is the latest. 
+    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') && 'windows-quick' || github.repository == 'dotnet/Silk.NET' && 'windows-2022' || 'windows-latest' }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -24,6 +31,10 @@ jobs:
       with:
         java-version: 11
         distribution: "temurin"
+    - name: Setup .NET 7.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.102
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
@@ -36,8 +47,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.404
-    - name: Setup NUKE
-      run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
       run: dotnet workload install android ios maccatalyst maui
@@ -45,18 +54,18 @@ jobs:
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
-      run: nuke Test --skip Clean Restore Compile
+      run: .\build.cmd Test --skip Clean Restore Compile
     - name: Validation Checks
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-      run: nuke ValidateSolution
+      run: .\build.cmd ValidateSolution
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
+      run: .\build.cmd Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true
     - name: Pack (CD)
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       # TODO build native mixins such as BuildLibSilkDroid
-      run: nuke Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
+      run: .\build.cmd Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true
     - name: Upload Unsigned Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
@@ -66,13 +75,13 @@ jobs:
         retention-days: 1
     - name: Sign Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
-      run: nuke SignPackages --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+      run: .\build.cmd SignPackages --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
     - name: Push to Azure Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
     - name: Push to GitHub Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+      run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     - name: Upload Signed Artifacts to Actions
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2.2.4
@@ -82,5 +91,5 @@ jobs:
         if-no-files-found: warn
     - name: Push to NuGet
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
-      run: nuke PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
+      run: .\build.cmd PushToNuGet --skip Clean Restore Pack --nuget-api-key ${{ secrets.NUGET_TOKEN }}
     

@@ -54,6 +54,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MeshShaderInvocationsBitExt\"")]
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
         QueryPipelineStatisticMeshShaderInvocationsBitExt = 4096,
+        [Obsolete("Deprecated in favour of \"ClusterCullingShaderInvocationsBitHuawei\"")]
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI")]
+        QueryPipelineStatisticClusterCullingShaderInvocationsBitHuawei = 8192,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_VERTICES_BIT")]
         InputAssemblyVerticesBit = 1,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_PRIMITIVES_BIT")]
@@ -80,5 +83,7 @@ namespace Silk.NET.Vulkan
         TaskShaderInvocationsBitExt = 2048,
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
         MeshShaderInvocationsBitExt = 4096,
+        [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI")]
+        ClusterCullingShaderInvocationsBitHuawei = 8192,
     }
 }

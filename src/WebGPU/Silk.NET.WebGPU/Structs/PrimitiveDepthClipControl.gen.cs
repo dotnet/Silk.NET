@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public PrimitiveDepthClipControl
         (
             ChainedStruct? chain = null,
-            bool? unclippedDepth = null
+            Silk.NET.Core.Bool32? unclippedDepth = null
         ) : this()
         {
             if (chain is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "unclippedDepth")]
-        public bool UnclippedDepth;
+        public Silk.NET.Core.Bool32 UnclippedDepth;
     }
 }

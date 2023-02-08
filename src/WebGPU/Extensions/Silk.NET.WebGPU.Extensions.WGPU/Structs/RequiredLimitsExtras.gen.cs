@@ -22,8 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public RequiredLimitsExtras
         (
             ChainedStruct? chain = null,
-            uint? maxPushConstantSize = null,
-            ulong? maxBufferSize = null
+            uint? maxPushConstantSize = null
         ) : this()
         {
             if (chain is not null)
@@ -34,11 +33,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             if (maxPushConstantSize is not null)
             {
                 MaxPushConstantSize = maxPushConstantSize.Value;
-            }
-
-            if (maxBufferSize is not null)
-            {
-                MaxBufferSize = maxBufferSize.Value;
             }
         }
 
@@ -52,10 +46,5 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxPushConstantSize")]
         public uint MaxPushConstantSize;
-
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxBufferSize")]
-        public ulong MaxBufferSize;
     }
 }

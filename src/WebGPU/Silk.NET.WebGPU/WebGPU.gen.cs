@@ -101,22 +101,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public unsafe partial bool AdapterGetLimits(Adapter* adapter, SupportedLimits* limits);
+        public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(Adapter* adapter, SupportedLimits* limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public unsafe partial bool AdapterGetLimits(Adapter* adapter, ref SupportedLimits limits);
+        public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(Adapter* adapter, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public unsafe partial bool AdapterGetLimits(ref Adapter adapter, SupportedLimits* limits);
+        public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(ref Adapter adapter, SupportedLimits* limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public partial bool AdapterGetLimits(ref Adapter adapter, ref SupportedLimits limits);
+        public partial Silk.NET.Core.Bool32 AdapterGetLimits(ref Adapter adapter, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1411, Column 18 in webgpu.h")]
@@ -141,12 +141,12 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1412, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterHasFeature")]
-        public unsafe partial bool AdapterHasFeature(Adapter* adapter, FeatureName feature);
+        public unsafe partial Silk.NET.Core.Bool32 AdapterHasFeature(Adapter* adapter, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1412, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterHasFeature")]
-        public partial bool AdapterHasFeature(ref Adapter adapter, FeatureName feature);
+        public partial Silk.NET.Core.Bool32 AdapterHasFeature(ref Adapter adapter, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
@@ -1571,22 +1571,22 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public unsafe partial bool DeviceGetLimits(Device* device, SupportedLimits* limits);
+        public unsafe partial Silk.NET.Core.Bool32 DeviceGetLimits(Device* device, SupportedLimits* limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public unsafe partial bool DeviceGetLimits(Device* device, ref SupportedLimits limits);
+        public unsafe partial Silk.NET.Core.Bool32 DeviceGetLimits(Device* device, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public unsafe partial bool DeviceGetLimits(ref Device device, SupportedLimits* limits);
+        public unsafe partial Silk.NET.Core.Bool32 DeviceGetLimits(ref Device device, SupportedLimits* limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public partial bool DeviceGetLimits(ref Device device, ref SupportedLimits limits);
+        public partial Silk.NET.Core.Bool32 DeviceGetLimits(ref Device device, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1486, Column 23 in webgpu.h")]
@@ -1601,32 +1601,32 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1487, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceHasFeature")]
-        public unsafe partial bool DeviceHasFeature(Device* device, FeatureName feature);
+        public unsafe partial Silk.NET.Core.Bool32 DeviceHasFeature(Device* device, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1487, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceHasFeature")]
-        public partial bool DeviceHasFeature(ref Device device, FeatureName feature);
+        public partial Silk.NET.Core.Bool32 DeviceHasFeature(ref Device device, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public unsafe partial bool DevicePopErrorScope(Device* device, PfnErrorCallback callback, void* userdata);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope(Device* device, PfnErrorCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public unsafe partial bool DevicePopErrorScope<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public unsafe partial bool DevicePopErrorScope(ref Device device, PfnErrorCallback callback, void* userdata);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope(ref Device device, PfnErrorCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public partial bool DevicePopErrorScope<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1489, Column 18 in webgpu.h")]

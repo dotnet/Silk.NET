@@ -12,6 +12,10 @@ partial class Build
     // ReSharper disable once RedundantEmptyObjectOrCollectionInitializer
     readonly HashSet<string> AllowedExclusions = new()
     {
+		"silkwindow",
+		"silkgl",
+		"silkgltriangle",
+        "DotZLib"
     };
 
     Target ValidateSolution => CommonTarget
@@ -20,8 +24,8 @@ partial class Build
         (
             () =>
             {
-                var files = SourceDirectory.GlobFiles("**/*.csproj").ToArray();
-                Logger.Info($"Found {files.Length} csproj files in \"{SourceDirectory}\"");
+                var files = RootDirectory.GlobFiles("**\\*.csproj").Concat(RootDirectory.GlobFiles("**/*.csproj")).ToArray();
+                Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
                 var missedOut = new List<string>();
                 foreach (var file in files)
                 {
@@ -41,7 +45,7 @@ partial class Build
                         (
                             "A project has not been included in the solution and will not be shipped! " +
                             $"\"{file}\" if this is acceptable please add the project name (excluding the path and " +
-                            "extension) to the AllowedExclusions array in the NUKE Build.CI.AutoReview.cs file."
+                            "extension) to the AllowedExclusions array in the NUKE Build.ReviewHelpers.cs file."
                         );
 
                         missedOut.Add(Path.GetRelativePath(RootDirectory, file).Replace('\\', '/'));
