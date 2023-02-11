@@ -18,6 +18,6 @@ pub fn build(b: *std.Build) void {
     vkd3d_shim.linkLibC();
 
     vkd3d_shim.addCSourceFiles(&.{"lib.c"}, &.{"-std=c99", "-fPIC"});
-    vkd3d_shim.addSystemIncludePath("../../../../build/submodules/vkd3d/include/");
+    vkd3d_shim.addSystemIncludePath("../../../build/submodules/vkd3d/include/");
     vkd3d_shim.install();
 }
