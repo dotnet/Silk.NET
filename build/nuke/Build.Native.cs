@@ -421,6 +421,26 @@ partial class Build
 
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
 
+                    var vkd3dBuild = SPIRVToolsPath / "build";
+                    EnsureCleanDirectory(vkd3dBuild);
+
+                    { //SPIRV-Tools
+                        //Clone the SPIRV-Headers external repo
+                        InheritedShell($"git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers", SPIRVToolsPath).AssertZeroExitCode();
+
+                        //Make the build scripts, with shared libs enabled
+                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1", vkd3dBuild).AssertZeroExitCode();
+
+                        //Compile SPIRV-Tools
+                        InheritedShell($"cmake --build . --config Release", vkd3dBuild).AssertZeroExitCode();
+
+                        //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
+                        InheritedShell($"strip -g libSPIRV-Tools-shared.so", vkd3dBuild / "source").AssertZeroExitCode();
+
+                        //Copy the resulting SPIRV-Tools shared library to the runtimes folder
+                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", runtimes / "linux-x64" / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                    }
+
                     { //Vkd3d
                         //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
                         InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
@@ -444,33 +464,14 @@ partial class Build
                         CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.a", vkd3dShaderCompiler / "libvkd3d-shader.a");
                         //Copy libvkd3d-shader.la
                         CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.la", vkd3dShaderCompiler / "libvkd3d-shader.la");
+                        //Copy libSPIRV-Tools-shared.so
+                        CopyFile(vkd3dBuild / "source" / "libSPIRV-Tools-shared.so", vkd3dShaderCompiler / "libSPIRV-Tools-shared.so");
 
                         //Build the shader compiler
                         InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
 
                         //Copy the resulting shader compiler to the native output
                         CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
-                    }
-
-                    { //SPIRV-Tools
-                        //Clone the SPIRV-Headers external repo
-                        InheritedShell($"git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers", SPIRVToolsPath).AssertZeroExitCode();
-
-                        //Our build directory
-                        var @out = SPIRVToolsPath / "build";
-                        EnsureCleanDirectory(@out);
-
-                        //Make the build scripts, with shared libs enabled
-                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1", @out).AssertZeroExitCode();
-
-                        //Compile SPIRV-Tools
-                        InheritedShell($"cmake --build . --config Release", @out).AssertZeroExitCode();
-
-                        //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
-                        InheritedShell($"strip -g libSPIRV-Tools-shared.so", @out / "source").AssertZeroExitCode();
-
-                        //Copy the resulting SPIRV-Tools shared library to the runtimes folder
-                        CopyFile(@out / "source" / "libSPIRV-Tools-shared.so", runtimes / "linux-x64" / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
                     }
 
                     PrUpdatedNativeBinary("Vkd3d");
