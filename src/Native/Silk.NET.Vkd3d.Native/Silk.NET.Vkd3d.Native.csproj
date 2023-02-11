@@ -25,6 +25,7 @@
         <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
 
         <Content Include="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" PackagePath="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" />
+        <Content Include="runtimes\linux-x64\native\libSPIRV-Tools-shared.so" PackagePath="runtimes\linux-x64\native\libSPIRV-Tools-shared.so" />
     </ItemGroup>
 
 </Project>

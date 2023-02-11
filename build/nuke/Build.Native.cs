@@ -404,6 +404,7 @@ partial class Build
     );
 
     AbsolutePath Vkd3dPath => RootDirectory / "build" / "submodules" / "vkd3d";
+    AbsolutePath SPIRVToolsPath => RootDirectory / "build" / "submodules" / "SPIRV-Tools";
 
     Target Vkd3d => CommonTarget
         (
@@ -418,35 +419,59 @@ partial class Build
                         throw new PlatformNotSupportedException("This task only runs on Linux!");
                     }
 
-                    //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
-                    InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
-
-                    var dest = Vkd3dPath / "dest";
-                    var @out = Vkd3dPath / "build";
-                    EnsureCleanDirectory(@out);
-                    EnsureCleanDirectory(dest);
-                    //Run autogen
-                    InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
-                    //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
-                    InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools", Vkd3dPath).AssertZeroExitCode();
-                    //Build vkd3d
-                    InheritedShell($"make -j4", Vkd3dPath).AssertZeroExitCode();
-                    //Install vkd3d to the dest folder
-                    InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
-
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vkd3d.Native" / "runtimes";
-                    var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
 
-                    //Copy libvkd3d-shader.a
-                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.a", vkd3dShaderCompiler / "libvkd3d-shader.a");
-                    //Copy libvkd3d-shader.la
-                    CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.la", vkd3dShaderCompiler / "libvkd3d-shader.la");
+                    { //Vkd3d
+                        //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
+                        InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
 
-                    //Build the shader compiler
-                    InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
+                        var dest = Vkd3dPath / "dest";
+                        var @out = Vkd3dPath / "build";
+                        EnsureCleanDirectory(@out);
+                        EnsureCleanDirectory(dest);
+                        //Run autogen
+                        InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
+                        //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
+                        InheritedShell($"./configure CPPFLAGS=\"-DNDEBUG -DVKD3D_NO_TRACE_MESSAGES -fPIC\" --prefix=/usr --with-spirv-tools", Vkd3dPath).AssertZeroExitCode();
+                        //Build vkd3d
+                        InheritedShell($"make -j4", Vkd3dPath).AssertZeroExitCode();
+                        //Install vkd3d to the dest folder
+                        InheritedShell($"make DESTDIR=\"{Vkd3dPath.ToString().TrimEnd('/')}/dest\" install", Vkd3dPath).AssertZeroExitCode();
 
-                    //Copy the resulting shader compiler to the native output
-                    CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
+                        var vkd3dShaderCompiler = RootDirectory / "src" / "Microsoft" / "Vkd3dCompiler";
+
+                        //Copy libvkd3d-shader.a
+                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.a", vkd3dShaderCompiler / "libvkd3d-shader.a");
+                        //Copy libvkd3d-shader.la
+                        CopyFile(@dest / "usr" / "lib" / "libvkd3d-shader.la", vkd3dShaderCompiler / "libvkd3d-shader.la");
+
+                        //Build the shader compiler
+                        InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
+
+                        //Copy the resulting shader compiler to the native output
+                        CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
+                    }
+
+                    { //SPIRV-Tools
+                        //Clone the SPIRV-Headers external repo
+                        InheritedShell($"git clone https://github.com/KhronosGroup/SPIRV-Headers.git external/spirv-headers", SPIRVToolsPath).AssertZeroExitCode();
+
+                        //Our build directory
+                        var @out = SPIRVToolsPath / "build";
+                        EnsureCleanDirectory(@out);
+
+                        //Make the build scripts, with shared libs enabled
+                        InheritedShell($"cmake .. -DBUILD_SHARED_LIBS=1", @out).AssertZeroExitCode();
+
+                        //Compile SPIRV-Tools
+                        InheritedShell($"cmake --build . --config Release", @out).AssertZeroExitCode();
+
+                        //Run `strip -g` on the shared library file to remove debug info and shrink it from ~30mb down to only ~5.5mb
+                        InheritedShell($"strip -g libSPIRV-Tools-shared.so", @out / "source").AssertZeroExitCode();
+
+                        //Copy the resulting SPIRV-Tools shared library to the runtimes folder
+                        CopyFile(@out / "source" / "libSPIRV-Tools-shared.so", runtimes / "linux-x64" / "native" / "libSPIRV-Tools-shared.so", FileExistsPolicy.Overwrite);
+                    }
 
                     PrUpdatedNativeBinary("Vkd3d");
                 }
