@@ -393,7 +393,7 @@ partial class Build
                     InheritedShell($"zig build -Doptimize=ReleaseSmall -Dtarget=x86_64-linux-gnu --verbose", vkd3dShaderCompiler).AssertZeroExitCode();
 
                     //Copy the resulting shader compiler to the native output
-                    CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so");
+                    CopyFile(vkd3dShaderCompiler / "zig-out" / "lib" / "libd3dcompile_vkd3d.so", runtimes / "linux-x64" / "native" / "libd3dcompile_vkd3d.so", FileExistsPolicy.Overwrite);
 
                     PrUpdatedNativeBinary("Vkd3d");
                 }
