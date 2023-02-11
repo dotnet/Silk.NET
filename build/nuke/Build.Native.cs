@@ -389,13 +389,12 @@ partial class Build
                     }
 
                     { //Vkd3d
-                        //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
-                        InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
-
                         var dest = Vkd3dPath / "dest";
                         var @out = Vkd3dPath / "build";
+
                         EnsureCleanDirectory(@out);
                         EnsureCleanDirectory(dest);
+
                         //Run autogen
                         InheritedShell($"./autogen.sh", Vkd3dPath).AssertZeroExitCode();
                         //Run configure to make a non-debug build, with no trace messages, with a prefix of /usr and with spirv-tools
