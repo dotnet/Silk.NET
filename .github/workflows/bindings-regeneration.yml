@@ -54,7 +54,7 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
     - name: Create or Update Pull Request
-      uses: gr2m/create-or-update-pull-request-action@master
+      uses: gr2m/create-or-update-pull-request-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
