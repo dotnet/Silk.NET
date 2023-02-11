@@ -10,6 +10,7 @@ on:
       - "build/submodules/vkd3d-no-ms-abi.patch"
       - "build/nuke/Build.Native.cs"
       - ".github/workflows/vkd3d.yml"
+      - "src/Microsoft/Vkd3dCompiler/*"
 jobs:
   Build:
     strategy:
