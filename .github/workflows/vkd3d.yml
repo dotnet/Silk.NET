@@ -25,10 +25,6 @@ jobs:
 
               wget http://mirrors.kernel.org/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2020.1-2_amd64.deb
               sudo apt install ./spirv-tools_2020.1-2_amd64.deb
-
-              wget https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1593+d24ebf1d1.tar.xz
-              tar -xf zig-linux-x86_64-0.11.0-dev.1593+d24ebf1d1.tar.xz
-              export PATH=$PATH:$PWD/zig-linux-x86_64-0.11.0-dev.1593+d24ebf1d1
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
@@ -44,6 +40,8 @@ jobs:
         run: |
           echo running extras
           ${{ matrix.env.extras }}
+      - name: Install Zig
+        uses: goto-bus-stop/setup-zig@v2
       - name: Setup .NET 6.0 and .NET 7.0
         uses: actions/setup-dotnet@v1
         with:
