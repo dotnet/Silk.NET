@@ -11,7 +11,7 @@ namespace Silk.NET.Direct3D.Compilers
     internal class D3DCompilerLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libvkd3d-utils.so.1";
+        public override string Linux => "libd3dcompile_vkd3d.so";
 
         /// <inheritdoc />
         public override string MacOS => "libD3DCompiler_47.dylib";
