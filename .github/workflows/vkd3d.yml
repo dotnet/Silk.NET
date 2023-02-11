@@ -22,7 +22,10 @@ jobs:
             nuke_invoke: ./build.sh
             extras: |
               sudo apt-get update 
-              sudo apt-get install -y xorg-dev libvulkan-dev spirv-headers wine64-development-tools spirv-tools
+              sudo apt-get install -y xorg-dev libvulkan-dev spirv-headers wine64-development-tools
+
+              wget http://mirrors.kernel.org/ubuntu/pool/universe/s/spirv-tools/spirv-tools_2020.1-2_amd64.deb
+              sudo apt install ./spirv-tools_2020.1-2_amd64.deb
     name: ${{ matrix.env.name }} Build
     runs-on: ${{ matrix.env.os }}
     steps:
