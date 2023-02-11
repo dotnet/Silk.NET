@@ -418,8 +418,8 @@ partial class Build
                         throw new PlatformNotSupportedException("This task only runs on Linux!");
                     }
 
-                    //Apply a patch to statically link SPIRV-Tools
-                    InheritedShell("patch -p1 < ../vkd3d-static-spirv-tools.patch", Vkd3dPath).AssertZeroExitCode();
+                    //Apply the patch to fix the ABI used by vkd3d so we can P/Invoke into it
+                    InheritedShell("patch -p1 < ../vkd3d-no-ms-abi.patch", Vkd3dPath).AssertZeroExitCode();
 
                     var dest = Vkd3dPath / "dest";
                     var @out = Vkd3dPath / "build";
