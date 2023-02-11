@@ -44,16 +44,12 @@ jobs:
             .tmp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-      - name: Setup .NET 6.0 and .NET 7.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: |
-            6.0.201
-            7.0.*
       - name: Build DXVK
         uses: Joshua-Ashton/arch-mingw-github-action@12cb3126180924c3be54025b08f42e4e14da080b
         with:
           command: |
+            pacman -Syu --needed --noconfirm dotnet-host dotnet-runtime dotnet-runtime-6.0 dotnet-sdk dotnet-sdk-6.0 dotnet-targeting-pack dotnet-targeting-pack-6.0
+
             ${{ matrix.env.nuke_invoke }} Dxvk
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
