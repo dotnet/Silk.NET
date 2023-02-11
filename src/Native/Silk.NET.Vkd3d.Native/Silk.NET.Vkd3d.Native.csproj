@@ -24,9 +24,7 @@
     <ItemGroup>
         <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
 
-        <Content Include="runtimes\linux-x64\native\libvkd3d.so.1" PackagePath="runtimes\linux-x64\native\libvkd3d.so.1" />
-        <Content Include="runtimes\linux-x64\native\libvkd3d-utils.so.1" PackagePath="runtimes\linux-x64\native\libvkd3d-utils.so.1" />
-        <Content Include="runtimes\linux-x64\native\libvkd3d-shader.so.1" PackagePath="runtimes\linux-x64\native\libvkd3d-shader.so.1" />
+        <Content Include="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" PackagePath="runtimes\linux-x64\native\libd3dcompile_vkd3d.so" />
     </ItemGroup>
 
 </Project>
