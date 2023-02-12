@@ -14,4 +14,4 @@ public sealed record ClassSymbol
     IdentifierSymbol Identifier,
     ImmutableArray<MemberSymbol> Members,
     ImmutableArray<ISymbolAnnotation> Annotations
-) : TypeSymbol(Id, Identifier, Annotations);
+) : TypeSymbol(Id, Identifier, Members, Annotations);

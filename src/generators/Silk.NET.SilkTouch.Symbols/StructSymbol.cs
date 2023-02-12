@@ -25,4 +25,4 @@ public sealed record StructSymbol
     IdentifierSymbol Identifier,
     ImmutableArray<MemberSymbol> Members,
     ImmutableArray<ISymbolAnnotation> Annotations
-) : TypeSymbol(Id, Identifier, Annotations);
+) : TypeSymbol(Id, Identifier, Members, Annotations);
