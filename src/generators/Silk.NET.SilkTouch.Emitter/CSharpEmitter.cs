@@ -81,25 +81,37 @@ public sealed class CSharpEmitter
             ClearState();
 
             Indent();
-            var fields = new List<MemberDeclarationSyntax>(structSymbol.Fields.Length);
-            foreach (var field in structSymbol.Fields)
+            var members = new List<MemberDeclarationSyntax>(structSymbol.Members.Length);
+            
+            foreach (var member in structSymbol.Members)
             {
-                VisitField(field);
-                if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
-                    throw new InvalidOperationException("Member was not visited correctly");
-                ClearState();
-                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(NewLine);
-                fields.Add(memberDeclarationSyntax);
+                switch (member)
+                {
+                    case MethodSymbol method:
+                    {
+                        throw new NotImplementedException("Struct methods not implemented");
+                    }
+
+                    case FieldSymbol field:
+                    {
+                        VisitField(field);
+                        if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
+                            throw new InvalidOperationException("Member was not visited correctly");
+                        ClearState();
+                        memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(NewLine);
+                        members.Add(memberDeclarationSyntax);
+                        break;
+                    }
+                }
             }
             
-            var members = List(fields);
             Outdent();
             
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
                     default, modifiers, identifierToken, null, null, List<TypeParameterConstraintClauseSyntax>(),
-                    members
+                    List(members)
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
                 .WithOpenBraceToken(Token(TriviaList(NewLine), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
@@ -117,21 +129,27 @@ public sealed class CSharpEmitter
             ClearState();
 
             Indent();
-            var members = List
-            (
-                classSymbol.Methods.Select
-                    (
-                        x =>
-                        {
-                            VisitMethod(x);
-                            if (_syntax is not MethodDeclarationSyntax mds)
-                                throw new InvalidOperationException("Method not visited correctly");
-                            ClearState();
-                            return ((MemberDeclarationSyntax) mds).WithLeadingTrivia(NewLine);
-                        }
-                    )
-                    .ToImmutableArray()
-            );
+
+            var members = new List<MemberDeclarationSyntax>();
+            foreach (var member in classSymbol.Members)
+            {
+                switch (member)
+                {
+                    case MethodSymbol method:
+                    {
+                        VisitMethod(method);
+                        if (_syntax is not MethodDeclarationSyntax mds)
+                            throw new InvalidOperationException("Method not visited correctly");
+                        ClearState();
+                        members.Add(mds.WithLeadingTrivia(NewLine));
+                        break;
+                    }
+                    case FieldSymbol field:
+                    {
+                        throw new NotImplementedException("Class fields not implemented");
+                    }
+                }
+            }
             Outdent();
 
             _syntax = ClassDeclaration(identifierSyntaxToken.WithLeadingTrivia(Space))
@@ -139,7 +157,7 @@ public sealed class CSharpEmitter
                 .WithKeyword(Token(SyntaxKind.ClassKeyword).WithLeadingTrivia(Space))
                 .WithOpenBraceToken(Token(SyntaxKind.OpenBraceToken).WithLeadingTrivia(NewLine))
                 .WithCloseBraceToken(Token(SyntaxKind.CloseBraceToken).WithLeadingTrivia(NewLine))
-                .WithMembers(members);
+                .WithMembers(List(members));
             
             return classSymbol;
         }

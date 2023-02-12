@@ -17,7 +17,7 @@ public sealed class TypeScopeSymbolVisitorTests
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
@@ -55,7 +55,7 @@ public sealed class TypeScopeSymbolVisitorTests
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var @namespace = new NamespaceSymbol
@@ -82,21 +82,21 @@ public sealed class TypeScopeSymbolVisitorTests
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("T1", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var testType2 = new StructSymbol
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("T2", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var testType3 = new StructSymbol
         (
             TypeId.CreateNew(),
             new IdentifierSymbol("T3", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         var @namespace = new NamespaceSymbol

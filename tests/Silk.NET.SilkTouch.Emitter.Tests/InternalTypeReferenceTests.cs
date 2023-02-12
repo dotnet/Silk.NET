@@ -20,7 +20,7 @@ public class InternalTypeReferenceTests : EmitterTest
         (
             typeId,
             new IdentifierSymbol("Identifier", ImmutableArray<ISymbolAnnotation>.Empty),
-            ImmutableArray<FieldSymbol>.Empty,
+            ImmutableArray<MemberSymbol>.Empty,
             ImmutableArray<ISymbolAnnotation>.Empty
         );
         typeStore.Store(actualType);

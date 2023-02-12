@@ -4,10 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
 using System.Xml;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Scraper.Annotations;
@@ -68,9 +65,9 @@ internal sealed class XmlVisitor
                 x =>
                 {
                     var results = Visit(x).ToArray();
-                    if (results.Any(x => x is not MethodSymbol))
-                        throw new NotImplementedException("Class only supports method members for now");
-                    return results.OfType<MethodSymbol>();
+                    if (results.Any(m => m is not MemberSymbol))
+                        throw new NotImplementedException("Invalid type encountered in class members");
+                    return results.OfType<MemberSymbol>();
                 }
             );
         return new[]
@@ -112,7 +109,7 @@ internal sealed class XmlVisitor
 
                     var paramTypeNode = x.ChildNodes.Cast<XmlNode>()
                         .OfType<XmlElement>()
-                        .SingleOrDefault(x => x.Name == "type");
+                        .SingleOrDefault(e => e.Name == "type");
                     if (paramTypeNode is null)
                         throw new InvalidOperationException("Parameter type cannot be null");
 
@@ -209,21 +206,25 @@ internal sealed class XmlVisitor
 
     private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
     {
-        var fields = new FieldSymbol[@struct.ChildNodes.Count];
+        var members = new MemberSymbol[@struct.ChildNodes.Count];
         var i = 0;
         foreach (var node in @struct.ChildNodes.Cast<XmlNode>())
         {
             var symbols = Visit(node);
             foreach (var v in symbols)
             {
-                if (v is FieldSymbol fieldSymbol)
+                if (v is MemberSymbol memberSymbol)
                 {
-                    fields[i++] = fieldSymbol;
+                    members[i++] = memberSymbol;
+                }
+                else
+                {
+                    throw new NotImplementedException("Invalid type encountered in struct members");
                 }
             }
         }
 
-        var name = @struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException();
+        var name = @struct.Attributes["name"]?.Value ?? throw new InvalidOperationException();
         return new[]
         {
             StoreType
@@ -236,7 +237,7 @@ internal sealed class XmlVisitor
                         name,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     ),
-                    ImmutableArray.Create(fields, 0, i),
+                    ImmutableArray.Create(members, 0, i),
                     ImmutableArray.Create<ISymbolAnnotation>(new NativeNameAnnotation(name))
                 )
             )
@@ -250,7 +251,7 @@ internal sealed class XmlVisitor
 
     private IEnumerable<Symbol> VisitNamespace(XmlElement @namespace)
     {
-        var name = @namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException();
+        var name = @namespace.Attributes["name"]?.Value ?? throw new InvalidOperationException();
         return new[]
         {
             new NamespaceSymbol

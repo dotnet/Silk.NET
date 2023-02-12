@@ -26,7 +26,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
                 ImmutableArray.Create
                 (
-                    new FieldSymbol
+                    (MemberSymbol)new FieldSymbol
                     (
                         new ExternalTypeReference
                         (
@@ -66,7 +66,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
                 ImmutableArray.Create
                 (
-                    new FieldSymbol
+                    (MemberSymbol)new FieldSymbol
                     (
                         new ExternalTypeReference
                         (

@@ -73,7 +73,7 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.Id, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Identifier, f => IdentifierSymbol.Generate())
-            .RuleFor(x => x.Methods, f => MethodSymbol.GenerateImmutableArray(0, StandardGenerateCount))
+            .RuleFor(x => x.Members, f => MethodSymbol.GenerateImmutableArray(0, StandardGenerateCount).CastArray<MemberSymbol>())
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
     
     public static Faker<FieldSymbol> FieldSymbol { get; } =
@@ -95,14 +95,13 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.ReferencedTypeId, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
-    
-    public static Faker<TypeSymbol> TypeSymbol { get; } =
-        new Faker<TypeSymbol>()
-            .Ignore(x => x.Id)
-            .Ignore(x => x.Identifier)
-            .Ignore(x => x.Annotations)
-            // TODO: Generate Structs & Classes here
-            .CustomInstantiator(f => ClassSymbol.Generate());
+
+    public static Faker<TypeSymbol> TypeSymbol { get; } = new Faker<TypeSymbol>()
+        .Ignore(x => x.Id)
+        .Ignore(x => x.Identifier)
+        .Ignore(x => x.Annotations)
+        .Ignore(x => x.Members)
+        .CustomInstantiator(e => e.PickRandom(new TypeSymbol[] { ClassSymbol.Generate(), StructSymbol!.Generate() }));
 
     public static Faker<NamespaceSymbol> NamespaceSymbol { get; } =
         new Faker<NamespaceSymbol>()
@@ -122,7 +121,7 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.Id, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Identifier, f => IdentifierSymbol.Generate())
-            .RuleFor(x => x.Fields, f => FieldSymbol.GenerateImmutableArray(0, StandardGenerateCount))
+            .RuleFor(x => x.Members, f => FieldSymbol.GenerateImmutableArray(0, StandardGenerateCount).CastArray<MemberSymbol>())
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
     
     public static Faker<UnresolvedTypeReference> UnresolvedTypeReference { get; } =

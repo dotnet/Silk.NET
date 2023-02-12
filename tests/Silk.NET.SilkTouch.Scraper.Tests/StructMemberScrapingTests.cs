@@ -22,7 +22,7 @@ public class StructMemberScrapingTests
 
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);
-        var fields = @struct.Fields;
+        var fields = @struct.Members;
         Assert.Collection(fields, 
             (e) =>
             {
@@ -47,7 +47,7 @@ public class StructMemberScrapingTests
 
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);
-        var fields = @struct.Fields;
+        var fields = @struct.Members;
         Assert.Collection(fields, 
             (e) =>
             {
