@@ -10,7 +10,7 @@ namespace Silk.NET.Maths.Benchmark
     {
         public static void Main(string[] args)
         {
-            BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()).Run(args);
+            BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()!).Run(args);
         }
     }
 }
