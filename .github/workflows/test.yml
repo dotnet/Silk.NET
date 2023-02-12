@@ -6,6 +6,9 @@ on:
             - "release/*"
     pull_request:
         # any
+    merge_group:
+        types: [checks_requested]
+
 jobs:
     Test:
         strategy:
