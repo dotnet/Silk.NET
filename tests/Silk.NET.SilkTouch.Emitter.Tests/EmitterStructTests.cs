@@ -18,7 +18,7 @@ public sealed class EmitterStructTests : EmitterTest
      Trait("Target Language", "C#")]
     public void StructSyntax()
     {
-        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty), ImmutableArray<FieldSymbol>.Empty, ImmutableArray<ISymbolAnnotation>.Empty));
+        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty), ImmutableArray<MemberSymbol>.Empty, ImmutableArray<ISymbolAnnotation>.Empty));
         Assert.IsType<StructDeclarationSyntax>(syntax);
     }
 
@@ -34,7 +34,7 @@ public sealed class EmitterStructTests : EmitterTest
             (
                 TypeId.CreateNew(),
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                ImmutableArray<FieldSymbol>.Empty,
+                ImmutableArray<MemberSymbol>.Empty,
                 ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as StructDeclarationSyntax;
@@ -53,7 +53,7 @@ public sealed class EmitterStructTests : EmitterTest
             (
                 TypeId.CreateNew(),
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                ImmutableArray<FieldSymbol>.Empty,
+                ImmutableArray<MemberSymbol>.Empty,
                 ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as StructDeclarationSyntax;
@@ -72,7 +72,7 @@ public sealed class EmitterStructTests : EmitterTest
             (
                 TypeId.CreateNew(),
                 new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                ImmutableArray<FieldSymbol>.Empty,
+                ImmutableArray<MemberSymbol>.Empty,
                 ImmutableArray<ISymbolAnnotation>.Empty
             )
         ) as StructDeclarationSyntax;
@@ -98,7 +98,7 @@ public sealed class EmitterStructTests : EmitterTest
                     (
                         TypeId.CreateNew(),
                         new IdentifierSymbol("Test", ImmutableArray<ISymbolAnnotation>.Empty),
-                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<MemberSymbol>.Empty,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     )
                 )

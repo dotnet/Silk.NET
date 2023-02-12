@@ -235,7 +235,7 @@ public abstract class SymbolVisitor
         (
             classSymbol.Id,
             VisitIdentifier(classSymbol.Identifier),
-            classSymbol.Methods.Select(VisitMethod).ToImmutableArray(),
+            classSymbol.Members.Select(VisitMember).ToImmutableArray(),
             classSymbol.Annotations
         );
     }
@@ -255,7 +255,7 @@ public abstract class SymbolVisitor
         (
             structSymbol.Id,
             VisitIdentifier(structSymbol.Identifier),
-            structSymbol.Fields.Select(VisitField).ToImmutableArray(),
+            structSymbol.Members.Select(VisitMember).ToImmutableArray(),
             structSymbol.Annotations
         );
     }

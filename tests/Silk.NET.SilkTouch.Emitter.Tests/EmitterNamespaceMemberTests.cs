@@ -28,7 +28,7 @@ public class EmitterNamespaceMemberTests : EmitterTest
                     (
                         TypeId.CreateNew(),
                         new IdentifierSymbol("Test2", ImmutableArray<ISymbolAnnotation>.Empty),
-                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<MemberSymbol>.Empty,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     )
                 ),
@@ -62,14 +62,14 @@ public class EmitterNamespaceMemberTests : EmitterTest
                     (
                         TypeId.CreateNew(),
                         new IdentifierSymbol("Test2", ImmutableArray<ISymbolAnnotation>.Empty),
-                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<MemberSymbol>.Empty,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     ),
                     new StructSymbol
                     (
                         TypeId.CreateNew(),
                         new IdentifierSymbol("Test3", ImmutableArray<ISymbolAnnotation>.Empty),
-                        ImmutableArray<FieldSymbol>.Empty,
+                        ImmutableArray<MemberSymbol>.Empty,
                         ImmutableArray<ISymbolAnnotation>.Empty
                     )
                 ),

@@ -23,7 +23,7 @@ public class NameResolverSymbolVisitorTests
             new IdentifierSymbol("a", ImmutableArray<ISymbolAnnotation>.Empty),
             ImmutableArray.Create
             (
-                new FieldSymbol
+                (MemberSymbol)new FieldSymbol
                 (
                     new UnresolvedTypeReference("a", ImmutableArray<ISymbolAnnotation>.Empty),
                     new IdentifierSymbol("someField", ImmutableArray<ISymbolAnnotation>.Empty),
@@ -53,8 +53,9 @@ public class NameResolverSymbolVisitorTests
 
         var @struct = Assert.IsType<StructSymbol>(resultType);
         Assert.StrictEqual(testType.Identifier, @struct.Identifier);
-        var field = Assert.Single(@struct.Fields);
-        Assert.StrictEqual(testType.Fields[0].Identifier, @field.Identifier);
+        var member = Assert.Single(@struct.Members);
+        var field  = Assert.IsType<FieldSymbol>(member);
+        Assert.StrictEqual(field.Identifier, @field.Identifier);
         var reference = Assert.IsType<InternalTypeReference>(field.Type);
         Assert.StrictEqual(@struct.Id, reference.ReferencedTypeId);
         Assert.Equal("a", Assert.IsType<ResolvedFromAnnotation>(Assert.Single(reference.Annotations)).OriginalString);

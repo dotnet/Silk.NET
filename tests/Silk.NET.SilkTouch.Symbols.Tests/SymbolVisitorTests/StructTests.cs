@@ -69,7 +69,7 @@ public class StructTests
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
 
-        foreach (var v in symbol.Fields)
+        foreach (var v in symbol.Members)
         {
             visitor.Protected()
                 .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => ReferenceEquals(x, v)));

@@ -73,7 +73,7 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.Id, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Identifier, f => IdentifierSymbol.Generate())
-            .RuleFor(x => x.Methods, f => MethodSymbol.GenerateImmutableArray(0, StandardGenerateCount))
+            .RuleFor(x => x.Members, f => MethodSymbol.GenerateImmutableArray(0, StandardGenerateCount).CastArray<MemberSymbol>())
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
     
     public static Faker<FieldSymbol> FieldSymbol { get; } =
@@ -122,7 +122,7 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.Id, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Identifier, f => IdentifierSymbol.Generate())
-            .RuleFor(x => x.Fields, f => FieldSymbol.GenerateImmutableArray(0, StandardGenerateCount))
+            .RuleFor(x => x.Members, f => FieldSymbol.GenerateImmutableArray(0, StandardGenerateCount).CastArray<MemberSymbol>())
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
     
     public static Faker<UnresolvedTypeReference> UnresolvedTypeReference { get; } =
