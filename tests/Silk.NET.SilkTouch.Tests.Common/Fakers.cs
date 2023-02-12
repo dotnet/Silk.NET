@@ -95,14 +95,13 @@ public static class Fakers
             .SkipConstructor()
             .RuleFor(x => x.ReferencedTypeId, f => TypeId.From(f.Random.Guid()))
             .RuleFor(x => x.Annotations, () => Annotation.GenerateImmutableArray(0, StandardGenerateCount));
-    
-    public static Faker<TypeSymbol> TypeSymbol { get; } =
-        new Faker<TypeSymbol>()
-            .Ignore(x => x.Id)
-            .Ignore(x => x.Identifier)
-            .Ignore(x => x.Annotations)
-            // TODO: Generate Structs & Classes here
-            .CustomInstantiator(f => ClassSymbol.Generate());
+
+    public static Faker<TypeSymbol> TypeSymbol { get; } = new Faker<TypeSymbol>()
+        .Ignore(x => x.Id)
+        .Ignore(x => x.Identifier)
+        .Ignore(x => x.Annotations)
+        .Ignore(x => x.Members)
+        .CustomInstantiator(e => e.PickRandom(new TypeSymbol[] { ClassSymbol.Generate(), StructSymbol!.Generate() }));
 
     public static Faker<NamespaceSymbol> NamespaceSymbol { get; } =
         new Faker<NamespaceSymbol>()
