@@ -12,6 +12,9 @@ on:
     # all branches
     paths-ignore:
       - 'documentation/**'
+  merge_group:
+      types: [checks_requested]
+      
 jobs:
   Build:
     # This will:
