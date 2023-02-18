@@ -516,7 +516,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 foreach (var (_, e) in enums)
                 {
-                    tm.Add(e.NativeName, e.Name.Replace("FlagBits", "Flags"));
+                    tm[e.NativeName] = e.Name.Replace("FlagBits", "Flags");
                     yield return new Enum
                     {
                         Attributes = e.Attributes,
