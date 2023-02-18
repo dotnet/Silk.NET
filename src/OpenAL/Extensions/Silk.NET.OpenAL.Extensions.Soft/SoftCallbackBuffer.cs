@@ -35,6 +35,6 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferPtrvSOFT")]
-        public partial void GetBufferPtr(uint buffer, SoftBufferCallback param, void** ptr);
+        public partial void GetBufferPtrv(uint buffer, SoftBufferCallback param, void** ptr);
     }
 }
