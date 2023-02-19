@@ -389,6 +389,11 @@ namespace Silk.NET.Windowing.Glfw
                 }
             );
 
+            if (opts.WindowState is not WindowState.Fullscreen)
+            {
+                CorePosition = opts.Position;
+            }
+
             IsInitialized = true;
             if (opts.IsVisible)
             {
