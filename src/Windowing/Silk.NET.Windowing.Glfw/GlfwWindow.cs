@@ -373,6 +373,8 @@ namespace Silk.NET.Windowing.Glfw
             _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
 
             var share = SharedContext;
+            _nonFullscreenSize = opts.Size;
+            _nonFullscreenPosition = opts.Position;
 
             // Create window
             _glfwWindow = _glfw.CreateWindow
@@ -387,10 +389,11 @@ namespace Silk.NET.Windowing.Glfw
                 }
             );
 
+            IsInitialized = true;
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
-                CoreWindowState = opts.WindowState;
+                WindowState = opts.WindowState;
             }
             else
             {

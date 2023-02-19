@@ -10,6 +10,11 @@ namespace Silk.NET.Windowing
     /// </summary>
     public interface IWindowPlatform : IWindowHost
     {
+        /// <summary>
+        /// Gets the name of this window platform.
+        /// </summary>
+        string Name => GetType().Name;
+
         bool IsViewOnly { get; }
 
         /// <summary>

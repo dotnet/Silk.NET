@@ -37,7 +37,7 @@ namespace Silk.NET.Windowing
                     ", ",
                     Platforms.Select
                     (
-                        x => x.GetType().Name + (x.IsViewOnly ? " - view only" :
+                        x => x.Name + (x.IsViewOnly ? " - view only" :
                             !x.IsApplicable ? " - not applicable" : string.Empty)
                     )
                 );
