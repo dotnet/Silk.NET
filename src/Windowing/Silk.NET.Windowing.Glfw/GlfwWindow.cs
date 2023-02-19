@@ -163,13 +163,15 @@ namespace Silk.NET.Windowing.Glfw
             }
             set
             {
-                if (ExtendedOptionsCache.WindowState == WindowState.Normal)
+                // if we're not fullscreen
+                if (ExtendedOptionsCache.WindowState is not WindowState.Fullscreen)
                 {
                     _nonFullscreenPosition = CorePosition;
                     _nonFullscreenSize = CoreSize;
                 }
-                else if (ExtendedOptionsCache.WindowState == WindowState.Fullscreen &&
-                         value != WindowState.Fullscreen)
+                
+                // if we're fullscreen and going not fullscreen
+                if (ExtendedOptionsCache.WindowState == WindowState.Fullscreen && value != WindowState.Fullscreen)
                 {
                     _glfw.SetWindowMonitor
                     (

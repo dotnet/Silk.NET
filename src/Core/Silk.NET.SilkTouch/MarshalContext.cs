@@ -172,6 +172,8 @@ namespace Silk.NET.SilkTouch
         /// <inheritdoc />
         public IMethodSymbol MethodSymbol { get; }
 
+        public string EntryPoint { get; }
+
         /// <inheritdoc />
         public bool ReturnsVoid => MethodSymbol.ReturnsVoid;
 
@@ -257,7 +259,15 @@ namespace Silk.NET.SilkTouch
             ParameterVariables[parameter] = variable;
         }
 
-        public int AllocateGcSlot() => GCCount++;
+        // A NOTE ABOUT GC SLOTS: Previously each method would have its own GC slot by virtue of each method
+        // incrementing a counter used globally throughout a single SilkTouch run-through. However, this wasn't
+        // particularly sound, as there may be more than one overload for the same native function using the
+        // PinObjectMarshaller. How do we keep track of this? We could use a dictionary mapping entry points to
+        // integers, but let's remember for a second how dictionaries work: hash codes. Oh hey look, a hash code is an
+        // integer already! So we just use the native entry-point's hash code as the GC slot, and this is sufficient to
+        // ensure multiple overloads of the same native function use the same GC slot. Note that the wiring for the old
+        // counter method hasn't been removed, so it should be trivial to switch back over should the need arise.
+        public int AllocateGcSlot() => EntryPoint.GetHashCode();
 
         public void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)
         {
@@ -491,10 +501,21 @@ namespace Silk.NET.SilkTouch
             CurrentStage = stage;
         }
 
+        [Obsolete
+        (
+            "As of 2.17, the native entry-point must be provided. This method is kept for no other reason than " +
+            "keeping our public API accountable (not that anyone is directly using the SilkTouch API anyway)",
+            true
+        )]
         public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol)
+            : this(compilation, methodSymbol, string.Empty)
+        {
+        }
+        public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, string entryPoint)
         {
             Compilation = compilation;
             MethodSymbol = methodSymbol;
+            EntryPoint = entryPoint;
             ParameterVariables = new int[MethodSymbol.Parameters.Length];
 
             LoadTypes = MethodSymbol.Parameters.Select

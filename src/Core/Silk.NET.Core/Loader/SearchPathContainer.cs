@@ -17,6 +17,20 @@ namespace Silk.NET.Core.Loader
         /// <summary>
         /// Gets or sets the underlying platform (operating system) to use for search path resolution.
         /// </summary>
+#if NET6_0_OR_GREATER
+        public static UnderlyingPlatform Platform { get; set; } = OperatingSystem.IsAndroid()
+            ?
+            UnderlyingPlatform.Android
+            : OperatingSystem.IsLinux()
+                ? UnderlyingPlatform.Linux
+                : OperatingSystem.IsIOS()
+                    ? UnderlyingPlatform.IOS
+                    : OperatingSystem.IsMacOS()
+                        ? UnderlyingPlatform.MacOS
+                        : OperatingSystem.IsWindows()
+                            ? Environment.Is64BitProcess ? UnderlyingPlatform.Windows64 : UnderlyingPlatform.Windows86
+                            : UnderlyingPlatform.Unknown;
+#else
         public static UnderlyingPlatform Platform { get; set; } = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
             ? RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID"))
                 ? UnderlyingPlatform.Android // NOTE: This seems to work inconsistently. Recommend setting manually.
@@ -30,6 +44,7 @@ namespace Silk.NET.Core.Loader
                     ? UnderlyingPlatform.IOS // NOTE: This seems to work inconsistently. Recommend setting manually.
                     : UnderlyingPlatform.MacOS
             : UnderlyingPlatform.Unknown;
+#endif
 
         /// <summary>
         /// Gets the library name to use on Windows 64-bit.
