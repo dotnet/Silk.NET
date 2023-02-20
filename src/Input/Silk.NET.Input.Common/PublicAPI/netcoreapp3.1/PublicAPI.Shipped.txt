@@ -112,6 +112,7 @@ Silk.NET.Input.IKeyboard.ClipboardText.get -> string!
 Silk.NET.Input.IKeyboard.ClipboardText.set -> void
 Silk.NET.Input.IKeyboard.EndInput() -> void
 Silk.NET.Input.IKeyboard.IsKeyPressed(Silk.NET.Input.Key key) -> bool
+Silk.NET.Input.IKeyboard.IsScancodePressed(int scancode) -> bool
 Silk.NET.Input.IKeyboard.KeyChar -> System.Action<Silk.NET.Input.IKeyboard!, char>?
 Silk.NET.Input.IKeyboard.KeyDown -> System.Action<Silk.NET.Input.IKeyboard!, Silk.NET.Input.Key, int>?
 Silk.NET.Input.IKeyboard.KeyUp -> System.Action<Silk.NET.Input.IKeyboard!, Silk.NET.Input.Key, int>?
