@@ -340,7 +340,7 @@ public abstract unsafe partial class Chain
     for (var i = 1; i <= maximumItems; i++)
     {
         var tList = TypeList(i);
-        var iBaseList = i == 1 ? string.Empty : $" : IChain<{TypeList(i - 1)}>";
+        var iBaseList = i == 1 ? "IDisposable" : $"IChain<{TypeList(i - 1)}>";
         var iM1 = i - 1;
         var pDocs = ParameterDocs(i, "    /// ");
 #>
@@ -348,7 +348,7 @@ public abstract unsafe partial class Chain
 /// <summary>
 /// Represents a <#= i #> element long structure chain.
 /// </summary>
-public interface IChain<<#= tList #>><#= iBaseList #>
+public interface IChain<<#= tList #>> : <#= iBaseList #>
 {
 <#
     if (i == 1)
