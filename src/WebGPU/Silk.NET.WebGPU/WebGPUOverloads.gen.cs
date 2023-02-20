@@ -82,7 +82,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
-        public static unsafe bool AdapterGetLimits(this WebGPU thisApi, Adapter* adapter, Span<SupportedLimits> limits)
+        public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Adapter* adapter, Span<SupportedLimits> limits)
         {
             // SpanOverloader
             return thisApi.AdapterGetLimits(adapter, ref limits.GetPinnableReference());
@@ -90,7 +90,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
-        public static unsafe bool AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, SupportedLimits* limits)
+        public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, SupportedLimits* limits)
         {
             // SpanOverloader
             return thisApi.AdapterGetLimits(ref adapter.GetPinnableReference(), limits);
@@ -98,7 +98,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
-        public static unsafe bool AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, Span<SupportedLimits> limits)
+        public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, Span<SupportedLimits> limits)
         {
             // SpanOverloader
             return thisApi.AdapterGetLimits(ref adapter.GetPinnableReference(), ref limits.GetPinnableReference());
@@ -130,7 +130,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1412, Column 18 in webgpu.h")]
-        public static unsafe bool AdapterHasFeature(this WebGPU thisApi, Span<Adapter> adapter, FeatureName feature)
+        public static unsafe Silk.NET.Core.Bool32 AdapterHasFeature(this WebGPU thisApi, Span<Adapter> adapter, FeatureName feature)
         {
             // SpanOverloader
             return thisApi.AdapterHasFeature(ref adapter.GetPinnableReference(), feature);
@@ -1874,7 +1874,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
-        public static unsafe bool DeviceGetLimits(this WebGPU thisApi, Device* device, Span<SupportedLimits> limits)
+        public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Device* device, Span<SupportedLimits> limits)
         {
             // SpanOverloader
             return thisApi.DeviceGetLimits(device, ref limits.GetPinnableReference());
@@ -1882,7 +1882,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
-        public static unsafe bool DeviceGetLimits(this WebGPU thisApi, Span<Device> device, SupportedLimits* limits)
+        public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Span<Device> device, SupportedLimits* limits)
         {
             // SpanOverloader
             return thisApi.DeviceGetLimits(ref device.GetPinnableReference(), limits);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
-        public static unsafe bool DeviceGetLimits(this WebGPU thisApi, Span<Device> device, Span<SupportedLimits> limits)
+        public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Span<Device> device, Span<SupportedLimits> limits)
         {
             // SpanOverloader
             return thisApi.DeviceGetLimits(ref device.GetPinnableReference(), ref limits.GetPinnableReference());
@@ -1906,7 +1906,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1487, Column 18 in webgpu.h")]
-        public static unsafe bool DeviceHasFeature(this WebGPU thisApi, Span<Device> device, FeatureName feature)
+        public static unsafe Silk.NET.Core.Bool32 DeviceHasFeature(this WebGPU thisApi, Span<Device> device, FeatureName feature)
         {
             // SpanOverloader
             return thisApi.DeviceHasFeature(ref device.GetPinnableReference(), feature);
@@ -1914,7 +1914,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
-        public static unsafe bool DevicePopErrorScope<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.DevicePopErrorScope(device, callback, ref userdata.GetPinnableReference());
@@ -1922,7 +1922,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
-        public static unsafe bool DevicePopErrorScope(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
         {
             // SpanOverloader
             return thisApi.DevicePopErrorScope(ref device.GetPinnableReference(), callback, userdata);
@@ -1930,7 +1930,7 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
-        public static unsafe bool DevicePopErrorScope<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.DevicePopErrorScope(ref device.GetPinnableReference(), callback, ref userdata.GetPinnableReference());

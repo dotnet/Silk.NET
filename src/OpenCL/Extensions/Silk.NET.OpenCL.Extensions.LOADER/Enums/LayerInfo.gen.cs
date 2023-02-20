@@ -14,5 +14,7 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
     {
         [NativeName("Name", "CL_LAYER_API_VERSION")]
         ApiVersion = 0x4240,
+        [NativeName("Name", "CL_LAYER_NAME")]
+        Name = 0x4241,
     }
 }

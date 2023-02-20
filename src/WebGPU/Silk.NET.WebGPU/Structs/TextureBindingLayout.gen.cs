@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             TextureSampleType? sampleType = null,
             TextureViewDimension? viewDimension = null,
-            bool? multisampled = null
+            Silk.NET.Core.Bool32? multisampled = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "multisampled")]
-        public bool Multisampled;
+        public Silk.NET.Core.Bool32 Multisampled;
     }
 }

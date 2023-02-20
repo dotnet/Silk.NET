@@ -85,11 +85,11 @@ public unsafe static class DStorageStatusArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static bool IsComplete(this ComPtr<IDStorageStatusArray> thisVtbl, uint index)
+    public static Silk.NET.Core.Bool32 IsComplete(this ComPtr<IDStorageStatusArray> thisVtbl, uint index)
     {
         var @this = thisVtbl.Handle;
-        bool ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDStorageStatusArray*, uint, bool>)@this->LpVtbl[3])(@this, index);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDStorageStatusArray*, uint, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, index);
         return ret;
     }
 

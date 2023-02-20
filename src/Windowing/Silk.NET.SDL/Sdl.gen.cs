@@ -948,10 +948,10 @@ namespace Silk.NET.SDL
         public const int MajorVersion = unchecked((int) 0x2);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_MINOR_VERSION")]
-        public const int MinorVersion = unchecked((int) 0x19);
+        public const int MinorVersion = unchecked((int) 0x1A);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_PATCHLEVEL")]
-        public const int Patchlevel = unchecked((int) 0x0);
+        public const int Patchlevel = unchecked((int) 0x2);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);
@@ -13103,111 +13103,111 @@ namespace Silk.NET.SDL
         public partial uint RegisterEvents(int numevents);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 78, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 82, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetBasePath")]
         public unsafe partial byte* GetBasePath();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 78, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 82, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetBasePath")]
         public partial string GetBasePathS();
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS([Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public partial string GetPrefPathS([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public partial string GetPrefPathS([Flow(FlowDirection.In)] in byte org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In)] byte* app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public partial string GetPrefPathS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In)] in byte app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial byte* GetPrefPath([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public partial string GetPrefPathS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);

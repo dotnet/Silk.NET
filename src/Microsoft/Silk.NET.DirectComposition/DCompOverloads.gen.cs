@@ -17,7 +17,7 @@ namespace Silk.NET.DirectComposition
     public static class DCompOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, Guid* iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, Guid* iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 67, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 67, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice(this DComp thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Silk.NET.Core.Native.IUnknown* renderingDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Silk.NET.Core.Native.IUnknown* renderingDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Guid* iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Guid* iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 84, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 84, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice2(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Silk.NET.Core.Native.IUnknown* renderingDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Silk.NET.Core.Native.IUnknown* renderingDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Guid* iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Guid* iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Span<Guid> iid, void** dcompositionDevice)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 102, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateDevice3(this DComp thisApi, Span<Silk.NET.Core.Native.IUnknown> renderingDevice, Span<Guid> iid, ref void* dcompositionDevice)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 121, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateSurfaceHandle(this DComp thisApi, uint desiredAccess, Span<Silk.NET.Core.Native.SecurityAttributes> securityAttributes, void** surfaceHandle)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 121, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int CreateSurfaceHandle(this DComp thisApi, uint desiredAccess, Span<Silk.NET.Core.Native.SecurityAttributes> securityAttributes, ref void* surfaceHandle)
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 138, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 138, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int AttachMouseWheelToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, Silk.NET.Core.Bool32 enable)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 157, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 157, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int AttachMouseDragToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, Silk.NET.Core.Bool32 enable)
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 175, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 175, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetFrameId(this DComp thisApi, CompositionFrameIDType frameIdType, Span<ulong> frameId)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, CompositionTargetId* targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, CompositionFrameStats* frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, CompositionTargetId* targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, CompositionTargetId* targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, uint* actualTargetIdCount)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 189, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 189, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetStatistics(this DComp thisApi, ulong frameId, Span<CompositionFrameStats> frameStats, uint targetIdCount, Span<CompositionTargetId> targetIds, Span<uint> actualTargetIdCount)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 205, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] CompositionTargetId* targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 205, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, CompositionTargetStats* targetStats)
         {
             // SpanOverloader
@@ -273,7 +273,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 205, Column 8 in D:\\Windows Kits\\10\\\\include\\10.0.22621.0\\\\um\\dcomp.h")]
+        [NativeName("Src", "Line 205, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dcomp.h")]
         public static unsafe int GetTargetStatistics(this DComp thisApi, ulong frameId, [Flow(FlowDirection.In)] ReadOnlySpan<CompositionTargetId> targetId, Span<CompositionTargetStats> targetStats)
         {
             // SpanOverloader

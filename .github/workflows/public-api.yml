@@ -38,10 +38,12 @@ jobs:
                       .tmp
                       ~/.nuget/packages
                   key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-            - name: Setup .NET 6.0
-              uses: actions/setup-dotnet@v1
+            - name: Setup .NET 6.0 and .NET 7.0
+              uses: actions/setup-dotnet@v3.0.3
               with:
-                  dotnet-version: 6.0.201
+                  dotnet-version: |
+                    6.0.201
+                    7.0.*
             - name: Install Workloads for Restore
               # TODO: This is slow. Maybe we can make a docker container with this already done?
               run: dotnet workload install android ios maccatalyst maui
@@ -68,10 +70,12 @@ jobs:
                       .tmp
                       ~/.nuget/packages
                   key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
-            - name: Setup .NET 6.0
-              uses: actions/setup-dotnet@v1
+            - name: Setup .NET 6.0 and .NET 7.0
+              uses: actions/setup-dotnet@v3.0.3
               with:
-                  dotnet-version: 6.0.201
+                  dotnet-version: |
+                    6.0.201
+                    7.0.* 
             - name: Ship Public API
               run: ./build.sh ShipApi
               env:

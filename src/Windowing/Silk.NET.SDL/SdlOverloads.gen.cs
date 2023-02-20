@@ -11150,7 +11150,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         public static unsafe byte* GetPrefPath(this Sdl thisApi, [Flow(FlowDirection.In)] byte* org, [Flow(FlowDirection.In)] ReadOnlySpan<byte> app)
         {
             // SpanOverloader
@@ -11158,7 +11158,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         public static unsafe byte* GetPrefPath(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> org, [Flow(FlowDirection.In)] byte* app)
         {
             // SpanOverloader
@@ -11166,7 +11166,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         public static unsafe byte* GetPrefPath(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> org, [Flow(FlowDirection.In)] ReadOnlySpan<byte> app)
         {
             // SpanOverloader
@@ -11174,7 +11174,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         public static unsafe byte* GetPrefPath(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> org, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app)
         {
             // SpanOverloader
@@ -11182,7 +11182,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [NativeName("Src", "Line 139, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         public static unsafe byte* GetPrefPath(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [Flow(FlowDirection.In)] ReadOnlySpan<byte> app)
         {
             // SpanOverloader
