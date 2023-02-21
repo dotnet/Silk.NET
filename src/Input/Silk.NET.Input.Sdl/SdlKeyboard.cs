@@ -9,7 +9,7 @@ namespace Silk.NET.Input.Sdl
     internal partial class SdlKeyboard : IKeyboard, ISdlDevice
     {
         private readonly SdlInputContext _ctx;
-        private List<Key> _keysDown = new List<Key>();
+        private List<Scancode> _scancodesDown = new List<Scancode>();
 
         public SdlKeyboard(SdlInputContext ctx)
         {
@@ -27,7 +27,8 @@ namespace Silk.NET.Input.Sdl
             get => _ctx.Sdl.GetClipboardTextS();
             set => _ctx.Sdl.SetClipboardText(value);
         }
-        public bool IsKeyPressed(Key key) => _keysDown.Contains(key);
+        public bool IsKeyPressed(Key key) => _scancodesDown.Any(x => _keyMap.TryGetValue(x, out Key skey) && key == skey);
+        public bool IsScancodePressed(int scancode) => _scancodesDown.Contains((Scancode) scancode);
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
         public event Action<IKeyboard, char>? KeyChar;
@@ -46,13 +47,13 @@ namespace Silk.NET.Input.Sdl
                         if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
                         {
                             keyDown = key;
-                            _keysDown.Add(keyDown);
                         }
                         else
                         {
                             keyDown = Key.Unknown;
                         }
 
+                        _scancodesDown.Add(@event.Key.Keysym.Scancode);
                         KeyDown?.Invoke(this, keyDown, (int) @event.Key.Keysym.Scancode);
                     }
 
@@ -66,13 +67,13 @@ namespace Silk.NET.Input.Sdl
                         if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
                         {
                             keyUp = key;
-                            _keysDown.Remove(keyUp);
                         }
                         else
                         {
                             keyUp = Key.Unknown;
                         }
 
+                        _scancodesDown.Remove(@event.Key.Keysym.Scancode);
                         KeyUp?.Invoke(this, keyUp, (int) @event.Key.Keysym.Scancode);
                     }
 
