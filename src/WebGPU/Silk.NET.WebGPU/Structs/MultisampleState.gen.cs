@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             uint? count = null,
             uint? mask = null,
-            bool? alphaToCoverageEnabled = null
+            Silk.NET.Core.Bool32? alphaToCoverageEnabled = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
         [NativeName("Name", "alphaToCoverageEnabled")]
-        public bool AlphaToCoverageEnabled;
+        public Silk.NET.Core.Bool32 AlphaToCoverageEnabled;
     }
 }

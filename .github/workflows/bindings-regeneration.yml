@@ -23,6 +23,10 @@ jobs:
       with:
         java-version: 11
         distribution: "temurin"
+    - name: Setup .NET 7.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.102
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
@@ -45,12 +49,12 @@ jobs:
       with:
         sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: dotnet run -c Release --project src/Core/Silk.NET.BuildTools/Silk.NET.BuildTools.csproj -- --no-parallel
+      run: dotnet run -c Release --project src/Core/Silk.NET.BuildTools/Silk.NET.BuildTools.csproj -- generator.json --no-parallel
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
     - name: Create or Update Pull Request
-      uses: gr2m/create-or-update-pull-request-action@master
+      uses: gr2m/create-or-update-pull-request-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
