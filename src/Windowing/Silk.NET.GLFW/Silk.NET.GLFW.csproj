@@ -7,7 +7,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <PackageReference Include="Ultz.Native.GLFW" Version="3.3.8" />
+      <PackageReference Include="Ultz.Native.GLFW" Version="3.3.*" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\bindings.props" />
