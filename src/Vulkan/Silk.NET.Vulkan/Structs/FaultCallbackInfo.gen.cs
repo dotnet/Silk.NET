@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? faultCount = null,
             FaultData* pFaults = null,
-            PFN_vkFaultCallbackFunction? pfnFaultCallback = null
+            PfnFaultCallbackFunction? pfnFaultCallback = null
         ) : this()
         {
             if (sType is not null)
@@ -78,7 +78,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkFaultCallbackFunction")]
         [NativeName("Type.Name", "PFN_vkFaultCallbackFunction")]
         [NativeName("Name", "pfnFaultCallback")]
-        public PFN_vkFaultCallbackFunction PfnFaultCallback;
+        public PfnFaultCallbackFunction PfnFaultCallback;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

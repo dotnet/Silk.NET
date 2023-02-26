@@ -359,7 +359,11 @@
             },
             "exclude": [
                 "VkAabbPositionsKHR",
-                "VkAabbPositionsNV"
+                "VkAabbPositionsNV",
+                "// The below types are part of VK_ANDROID_native_buffer which is an Android internal extension (not user facing)",
+                "VkNativeBufferANDROID",
+                "VkSwapchainImageCreateInfoANDROID",
+                "VkPhysicalDevicePresentationPropertiesANDROID"
             ],
             "output": {
                 "mode": "Default",
@@ -407,6 +411,7 @@
                     "PFN_vkDeviceMemoryReportCallbackEXT": "PfnDeviceMemoryReportCallbackEXT",
                     "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
                     "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
+                    "PFN_vkFaultCallbackFunction": "PfnFaultCallbackFunction",
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
