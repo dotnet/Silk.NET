@@ -18,6 +18,7 @@ using static Nuke.Common.Tooling.ProcessTasks;
 partial class Build
 {
     [Nuke.Common.Parameter("Build native code")] readonly bool CreateBindingsPr;
+    [Nuke.Common.Parameter("Don't let BuildTools parallelize")] readonly bool NoParallelGeneration;
 
     Target RegenerateBindings => CommonTarget
     (
@@ -38,7 +39,11 @@ partial class Build
                     (
                         s => s.SetProjectFile(project)
                             .SetConfiguration("Release")
-                            .SetApplicationArguments(Path.Combine(RootDirectory, "generator.json"))
+                            .SetApplicationArguments
+                            (
+                                Path.Combine(RootDirectory, "generator.json") +
+                                (NoParallelGeneration ? " --no-parallel" : "")
+                            )
                     );
 
                     if (CreateBindingsPr)

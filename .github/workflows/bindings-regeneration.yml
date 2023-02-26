@@ -54,4 +54,4 @@ jobs:
       with:
         sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: ./build.cmd regenerate-bindings --create-bindings-pr
+      run: ./build.cmd regenerate-bindings --create-bindings-pr --no-parallel-generation
