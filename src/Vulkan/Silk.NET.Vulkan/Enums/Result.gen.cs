@@ -118,5 +118,11 @@ namespace Silk.NET.Vulkan
         ErrorInvalidOpaqueCaptureAddress = unchecked((int) -1000257000),
         [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
         PipelineCompileRequired = 1000297000,
+        [NativeName("Name", "VK_ERROR_VALIDATION_FAILED")]
+        ErrorValidationFailed = unchecked((int) -1000011001),
+        [NativeName("Name", "VK_ERROR_INVALID_PIPELINE_CACHE_DATA")]
+        ErrorInvalidPipelineCacheData = unchecked((int) -1000298000),
+        [NativeName("Name", "VK_ERROR_NO_PIPELINE_MATCH")]
+        ErrorNoPipelineMatch = unchecked((int) -1000298001),
     }
 }

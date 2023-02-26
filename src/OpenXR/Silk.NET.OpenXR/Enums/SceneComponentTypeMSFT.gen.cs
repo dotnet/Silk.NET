@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrSceneComponentTypeMSFT")]
     public enum SceneComponentTypeMSFT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"InvalidMsft\"")]
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_INVALID_MSFT")]
         SceneComponentTypeInvalidMsft = unchecked((int) -1),

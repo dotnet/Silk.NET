@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkSamplerYcbcrModelConversion")]
     public enum SamplerYcbcrModelConversion : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY")]
         RgbIdentity = 0,
         [NativeName("Name", "VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_IDENTITY")]

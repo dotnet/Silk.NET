@@ -22,19 +22,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<Boolean> data)
-        {
-            // SpanOverloader
-            thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
-        }
-
         public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<bool> data)
-        {
-            // SpanOverloader
-            thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetBooleanIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<Boolean> data)
         {
             // SpanOverloader
             thisApi.GetBooleanIndexed(target, index, out data.GetPinnableReference());

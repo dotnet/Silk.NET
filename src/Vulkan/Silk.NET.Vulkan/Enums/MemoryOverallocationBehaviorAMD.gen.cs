@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkMemoryOverallocationBehaviorAMD")]
     public enum MemoryOverallocationBehaviorAMD : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"DefaultAmd\"")]
         [NativeName("Name", "VK_MEMORY_OVERALLOCATION_BEHAVIOR_DEFAULT_AMD")]
         MemoryOverallocationBehaviorDefaultAmd = 0,

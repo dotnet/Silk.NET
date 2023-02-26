@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkVertexInputRate")]
     public enum VertexInputRate : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VERTEX_INPUT_RATE_VERTEX")]
         Vertex = 0,
         [NativeName("Name", "VK_VERTEX_INPUT_RATE_INSTANCE")]

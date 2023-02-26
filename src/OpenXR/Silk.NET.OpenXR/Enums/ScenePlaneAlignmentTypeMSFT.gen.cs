@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrScenePlaneAlignmentTypeMSFT")]
     public enum ScenePlaneAlignmentTypeMSFT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"NonOrthogonalMsft\"")]
         [NativeName("Name", "XR_SCENE_PLANE_ALIGNMENT_TYPE_NON_ORTHOGONAL_MSFT")]
         ScenePlaneAlignmentTypeNonOrthogonalMsft = 0,

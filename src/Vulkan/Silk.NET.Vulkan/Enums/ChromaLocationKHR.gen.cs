@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkChromaLocationKHR")]
     public enum ChromaLocationKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"CositedEven\"")]
         [NativeName("Name", "VK_CHROMA_LOCATION_COSITED_EVEN")]
         ChromaLocationCositedEven = 0,

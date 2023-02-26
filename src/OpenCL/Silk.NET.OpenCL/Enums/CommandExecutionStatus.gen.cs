@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [Flags]
     [NativeName("Name", "clCommandExecutionStatus")]
     public enum CommandExecutionStatus : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_COMPLETE")]
         Complete = 0x0,
         [NativeName("Name", "CL_RUNNING")]

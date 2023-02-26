@@ -19,6 +19,8 @@ namespace Silk.NET.BuildTools.Converters
             (IReader reader, IConstructor ctor, Stream input, BindTask task)
         {
             var obj = reader.Load(input);
+            Console.WriteLine("Reading typedefs...");
+            var typedefs = reader.ReadTypedefs(obj, task).ToList();
             Console.WriteLine("Reading enums...");
             var enums = reader.ReadEnums(obj, task)
                 .OrderBy(x => x.Name)
@@ -46,17 +48,46 @@ namespace Silk.NET.BuildTools.Converters
                 .Distinct()
                 .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion));
 
-            task.TypeMaps = new List<Dictionary<string, string>> { TypeMapper.MergeMaps(task.TypeMaps) };
+            task.TypeMaps = new List<Dictionary<string, string>>
+            {
+                TypeMapper.MergeMaps
+                (
+                    task.TypeMaps.Where
+                    (
+                        x => x.TryGetValue("$typemapPrecedesInjections", out var precede) &&
+                             precede.ToLower() == "true"
+                    )
+                    .ToList()
+                ),
+                TypeMapper.MergeMaps
+                (
+                    task.TypeMaps.Where
+                    (
+                        x => !x.TryGetValue("$typemapPrecedesInjections", out var precede) ||
+                             precede.ToLower() != "true"
+                    )
+                    .ToList()
+                )
+            };
 
             foreach (var profile in profiles)
             {
-                bool mapNative = task.Controls.Contains("typemap-native");
+                var mapNative = task.Controls.Contains("typemap-native");
+                var maps = Enumerable.Repeat(task.TypeMaps[0], 1)
+                    .Concat
+                    (
+                        typedefs
+                            .Where(x => x.ProfileName is null || x.ProfileName == profile.Name)
+                            .Select(x => x.Typemap)
+                    )
+                    .Concat(Enumerable.Repeat(task.TypeMaps[1], 1))
+                    .ToList();
 
                 ctor.WriteFunctions(profile, functions, task);
                 ctor.WriteEnums(profile, enums, task);
                 ctor.WriteStructs(profile, structs, task);
                 ctor.WriteConstants(profile, constants, task);
-                foreach (var typeMap in task.TypeMaps)
+                foreach (var typeMap in maps)
                 {
                     TypeMapper.Map
                     (
@@ -66,7 +97,7 @@ namespace Silk.NET.BuildTools.Converters
                     );
                 }
 
-                foreach (var typeMap in task.TypeMaps)
+                foreach (var typeMap in maps)
                 {
                     TypeMapper.Map(typeMap, structs, mapNative);
                 }
@@ -77,7 +108,7 @@ namespace Silk.NET.BuildTools.Converters
                     {
                         foreach (var constant in @class.Constants)
                         {
-                            constant.Type = TypeMapper.MapOne(task.TypeMaps, constant.Type, mapNative, constant.Name);
+                            constant.Type = TypeMapper.MapOne(maps, constant.Type, mapNative, constant.Name);
                         }
                     }
                 }

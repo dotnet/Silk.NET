@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrHandEXT")]
     public enum HandEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"LeftExt\"")]
         [NativeName("Name", "XR_HAND_LEFT_EXT")]
         HandLeftExt = 1,

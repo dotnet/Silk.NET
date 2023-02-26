@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrEnvironmentBlendMode")]
     public enum EnvironmentBlendMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_ENVIRONMENT_BLEND_MODE_OPAQUE")]
         Opaque = 1,
         [NativeName("Name", "XR_ENVIRONMENT_BLEND_MODE_ADDITIVE")]

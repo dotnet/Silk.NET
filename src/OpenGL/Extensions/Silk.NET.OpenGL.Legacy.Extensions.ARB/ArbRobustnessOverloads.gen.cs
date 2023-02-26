@@ -148,30 +148,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -191,30 +167,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
@@ -316,30 +268,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -359,30 +287,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());

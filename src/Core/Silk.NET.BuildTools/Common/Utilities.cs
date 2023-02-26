@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
@@ -621,5 +622,27 @@ namespace Silk.NET.BuildTools.Common
             decl.Location.GetSpellingLocation(out var file, out var line, out var column, out _);
             return $"Line {line}, Column {column} in {Path.GetFileName(file.Name.ToString())}";
         }
+        
+        public static bool IsProbablyABitmask(this Enums.Enum @enum)
+            => @enum.Tokens.Count > 1 && // there is more than one token
+               // at least approx 50% of the tokens have only one bit set
+               @enum.Tokens.Count(x => BitOperations.PopCount(ParseToken(x.Value, @enum)) == 1)
+               >= MathF.Floor(@enum.Tokens.Count / 2f);
+
+        private static ulong ParseToken(string value, Enums.Enum @enum) => value.StartsWith("0x")
+            ? ulong.Parse(value[2..], NumberStyles.HexNumber, null)
+            : value.StartsWith("unchecked")
+                ? ParseToken(value[$"unchecked(({@enum.EnumBaseType.Name})".Length..].TrimEnd(')').Trim(), @enum)
+                : ulong.TryParse(value, out var val)
+                    ? val
+                    : long.TryParse(value, out var signedVal)
+                        ? @enum.EnumBaseType.Name switch
+                        {
+                            "int" => unchecked((ulong) (int) signedVal),
+                            "uint" => unchecked((uint) signedVal),
+                            "long" or "ulong" => unchecked((ulong) signedVal),
+                            _ => throw new ArgumentOutOfRangeException()
+                        }
+                        : throw new ArgumentException("failed to parse", nameof(value));
     }
 }

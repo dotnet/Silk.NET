@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [Flags]
     [NativeName("Name", "cl_device_local_mem_type")]
     public enum DeviceLocalMemType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]

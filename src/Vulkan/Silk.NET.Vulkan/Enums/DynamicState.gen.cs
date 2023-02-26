@@ -34,6 +34,10 @@ namespace Silk.NET.Vulkan
         ViewportWScalingNV = 1000087000,
         [NativeName("Name", "VK_DYNAMIC_STATE_DISCARD_RECTANGLE_EXT")]
         DiscardRectangleExt = 1000099000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DISCARD_RECTANGLE_ENABLE_EXT")]
+        DiscardRectangleEnableExt = 1000099001,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DISCARD_RECTANGLE_MODE_EXT")]
+        DiscardRectangleModeExt = 1000099002,
         [NativeName("Name", "VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT")]
         SampleLocationsExt = 1000143000,
         [NativeName("Name", "VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
@@ -42,6 +46,8 @@ namespace Silk.NET.Vulkan
         ViewportShadingRatePaletteNV = 1000164004,
         [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV")]
         ViewportCoarseSampleOrderNV = 1000164006,
+        [NativeName("Name", "VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_ENABLE_NV")]
+        ExclusiveScissorEnableNV = 1000205000,
         [NativeName("Name", "VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV")]
         ExclusiveScissorNV = 1000205001,
         [NativeName("Name", "VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR")]

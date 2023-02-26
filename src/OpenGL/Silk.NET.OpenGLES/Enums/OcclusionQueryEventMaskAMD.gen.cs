@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
+    [Flags]
     [NativeName("Name", "OcclusionQueryEventMaskAMD")]
     public enum OcclusionQueryEventMaskAMD : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"DepthPassEventBitAmd\"")]
         [NativeName("Name", "GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
         QueryDepthPassEventBitAmd = 0x1,

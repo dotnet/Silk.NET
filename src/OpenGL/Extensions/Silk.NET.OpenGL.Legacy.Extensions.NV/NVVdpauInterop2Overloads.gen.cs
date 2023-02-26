@@ -34,24 +34,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return thisApi.VdpauregisterVideoSurfaceWithPictureStructure(in vdpSurface.GetPinnableReference(), target, numTextureNames, in textureNames.GetPinnableReference(), isFrameStructure);
         }
 
-        public static unsafe nint VdpauregisterVideoSurfaceWithPictureStructure(this NVVdpauInterop2 thisApi, [Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames, [Flow(FlowDirection.In)] Boolean isFrameStructure)
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurfaceWithPictureStructure(vdpSurface, target, numTextureNames, in textureNames.GetPinnableReference(), isFrameStructure);
-        }
-
-        public static unsafe nint VdpauregisterVideoSurfaceWithPictureStructure<T0>(this NVVdpauInterop2 thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames, [Flow(FlowDirection.In)] Boolean isFrameStructure) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurfaceWithPictureStructure(in vdpSurface.GetPinnableReference(), target, numTextureNames, textureNames, isFrameStructure);
-        }
-
-        public static unsafe nint VdpauregisterVideoSurfaceWithPictureStructure<T0>(this NVVdpauInterop2 thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames, [Flow(FlowDirection.In)] Boolean isFrameStructure) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurfaceWithPictureStructure(in vdpSurface.GetPinnableReference(), target, numTextureNames, in textureNames.GetPinnableReference(), isFrameStructure);
-        }
-
     }
 }
 

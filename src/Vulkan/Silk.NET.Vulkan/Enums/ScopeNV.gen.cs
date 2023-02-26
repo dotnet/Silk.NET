@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkScopeNV")]
     public enum ScopeNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"DeviceNV\"")]
         [NativeName("Name", "VK_SCOPE_DEVICE_NV")]
         ScopeDeviceNV = 1,

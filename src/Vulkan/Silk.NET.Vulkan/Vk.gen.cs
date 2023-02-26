@@ -86,6 +86,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_QUEUE_FAMILY_IGNORED")]
         public const uint QueueFamilyIgnored = unchecked((uint) (~0U));
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_REMAINING_3D_SLICES_EXT")]
+        public const uint Remaining3DSlicesExt = unchecked((uint) (~0U));
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_REMAINING_ARRAY_LAYERS")]
         public const uint RemainingArrayLayers = unchecked((uint) (~0U));
         [NativeName("Type", "")]

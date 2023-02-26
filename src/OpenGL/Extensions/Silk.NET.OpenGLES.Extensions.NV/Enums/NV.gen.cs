@@ -498,6 +498,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         FloatMat4x2NV = 0x8B69,
         [NativeName("Name", "GL_FLOAT_MAT4x3_NV")]
         FloatMat4x3NV = 0x8B6A,
+        [NativeName("Name", "GL_PACK_ROW_LENGTH_NV")]
+        PackRowLengthNV = 0xD02,
+        [NativeName("Name", "GL_PACK_SKIP_ROWS_NV")]
+        PackSkipRowsNV = 0xD03,
+        [NativeName("Name", "GL_PACK_SKIP_PIXELS_NV")]
+        PackSkipPixelsNV = 0xD04,
         [NativeName("Name", "GL_PATH_FORMAT_SVG_NV")]
         PathFormatSvgNV = 0x9070,
         [NativeName("Name", "GL_PATH_FORMAT_PS_NV")]

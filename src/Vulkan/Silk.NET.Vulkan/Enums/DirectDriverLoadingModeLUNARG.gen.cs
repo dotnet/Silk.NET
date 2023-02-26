@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkDirectDriverLoadingModeLUNARG")]
     public enum DirectDriverLoadingModeLUNARG : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"ExclusiveLunarg\"")]
         [NativeName("Name", "VK_DIRECT_DRIVER_LOADING_MODE_EXCLUSIVE_LUNARG")]
         DirectDriverLoadingModeExclusiveLunarg = 0,

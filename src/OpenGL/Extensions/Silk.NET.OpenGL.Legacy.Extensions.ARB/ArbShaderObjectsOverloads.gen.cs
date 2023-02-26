@@ -466,31 +466,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());

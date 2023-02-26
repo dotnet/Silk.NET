@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
-
         [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
 

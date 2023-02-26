@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.ShaderModuleCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            ShaderModuleCreateFlags? flags = null,
             nuint? codeSize = null,
             uint* pCode = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkShaderModuleCreateFlags")]
         [NativeName("Type.Name", "VkShaderModuleCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public ShaderModuleCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

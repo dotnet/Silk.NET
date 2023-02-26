@@ -52,19 +52,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix2(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix2x3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix2x3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
@@ -76,19 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix2x4(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
@@ -100,19 +76,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix3x2(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix3x4(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3x4(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
@@ -124,31 +88,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix4(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix4x2(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix4x2(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix4x3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4x3(this ArbGpuShaderFp64 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());

@@ -28,19 +28,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
         public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -52,19 +40,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
         public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -76,19 +52,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
         public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -100,19 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
         public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
-        public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);

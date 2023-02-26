@@ -33,18 +33,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
         [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
         [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
@@ -55,18 +43,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
         public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreProgramsResidentNV", Convention = CallingConvention.Winapi)]
-        public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
         [NativeApi(EntryPoint = "glBindProgramNV", Convention = CallingConvention.Winapi)]
         public partial void BindProgram([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id);
@@ -602,24 +578,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
-        }
-
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
         public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
         {
             // ImplicitCountSpanOverloader
@@ -633,24 +591,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         }
 
         public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
-        }
-
-        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
         {
             // ImplicitCountSpanOverloader
             return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());

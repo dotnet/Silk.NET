@@ -62,6 +62,11 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
+                    if (Generator.TestMode)
+                    {
+                        sw.WriteLine($"    // {attr.Name}: {string.Join(", ", attr.Arguments)}");
+                    }
+
                     if (attr.Arguments.Count > 0)
                     {
                         switch (attr.Arguments[0])
@@ -139,7 +144,7 @@ namespace Silk.NET.BuildTools.Bind
 
             interfaces.AddRange
             (
-                chainExtensions?.Select(e => $"IExtendsChain<{e}>") ??
+                chainExtensions?.Distinct().Select(e => $"IExtendsChain<{e}>") ??
                 Enumerable.Empty<string>()
             );
             if (!interfaces.Any())

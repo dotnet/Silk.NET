@@ -664,30 +664,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
         public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -707,30 +683,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetHistogram<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
@@ -808,30 +760,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
         public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -851,30 +779,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
-        }
-
-        public static unsafe void GetMinmax<T0>(this ArbImaging thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());

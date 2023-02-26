@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkOpticalFlowPerformanceLevelNV")]
     public enum OpticalFlowPerformanceLevelNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"UnknownNV\"")]
         [NativeName("Name", "VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_UNKNOWN_NV")]
         OpticalFlowPerformanceLevelUnknownNV = 0,

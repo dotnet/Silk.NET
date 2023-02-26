@@ -15,8 +15,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string Alias { get; }
         public MemberSpec[] Members { get; }
         public IReadOnlyList<string> Extends { get; }
+        public string? Api { get; }
 
-        public StructureDefinition(string name, string alias, MemberSpec[] members, string extends)
+        public StructureDefinition(string name, string alias, MemberSpec[] members, string extends, string? api)
         {
             Name = name;
             Alias = alias;
@@ -24,6 +25,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Extends = string.IsNullOrWhiteSpace(extends)
                 ? Array.Empty<string>()
                 : extends.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+            Api = api;
         }
 
         public static StructureDefinition CreateFromXml(XElement xe)
@@ -58,7 +60,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .Select(memberx => MemberSpec.CreateFromXml(memberx))
                 .ToArray();
             var extends = xe.Attribute("structextends")?.Value;
-            return new StructureDefinition(name, alias, members, extends);
+            var api = xe.Attribute("api")?.Value;
+            return new StructureDefinition(name, alias, members, extends, api);
         }
 
         public override string ToString()

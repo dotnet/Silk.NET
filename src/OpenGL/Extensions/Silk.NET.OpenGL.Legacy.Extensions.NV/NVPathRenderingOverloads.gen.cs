@@ -52,37 +52,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
@@ -124,37 +124,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
@@ -196,37 +196,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
@@ -268,37 +268,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
@@ -353,6 +353,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         }
 
         public static unsafe void GetPathCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Count(Computed = "path"), Flow(FlowDirection.Out)] Span<byte> commands)
+        {
+            // SpanOverloader
+            thisApi.GetPathCommands(path, out commands.GetPinnableReference());
+        }
+
+        public static unsafe void GetPathCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Count(Computed = "path"), Flow(FlowDirection.Out)] Span<PathCoordType> commands)
         {
             // SpanOverloader
             thisApi.GetPathCommands(path, out commands.GetPinnableReference());
@@ -982,6 +988,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
         }
 
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] PathCoordType* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] PathCoordType* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+        }
+
         public static unsafe void PathCoords<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1474,6 +1516,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
         }
 
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] PathCoordType* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathSubCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] PathCoordType* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+        }
+
+        public static unsafe void PathSubCommands(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+        }
+
         public static unsafe void PathSubCoords<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint coordStart, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1822,37 +1900,433 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
             thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
-        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
-        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues)
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, transformValues);
+        }
+
+        public static unsafe void StencilThenCoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());

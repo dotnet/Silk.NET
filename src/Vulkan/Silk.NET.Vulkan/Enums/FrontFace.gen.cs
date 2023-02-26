@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkFrontFace")]
     public enum FrontFace : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_FRONT_FACE_COUNTER_CLOCKWISE")]
         CounterClockwise = 0,
         [NativeName("Name", "VK_FRONT_FACE_CLOCKWISE")]

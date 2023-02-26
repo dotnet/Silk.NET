@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrViewConfigurationType")]
     public enum ViewConfigurationType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_VIEW_CONFIGURATION_TYPE_PRIMARY_MONO")]
         PrimaryMono = 1,
         [NativeName("Name", "XR_VIEW_CONFIGURATION_TYPE_PRIMARY_STEREO")]

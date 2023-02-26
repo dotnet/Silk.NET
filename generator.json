@@ -268,10 +268,8 @@
             "rename": {
                 "cl_kernel_arg_type_qualifer": "cl_kernel_arg_type_qualifier",
                 "ck_khr_mipmap_image": "cl_khr_mipmap_image",
-                
                 "CL_DRIVER_VERSION": "CL_DEVICE_DRIVER_VERSION",
                 "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
-                
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
                 "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
@@ -317,7 +315,20 @@
                 },
                 {
                     "cl_icd_dispatch": "void",
-                    "cl_svm_mem_flags": "cl_mem_flags"
+                    "cl_svm_mem_flags": "cl_mem_flags",
+                    "CL_CALLBACK_EnqueueSVMFreeARM_pfn_free_func*": "FreeCallback",
+                    "CL_CALLBACK_EnqueueSVMFree_pfn_free_func*": "FreeCallback",
+                    "CL_CALLBACK_CreateContext_pfn_notify*": "NotifyCallback",
+                    "CL_CALLBACK_CreateContextFromType_pfn_notify*": "NotifyCallback",
+                    "CL_CALLBACK_SetContextDestructorCallback_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_SetMemObjectDestructorCallback_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_SetMemObjectDestructorAPPLE_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_CompileProgram_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_LinkProgram_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_SetProgramReleaseCallback_pfn_notify*": "ObjectNotifyCallback",
+                    "CL_CALLBACK_SetEventCallback_pfn_notify*": "EventNotifyCallback",
+                    "CL_CALLBACK_EnqueueNativeKernel_user_func*": "UserFunction",
+                    "CL_CALLBACK_BuildProgram_pfn_notify*": "ObjectNotifyCallback"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -661,6 +672,7 @@
             ],
             "typeMaps": [
                 {
+                    "$typemapPrecedesInjections": "true",
                     "char": "byte",
                     "XR_DEFINE_ATOM": "uint64_t",
                     "LUID": "ulong",
@@ -706,7 +718,9 @@
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
-                    "$include.khronosTypeMap": "build/khronos_typemap.json"
+                    "$include.khronosTypeMap": "build/khronos_typemap.json",
+                    "XR_DEFINE_ATOM": "uint64_t",
+                    "char": "byte"
                 }
             ]
         },
@@ -1837,7 +1851,7 @@
                 "traverse": [
 					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcompanimation.h",
 					"$windowsSdkDir/Include/$windowsSdkVersion/shared/dcomptypes.h",
-					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcomp.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcomp.h"
                 ],
                 "classes": {
                     "silk.net.directcomposition.dcomp.h": "[Core]DComp"

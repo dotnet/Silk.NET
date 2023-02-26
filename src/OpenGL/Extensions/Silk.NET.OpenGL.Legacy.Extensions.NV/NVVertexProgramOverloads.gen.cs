@@ -34,24 +34,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, programs, out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), residences);
-        }
-
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
         public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
         {
             // SpanOverloader
@@ -65,24 +47,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         }
 
         public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, programs, out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // SpanOverloader
-            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), residences);
-        }
-
-        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
         {
             // SpanOverloader
             return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());

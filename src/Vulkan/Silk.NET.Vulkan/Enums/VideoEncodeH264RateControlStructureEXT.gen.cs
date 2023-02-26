@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkVideoEncodeH264RateControlStructureEXT")]
     public enum VideoEncodeH264RateControlStructureEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"UnknownExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT")]
         VideoEncodeH264RateControlStructureUnknownExt = 0,

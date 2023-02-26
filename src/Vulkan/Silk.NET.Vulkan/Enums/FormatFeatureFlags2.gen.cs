@@ -192,12 +192,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FormatFeature2FragmentShadingRateAttachmentBitKhr = 1073741824,
-        [Obsolete("Deprecated in favour of \"Reserved44BitExt\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_44_BIT_EXT")]
-        FormatFeature2Reserved44BitExt = 17592186044416,
-        [Obsolete("Deprecated in favour of \"Reserved45BitExt\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_45_BIT_EXT")]
-        FormatFeature2Reserved45BitExt = 35184372088832,
         [Obsolete("Deprecated in favour of \"VideoEncodeInputBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         FormatFeature2VideoEncodeInputBitKhr = 134217728,
@@ -219,9 +213,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"BoxFilterSampledBitQCom\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_BOX_FILTER_SAMPLED_BIT_QCOM")]
         FormatFeature2BoxFilterSampledBitQCom = 137438953472,
-        [Obsolete("Deprecated in favour of \"Reserved39BitExt\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
-        FormatFeature2Reserved39BitExt = 549755813888,
         [Obsolete("Deprecated in favour of \"OpticalFlowImageBitNV\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_IMAGE_BIT_NV")]
         FormatFeature2OpticalFlowImageBitNV = 1099511627776,
@@ -349,10 +340,6 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapBitExt = 16777216,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FragmentShadingRateAttachmentBitKhr = 1073741824,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_44_BIT_EXT")]
-        Reserved44BitExt = 17592186044416,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_45_BIT_EXT")]
-        Reserved45BitExt = 35184372088832,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         VideoEncodeInputBitKhr = 134217728,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR")]
@@ -367,8 +354,6 @@ namespace Silk.NET.Vulkan
         BlockMatchingBitQCom = 68719476736,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_BOX_FILTER_SAMPLED_BIT_QCOM")]
         BoxFilterSampledBitQCom = 137438953472,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
-        Reserved39BitExt = 549755813888,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_IMAGE_BIT_NV")]
         OpticalFlowImageBitNV = 1099511627776,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_VECTOR_BIT_NV")]

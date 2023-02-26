@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkSemaphoreType")]
     public enum SemaphoreType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
         Binary = 0,
         [NativeName("Name", "VK_SEMAPHORE_TYPE_TIMELINE")]

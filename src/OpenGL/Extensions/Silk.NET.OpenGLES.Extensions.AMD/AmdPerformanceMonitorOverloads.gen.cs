@@ -178,12 +178,6 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
             thisApi.SelectPerfMonitorCounters(monitor, enable, group, numCounters, out counterList.GetPinnableReference());
         }
 
-        public static unsafe void SelectPerfMonitorCounters(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] Span<uint> counterList)
-        {
-            // SpanOverloader
-            thisApi.SelectPerfMonitorCounters(monitor, enable, group, numCounters, out counterList.GetPinnableReference());
-        }
-
     }
 }
 

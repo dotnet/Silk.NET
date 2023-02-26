@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandPoolCreateInfo")]
-    public unsafe partial struct CommandPoolCreateInfo : IChainable
+    public unsafe partial struct CommandPoolCreateInfo : IChainStart
     {
         public CommandPoolCreateInfo
         (
@@ -80,6 +80,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref CommandPoolCreateInfo Chain(
+            out CommandPoolCreateInfo capture)
+        {
+            capture = new CommandPoolCreateInfo(StructureType.CommandPoolCreateInfo);
+            return ref capture;
         }
     }
 }

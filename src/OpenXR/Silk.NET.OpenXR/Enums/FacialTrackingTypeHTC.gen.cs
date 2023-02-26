@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrFacialTrackingTypeHTC")]
     public enum FacialTrackingTypeHTC : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"EyeDefaultHtc\"")]
         [NativeName("Name", "XR_FACIAL_TRACKING_TYPE_EYE_DEFAULT_HTC")]
         FacialTrackingTypeEyeDefaultHtc = 1,

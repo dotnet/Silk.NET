@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.SemaphoreCreateInfo,
             void* pNext = null,
-            uint? flags = null
+            SemaphoreCreateFlags? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkSemaphoreCreateFlags")]
         [NativeName("Type.Name", "VkSemaphoreCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public SemaphoreCreateFlags Flags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

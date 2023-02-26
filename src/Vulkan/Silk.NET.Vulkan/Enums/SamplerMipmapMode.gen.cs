@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkSamplerMipmapMode")]
     public enum SamplerMipmapMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SAMPLER_MIPMAP_MODE_NEAREST")]
         Nearest = 0,
         [NativeName("Name", "VK_SAMPLER_MIPMAP_MODE_LINEAR")]

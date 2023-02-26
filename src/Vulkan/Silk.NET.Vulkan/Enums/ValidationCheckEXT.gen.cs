@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkValidationCheckEXT")]
     public enum ValidationCheckEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"AllExt\"")]
         [NativeName("Name", "VK_VALIDATION_CHECK_ALL_EXT")]
         ValidationCheckAllExt = 0,

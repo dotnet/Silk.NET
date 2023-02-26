@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkSamplerReductionMode")]
     public enum SamplerReductionMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE")]
         WeightedAverage = 0,
         [NativeName("Name", "VK_SAMPLER_REDUCTION_MODE_MIN")]

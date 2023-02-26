@@ -28,19 +28,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             thisApi.DebugMessageEnable(category, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
-        public static unsafe void DebugMessageEnable(this AmdDebugOutput thisApi, [Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageEnable(category, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
         public static unsafe void DebugMessageEnable(this AmdDebugOutput thisApi, [Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // SpanOverloader
-            thisApi.DebugMessageEnable(category, severity, count, in ids.GetPinnableReference(), enabled);
-        }
-
-        public static unsafe void DebugMessageEnable(this AmdDebugOutput thisApi, [Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageEnable(category, severity, count, in ids.GetPinnableReference(), enabled);

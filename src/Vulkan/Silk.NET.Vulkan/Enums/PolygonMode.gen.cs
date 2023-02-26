@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkPolygonMode")]
     public enum PolygonMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_POLYGON_MODE_FILL")]
         Fill = 0,
         [NativeName("Name", "VK_POLYGON_MODE_LINE")]

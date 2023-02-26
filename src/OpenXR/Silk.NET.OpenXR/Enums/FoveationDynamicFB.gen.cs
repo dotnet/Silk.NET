@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrFoveationDynamicFB")]
     public enum FoveationDynamicFB : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"DisabledFB\"")]
         [NativeName("Name", "XR_FOVEATION_DYNAMIC_DISABLED_FB")]
         FoveationDynamicDisabledFB = 0,

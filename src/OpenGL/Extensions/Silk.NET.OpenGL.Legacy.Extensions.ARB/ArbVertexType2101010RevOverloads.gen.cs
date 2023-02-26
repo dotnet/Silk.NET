@@ -214,19 +214,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribP1(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
-        }
-
         public static unsafe void VertexAttribP1(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribP1(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
@@ -238,19 +226,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribP2(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
-        }
-
         public static unsafe void VertexAttribP2(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribP2(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
@@ -262,19 +238,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribP3(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
-        }
-
         public static unsafe void VertexAttribP3(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribP3(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
@@ -286,19 +250,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribP4(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
-        }
-
         public static unsafe void VertexAttribP4(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
-        {
-            // SpanOverloader
-            thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribP4(this ArbVertexType2101010Rev thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());

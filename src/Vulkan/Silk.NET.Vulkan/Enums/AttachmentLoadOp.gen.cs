@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkAttachmentLoadOp")]
     public enum AttachmentLoadOp : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_ATTACHMENT_LOAD_OP_LOAD")]
         Load = 0,
         [NativeName("Name", "VK_ATTACHMENT_LOAD_OP_CLEAR")]

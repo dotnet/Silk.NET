@@ -141,22 +141,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
@@ -189,22 +177,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
@@ -237,22 +213,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);

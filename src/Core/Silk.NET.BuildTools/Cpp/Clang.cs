@@ -48,12 +48,6 @@ namespace Silk.NET.BuildTools.Cpp
             "LONG_PTR"
         };
 
-        public static bool IsProbablyABitmask(Enum @enum)
-            => @enum.Tokens.Count > 1 && // there is more than one token
-               // at least approx 50% of the tokens have only one bit set
-               @enum.Tokens.Count(x => BitOperations.PopCount(ulong.Parse(x.Value[2..], NumberStyles.HexNumber)) == 1)
-               >= MathF.Floor(@enum.Tokens.Count / 2f);
-
         public static bool ShouldVisit(Cursor cursor, BindTask task, bool nullTolerant = false)
         {
             var traversals = task.ClangOpts.Traverse;
@@ -1211,7 +1205,7 @@ namespace Silk.NET.BuildTools.Cpp
                             EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
                         };
 
-                        if (IsProbablyABitmask(@enum))
+                        if (@enum.IsProbablyABitmask())
                         {
                             @enum.Attributes.Add(new() { Name = "Flags" });
                         }

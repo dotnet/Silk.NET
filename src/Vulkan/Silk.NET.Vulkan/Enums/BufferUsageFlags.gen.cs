@@ -57,9 +57,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ConditionalRenderingBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         BufferUsageConditionalRenderingBitExt = 512,
-        [Obsolete("Deprecated in favour of \"Reserved25BitAmd\"")]
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_25_BIT_AMD")]
-        BufferUsageReserved25BitAmd = 33554432,
         [Obsolete("Deprecated in favour of \"AccelerationStructureBuildInputReadOnlyBitKhr\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
         BufferUsageAccelerationStructureBuildInputReadOnlyBitKhr = 524288,
@@ -72,9 +69,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"RayTracingBitNV\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
         BufferUsageRayTracingBitNV = 1024,
-        [Obsolete("Deprecated in favour of \"Reserved18BitQCom\"")]
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_18_BIT_QCOM")]
-        BufferUsageReserved18BitQCom = 262144,
         [Obsolete("Deprecated in favour of \"ShaderDeviceAddressBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
         BufferUsageShaderDeviceAddressBitExt = 131072,
@@ -133,8 +127,6 @@ namespace Silk.NET.Vulkan
         TransformFeedbackCounterBufferBitExt = 4096,
         [NativeName("Name", "VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         ConditionalRenderingBitExt = 512,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_25_BIT_AMD")]
-        Reserved25BitAmd = 33554432,
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
         AccelerationStructureBuildInputReadOnlyBitKhr = 524288,
         [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
@@ -143,8 +135,6 @@ namespace Silk.NET.Vulkan
         ShaderBindingTableBitKhr = 1024,
         [NativeName("Name", "VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
         RayTracingBitNV = 1024,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_18_BIT_QCOM")]
-        Reserved18BitQCom = 262144,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
         ShaderDeviceAddressBitExt = 131072,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]

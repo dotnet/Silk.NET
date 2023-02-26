@@ -17,7 +17,7 @@ namespace Silk.NET.Direct3D9
     public static class D3D9Overloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 315, Column 12 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeName("Src", "Line 315, Column 12 in d3d9.h")]
         public static unsafe int PERFBeginEvent(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<char> wszName)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 317, Column 13 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeName("Src", "Line 317, Column 13 in d3d9.h")]
         public static unsafe void PERFSetMarker(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<char> wszName)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 318, Column 13 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeName("Src", "Line 318, Column 13 in d3d9.h")]
         public static unsafe void PERFSetRegion(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<char> wszName)
         {
             // SpanOverloader

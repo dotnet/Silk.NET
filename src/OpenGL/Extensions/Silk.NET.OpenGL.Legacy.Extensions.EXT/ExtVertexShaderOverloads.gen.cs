@@ -22,19 +22,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetInvariantBoolean(id, value, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetInvariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
-        {
-            // SpanOverloader
-            thisApi.GetInvariantBoolean(id, value, out data.GetPinnableReference());
-        }
-
         public static unsafe void GetInvariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<bool> data)
-        {
-            // SpanOverloader
-            thisApi.GetInvariantBoolean(id, value, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetInvariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
         {
             // SpanOverloader
             thisApi.GetInvariantBoolean(id, value, out data.GetPinnableReference());
@@ -70,19 +58,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetLocalConstantBoolean(id, value, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetLocalConstantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
-        {
-            // SpanOverloader
-            thisApi.GetLocalConstantBoolean(id, value, out data.GetPinnableReference());
-        }
-
         public static unsafe void GetLocalConstantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<bool> data)
-        {
-            // SpanOverloader
-            thisApi.GetLocalConstantBoolean(id, value, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetLocalConstantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
         {
             // SpanOverloader
             thisApi.GetLocalConstantBoolean(id, value, out data.GetPinnableReference());
@@ -118,19 +94,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetVariantBoolean(id, value, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetVariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
-        {
-            // SpanOverloader
-            thisApi.GetVariantBoolean(id, value, out data.GetPinnableReference());
-        }
-
         public static unsafe void GetVariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<bool> data)
-        {
-            // SpanOverloader
-            thisApi.GetVariantBoolean(id, value, out data.GetPinnableReference());
-        }
-
-        public static unsafe void GetVariantBoolean(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Span<Boolean> data)
         {
             // SpanOverloader
             thisApi.GetVariantBoolean(id, value, out data.GetPinnableReference());

@@ -36,9 +36,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ZirconEventBitFuchsia\"")]
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_ZIRCON_EVENT_BIT_FUCHSIA")]
         ExternalSemaphoreHandleTypeZirconEventBitFuchsia = 128,
-        [Obsolete("Deprecated in favour of \"Reserved5BitNV\"")]
-        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_RESERVED_5_BIT_NV")]
-        ExternalSemaphoreHandleTypeReserved5BitNV = 32,
+        [Obsolete("Deprecated in favour of \"SciSyncObjBitNV\"")]
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV")]
+        ExternalSemaphoreHandleTypeSciSyncObjBitNV = 32,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT")]
         OpaqueFDBit = 1,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_BIT")]
@@ -53,7 +53,7 @@ namespace Silk.NET.Vulkan
         SyncFDBit = 16,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_ZIRCON_EVENT_BIT_FUCHSIA")]
         ZirconEventBitFuchsia = 128,
-        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_RESERVED_5_BIT_NV")]
-        Reserved5BitNV = 32,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV")]
+        SciSyncObjBitNV = 32,
     }
 }

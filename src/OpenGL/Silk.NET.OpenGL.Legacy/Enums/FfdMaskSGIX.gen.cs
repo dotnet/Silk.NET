@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "FfdMaskSGIX")]
     public enum FfdMaskSGIX : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_TEXTURE_DEFORMATION_BIT_SGIX")]
         TextureDeformationBitSgix = 0x1,
         [NativeName("Name", "GL_GEOMETRY_DEFORMATION_BIT_SGIX")]

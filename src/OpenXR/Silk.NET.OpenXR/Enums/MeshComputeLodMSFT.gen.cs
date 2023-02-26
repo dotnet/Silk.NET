@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrMeshComputeLodMSFT")]
     public enum MeshComputeLodMSFT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"CoarseMsft\"")]
         [NativeName("Name", "XR_MESH_COMPUTE_LOD_COARSE_MSFT")]
         MeshComputeLodCoarseMsft = 1,

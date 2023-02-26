@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkPerformanceParameterTypeINTEL")]
     public enum PerformanceParameterTypeINTEL : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"HWCountersSupportedIntel\"")]
         [NativeName("Name", "VK_PERFORMANCE_PARAMETER_TYPE_HW_COUNTERS_SUPPORTED_INTEL")]
         PerformanceParameterTypeHWCountersSupportedIntel = 0,

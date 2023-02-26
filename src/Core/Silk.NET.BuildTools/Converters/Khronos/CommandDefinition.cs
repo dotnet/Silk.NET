@@ -38,6 +38,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string[] ErrorCodes { get; }
 
         /// <summary>
+        /// The specific API this function is applicable to.
+        /// </summary>
+        public string? Api { get; }
+
+        /// <summary>
         /// Create a new command definition.
         /// </summary>
         /// <param name="name">The name of the command.</param>
@@ -51,7 +56,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             TypeSpec returnType,
             ParameterDefinition[] parameters,
             string[] successCodes,
-            string[] errorCodes
+            string[] errorCodes,
+            string? api
         )
         {
             Require.NotNull(parameters);
@@ -63,6 +69,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Parameters = parameters;
             SuccessCodes = successCodes;
             ErrorCodes = errorCodes;
+            Api = api;
         }
 
         /// <summary>
@@ -85,7 +92,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 );
 
                 return new CommandDefinition
-                    (xe.GetNameAttribute(), ret.ReturnType, ret.Parameters, ret.SuccessCodes, ret.ErrorCodes);
+                    (xe.GetNameAttribute(), ret.ReturnType, ret.Parameters, ret.SuccessCodes, ret.ErrorCodes, ret.Api);
             }
 
             var proto = xe.Element("proto");
@@ -103,6 +110,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var errorCodes = errorAttr != null
                 ? errorAttr.Value.Split(',').ToArray()
                 : Array.Empty<string>();
+
+            var api = xe.Attribute("api")?.Value;
             
             // ReSharper restore StringLiteralTypo
 
@@ -110,7 +119,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .Select(ParameterDefinition.CreateFromXml)
                 .ToArray();
 
-            return new CommandDefinition(name, returnType, Vary(parameters, name), successCodes, errorCodes);
+            return new CommandDefinition(name, returnType, Vary(parameters, name), successCodes, errorCodes, api);
         }
 
         [Pure]
@@ -127,7 +136,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         (
                             param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
                             ParameterModifier.In, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
-                            param.IsConst
+                            param.IsConst, param.Api
                         );
                     }
                     else if (name.ConstitutesVulkanOutOverload() && i == p.Length - 1)
@@ -137,7 +146,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         (
                             param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
                             ParameterModifier.Out, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
-                            param.IsConst
+                            param.IsConst, param.Api
                         );
                     }
                     else
@@ -146,7 +155,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         (
                             param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
                             ParameterModifier.Ref, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
-                            param.IsConst
+                            param.IsConst, param.Api
                         );
                     }
                 }

@@ -33,18 +33,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
@@ -55,18 +43,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
-        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
         [NativeApi(EntryPoint = "glBindTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
@@ -143,24 +119,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-        }
-
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
         public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
         {
             // ImplicitCountSpanOverloader
@@ -174,24 +132,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         }
 
         public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-        }
-
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // ImplicitCountSpanOverloader
-            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-        }
-
-        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
         {
             // ImplicitCountSpanOverloader
             return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());

@@ -32,7 +32,8 @@ namespace Silk.NET.BuildTools.Overloading
             var hasCorrectDsaSignature = function.Parameters.Count >= 2 &&
                                          function.Parameters[^1].Count?.ValueReference ==
                                          function.Parameters[^2].Name &&
-                                         function.Parameters[^1].Type is not { Name: "void", IndirectionLevels: 1 };
+                                         function.Parameters[^1].Type is not { Name: "void", IndirectionLevels: 1 } &&
+                                         function.NativeName.StartsWith("gl");
             
             // function has 1 - 2 parameters (backcompat assumption for functions that are not count annotated properly)
             var parameterCount = function.Parameters.Count;

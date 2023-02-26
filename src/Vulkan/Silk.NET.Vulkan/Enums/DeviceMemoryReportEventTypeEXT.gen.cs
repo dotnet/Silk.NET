@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkDeviceMemoryReportEventTypeEXT")]
     public enum DeviceMemoryReportEventTypeEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"AllocateExt\"")]
         [NativeName("Name", "VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATE_EXT")]
         DeviceMemoryReportEventTypeAllocateExt = 0,

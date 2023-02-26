@@ -145,9 +145,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VideoDecodeWriteBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
         Access2VideoDecodeWriteBitKhr = 68719476736,
-        [Obsolete("Deprecated in favour of \"Reserved46BitExt\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_46_BIT_EXT")]
-        Access2Reserved46BitExt = 70368744177664,
         [Obsolete("Deprecated in favour of \"VideoEncodeReadBitKhr\"")]
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
         Access2VideoEncodeReadBitKhr = 137438953472,
@@ -305,8 +302,6 @@ namespace Silk.NET.Vulkan
         VideoDecodeReadBitKhr = 34359738368,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
         VideoDecodeWriteBitKhr = 68719476736,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_46_BIT_EXT")]
-        Reserved46BitExt = 70368744177664,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
         VideoEncodeReadBitKhr = 137438953472,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_WRITE_BIT_KHR")]
