@@ -6903,7 +6903,7 @@ public abstract unsafe partial class Chain
 /// <summary>
 /// Represents a 1 element long structure chain.
 /// </summary>
-public interface IChain<TChain> : IDisposable
+public interface IChain<TChain> : IDisposable, IReadOnlyList<IChainable>
 {
     /// <summary>
     /// The first structure in the structure chain.
