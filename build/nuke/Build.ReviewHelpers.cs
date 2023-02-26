@@ -24,34 +24,7 @@ partial class Build
         (
             () =>
             {
-                var files = RootDirectory.GlobFiles("**\\*.csproj").Concat(RootDirectory.GlobFiles("**/*.csproj")).ToArray();
-                Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
-                var missedOut = new List<string>();
-                foreach (var file in files)
-                {
-                    var found = false;
-                    foreach (var project in OriginalSolution.GetProjects("*"))
-                    {
-                        if (new FileInfo(file).FullName.Equals(new FileInfo(project.Path).FullName))
-                        {
-                            found = true;
-                            break;
-                        }
-                    }
-
-                    if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
-                    {
-                        Logger.Error
-                        (
-                            "A project has not been included in the solution and will not be shipped! " +
-                            $"\"{file}\" if this is acceptable please add the project name (excluding the path and " +
-                            "extension) to the AllowedExclusions array in the NUKE Build.ReviewHelpers.cs file."
-                        );
-
-                        missedOut.Add(Path.GetRelativePath(RootDirectory, file).Replace('\\', '/'));
-                    }
-                }
-
+                var missedOut = GetNewProjects();
                 if (missedOut.Any())
                 {
                     Logger.Warn("Commands to add these for your convenience:");
@@ -65,4 +38,37 @@ partial class Build
             }
         )
     );
+
+    List<string> GetNewProjects()
+    {
+        var missedOut = new List<string>();
+        var files = RootDirectory.GlobFiles("**\\*.csproj").Concat(RootDirectory.GlobFiles("**/*.csproj")).ToArray();
+        Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
+        foreach (var file in files)
+        {
+            var found = false;
+            foreach (var project in OriginalSolution.GetProjects("*"))
+            {
+                if (new FileInfo(file).FullName.Equals(new FileInfo(project.Path).FullName))
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
+            {
+                Logger.Error
+                (
+                    "A project has not been included in the solution and will not be shipped! " +
+                    $"\"{file}\" if this is acceptable please add the project name (excluding the path and " +
+                    "extension) to the AllowedExclusions array in the NUKE Build.ReviewHelpers.cs file."
+                );
+
+                missedOut.Add(Path.GetRelativePath(RootDirectory, file).Replace('\\', '/'));
+            }
+        }
+
+        return missedOut;
+    }
 }

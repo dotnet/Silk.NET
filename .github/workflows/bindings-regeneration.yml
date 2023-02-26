@@ -13,7 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: 'recursive'
+        token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+    - name: Checkout submodules, configure git.
+      run: |
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -49,17 +54,4 @@ jobs:
       with:
         sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: dotnet run -c Release --project src/Core/Silk.NET.BuildTools/Silk.NET.BuildTools.csproj -- generator.json --no-parallel
-    - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
-    - name: Create or Update Pull Request
-      uses: gr2m/create-or-update-pull-request-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        title: Binding and specification updates
-        body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
-        branch: patch/spec-updates
-        author: "Team Silk.NET <9011267+dotnet-bot@users.noreply.github.com>"
-        commit-message: Latest bindings as of ${{ steps.date.outputs.date }}
+      run: ./build.cmd regenerate-bindings --create-bindings-pr
