@@ -42,7 +42,10 @@ partial class Build
     List<string> GetNewProjects()
     {
         var missedOut = new List<string>();
-        var files = RootDirectory.GlobFiles("**\\*.csproj").Concat(RootDirectory.GlobFiles("**/*.csproj")).ToArray();
+        var files = RootDirectory.GlobFiles("**\\*.csproj")
+            .Concat(RootDirectory.GlobFiles("**/*.csproj"))
+            .Where(x => !x.Contains("submodules"))
+            .ToArray();
         Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
         foreach (var file in files)
         {
