@@ -45,6 +45,7 @@ namespace Silk.NET.WebGPU
             uint? maxInterStageShaderComponents = null,
             uint? maxInterStageShaderVariables = null,
             uint? maxColorAttachments = null,
+            uint? maxColorAttachmentBytesPerSample = null,
             uint? maxComputeWorkgroupStorageSize = null,
             uint? maxComputeInvocationsPerWorkgroup = null,
             uint? maxComputeWorkgroupSizeX = null,
@@ -171,6 +172,11 @@ namespace Silk.NET.WebGPU
             if (maxColorAttachments is not null)
             {
                 MaxColorAttachments = maxColorAttachments.Value;
+            }
+
+            if (maxColorAttachmentBytesPerSample is not null)
+            {
+                MaxColorAttachmentBytesPerSample = maxColorAttachmentBytesPerSample.Value;
             }
 
             if (maxComputeWorkgroupStorageSize is not null)
@@ -324,6 +330,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxColorAttachments")]
         public uint MaxColorAttachments;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxColorAttachmentBytesPerSample")]
+        public uint MaxColorAttachmentBytesPerSample;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

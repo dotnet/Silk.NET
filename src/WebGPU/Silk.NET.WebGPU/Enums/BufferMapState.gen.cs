@@ -7,7 +7,7 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.Dawn
+namespace Silk.NET.WebGPU
 {
     [Flags]
     [NativeName("Name", "WGPUBufferMapState")]
