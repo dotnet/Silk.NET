@@ -10,6 +10,7 @@ namespace WebGPUTest;
 
 public static unsafe class Program
 {
+    public static Instance* instance;
     public static Adapter* adapter;
     public static Device* device;
     public static void Main(string[] args)
@@ -22,25 +23,13 @@ public static unsafe class Program
 
         wgpu.TryGetDeviceExtension(null, out Wgpu wgpuSpecific);
 
+        InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
+        instance = wgpu.CreateInstance(&instanceDescriptor);
+
         var requestAdapterOptions = new RequestAdapterOptions();
-        wgpu.InstanceRequestAdapter(null, &requestAdapterOptions, new PfnRequestAdapterCallback(RequestAdapterCallback), null);
+        wgpu.InstanceRequestAdapter(instance, &requestAdapterOptions, new PfnRequestAdapterCallback(RequestAdapterCallback), null);
 
-        var deviceDescriptor = new DeviceDescriptor
-        {
-            Label = (byte*) SilkMarshal.StringToPtr("Device"), //TODO: free this
-            DefaultQueue = new QueueDescriptor(),
-        };
-        var requiredLimits = stackalloc RequiredLimits[1];
-        requiredLimits[0] = new RequiredLimits
-        {
-            Limits = new Limits
-            {
-                MaxBindGroups = 1
-            }
-        };
-        deviceDescriptor.RequiredLimits = requiredLimits;
-
-        wgpu.AdapterRequestDevice(adapter, &deviceDescriptor, new PfnRequestDeviceCallback(RequestDeviceCallback), null);
+        wgpu.AdapterRequestDevice(adapter, null, new PfnRequestDeviceCallback(RequestDeviceCallback), null);
 
         SetErrorCallback(wgpu);
 
@@ -184,7 +173,10 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         wgpu.BufferMapAsync(stagingBuffer, MapMode.Read, 0, numbersSize, new PfnBufferMapCallback(
                                 (arg0, data) =>
                                 {
-                                    Console.WriteLine($"status: {arg0}");
+                                    if(arg0 != BufferMapAsyncStatus.Success)
+                                    {
+                                        throw new Exception($"Unable to map buffer! status: {arg0}");
+                                    }
 
                                     var times = (uint*) wgpu.BufferGetMappedRange(stagingBuffer, 0, numbersSize); ;
 
@@ -202,11 +194,20 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
 
     private static void RequestDeviceCallback(RequestDeviceStatus arg0, Device* received, byte* arg2, void* arg3)
     {
+        if(arg0 != RequestDeviceStatus.Success)
+        {
+            throw new Exception($"Unable to get WebGPU Device! status: {arg0} message: {SilkMarshal.PtrToString((nint)arg2)}");
+        }
         device = received;
     }
 
     private static unsafe void RequestAdapterCallback(RequestAdapterStatus arg0, Adapter* received, byte* arg2, void* userdata)
     {
+        if(arg0 != RequestAdapterStatus.Success)
+        {
+            throw new Exception($"Unable to get WebGPU Adapter! status: {arg0} message: {SilkMarshal.PtrToString((nint)arg2)}");
+        }
+
         adapter = received;
     }
 

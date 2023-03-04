@@ -18,6 +18,7 @@ public static unsafe class Program
     private static WebGPUDisposal _WebGpuDisposal = null!;
     private static IWindow?       _Window;
 
+    private static Instance*       _Instance;
     private static Surface*        _Surface;
     private static Adapter*        _Adapter;
     private static Device*         _Device;
@@ -74,7 +75,10 @@ fn fs_main() -> @location(0) vec4<f32> {
 
         _WebGpuDisposal = new WebGPUDisposal(wgpu);
 
-        _Surface = _Window.CreateWebGPUSurface(wgpu);
+        InstanceDescriptor instanceDescriptor = new InstanceDescriptor();
+        _Instance = wgpu.CreateInstance(&instanceDescriptor);
+
+        _Surface = _Window.CreateWebGPUSurface(wgpu, _Instance);
 
         { //Get adapter
             var requestAdapterOptions = new RequestAdapterOptions
@@ -84,7 +88,7 @@ fn fs_main() -> @location(0) vec4<f32> {
 
             wgpu.InstanceRequestAdapter
             (
-                null,
+                _Instance,
                 requestAdapterOptions,
                 new PfnRequestAdapterCallback((_, adapter1, _, _) => _Adapter = adapter1),
                 null
@@ -96,19 +100,10 @@ fn fs_main() -> @location(0) vec4<f32> {
         PrintAdapterFeatures();
 
         { //Get device
-            var requiredLimits = stackalloc RequiredLimits[1];
-            requiredLimits->Limits.MaxBindGroups = 1;
-
-            var deviceDescriptor = new DeviceDescriptor
-            {
-                RequiredLimits = requiredLimits,
-                DefaultQueue   = new QueueDescriptor()
-            };
-
             wgpu.AdapterRequestDevice
             (
                 _Adapter,
-                deviceDescriptor,
+                null,
                 new PfnRequestDeviceCallback((_, device1, _, _) => _Device = device1),
                 null
             );
