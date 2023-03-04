@@ -59,7 +59,7 @@ partial class Build
                 }
             }
 
-            if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
+            if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)) && !file.Contains("submodules"))
             {
                 Logger.Error
                 (
