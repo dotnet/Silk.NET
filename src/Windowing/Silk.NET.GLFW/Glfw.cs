@@ -170,7 +170,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.InvalidEnum" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
-        public partial void InitHint(InitHint hint, bool value);
+        public partial void InitHint(InitHint hint, int value);
 
         /// <summary>
         /// <para>
