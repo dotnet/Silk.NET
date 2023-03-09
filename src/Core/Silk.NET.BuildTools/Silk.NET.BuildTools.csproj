@@ -20,7 +20,7 @@
       <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
       <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.4.2244" />
       <PackageReference Include="morelinq" Version="3.4.0" />
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="ClangSharp" Version="15.0.2" />
     </ItemGroup>
 
