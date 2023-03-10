@@ -44,7 +44,7 @@ partial class Build
         var missedOut = new List<string>();
         var files = RootDirectory.GlobFiles("**\\*.csproj")
             .Concat(RootDirectory.GlobFiles("**/*.csproj"))
-            .Where(x => !x.Contains("submodules"))
+            .Where(x => !x.ToString().Contains("submodules"))
             .ToArray();
         Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
         foreach (var file in files)
@@ -59,7 +59,7 @@ partial class Build
                 }
             }
 
-            if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)) && !file.Contains("submodules"))
+            if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
             {
                 Logger.Error
                 (

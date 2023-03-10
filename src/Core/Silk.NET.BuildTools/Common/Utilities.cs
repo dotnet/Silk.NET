@@ -629,6 +629,9 @@ namespace Silk.NET.BuildTools.Common
                @enum.Tokens.Count(x => BitOperations.PopCount(ParseToken(x.Value, @enum)) == 1)
                >= MathF.Floor(@enum.Tokens.Count / 2f);
 
+        public static bool HasDefaultValue(this Enums.Enum @enum)
+            => @enum.Tokens.Any(x => ParseToken(x.Value, @enum) is 0);
+
         private static ulong ParseToken(string value, Enums.Enum @enum) => value.StartsWith("0x")
             ? ulong.Parse(value[2..], NumberStyles.HexNumber, null)
             : value.StartsWith("unchecked")

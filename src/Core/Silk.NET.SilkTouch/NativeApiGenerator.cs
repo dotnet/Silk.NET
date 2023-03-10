@@ -79,7 +79,6 @@ namespace Silk.NET.SilkTouch
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
-
             foreach (var group in receiver.ClassDeclarations.Select(x => (x.Item1, x.Item2, x.Item2.GetDeclaredSymbol(x.Item1)))
                 .GroupBy(x => x.Item3, SymbolEqualityComparer.Default))
             {

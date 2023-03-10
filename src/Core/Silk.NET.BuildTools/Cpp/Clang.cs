@@ -1205,7 +1205,7 @@ namespace Silk.NET.BuildTools.Cpp
                             EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
                         };
 
-                        if (@enum.IsProbablyABitmask())
+                        if (@enum.IsProbablyABitmask() && !@enum.HasDefaultValue())
                         {
                             @enum.Attributes.Add(new() { Name = "Flags" });
                         }
