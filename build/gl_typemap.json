@@ -1,5 +1,4 @@
 {
-  "Boolean": "GLboolean",
   "BooleanPointer": "GLboolean*",
   "Char": "GLchar",
   "CharPointer": "GLchar*",

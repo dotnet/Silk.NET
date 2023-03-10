@@ -340,7 +340,7 @@ public abstract unsafe partial class Chain
     for (var i = 1; i <= maximumItems; i++)
     {
         var tList = TypeList(i);
-        var iBaseList = i == 1 ? "IDisposable" : $"IChain<{TypeList(i - 1)}>";
+        var iBaseList = i == 1 ? "IDisposable, IReadOnlyList<IChainable>" : $"IChain<{TypeList(i - 1)}>";
         var iM1 = i - 1;
         var pDocs = ParameterDocs(i, "    /// ");
 #>

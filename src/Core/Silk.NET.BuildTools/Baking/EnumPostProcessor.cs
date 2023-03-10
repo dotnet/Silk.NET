@@ -28,7 +28,7 @@ public static class EnumPostProcessor
         foreach (var @enum in from project in profile.Projects.Values
                  from @enum in project.Enums
                  where @enum.Attributes.Any(x => x.Name is "System.Flags" or "Flags") &&
-                       @enum.Tokens.All(x => x.Name is not "None")
+                       !@enum.HasDefaultValue()
                  select @enum)
         {
             @enum.Tokens.Insert(0, new Token { Name = "None", Value = "0" });
