@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP")]
     public enum Lookuptable3DProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Lut\"")]
         [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_LUT")]
         Lookuptable3DPropLut = 0x0,

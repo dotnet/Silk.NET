@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_ALPHA_MODE")]
     public enum AlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D2D1_ALPHA_MODE_UNKNOWN")]
         AlphaModeUnknown = 0x0,

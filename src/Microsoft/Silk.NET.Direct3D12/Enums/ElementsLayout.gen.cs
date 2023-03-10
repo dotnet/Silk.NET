@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_ELEMENTS_LAYOUT")]
     public enum ElementsLayout : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Array\"")]
         [NativeName("Name", "D3D12_ELEMENTS_LAYOUT_ARRAY")]
         ElementsLayoutArray = 0x0,

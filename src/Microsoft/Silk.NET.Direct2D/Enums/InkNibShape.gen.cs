@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_INK_NIB_SHAPE")]
     public enum InkNibShape : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Round\"")]
         [NativeName("Name", "D2D1_INK_NIB_SHAPE_ROUND")]
         InkNibShapeRound = 0x0,

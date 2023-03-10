@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureMotionInstanceTypeNV")]
     public enum AccelerationStructureMotionInstanceTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"StaticNV\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_STATIC_NV")]
         AccelerationStructureMotionInstanceTypeStaticNV = 0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_TIER_HEVC")]
     public enum VideoEncoderTierHevc : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Main\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_TIER_HEVC_MAIN")]
         VideoEncoderTierHevcMain = 0x0,

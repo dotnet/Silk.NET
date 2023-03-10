@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageViewType")]
     public enum ImageViewType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Type1D\"")]
         [NativeName("Name", "VK_IMAGE_VIEW_TYPE_1D")]
         ImageViewType1D = 0,

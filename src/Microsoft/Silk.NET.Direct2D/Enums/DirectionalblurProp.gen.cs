@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DIRECTIONALBLUR_PROP")]
     public enum DirectionalblurProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"StandardDeviation\"")]
         [NativeName("Name", "D2D1_DIRECTIONALBLUR_PROP_STANDARD_DEVIATION")]
         DirectionalblurPropStandardDeviation = 0x0,

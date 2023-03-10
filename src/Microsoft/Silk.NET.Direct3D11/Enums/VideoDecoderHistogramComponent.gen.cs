@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT")]
     public enum VideoDecoderHistogramComponent : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Y\"")]
         [NativeName("Name", "D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_Y")]
         VideoDecoderHistogramComponentY = 0x0,

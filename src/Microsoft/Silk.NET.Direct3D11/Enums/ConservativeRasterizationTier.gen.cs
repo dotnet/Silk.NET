@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
     public enum ConservativeRasterizationTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NotSupported\"")]
         [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_NOT_SUPPORTED")]
         ConservativeRasterizationNotSupported = 0x0,

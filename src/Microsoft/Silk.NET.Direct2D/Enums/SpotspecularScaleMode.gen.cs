@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SPOTSPECULAR_SCALE_MODE")]
     public enum SpotspecularScaleMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_SPOTSPECULAR_SCALE_MODE_NEAREST_NEIGHBOR")]
         SpotspecularScaleModeNearestNeighbor = 0x0,

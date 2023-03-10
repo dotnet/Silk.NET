@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SCALE_PROP")]
     public enum ScaleProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Scale\"")]
         [NativeName("Name", "D2D1_SCALE_PROP_SCALE")]
         ScalePropScale = 0x0,

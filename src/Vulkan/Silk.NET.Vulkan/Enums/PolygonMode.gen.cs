@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPolygonMode")]
     public enum PolygonMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_POLYGON_MODE_FILL")]
         Fill = 0,
         [NativeName("Name", "VK_POLYGON_MODE_LINE")]

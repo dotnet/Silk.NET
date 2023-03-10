@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFragmentShadingRateCombinerOpKHR")]
     public enum FragmentShadingRateCombinerOpKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"KeepKhr\"")]
         [NativeName("Name", "VK_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_KHR")]
         FragmentShadingRateCombinerOpKeepKhr = 0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_FILTER_TYPE")]
     public enum FilterType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Point\"")]
         [NativeName("Name", "D3D11_FILTER_TYPE_POINT")]
         FilterTypePoint = 0x0,

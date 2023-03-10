@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_MORPHOLOGY_PROP")]
     public enum MorphologyProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Mode\"")]
         [NativeName("Name", "D2D1_MORPHOLOGY_PROP_MODE")]
         MorphologyPropMode = 0x0,

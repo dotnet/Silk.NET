@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineExecutableStatisticFormatKHR")]
     public enum PipelineExecutableStatisticFormatKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Bool32Khr\"")]
         [NativeName("Name", "VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR")]
         PipelineExecutableStatisticFormatBool32Khr = 0,

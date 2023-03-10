@@ -4034,6 +4034,9 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE")]
         public const int PFArmV83JscvtInstructionsAvailable = unchecked((int) 0x2C);
         [NativeName("Type", "int")]
+        [NativeName("Name", "PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE")]
+        public const int PFArmV83LrcpcInstructionsAvailable = unchecked((int) 0x2D);
+        [NativeName("Type", "int")]
         [NativeName("Name", "XSTATE_LEGACY_FLOATING_POINT")]
         public const int XstateLegacyFloatingPoint = unchecked((int) 0x0);
         [NativeName("Type", "int")]

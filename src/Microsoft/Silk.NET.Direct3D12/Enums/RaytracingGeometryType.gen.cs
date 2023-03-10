@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE")]
     public enum RaytracingGeometryType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Triangles\"")]
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_TRIANGLES")]
         RaytracingGeometryTypeTriangles = 0x0,

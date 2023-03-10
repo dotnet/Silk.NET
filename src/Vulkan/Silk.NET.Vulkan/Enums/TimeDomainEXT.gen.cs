@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkTimeDomainEXT")]
     public enum TimeDomainEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DeviceExt\"")]
         [NativeName("Name", "VK_TIME_DOMAIN_DEVICE_EXT")]
         TimeDomainDeviceExt = 0,

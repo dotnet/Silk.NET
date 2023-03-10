@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.scan.dir")]
     public enum DeviceSideAvcMotionEstimationScanDir : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_INTERLACED_SCAN_TOP_FIELD_INTEL")]
         TopField = 0x0,
         [NativeName("Name", "CL_AVC_ME_INTERLACED_SCAN_BOTTOM_FIELD_INTEL")]

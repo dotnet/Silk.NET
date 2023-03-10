@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_OPACITY_MASK_CONTENT")]
     public enum OpacityMaskContent : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Graphics\"")]
         [NativeName("Name", "D2D1_OPACITY_MASK_CONTENT_GRAPHICS")]
         OpacityMaskContentGraphics = 0x0,

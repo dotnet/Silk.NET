@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPhysicalDeviceType")]
     public enum PhysicalDeviceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_PHYSICAL_DEVICE_TYPE_OTHER")]
         Other = 0,
         [NativeName("Name", "VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU")]

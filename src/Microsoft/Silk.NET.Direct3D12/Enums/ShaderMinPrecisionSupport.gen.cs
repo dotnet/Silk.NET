@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
     public enum ShaderMinPrecisionSupport : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SupportNone\"")]
         [NativeName("Name", "D3D12_SHADER_MIN_PRECISION_SUPPORT_NONE")]
         ShaderMinPrecisionSupportNone = 0x0,

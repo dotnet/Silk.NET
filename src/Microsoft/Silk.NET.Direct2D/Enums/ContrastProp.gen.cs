@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CONTRAST_PROP")]
     public enum ContrastProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Contrast\"")]
         [NativeName("Name", "D2D1_CONTRAST_PROP_CONTRAST")]
         ContrastPropContrast = 0x0,

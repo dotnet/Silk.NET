@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_ALPHA_FILL_MODE")]
     public enum HDAlphaFillMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Opaque\"")]
         [NativeName("Name", "DXVAHD_ALPHA_FILL_MODE_OPAQUE")]
         HDAlphaFillModeOpaque = 0x0,

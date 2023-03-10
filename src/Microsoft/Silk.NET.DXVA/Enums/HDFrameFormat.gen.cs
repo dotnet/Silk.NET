@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_FRAME_FORMAT")]
     public enum HDFrameFormat : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Progressive\"")]
         [NativeName("Name", "DXVAHD_FRAME_FORMAT_PROGRESSIVE")]
         HDFrameFormatProgressive = 0x0,

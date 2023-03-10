@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkOpticalFlowUsageFlagsNV")]
     public enum OpticalFlowUsageFlagsNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UnknownNV\"")]
         [NativeName("Name", "VK_OPTICAL_FLOW_USAGE_UNKNOWN_NV")]
         OpticalFlowUsageUnknownNV = 0,

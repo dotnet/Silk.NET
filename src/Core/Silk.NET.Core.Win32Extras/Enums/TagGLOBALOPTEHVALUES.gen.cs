@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "tagGLOBALOPT_EH_VALUES")]
     public enum TagGLOBALOPTEHVALUES : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Handle\"")]
         [NativeName("Name", "COMGLB_EXCEPTION_HANDLE")]
         ComglbExceptionHandle = 0x0,

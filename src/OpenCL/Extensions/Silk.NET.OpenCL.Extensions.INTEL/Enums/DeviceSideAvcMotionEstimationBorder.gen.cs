@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.border")]
     public enum DeviceSideAvcMotionEstimationBorder : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_LEFT_INTEL")]
         Left = 0x0,
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_RIGHT_INTEL")]

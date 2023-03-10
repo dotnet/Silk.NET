@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageCompressionFlagsEXT")]
     public enum ImageCompressionFlagsEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DefaultExt\"")]
         [NativeName("Name", "VK_IMAGE_COMPRESSION_DEFAULT_EXT")]
         ImageCompressionDefaultExt = 0,

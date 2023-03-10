@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_DisplayOrientation")]
     public enum DisplayOrientation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "SDL_ORIENTATION_UNKNOWN")]
         OrientationUnknown = 0x0,

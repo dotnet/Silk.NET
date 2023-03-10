@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_MessageBoxColorType")]
     public enum MessageBoxColorType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Background\"")]
         [NativeName("Name", "SDL_MESSAGEBOX_COLOR_BACKGROUND")]
         MessageboxColorBackground = 0x0,

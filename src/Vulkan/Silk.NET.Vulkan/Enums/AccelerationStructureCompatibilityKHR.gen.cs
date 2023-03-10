@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureCompatibilityKHR")]
     public enum AccelerationStructureCompatibilityKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CompatibleKhr\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_COMPATIBILITY_COMPATIBLE_KHR")]
         AccelerationStructureCompatibilityCompatibleKhr = 0,

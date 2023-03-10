@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDeviceMemoryReportEventTypeEXT")]
     public enum DeviceMemoryReportEventTypeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"AllocateExt\"")]
         [NativeName("Name", "VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATE_EXT")]
         DeviceMemoryReportEventTypeAllocateExt = 0,

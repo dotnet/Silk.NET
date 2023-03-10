@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_TouchDeviceType")]
     public enum TouchDeviceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_INVALID")]
         TouchDeviceInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),

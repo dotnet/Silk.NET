@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_LINE_JOIN")]
     public enum LineJoin : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Miter\"")]
         [NativeName("Name", "D2D1_LINE_JOIN_MITER")]
         LineJoinMiter = 0x0,

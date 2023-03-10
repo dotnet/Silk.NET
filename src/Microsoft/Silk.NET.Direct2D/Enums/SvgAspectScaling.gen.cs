@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_ASPECT_SCALING")]
     public enum SvgAspectScaling : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Meet\"")]
         [NativeName("Name", "D2D1_SVG_ASPECT_SCALING_MEET")]
         SvgAspectScalingMeet = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.DirectComposition
     [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE")]
     public enum BitmapInterpolationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR")]

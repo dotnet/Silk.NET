@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_LENGTH_UNITS")]
     public enum SvgLengthUnits : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Number\"")]
         [NativeName("Name", "D2D1_SVG_LENGTH_UNITS_NUMBER")]
         SvgLengthUnitsNumber = 0x0,

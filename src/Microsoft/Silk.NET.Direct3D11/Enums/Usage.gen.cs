@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_USAGE")]
     public enum Usage : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D3D11_USAGE_DEFAULT")]
         UsageDefault = 0x0,

@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_PowerState")]
     public enum PowerState : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "SDL_POWERSTATE_UNKNOWN")]
         PowerstateUnknown = 0x0,

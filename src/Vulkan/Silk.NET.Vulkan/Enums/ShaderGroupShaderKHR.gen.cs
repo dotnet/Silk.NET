@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkShaderGroupShaderKHR")]
     public enum ShaderGroupShaderKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"GeneralKhr\"")]
         [NativeName("Name", "VK_SHADER_GROUP_SHADER_GENERAL_KHR")]
         ShaderGroupShaderGeneralKhr = 0,

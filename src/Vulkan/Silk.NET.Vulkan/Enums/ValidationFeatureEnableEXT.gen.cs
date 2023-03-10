@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkValidationFeatureEnableEXT")]
     public enum ValidationFeatureEnableEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"GpuAssistedExt\"")]
         [NativeName("Name", "VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_EXT")]
         ValidationFeatureEnableGpuAssistedExt = 0,

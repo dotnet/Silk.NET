@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_EXTEND_MODE")]
     public enum ExtendMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Clamp\"")]
         [NativeName("Name", "D2D1_EXTEND_MODE_CLAMP")]
         ExtendModeClamp = 0x0,
