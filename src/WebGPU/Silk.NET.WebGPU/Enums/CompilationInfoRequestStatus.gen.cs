@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
+    [Flags]
     [NativeName("Name", "WGPUCompilationInfoRequestStatus")]
     public enum CompilationInfoRequestStatus : int
     {

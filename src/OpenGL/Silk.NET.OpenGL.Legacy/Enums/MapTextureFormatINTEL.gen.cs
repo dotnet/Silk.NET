@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "MapTextureFormatINTEL")]
     public enum MapTextureFormatINTEL : int
     {

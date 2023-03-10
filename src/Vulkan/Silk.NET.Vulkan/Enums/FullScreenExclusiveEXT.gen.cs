@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkFullScreenExclusiveEXT")]
     public enum FullScreenExclusiveEXT : int
     {

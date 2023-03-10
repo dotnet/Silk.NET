@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
     public enum AuthenticatedProcessIdentifierType : int
     {

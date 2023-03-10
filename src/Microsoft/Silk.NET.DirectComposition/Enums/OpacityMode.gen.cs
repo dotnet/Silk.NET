@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
+    [Flags]
     [NativeName("Name", "DCOMPOSITION_OPACITY_MODE")]
     public enum OpacityMode : int
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
+    [Flags]
     [NativeName("Name", "D2D1_HUETORGB_INPUT_COLOR_SPACE")]
     public enum HuetorgbInputColorSpace : int
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "__AnonymousEnum_dxva9typ_L809_C1")]
     public enum AnonymousEnumDxva9typL809C1 : int
     {

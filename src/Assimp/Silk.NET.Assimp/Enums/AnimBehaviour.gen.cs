@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
+    [Flags]
     [NativeName("Name", "aiAnimBehaviour")]
     public enum AnimBehaviour : int
     {

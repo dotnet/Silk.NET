@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrWindingOrderFB")]
     public enum WindingOrderFB : int
     {

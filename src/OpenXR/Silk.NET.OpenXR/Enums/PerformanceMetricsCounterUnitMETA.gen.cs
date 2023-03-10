@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
+    [Flags]
     [NativeName("Name", "XrPerformanceMetricsCounterUnitMETA")]
     public enum PerformanceMetricsCounterUnitMETA : int
     {

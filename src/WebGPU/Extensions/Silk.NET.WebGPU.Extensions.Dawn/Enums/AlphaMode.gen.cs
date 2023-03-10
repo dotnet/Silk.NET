@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.Dawn
 {
+    [Flags]
     [NativeName("Name", "WGPUAlphaMode")]
     public enum AlphaMode : int
     {

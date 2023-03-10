@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
+    [Flags]
     [NativeName("Name", "WGPUInstanceBackend")]
     public enum InstanceBackend : int
     {

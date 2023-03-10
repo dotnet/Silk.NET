@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_DXVA_DeinterlaceTech")]
     public enum DeinterlaceTech : int
     {

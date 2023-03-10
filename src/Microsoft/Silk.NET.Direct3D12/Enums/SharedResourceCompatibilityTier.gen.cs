@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
     public enum SharedResourceCompatibilityTier : int
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.XAudio
 {
+    [Flags]
     [NativeName("Name", "XAUDIO2_FILTER_TYPE")]
     public enum FilterType : int
     {

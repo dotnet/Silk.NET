@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
+    [Flags]
     [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP")]
     public enum D2D12DaffinetransformProp : int
     {

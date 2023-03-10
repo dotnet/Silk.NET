@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagEOLE_AUTHENTICATION_CAPABILITIES")]
     public enum TagEOLEAUTHENTICATIONCAPABILITIES : int
     {

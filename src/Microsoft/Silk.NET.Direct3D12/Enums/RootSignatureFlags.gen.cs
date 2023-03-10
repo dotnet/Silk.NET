@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAGS")]
     public enum RootSignatureFlags : int
     {

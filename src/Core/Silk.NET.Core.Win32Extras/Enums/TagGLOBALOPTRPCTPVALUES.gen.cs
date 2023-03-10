@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagGLOBALOPT_RPCTP_VALUES")]
     public enum TagGLOBALOPTRPCTPVALUES : int
     {

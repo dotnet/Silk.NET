@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
+    [Flags]
     [NativeName("Name", "StdVideoH265SliceType")]
     public enum StdVideoH265SliceType : int
     {

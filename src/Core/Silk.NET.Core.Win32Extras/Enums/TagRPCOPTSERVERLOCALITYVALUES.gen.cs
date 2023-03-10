@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [Flags]
     [NativeName("Name", "tagRPCOPT_SERVER_LOCALITY_VALUES")]
     public enum TagRPCOPTSERVERLOCALITYVALUES : int
     {

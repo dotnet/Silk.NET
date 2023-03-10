@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
+    [Flags]
     [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS")]
     public enum DeviceContextOptions : int
     {

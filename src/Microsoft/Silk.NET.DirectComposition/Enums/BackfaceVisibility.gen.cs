@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
+    [Flags]
     [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY")]
     public enum BackfaceVisibility : int
     {

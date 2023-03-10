@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
+    [Flags]
     [NativeName("Name", "D3DSCANLINEORDERING")]
     public enum Scanlineordering : int
     {

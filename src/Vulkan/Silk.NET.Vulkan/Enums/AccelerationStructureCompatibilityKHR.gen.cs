@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkAccelerationStructureCompatibilityKHR")]
     public enum AccelerationStructureCompatibilityKHR : int
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
+    [Flags]
     [NativeName("Name", "aiOrigin")]
     public enum Origin : int
     {

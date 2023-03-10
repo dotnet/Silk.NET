@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_COPP_HDCP_Protection_Level")]
     public enum COPPHDCPProtectionLevel : int
     {

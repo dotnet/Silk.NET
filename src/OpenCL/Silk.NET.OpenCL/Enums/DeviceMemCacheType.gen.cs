@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [Flags]
     [NativeName("Name", "cl_device_mem_cache_type")]
     public enum DeviceMemCacheType : int
     {

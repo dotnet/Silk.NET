@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkRayTracingShaderGroupTypeKHR")]
     public enum RayTracingShaderGroupTypeKHR : int
     {

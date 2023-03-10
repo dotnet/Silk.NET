@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "_DXGI_RECLAIM_RESOURCE_RESULTS")]
     public enum ReclaimResourceResults : int
     {

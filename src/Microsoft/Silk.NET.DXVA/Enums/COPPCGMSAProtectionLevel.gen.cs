@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_COPP_CGMSA_Protection_Level")]
     public enum COPPCGMSAProtectionLevel : int
     {

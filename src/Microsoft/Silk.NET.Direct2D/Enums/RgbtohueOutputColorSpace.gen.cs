@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
+    [Flags]
     [NativeName("Name", "D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE")]
     public enum RgbtohueOutputColorSpace : int
     {

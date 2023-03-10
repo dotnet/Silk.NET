@@ -28,7 +28,7 @@ public static class EnumPostProcessor
         foreach (var @enum in from project in profile.Projects.Values
                  from @enum in project.Enums
                  where @enum.Attributes.Any(x => x.Name is "System.Flags" or "Flags") &&
-                       @enum.Tokens.All(x => x.Name is not "None")
+                       !@enum.HasDefaultValue()
                  select @enum)
         {
             @enum.Tokens.Insert(0, new Token { Name = "None", Value = "0" });
@@ -149,7 +149,7 @@ public static class EnumPostProcessor
         foreach (var @enum in from project in profile.Projects.Values
                  from @enum in project.Enums
                  where @enum.Attributes.All(x => x.Name is not "Flags" and not "System.Flags") &&
-                       @enum.IsProbablyABitmask() && !@enum.HasDefaultValue()
+                       @enum.IsProbablyABitmask()
                  select @enum)
         {
             @enum.Attributes.Add(new Attribute { Name = "Flags" });

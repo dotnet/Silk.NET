@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_touch_L44_C9")]
     [NativeName("Name", "SDL_TouchDeviceType")]
     public enum TouchDeviceType : int

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
+    [Flags]
     [NativeName("Name", "DCOMPOSITION_BORDER_MODE")]
     public enum BorderMode : int
     {

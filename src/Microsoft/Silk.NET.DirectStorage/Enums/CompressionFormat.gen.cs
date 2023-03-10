@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
+    [Flags]
     [NativeName("Name", "DSTORAGE_COMPRESSION_FORMAT")]
     public enum CompressionFormat : byte
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
+    [Flags]
     [NativeName("Name", "cl_command_termination_reason_arm")]
     public enum CommandTerminationReason : int
     {

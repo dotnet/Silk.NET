@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
+    [Flags]
     [NativeName("Name", "cl_command_buffer_state_khr")]
     public enum CommandBufferState : int
     {

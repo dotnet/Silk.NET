@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_DXVA2_NominalRange")]
     public enum DXVA2NominalRange : int
     {
