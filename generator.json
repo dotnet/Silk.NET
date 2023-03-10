@@ -30,6 +30,9 @@
             "rename": {
                 "Buffer": "BufferKind"
             },
+            "exclude": [
+                "Boolean"
+            ],
             "namespace": "Silk.NET.OpenGL",
             "overloadExclusions": {
                 "RefOverloader": [
@@ -113,6 +116,9 @@
             "rename": {
                 "Buffer": "BufferKind"
             },
+            "exclude": [
+                "Boolean"
+            ],
             "namespace": "Silk.NET.OpenGL.Legacy",
             "extensionsNamespace": "Silk.NET.OpenGL.Legacy.Extensions",
             "overloadExclusions": {
@@ -196,6 +202,9 @@
             "rename": {
                 "Buffer": "BufferKind"
             },
+            "exclude": [
+                "Boolean"
+            ],
             "namespace": "Silk.NET.OpenGLES",
             "extensionsNamespace": "Silk.NET.OpenGLES.Extensions",
             "overloadExclusions": {
