@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_VERTEX_USAGE")]
     public enum VertexUsage : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Static\"")]
         [NativeName("Name", "D2D1_VERTEX_USAGE_STATIC")]
         VertexUsageStatic = 0x0,

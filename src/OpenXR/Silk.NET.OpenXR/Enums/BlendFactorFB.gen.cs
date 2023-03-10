@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrBlendFactorFB")]
     public enum BlendFactorFB : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ZeroFB\"")]
         [NativeName("Name", "XR_BLEND_FACTOR_ZERO_FB")]
         BlendFactorZeroFB = 0,

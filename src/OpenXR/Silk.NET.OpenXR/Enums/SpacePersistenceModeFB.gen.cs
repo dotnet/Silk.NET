@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSpacePersistenceModeFB")]
     public enum SpacePersistenceModeFB : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InvalidFB\"")]
         [NativeName("Name", "XR_SPACE_PERSISTENCE_MODE_INVALID_FB")]
         SpacePersistenceModeInvalidFB = 0,

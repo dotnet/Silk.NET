@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
     public enum AuthenticatedProcessIdentifierType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D11_PROCESSIDTYPE_UNKNOWN")]
         ProcessidtypeUnknown = 0x0,

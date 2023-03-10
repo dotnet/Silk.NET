@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDisplayPowerStateEXT")]
     public enum DisplayPowerStateEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"OffExt\"")]
         [NativeName("Name", "VK_DISPLAY_POWER_STATE_OFF_EXT")]
         DisplayPowerStateOffExt = 0,

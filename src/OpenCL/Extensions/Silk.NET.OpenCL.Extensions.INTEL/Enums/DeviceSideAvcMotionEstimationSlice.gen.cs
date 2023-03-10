@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.slice")]
     public enum DeviceSideAvcMotionEstimationSlice : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_SLICE_TYPE_PRED_INTEL")]
         Pred = 0x0,
         [NativeName("Name", "CL_AVC_ME_SLICE_TYPE_BPRED_INTEL")]

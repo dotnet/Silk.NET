@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_FlashOperation")]
     public enum FlashOperation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Cancel\"")]
         [NativeName("Name", "SDL_FLASH_CANCEL")]
         FlashCancel = 0x0,

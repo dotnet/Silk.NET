@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CULL_MODE")]
     public enum CullMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3D11_CULL_NONE")]
         CullNone = 0x1,

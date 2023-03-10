@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_AXIS_SHADING_RATE")]
     public enum AxisShadingRate : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Rate1X\"")]
         [NativeName("Name", "D3D12_AXIS_SHADING_RATE_1X")]
         AxisShadingRate1X = 0x0,

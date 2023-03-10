@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_bool")]
     public enum SdlBool : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "SDL_FALSE")]
         False = 0x0,
         [NativeName("Name", "SDL_TRUE")]

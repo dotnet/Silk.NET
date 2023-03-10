@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSamplerYcbcrModelConversionKHR")]
     public enum SamplerYcbcrModelConversionKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"RgbIdentity\"")]
         [NativeName("Name", "VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY")]
         SamplerYcbcrModelConversionRgbIdentity = 0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DBACKBUFFER_TYPE")]
     public enum BackbufferType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Mono\"")]
         [NativeName("Name", "D3DBACKBUFFER_TYPE_MONO")]
         BackbufferTypeMono = 0x0,

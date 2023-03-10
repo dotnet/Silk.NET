@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_ThreadPriority")]
     public enum ThreadPriority : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Low\"")]
         [NativeName("Name", "SDL_THREAD_PRIORITY_LOW")]
         ThreadPriorityLow = 0x0,

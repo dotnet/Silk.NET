@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSystemAllocationScope")]
     public enum SystemAllocationScope : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_SYSTEM_ALLOCATION_SCOPE_COMMAND")]
         Command = 0,
         [NativeName("Name", "VK_SYSTEM_ALLOCATION_SCOPE_OBJECT")]

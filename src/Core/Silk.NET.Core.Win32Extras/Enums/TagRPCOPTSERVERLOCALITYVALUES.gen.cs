@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "tagRPCOPT_SERVER_LOCALITY_VALUES")]
     public enum TagRPCOPTSERVERLOCALITYVALUES : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ProcessLocal\"")]
         [NativeName("Name", "SERVER_LOCALITY_PROCESS_LOCAL")]
         ServerLocalityProcessLocal = 0x0,

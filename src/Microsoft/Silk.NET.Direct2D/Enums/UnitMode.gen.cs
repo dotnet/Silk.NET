@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_UNIT_MODE")]
     public enum UnitMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Dips\"")]
         [NativeName("Name", "D2D1_UNIT_MODE_DIPS")]
         UnitModeDips = 0x0,

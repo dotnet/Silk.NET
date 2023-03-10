@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DASH_STYLE")]
     public enum DashStyle : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Solid\"")]
         [NativeName("Name", "D2D1_DASH_STYLE_SOLID")]
         DashStyleSolid = 0x0,

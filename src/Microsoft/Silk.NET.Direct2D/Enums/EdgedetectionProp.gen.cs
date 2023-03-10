@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_EDGEDETECTION_PROP")]
     public enum EdgedetectionProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Strength\"")]
         [NativeName("Name", "D2D1_EDGEDETECTION_PROP_STRENGTH")]
         EdgedetectionPropStrength = 0x0,

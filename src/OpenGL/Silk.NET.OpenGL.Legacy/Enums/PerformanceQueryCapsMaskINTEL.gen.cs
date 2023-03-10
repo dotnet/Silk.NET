@@ -13,8 +13,6 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "PerformanceQueryCapsMaskINTEL")]
     public enum PerformanceQueryCapsMaskINTEL : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SingleContextIntel\"")]
         [NativeName("Name", "GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
         PerfquerySingleContextIntel = 0x0,

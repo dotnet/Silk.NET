@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_YUV_CONVERSION_MODE")]
     public enum YUVCONVERSIONMODE : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Jpeg\"")]
         [NativeName("Name", "SDL_YUV_CONVERSION_JPEG")]
         YuvConversionJpeg = 0x0,

@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_TextureAccess")]
     public enum TextureAccess : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Static\"")]
         [NativeName("Name", "SDL_TEXTUREACCESS_STATIC")]
         TextureaccessStatic = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRayTracingShaderGroupTypeKHR")]
     public enum RayTracingShaderGroupTypeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"GeneralKhr\"")]
         [NativeName("Name", "VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_KHR")]
         RayTracingShaderGroupTypeGeneralKhr = 0,

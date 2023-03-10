@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264SliceType")]
     public enum StdVideoH264SliceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"P\"")]
         [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_P")]
         StdVideoH264SliceTypeP = 0x0,

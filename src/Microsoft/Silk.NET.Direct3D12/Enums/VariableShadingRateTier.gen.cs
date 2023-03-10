@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VARIABLE_SHADING_RATE_TIER")]
     public enum VariableShadingRateTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TierNotSupported\"")]
         [NativeName("Name", "D3D12_VARIABLE_SHADING_RATE_TIER_NOT_SUPPORTED")]
         VariableShadingRateTierNotSupported = 0x0,

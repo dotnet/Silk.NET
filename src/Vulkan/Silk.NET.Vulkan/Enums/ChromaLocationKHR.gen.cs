@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkChromaLocationKHR")]
     public enum ChromaLocationKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CositedEven\"")]
         [NativeName("Name", "VK_CHROMA_LOCATION_COSITED_EVEN")]
         ChromaLocationCositedEven = 0,

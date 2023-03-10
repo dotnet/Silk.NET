@@ -14,8 +14,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "ETW_COMPRESSION_RESUMPTION_MODE")]
     public enum EtwCompressionResumptionMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "EtwCompressionModeRestart")]
         EtwCompressionModeRestart = 0x0,
         [NativeName("Name", "EtwCompressionModeNoDisable")]

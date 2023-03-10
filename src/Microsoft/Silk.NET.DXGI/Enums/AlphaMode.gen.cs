@@ -13,8 +13,6 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_ALPHA_MODE")]
     public enum AlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unspecified\"")]
         [NativeName("Name", "DXGI_ALPHA_MODE_UNSPECIFIED")]
         AlphaModeUnspecified = 0x0,

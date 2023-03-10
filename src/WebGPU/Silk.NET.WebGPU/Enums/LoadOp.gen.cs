@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPULoadOp")]
     public enum LoadOp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPULoadOp_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPULoadOp_Clear")]

@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDeviceAddressBindingTypeEXT")]
     public enum DeviceAddressBindingTypeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"BindExt\"")]
         [NativeName("Name", "VK_DEVICE_ADDRESS_BINDING_TYPE_BIND_EXT")]
         DeviceAddressBindingTypeBindExt = 0,

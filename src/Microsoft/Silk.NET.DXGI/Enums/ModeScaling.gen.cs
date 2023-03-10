@@ -13,8 +13,6 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_MODE_SCALING")]
     public enum ModeScaling : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unspecified\"")]
         [NativeName("Name", "DXGI_MODE_SCALING_UNSPECIFIED")]
         ModeScalingUnspecified = 0x0,

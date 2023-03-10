@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "tagSTREAM_SEEK")]
     public enum TagSTREAMSEEK : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Set\"")]
         [NativeName("Name", "STREAM_SEEK_SET")]
         StreamSeekSet = 0x0,

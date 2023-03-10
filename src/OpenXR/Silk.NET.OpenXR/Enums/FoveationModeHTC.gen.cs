@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrFoveationModeHTC")]
     public enum FoveationModeHTC : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DisableHtc\"")]
         [NativeName("Name", "XR_FOVEATION_MODE_DISABLE_HTC")]
         FoveationModeDisableHtc = 0,

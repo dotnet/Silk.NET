@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_STATIC_BORDER_COLOR")]
     public enum StaticBorderColor : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TransparentBlack\"")]
         [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK")]
         StaticBorderColorTransparentBlack = 0x0,

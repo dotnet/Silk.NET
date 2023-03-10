@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_TILED_RESOURCES_TIER")]
     public enum TiledResourcesTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NotSupported\"")]
         [NativeName("Name", "D3D11_TILED_RESOURCES_NOT_SUPPORTED")]
         TiledResourcesNotSupported = 0x0,

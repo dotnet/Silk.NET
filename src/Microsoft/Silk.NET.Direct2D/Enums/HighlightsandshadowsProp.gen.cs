@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_HIGHLIGHTSANDSHADOWS_PROP")]
     public enum HighlightsandshadowsProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Highlights\"")]
         [NativeName("Name", "D2D1_HIGHLIGHTSANDSHADOWS_PROP_HIGHLIGHTS")]
         HighlightsandshadowsPropHighlights = 0x0,

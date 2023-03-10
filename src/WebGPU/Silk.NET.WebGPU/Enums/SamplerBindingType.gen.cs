@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUSamplerBindingType")]
     public enum SamplerBindingType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUSamplerBindingType_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUSamplerBindingType_Filtering")]

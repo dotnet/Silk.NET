@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SHADOW_PROP")]
     public enum ShadowProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"BlurStandardDeviation\"")]
         [NativeName("Name", "D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION")]
         ShadowPropBlurStandardDeviation = 0x0,

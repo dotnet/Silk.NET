@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPURenderPassTimestampLocation")]
     public enum RenderPassTimestampLocation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPURenderPassTimestampLocation_Beginning")]
         Beginning = 0x0,
         [NativeName("Name", "WGPURenderPassTimestampLocation_End")]

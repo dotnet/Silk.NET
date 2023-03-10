@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDeviceFaultAddressTypeEXT")]
     public enum DeviceFaultAddressTypeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoneExt\"")]
         [NativeName("Name", "VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_EXT")]
         DeviceFaultAddressTypeNoneExt = 0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_BARRIER_TYPE")]
     public enum BarrierType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Global\"")]
         [NativeName("Name", "D3D12_BARRIER_TYPE_GLOBAL")]
         BarrierTypeGlobal = 0x0,

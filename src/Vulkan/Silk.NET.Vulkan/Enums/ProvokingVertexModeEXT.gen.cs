@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkProvokingVertexModeEXT")]
     public enum ProvokingVertexModeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FirstVertexExt\"")]
         [NativeName("Name", "VK_PROVOKING_VERTEX_MODE_FIRST_VERTEX_EXT")]
         ProvokingVertexModeFirstVertexExt = 0,

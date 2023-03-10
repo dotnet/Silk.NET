@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureAspect")]
     public enum TextureAspect : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUTextureAspect_All")]
         All = 0x0,
         [NativeName("Name", "WGPUTextureAspect_StencilOnly")]

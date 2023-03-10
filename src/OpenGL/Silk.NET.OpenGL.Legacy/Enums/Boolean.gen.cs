@@ -13,8 +13,6 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "Boolean")]
     public enum Boolean : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "GL_FALSE")]
         False = 0x0,
         [NativeName("Name", "GL_TRUE")]
