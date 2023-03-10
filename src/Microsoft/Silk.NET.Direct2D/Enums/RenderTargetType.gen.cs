@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_RENDER_TARGET_TYPE")]
     public enum RenderTargetType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_DEFAULT")]
         RenderTargetTypeDefault = 0x0,

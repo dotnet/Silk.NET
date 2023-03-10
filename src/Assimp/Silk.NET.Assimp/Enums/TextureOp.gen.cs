@@ -13,8 +13,6 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiTextureOp")]
     public enum TextureOp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Multiply\"")]
         [NativeName("Name", "aiTextureOp_Multiply")]
         TextureOpMultiply = 0x0,

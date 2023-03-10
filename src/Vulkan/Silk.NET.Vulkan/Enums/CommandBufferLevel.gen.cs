@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCommandBufferLevel")]
     public enum CommandBufferLevel : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_PRIMARY")]
         Primary = 0,
         [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_SECONDARY")]

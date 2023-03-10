@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.luma.predictor")]
     public enum DeviceSideAvcMotionEstimationLumaPredictor : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_LUMA_PREDICTOR_MODE_VERTICAL_INTEL")]
         LumaPredictorModeVertical = 0x0,
         [NativeName("Name", "CL_AVC_ME_LUMA_PREDICTOR_MODE_HORIZONTAL_INTEL")]

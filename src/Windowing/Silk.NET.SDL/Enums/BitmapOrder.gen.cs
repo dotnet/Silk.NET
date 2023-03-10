@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_BitmapOrder")]
     public enum BitmapOrder : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "SDL_BITMAPORDER_NONE")]
         BitmaporderNone = 0x0,
         [NativeName("Name", "SDL_BITMAPORDER_4321")]

@@ -13,8 +13,6 @@ namespace Silk.NET.DirectStorage
     [NativeName("Name", "DSTORAGE_COMPRESSION")]
     public enum Compression : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Fastest\"")]
         [NativeName("Name", "DSTORAGE_COMPRESSION_FASTEST")]
         CompressionFastest = unchecked((int) 0xFFFFFFFFFFFFFFFF),

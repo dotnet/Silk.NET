@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrPassthroughFormHTC")]
     public enum PassthroughFormHTC : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PlanarHtc\"")]
         [NativeName("Name", "XR_PASSTHROUGH_FORM_PLANAR_HTC")]
         PassthroughFormPlanarHtc = 0,

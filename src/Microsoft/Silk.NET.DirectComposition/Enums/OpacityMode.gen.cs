@@ -13,8 +13,6 @@ namespace Silk.NET.DirectComposition
     [NativeName("Name", "DCOMPOSITION_OPACITY_MODE")]
     public enum OpacityMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_LAYER")]
         Layer = 0x0,
         [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_MULTIPLY")]

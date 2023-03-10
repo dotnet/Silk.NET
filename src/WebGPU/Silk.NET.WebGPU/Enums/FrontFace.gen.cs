@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUFrontFace")]
     public enum FrontFace : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUFrontFace_CCW")]
         Ccw = 0x0,
         [NativeName("Name", "WGPUFrontFace_CW")]

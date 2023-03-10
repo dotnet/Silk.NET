@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_TEXTURECUBE_FACE")]
     public enum TexturecubeFace : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PositiveX\"")]
         [NativeName("Name", "D3D11_TEXTURECUBE_FACE_POSITIVE_X")]
         TexturecubeFacePositiveX = 0x0,

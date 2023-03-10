@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRayTracingInvocationReorderModeNV")]
     public enum RayTracingInvocationReorderModeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoneNV\"")]
         [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_NV")]
         RayTracingInvocationReorderModeNoneNV = 0,

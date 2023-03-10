@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FIGURE_END")]
     public enum FigureEnd : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Open\"")]
         [NativeName("Name", "D2D1_FIGURE_END_OPEN")]
         FigureEndOpen = 0x0,

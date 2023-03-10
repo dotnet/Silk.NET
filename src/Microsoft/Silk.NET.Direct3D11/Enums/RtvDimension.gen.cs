@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_RTV_DIMENSION")]
     public enum RtvDimension : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D11_RTV_DIMENSION_UNKNOWN")]
         RtvDimensionUnknown = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DC_INITIALIZE_MODE")]
     public enum DCInitializeMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Copy\"")]
         [NativeName("Name", "D2D1_DC_INITIALIZE_MODE_COPY")]
         DCInitializeModeCopy = 0x0,

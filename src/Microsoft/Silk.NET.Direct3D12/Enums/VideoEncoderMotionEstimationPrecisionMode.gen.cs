@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE")]
     public enum VideoEncoderMotionEstimationPrecisionMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Maximum\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE_MAXIMUM")]
         VideoEncoderMotionEstimationPrecisionModeMaximum = 0x0,

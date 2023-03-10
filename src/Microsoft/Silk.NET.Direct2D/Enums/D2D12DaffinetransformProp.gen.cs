@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP")]
     public enum D2D12DaffinetransformProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InterpolationMode\"")]
         [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE")]
         D2D12DaffinetransformPropInterpolationMode = 0x0,

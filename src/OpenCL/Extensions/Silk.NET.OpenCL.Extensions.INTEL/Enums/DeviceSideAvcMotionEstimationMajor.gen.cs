@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.major")]
     public enum DeviceSideAvcMotionEstimationMajor : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_MAJOR_16x16_INTEL")]
         Major16x16 = 0x0,
         [NativeName("Name", "CL_AVC_ME_MAJOR_16x8_INTEL")]

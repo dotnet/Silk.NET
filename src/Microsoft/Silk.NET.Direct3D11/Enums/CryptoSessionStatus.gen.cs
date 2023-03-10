@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CRYPTO_SESSION_STATUS")]
     public enum CryptoSessionStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"OK\"")]
         [NativeName("Name", "D3D11_CRYPTO_SESSION_STATUS_OK")]
         CryptoSessionStatusOK = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUIndexFormat")]
     public enum IndexFormat : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUIndexFormat_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUIndexFormat_Uint16")]

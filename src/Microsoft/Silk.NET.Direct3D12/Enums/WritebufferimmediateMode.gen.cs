@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_WRITEBUFFERIMMEDIATE_MODE")]
     public enum WritebufferimmediateMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D3D12_WRITEBUFFERIMMEDIATE_MODE_DEFAULT")]
         WritebufferimmediateModeDefault = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0006_0001")]
     public enum MIDLMIDLItfDxva2api000000060001 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DecoderRenderTarget\"")]
         [NativeName("Name", "DXVA2_SurfaceType_DecoderRenderTarget")]
         DXVA2SurfaceTypeDecoderRenderTarget = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_DECODE_TIER")]
     public enum VideoDecodeTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TierNotSupported\"")]
         [NativeName("Name", "D3D12_VIDEO_DECODE_TIER_NOT_SUPPORTED")]
         VideoDecodeTierNotSupported = 0x0,

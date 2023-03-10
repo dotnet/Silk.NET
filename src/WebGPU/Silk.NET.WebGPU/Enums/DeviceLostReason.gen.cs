@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUDeviceLostReason")]
     public enum DeviceLostReason : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUDeviceLostReason_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUDeviceLostReason_Destroyed")]

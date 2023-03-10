@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_bool")]
     public enum Bool : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_FALSE")]
         False = 0x0,
         [NativeName("Name", "CL_TRUE")]

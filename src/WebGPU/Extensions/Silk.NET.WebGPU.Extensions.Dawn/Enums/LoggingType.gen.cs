@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     [NativeName("Name", "WGPULoggingType")]
     public enum LoggingType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPULoggingType_Verbose")]
         Verbose = 0x0,
         [NativeName("Name", "WGPULoggingType_Info")]

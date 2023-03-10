@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCopyAccelerationStructureModeKHR")]
     public enum CopyAccelerationStructureModeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CloneKhr\"")]
         [NativeName("Name", "VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_KHR")]
         CopyAccelerationStructureModeCloneKhr = 0,

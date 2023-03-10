@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUQueueWorkDoneStatus")]
     public enum QueueWorkDoneStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Error")]

@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DPATCHEDGESTYLE")]
     public enum Patchedgestyle : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Discrete\"")]
         [NativeName("Name", "D3DPATCHEDGE_DISCRETE")]
         PatchedgeDiscrete = 0x0,

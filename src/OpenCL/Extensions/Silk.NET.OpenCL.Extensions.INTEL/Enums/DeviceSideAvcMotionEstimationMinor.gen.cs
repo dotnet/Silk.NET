@@ -13,8 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.minor")]
     public enum DeviceSideAvcMotionEstimationMinor : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_MINOR_8x8_INTEL")]
         Minor8x8 = 0x0,
         [NativeName("Name", "CL_AVC_ME_MINOR_8x4_INTEL")]

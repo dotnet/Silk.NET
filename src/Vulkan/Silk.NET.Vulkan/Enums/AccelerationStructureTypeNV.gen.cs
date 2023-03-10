@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureTypeNV")]
     public enum AccelerationStructureTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TopLevelKhr\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_KHR")]
         AccelerationStructureTypeTopLevelKhr = 0,

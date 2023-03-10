@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE")]
     public enum ScaleInterpolationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         ScaleInterpolationModeNearestNeighbor = 0x0,

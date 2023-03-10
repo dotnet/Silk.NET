@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPURequestAdapterStatus")]
     public enum RequestAdapterStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPURequestAdapterStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPURequestAdapterStatus_Unavailable")]

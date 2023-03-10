@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_SURFACE_TYPE")]
     public enum HDSurfaceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Input\"")]
         [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_INPUT")]
         HDSurfaceTypeVideoInput = 0x0,

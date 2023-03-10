@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSamplerYcbcrRangeKHR")]
     public enum SamplerYcbcrRangeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Full\"")]
         [NativeName("Name", "VK_SAMPLER_YCBCR_RANGE_ITU_FULL")]
         SamplerYcbcrRangeItuFull = 0,

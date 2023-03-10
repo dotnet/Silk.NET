@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoComponentBitDepthFlagsKHR")]
     public enum VideoComponentBitDepthFlagsKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DepthInvalidKhr\"")]
         [NativeName("Name", "VK_VIDEO_COMPONENT_BIT_DEPTH_INVALID_KHR")]
         VideoComponentBitDepthInvalidKhr = 0,

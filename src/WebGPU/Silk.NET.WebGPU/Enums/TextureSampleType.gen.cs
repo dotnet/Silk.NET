@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureSampleType")]
     public enum TextureSampleType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUTextureSampleType_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUTextureSampleType_Float")]

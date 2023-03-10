@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkTessellationDomainOriginKHR")]
     public enum TessellationDomainOriginKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UpperLeft\"")]
         [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT")]
         TessellationDomainOriginUpperLeft = 0,

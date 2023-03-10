@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_INPUT_CLASSIFICATION")]
     public enum InputClassification : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PerVertexData\"")]
         [NativeName("Name", "D3D11_INPUT_PER_VERTEX_DATA")]
         InputPerVertexData = 0x0,

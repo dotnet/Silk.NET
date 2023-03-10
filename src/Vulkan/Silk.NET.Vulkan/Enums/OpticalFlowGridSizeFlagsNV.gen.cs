@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkOpticalFlowGridSizeFlagsNV")]
     public enum OpticalFlowGridSizeFlagsNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SizeUnknownNV\"")]
         [NativeName("Name", "VK_OPTICAL_FLOW_GRID_SIZE_UNKNOWN_NV")]
         OpticalFlowGridSizeUnknownNV = 0,

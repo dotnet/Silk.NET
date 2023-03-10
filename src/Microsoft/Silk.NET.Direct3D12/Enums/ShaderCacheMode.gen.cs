@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_CACHE_MODE")]
     public enum ShaderCacheMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Memory\"")]
         [NativeName("Name", "D3D12_SHADER_CACHE_MODE_MEMORY")]
         ShaderCacheModeMemory = 0x0,

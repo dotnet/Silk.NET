@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_DEVICE_USAGE")]
     public enum HDDeviceUsage : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PlaybackNormal\"")]
         [NativeName("Name", "DXVAHD_DEVICE_USAGE_PLAYBACK_NORMAL")]
         HDDeviceUsagePlaybackNormal = 0x0,

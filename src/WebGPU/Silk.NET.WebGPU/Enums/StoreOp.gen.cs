@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUStoreOp")]
     public enum StoreOp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUStoreOp_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUStoreOp_Store")]

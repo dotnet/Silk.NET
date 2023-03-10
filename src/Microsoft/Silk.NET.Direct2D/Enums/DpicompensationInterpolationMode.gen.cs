@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DPICOMPENSATION_INTERPOLATION_MODE")]
     public enum DpicompensationInterpolationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_DPICOMPENSATION_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         DpicompensationInterpolationModeNearestNeighbor = 0x0,

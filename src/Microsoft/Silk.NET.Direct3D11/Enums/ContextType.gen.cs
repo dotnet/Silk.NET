@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CONTEXT_TYPE")]
     public enum ContextType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TypeAll\"")]
         [NativeName("Name", "D3D11_CONTEXT_TYPE_ALL")]
         ContextTypeAll = 0x0,

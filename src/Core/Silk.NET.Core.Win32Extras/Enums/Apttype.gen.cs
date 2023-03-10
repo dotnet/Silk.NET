@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_APTTYPE")]
     public enum Apttype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Current\"")]
         [NativeName("Name", "APTTYPE_CURRENT")]
         ApttypeCurrent = unchecked((int) 0xFFFFFFFFFFFFFFFF),

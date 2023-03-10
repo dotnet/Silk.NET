@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_YCBCR_CHROMA_SUBSAMPLING")]
     public enum YcbcrChromaSubsampling : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SubsamplingAuto\"")]
         [NativeName("Name", "D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO")]
         YcbcrChromaSubsamplingAuto = 0x0,

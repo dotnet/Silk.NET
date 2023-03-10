@@ -13,8 +13,6 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "_AudioSessionState")]
     public enum AudioSessionState : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "AudioSessionStateInactive")]
         AudioSessionStateInactive = 0x0,
         [NativeName("Name", "AudioSessionStateActive")]

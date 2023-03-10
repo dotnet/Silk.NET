@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "_D3D_INCLUDE_TYPE")]
     public enum D3DIncludeType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3D_INCLUDE_LOCAL")]
         D3DIncludeLocal = 0x0,
         [NativeName("Name", "D3D_INCLUDE_SYSTEM")]

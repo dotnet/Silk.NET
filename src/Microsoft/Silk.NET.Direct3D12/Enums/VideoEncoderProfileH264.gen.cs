@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_PROFILE_H264")]
     public enum VideoEncoderProfileH264 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Main\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PROFILE_H264_MAIN")]
         VideoEncoderProfileH264Main = 0x0,

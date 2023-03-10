@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_BusType")]
     public enum COPPBusType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "COPP_BusType_Unknown")]
         CoppBusTypeUnknown = 0x0,

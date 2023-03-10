@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPointClippingBehaviorKHR")]
     public enum PointClippingBehaviorKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"AllClipPlanes\"")]
         [NativeName("Name", "VK_POINT_CLIPPING_BEHAVIOR_ALL_CLIP_PLANES")]
         PointClippingBehaviorAllClipPlanes = 0,

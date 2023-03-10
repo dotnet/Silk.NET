@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrFoveationLevelFB")]
     public enum FoveationLevelFB : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoneFB\"")]
         [NativeName("Name", "XR_FOVEATION_LEVEL_NONE_FB")]
         FoveationLevelNoneFB = 0,
