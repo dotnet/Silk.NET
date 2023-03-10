@@ -55,3 +55,5 @@ jobs:
         sdk-version: 22621
     - name: Run a full run of BuildTools
       run: ./build.cmd regenerate-bindings --create-bindings-pr --no-parallel-generation
+      env:
+        PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
