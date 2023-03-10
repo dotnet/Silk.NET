@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT")]
     public enum ColormanagementRenderingIntent : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Perceptual\"")]
         [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL")]
         ColormanagementRenderingIntentPerceptual = 0x0,

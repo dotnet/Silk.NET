@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUPresentMode")]
     public enum PresentMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUPresentMode_Immediate")]
         Immediate = 0x0,
         [NativeName("Name", "WGPUPresentMode_Mailbox")]

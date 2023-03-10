@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("Name", "__AnonymousEnum_SDL_shape_L85_C9")]
     public enum WindowShapeModeVal : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "ShapeModeDefault")]
         ShapeModeDefault = 0x0,
         [NativeName("Name", "ShapeModeBinarizeAlpha")]

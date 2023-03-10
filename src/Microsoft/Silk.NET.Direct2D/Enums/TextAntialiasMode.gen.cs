@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_TEXT_ANTIALIAS_MODE")]
     public enum TextAntialiasMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D2D1_TEXT_ANTIALIAS_MODE_DEFAULT")]
         TextAntialiasModeDefault = 0x0,

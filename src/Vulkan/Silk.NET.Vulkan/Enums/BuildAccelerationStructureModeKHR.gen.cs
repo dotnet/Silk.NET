@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkBuildAccelerationStructureModeKHR")]
     public enum BuildAccelerationStructureModeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"BuildKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
         BuildAccelerationStructureModeBuildKhr = 0,

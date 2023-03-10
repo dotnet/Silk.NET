@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_COMPUTE_PREEMPTION_GRANULARITY")]
     public enum ComputePreemptionGranularity : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DmaBufferBoundary\"")]
         [NativeName("Name", "DXGI_COMPUTE_PREEMPTION_DMA_BUFFER_BOUNDARY")]
         ComputePreemptionDmaBufferBoundary = 0x0,

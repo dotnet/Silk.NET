@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE")]
     public enum ColorContextType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Icc\"")]
         [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_ICC")]
         ColorContextTypeIcc = 0x0,

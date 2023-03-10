@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_TURBULENCE_NOISE")]
     public enum TurbulenceNoise : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FractalSum\"")]
         [NativeName("Name", "D2D1_TURBULENCE_NOISE_FRACTAL_SUM")]
         TurbulenceNoiseFractalSum = 0x0,

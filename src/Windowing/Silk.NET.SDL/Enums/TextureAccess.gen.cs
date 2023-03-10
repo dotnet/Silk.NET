@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L111_C9")]
     [NativeName("Name", "SDL_TextureAccess")]
     public enum TextureAccess : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Static\"")]
         [NativeName("Name", "SDL_TEXTUREACCESS_STATIC")]
         TextureaccessStatic = 0x0,

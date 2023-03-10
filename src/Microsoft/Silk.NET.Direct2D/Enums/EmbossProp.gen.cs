@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_EMBOSS_PROP")]
     public enum EmbossProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Height\"")]
         [NativeName("Name", "D2D1_EMBOSS_PROP_HEIGHT")]
         EmbossPropHeight = 0x0,

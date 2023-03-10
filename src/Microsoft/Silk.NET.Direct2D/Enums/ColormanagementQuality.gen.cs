@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLORMANAGEMENT_QUALITY")]
     public enum ColormanagementQuality : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Proof\"")]
         [NativeName("Name", "D2D1_COLORMANAGEMENT_QUALITY_PROOF")]
         ColormanagementQualityProof = 0x0,

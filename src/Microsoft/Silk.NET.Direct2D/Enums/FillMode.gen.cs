@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_FILL_MODE")]
     public enum FillMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Alternate\"")]
         [NativeName("Name", "D2D1_FILL_MODE_ALTERNATE")]
         FillModeAlternate = 0x0,

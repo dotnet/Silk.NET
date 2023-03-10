@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP")]
     public enum ArithmeticcompositeProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Coefficients\"")]
         [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_COEFFICIENTS")]
         ArithmeticcompositePropCoefficients = 0x0,

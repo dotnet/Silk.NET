@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkSamplerAddressMode")]
     public enum SamplerAddressMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_SAMPLER_ADDRESS_MODE_REPEAT")]
         Repeat = 0,
         [NativeName("Name", "VK_SAMPLER_ADDRESS_MODE_MIRRORED_REPEAT")]

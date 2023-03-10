@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkCoarseSampleOrderTypeNV")]
     public enum CoarseSampleOrderTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DefaultNV\"")]
         [NativeName("Name", "VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV")]
         CoarseSampleOrderTypeDefaultNV = 0,

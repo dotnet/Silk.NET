@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkGeometryTypeNV")]
     public enum GeometryTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TrianglesKhr\"")]
         [NativeName("Name", "VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
         GeometryTypeTrianglesKhr = 0,

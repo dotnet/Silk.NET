@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_BITMAPSOURCE_PROP")]
     public enum BitmapsourceProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"WicBitmapSource\"")]
         [NativeName("Name", "D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE")]
         BitmapsourcePropWicBitmapSource = 0x0,

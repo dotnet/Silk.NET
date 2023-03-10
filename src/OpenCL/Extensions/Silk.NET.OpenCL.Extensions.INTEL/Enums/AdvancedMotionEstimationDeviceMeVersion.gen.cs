@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [Flags]
     [NativeName("Name", "cl_intel_advanced_motion_estimation.device_me_version")]
     public enum AdvancedMotionEstimationDeviceMeVersion : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_ME_VERSION_LEGACY_INTEL")]
         Legacy = 0x0,
         [NativeName("Name", "CL_ME_VERSION_ADVANCED_VER_1_INTEL")]

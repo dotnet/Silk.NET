@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE")]
     public enum D2D13DperspectivetransformInterpolationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_3DPERSPECTIVETRANSFORM_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         D2D13DperspectivetransformInterpolationModeNearestNeighbor = 0x0,

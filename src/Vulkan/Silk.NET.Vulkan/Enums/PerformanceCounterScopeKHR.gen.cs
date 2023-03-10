@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkPerformanceCounterScopeKHR")]
     public enum PerformanceCounterScopeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_SCOPE_COMMAND_BUFFER_KHR")]
         PerformanceCounterScopeCommandBufferKhr = 0,
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_SCOPE_RENDER_PASS_KHR")]

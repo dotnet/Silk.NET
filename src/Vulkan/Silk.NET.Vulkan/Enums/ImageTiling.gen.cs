@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkImageTiling")]
     public enum ImageTiling : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_IMAGE_TILING_OPTIMAL")]
         Optimal = 0,
         [NativeName("Name", "VK_IMAGE_TILING_LINEAR")]

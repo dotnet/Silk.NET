@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_ALPHA_MODE")]
     public enum AlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unspecified\"")]
         [NativeName("Name", "DXGI_ALPHA_MODE_UNSPECIFIED")]
         AlphaModeUnspecified = 0x0,

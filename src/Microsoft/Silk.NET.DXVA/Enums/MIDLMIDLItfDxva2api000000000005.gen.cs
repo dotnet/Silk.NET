@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0005")]
     public enum MIDLMIDLItfDxva2api000000000005 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unsupported\"")]
         [NativeName("Name", "DXVA2_NoiseFilterTech_Unsupported")]
         DXVA2NoiseFilterTechUnsupported = 0x0,

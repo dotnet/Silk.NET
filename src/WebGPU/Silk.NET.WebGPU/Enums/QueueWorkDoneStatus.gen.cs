@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUQueueWorkDoneStatus")]
     public enum QueueWorkDoneStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Error")]

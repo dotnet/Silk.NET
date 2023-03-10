@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkQueryResultStatusKHR")]
     public enum QueryResultStatusKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ErrorKhr\"")]
         [NativeName("Name", "VK_QUERY_RESULT_STATUS_ERROR_KHR")]
         QueryResultStatusErrorKhr = unchecked((int) -1),

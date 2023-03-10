@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_COPP_HDCP_Protection_Level")]
     public enum COPPHDCPProtectionLevel : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Level0\"")]
         [NativeName("Name", "COPP_HDCP_Level0")]
         CoppHdcpLevel0 = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_VIGNETTE_PROP")]
     public enum VignetteProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Color\"")]
         [NativeName("Name", "D2D1_VIGNETTE_PROP_COLOR")]
         VignettePropColor = 0x0,

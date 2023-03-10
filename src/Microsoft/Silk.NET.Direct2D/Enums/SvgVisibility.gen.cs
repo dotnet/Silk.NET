@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SVG_VISIBILITY")]
     public enum SvgVisibility : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Visible\"")]
         [NativeName("Name", "D2D1_SVG_VISIBILITY_VISIBLE")]
         SvgVisibilityVisible = 0x0,

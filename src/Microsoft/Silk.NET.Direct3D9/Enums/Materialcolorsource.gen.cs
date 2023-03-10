@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DMATERIALCOLORSOURCE")]
     public enum Materialcolorsource : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Material\"")]
         [NativeName("Name", "D3DMCS_MATERIAL")]
         McsMaterial = 0x0,

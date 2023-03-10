@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_GEOMETRY_SIMPLIFICATION_OPTION")]
     public enum GeometrySimplificationOption : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CubicsAndLines\"")]
         [NativeName("Name", "D2D1_GEOMETRY_SIMPLIFICATION_OPTION_CUBICS_AND_LINES")]
         GeometrySimplificationOptionCubicsAndLines = 0x0,

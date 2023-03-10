@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUTextureSampleType")]
     public enum TextureSampleType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUTextureSampleType_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUTextureSampleType_Float")]

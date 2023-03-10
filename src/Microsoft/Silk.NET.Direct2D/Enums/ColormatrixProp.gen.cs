@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLORMATRIX_PROP")]
     public enum ColormatrixProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ColorMatrix\"")]
         [NativeName("Name", "D2D1_COLORMATRIX_PROP_COLOR_MATRIX")]
         ColormatrixPropColorMatrix = 0x0,

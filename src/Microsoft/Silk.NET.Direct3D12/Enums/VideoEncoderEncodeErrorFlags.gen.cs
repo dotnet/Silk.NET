@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS")]
     public enum VideoEncoderEncodeErrorFlags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoError\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_NO_ERROR")]
         VideoEncoderEncodeErrorFlagNoError = 0x0,

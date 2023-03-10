@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_MODE_ROTATION")]
     public enum ModeRotation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unspecified\"")]
         [NativeName("Name", "DXGI_MODE_ROTATION_UNSPECIFIED")]
         ModeRotationUnspecified = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [Flags]
     [NativeName("Name", "StdVideoH264DisableDeblockingFilterIdc")]
     public enum StdVideoH264DisableDeblockingFilterIdc : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Disabled\"")]
         [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_DISABLED")]
         StdVideoH264DisableDeblockingFilterIdcDisabled = 0x0,

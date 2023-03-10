@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkComponentSwizzle")]
     public enum ComponentSwizzle : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_COMPONENT_SWIZZLE_IDENTITY")]
         Identity = 0,
         [NativeName("Name", "VK_COMPONENT_SWIZZLE_ZERO")]

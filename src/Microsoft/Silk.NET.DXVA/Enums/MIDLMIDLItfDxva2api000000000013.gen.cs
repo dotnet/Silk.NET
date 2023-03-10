@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0013")]
     public enum MIDLMIDLItfDxva2api000000000013 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"VideoDecoderRenderTarget\"")]
         [NativeName("Name", "DXVA2_VideoDecoderRenderTarget")]
         DXVA2VideoDecoderRenderTarget = 0x0,

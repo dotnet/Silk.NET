@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DZBUFFERTYPE")]
     public enum Zbuffertype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"False\"")]
         [NativeName("Name", "D3DZB_FALSE")]
         ZBFalse = 0x0,

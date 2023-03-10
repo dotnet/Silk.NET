@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [Flags]
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.??")]
     public enum DeviceSideAvcMotionEstimation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_AVC_ME_INTRA_16x16_INTEL")]
         Intra16x16 = 0x0,
         [NativeName("Name", "CL_AVC_ME_INTRA_8x8_INTEL")]

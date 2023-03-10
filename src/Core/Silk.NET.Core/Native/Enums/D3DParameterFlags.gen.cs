@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
-    [Flags]
     [NativeName("Name", "_D3D_PARAMETER_FLAGS")]
     public enum D3DParameterFlags : int
     {

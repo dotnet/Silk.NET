@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
-    [Flags]
     [NativeName("Name", "FragmentShaderDestModMaskATI")]
     public enum FragmentShaderDestModMaskATI : int
     {

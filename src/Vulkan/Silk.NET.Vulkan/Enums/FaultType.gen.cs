@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkFaultType")]
     public enum FaultType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_FAULT_TYPE_INVALID")]
         Invalid = 0,
         [NativeName("Name", "VK_FAULT_TYPE_UNASSIGNED")]

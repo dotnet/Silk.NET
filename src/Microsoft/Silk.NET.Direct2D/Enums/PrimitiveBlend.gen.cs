@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_PRIMITIVE_BLEND")]
     public enum PrimitiveBlend : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SourceOver\"")]
         [NativeName("Name", "D2D1_PRIMITIVE_BLEND_SOURCE_OVER")]
         PrimitiveBlendSourceOver = 0x0,

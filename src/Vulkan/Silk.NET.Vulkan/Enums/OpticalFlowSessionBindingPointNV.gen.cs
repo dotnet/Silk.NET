@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkOpticalFlowSessionBindingPointNV")]
     public enum OpticalFlowSessionBindingPointNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UnknownNV\"")]
         [NativeName("Name", "VK_OPTICAL_FLOW_SESSION_BINDING_POINT_UNKNOWN_NV")]
         OpticalFlowSessionBindingPointUnknownNV = 0,

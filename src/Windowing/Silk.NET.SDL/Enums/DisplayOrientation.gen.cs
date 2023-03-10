@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L196_C9")]
     [NativeName("Name", "SDL_DisplayOrientation")]
     public enum DisplayOrientation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "SDL_ORIENTATION_UNKNOWN")]
         OrientationUnknown = 0x0,

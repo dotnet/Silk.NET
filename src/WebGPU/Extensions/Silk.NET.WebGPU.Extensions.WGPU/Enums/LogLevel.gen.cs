@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [Flags]
     [NativeName("Name", "WGPULogLevel")]
     public enum LogLevel : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPULogLevel_Off")]
         Off = 0x0,
         [NativeName("Name", "WGPULogLevel_Error")]

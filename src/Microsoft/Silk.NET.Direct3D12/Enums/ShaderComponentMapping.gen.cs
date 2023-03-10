@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_SHADER_COMPONENT_MAPPING")]
     public enum ShaderComponentMapping : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FromMemoryComponent0\"")]
         [NativeName("Name", "D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_0")]
         ShaderComponentMappingFromMemoryComponent0 = 0x0,

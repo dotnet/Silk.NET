@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_CAP_STYLE")]
     public enum CapStyle : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Flat\"")]
         [NativeName("Name", "D2D1_CAP_STYLE_FLAT")]
         CapStyleFlat = 0x0,

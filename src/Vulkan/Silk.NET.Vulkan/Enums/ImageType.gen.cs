@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkImageType")]
     public enum ImageType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Type1D\"")]
         [NativeName("Name", "VK_IMAGE_TYPE_1D")]
         ImageType1D = 0,

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "DWRITE_GLYPH_IMAGE_FORMATS")]
     public enum DwriteGlyphImageFormats : int
     {

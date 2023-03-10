@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUPrimitiveTopology")]
     public enum PrimitiveTopology : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUPrimitiveTopology_PointList")]
         PointList = 0x0,
         [NativeName("Name", "WGPUPrimitiveTopology_LineList")]

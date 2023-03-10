@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_HDRTONEMAP_PROP")]
     public enum HdrtonemapProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InputMaxLuminance\"")]
         [NativeName("Name", "D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE")]
         HdrtonemapPropInputMaxLuminance = 0x0,

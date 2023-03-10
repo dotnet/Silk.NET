@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
-    [Flags]
     [NativeName("Name", "D3D_DRIVER_TYPE")]
     public enum D3DDriverType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D_DRIVER_TYPE_UNKNOWN")]
         D3DDriverTypeUnknown = 0x0,

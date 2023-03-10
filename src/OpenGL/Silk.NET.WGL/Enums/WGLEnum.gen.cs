@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WGL
 {
-    [Flags]
     [NativeName("Name", "GLenum")]
     public enum WGLEnum : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGL_FONT_LINES")]
         FontLines = 0x0,
         [NativeName("Name", "WGL_FONT_POLYGONS")]

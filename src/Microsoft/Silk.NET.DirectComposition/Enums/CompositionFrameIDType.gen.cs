@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
-    [Flags]
     [NativeName("Name", "COMPOSITION_FRAME_ID_TYPE")]
     public enum CompositionFrameIDType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "COMPOSITION_FRAME_ID_CREATED")]
         Created = 0x0,
         [NativeName("Name", "COMPOSITION_FRAME_ID_CONFIRMED")]

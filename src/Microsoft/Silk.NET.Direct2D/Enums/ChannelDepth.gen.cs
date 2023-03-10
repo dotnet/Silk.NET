@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_CHANNEL_DEPTH")]
     public enum ChannelDepth : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DepthDefault\"")]
         [NativeName("Name", "D2D1_CHANNEL_DEPTH_DEFAULT")]
         ChannelDepthDefault = 0x0,

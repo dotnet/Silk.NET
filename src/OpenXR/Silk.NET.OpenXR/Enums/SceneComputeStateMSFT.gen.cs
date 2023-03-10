@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrSceneComputeStateMSFT")]
     public enum SceneComputeStateMSFT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoneMsft\"")]
         [NativeName("Name", "XR_SCENE_COMPUTE_STATE_NONE_MSFT")]
         SceneComputeStateNoneMsft = 0,

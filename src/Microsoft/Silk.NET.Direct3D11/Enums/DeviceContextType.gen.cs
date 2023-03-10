@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_DEVICE_CONTEXT_TYPE")]
     public enum DeviceContextType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Immediate\"")]
         [NativeName("Name", "D3D11_DEVICE_CONTEXT_IMMEDIATE")]
         DeviceContextImmediate = 0x0,

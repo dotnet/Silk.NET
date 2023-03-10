@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "_ETW_PMC_COUNTER_OWNER_TYPE")]
     public enum EtwPmcCounterOwnerType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "EtwPmcOwnerFree")]
         EtwPmcOwnerFree = 0x0,
         [NativeName("Name", "EtwPmcOwnerUntagged")]

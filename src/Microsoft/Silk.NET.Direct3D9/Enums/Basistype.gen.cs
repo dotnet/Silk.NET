@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DBASISTYPE")]
     public enum Basistype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Bezier\"")]
         [NativeName("Name", "D3DBASIS_BEZIER")]
         BasisBezier = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_DISPLACEMENTMAP_PROP")]
     public enum DisplacementmapProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Scale\"")]
         [NativeName("Name", "D2D1_DISPLACEMENTMAP_PROP_SCALE")]
         DisplacementmapPropScale = 0x0,

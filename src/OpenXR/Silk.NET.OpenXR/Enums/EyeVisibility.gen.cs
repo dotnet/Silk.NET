@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrEyeVisibility")]
     public enum EyeVisibility : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "XR_EYE_VISIBILITY_BOTH")]
         Both = 0,
         [NativeName("Name", "XR_EYE_VISIBILITY_LEFT")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkPipelineRobustnessImageBehaviorEXT")]
     public enum PipelineRobustnessImageBehaviorEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DeviceDefaultExt\"")]
         [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
         PipelineRobustnessImageBehaviorDeviceDefaultExt = 0,

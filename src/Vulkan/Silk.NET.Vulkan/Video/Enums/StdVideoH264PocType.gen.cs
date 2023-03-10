@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [Flags]
     [NativeName("Name", "StdVideoH264PocType")]
     public enum StdVideoH264PocType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Type0\"")]
         [NativeName("Name", "STD_VIDEO_H264_POC_TYPE_0")]
         StdVideoH264PocType0 = 0x0,

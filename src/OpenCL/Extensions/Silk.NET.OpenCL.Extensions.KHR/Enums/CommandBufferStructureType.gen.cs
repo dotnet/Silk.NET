@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
-    [Flags]
     [NativeName("Name", "cl_command_buffer_structure_type_khr")]
     public enum CommandBufferStructureType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
         BaseConfig = 0x0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]

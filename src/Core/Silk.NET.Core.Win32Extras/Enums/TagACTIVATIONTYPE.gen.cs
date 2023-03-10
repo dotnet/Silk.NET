@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "tagACTIVATIONTYPE")]
     public enum TagACTIVATIONTYPE : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Uncategorized\"")]
         [NativeName("Name", "ACTIVATIONTYPE_UNCATEGORIZED")]
         ActivationtypeUncategorized = 0x0,

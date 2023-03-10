@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_DEBUG_DEVICE_PARAMETER_TYPE")]
     public enum DebugDeviceParameterType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FeatureFlags\"")]
         [NativeName("Name", "D3D12_DEBUG_DEVICE_PARAMETER_FEATURE_FLAGS")]
         DebugDeviceParameterFeatureFlags = 0x0,

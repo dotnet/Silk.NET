@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_ATLAS_PROP")]
     public enum AtlasProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InputRect\"")]
         [NativeName("Name", "D2D1_ATLAS_PROP_INPUT_RECT")]
         AtlasPropInputRect = 0x0,

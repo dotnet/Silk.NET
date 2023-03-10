@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_POSTERIZE_PROP")]
     public enum PosterizeProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"RedValueCount\"")]
         [NativeName("Name", "D2D1_POSTERIZE_PROP_RED_VALUE_COUNT")]
         PosterizePropRedValueCount = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SWEEP_DIRECTION")]
     public enum SweepDirection : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CounterClockwise\"")]
         [NativeName("Name", "D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE")]
         SweepDirectionCounterClockwise = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUMipmapFilterMode")]
     public enum MipmapFilterMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUMipmapFilterMode_Nearest")]
         Nearest = 0x0,
         [NativeName("Name", "WGPUMipmapFilterMode_Linear")]

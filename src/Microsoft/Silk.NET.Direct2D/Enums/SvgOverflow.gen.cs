@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SVG_OVERFLOW")]
     public enum SvgOverflow : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Visible\"")]
         [NativeName("Name", "D2D1_SVG_OVERFLOW_VISIBLE")]
         SvgOverflowVisible = 0x0,

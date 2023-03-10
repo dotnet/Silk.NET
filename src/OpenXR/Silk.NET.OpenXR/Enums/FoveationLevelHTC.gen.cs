@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrFoveationLevelHTC")]
     public enum FoveationLevelHTC : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoneHtc\"")]
         [NativeName("Name", "XR_FOVEATION_LEVEL_NONE_HTC")]
         FoveationLevelNoneHtc = 0,

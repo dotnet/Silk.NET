@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0003")]
     public enum MIDLMIDLItfDxva2api000000000003 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "DXVA2_DeinterlaceTech_Unknown")]
         DXVA2DeinterlaceTechUnknown = 0x0,

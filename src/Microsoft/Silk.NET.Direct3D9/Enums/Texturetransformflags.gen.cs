@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DTEXTURETRANSFORMFLAGS")]
     public enum Texturetransformflags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Disable\"")]
         [NativeName("Name", "D3DTTFF_DISABLE")]
         TtffDisable = 0x0,

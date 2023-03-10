@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_HIT_GROUP_TYPE")]
     public enum HitGroupType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Triangles\"")]
         [NativeName("Name", "D3D12_HIT_GROUP_TYPE_TRIANGLES")]
         HitGroupTypeTriangles = 0x0,

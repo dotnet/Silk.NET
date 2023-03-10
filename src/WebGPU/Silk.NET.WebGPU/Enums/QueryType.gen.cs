@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUQueryType")]
     public enum QueryType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUQueryType_Occlusion")]
         Occlusion = 0x0,
         [NativeName("Name", "WGPUQueryType_PipelineStatistics")]

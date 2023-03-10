@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUDeviceLostReason")]
     public enum DeviceLostReason : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUDeviceLostReason_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUDeviceLostReason_Destroyed")]

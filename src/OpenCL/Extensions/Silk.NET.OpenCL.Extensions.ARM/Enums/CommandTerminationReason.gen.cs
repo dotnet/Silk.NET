@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
-    [Flags]
     [NativeName("Name", "cl_command_termination_reason_arm")]
     public enum CommandTerminationReason : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_COMMAND_TERMINATION_COMPLETION_ARM")]
         Completion = 0x0,
         [NativeName("Name", "CL_COMMAND_TERMINATION_CONTROLLED_SUCCESS_ARM")]

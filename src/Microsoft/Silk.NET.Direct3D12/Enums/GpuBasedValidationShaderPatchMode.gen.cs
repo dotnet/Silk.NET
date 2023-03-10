@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE")]
     public enum GpuBasedValidationShaderPatchMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE_NONE")]
         GpuBasedValidationShaderPatchModeNone = 0x0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE_STATE_TRACKING_ONLY")]

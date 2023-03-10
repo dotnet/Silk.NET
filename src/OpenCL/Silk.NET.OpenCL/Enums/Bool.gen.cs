@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
-    [Flags]
     [NativeName("Name", "cl_bool")]
     public enum Bool : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_FALSE")]
         False = 0x0,
         [NativeName("Name", "CL_TRUE")]

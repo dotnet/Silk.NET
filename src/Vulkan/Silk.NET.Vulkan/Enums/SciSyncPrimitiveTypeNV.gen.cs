@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkSciSyncPrimitiveTypeNV")]
     public enum SciSyncPrimitiveTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FenceNV\"")]
         [NativeName("Name", "VK_SCI_SYNC_PRIMITIVE_TYPE_FENCE_NV")]
         SciSyncPrimitiveTypeFenceNV = 0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_MESSAGE_SEVERITY")]
     public enum MessageSeverity : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Corruption\"")]
         [NativeName("Name", "D3D11_MESSAGE_SEVERITY_CORRUPTION")]
         MessageSeverityCorruption = 0x0,

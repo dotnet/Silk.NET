@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_BARRIER_ACCESS")]
     public enum BarrierAccess : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Common\"")]
         [NativeName("Name", "D3D12_BARRIER_ACCESS_COMMON")]
         BarrierAccessCommon = 0x0,

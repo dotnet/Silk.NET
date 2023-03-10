@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkShaderFloatControlsIndependenceKHR")]
     public enum ShaderFloatControlsIndependenceKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Independence32BitOnly\"")]
         [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY")]
         ShaderFloatControlsIndependence32BitOnly = 0,

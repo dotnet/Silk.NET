@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPURequestDeviceStatus")]
     public enum RequestDeviceStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPURequestDeviceStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPURequestDeviceStatus_Error")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
-    [Flags]
     [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE")]
     public enum CompositeMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER")]
         SourceOver = 0x0,
         [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT")]
