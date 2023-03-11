@@ -170,6 +170,41 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.InvalidEnum" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
+        public partial void InitHint(InitHint hint, bool value);
+
+        /// <summary>
+        /// <para>
+        /// This function sets hints for the next initialization of GLFW.
+        /// </para>
+        /// <para>
+        /// The values you set hints to are never reset by GLFW, but they only take effect during initialization.
+        /// </para>
+        /// <para>
+        /// Once GLFW has been initialized,
+        /// any values you set will be ignored until the library is terminated and initialized again.
+        /// </para>
+        /// <para>
+        /// Some hints are platform specific.
+        /// These may be set on any platform but they will only affect their specific platform.
+        /// Other platforms will ignore them. Setting these hints requires no platform specific headers or functions.
+        /// </para>
+        /// </summary>
+        /// <param name="hint">The <see cref="NET.GLFW.InitHint" /> to set.</param>
+        /// <param name="value">You may use <see cref="Bool"/> for GL_TRUE
+        /// and GL_FALSE, <see cref="AnglePlatformType"/> for the
+        /// AnglePlatformType enum, or any other GLFW supported integer value.
+        /// </param>
+        /// <remarks>
+        /// <para>
+        /// This function may be called before <see cref="Init" />.
+        /// </para>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.InvalidEnum" /> and <see cref="ErrorCode.InvalidValue" />.
+        /// </para>
+        /// </remarks>
         public partial void InitHint(InitHint hint, int value);
 
         /// <summary>
