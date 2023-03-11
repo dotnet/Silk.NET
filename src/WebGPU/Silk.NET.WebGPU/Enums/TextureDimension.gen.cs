@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureDimension")]
     public enum TextureDimension : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUTextureDimension_1D")]
         TextureDimension1D = 0x0,
         [NativeName("Name", "WGPUTextureDimension_2D")]

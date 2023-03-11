@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "D3D_REGISTER_COMPONENT_TYPE")]
     public enum D3DRegisterComponentType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3D_REGISTER_COMPONENT_UNKNOWN")]
         D3DRegisterComponentUnknown = 0x0,
         [NativeName("Name", "D3D_REGISTER_COMPONENT_UINT32")]

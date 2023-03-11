@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA2_VideoTransferMatrix")]
     public enum DXVA2VideoTransferMatrix : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"VideoTransferMatrixMask\"")]
         [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
         DXVA2VideoTransferMatrixMask = 0x7,

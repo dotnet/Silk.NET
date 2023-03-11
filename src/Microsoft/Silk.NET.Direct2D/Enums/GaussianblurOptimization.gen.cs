@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_GAUSSIANBLUR_OPTIMIZATION")]
     public enum GaussianblurOptimization : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Speed\"")]
         [NativeName("Name", "D2D1_GAUSSIANBLUR_OPTIMIZATION_SPEED")]
         GaussianblurOptimizationSpeed = 0x0,

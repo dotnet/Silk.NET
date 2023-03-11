@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkBlendOverlapEXT")]
     public enum BlendOverlapEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UncorrelatedExt\"")]
         [NativeName("Name", "VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
         BlendOverlapUncorrelatedExt = 0,

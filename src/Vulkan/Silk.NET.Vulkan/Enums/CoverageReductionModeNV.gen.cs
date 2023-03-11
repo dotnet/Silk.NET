@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCoverageReductionModeNV")]
     public enum CoverageReductionModeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"MergeNV\"")]
         [NativeName("Name", "VK_COVERAGE_REDUCTION_MODE_MERGE_NV")]
         CoverageReductionModeMergeNV = 0,

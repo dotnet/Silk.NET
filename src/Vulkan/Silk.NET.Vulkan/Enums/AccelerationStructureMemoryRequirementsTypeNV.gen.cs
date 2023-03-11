@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureMemoryRequirementsTypeNV")]
     public enum AccelerationStructureMemoryRequirementsTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ObjectNV\"")]
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV")]
         AccelerationStructureMemoryRequirementsTypeObjectNV = 0,

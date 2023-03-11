@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_THREADING_MODE")]
     public enum ThreadingMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SingleThreaded\"")]
         [NativeName("Name", "D2D1_THREADING_MODE_SINGLE_THREADED")]
         ThreadingModeSingleThreaded = 0x0,

@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUCompilationMessageType")]
     public enum CompilationMessageType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUCompilationMessageType_Error")]
         Error = 0x0,
         [NativeName("Name", "WGPUCompilationMessageType_Warning")]

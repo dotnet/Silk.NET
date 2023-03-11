@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSciSyncClientTypeNV")]
     public enum SciSyncClientTypeNV : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SignalerNV\"")]
         [NativeName("Name", "VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_NV")]
         SciSyncClientTypeSignalerNV = 0,

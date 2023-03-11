@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_POINTDIFFUSE_SCALE_MODE")]
     public enum PointdiffuseScaleMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_POINTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR")]
         PointdiffuseScaleModeNearestNeighbor = 0x0,

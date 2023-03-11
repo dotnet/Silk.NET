@@ -13,8 +13,6 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "VertexShaderWriteMaskEXT")]
     public enum VertexShaderWriteMaskEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "GL_FALSE")]
         False = 0x0,
         [NativeName("Name", "GL_TRUE")]

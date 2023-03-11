@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUBufferMapAsyncStatus")]
     public enum BufferMapAsyncStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUBufferMapAsyncStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUBufferMapAsyncStatus_Error")]

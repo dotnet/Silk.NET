@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     [NativeName("Name", "WGPUAlphaMode")]
     public enum AlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUAlphaMode_Premultiplied")]
         Premultiplied = 0x0,
         [NativeName("Name", "WGPUAlphaMode_Unpremultiplied")]

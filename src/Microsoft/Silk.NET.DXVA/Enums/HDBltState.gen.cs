@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_BLT_STATE")]
     public enum HDBltState : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"TargetRect\"")]
         [NativeName("Name", "DXVAHD_BLT_STATE_TARGET_RECT")]
         HDBltStateTargetRect = 0x0,

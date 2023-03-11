@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DDECLMETHOD")]
     public enum Declmethod : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "D3DDECLMETHOD_DEFAULT")]
         DeclmethodDefault = 0x0,

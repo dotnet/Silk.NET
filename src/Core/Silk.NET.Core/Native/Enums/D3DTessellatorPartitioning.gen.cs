@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING")]
     public enum D3DTessellatorPartitioning : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_UNDEFINED")]
         D3DTessellatorPartitioningUndefined = 0x0,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_INTEGER")]

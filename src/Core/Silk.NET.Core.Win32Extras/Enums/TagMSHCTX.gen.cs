@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "tagMSHCTX")]
     public enum TagMSHCTX : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Local\"")]
         [NativeName("Name", "MSHCTX_LOCAL")]
         MshctxLocal = 0x0,

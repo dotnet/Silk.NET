@@ -13,8 +13,6 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_DEVICE_TYPE")]
     public enum HDDeviceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Hardware\"")]
         [NativeName("Name", "DXVAHD_DEVICE_TYPE_HARDWARE")]
         HDDeviceTypeHardware = 0x0,

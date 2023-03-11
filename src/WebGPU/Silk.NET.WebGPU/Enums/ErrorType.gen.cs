@@ -13,8 +13,6 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUErrorType")]
     public enum ErrorType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUErrorType_NoError")]
         NoError = 0x0,
         [NativeName("Name", "WGPUErrorType_Validation")]

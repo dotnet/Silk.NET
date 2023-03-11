@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE")]
     public enum StraightenScaleMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR")]
         StraightenScaleModeNearestNeighbor = 0x0,

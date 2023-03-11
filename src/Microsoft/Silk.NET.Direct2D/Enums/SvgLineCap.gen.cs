@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_LINE_CAP")]
     public enum SvgLineCap : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Butt\"")]
         [NativeName("Name", "D2D1_SVG_LINE_CAP_BUTT")]
         SvgLineCapButt = 0x0,

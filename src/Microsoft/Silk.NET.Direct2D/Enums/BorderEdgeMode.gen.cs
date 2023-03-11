@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BORDER_EDGE_MODE")]
     public enum BorderEdgeMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Clamp\"")]
         [NativeName("Name", "D2D1_BORDER_EDGE_MODE_CLAMP")]
         BorderEdgeModeClamp = 0x0,

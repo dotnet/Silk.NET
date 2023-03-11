@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264CabacInitIdc")]
     public enum StdVideoH264CabacInitIdc : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Idc0\"")]
         [NativeName("Name", "STD_VIDEO_H264_CABAC_INIT_IDC_0")]
         StdVideoH264CabacInitIdc0 = 0x0,

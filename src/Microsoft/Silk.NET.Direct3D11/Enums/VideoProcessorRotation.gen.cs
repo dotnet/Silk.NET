@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ROTATION")]
     public enum VideoProcessorRotation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"RotationIdentity\"")]
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY")]
         VideoProcessorRotationIdentity = 0x0,

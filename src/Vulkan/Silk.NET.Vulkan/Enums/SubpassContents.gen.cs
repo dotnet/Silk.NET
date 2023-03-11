@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSubpassContents")]
     public enum SubpassContents : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_SUBPASS_CONTENTS_INLINE")]
         Inline = 0,
         [NativeName("Name", "VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS")]

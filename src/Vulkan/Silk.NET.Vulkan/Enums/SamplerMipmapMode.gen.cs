@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSamplerMipmapMode")]
     public enum SamplerMipmapMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_SAMPLER_MIPMAP_MODE_NEAREST")]
         Nearest = 0,
         [NativeName("Name", "VK_SAMPLER_MIPMAP_MODE_LINEAR")]

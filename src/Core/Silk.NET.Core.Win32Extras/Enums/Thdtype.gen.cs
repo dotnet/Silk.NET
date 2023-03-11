@@ -13,8 +13,6 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_THDTYPE")]
     public enum Thdtype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Blockmessages\"")]
         [NativeName("Name", "THDTYPE_BLOCKMESSAGES")]
         ThdtypeBlockmessages = 0x0,

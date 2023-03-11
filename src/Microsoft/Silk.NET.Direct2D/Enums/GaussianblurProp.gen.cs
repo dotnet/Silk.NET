@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP")]
     public enum GaussianblurProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"StandardDeviation\"")]
         [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION")]
         GaussianblurPropStandardDeviation = 0x0,

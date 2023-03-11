@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFaultLevel")]
     public enum FaultLevel : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "VK_FAULT_LEVEL_UNASSIGNED")]
         Unassigned = 0,
         [NativeName("Name", "VK_FAULT_LEVEL_CRITICAL")]

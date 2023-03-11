@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCopyMicromapModeEXT")]
     public enum CopyMicromapModeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CloneExt\"")]
         [NativeName("Name", "VK_COPY_MICROMAP_MODE_CLONE_EXT")]
         CopyMicromapModeCloneExt = 0,

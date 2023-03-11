@@ -13,8 +13,6 @@ namespace Silk.NET.DirectStorage
     [NativeName("Name", "DSTORAGE_PRIORITY")]
     public enum Priority : byte
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Low\"")]
         [NativeName("Name", "DSTORAGE_PRIORITY_LOW")]
         PriorityLow = unchecked((byte) 0xFFFFFFFFFFFFFFFF),

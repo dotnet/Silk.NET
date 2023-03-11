@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_MouseWheelDirection")]
     public enum MouseWheelDirection : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "SDL_MOUSEWHEEL_NORMAL")]
         MousewheelNormal = 0x0,

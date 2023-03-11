@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CHANNEL_SELECTOR")]
     public enum ChannelSelector : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"R\"")]
         [NativeName("Name", "D2D1_CHANNEL_SELECTOR_R")]
         ChannelSelectorR = 0x0,

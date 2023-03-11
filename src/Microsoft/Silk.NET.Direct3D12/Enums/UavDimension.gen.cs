@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_UAV_DIMENSION")]
     public enum UavDimension : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D12_UAV_DIMENSION_UNKNOWN")]
         UavDimensionUnknown = 0x0,

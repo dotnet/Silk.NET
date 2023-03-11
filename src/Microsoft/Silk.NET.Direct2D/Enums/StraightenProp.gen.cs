@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_STRAIGHTEN_PROP")]
     public enum StraightenProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Angle\"")]
         [NativeName("Name", "D2D1_STRAIGHTEN_PROP_ANGLE")]
         StraightenPropAngle = 0x0,

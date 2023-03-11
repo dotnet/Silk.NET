@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPerformanceOverrideTypeINTEL")]
     public enum PerformanceOverrideTypeINTEL : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NullHardwareIntel\"")]
         [NativeName("Name", "VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL")]
         PerformanceOverrideTypeNullHardwareIntel = 0,

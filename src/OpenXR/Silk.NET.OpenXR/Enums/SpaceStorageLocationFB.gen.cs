@@ -13,8 +13,6 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSpaceStorageLocationFB")]
     public enum SpaceStorageLocationFB : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InvalidFB\"")]
         [NativeName("Name", "XR_SPACE_STORAGE_LOCATION_INVALID_FB")]
         SpaceStorageLocationInvalidFB = 0,

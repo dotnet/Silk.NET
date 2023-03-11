@@ -13,8 +13,6 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_MODE_ROTATION")]
     public enum ModeRotation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unspecified\"")]
         [NativeName("Name", "DXGI_MODE_ROTATION_UNSPECIFIED")]
         ModeRotationUnspecified = 0x0,

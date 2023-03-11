@@ -13,8 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_WHITELEVELADJUSTMENT_PROP")]
     public enum WhiteleveladjustmentProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InputWhiteLevel\"")]
         [NativeName("Name", "D2D1_WHITELEVELADJUSTMENT_PROP_INPUT_WHITE_LEVEL")]
         WhiteleveladjustmentPropInputWhiteLevel = 0x0,

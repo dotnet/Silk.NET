@@ -13,8 +13,6 @@ namespace Silk.NET.DirectComposition
     [NativeName("Name", "DCOMPOSITION_BORDER_MODE")]
     public enum BorderMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "DCOMPOSITION_BORDER_MODE_SOFT")]
         Soft = 0x0,
         [NativeName("Name", "DCOMPOSITION_BORDER_MODE_HARD")]
