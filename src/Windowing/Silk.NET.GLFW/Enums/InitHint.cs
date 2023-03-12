@@ -18,6 +18,17 @@ namespace Silk.NET.GLFW
         JoystickHatButtons = 0x00050001,
 
         /// <summary>
+        /// Introduced in GLFW 3.4, this enum is used to specify the platform
+        /// type (rendering backend) to request when using OpenGL ES and EGL via
+        /// ANGLE. If the requested platform type is unavailable, ANGLE will use
+        /// its default. Please see <see cref="AnglePlatformType" /> for
+        /// possible values. The ANGLE platform type is specified via the
+        /// EGL_ANGLE_platform_angle extension. This extension is not used if
+        /// this hint is AnglePlatformType.None, which is the default value.
+        /// </summary>
+        AnglePlatformType = 0x00050002,
+
+        /// <summary>
         /// Used to specify whether to set the current directory to the application to the Contents/Resources
         /// subdirectory of the application's bundle, if present.
         /// Set this with <see cref="InitHint" />.
