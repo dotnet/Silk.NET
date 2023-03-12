@@ -27,7 +27,10 @@ namespace Silk.NET.WebGPU
             ulong? lineNum = null,
             ulong? linePos = null,
             ulong? offset = null,
-            ulong? length = null
+            ulong? length = null,
+            ulong? utf16LinePos = null,
+            ulong? utf16Offset = null,
+            ulong? utf16Length = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -63,6 +66,21 @@ namespace Silk.NET.WebGPU
             if (length is not null)
             {
                 Length = length.Value;
+            }
+
+            if (utf16LinePos is not null)
+            {
+                Utf16LinePos = utf16LinePos.Value;
+            }
+
+            if (utf16Offset is not null)
+            {
+                Utf16Offset = utf16Offset.Value;
+            }
+
+            if (utf16Length is not null)
+            {
+                Utf16Length = utf16Length.Value;
             }
         }
 
@@ -101,5 +119,20 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "length")]
         public ulong Length;
+
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "utf16LinePos")]
+        public ulong Utf16LinePos;
+
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "utf16Offset")]
+        public ulong Utf16Offset;
+
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "utf16Length")]
+        public ulong Utf16Length;
     }
 }

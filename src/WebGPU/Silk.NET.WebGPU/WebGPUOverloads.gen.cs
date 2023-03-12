@@ -17,7 +17,7 @@ namespace Silk.NET.WebGPU
     public static class WebGPUOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1405, Column 26 in webgpu.h")]
+        [NativeName("Src", "Line 1419, Column 26 in webgpu.h")]
         public static unsafe Instance* CreateInstance(this WebGPU thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<InstanceDescriptor> descriptor)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1420, Column 22 in webgpu.h")]
         public static unsafe PfnProc GetProcAddress(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<byte> procName)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1420, Column 22 in webgpu.h")]
         public static unsafe PfnProc GetProcAddress(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] byte* procName)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1420, Column 22 in webgpu.h")]
         public static unsafe PfnProc GetProcAddress(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<byte> procName)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1420, Column 22 in webgpu.h")]
         public static unsafe PfnProc GetProcAddress(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string procName)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1409, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1423, Column 20 in webgpu.h")]
         public static unsafe nuint AdapterEnumerateFeatures(this WebGPU thisApi, Adapter* adapter, Span<FeatureName> features)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1409, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1423, Column 20 in webgpu.h")]
         public static unsafe nuint AdapterEnumerateFeatures(this WebGPU thisApi, Span<Adapter> adapter, FeatureName* features)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1409, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1423, Column 20 in webgpu.h")]
         public static unsafe nuint AdapterEnumerateFeatures(this WebGPU thisApi, Span<Adapter> adapter, Span<FeatureName> features)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Adapter* adapter, Span<SupportedLimits> limits)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, SupportedLimits* limits)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1410, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 AdapterGetLimits(this WebGPU thisApi, Span<Adapter> adapter, Span<SupportedLimits> limits)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1411, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
         public static unsafe void AdapterGetProperties(this WebGPU thisApi, Adapter* adapter, Span<AdapterProperties> properties)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1411, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
         public static unsafe void AdapterGetProperties(this WebGPU thisApi, Span<Adapter> adapter, AdapterProperties* properties)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1411, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
         public static unsafe void AdapterGetProperties(this WebGPU thisApi, Span<Adapter> adapter, Span<AdapterProperties> properties)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1412, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1426, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 AdapterHasFeature(this WebGPU thisApi, Span<Adapter> adapter, FeatureName feature)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Adapter* adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor, PfnRequestDeviceCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] DeviceDescriptor* descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1413, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
         public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Span<Adapter> adapter, [Flow(FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1416, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1430, Column 18 in webgpu.h")]
         public static unsafe void BindGroupSetLabel(this WebGPU thisApi, BindGroup* bindGroup, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1416, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1430, Column 18 in webgpu.h")]
         public static unsafe void BindGroupSetLabel(this WebGPU thisApi, Span<BindGroup> bindGroup, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1416, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1430, Column 18 in webgpu.h")]
         public static unsafe void BindGroupSetLabel(this WebGPU thisApi, Span<BindGroup> bindGroup, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1416, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1430, Column 18 in webgpu.h")]
         public static unsafe void BindGroupSetLabel(this WebGPU thisApi, Span<BindGroup> bindGroup, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1433, Column 18 in webgpu.h")]
         public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, BindGroupLayout* bindGroupLayout, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1433, Column 18 in webgpu.h")]
         public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1433, Column 18 in webgpu.h")]
         public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1419, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1433, Column 18 in webgpu.h")]
         public static unsafe void BindGroupLayoutSetLabel(this WebGPU thisApi, Span<BindGroupLayout> bindGroupLayout, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1422, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1436, Column 18 in webgpu.h")]
         public static unsafe void BufferDestroy(this WebGPU thisApi, Span<Buffer> buffer)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1423, Column 26 in webgpu.h")]
+        [NativeName("Src", "Line 1437, Column 26 in webgpu.h")]
         public static unsafe void* BufferGetConstMappedRange(this WebGPU thisApi, Span<Buffer> buffer, nuint offset, nuint size)
         {
             // SpanOverloader
@@ -273,7 +273,15 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1424, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1438, Column 32 in webgpu.h")]
+        public static unsafe BufferMapState BufferGetMapState(this WebGPU thisApi, Span<Buffer> buffer)
+        {
+            // SpanOverloader
+            return thisApi.BufferGetMapState(ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1439, Column 20 in webgpu.h")]
         public static unsafe void* BufferGetMappedRange(this WebGPU thisApi, Span<Buffer> buffer, nuint offset, nuint size)
         {
             // SpanOverloader
@@ -281,7 +289,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1425, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1440, Column 22 in webgpu.h")]
         public static unsafe ulong BufferGetSize(this WebGPU thisApi, Span<Buffer> buffer)
         {
             // SpanOverloader
@@ -289,7 +297,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1426, Column 29 in webgpu.h")]
+        [NativeName("Src", "Line 1441, Column 29 in webgpu.h")]
         public static unsafe BufferUsage BufferGetUsage(this WebGPU thisApi, Span<Buffer> buffer)
         {
             // SpanOverloader
@@ -297,7 +305,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
         public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -305,7 +313,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
         public static unsafe void BufferMapAsync(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -313,7 +321,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
         public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -321,7 +329,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1428, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
         public static unsafe void BufferSetLabel(this WebGPU thisApi, Buffer* buffer, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -329,7 +337,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1428, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
         public static unsafe void BufferSetLabel(this WebGPU thisApi, Span<Buffer> buffer, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -337,7 +345,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1428, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
         public static unsafe void BufferSetLabel(this WebGPU thisApi, Span<Buffer> buffer, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -345,7 +353,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1428, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
         public static unsafe void BufferSetLabel(this WebGPU thisApi, Span<Buffer> buffer, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -353,7 +361,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1429, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1444, Column 18 in webgpu.h")]
         public static unsafe void BufferUnmap(this WebGPU thisApi, Span<Buffer> buffer)
         {
             // SpanOverloader
@@ -361,7 +369,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1432, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
         public static unsafe void CommandBufferSetLabel(this WebGPU thisApi, CommandBuffer* commandBuffer, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -369,7 +377,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1432, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
         public static unsafe void CommandBufferSetLabel(this WebGPU thisApi, Span<CommandBuffer> commandBuffer, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -377,7 +385,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1432, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
         public static unsafe void CommandBufferSetLabel(this WebGPU thisApi, Span<CommandBuffer> commandBuffer, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -385,7 +393,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1432, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
         public static unsafe void CommandBufferSetLabel(this WebGPU thisApi, Span<CommandBuffer> commandBuffer, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -393,7 +401,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1435, Column 36 in webgpu.h")]
+        [NativeName("Src", "Line 1450, Column 36 in webgpu.h")]
         public static unsafe ComputePassEncoder* CommandEncoderBeginComputePass(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePassDescriptor> descriptor)
         {
             // SpanOverloader
@@ -401,7 +409,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1435, Column 36 in webgpu.h")]
+        [NativeName("Src", "Line 1450, Column 36 in webgpu.h")]
         public static unsafe ComputePassEncoder* CommandEncoderBeginComputePass(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ComputePassDescriptor* descriptor)
         {
             // SpanOverloader
@@ -409,7 +417,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1435, Column 36 in webgpu.h")]
+        [NativeName("Src", "Line 1450, Column 36 in webgpu.h")]
         public static unsafe ComputePassEncoder* CommandEncoderBeginComputePass(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePassDescriptor> descriptor)
         {
             // SpanOverloader
@@ -417,7 +425,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1436, Column 35 in webgpu.h")]
+        [NativeName("Src", "Line 1451, Column 35 in webgpu.h")]
         public static unsafe RenderPassEncoder* CommandEncoderBeginRenderPass(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPassDescriptor> descriptor)
         {
             // SpanOverloader
@@ -425,7 +433,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1436, Column 35 in webgpu.h")]
+        [NativeName("Src", "Line 1451, Column 35 in webgpu.h")]
         public static unsafe RenderPassEncoder* CommandEncoderBeginRenderPass(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] RenderPassDescriptor* descriptor)
         {
             // SpanOverloader
@@ -433,7 +441,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1436, Column 35 in webgpu.h")]
+        [NativeName("Src", "Line 1451, Column 35 in webgpu.h")]
         public static unsafe RenderPassEncoder* CommandEncoderBeginRenderPass(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPassDescriptor> descriptor)
         {
             // SpanOverloader
@@ -441,7 +449,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1437, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderClearBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -449,7 +457,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1437, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderClearBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Buffer* buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -457,7 +465,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1437, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderClearBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -465,7 +473,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, Buffer* source, ulong sourceOffset, Span<Buffer> destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -473,7 +481,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<Buffer> source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -481,7 +489,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<Buffer> source, ulong sourceOffset, Span<Buffer> destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -489,7 +497,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Buffer* source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -497,7 +505,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Buffer* source, ulong sourceOffset, Span<Buffer> destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -505,7 +513,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -513,7 +521,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<Buffer> source, ulong sourceOffset, Span<Buffer> destination, ulong destinationOffset, ulong size)
         {
             // SpanOverloader
@@ -521,7 +529,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -529,7 +537,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -537,7 +545,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -545,7 +553,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -553,7 +561,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -561,7 +569,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -569,7 +577,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -577,7 +585,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -585,7 +593,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -593,7 +601,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -601,7 +609,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyBuffer* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -609,7 +617,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -617,7 +625,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -625,7 +633,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -633,7 +641,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyBufferToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -641,7 +649,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -649,7 +657,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -657,7 +665,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -665,7 +673,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -673,7 +681,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -681,7 +689,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -689,7 +697,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -697,7 +705,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -705,7 +713,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -713,7 +721,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -721,7 +729,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -729,7 +737,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -737,7 +745,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyBuffer* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -745,7 +753,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -753,7 +761,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToBuffer(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyBuffer> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -761,7 +769,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -769,7 +777,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -777,7 +785,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -785,7 +793,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -793,7 +801,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -801,7 +809,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -809,7 +817,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -817,7 +825,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -825,7 +833,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -833,7 +841,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -841,7 +849,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ImageCopyTexture* source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -849,7 +857,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -857,7 +865,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -865,7 +873,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] Extent3D* copySize)
         {
             // SpanOverloader
@@ -873,7 +881,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderCopyTextureToTexture(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> source, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> copySize)
         {
             // SpanOverloader
@@ -881,7 +889,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1442, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1457, Column 31 in webgpu.h")]
         public static unsafe CommandBuffer* CommandEncoderFinish(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<CommandBufferDescriptor> descriptor)
         {
             // SpanOverloader
@@ -889,7 +897,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1442, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1457, Column 31 in webgpu.h")]
         public static unsafe CommandBuffer* CommandEncoderFinish(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] CommandBufferDescriptor* descriptor)
         {
             // SpanOverloader
@@ -897,7 +905,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1442, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1457, Column 31 in webgpu.h")]
         public static unsafe CommandBuffer* CommandEncoderFinish(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<CommandBufferDescriptor> descriptor)
         {
             // SpanOverloader
@@ -905,7 +913,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderInsertDebugMarker(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -913,7 +921,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderInsertDebugMarker(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] byte* markerLabel)
         {
             // SpanOverloader
@@ -921,7 +929,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderInsertDebugMarker(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -929,7 +937,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderInsertDebugMarker(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string markerLabel)
         {
             // SpanOverloader
@@ -937,7 +945,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1444, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderPopDebugGroup(this WebGPU thisApi, Span<CommandEncoder> commandEncoder)
         {
             // SpanOverloader
@@ -945,7 +953,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1445, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderPushDebugGroup(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -953,7 +961,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1445, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderPushDebugGroup(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] byte* groupLabel)
         {
             // SpanOverloader
@@ -961,7 +969,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1445, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderPushDebugGroup(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -969,7 +977,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1445, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderPushDebugGroup(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string groupLabel)
         {
             // SpanOverloader
@@ -977,7 +985,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, CommandEncoder* commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, Span<Buffer> destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -985,7 +993,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<QuerySet> querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -993,7 +1001,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<QuerySet> querySet, uint firstQuery, uint queryCount, Span<Buffer> destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -1001,7 +1009,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -1009,7 +1017,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, Span<Buffer> destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -1017,7 +1025,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<QuerySet> querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -1025,7 +1033,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1446, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderResolveQuerySet(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<QuerySet> querySet, uint firstQuery, uint queryCount, Span<Buffer> destination, ulong destinationOffset)
         {
             // SpanOverloader
@@ -1033,7 +1041,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1462, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderSetLabel(this WebGPU thisApi, CommandEncoder* commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1041,7 +1049,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1462, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderSetLabel(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -1049,7 +1057,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1462, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderSetLabel(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1057,7 +1065,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1462, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderSetLabel(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -1065,7 +1073,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1448, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderWriteTimestamp(this WebGPU thisApi, CommandEncoder* commandEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1073,7 +1081,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1448, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderWriteTimestamp(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, QuerySet* querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1081,7 +1089,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1448, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
         public static unsafe void CommandEncoderWriteTimestamp(this WebGPU thisApi, Span<CommandEncoder> commandEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1089,7 +1097,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1451, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1097,7 +1105,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1451, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, QuerySet* querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1105,7 +1113,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1451, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -1113,7 +1121,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1467, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderDispatchWorkgroups(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, uint workgroupCountX, uint workgroupCountY, uint workgroupCountZ)
         {
             // SpanOverloader
@@ -1121,7 +1129,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderDispatchWorkgroupsIndirect(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -1129,7 +1137,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderDispatchWorkgroupsIndirect(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, Buffer* indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -1137,7 +1145,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderDispatchWorkgroupsIndirect(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -1145,7 +1153,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1469, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderEnd(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder)
         {
             // SpanOverloader
@@ -1153,7 +1161,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1455, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1470, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderEndPipelineStatisticsQuery(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder)
         {
             // SpanOverloader
@@ -1161,7 +1169,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1471, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderInsertDebugMarker(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -1169,7 +1177,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1471, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderInsertDebugMarker(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] byte* markerLabel)
         {
             // SpanOverloader
@@ -1177,7 +1185,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1471, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderInsertDebugMarker(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -1185,7 +1193,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1456, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1471, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderInsertDebugMarker(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string markerLabel)
         {
             // SpanOverloader
@@ -1193,7 +1201,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1457, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1472, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderPopDebugGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder)
         {
             // SpanOverloader
@@ -1201,7 +1209,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderPushDebugGroup(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -1209,7 +1217,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderPushDebugGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] byte* groupLabel)
         {
             // SpanOverloader
@@ -1217,7 +1225,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderPushDebugGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -1225,7 +1233,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1458, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderPushDebugGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string groupLabel)
         {
             // SpanOverloader
@@ -1233,7 +1241,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -1241,7 +1249,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -1249,7 +1257,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -1257,7 +1265,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -1265,7 +1273,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -1273,7 +1281,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -1281,7 +1289,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1474, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetBindGroup(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -1289,7 +1297,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1475, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetLabel(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1297,7 +1305,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1475, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetLabel(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -1305,7 +1313,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1475, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetLabel(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1313,7 +1321,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1475, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetLabel(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -1321,7 +1329,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetPipeline(this WebGPU thisApi, ComputePassEncoder* computePassEncoder, Span<ComputePipeline> pipeline)
         {
             // SpanOverloader
@@ -1329,7 +1337,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetPipeline(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, ComputePipeline* pipeline)
         {
             // SpanOverloader
@@ -1337,7 +1345,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
         public static unsafe void ComputePassEncoderSetPipeline(this WebGPU thisApi, Span<ComputePassEncoder> computePassEncoder, Span<ComputePipeline> pipeline)
         {
             // SpanOverloader
@@ -1345,7 +1353,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1464, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1479, Column 33 in webgpu.h")]
         public static unsafe BindGroupLayout* ComputePipelineGetBindGroupLayout(this WebGPU thisApi, Span<ComputePipeline> computePipeline, uint groupIndex)
         {
             // SpanOverloader
@@ -1353,7 +1361,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1465, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1480, Column 18 in webgpu.h")]
         public static unsafe void ComputePipelineSetLabel(this WebGPU thisApi, ComputePipeline* computePipeline, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1361,7 +1369,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1465, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1480, Column 18 in webgpu.h")]
         public static unsafe void ComputePipelineSetLabel(this WebGPU thisApi, Span<ComputePipeline> computePipeline, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -1369,7 +1377,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1465, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1480, Column 18 in webgpu.h")]
         public static unsafe void ComputePipelineSetLabel(this WebGPU thisApi, Span<ComputePipeline> computePipeline, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1377,7 +1385,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1465, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1480, Column 18 in webgpu.h")]
         public static unsafe void ComputePipelineSetLabel(this WebGPU thisApi, Span<ComputePipeline> computePipeline, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -1385,7 +1393,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1483, Column 27 in webgpu.h")]
         public static unsafe BindGroup* DeviceCreateBindGroup(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<BindGroupDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1393,7 +1401,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1483, Column 27 in webgpu.h")]
         public static unsafe BindGroup* DeviceCreateBindGroup(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] BindGroupDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1401,7 +1409,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1483, Column 27 in webgpu.h")]
         public static unsafe BindGroup* DeviceCreateBindGroup(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<BindGroupDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1409,7 +1417,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1484, Column 33 in webgpu.h")]
         public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<BindGroupLayoutDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1417,7 +1425,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1484, Column 33 in webgpu.h")]
         public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] BindGroupLayoutDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1425,7 +1433,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1469, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1484, Column 33 in webgpu.h")]
         public static unsafe BindGroupLayout* DeviceCreateBindGroupLayout(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<BindGroupLayoutDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1433,7 +1441,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1470, Column 24 in webgpu.h")]
+        [NativeName("Src", "Line 1485, Column 24 in webgpu.h")]
         public static unsafe Buffer* DeviceCreateBuffer(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<BufferDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1441,7 +1449,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1470, Column 24 in webgpu.h")]
+        [NativeName("Src", "Line 1485, Column 24 in webgpu.h")]
         public static unsafe Buffer* DeviceCreateBuffer(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] BufferDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1449,7 +1457,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1470, Column 24 in webgpu.h")]
+        [NativeName("Src", "Line 1485, Column 24 in webgpu.h")]
         public static unsafe Buffer* DeviceCreateBuffer(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<BufferDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1457,7 +1465,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1471, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1486, Column 32 in webgpu.h")]
         public static unsafe CommandEncoder* DeviceCreateCommandEncoder(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<CommandEncoderDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1465,7 +1473,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1471, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1486, Column 32 in webgpu.h")]
         public static unsafe CommandEncoder* DeviceCreateCommandEncoder(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] CommandEncoderDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1473,7 +1481,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1471, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1486, Column 32 in webgpu.h")]
         public static unsafe CommandEncoder* DeviceCreateCommandEncoder(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<CommandEncoderDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1481,7 +1489,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1472, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1487, Column 33 in webgpu.h")]
         public static unsafe ComputePipeline* DeviceCreateComputePipeline(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1489,7 +1497,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1472, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1487, Column 33 in webgpu.h")]
         public static unsafe ComputePipeline* DeviceCreateComputePipeline(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ComputePipelineDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1497,7 +1505,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1472, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1487, Column 33 in webgpu.h")]
         public static unsafe ComputePipeline* DeviceCreateComputePipeline(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1505,7 +1513,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1513,7 +1521,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1521,7 +1529,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1529,7 +1537,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1537,7 +1545,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1545,7 +1553,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1553,7 +1561,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1561,7 +1569,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1474, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1489, Column 32 in webgpu.h")]
         public static unsafe PipelineLayout* DeviceCreatePipelineLayout(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineLayoutDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1569,7 +1577,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1474, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1489, Column 32 in webgpu.h")]
         public static unsafe PipelineLayout* DeviceCreatePipelineLayout(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] PipelineLayoutDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1577,7 +1585,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1474, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1489, Column 32 in webgpu.h")]
         public static unsafe PipelineLayout* DeviceCreatePipelineLayout(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<PipelineLayoutDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1585,7 +1593,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1475, Column 26 in webgpu.h")]
+        [NativeName("Src", "Line 1490, Column 26 in webgpu.h")]
         public static unsafe QuerySet* DeviceCreateQuerySet(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<QuerySetDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1593,7 +1601,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1475, Column 26 in webgpu.h")]
+        [NativeName("Src", "Line 1490, Column 26 in webgpu.h")]
         public static unsafe QuerySet* DeviceCreateQuerySet(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] QuerySetDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1601,7 +1609,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1475, Column 26 in webgpu.h")]
+        [NativeName("Src", "Line 1490, Column 26 in webgpu.h")]
         public static unsafe QuerySet* DeviceCreateQuerySet(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<QuerySetDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1609,7 +1617,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 37 in webgpu.h")]
+        [NativeName("Src", "Line 1491, Column 37 in webgpu.h")]
         public static unsafe RenderBundleEncoder* DeviceCreateRenderBundleEncoder(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderBundleEncoderDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1617,7 +1625,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 37 in webgpu.h")]
+        [NativeName("Src", "Line 1491, Column 37 in webgpu.h")]
         public static unsafe RenderBundleEncoder* DeviceCreateRenderBundleEncoder(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] RenderBundleEncoderDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1625,7 +1633,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 37 in webgpu.h")]
+        [NativeName("Src", "Line 1491, Column 37 in webgpu.h")]
         public static unsafe RenderBundleEncoder* DeviceCreateRenderBundleEncoder(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderBundleEncoderDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1633,7 +1641,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1492, Column 32 in webgpu.h")]
         public static unsafe RenderPipeline* DeviceCreateRenderPipeline(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1641,7 +1649,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1492, Column 32 in webgpu.h")]
         public static unsafe RenderPipeline* DeviceCreateRenderPipeline(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] RenderPipelineDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1649,7 +1657,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 32 in webgpu.h")]
+        [NativeName("Src", "Line 1492, Column 32 in webgpu.h")]
         public static unsafe RenderPipeline* DeviceCreateRenderPipeline(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1657,7 +1665,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1665,7 +1673,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1673,7 +1681,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1681,7 +1689,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1689,7 +1697,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1697,7 +1705,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1705,7 +1713,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1478, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1713,7 +1721,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1479, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1494, Column 25 in webgpu.h")]
         public static unsafe Sampler* DeviceCreateSampler(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<SamplerDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1721,7 +1729,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1479, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1494, Column 25 in webgpu.h")]
         public static unsafe Sampler* DeviceCreateSampler(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] SamplerDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1729,7 +1737,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1479, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1494, Column 25 in webgpu.h")]
         public static unsafe Sampler* DeviceCreateSampler(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<SamplerDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1737,7 +1745,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1480, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1495, Column 30 in webgpu.h")]
         public static unsafe ShaderModule* DeviceCreateShaderModule(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1745,7 +1753,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1480, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1495, Column 30 in webgpu.h")]
         public static unsafe ShaderModule* DeviceCreateShaderModule(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ShaderModuleDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1753,7 +1761,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1480, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1495, Column 30 in webgpu.h")]
         public static unsafe ShaderModule* DeviceCreateShaderModule(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1761,7 +1769,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Device* device, Surface* surface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1769,7 +1777,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Device* device, Span<Surface> surface, [Flow(FlowDirection.In)] SwapChainDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1777,7 +1785,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Device* device, Span<Surface> surface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1785,7 +1793,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Span<Device> device, Surface* surface, [Flow(FlowDirection.In)] SwapChainDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1793,7 +1801,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Span<Device> device, Surface* surface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1801,7 +1809,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Span<Device> device, Span<Surface> surface, [Flow(FlowDirection.In)] SwapChainDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1809,7 +1817,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1481, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1496, Column 27 in webgpu.h")]
         public static unsafe SwapChain* DeviceCreateSwapChain(this WebGPU thisApi, Span<Device> device, Span<Surface> surface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1817,7 +1825,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1482, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1497, Column 25 in webgpu.h")]
         public static unsafe Texture* DeviceCreateTexture(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1825,7 +1833,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1482, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1497, Column 25 in webgpu.h")]
         public static unsafe Texture* DeviceCreateTexture(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] TextureDescriptor* descriptor)
         {
             // SpanOverloader
@@ -1833,7 +1841,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1482, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1497, Column 25 in webgpu.h")]
         public static unsafe Texture* DeviceCreateTexture(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
             // SpanOverloader
@@ -1841,7 +1849,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1483, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1498, Column 18 in webgpu.h")]
         public static unsafe void DeviceDestroy(this WebGPU thisApi, Span<Device> device)
         {
             // SpanOverloader
@@ -1849,7 +1857,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1484, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
         public static unsafe nuint DeviceEnumerateFeatures(this WebGPU thisApi, Device* device, Span<FeatureName> features)
         {
             // SpanOverloader
@@ -1857,7 +1865,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1484, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
         public static unsafe nuint DeviceEnumerateFeatures(this WebGPU thisApi, Span<Device> device, FeatureName* features)
         {
             // SpanOverloader
@@ -1865,7 +1873,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1484, Column 20 in webgpu.h")]
+        [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
         public static unsafe nuint DeviceEnumerateFeatures(this WebGPU thisApi, Span<Device> device, Span<FeatureName> features)
         {
             // SpanOverloader
@@ -1873,7 +1881,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Device* device, Span<SupportedLimits> limits)
         {
             // SpanOverloader
@@ -1881,7 +1889,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Span<Device> device, SupportedLimits* limits)
         {
             // SpanOverloader
@@ -1889,7 +1897,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1485, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DeviceGetLimits(this WebGPU thisApi, Span<Device> device, Span<SupportedLimits> limits)
         {
             // SpanOverloader
@@ -1897,7 +1905,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1486, Column 23 in webgpu.h")]
+        [NativeName("Src", "Line 1501, Column 23 in webgpu.h")]
         public static unsafe Queue* DeviceGetQueue(this WebGPU thisApi, Span<Device> device)
         {
             // SpanOverloader
@@ -1905,7 +1913,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1487, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1502, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DeviceHasFeature(this WebGPU thisApi, Span<Device> device, FeatureName feature)
         {
             // SpanOverloader
@@ -1913,7 +1921,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1921,7 +1929,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1929,7 +1937,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1937,7 +1945,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1489, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1504, Column 18 in webgpu.h")]
         public static unsafe void DevicePushErrorScope(this WebGPU thisApi, Span<Device> device, ErrorFilter filter)
         {
             // SpanOverloader
@@ -1945,7 +1953,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1490, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetDeviceLostCallback<T0>(this WebGPU thisApi, Device* device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1953,7 +1961,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1490, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetDeviceLostCallback(this WebGPU thisApi, Span<Device> device, PfnDeviceLostCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -1961,7 +1969,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1490, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetDeviceLostCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1969,7 +1977,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1491, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetLabel(this WebGPU thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1977,7 +1985,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1491, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetLabel(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -1985,7 +1993,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1491, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetLabel(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -1993,7 +2001,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1491, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetLabel(this WebGPU thisApi, Span<Device> device, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -2001,7 +2009,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1492, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2009,7 +2017,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1492, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetUncapturedErrorCallback(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -2017,7 +2025,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1492, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
         public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2025,7 +2033,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1495, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1510, Column 25 in webgpu.h")]
         public static unsafe Surface* InstanceCreateSurface(this WebGPU thisApi, Instance* instance, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDescriptor> descriptor)
         {
             // SpanOverloader
@@ -2033,7 +2041,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1495, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1510, Column 25 in webgpu.h")]
         public static unsafe Surface* InstanceCreateSurface(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] SurfaceDescriptor* descriptor)
         {
             // SpanOverloader
@@ -2041,7 +2049,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1495, Column 25 in webgpu.h")]
+        [NativeName("Src", "Line 1510, Column 25 in webgpu.h")]
         public static unsafe Surface* InstanceCreateSurface(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDescriptor> descriptor)
         {
             // SpanOverloader
@@ -2049,7 +2057,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1496, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         public static unsafe void InstanceProcessEvents(this WebGPU thisApi, Span<Instance> instance)
         {
             // SpanOverloader
@@ -2057,7 +2065,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(FlowDirection.In)] RequestAdapterOptions* options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2065,7 +2073,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Instance* instance, [Flow(FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -2073,7 +2081,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2081,7 +2089,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] RequestAdapterOptions* options, PfnRequestAdapterCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -2089,7 +2097,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] RequestAdapterOptions* options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2097,7 +2105,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -2105,7 +2113,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Span<Instance> instance, [Flow(FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2113,7 +2121,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1515, Column 18 in webgpu.h")]
         public static unsafe void PipelineLayoutSetLabel(this WebGPU thisApi, PipelineLayout* pipelineLayout, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2121,7 +2129,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1515, Column 18 in webgpu.h")]
         public static unsafe void PipelineLayoutSetLabel(this WebGPU thisApi, Span<PipelineLayout> pipelineLayout, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -2129,7 +2137,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1515, Column 18 in webgpu.h")]
         public static unsafe void PipelineLayoutSetLabel(this WebGPU thisApi, Span<PipelineLayout> pipelineLayout, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2137,7 +2145,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1515, Column 18 in webgpu.h")]
         public static unsafe void PipelineLayoutSetLabel(this WebGPU thisApi, Span<PipelineLayout> pipelineLayout, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -2145,7 +2153,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1518, Column 18 in webgpu.h")]
         public static unsafe void QuerySetDestroy(this WebGPU thisApi, Span<QuerySet> querySet)
         {
             // SpanOverloader
@@ -2153,7 +2161,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1504, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1519, Column 22 in webgpu.h")]
         public static unsafe uint QuerySetGetCount(this WebGPU thisApi, Span<QuerySet> querySet)
         {
             // SpanOverloader
@@ -2161,7 +2169,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1505, Column 27 in webgpu.h")]
+        [NativeName("Src", "Line 1520, Column 27 in webgpu.h")]
         public static unsafe QueryType QuerySetGetType(this WebGPU thisApi, Span<QuerySet> querySet)
         {
             // SpanOverloader
@@ -2169,7 +2177,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
         public static unsafe void QuerySetSetLabel(this WebGPU thisApi, QuerySet* querySet, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2177,7 +2185,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
         public static unsafe void QuerySetSetLabel(this WebGPU thisApi, Span<QuerySet> querySet, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -2185,7 +2193,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
         public static unsafe void QuerySetSetLabel(this WebGPU thisApi, Span<QuerySet> querySet, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2193,7 +2201,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
         public static unsafe void QuerySetSetLabel(this WebGPU thisApi, Span<QuerySet> querySet, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -2201,7 +2209,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1509, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
         public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Queue* queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2209,7 +2217,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1509, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
         public static unsafe void QueueOnSubmittedWorkDone(this WebGPU thisApi, Span<Queue> queue, PfnQueueWorkDoneCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -2217,7 +2225,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1509, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
         public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Span<Queue> queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2225,7 +2233,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
         public static unsafe void QueueSetLabel(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2233,7 +2241,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
         public static unsafe void QueueSetLabel(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -2241,7 +2249,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
         public static unsafe void QueueSetLabel(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2249,7 +2257,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
         public static unsafe void QueueSetLabel(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -2257,7 +2265,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
         public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, CommandBuffer** commands)
         {
             // SpanOverloader
@@ -2265,7 +2273,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
         public static unsafe void QueueSubmit(this WebGPU thisApi, Span<Queue> queue, uint commandCount, ref CommandBuffer* commands)
         {
             // SpanOverloader
@@ -2273,7 +2281,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer<T0>(this WebGPU thisApi, Queue* queue, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2281,7 +2289,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer(this WebGPU thisApi, Queue* queue, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] void* data, nuint size)
         {
             // SpanOverloader
@@ -2289,7 +2297,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer<T0>(this WebGPU thisApi, Queue* queue, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2297,7 +2305,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer(this WebGPU thisApi, Span<Queue> queue, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] void* data, nuint size)
         {
             // SpanOverloader
@@ -2305,7 +2313,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer<T0>(this WebGPU thisApi, Span<Queue> queue, Buffer* buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2313,7 +2321,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer(this WebGPU thisApi, Span<Queue> queue, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] void* data, nuint size)
         {
             // SpanOverloader
@@ -2321,7 +2329,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteBuffer<T0>(this WebGPU thisApi, Span<Queue> queue, Span<Buffer> buffer, ulong bufferOffset, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2329,7 +2337,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2337,7 +2345,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2345,7 +2353,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2353,7 +2361,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2361,7 +2369,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2369,7 +2377,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2377,7 +2385,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2385,7 +2393,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2393,7 +2401,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2401,7 +2409,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2409,7 +2417,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2417,7 +2425,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2425,7 +2433,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2433,7 +2441,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2441,7 +2449,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2449,7 +2457,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2457,7 +2465,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2465,7 +2473,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2473,7 +2481,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2481,7 +2489,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2489,7 +2497,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2497,7 +2505,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2505,7 +2513,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ImageCopyTexture* destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2513,7 +2521,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2521,7 +2529,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2529,7 +2537,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
@@ -2537,7 +2545,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] void* data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
@@ -2545,7 +2553,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2553,7 +2561,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2561,7 +2569,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2569,7 +2577,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1513, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Span<Queue> queue, [Flow(FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2577,7 +2585,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1516, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1531, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDraw(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance)
         {
             // SpanOverloader
@@ -2585,7 +2593,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1517, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndexed(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance)
         {
             // SpanOverloader
@@ -2593,7 +2601,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1518, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndexedIndirect(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2601,7 +2609,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1518, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndexedIndirect(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2609,7 +2617,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1518, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndexedIndirect(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2617,7 +2625,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1519, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndirect(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2625,7 +2633,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1519, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndirect(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2633,7 +2641,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1519, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderDrawIndirect(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2641,7 +2649,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1535, Column 30 in webgpu.h")]
         public static unsafe RenderBundle* RenderBundleEncoderFinish(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<RenderBundleDescriptor> descriptor)
         {
             // SpanOverloader
@@ -2649,7 +2657,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1535, Column 30 in webgpu.h")]
         public static unsafe RenderBundle* RenderBundleEncoderFinish(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] RenderBundleDescriptor* descriptor)
         {
             // SpanOverloader
@@ -2657,7 +2665,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1535, Column 30 in webgpu.h")]
         public static unsafe RenderBundle* RenderBundleEncoderFinish(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<RenderBundleDescriptor> descriptor)
         {
             // SpanOverloader
@@ -2665,7 +2673,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderInsertDebugMarker(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -2673,7 +2681,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] byte* markerLabel)
         {
             // SpanOverloader
@@ -2681,7 +2689,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -2689,7 +2697,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string markerLabel)
         {
             // SpanOverloader
@@ -2697,7 +2705,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1522, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1537, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderPopDebugGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder)
         {
             // SpanOverloader
@@ -2705,7 +2713,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1523, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderPushDebugGroup(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -2713,7 +2721,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1523, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] byte* groupLabel)
         {
             // SpanOverloader
@@ -2721,7 +2729,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1523, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -2729,7 +2737,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1523, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string groupLabel)
         {
             // SpanOverloader
@@ -2737,7 +2745,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -2745,7 +2753,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -2753,7 +2761,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -2761,7 +2769,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -2769,7 +2777,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -2777,7 +2785,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -2785,7 +2793,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetBindGroup(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -2793,7 +2801,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetIndexBuffer(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, Span<Buffer> buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2801,7 +2809,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetIndexBuffer(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2809,7 +2817,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetIndexBuffer(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Span<Buffer> buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2817,7 +2825,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetLabel(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2825,7 +2833,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetLabel(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -2833,7 +2841,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetLabel(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -2841,7 +2849,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetLabel(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -2849,7 +2857,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetPipeline(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, Span<RenderPipeline> pipeline)
         {
             // SpanOverloader
@@ -2857,7 +2865,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetPipeline(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, RenderPipeline* pipeline)
         {
             // SpanOverloader
@@ -2865,7 +2873,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetPipeline(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, Span<RenderPipeline> pipeline)
         {
             // SpanOverloader
@@ -2873,7 +2881,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetVertexBuffer(this WebGPU thisApi, RenderBundleEncoder* renderBundleEncoder, uint slot, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2881,7 +2889,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetVertexBuffer(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint slot, Buffer* buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2889,7 +2897,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
         public static unsafe void RenderBundleEncoderSetVertexBuffer(this WebGPU thisApi, Span<RenderBundleEncoder> renderBundleEncoder, uint slot, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -2897,7 +2905,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1531, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderBeginOcclusionQuery(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint queryIndex)
         {
             // SpanOverloader
@@ -2905,7 +2913,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -2913,7 +2921,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, QuerySet* querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -2921,7 +2929,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderBeginPipelineStatisticsQuery(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Span<QuerySet> querySet, uint queryIndex)
         {
             // SpanOverloader
@@ -2929,7 +2937,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDraw(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance)
         {
             // SpanOverloader
@@ -2937,7 +2945,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1549, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndexed(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance)
         {
             // SpanOverloader
@@ -2945,7 +2953,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1535, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndexedIndirect(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2953,7 +2961,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1535, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndexedIndirect(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2961,7 +2969,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1535, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndexedIndirect(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2969,7 +2977,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndirect(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2977,7 +2985,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndirect(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2985,7 +2993,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1536, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderDrawIndirect(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Span<Buffer> indirectBuffer, ulong indirectOffset)
         {
             // SpanOverloader
@@ -2993,7 +3001,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1537, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1552, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderEnd(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder)
         {
             // SpanOverloader
@@ -3001,7 +3009,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1553, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderEndOcclusionQuery(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder)
         {
             // SpanOverloader
@@ -3009,7 +3017,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1539, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1554, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderEndPipelineStatisticsQuery(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder)
         {
             // SpanOverloader
@@ -3017,23 +3025,23 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, RenderBundle** bundles)
+        [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
+        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundleCount, RenderBundle** bundles)
         {
             // SpanOverloader
-            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundlesCount, bundles);
+            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundleCount, bundles);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundlesCount, ref RenderBundle* bundles)
+        [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
+        public static unsafe void RenderPassEncoderExecuteBundles(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint bundleCount, ref RenderBundle* bundles)
         {
             // SpanOverloader
-            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundlesCount, ref bundles);
+            thisApi.RenderPassEncoderExecuteBundles(ref renderPassEncoder.GetPinnableReference(), bundleCount, ref bundles);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderInsertDebugMarker(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -3041,7 +3049,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] byte* markerLabel)
         {
             // SpanOverloader
@@ -3049,7 +3057,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> markerLabel)
         {
             // SpanOverloader
@@ -3057,7 +3065,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderInsertDebugMarker(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string markerLabel)
         {
             // SpanOverloader
@@ -3065,7 +3073,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1557, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderPopDebugGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder)
         {
             // SpanOverloader
@@ -3073,7 +3081,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1558, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderPushDebugGroup(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -3081,7 +3089,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1558, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] byte* groupLabel)
         {
             // SpanOverloader
@@ -3089,7 +3097,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1558, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> groupLabel)
         {
             // SpanOverloader
@@ -3097,7 +3105,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1558, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderPushDebugGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string groupLabel)
         {
             // SpanOverloader
@@ -3105,7 +3113,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -3113,7 +3121,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -3121,7 +3129,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -3129,7 +3137,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -3137,7 +3145,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint groupIndex, BindGroup* group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -3145,7 +3153,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] uint* dynamicOffsets)
         {
             // SpanOverloader
@@ -3153,7 +3161,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBindGroup(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint groupIndex, Span<BindGroup> group, uint dynamicOffsetCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> dynamicOffsets)
         {
             // SpanOverloader
@@ -3161,7 +3169,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1545, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1560, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBlendConstant(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color)
         {
             // SpanOverloader
@@ -3169,7 +3177,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1545, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1560, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBlendConstant(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] Color* color)
         {
             // SpanOverloader
@@ -3177,7 +3185,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1545, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1560, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetBlendConstant(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color)
         {
             // SpanOverloader
@@ -3185,7 +3193,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetIndexBuffer(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, Span<Buffer> buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3193,7 +3201,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetIndexBuffer(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3201,7 +3209,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetIndexBuffer(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Span<Buffer> buffer, IndexFormat format, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3209,7 +3217,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetLabel(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3217,7 +3225,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetLabel(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3225,7 +3233,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetLabel(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3233,7 +3241,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetLabel(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -3241,7 +3249,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetPipeline(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, Span<RenderPipeline> pipeline)
         {
             // SpanOverloader
@@ -3249,7 +3257,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetPipeline(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, RenderPipeline* pipeline)
         {
             // SpanOverloader
@@ -3257,7 +3265,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetPipeline(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, Span<RenderPipeline> pipeline)
         {
             // SpanOverloader
@@ -3265,7 +3273,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1549, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1564, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetScissorRect(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint x, uint y, uint width, uint height)
         {
             // SpanOverloader
@@ -3273,7 +3281,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1565, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetStencilReference(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint reference)
         {
             // SpanOverloader
@@ -3281,7 +3289,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetVertexBuffer(this WebGPU thisApi, RenderPassEncoder* renderPassEncoder, uint slot, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3289,7 +3297,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetVertexBuffer(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint slot, Buffer* buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3297,7 +3305,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetVertexBuffer(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, uint slot, Span<Buffer> buffer, ulong offset, ulong size)
         {
             // SpanOverloader
@@ -3305,7 +3313,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1552, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1567, Column 18 in webgpu.h")]
         public static unsafe void RenderPassEncoderSetViewport(this WebGPU thisApi, Span<RenderPassEncoder> renderPassEncoder, float x, float y, float width, float height, float minDepth, float maxDepth)
         {
             // SpanOverloader
@@ -3313,7 +3321,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1555, Column 33 in webgpu.h")]
+        [NativeName("Src", "Line 1570, Column 33 in webgpu.h")]
         public static unsafe BindGroupLayout* RenderPipelineGetBindGroupLayout(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, uint groupIndex)
         {
             // SpanOverloader
@@ -3321,7 +3329,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
         public static unsafe void RenderPipelineSetLabel(this WebGPU thisApi, RenderPipeline* renderPipeline, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3329,7 +3337,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
         public static unsafe void RenderPipelineSetLabel(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3337,7 +3345,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
         public static unsafe void RenderPipelineSetLabel(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3345,7 +3353,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
         public static unsafe void RenderPipelineSetLabel(this WebGPU thisApi, Span<RenderPipeline> renderPipeline, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -3353,7 +3361,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1574, Column 18 in webgpu.h")]
         public static unsafe void SamplerSetLabel(this WebGPU thisApi, Sampler* sampler, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3361,7 +3369,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1574, Column 18 in webgpu.h")]
         public static unsafe void SamplerSetLabel(this WebGPU thisApi, Span<Sampler> sampler, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3369,7 +3377,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1574, Column 18 in webgpu.h")]
         public static unsafe void SamplerSetLabel(this WebGPU thisApi, Span<Sampler> sampler, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3377,7 +3385,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1559, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1574, Column 18 in webgpu.h")]
         public static unsafe void SamplerSetLabel(this WebGPU thisApi, Span<Sampler> sampler, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -3385,7 +3393,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, ShaderModule* shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -3393,7 +3401,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleGetCompilationInfo(this WebGPU thisApi, Span<ShaderModule> shaderModule, PfnCompilationInfoCallback callback, void* userdata)
         {
             // SpanOverloader
@@ -3401,7 +3409,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, Span<ShaderModule> shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -3409,7 +3417,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleSetLabel(this WebGPU thisApi, ShaderModule* shaderModule, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3417,7 +3425,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleSetLabel(this WebGPU thisApi, Span<ShaderModule> shaderModule, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3425,7 +3433,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleSetLabel(this WebGPU thisApi, Span<ShaderModule> shaderModule, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3433,7 +3441,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]
         public static unsafe void ShaderModuleSetLabel(this WebGPU thisApi, Span<ShaderModule> shaderModule, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -3441,7 +3449,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
         public static unsafe TextureFormat SurfaceGetPreferredFormat(this WebGPU thisApi, Surface* surface, Span<Adapter> adapter)
         {
             // SpanOverloader
@@ -3449,7 +3457,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
         public static unsafe TextureFormat SurfaceGetPreferredFormat(this WebGPU thisApi, Span<Surface> surface, Adapter* adapter)
         {
             // SpanOverloader
@@ -3457,7 +3465,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
         public static unsafe TextureFormat SurfaceGetPreferredFormat(this WebGPU thisApi, Span<Surface> surface, Span<Adapter> adapter)
         {
             // SpanOverloader
@@ -3465,7 +3473,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1569, Column 29 in webgpu.h")]
+        [NativeName("Src", "Line 1584, Column 29 in webgpu.h")]
         public static unsafe TextureView* SwapChainGetCurrentTextureView(this WebGPU thisApi, Span<SwapChain> swapChain)
         {
             // SpanOverloader
@@ -3473,7 +3481,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1570, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1585, Column 18 in webgpu.h")]
         public static unsafe void SwapChainPresent(this WebGPU thisApi, Span<SwapChain> swapChain)
         {
             // SpanOverloader
@@ -3481,7 +3489,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1573, Column 29 in webgpu.h")]
+        [NativeName("Src", "Line 1588, Column 29 in webgpu.h")]
         public static unsafe TextureView* TextureCreateView(this WebGPU thisApi, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<TextureViewDescriptor> descriptor)
         {
             // SpanOverloader
@@ -3489,7 +3497,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1573, Column 29 in webgpu.h")]
+        [NativeName("Src", "Line 1588, Column 29 in webgpu.h")]
         public static unsafe TextureView* TextureCreateView(this WebGPU thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] TextureViewDescriptor* descriptor)
         {
             // SpanOverloader
@@ -3497,7 +3505,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1573, Column 29 in webgpu.h")]
+        [NativeName("Src", "Line 1588, Column 29 in webgpu.h")]
         public static unsafe TextureView* TextureCreateView(this WebGPU thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<TextureViewDescriptor> descriptor)
         {
             // SpanOverloader
@@ -3505,7 +3513,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1574, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1589, Column 18 in webgpu.h")]
         public static unsafe void TextureDestroy(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3513,7 +3521,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1590, Column 22 in webgpu.h")]
         public static unsafe uint TextureGetDepthOrArrayLayers(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3521,7 +3529,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1576, Column 34 in webgpu.h")]
+        [NativeName("Src", "Line 1591, Column 34 in webgpu.h")]
         public static unsafe TextureDimension TextureGetDimension(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3529,7 +3537,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1577, Column 31 in webgpu.h")]
+        [NativeName("Src", "Line 1592, Column 31 in webgpu.h")]
         public static unsafe TextureFormat TextureGetFormat(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3537,7 +3545,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1578, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1593, Column 22 in webgpu.h")]
         public static unsafe uint TextureGetHeight(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3545,7 +3553,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1579, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1594, Column 22 in webgpu.h")]
         public static unsafe uint TextureGetMipLevelCount(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3553,7 +3561,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1580, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1595, Column 22 in webgpu.h")]
         public static unsafe uint TextureGetSampleCount(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3561,7 +3569,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 30 in webgpu.h")]
+        [NativeName("Src", "Line 1596, Column 30 in webgpu.h")]
         public static unsafe TextureUsage TextureGetUsage(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3569,7 +3577,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1582, Column 22 in webgpu.h")]
+        [NativeName("Src", "Line 1597, Column 22 in webgpu.h")]
         public static unsafe uint TextureGetWidth(this WebGPU thisApi, Span<Texture> texture)
         {
             // SpanOverloader
@@ -3577,7 +3585,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1583, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1598, Column 18 in webgpu.h")]
         public static unsafe void TextureSetLabel(this WebGPU thisApi, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3585,7 +3593,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1583, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1598, Column 18 in webgpu.h")]
         public static unsafe void TextureSetLabel(this WebGPU thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3593,7 +3601,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1583, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1598, Column 18 in webgpu.h")]
         public static unsafe void TextureSetLabel(this WebGPU thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3601,7 +3609,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1583, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1598, Column 18 in webgpu.h")]
         public static unsafe void TextureSetLabel(this WebGPU thisApi, Span<Texture> texture, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
@@ -3609,7 +3617,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1601, Column 18 in webgpu.h")]
         public static unsafe void TextureViewSetLabel(this WebGPU thisApi, TextureView* textureView, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3617,7 +3625,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1601, Column 18 in webgpu.h")]
         public static unsafe void TextureViewSetLabel(this WebGPU thisApi, Span<TextureView> textureView, [Flow(FlowDirection.In)] byte* label)
         {
             // SpanOverloader
@@ -3625,7 +3633,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1601, Column 18 in webgpu.h")]
         public static unsafe void TextureViewSetLabel(this WebGPU thisApi, Span<TextureView> textureView, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
@@ -3633,7 +3641,7 @@ namespace Silk.NET.WebGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 18 in webgpu.h")]
+        [NativeName("Src", "Line 1601, Column 18 in webgpu.h")]
         public static unsafe void TextureViewSetLabel(this WebGPU thisApi, Span<TextureView> textureView, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label)
         {
             // SpanOverloader
