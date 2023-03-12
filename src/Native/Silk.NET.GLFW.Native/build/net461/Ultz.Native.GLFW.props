@@ -9,9 +9,11 @@
     <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Ultz_NativePackages_GLFW_NativeRuntime>
     <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Ultz_NativePackages_GLFW_NativeRuntime>
     <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Ultz_NativePackages_GLFW_NativeRuntime>
+    <_Ultz_NativePackages_GLFW_NativeRuntime Condition=" '$(_Ultz_NativePackages_GLFW_NativeRuntime)' == '' And '$(_Ultz_NativePackages_GLFW_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Ultz_NativePackages_GLFW_NativeRuntime>
 
     <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-x86'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
     <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-x64'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
+    <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'win-arm64'">glfw3.dll</_Ultz_NativePackages_GLFW_NativeLibName>
     <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'osx-x64'">libglfw.3.dylib</_Ultz_NativePackages_GLFW_NativeLibName>
     <_Ultz_NativePackages_GLFW_NativeLibName Condition="'$(_Ultz_NativePackages_GLFW_NativeRuntime)' == 'linux-x64'">libglfw.so.3</_Ultz_NativePackages_GLFW_NativeLibName>
   </PropertyGroup>

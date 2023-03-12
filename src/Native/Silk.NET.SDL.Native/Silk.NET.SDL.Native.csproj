@@ -9,7 +9,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <PackageId>Ultz.Native.SDL</PackageId> <!-- TODO change this in 3.0 -->
-    <PackageVersion>2.24.2</PackageVersion>
+    <PackageVersion>2.24.3</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Zlib</PackageLicenseExpression>
@@ -26,6 +26,7 @@
     <Content Include="runtimes\linux-x64\native\libSDL2-2.0.so" PackagePath="runtimes\linux-x64\native\libSDL2-2.0.so" />
     <Content Include="runtimes\osx-x64\native\libSDL2-2.0.dylib" PackagePath="runtimes\osx-x64\native\libSDL2-2.0.dylib" />
     <Content Include="runtimes\win-x64\native\SDL2.dll" PackagePath="runtimes\win-x64\native\SDL2.dll" />
+    <Content Include="runtimes\win-arm64\native\SDL2.dll" PackagePath="runtimes\win-arm64\native\SDL2.dll" />
   </ItemGroup>
 
 </Project>
