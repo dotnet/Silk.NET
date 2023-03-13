@@ -20,7 +20,7 @@ public static class WebGPUSurface
     /// <param name="view">The window to get the surface from</param>
     /// <returns>A newly created Surface*/</returns>
     /// <exception cref="NotSupportedException">Throws when an unsupported platform is detected.</exception>
-    public static unsafe Surface* CreateWebGPUSurface(this INativeWindowSource view, NET.WebGPU.WebGPU wgpu, Instance* instance = null)
+    public static unsafe Surface* CreateWebGPUSurface(this INativeWindowSource view, NET.WebGPU.WebGPU wgpu, Instance* instance)
     {
         var descriptor = new SurfaceDescriptor();
 

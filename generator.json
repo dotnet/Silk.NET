@@ -2204,11 +2204,11 @@
             "namespace": "Silk.NET.WebGPU",
             "extensionsNamespace": "Silk.NET.WebGPU.Extensions",
             "nameContainer": {
-                "linux-x64": "libwgpu.so",
-                "win-x64": "libwgpu.dll",
-                "win-x86": "libwgpu.dll",
-                "osx-x64": "libwgpu.dylib",
-                "android": "libwgpu.so",
+                "linux-x64": "libwgpu_native.so",
+                "win-x64": "libwgpu_native.dll",
+                "win-x86": "libwgpu_native.dll",
+                "osx-x64": "libwgpu_native.dylib",
+                "android": "libwgpu_native.so",
                 "className": "WebGPULibraryNameContainer"
             },
             "typeMaps": [
