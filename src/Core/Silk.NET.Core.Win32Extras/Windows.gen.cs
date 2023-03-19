@@ -4034,9 +4034,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE")]
         public const int PFArmV83JscvtInstructionsAvailable = unchecked((int) 0x2C);
         [NativeName("Type", "int")]
-        [NativeName("Name", "PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE")]
-        public const int PFArmV83LrcpcInstructionsAvailable = unchecked((int) 0x2D);
-        [NativeName("Type", "int")]
         [NativeName("Name", "XSTATE_LEGACY_FLOATING_POINT")]
         public const int XstateLegacyFloatingPoint = unchecked((int) 0x0);
         [NativeName("Type", "int")]
@@ -18723,17 +18720,7 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
         [NativeApi(EntryPoint = "EnableTraceEx")]
-        public unsafe partial uint EnableTraceEx([Flow(FlowDirection.In)] Guid* ProviderId, [Flow(FlowDirection.In)] Guid* SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, ref EventFilterDescriptor EnableFilterDesc);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        [NativeApi(EntryPoint = "EnableTraceEx")]
         public unsafe partial uint EnableTraceEx([Flow(FlowDirection.In)] Guid* ProviderId, [Flow(FlowDirection.In)] in Guid SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, EventFilterDescriptor* EnableFilterDesc);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        [NativeApi(EntryPoint = "EnableTraceEx")]
-        public unsafe partial uint EnableTraceEx([Flow(FlowDirection.In)] Guid* ProviderId, [Flow(FlowDirection.In)] in Guid SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, ref EventFilterDescriptor EnableFilterDesc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
@@ -18743,17 +18730,7 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
         [NativeApi(EntryPoint = "EnableTraceEx")]
-        public unsafe partial uint EnableTraceEx([Flow(FlowDirection.In)] in Guid ProviderId, [Flow(FlowDirection.In)] Guid* SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, ref EventFilterDescriptor EnableFilterDesc);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        [NativeApi(EntryPoint = "EnableTraceEx")]
         public unsafe partial uint EnableTraceEx([Flow(FlowDirection.In)] in Guid ProviderId, [Flow(FlowDirection.In)] in Guid SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, EventFilterDescriptor* EnableFilterDesc);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        [NativeApi(EntryPoint = "EnableTraceEx")]
-        public partial uint EnableTraceEx([Flow(FlowDirection.In)] in Guid ProviderId, [Flow(FlowDirection.In)] in Guid SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, ref EventFilterDescriptor EnableFilterDesc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1993, Column 1 in evntrace.h")]

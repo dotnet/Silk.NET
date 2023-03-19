@@ -139,18 +139,6 @@ public unsafe static class D2D1CommandSink5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextRenderingParams(this ComPtr<ID2D1CommandSink5> thisVtbl, ref IDWriteRenderingParams textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, IDWriteRenderingParams*, int>)@this->LpVtbl[8])(@this, textRenderingParamsPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int SetTransform(this ComPtr<ID2D1CommandSink5> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
@@ -227,93 +215,6 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrushPtr, measuringMode);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescriptionPtr, foregroundBrush, measuringMode);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-        {
-            fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescriptionPtr, foregroundBrushPtr, measuringMode);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescription, foregroundBrush, measuringMode);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescription, foregroundBrushPtr, measuringMode);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescriptionPtr, foregroundBrush, measuringMode);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-            {
-                fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescriptionPtr, foregroundBrushPtr, measuringMode);
-                }
-            }
         }
         return ret;
     }
@@ -1838,14 +1739,6 @@ public unsafe static class D2D1CommandSink5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextRenderingParams(this ComPtr<ID2D1CommandSink5> thisVtbl, Span<IDWriteRenderingParams> textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetTextRenderingParams(ref textRenderingParams.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
     public static int SetTransform(this ComPtr<ID2D1CommandSink5> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
@@ -1875,78 +1768,6 @@ public unsafe static class D2D1CommandSink5VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->DrawGlyphRun(baselineOrigin, glyphRun, glyphRunDescription, ref foregroundBrush.GetPinnableReference(), measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), glyphRunDescription, foregroundBrush, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun, glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), glyphRunDescription, ref foregroundBrush.GetPinnableReference(), measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), in glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink5> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), in glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
     }
 
     /// <summary>To be documented.</summary>

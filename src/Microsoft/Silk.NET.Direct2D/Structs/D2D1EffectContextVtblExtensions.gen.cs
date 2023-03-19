@@ -1950,33 +1950,6 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ref IWICColorContext wicColorContext, ID2D1ColorContext** colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[21])(@this, wicColorContextPtr, colorContext);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ref IWICColorContext wicColorContext, ref ID2D1ColorContext* colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-        {
-            fixed (ID2D1ColorContext** colorContextPtr = &colorContext)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[21])(@this, wicColorContextPtr, colorContextPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CheckFeatureSupport(this ComPtr<ID2D1EffectContext> thisVtbl, Feature feature, void* featureSupportData, uint featureSupportDataSize)
     {
         var @this = thisVtbl.Handle;
@@ -3208,30 +3181,6 @@ public unsafe static class D2D1EffectContextVtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateColorContextFromWicColorContext(wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, Span<IWICColorContext> wicColorContext, ID2D1ColorContext** colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext.GetPinnableReference(), colorContext);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromWicColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref IWICColorContext wicColorContext, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, Span<IWICColorContext> wicColorContext, ref ID2D1ColorContext* colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext.GetPinnableReference(), ref colorContext);
     }
 
     /// <summary>To be documented.</summary>

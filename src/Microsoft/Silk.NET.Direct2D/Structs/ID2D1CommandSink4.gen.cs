@@ -177,18 +177,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTextRenderingParams(ref IDWriteRenderingParams textRenderingParams)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, IDWriteRenderingParams*, int>)@this->LpVtbl[8])(@this, textRenderingParamsPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -265,93 +253,6 @@ namespace Silk.NET.Direct2D
             fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescription, foregroundBrushPtr, measuringMode);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescriptionPtr, foregroundBrush, measuringMode);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-            {
-                fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRun, glyphRunDescriptionPtr, foregroundBrushPtr, measuringMode);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescription, foregroundBrush, measuringMode);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-            {
-                fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescription, foregroundBrushPtr, measuringMode);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-            {
-                fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescriptionPtr, foregroundBrush, measuringMode);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-            {
-                fixed (DwriteGlyphRunDescription* glyphRunDescriptionPtr = &glyphRunDescription)
-                {
-                    fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1CommandSink4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteGlyphRunDescription*, ID2D1Brush*, DwriteMeasuringMode, int>)@this->LpVtbl[13])(@this, baselineOrigin, glyphRunPtr, glyphRunDescriptionPtr, foregroundBrushPtr, measuringMode);
-                    }
-                }
             }
             return ret;
         }
@@ -1757,30 +1658,6 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->DrawGlyphRun(baselineOrigin, glyphRun, glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->DrawGlyphRun(baselineOrigin, in glyphRun, glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1CommandSink4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->DrawGlyphRun(baselineOrigin, in glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
         }
 
         /// <summary>To be documented.</summary>

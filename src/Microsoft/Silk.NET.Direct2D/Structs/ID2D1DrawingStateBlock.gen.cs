@@ -172,16 +172,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetTextRenderingParams(ref IDWriteRenderingParams textRenderingParams)
-        {
-            var @this = (ID2D1DrawingStateBlock*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DrawingStateBlock*, IDWriteRenderingParams*, void>)@this->LpVtbl[6])(@this, textRenderingParamsPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams)
         {
             var @this = (ID2D1DrawingStateBlock*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

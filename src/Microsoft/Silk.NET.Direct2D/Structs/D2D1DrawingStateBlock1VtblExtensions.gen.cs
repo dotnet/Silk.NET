@@ -143,16 +143,6 @@ public unsafe static class D2D1DrawingStateBlock1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTextRenderingParams(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, ref IDWriteRenderingParams textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DrawingStateBlock1*, IDWriteRenderingParams*, void>)@this->LpVtbl[6])(@this, textRenderingParamsPtr);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void GetTextRenderingParams(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, IDWriteRenderingParams** textRenderingParams)
     {
         var @this = thisVtbl.Handle;
@@ -216,14 +206,6 @@ public unsafe static class D2D1DrawingStateBlock1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SetDescription(in stateDescription.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void SetTextRenderingParams(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, Span<IDWriteRenderingParams> textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->SetTextRenderingParams(ref textRenderingParams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
