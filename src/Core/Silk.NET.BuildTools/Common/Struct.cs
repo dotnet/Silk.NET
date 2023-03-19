@@ -65,6 +65,11 @@ namespace Silk.NET.BuildTools.Common
         public Guid? Uuid { get; set; }
 
         /// <summary>
+        /// This struct has no fields, and is just used for opaque pointers
+        /// </summary>
+        public bool IsOpaque => this.Fields.Count == 0;
+
+        /// <summary>
         /// Creates an alias of this structure, by cloning it.
         /// </summary>
         /// <param name="alias">The alias name.</param>
