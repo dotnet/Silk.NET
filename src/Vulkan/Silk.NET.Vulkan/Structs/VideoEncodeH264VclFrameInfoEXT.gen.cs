@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264VclFrameInfoExt,
             void* pNext = null,
-            StdVideoEncodeH264ReferenceListsInfo* pStdReferenceFinalLists = null,
+            Video.StdVideoEncodeH264ReferenceListsInfo* pStdReferenceFinalLists = null,
             uint? naluSliceEntryCount = null,
             VideoEncodeH264NaluSliceInfoEXT* pNaluSliceEntries = null,
             Video.StdVideoEncodeH264PictureInfo* pStdPictureInfo = null
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoEncodeH264ReferenceListsInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH264ReferenceListsInfo")]
         [NativeName("Name", "pStdReferenceFinalLists")]
-        public StdVideoEncodeH264ReferenceListsInfo* PStdReferenceFinalLists;
+        public Video.StdVideoEncodeH264ReferenceListsInfo* PStdReferenceFinalLists;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
