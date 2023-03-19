@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
-    [Flags]
     [NativeName("Name", "cl_program_binary_type")]
     public enum ProgramBinaryType : int
     {

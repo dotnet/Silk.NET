@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkSharingMode")]
     public enum SharingMode : int
     {

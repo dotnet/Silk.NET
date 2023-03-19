@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DSTATEBLOCKTYPE")]
     public enum Stateblocktype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"All\"")]
         [NativeName("Name", "D3DSBT_ALL")]
         SbtAll = 0x1,

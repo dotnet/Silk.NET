@@ -30,6 +30,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Pocl\"")]
         [NativeName("Name", "VK_VENDOR_ID_POCL")]
         VendorIDPocl = 65542,
+        [Obsolete("Deprecated in favour of \"Mobileye\"")]
+        [NativeName("Name", "VK_VENDOR_ID_MOBILEYE")]
+        VendorIDMobileye = 65543,
         [NativeName("Name", "VK_VENDOR_ID_VIV")]
         Viv = 65537,
         [NativeName("Name", "VK_VENDOR_ID_VSI")]
@@ -42,5 +45,7 @@ namespace Silk.NET.Vulkan
         Mesa = 65541,
         [NativeName("Name", "VK_VENDOR_ID_POCL")]
         Pocl = 65542,
+        [NativeName("Name", "VK_VENDOR_ID_MOBILEYE")]
+        Mobileye = 65543,
     }
 }

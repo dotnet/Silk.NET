@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrHandJointsMotionRangeEXT")]
     public enum HandJointsMotionRangeEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UnobstructedExt\"")]
         [NativeName("Name", "XR_HAND_JOINTS_MOTION_RANGE_UNOBSTRUCTED_EXT")]
         HandJointsMotionRangeUnobstructedExt = 1,

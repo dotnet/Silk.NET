@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUStorageTextureAccess")]
     public enum StorageTextureAccess : int
     {

@@ -23,6 +23,7 @@
             - Added support for OpenAL disconnect extension. (thanks @okaniku)
             - Added extension functions for OpenAL BufferData to make use of AL_EXT_float32 enums.
             - Added ReopenDevices extension for OpenAL Soft. (thanks @LeNitrous)
+            - Added BufferCallback extension for OpenAL Soft.
             - Added Vulkan structure chain polymorphism. (thanks @Khitiara for the proposal)
             - Added SDL/GLFW native libraries for Windows on ARM64.
             - Added IsScancodePressed function in Silk.NET Input.
@@ -30,6 +31,7 @@
             - Added EGL display and surface to INativeWindow.
             - Added an explicit check against calling Reset on a window while within the render loop of said window.
             - Improved support for WASM and AOT in the Silk.NET loader.
+            - Improved support for Windows on ARM64.
             - Improved Silk.NET.Maths generic specialization codegen.
             - Improved support for DXVK, including a new DXHandle property in INativeWindow for getting Linux HWND equivalents.
             - Updated to SDL 2.24.

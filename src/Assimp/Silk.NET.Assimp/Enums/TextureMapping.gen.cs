@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiTextureMapping")]
     public enum TextureMapping : int
     {

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrHandPoseTypeMSFT")]
     public enum HandPoseTypeMSFT : int
     {

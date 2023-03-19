@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_COPP_StatusHDCPFlags")]
     public enum COPPStatusHDCPFlags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Hdcprepeater\"")]
         [NativeName("Name", "COPP_HDCPRepeater")]
         CoppHdcprepeater = 0x1,

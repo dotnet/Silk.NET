@@ -93,6 +93,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"BFrameInL1ListBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT")]
         VideoEncodeH265CapabilityBFrameInL1ListBitExt = 33554432,
+        [Obsolete("Deprecated in favour of \"DifferentReferenceFinalListsBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_REFERENCE_FINAL_LISTS_BIT_EXT")]
+        VideoEncodeH265CapabilityDifferentReferenceFinalListsBitExt = 67108864,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_SEPARATE_COLOUR_PLANE_BIT_EXT")]
         SeparateColourPlaneBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_SCALING_LISTS_BIT_EXT")]
@@ -145,5 +148,7 @@ namespace Silk.NET.Vulkan
         DifferentSliceTypeBitExt = 16777216,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT")]
         BFrameInL1ListBitExt = 33554432,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_REFERENCE_FINAL_LISTS_BIT_EXT")]
+        DifferentReferenceFinalListsBitExt = 67108864,
     }
 }

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L208_C9")]
     [NativeName("Name", "SDL_FlashOperation")]
     public enum FlashOperation : int

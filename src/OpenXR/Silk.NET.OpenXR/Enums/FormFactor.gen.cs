@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrFormFactor")]
     public enum FormFactor : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY")]
         HeadMountedDisplay = 1,
         [NativeName("Name", "XR_FORM_FACTOR_HANDHELD_DISPLAY")]

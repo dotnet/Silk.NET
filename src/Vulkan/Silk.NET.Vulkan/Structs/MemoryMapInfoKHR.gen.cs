@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoEncodeH264EmitPictureParametersInfoEXT")]
-    public unsafe partial struct VideoEncodeH264EmitPictureParametersInfoEXT : IExtendsChain<VideoEncodeInfoKHR>
+    [NativeName("Name", "VkMemoryMapInfoKHR")]
+    public unsafe partial struct MemoryMapInfoKHR : IChainable
     {
-        public VideoEncodeH264EmitPictureParametersInfoEXT
+        public MemoryMapInfoKHR
         (
-            StructureType? sType = StructureType.VideoEncodeH264EmitPictureParametersInfoExt,
+            StructureType? sType = StructureType.MemoryMapInfoKhr,
             void* pNext = null,
-            byte? spsId = null,
-            Bool32? emitSpsEnable = null,
-            uint? ppsIdEntryCount = null,
-            byte* ppsIdEntries = null
+            uint? flags = null,
+            DeviceMemory? memory = null,
+            ulong? offset = null,
+            ulong? size = null
         ) : this()
         {
             if (sType is not null)
@@ -39,24 +39,24 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (spsId is not null)
+            if (flags is not null)
             {
-                SpsId = spsId.Value;
+                Flags = flags.Value;
             }
 
-            if (emitSpsEnable is not null)
+            if (memory is not null)
             {
-                EmitSpsEnable = emitSpsEnable.Value;
+                Memory = memory.Value;
             }
 
-            if (ppsIdEntryCount is not null)
+            if (offset is not null)
             {
-                PpsIdEntryCount = ppsIdEntryCount.Value;
+                Offset = offset.Value;
             }
 
-            if (ppsIdEntries is not null)
+            if (size is not null)
             {
-                PpsIdEntries = ppsIdEntries;
+                Size = size.Value;
             }
         }
 
@@ -71,30 +71,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "spsId")]
-        public byte SpsId;
+        [NativeName("Type", "VkMemoryMapFlags")]
+        [NativeName("Type.Name", "VkMemoryMapFlags")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "emitSpsEnable")]
-        public Bool32 EmitSpsEnable;
+        [NativeName("Type", "VkDeviceMemory")]
+        [NativeName("Type.Name", "VkDeviceMemory")]
+        [NativeName("Name", "memory")]
+        public DeviceMemory Memory;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "ppsIdEntryCount")]
-        public uint PpsIdEntryCount;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "offset")]
+        public ulong Offset;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t*")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "ppsIdEntries")]
-        public byte* PpsIdEntries;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoEncodeH264EmitPictureParametersInfoExt;
+            return SType = StructureType.MemoryMapInfoKhr;
         }
 
         /// <inheritdoc />

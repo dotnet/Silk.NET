@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_DXVAHD_FILTER")]
     public enum HDFilter : int
     {

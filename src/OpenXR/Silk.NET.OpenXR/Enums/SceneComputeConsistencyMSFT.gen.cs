@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrSceneComputeConsistencyMSFT")]
     public enum SceneComputeConsistencyMSFT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SnapshotCompleteMsft\"")]
         [NativeName("Name", "XR_SCENE_COMPUTE_CONSISTENCY_SNAPSHOT_COMPLETE_MSFT")]
         SceneComputeConsistencySnapshotCompleteMsft = 1,

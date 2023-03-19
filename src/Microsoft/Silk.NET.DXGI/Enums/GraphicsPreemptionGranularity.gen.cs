@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_GRANULARITY")]
     public enum GraphicsPreemptionGranularity : int
     {

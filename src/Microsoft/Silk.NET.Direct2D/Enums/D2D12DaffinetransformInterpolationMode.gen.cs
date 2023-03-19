@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE")]
     public enum D2D12DaffinetransformInterpolationMode : int
     {

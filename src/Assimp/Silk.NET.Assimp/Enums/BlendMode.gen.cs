@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiBlendMode")]
     public enum BlendMode : int
     {

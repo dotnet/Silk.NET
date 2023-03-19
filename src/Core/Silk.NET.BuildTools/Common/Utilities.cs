@@ -627,7 +627,30 @@ namespace Silk.NET.BuildTools.Common
             => @enum.Tokens.Count > 1 && // there is more than one token
                // at least approx 50% of the tokens have only one bit set
                @enum.Tokens.Count(x => BitOperations.PopCount(ParseToken(x.Value, @enum)) == 1)
-               >= MathF.Floor(@enum.Tokens.Count / 2f);
+               >= MathF.Floor(@enum.Tokens.Count / 2f) &&
+               // it's not sequential (1, 2, 3)
+               !@enum.IsSequential();
+
+        private static bool IsSequential(this Enums.Enum @enum)
+        {
+            const int maxMisses = 1;
+            var misses = 0;
+            for (var i = 0; i < @enum.Tokens.Count; i++)
+            {
+                if (ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)(i - misses) &&
+                    ParseToken(@enum.Tokens[i].Value, @enum) != (ulong)((i - misses) + 1))
+                {
+                    misses++;
+                }
+
+                if (misses > maxMisses)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         public static bool HasDefaultValue(this Enums.Enum @enum)
             => @enum.Tokens.Any(x => ParseToken(x.Value, @enum) is 0);

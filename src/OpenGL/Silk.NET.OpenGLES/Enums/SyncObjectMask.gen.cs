@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
-    [Flags]
     [NativeName("Name", "SyncObjectMask")]
     public enum SyncObjectMask : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Bit\"")]
         [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
         SyncFlushCommandsBit = 0x1,

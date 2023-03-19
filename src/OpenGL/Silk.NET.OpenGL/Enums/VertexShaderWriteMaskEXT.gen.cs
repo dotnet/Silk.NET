@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL
 {
-    [Flags]
     [NativeName("Name", "VertexShaderWriteMaskEXT")]
     public enum VertexShaderWriteMaskEXT : int
     {

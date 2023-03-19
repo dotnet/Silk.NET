@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "tagSTGTY")]
     public enum TagSTGTY : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Storage\"")]
         [NativeName("Name", "STGTY_STORAGE")]
         StgtyStorage = 0x1,

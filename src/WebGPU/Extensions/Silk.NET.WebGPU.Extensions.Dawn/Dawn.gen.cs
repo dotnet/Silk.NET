@@ -433,12 +433,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1743, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorBuffer")]
-        public unsafe partial Buffer* DeviceCreateErrorBuffer(Device* device);
+        public unsafe partial Buffer* DeviceCreateErrorBuffer(Device* device, [Flow(FlowDirection.In)] BufferDescriptor* descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1743, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorBuffer")]
-        public unsafe partial Buffer* DeviceCreateErrorBuffer(ref Device device);
+        public unsafe partial Buffer* DeviceCreateErrorBuffer(Device* device, [Flow(FlowDirection.In)] in BufferDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1743, Column 24 in dawn-webgpu.h")]

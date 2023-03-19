@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkOpacityMicromapFormatEXT")]
     public enum OpacityMicromapFormatEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Format2StateExt\"")]
         [NativeName("Name", "VK_OPACITY_MICROMAP_FORMAT_2_STATE_EXT")]
         OpacityMicromapFormat2StateExt = 1,

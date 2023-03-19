@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.IMG
 {
-    [Flags]
     [NativeName("Name", "cl_mipmap_filter_mode_img")]
     public enum MipmapFilterMode : int
     {

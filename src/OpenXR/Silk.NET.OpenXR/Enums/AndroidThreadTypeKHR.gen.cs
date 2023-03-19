@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrAndroidThreadTypeKHR")]
     public enum AndroidThreadTypeKHR : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ApplicationMainKhr\"")]
         [NativeName("Name", "XR_ANDROID_THREAD_TYPE_APPLICATION_MAIN_KHR")]
         AndroidThreadTypeApplicationMainKhr = 1,

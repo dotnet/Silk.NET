@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUCompositeAlphaMode")]
     public enum CompositeAlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUCompositeAlphaMode_Auto")]
         Auto = 0x0,
         [NativeName("Name", "WGPUCompositeAlphaMode_Opaque")]

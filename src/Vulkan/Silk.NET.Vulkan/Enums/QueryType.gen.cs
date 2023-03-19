@@ -32,8 +32,8 @@ namespace Silk.NET.Vulkan
         AccelerationStructureCompactedSizeNV = 1000165000,
         [NativeName("Name", "VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
         PerformanceQueryIntel = 1000210000,
-        [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR")]
-        VideoEncodeBitstreamBufferRangeKhr = 1000299000,
+        [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR")]
+        VideoEncodeFeedbackKhr = 1000299000,
         [NativeName("Name", "VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT")]
         MeshPrimitivesGeneratedExt = 1000328000,
         [NativeName("Name", "VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]

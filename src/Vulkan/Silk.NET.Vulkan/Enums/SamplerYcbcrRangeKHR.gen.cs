@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags]
     [NativeName("Name", "VkSamplerYcbcrRangeKHR")]
     public enum SamplerYcbcrRangeKHR : int
     {

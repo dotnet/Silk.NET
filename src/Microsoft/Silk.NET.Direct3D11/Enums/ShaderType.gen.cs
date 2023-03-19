@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_SHADER_TYPE")]
     public enum ShaderType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "D3D11_VERTEX_SHADER")]
         VertexShader = 0x1,
         [NativeName("Name", "D3D11_HULL_SHADER")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DPRIMITIVETYPE")]
     public enum Primitivetype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Pointlist\"")]
         [NativeName("Name", "D3DPT_POINTLIST")]
         PTPointlist = 0x1,

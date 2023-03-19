@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DAUTHENTICATEDCHANNELTYPE")]
     public enum Authenticatedchanneltype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"D3D9\"")]
         [NativeName("Name", "D3DAUTHENTICATEDCHANNEL_D3D9")]
         AuthenticatedchannelD3D9 = 0x1,

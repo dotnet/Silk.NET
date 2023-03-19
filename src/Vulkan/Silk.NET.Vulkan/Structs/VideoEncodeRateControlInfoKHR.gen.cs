@@ -25,8 +25,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlMode = null,
-            byte? layerCount = null,
-            VideoEncodeRateControlLayerInfoKHR* pLayerConfigs = null
+            uint? layerCount = null,
+            VideoEncodeRateControlLayerInfoKHR* pLayers = null
         ) : this()
         {
             if (sType is not null)
@@ -54,9 +54,9 @@ namespace Silk.NET.Vulkan
                 LayerCount = layerCount.Value;
             }
 
-            if (pLayerConfigs is not null)
+            if (pLayers is not null)
             {
-                PLayerConfigs = pLayerConfigs;
+                PLayers = pLayers;
             }
         }
 
@@ -81,15 +81,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "rateControlMode")]
         public VideoEncodeRateControlModeFlagsKHR RateControlMode;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "layerCount")]
-        public byte LayerCount;
+        public uint LayerCount;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeRateControlLayerInfoKHR*")]
         [NativeName("Type.Name", "VkVideoEncodeRateControlLayerInfoKHR")]
-        [NativeName("Name", "pLayerConfigs")]
-        public VideoEncodeRateControlLayerInfoKHR* PLayerConfigs;
+        [NativeName("Name", "pLayers")]
+        public VideoEncodeRateControlLayerInfoKHR* PLayers;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

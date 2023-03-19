@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_COPP_StatusFlags")]
     public enum COPPStatusFlags : int
     {

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [Flags]
     [NativeName("Name", "cl_intel_advanced_motion_estimation.skip_block_type")]
     public enum AdvancedMotionEstimationSkipBlockType : int
     {

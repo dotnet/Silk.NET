@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.XAudio
 {
-    [Flags]
     [NativeName("Name", "_AUDCLNT_SHAREMODE")]
     public enum AudclntSharemode : int
     {

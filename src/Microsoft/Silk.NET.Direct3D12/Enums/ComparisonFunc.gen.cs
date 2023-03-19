@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_COMPARISON_FUNC")]
     public enum ComparisonFunc : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Never\"")]
         [NativeName("Name", "D3D12_COMPARISON_FUNC_NEVER")]
         ComparisonFuncNever = 0x1,

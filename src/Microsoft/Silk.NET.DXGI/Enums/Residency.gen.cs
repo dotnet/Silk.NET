@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_RESIDENCY")]
     public enum Residency : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"FullyResident\"")]
         [NativeName("Name", "DXGI_RESIDENCY_FULLY_RESIDENT")]
         ResidencyFullyResident = 0x1,

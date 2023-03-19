@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrSpatialGraphNodeTypeMSFT")]
     public enum SpatialGraphNodeTypeMSFT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"StaticMsft\"")]
         [NativeName("Name", "XR_SPATIAL_GRAPH_NODE_TYPE_STATIC_MSFT")]
         SpatialGraphNodeTypeStaticMsft = 1,

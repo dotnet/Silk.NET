@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DCULL")]
     public enum Cull : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3DCULL_NONE")]
         CullNone = 0x1,

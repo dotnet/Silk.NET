@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrPerfSettingsSubDomainEXT")]
     public enum PerfSettingsSubDomainEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"CompositingExt\"")]
         [NativeName("Name", "XR_PERF_SETTINGS_SUB_DOMAIN_COMPOSITING_EXT")]
         PerfSettingsSubDomainCompositingExt = 1,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [Flags]
     [NativeName("Name", "cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel")]
     public enum AdvancedMotionEstimationClMotionDetectDesc : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "CL_ME_FORWARD_INPUT_MODE_INTEL")]
         ForwardInputMode = 0x1,
         [NativeName("Name", "CL_ME_BACKWARD_INPUT_MODE_INTEL")]

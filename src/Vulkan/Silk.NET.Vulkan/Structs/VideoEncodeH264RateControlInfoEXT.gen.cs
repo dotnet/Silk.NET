@@ -27,7 +27,7 @@ namespace Silk.NET.Vulkan
             uint? idrPeriod = null,
             uint? consecutiveBFrameCount = null,
             VideoEncodeH264RateControlStructureEXT? rateControlStructure = null,
-            byte? temporalLayerCount = null
+            uint? temporalLayerCount = null
         ) : this()
         {
             if (sType is not null)
@@ -97,10 +97,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "rateControlStructure")]
         public VideoEncodeH264RateControlStructureEXT RateControlStructure;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "temporalLayerCount")]
-        public byte TemporalLayerCount;
+        public uint TemporalLayerCount;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

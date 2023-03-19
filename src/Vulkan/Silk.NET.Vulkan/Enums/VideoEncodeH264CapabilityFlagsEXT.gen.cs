@@ -90,6 +90,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"BFrameInL1ListBitExt\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT")]
         VideoEncodeH264CapabilityBFrameInL1ListBitExt = 16777216,
+        [Obsolete("Deprecated in favour of \"DifferentReferenceFinalListsBitExt\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_DIFFERENT_REFERENCE_FINAL_LISTS_BIT_EXT")]
+        VideoEncodeH264CapabilityDifferentReferenceFinalListsBitExt = 33554432,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_DIRECT_8X8_INFERENCE_ENABLED_BIT_EXT")]
         Direct8X8InferenceEnabledBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_DIRECT_8X8_INFERENCE_DISABLED_BIT_EXT")]
@@ -140,5 +143,7 @@ namespace Silk.NET.Vulkan
         DifferentSliceTypeBitExt = 8388608,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT")]
         BFrameInL1ListBitExt = 16777216,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_DIFFERENT_REFERENCE_FINAL_LISTS_BIT_EXT")]
+        DifferentReferenceFinalListsBitExt = 33554432,
     }
 }

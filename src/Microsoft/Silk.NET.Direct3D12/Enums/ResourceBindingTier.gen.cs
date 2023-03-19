@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_RESOURCE_BINDING_TIER")]
     public enum ResourceBindingTier : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Tier1\"")]
         [NativeName("Name", "D3D12_RESOURCE_BINDING_TIER_1")]
         ResourceBindingTier1 = 0x1,

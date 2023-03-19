@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION")]
     public enum ColorBitmapGlyphSnapOption : int
     {

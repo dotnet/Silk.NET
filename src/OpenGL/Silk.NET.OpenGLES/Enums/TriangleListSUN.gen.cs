@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
-    [Flags]
     [NativeName("Name", "TriangleListSUN")]
     public enum TriangleListSUN : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "GL_RESTART_SUN")]
         RestartSun = 0x1,
         [NativeName("Name", "GL_REPLACE_MIDDLE_SUN")]

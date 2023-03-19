@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SEPIA_PROP")]
     public enum SepiaProp : int
     {

@@ -228,16 +228,12 @@ namespace Silk.NET.Vulkan
         VideoEncodeH264DpbSlotInfoExt = 1000038004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_EXT")]
         VideoEncodeH264NaluSliceInfoExt = 1000038005,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_EMIT_PICTURE_PARAMETERS_INFO_EXT")]
-        VideoEncodeH264EmitPictureParametersInfoExt = 1000038006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_EXT")]
         VideoEncodeH264ProfileInfoExt = 1000038007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH264RateControlInfoExt = 1000038008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_EXT")]
         VideoEncodeH264RateControlLayerInfoExt = 1000038009,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_REFERENCE_LISTS_INFO_EXT")]
-        VideoEncodeH264ReferenceListsInfoExt = 1000038010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_EXT")]
         VideoEncodeH265CapabilitiesExt = 1000039000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT")]
@@ -250,12 +246,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeH265DpbSlotInfoExt = 1000039004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_EXT")]
         VideoEncodeH265NaluSliceSegmentInfoExt = 1000039005,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_EMIT_PICTURE_PARAMETERS_INFO_EXT")]
-        VideoEncodeH265EmitPictureParametersInfoExt = 1000039006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_EXT")]
         VideoEncodeH265ProfileInfoExt = 1000039007,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_REFERENCE_LISTS_INFO_EXT")]
-        VideoEncodeH265ReferenceListsInfoExt = 1000039008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH265RateControlInfoExt = 1000039009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_EXT")]
@@ -1010,6 +1002,10 @@ namespace Silk.NET.Vulkan
         PipelineExecutableStatisticKhr = 1000269004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR")]
         PipelineExecutableInternalRepresentationKhr = 1000269005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR")]
+        MemoryMapInfoKhr = 1000271000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR")]
+        MemoryUnmapInfoKhr = 1000271001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT")]
         PhysicalDeviceShaderAtomicFloat2FeaturesExt = 1000273000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT")]
@@ -1110,6 +1106,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeCapabilitiesKhr = 1000299003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_USAGE_INFO_KHR")]
         VideoEncodeUsageInfoKhr = 1000299004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR")]
+        QueryPoolVideoEncodeFeedbackCreateInfoKhr = 1000299005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV")]
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]

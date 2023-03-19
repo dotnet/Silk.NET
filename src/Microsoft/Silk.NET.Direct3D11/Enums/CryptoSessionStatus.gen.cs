@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_CRYPTO_SESSION_STATUS")]
     public enum CryptoSessionStatus : int
     {

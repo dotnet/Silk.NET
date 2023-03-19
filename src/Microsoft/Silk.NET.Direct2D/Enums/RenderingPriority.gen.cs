@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_RENDERING_PRIORITY")]
     public enum RenderingPriority : int
     {

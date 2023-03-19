@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_SEVERITY")]
     public enum InfoQueueMessageSeverity : int
     {

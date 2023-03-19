@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
-    [Flags]
     [NativeName("Name", "PathFontStyle")]
     public enum PathFontStyle : int
     {

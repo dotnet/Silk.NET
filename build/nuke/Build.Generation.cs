@@ -17,7 +17,7 @@ using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
-    [Nuke.Common.Parameter("Build native code")] readonly bool CreateBindingsPr;
+    [Nuke.Common.Parameter("Create a PR after bindings regeneration completes")] readonly bool CreateBindingsPr;
     [Nuke.Common.Parameter("Don't let BuildTools parallelize")] readonly bool NoParallelGeneration;
 
     Target RegenerateBindings => CommonTarget

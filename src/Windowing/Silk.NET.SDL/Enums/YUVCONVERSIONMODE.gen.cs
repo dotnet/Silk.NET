@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_surface_L108_C9")]
     [NativeName("Name", "SDL_YUV_CONVERSION_MODE")]
     public enum YUVCONVERSIONMODE : int

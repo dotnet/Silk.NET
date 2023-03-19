@@ -23,8 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeRateControlLayerInfoKhr,
             void* pNext = null,
-            uint? averageBitrate = null,
-            uint? maxBitrate = null,
+            ulong? averageBitrate = null,
+            ulong? maxBitrate = null,
             uint? frameRateNumerator = null,
             uint? frameRateDenominator = null,
             uint? virtualBufferSizeInMs = null,
@@ -83,15 +83,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "averageBitrate")]
-        public uint AverageBitrate;
+        public ulong AverageBitrate;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "maxBitrate")]
-        public uint MaxBitrate;
+        public ulong MaxBitrate;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

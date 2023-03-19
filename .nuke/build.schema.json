@@ -20,7 +20,7 @@
         },
         "CreateBindingsPr": {
           "type": "boolean",
-          "description": "Build native code"
+          "description": "Create a PR after bindings regeneration completes"
         },
         "Help": {
           "type": "boolean",

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "_DXVA2_VideoLighting")]
     public enum DXVA2VideoLighting : int
     {

@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectComposition
 {
-    [Flags]
     [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE")]
     public enum BitmapInterpolationMode : int
     {

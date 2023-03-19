@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "tagGLOBALOPT_PROPERTIES")]
     public enum TagGLOBALOPTPROPERTIES : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ExceptionHandling\"")]
         [NativeName("Name", "COMGLB_EXCEPTION_HANDLING")]
         ComglbExceptionHandling = 0x1,

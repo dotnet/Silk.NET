@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264RateControlLayerInfoExt,
             void* pNext = null,
-            byte? temporalLayerId = null,
+            uint? temporalLayerId = null,
             Bool32? useInitialRcQp = null,
             VideoEncodeH264QpEXT? initialRcQp = null,
             Bool32? useMinQp = null,
@@ -101,10 +101,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "temporalLayerId")]
-        public byte TemporalLayerId;
+        public uint TemporalLayerId;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]

@@ -469,7 +469,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public static unsafe Buffer* DeviceCreateErrorBuffer(this Dawn thisApi, Device* device, [Flow(FlowDirection.In)] ReadOnlySpan<BufferDescriptor> descriptor)
         {
             // SpanOverloader
-            return thisApi.DeviceCreateErrorBuffer(ref device.GetPinnableReference());
+            return thisApi.DeviceCreateErrorBuffer(device, in descriptor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

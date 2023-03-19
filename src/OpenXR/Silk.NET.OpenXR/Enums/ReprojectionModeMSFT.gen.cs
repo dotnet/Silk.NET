@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags]
     [NativeName("Name", "XrReprojectionModeMSFT")]
     public enum ReprojectionModeMSFT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DepthMsft\"")]
         [NativeName("Name", "XR_REPROJECTION_MODE_DEPTH_MSFT")]
         ReprojectionModeDepthMsft = 1,

@@ -106,6 +106,8 @@ namespace Silk.NET.Vulkan
         PipelineCompileRequiredExt = 1000297000,
         [NativeName("Name", "VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT")]
         ErrorPipelineCompileRequiredExt = 1000297000,
+        [NativeName("Name", "VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR")]
+        ErrorInvalidVideoStdParametersKhr = unchecked((int) -1000299000),
         [NativeName("Name", "VK_ERROR_COMPRESSION_EXHAUSTED_EXT")]
         ErrorCompressionExhaustedExt = unchecked((int) -1000338000),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY")]

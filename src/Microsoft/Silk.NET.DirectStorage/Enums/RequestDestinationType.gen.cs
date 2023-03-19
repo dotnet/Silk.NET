@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
-    [Flags]
     [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_TYPE")]
     public enum RequestDestinationType : ulong
     {

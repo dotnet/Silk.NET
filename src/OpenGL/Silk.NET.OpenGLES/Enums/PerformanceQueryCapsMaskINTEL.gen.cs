@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
-    [Flags]
     [NativeName("Name", "PerformanceQueryCapsMaskINTEL")]
     public enum PerformanceQueryCapsMaskINTEL : int
     {
