@@ -9,9 +9,11 @@
     <_Ultz_NativePackages_SDL_NativeRuntime Condition=" '$(_Ultz_NativePackages_SDL_NativeRuntime)' == '' And '$(_Ultz_NativePackages_SDL_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Ultz_NativePackages_SDL_NativeRuntime>
     <_Ultz_NativePackages_SDL_NativeRuntime Condition=" '$(_Ultz_NativePackages_SDL_NativeRuntime)' == '' And '$(_Ultz_NativePackages_SDL_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Ultz_NativePackages_SDL_NativeRuntime>
     <_Ultz_NativePackages_SDL_NativeRuntime Condition=" '$(_Ultz_NativePackages_SDL_NativeRuntime)' == '' And '$(_Ultz_NativePackages_SDL_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Ultz_NativePackages_SDL_NativeRuntime>
+    <_Ultz_NativePackages_SDL_NativeRuntime Condition=" '$(_Ultz_NativePackages_SDL_NativeRuntime)' == '' And '$(_Ultz_NativePackages_SDL_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Ultz_NativePackages_SDL_NativeRuntime>
 
     <_Ultz_NativePackages_SDL_NativeLibName Condition="'$(_Ultz_NativePackages_SDL_NativeRuntime)' == 'win-x86'">SDL2.dll</_Ultz_NativePackages_SDL_NativeLibName>
     <_Ultz_NativePackages_SDL_NativeLibName Condition="'$(_Ultz_NativePackages_SDL_NativeRuntime)' == 'win-x64'">SDL2.dll</_Ultz_NativePackages_SDL_NativeLibName>
+    <_Ultz_NativePackages_SDL_NativeLibName Condition="'$(_Ultz_NativePackages_SDL_NativeRuntime)' == 'win-arm64'">SDL2.dll</_Ultz_NativePackages_SDL_NativeLibName>
     <_Ultz_NativePackages_SDL_NativeLibName Condition="'$(_Ultz_NativePackages_SDL_NativeRuntime)' == 'osx-x64'">libSDL-2.0.dylib</_Ultz_NativePackages_SDL_NativeLibName>
     <_Ultz_NativePackages_SDL_NativeLibName Condition="'$(_Ultz_NativePackages_SDL_NativeRuntime)' == 'linux-x64'">libSDL2-2.0.so</_Ultz_NativePackages_SDL_NativeLibName>
   </PropertyGroup>

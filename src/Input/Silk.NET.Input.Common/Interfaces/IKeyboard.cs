@@ -29,6 +29,13 @@ namespace Silk.NET.Input
         bool IsKeyPressed(Key key);
 
         /// <summary>
+        /// Checks if a specific scancode is pressed.
+        /// </summary>
+        /// <param name="scancode">The scancode to check.</param>
+        /// <returns>Whether or not the scancode is pressed.</returns>
+        bool IsScancodePressed(int scancode);
+
+        /// <summary>
         /// Called when a key is pressed.
         /// </summary>
         event Action<IKeyboard, Key, int>? KeyDown;

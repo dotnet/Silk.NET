@@ -26,6 +26,8 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         STypeSupportedLimitsExtras = 0x60000003,
         [NativeName("Name", "WGPUSType_InstanceExtras")]
         STypeInstanceExtras = 0x60000006,
+        [NativeName("Name", "WGPUSType_SwapChainDescriptorExtras")]
+        STypeSwapChainDescriptorExtras = 0x60000007,
         [NativeName("Name", "WGPUNativeSType_Force32")]
         NativeSTypeForce32 = 0x7FFFFFFF,
     }

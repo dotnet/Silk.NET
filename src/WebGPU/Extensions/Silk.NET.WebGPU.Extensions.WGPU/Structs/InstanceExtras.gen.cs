@@ -22,7 +22,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public InstanceExtras
         (
             ChainedStruct? chain = null,
-            uint? backends = null
+            uint? backends = null,
+            Dx12Compiler? dx12ShaderCompiler = null,
+            byte* dxilPath = null,
+            byte* dxcPath = null
         ) : this()
         {
             if (chain is not null)
@@ -33,6 +36,21 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             if (backends is not null)
             {
                 Backends = backends.Value;
+            }
+
+            if (dx12ShaderCompiler is not null)
+            {
+                Dx12ShaderCompiler = dx12ShaderCompiler.Value;
+            }
+
+            if (dxilPath is not null)
+            {
+                DxilPath = dxilPath;
+            }
+
+            if (dxcPath is not null)
+            {
+                DxcPath = dxcPath;
             }
         }
 
@@ -46,5 +64,20 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type.Name", "WGPUInstanceBackendFlags")]
         [NativeName("Name", "backends")]
         public uint Backends;
+
+        [NativeName("Type", "WGPUDx12Compiler")]
+        [NativeName("Type.Name", "WGPUDx12Compiler")]
+        [NativeName("Name", "dx12ShaderCompiler")]
+        public Dx12Compiler Dx12ShaderCompiler;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "dxilPath")]
+        public byte* DxilPath;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "dxcPath")]
+        public byte* DxcPath;
     }
 }

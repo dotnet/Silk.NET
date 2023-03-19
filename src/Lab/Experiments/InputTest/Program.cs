@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -33,10 +34,15 @@ namespace InputTest
             window.Run();
         }
 
+        static Key[] _allKeys = Enum.GetValues(typeof(Key)).Cast<Key>().Where(x => x != Key.Unknown).ToArray();
+        static List<Key> _keysDown = new List<Key>();
+        static List<int> _scancodesDown = new List<int>();
+
         public static Action OnLoad(IView window) =>
             () =>
             {
                 var input = window.CreateInput();
+                window.Update += OnUpdate(input);
                 input.ConnectionChanged += DoConnect;
                 Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
                 foreach (var gamepad in input.Gamepads)
@@ -69,44 +75,66 @@ namespace InputTest
                 //};
             };
 
-        private static void GamepadOnTriggerMoved(IGamepad g, Trigger t)
+        public static Action<double> OnUpdate(IInputContext input) =>
+            (dt) =>
+            {
+                foreach (Key k in _allKeys)
+                {
+                    // This should really be separated into different keyboards, but since all current backends
+                    // just report a single keyboard we'll leave this test as is for now.
+                    if (_keysDown.Contains(k) != input.Keyboards.Any(x => x.IsKeyPressed(k)))
+                    {
+                        Console.WriteLine($"[ERROR] IsKeyPressed() and event mismatch! Key {k}");
+                    }
+                }
+
+                for (int s = 0; s < 256; s++)
+                {
+                    if (_scancodesDown.Contains(s) != input.Keyboards.Any(x => x.IsScancodePressed(s)))
+                    {
+                        Console.WriteLine($"[ERROR] IsScancodePressed() and event mismatch! Scancode {s}");
+                    }
+                }
+            };
+
+        private static void GamepadOnTriggerMoved(IGamepad gamepad, Trigger trigger)
         {
-            Console.WriteLine($"G{g.Index}> {t.Index} trigger moved: {t.Position}");
+            Console.WriteLine($"G{gamepad.Index}> {trigger.Index} trigger moved: {trigger.Position}");
         }
 
-        private static void GamepadOnThumbstickMoved(IGamepad g, Thumbstick t)
+        private static void GamepadOnThumbstickMoved(IGamepad gamepad, Thumbstick thumbstick)
         {
-            Console.WriteLine($"G{g.Index}> {t.Index} thumbstick moved: ({t.X}, {t.Y})");
+            Console.WriteLine($"G{gamepad.Index}> {thumbstick.Index} thumbstick moved: ({thumbstick.X}, {thumbstick.Y})");
         }
 
-        private static void JoystickOnHatMoved(IJoystick arg1, Hat arg2)
+        private static void JoystickOnHatMoved(IJoystick joystick, Hat hat)
         {
-            Console.WriteLine($"J{arg1.Index}> {arg2.Index} hat moved: {arg2.Position}");
+            Console.WriteLine($"J{joystick.Index}> {hat.Index} hat moved: {hat.Position}");
         }
 
-        private static void JoystickOnAxisMoved(IJoystick arg1, Axis arg2)
+        private static void JoystickOnAxisMoved(IJoystick joystick, Axis axis)
         {
-            Console.WriteLine($"J{arg1.Index}> {arg2.Index} axis moved: {arg2.Position}");
+            Console.WriteLine($"J{joystick.Index}> {axis.Index} axis moved: {axis.Position}");
         }
 
-        private static void JoystickOnButtonUp(IJoystick arg1, Button arg2)
+        private static void JoystickOnButtonUp(IJoystick joystick, Button button)
         {
-            Console.WriteLine($"J{arg1.Index}> {arg2.Name} down.");
+            Console.WriteLine($"J{joystick.Index}> {button.Name} down.");
         }
 
-        private static void JoystickOnButtonDown(IJoystick arg1, Button arg2)
+        private static void JoystickOnButtonDown(IJoystick joystick, Button button)
         {
-            Console.WriteLine($"J{arg1.Index}> {arg2.Name} down.");
+            Console.WriteLine($"J{joystick.Index}> {button.Name} down.");
         }
 
-        private static void InputGamepadOnButtonDown(IGamepad arg1, Button arg2)
+        private static void InputGamepadOnButtonDown(IGamepad gamepad, Button button)
         {
-            Console.WriteLine($"G{arg1.Index}> {arg2.Name} down. {(int) arg2.Name}");
+            Console.WriteLine($"G{gamepad.Index}> {button.Name} down. {(int) button.Name}");
         }
 
-        private static void InputGamepadOnButtonUp(IGamepad arg1, Button arg2)
+        private static void InputGamepadOnButtonUp(IGamepad gamepad, Button button)
         {
-            Console.WriteLine($"G{arg1.Index}> {arg2.Name} up.");
+            Console.WriteLine($"G{gamepad.Index}> {button.Name} up.");
         }
 
         public static unsafe void DoConnect(IInputDevice device, bool isConnected)
@@ -214,49 +242,77 @@ namespace InputTest
             }
         }
 
-        private static void KeyboardOnKeyChar(IKeyboard arg1, char arg2)
+        private static void KeyboardOnKeyChar(IKeyboard keyboard, char c)
         {
-            Console.WriteLine($"K{arg1.Index}> {arg2} received.");
+            Console.WriteLine($"K{keyboard.Index}> {c} received.");
         }
 
-        private static void MouseOnMouseMove(IMouse arg1, Vector2 arg2)
+        private static void MouseOnMouseMove(IMouse mouse, Vector2 pos)
         {
-            Console.WriteLine($"M{arg1.Index}> Moved: {arg2}");
+            Console.WriteLine($"M{mouse.Index}> Moved: {pos}");
         }
 
-        private static void MouseOnScroll(IMouse arg1, ScrollWheel arg2)
+        private static void MouseOnScroll(IMouse mouse, ScrollWheel sw)
         {
-            Console.WriteLine($"K{arg1.Index}> Scrolled: ({arg2.X}, {arg2.Y})");
+            Console.WriteLine($"K{mouse.Index}> Scrolled: ({sw.X}, {sw.Y})");
         }
 
-        private static void MouseOnMouseDown(IMouse arg1, MouseButton arg2)
+        private static void MouseOnMouseDown(IMouse mouse, MouseButton button)
         {
-            Console.WriteLine($"M{arg1.Index}> {arg2} down.");
+            Console.WriteLine($"M{mouse.Index}> {button} down.");
         }
 
-        private static void MouseOnMouseUp(IMouse arg1, MouseButton arg2)
+        private static void MouseOnMouseUp(IMouse mouse, MouseButton button)
         {
-            Console.WriteLine($"M{arg1.Index}> {arg2} up.");
+            Console.WriteLine($"M{mouse.Index}> {button} up.");
         }
 
-        private static void MouseOnClick(IMouse arg1, MouseButton arg2, Vector2 pos)
+        private static void MouseOnClick(IMouse mouse, MouseButton button, Vector2 pos)
         {
-            Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
+            Console.WriteLine($"M{mouse.Index}> {button} single click.");
         }
 
-        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, Vector2 pos)
+        private static void MouseOnDoubleClick(IMouse mouse, MouseButton button, Vector2 pos)
         {
-            Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
+            Console.WriteLine($"M{mouse.Index}> {button} double click.");
         }
 
-        private static void KeyboardOnKeyUp(IKeyboard arg1, Key arg2, int _)
+        private static void KeyboardOnKeyUp(IKeyboard keyboard, Key key, int scancode)
         {
-            Console.WriteLine($"K{arg1.Index}> {arg2} up.");
+            Console.WriteLine($"K{keyboard.Index}> key={key} scancode={scancode} up.");
+
+            if (key != Key.Unknown)
+            {
+                int keyIndex = _keysDown.IndexOf(key);
+                if (keyIndex < 0)
+                    Console.WriteLine($"[ERROR] Double key up detected? K{keyboard.Index}> {key} up.");
+                else
+                    _keysDown.RemoveAt(keyIndex);
+            }
+
+            int scancodeIndex = _scancodesDown.IndexOf(scancode);
+            if (scancodeIndex < 0)
+                Console.WriteLine($"[ERROR] Double scancode up detected? K{keyboard.Index}> {scancode} up.");
+            else
+                _scancodesDown.RemoveAt(scancodeIndex);
         }
 
-        private static void KeyboardOnKeyDown(IKeyboard arg1, Key arg2, int _)
+        private static void KeyboardOnKeyDown(IKeyboard keyboard, Key key, int scancode)
         {
-            Console.WriteLine($"K{arg1.Index}> {arg2} down.");
+            Console.WriteLine($"K{keyboard.Index}> key={key} scancode={scancode} down.");
+
+            if (key != Key.Unknown)
+            {
+                if (_keysDown.Contains(key))
+                    Console.WriteLine($"[ERROR] Double key down detected? K{keyboard.Index}> {key} down.");
+                else
+                    _keysDown.Add(key);
+            }
+
+            if (_scancodesDown.Contains(scancode))
+                Console.WriteLine($"[ERROR] Double scancode down detected? K{keyboard.Index}> {scancode} down.");
+            else
+                _scancodesDown.Add(scancode);
         }
     }
 }

@@ -18,9 +18,9 @@
       <PackageReference Include="Humanizer.Core" Version="2.8.26" />
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
       <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
-      <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.4.2244" />
-      <PackageReference Include="morelinq" Version="3.3.2" />
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+      <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.5.2145" />
+      <PackageReference Include="morelinq" Version="3.4.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="ClangSharp" Version="15.0.2" />
     </ItemGroup>
 
