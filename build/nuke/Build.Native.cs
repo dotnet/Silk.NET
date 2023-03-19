@@ -311,8 +311,8 @@ partial class Build
                 InheritedShell("cargo build --release --target=i686-unknown-linux-gnu", WgpuPath).AssertZeroExitCode();
                 InheritedShell("cargo build --release --target=x86_64-unknown-linux-gnu", WgpuPath).AssertZeroExitCode();
 
-                CopyFile(target / "i686-unknown-linux-gnu" / "release" / "wgpu_native.so", runtimes / "linux-x86" / "native" / "wgpu_native.so", FileExistsPolicy.Overwrite);
-                CopyFile(target / "x86_64-unknown-linux-gnu" / "release" / "wgpu_native.so", runtimes / "linux-x64" / "native" / "wgpu_native.so", FileExistsPolicy.Overwrite);
+                CopyFile(target / "i686-unknown-linux-gnu" / "release" / "libwgpu_native.so", runtimes / "linux-x86" / "native" / "libwgpu_native.so", FileExistsPolicy.Overwrite);
+                CopyFile(target / "x86_64-unknown-linux-gnu" / "release" / "libwgpu_native.so", runtimes / "linux-x64" / "native" / "libwgpu_native.so", FileExistsPolicy.Overwrite);
             }
 
             if(OperatingSystem.IsMacOS())
@@ -321,8 +321,8 @@ partial class Build
                 InheritedShell("cargo build --release --target=aarch64-apple-darwin", WgpuPath).AssertZeroExitCode();
                 InheritedShell("cargo build --release --target=x86_64-apple-darwin", WgpuPath).AssertZeroExitCode();
 
-                CopyFile(target / "x86_64-apple-darwin" / "release" / "wgpu_native.dylib", runtimes / "osx-x64" / "native" / "wgpu_native.dylib", FileExistsPolicy.Overwrite);
-                CopyFile(target / "aarch64-apple-darwin" / "release" / "wgpu_native.dylib", runtimes / "osx-arm64" / "native" / "wgpu_native.dylib", FileExistsPolicy.Overwrite);
+                CopyFile(target / "x86_64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-x64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
+                CopyFile(target / "aarch64-apple-darwin" / "release" / "libwgpu_native.dylib", runtimes / "osx-arm64" / "native" / "libwgpu_native.dylib", FileExistsPolicy.Overwrite);
             }
 
             PrUpdatedNativeBinary("Wgpu");
