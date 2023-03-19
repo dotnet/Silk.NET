@@ -523,7 +523,7 @@
             ]
         },
         {
-            "profileName": "Vulkan Video",
+            "profileName": "VulkanVideo",
             "sources": [
                 "src/Vulkan/vk_video.h"
             ],

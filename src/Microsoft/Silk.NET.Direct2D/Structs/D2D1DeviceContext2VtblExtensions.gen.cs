@@ -258,66 +258,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[5])(@this, wicBitmapSourcePtr, bitmapProperties, bitmap);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[5])(@this, wicBitmapSourcePtr, bitmapProperties, bitmapPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[5])(@this, wicBitmapSourcePtr, bitmapPropertiesPtr, bitmap);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[5])(@this, wicBitmapSourcePtr, bitmapPropertiesPtr, bitmapPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
@@ -2743,58 +2683,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-            {
-                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
@@ -2841,70 +2729,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
                 fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
                 {
                     ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormat, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (char* @stringPtr = &@string)
-        {
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (char* @stringPtr = &@string)
-        {
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (char* @stringPtr = &@string)
-        {
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
-                }
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (char* @stringPtr = &@string)
-        {
-            fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-            {
-                fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-                {
-                    fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                    }
                 }
             }
         }
@@ -2959,66 +2783,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrush, options, measuringMode);
-        }
-        SilkMarshal.Free((nint)@stringPtr);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRect, defaultFillBrushPtr, options, measuringMode);
-            }
-        }
-        SilkMarshal.Free((nint)@stringPtr);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrush, options, measuringMode);
-            }
-        }
-        SilkMarshal.Free((nint)@stringPtr);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
-        fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
-        {
-            fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
-            {
-                fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, byte*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @stringPtr, stringLength, textFormatPtr, layoutRectPtr, defaultFillBrushPtr, options, measuringMode);
-                }
-            }
-        }
-        SilkMarshal.Free((nint)@stringPtr);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawTextLayout(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, IDWriteTextLayout* textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
     {
         var @this = thisVtbl.Handle;
@@ -3036,29 +2800,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextLayout(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, ref IDWriteTextLayout textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextLayout* textLayoutPtr = &textLayout)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)@this->LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrush, options);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextLayout(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, ref IDWriteTextLayout textLayout, ref ID2D1Brush defaultFillBrush, DrawTextOptions options)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteTextLayout* textLayoutPtr = &textLayout)
-        {
-            fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, IDWriteTextLayout*, ID2D1Brush*, DrawTextOptions, void>)@this->LpVtbl[28])(@this, origin, textLayoutPtr, defaultFillBrushPtr, options);
-            }
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
@@ -3072,29 +2813,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
         {
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrushPtr, measuringMode);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrush, measuringMode);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
-            {
-                ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRunPtr, foregroundBrushPtr, measuringMode);
-            }
         }
     }
 
@@ -3169,16 +2887,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IDWriteRenderingParams*, void>)@this->LpVtbl[36])(@this, textRenderingParams);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void SetTextRenderingParams(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IDWriteRenderingParams textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-        {
-            ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IDWriteRenderingParams*, void>)@this->LpVtbl[36])(@this, textRenderingParamsPtr);
-        }
     }
 
     /// <summary>To be documented.</summary>
@@ -3748,33 +3456,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICColorContext wicColorContext, ID2D1ColorContext** colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[59])(@this, wicColorContextPtr, colorContext);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICColorContext wicColorContext, ref ID2D1ColorContext* colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-        {
-            fixed (ID2D1ColorContext** colorContextPtr = &colorContext)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[59])(@this, wicColorContextPtr, colorContextPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
@@ -4322,33 +4003,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[68])(@this, baselineOrigin, glyphRun, measuringMode, boundsPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, bounds);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
-        {
-            fixed (Silk.NET.Maths.Box2D<float>* boundsPtr = &bounds)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, Silk.NET.Maths.Box2D<float>*, int>)@this->LpVtbl[68])(@this, baselineOrigin, glyphRunPtr, measuringMode, boundsPtr);
-            }
         }
         return ret;
     }
@@ -5348,33 +5002,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageSourceFromWic(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ImageSourceLoadingOptions loadingOptions, AlphaMode alphaMode, ID2D1ImageSourceFromWic** imageSource)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, ImageSourceLoadingOptions, AlphaMode, ID2D1ImageSourceFromWic**, int>)@this->LpVtbl[90])(@this, wicBitmapSourcePtr, loadingOptions, alphaMode, imageSource);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageSourceFromWic(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ImageSourceLoadingOptions loadingOptions, AlphaMode alphaMode, ref ID2D1ImageSourceFromWic* imageSource)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmapSource* wicBitmapSourcePtr = &wicBitmapSource)
-        {
-            fixed (ID2D1ImageSourceFromWic** imageSourcePtr = &imageSource)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, IWICBitmapSource*, ImageSourceLoadingOptions, AlphaMode, ID2D1ImageSourceFromWic**, int>)@this->LpVtbl[90])(@this, wicBitmapSourcePtr, loadingOptions, alphaMode, imageSourcePtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
@@ -6194,54 +5821,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateBitmapFromWicBitmap(wicBitmapSource, in bitmapProperties.GetPinnableReference(), ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), bitmapProperties, bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -8469,54 +8048,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), layoutRect, defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
@@ -8565,54 +8096,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(in @string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(in @string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -8653,54 +8136,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), layoutRect, defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void DrawTextLayout<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, IDWriteTextLayout* textLayout, ComPtr<TI0> defaultFillBrush, DrawTextOptions options) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -8714,30 +8149,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->DrawTextLayout(origin, textLayout, ref defaultFillBrush.GetPinnableReference(), options);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextLayout(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, Span<IDWriteTextLayout> textLayout, ID2D1Brush* defaultFillBrush, DrawTextOptions options)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextLayout(origin, ref textLayout.GetPinnableReference(), defaultFillBrush, options);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextLayout<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, ref IDWriteTextLayout textLayout, ComPtr<TI0> defaultFillBrush, DrawTextOptions options) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawTextLayout(origin, ref textLayout, (ID2D1Brush*) defaultFillBrush.Handle, options);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawTextLayout(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> origin, Span<IDWriteTextLayout> textLayout, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawTextLayout(origin, ref textLayout.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options);
     }
 
     /// <summary>To be documented.</summary>
@@ -8757,30 +8168,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), foregroundBrush, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->DrawGlyphRun(baselineOrigin, in glyphRun, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
-    }
-
-    /// <summary>To be documented.</summary>
     public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
@@ -8794,14 +8181,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetTransform(ref transform.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void SetTextRenderingParams(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IDWriteRenderingParams> textRenderingParams)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->SetTextRenderingParams(ref textRenderingParams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9082,30 +8461,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateColorContextFromWicColorContext(wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICColorContext> wicColorContext, ID2D1ColorContext** colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext.GetPinnableReference(), colorContext);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromWicColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICColorContext wicColorContext, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromWicColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICColorContext> wicColorContext, ref ID2D1ColorContext* colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContextFromWicColorContext(ref wicColorContext.GetPinnableReference(), ref colorContext);
     }
 
     /// <summary>To be documented.</summary>
@@ -9523,22 +8878,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetGlyphRunWorldBounds(baselineOrigin, glyphRun, measuringMode, ref bounds.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetGlyphRunWorldBounds(baselineOrigin, in glyphRun.GetPinnableReference(), measuringMode, bounds);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Span<Silk.NET.Maths.Box2D<float>> bounds)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetGlyphRunWorldBounds(baselineOrigin, in glyphRun.GetPinnableReference(), measuringMode, ref bounds.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -10315,30 +9654,6 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->CreateImageSourceFromWic(wicBitmapSource, loadingOptions, alphaMode, (ID2D1ImageSourceFromWic**) imageSource.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageSourceFromWic(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, ImageSourceLoadingOptions loadingOptions, AlphaMode alphaMode, ID2D1ImageSourceFromWic** imageSource)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateImageSourceFromWic(ref wicBitmapSource.GetPinnableReference(), loadingOptions, alphaMode, imageSource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateImageSourceFromWic<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ImageSourceLoadingOptions loadingOptions, AlphaMode alphaMode, ref ComPtr<TI0> imageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSourceFromWic>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateImageSourceFromWic(ref wicBitmapSource, loadingOptions, alphaMode, (ID2D1ImageSourceFromWic**) imageSource.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageSourceFromWic(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, ImageSourceLoadingOptions loadingOptions, AlphaMode alphaMode, ref ID2D1ImageSourceFromWic* imageSource)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateImageSourceFromWic(ref wicBitmapSource.GetPinnableReference(), loadingOptions, alphaMode, ref imageSource);
     }
 
     /// <summary>To be documented.</summary>

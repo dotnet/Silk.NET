@@ -3954,11 +3954,6 @@ namespace Silk.NET.SDL
         public unsafe partial int IconvClose(Icon* cd);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 691, Column 29 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_close")]
-        public partial int IconvClose(ref Icon cd);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 692, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
         public unsafe partial nuint Iconv(Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** inbuf, nuint* inbytesleft, byte** outbuf, nuint* outbytesleft);
@@ -7829,11 +7824,6 @@ namespace Silk.NET.SDL
         public unsafe partial int GetWindowDisplayIndex(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 642, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowDisplayIndex")]
-        public partial int GetWindowDisplayIndex(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 663, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowDisplayMode")]
         public unsafe partial int SetWindowDisplayMode(Window* window, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DisplayMode* mode);
@@ -7864,16 +7854,6 @@ namespace Silk.NET.SDL
         public unsafe partial int GetWindowDisplayMode(Window* window, ref DisplayMode mode);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 680, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowDisplayMode")]
-        public unsafe partial int GetWindowDisplayMode(ref Window window, DisplayMode* mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 680, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowDisplayMode")]
-        public partial int GetWindowDisplayMode(ref Window window, ref DisplayMode mode);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 31 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowICCProfile")]
         public unsafe partial void* GetWindowICCProfile(Window* window, nuint* size);
@@ -7884,24 +7864,9 @@ namespace Silk.NET.SDL
         public unsafe partial void* GetWindowICCProfile(Window* window, ref nuint size);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 695, Column 31 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowICCProfile")]
-        public unsafe partial void* GetWindowICCProfile(ref Window window, nuint* size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 695, Column 31 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowICCProfile")]
-        public unsafe partial void* GetWindowICCProfile(ref Window window, ref nuint size);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 707, Column 32 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowPixelFormat")]
         public unsafe partial uint GetWindowPixelFormat(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 707, Column 32 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowPixelFormat")]
-        public partial uint GetWindowPixelFormat(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 780, Column 38 in SDL_video.h")]
@@ -7934,11 +7899,6 @@ namespace Silk.NET.SDL
         public unsafe partial uint GetWindowID(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 817, Column 32 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowID")]
-        public partial uint GetWindowID(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 833, Column 38 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowFromID")]
         public unsafe partial Window* GetWindowFromID(uint id);
@@ -7947,11 +7907,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 851, Column 32 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowFlags")]
         public unsafe partial uint GetWindowFlags(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 851, Column 32 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowFlags")]
-        public partial uint GetWindowFlags(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 865, Column 30 in SDL_video.h")]
@@ -7995,17 +7950,6 @@ namespace Silk.NET.SDL
         public unsafe partial string GetWindowTitleS(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 879, Column 37 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
-        public unsafe partial byte* GetWindowTitle(ref Window window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 879, Column 37 in SDL_video.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
-        public partial string GetWindowTitleS(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 889, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowIcon")]
         public unsafe partial void SetWindowIcon(Window* window, Surface* icon);
@@ -8014,16 +7958,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 889, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowIcon")]
         public unsafe partial void SetWindowIcon(Window* window, ref Surface icon);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 889, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowIcon")]
-        public unsafe partial void SetWindowIcon(ref Window window, Surface* icon);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 889, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowIcon")]
-        public partial void SetWindowIcon(ref Window window, ref Surface icon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
@@ -8121,11 +8055,6 @@ namespace Silk.NET.SDL
         public unsafe partial void SetWindowPosition(Window* window, int x, int y);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 939, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowPosition")]
-        public partial void SetWindowPosition(ref Window window, int x, int y);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 958, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowPosition")]
         public unsafe partial void GetWindowPosition(Window* window, int* x, int* y);
@@ -8146,34 +8075,9 @@ namespace Silk.NET.SDL
         public unsafe partial void GetWindowPosition(Window* window, ref int x, ref int y);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 958, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowPosition")]
-        public unsafe partial void GetWindowPosition(ref Window window, int* x, int* y);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 958, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowPosition")]
-        public unsafe partial void GetWindowPosition(ref Window window, int* x, ref int y);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 958, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowPosition")]
-        public unsafe partial void GetWindowPosition(ref Window window, ref int x, int* y);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 958, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowPosition")]
-        public partial void GetWindowPosition(ref Window window, ref int x, ref int y);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 983, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowSize")]
         public unsafe partial void SetWindowSize(Window* window, int w, int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 983, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowSize")]
-        public partial void SetWindowSize(ref Window window, int w, int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
@@ -8194,26 +8098,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowSize")]
         public unsafe partial void GetWindowSize(Window* window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSize")]
-        public unsafe partial void GetWindowSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSize")]
-        public unsafe partial void GetWindowSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSize")]
-        public unsafe partial void GetWindowSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1010, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSize")]
-        public partial void GetWindowSize(ref Window window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
@@ -8296,86 +8180,6 @@ namespace Silk.NET.SDL
         public unsafe partial int GetWindowBordersSize(Window* window, ref int top, ref int left, ref int bottom, ref int right);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, int* left, int* bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, int* left, int* bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, int* left, ref int bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, int* left, ref int bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, ref int left, int* bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, ref int left, int* bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, ref int left, ref int bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, int* top, ref int left, ref int bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, int* left, int* bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, int* left, int* bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, int* left, ref int bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, int* left, ref int bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, ref int left, int* bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, ref int left, int* bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public unsafe partial int GetWindowBordersSize(ref Window window, ref int top, ref int left, ref int bottom, int* right);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBordersSize")]
-        public partial int GetWindowBordersSize(ref Window window, ref int top, ref int left, ref int bottom, ref int right);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(Window* window, int* w, int* h);
@@ -8396,34 +8200,9 @@ namespace Silk.NET.SDL
         public unsafe partial void GetWindowSizeInPixels(Window* window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
-        public unsafe partial void GetWindowSizeInPixels(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
-        public unsafe partial void GetWindowSizeInPixels(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
-        public unsafe partial void GetWindowSizeInPixels(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
-        public partial void GetWindowSizeInPixels(ref Window window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1082, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowMinimumSize")]
         public unsafe partial void SetWindowMinimumSize(Window* window, int min_w, int min_h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1082, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowMinimumSize")]
-        public partial void SetWindowMinimumSize(ref Window window, int min_w, int min_h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
@@ -8446,34 +8225,9 @@ namespace Silk.NET.SDL
         public unsafe partial void GetWindowMinimumSize(Window* window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMinimumSize")]
-        public unsafe partial void GetWindowMinimumSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMinimumSize")]
-        public unsafe partial void GetWindowMinimumSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMinimumSize")]
-        public unsafe partial void GetWindowMinimumSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMinimumSize")]
-        public partial void GetWindowMinimumSize(ref Window window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowMaximumSize")]
         public unsafe partial void SetWindowMaximumSize(Window* window, int max_w, int max_h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1114, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowMaximumSize")]
-        public partial void SetWindowMaximumSize(ref Window window, int max_w, int max_h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1131, Column 30 in SDL_video.h")]
@@ -8496,34 +8250,9 @@ namespace Silk.NET.SDL
         public unsafe partial void GetWindowMaximumSize(Window* window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1131, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMaximumSize")]
-        public unsafe partial void GetWindowMaximumSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1131, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMaximumSize")]
-        public unsafe partial void GetWindowMaximumSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1131, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMaximumSize")]
-        public unsafe partial void GetWindowMaximumSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1131, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMaximumSize")]
-        public partial void GetWindowMaximumSize(ref Window window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowBordered")]
         public unsafe partial void SetWindowBordered(Window* window, SdlBool bordered);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1150, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowBordered")]
-        public partial void SetWindowBordered(ref Window window, SdlBool bordered);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1169, Column 30 in SDL_video.h")]
@@ -8531,19 +8260,9 @@ namespace Silk.NET.SDL
         public unsafe partial void SetWindowResizable(Window* window, SdlBool resizable);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1169, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowResizable")]
-        public partial void SetWindowResizable(ref Window window, SdlBool resizable);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1186, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowAlwaysOnTop")]
         public unsafe partial void SetWindowAlwaysOnTop(Window* window, SdlBool on_top);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1186, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowAlwaysOnTop")]
-        public partial void SetWindowAlwaysOnTop(ref Window window, SdlBool on_top);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1199, Column 30 in SDL_video.h")]
@@ -8551,19 +8270,9 @@ namespace Silk.NET.SDL
         public unsafe partial void ShowWindow(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1199, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_ShowWindow")]
-        public partial void ShowWindow(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1210, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_HideWindow")]
         public unsafe partial void HideWindow(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1210, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_HideWindow")]
-        public partial void HideWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1219, Column 30 in SDL_video.h")]
@@ -8571,19 +8280,9 @@ namespace Silk.NET.SDL
         public unsafe partial void RaiseWindow(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1219, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_RaiseWindow")]
-        public partial void RaiseWindow(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1231, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_MaximizeWindow")]
         public unsafe partial void MaximizeWindow(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1231, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_MaximizeWindow")]
-        public partial void MaximizeWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1243, Column 30 in SDL_video.h")]
@@ -8591,19 +8290,9 @@ namespace Silk.NET.SDL
         public unsafe partial void MinimizeWindow(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1243, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_MinimizeWindow")]
-        public partial void MinimizeWindow(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1255, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_RestoreWindow")]
         public unsafe partial void RestoreWindow(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1255, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_RestoreWindow")]
-        public partial void RestoreWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1274, Column 29 in SDL_video.h")]
@@ -8611,29 +8300,14 @@ namespace Silk.NET.SDL
         public unsafe partial int SetWindowFullscreen(Window* window, uint flags);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1274, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowFullscreen")]
-        public partial int SetWindowFullscreen(ref Window window, uint flags);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1300, Column 39 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowSurface")]
         public unsafe partial Surface* GetWindowSurface(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1300, Column 39 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowSurface")]
-        public unsafe partial Surface* GetWindowSurface(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1319, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurface")]
         public unsafe partial int UpdateWindowSurface(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1319, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_UpdateWindowSurface")]
-        public partial int UpdateWindowSurface(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1341, Column 29 in SDL_video.h")]
@@ -8661,19 +8335,9 @@ namespace Silk.NET.SDL
         public unsafe partial void SetWindowGrab(Window* window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1363, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowGrab")]
-        public partial void SetWindowGrab(ref Window window, SdlBool grabbed);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1394, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowKeyboardGrab")]
         public unsafe partial void SetWindowKeyboardGrab(Window* window, SdlBool grabbed);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1394, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowKeyboardGrab")]
-        public partial void SetWindowKeyboardGrab(ref Window window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1411, Column 30 in SDL_video.h")]
@@ -8681,19 +8345,9 @@ namespace Silk.NET.SDL
         public unsafe partial void SetWindowMouseGrab(Window* window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1411, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowMouseGrab")]
-        public partial void SetWindowMouseGrab(ref Window window, SdlBool grabbed);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1424, Column 34 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowGrab")]
         public unsafe partial SdlBool GetWindowGrab(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1424, Column 34 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGrab")]
-        public partial SdlBool GetWindowGrab(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1437, Column 34 in SDL_video.h")]
@@ -8701,19 +8355,9 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool GetWindowKeyboardGrab(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1437, Column 34 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowKeyboardGrab")]
-        public partial SdlBool GetWindowKeyboardGrab(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1450, Column 34 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowMouseGrab")]
         public unsafe partial SdlBool GetWindowMouseGrab(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1450, Column 34 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMouseGrab")]
-        public partial SdlBool GetWindowMouseGrab(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1462, Column 38 in SDL_video.h")]
@@ -8746,19 +8390,9 @@ namespace Silk.NET.SDL
         public unsafe partial Silk.NET.Maths.Rectangle<int>* GetWindowMouseRect(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1494, Column 42 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowMouseRect")]
-        public unsafe partial Silk.NET.Maths.Rectangle<int>* GetWindowMouseRect(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1522, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowBrightness")]
         public unsafe partial int SetWindowBrightness(Window* window, float brightness);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1522, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowBrightness")]
-        public partial int SetWindowBrightness(ref Window window, float brightness);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1541, Column 31 in SDL_video.h")]
@@ -8766,19 +8400,9 @@ namespace Silk.NET.SDL
         public unsafe partial float GetWindowBrightness(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1541, Column 31 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowBrightness")]
-        public partial float GetWindowBrightness(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1560, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowOpacity")]
         public unsafe partial int SetWindowOpacity(Window* window, float opacity);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1560, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowOpacity")]
-        public partial int SetWindowOpacity(ref Window window, float opacity);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1581, Column 29 in SDL_video.h")]
@@ -8791,44 +8415,14 @@ namespace Silk.NET.SDL
         public unsafe partial int GetWindowOpacity(Window* window, ref float out_opacity);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowOpacity")]
-        public unsafe partial int GetWindowOpacity(ref Window window, float* out_opacity);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowOpacity")]
-        public partial int GetWindowOpacity(ref Window window, ref float out_opacity);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1593, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowModalFor")]
         public unsafe partial int SetWindowModalFor(Window* modal_window, Window* parent_window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1593, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowModalFor")]
-        public unsafe partial int SetWindowModalFor(Window* modal_window, ref Window parent_window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1593, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowModalFor")]
-        public unsafe partial int SetWindowModalFor(ref Window modal_window, Window* parent_window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1593, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowModalFor")]
-        public partial int SetWindowModalFor(ref Window modal_window, ref Window parent_window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1610, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowInputFocus")]
         public unsafe partial int SetWindowInputFocus(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1610, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowInputFocus")]
-        public partial int SetWindowInputFocus(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1642, Column 29 in SDL_video.h")]
@@ -8951,46 +8545,6 @@ namespace Silk.NET.SDL
         public unsafe partial int GetWindowGammaRamp(Window* window, ref ushort red, ref ushort green, ref ushort blue);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ushort* red, ushort* green, ushort* blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ushort* red, ushort* green, ref ushort blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ushort* red, ref ushort green, ushort* blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ushort* red, ref ushort green, ref ushort blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ref ushort red, ushort* green, ushort* blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ref ushort red, ushort* green, ref ushort blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public unsafe partial int GetWindowGammaRamp(ref Window window, ref ushort red, ref ushort green, ushort* blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1670, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowGammaRamp")]
-        public partial int GetWindowGammaRamp(ref Window window, ref ushort red, ref ushort green, ref ushort blue);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
         public unsafe partial int SetWindowHitTest(Window* window, PfnHitTest callback, void* callback_data);
@@ -9001,34 +8555,14 @@ namespace Silk.NET.SDL
         public unsafe partial int SetWindowHitTest<T0>(Window* window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest(ref Window window, PfnHitTest callback, void* callback_data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public partial int SetWindowHitTest<T0>(ref Window window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1762, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_FlashWindow")]
         public unsafe partial int FlashWindow(Window* window, FlashOperation operation);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1762, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_FlashWindow")]
-        public partial int FlashWindow(ref Window window, FlashOperation operation);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1777, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_DestroyWindow")]
         public unsafe partial void DestroyWindow(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1777, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyWindow")]
-        public partial void DestroyWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1796, Column 34 in SDL_video.h")]
@@ -9121,11 +8655,6 @@ namespace Silk.NET.SDL
         public unsafe partial void* GLCreateContext(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2001, Column 39 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_CreateContext")]
-        public unsafe partial void* GLCreateContext(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
         public unsafe partial int GLMakeCurrent(Window* window, void* context);
@@ -9134,16 +8663,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
         public unsafe partial int GLMakeCurrent<T0>(Window* window, ref T0 context) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
-        public unsafe partial int GLMakeCurrent(ref Window window, void* context);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
-        public partial int GLMakeCurrent<T0>(ref Window window, ref T0 context) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2029, Column 37 in SDL_video.h")]
@@ -9176,26 +8695,6 @@ namespace Silk.NET.SDL
         public unsafe partial void GLGetDrawableSize(Window* window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2063, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_GetDrawableSize")]
-        public unsafe partial void GLGetDrawableSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2063, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_GetDrawableSize")]
-        public unsafe partial void GLGetDrawableSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2063, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_GetDrawableSize")]
-        public unsafe partial void GLGetDrawableSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2063, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_GetDrawableSize")]
-        public partial void GLGetDrawableSize(ref Window window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2093, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_SetSwapInterval")]
         public partial int GLSetSwapInterval(int interval);
@@ -9209,11 +8708,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 2126, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_SwapWindow")]
         public unsafe partial void GLSwapWindow(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2126, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_SwapWindow")]
-        public partial void GLSwapWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2137, Column 30 in SDL_video.h")]
@@ -9301,16 +8795,6 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public unsafe partial SdlBool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public partial SdlBool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
         public unsafe partial void VulkanGetDrawableSize(Window* window, int* w, int* h);
@@ -9329,26 +8813,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
         public unsafe partial void VulkanGetDrawableSize(Window* window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
-        public unsafe partial void VulkanGetDrawableSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
-        public unsafe partial void VulkanGetDrawableSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
-        public unsafe partial void VulkanGetDrawableSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
-        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
-        public partial void VulkanGetDrawableSize(ref Window window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 171, Column 30 in SDL_main.h")]
@@ -9711,19 +9175,9 @@ namespace Silk.NET.SDL
         public unsafe partial int LockMutex(Mutex* mutex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 99, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_LockMutex")]
-        public partial int LockMutex(ref Mutex mutex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 122, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_TryLockMutex")]
         public unsafe partial int TryLockMutex(Mutex* mutex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 122, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_TryLockMutex")]
-        public partial int TryLockMutex(ref Mutex mutex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 141, Column 29 in SDL_mutex.h")]
@@ -9731,19 +9185,9 @@ namespace Silk.NET.SDL
         public unsafe partial int UnlockMutex(Mutex* mutex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 141, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockMutex")]
-        public partial int UnlockMutex(ref Mutex mutex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 162, Column 30 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_DestroyMutex")]
         public unsafe partial void DestroyMutex(Mutex* mutex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 162, Column 30 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyMutex")]
-        public partial void DestroyMutex(ref Mutex mutex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 34 in SDL_mutex.h")]
@@ -9756,19 +9200,9 @@ namespace Silk.NET.SDL
         public unsafe partial void DestroySemaphore(Semaphore* sem);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 217, Column 30 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroySemaphore")]
-        public partial void DestroySemaphore(ref Semaphore sem);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 244, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_SemWait")]
         public unsafe partial int SemWait(Semaphore* sem);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 244, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWait")]
-        public partial int SemWait(ref Semaphore sem);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 268, Column 29 in SDL_mutex.h")]
@@ -9776,19 +9210,9 @@ namespace Silk.NET.SDL
         public unsafe partial int SemTryWait(Semaphore* sem);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 268, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemTryWait")]
-        public partial int SemTryWait(ref Semaphore sem);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 293, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
         public unsafe partial int SemWaitTimeout(Semaphore* sem, uint ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 293, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
-        public partial int SemWaitTimeout(ref Semaphore sem, uint ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 311, Column 29 in SDL_mutex.h")]
@@ -9796,19 +9220,9 @@ namespace Silk.NET.SDL
         public unsafe partial int SemPost(Semaphore* sem);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 311, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemPost")]
-        public partial int SemPost(ref Semaphore sem);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 323, Column 32 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_SemValue")]
         public unsafe partial uint SemValue(Semaphore* sem);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 323, Column 32 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemValue")]
-        public partial uint SemValue(ref Semaphore sem);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 351, Column 35 in SDL_mutex.h")]
@@ -9821,19 +9235,9 @@ namespace Silk.NET.SDL
         public unsafe partial void DestroyCond(Cond* cond);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 366, Column 30 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyCond")]
-        public partial void DestroyCond(ref Cond cond);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 383, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_CondSignal")]
         public unsafe partial int CondSignal(Cond* cond);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 383, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondSignal")]
-        public partial int CondSignal(ref Cond cond);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 400, Column 29 in SDL_mutex.h")]
@@ -9841,49 +9245,14 @@ namespace Silk.NET.SDL
         public unsafe partial int CondBroadcast(Cond* cond);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 400, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondBroadcast")]
-        public partial int CondBroadcast(ref Cond cond);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_CondWait")]
         public unsafe partial int CondWait(Cond* cond, Mutex* mutex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 428, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWait")]
-        public unsafe partial int CondWait(Cond* cond, ref Mutex mutex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 428, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWait")]
-        public unsafe partial int CondWait(ref Cond cond, Mutex* mutex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 428, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWait")]
-        public partial int CondWait(ref Cond cond, ref Mutex mutex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 457, Column 29 in SDL_mutex.h")]
         [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
         public unsafe partial int CondWaitTimeout(Cond* cond, Mutex* mutex, uint ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 457, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
-        public unsafe partial int CondWaitTimeout(Cond* cond, ref Mutex mutex, uint ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 457, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
-        public unsafe partial int CondWaitTimeout(ref Cond cond, Mutex* mutex, uint ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 457, Column 29 in SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
-        public partial int CondWaitTimeout(ref Cond cond, ref Mutex mutex, uint ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 1 in SDL_thread.h")]
@@ -9957,17 +9326,6 @@ namespace Silk.NET.SDL
         public unsafe partial string GetThreadNameS(Thread* thread);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 272, Column 37 in SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadName")]
-        public unsafe partial byte* GetThreadName(ref Thread thread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 272, Column 37 in SDL_thread.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GetThreadName")]
-        public partial string GetThreadNameS(ref Thread thread);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 38 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_ThreadID")]
         public partial uint ThreadID();
@@ -9976,11 +9334,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 307, Column 38 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_GetThreadID")]
         public unsafe partial uint GetThreadID(Thread* thread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 307, Column 38 in SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadID")]
-        public partial uint GetThreadID(ref Thread thread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 322, Column 29 in SDL_thread.h")]
@@ -9998,24 +9351,9 @@ namespace Silk.NET.SDL
         public unsafe partial void WaitThread(Thread* thread, ref int status);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 357, Column 30 in SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_WaitThread")]
-        public unsafe partial void WaitThread(ref Thread thread, int* status);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 357, Column 30 in SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_WaitThread")]
-        public partial void WaitThread(ref Thread thread, ref int status);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 393, Column 30 in SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_DetachThread")]
         public unsafe partial void DetachThread(Thread* thread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 393, Column 30 in SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_DetachThread")]
-        public partial void DetachThread(ref Thread thread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 408, Column 35 in SDL_thread.h")]
@@ -10386,24 +9724,9 @@ namespace Silk.NET.SDL
         public unsafe partial int AudioStreamGet<T0>(AudioStream* stream, ref T0 buf, int len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public unsafe partial int AudioStreamGet(ref AudioStream stream, void* buf, int len);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public partial int AudioStreamGet<T0>(ref AudioStream stream, ref T0 buf, int len) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1072, Column 29 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
         public unsafe partial int AudioStreamAvailable(AudioStream* stream);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1072, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
-        public partial int AudioStreamAvailable(ref AudioStream stream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1091, Column 29 in SDL_audio.h")]
@@ -10411,29 +9734,14 @@ namespace Silk.NET.SDL
         public unsafe partial int AudioStreamFlush(AudioStream* stream);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1091, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
-        public partial int AudioStreamFlush(ref AudioStream stream);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1105, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
         public unsafe partial void AudioStreamClear(AudioStream* stream);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1105, Column 30 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
-        public partial void AudioStreamClear(ref AudioStream stream);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1119, Column 30 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
         public unsafe partial void FreeAudioStream(AudioStream* stream);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1119, Column 30 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
-        public partial void FreeAudioStream(ref AudioStream stream);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 30 in SDL_audio.h")]
@@ -10922,11 +10230,6 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool IsScreenKeyboardShown(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 343, Column 34 in SDL_keyboard.h")]
-        [NativeApi(EntryPoint = "SDL_IsScreenKeyboardShown")]
-        public partial SdlBool IsScreenKeyboardShown(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 81, Column 38 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_GetMouseFocus")]
         public unsafe partial Window* GetMouseFocus();
@@ -10995,11 +10298,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 173, Column 30 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_WarpMouseInWindow")]
         public unsafe partial void WarpMouseInWindow(Window* window, int x, int y);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 173, Column 30 in SDL_mouse.h")]
-        [NativeApi(EntryPoint = "SDL_WarpMouseInWindow")]
-        public partial void WarpMouseInWindow(ref Window window, int x, int y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 196, Column 29 in SDL_mouse.h")]
@@ -11087,11 +10385,6 @@ namespace Silk.NET.SDL
         public unsafe partial void SetCursor(Cursor* cursor);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 373, Column 30 in SDL_mouse.h")]
-        [NativeApi(EntryPoint = "SDL_SetCursor")]
-        public partial void SetCursor(ref Cursor cursor);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 37 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_GetCursor")]
         public unsafe partial Cursor* GetCursor();
@@ -11105,11 +10398,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 414, Column 30 in SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_FreeCursor")]
         public unsafe partial void FreeCursor(Cursor* cursor);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 414, Column 30 in SDL_mouse.h")]
-        [NativeApi(EntryPoint = "SDL_FreeCursor")]
-        public partial void FreeCursor(ref Cursor cursor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 29 in SDL_mouse.h")]
@@ -11264,29 +10552,14 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickSetVirtualAxis(Joystick* joystick, int axis, short value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 444, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickSetVirtualAxis")]
-        public partial int JoystickSetVirtualAxis(ref Joystick joystick, int axis, short value);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 462, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualButton")]
         public unsafe partial int JoystickSetVirtualButton(Joystick* joystick, int button, byte value);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 462, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickSetVirtualButton")]
-        public partial int JoystickSetVirtualButton(ref Joystick joystick, int button, byte value);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 480, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualHat")]
         public unsafe partial int JoystickSetVirtualHat(Joystick* joystick, int hat, byte value);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 480, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickSetVirtualHat")]
-        public partial int JoystickSetVirtualHat(ref Joystick joystick, int hat, byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 494, Column 37 in SDL_joystick.h")]
@@ -11300,17 +10573,6 @@ namespace Silk.NET.SDL
         public unsafe partial string JoystickNameS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 494, Column 37 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public unsafe partial byte* JoystickName(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 494, Column 37 in SDL_joystick.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public partial string JoystickNameS(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 507, Column 37 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickPath")]
         public unsafe partial byte* JoystickPath(Joystick* joystick);
@@ -11322,25 +10584,9 @@ namespace Silk.NET.SDL
         public unsafe partial string JoystickPathS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 507, Column 37 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickPath")]
-        public unsafe partial byte* JoystickPath(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 507, Column 37 in SDL_joystick.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_JoystickPath")]
-        public partial string JoystickPathS(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
         public unsafe partial int JoystickGetPlayerIndex(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 520, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
-        public partial int JoystickGetPlayerIndex(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 30 in SDL_joystick.h")]
@@ -11348,19 +10594,9 @@ namespace Silk.NET.SDL
         public unsafe partial void JoystickSetPlayerIndex(Joystick* joystick, int player_index);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 531, Column 30 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickSetPlayerIndex")]
-        public partial void JoystickSetPlayerIndex(ref Joystick joystick, int player_index);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 42 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
         public unsafe partial GUID JoystickGetGUID(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 548, Column 42 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
-        public partial GUID JoystickGetGUID(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in SDL_joystick.h")]
@@ -11368,19 +10604,9 @@ namespace Silk.NET.SDL
         public unsafe partial ushort JoystickGetVendor(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 560, Column 32 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetVendor")]
-        public partial ushort JoystickGetVendor(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
         public unsafe partial ushort JoystickGetProduct(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 572, Column 32 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
-        public partial ushort JoystickGetProduct(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 584, Column 32 in SDL_joystick.h")]
@@ -11388,19 +10614,9 @@ namespace Silk.NET.SDL
         public unsafe partial ushort JoystickGetProductVersion(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 584, Column 32 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetProductVersion")]
-        public partial ushort JoystickGetProductVersion(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetFirmwareVersion")]
         public unsafe partial ushort JoystickGetFirmwareVersion(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 597, Column 32 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetFirmwareVersion")]
-        public partial ushort JoystickGetFirmwareVersion(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 38 in SDL_joystick.h")]
@@ -11414,25 +10630,9 @@ namespace Silk.NET.SDL
         public unsafe partial string JoystickGetSerialS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 610, Column 38 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
-        public unsafe partial byte* JoystickGetSerial(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 610, Column 38 in SDL_joystick.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
-        public partial string JoystickGetSerialS(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 42 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetType")]
         public unsafe partial JoystickType JoystickGetType(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 620, Column 42 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetType")]
-        public partial JoystickType JoystickGetType(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 637, Column 30 in SDL_joystick.h")]
@@ -11550,19 +10750,9 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool JoystickGetAttached(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 686, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
-        public partial SdlBool JoystickGetAttached(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 40 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
         public unsafe partial int JoystickInstanceID(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 699, Column 40 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
-        public partial int JoystickInstanceID(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 718, Column 29 in SDL_joystick.h")]
@@ -11570,19 +10760,9 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickNumAxes(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 718, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickNumAxes")]
-        public partial int JoystickNumAxes(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 736, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
         public unsafe partial int JoystickNumBalls(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 736, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
-        public partial int JoystickNumBalls(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 29 in SDL_joystick.h")]
@@ -11590,19 +10770,9 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickNumHats(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 750, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickNumHats")]
-        public partial int JoystickNumHats(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 764, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
         public unsafe partial int JoystickNumButtons(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 764, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
-        public partial int JoystickNumButtons(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 776, Column 30 in SDL_joystick.h")]
@@ -11620,11 +10790,6 @@ namespace Silk.NET.SDL
         public unsafe partial short JoystickGetAxis(Joystick* joystick, int axis);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 828, Column 32 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetAxis")]
-        public partial short JoystickGetAxis(ref Joystick joystick, int axis);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
         public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, short* state);
@@ -11635,24 +10800,9 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, ref short state);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 845, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public unsafe partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, short* state);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 845, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, ref short state);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 886, Column 31 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
         public unsafe partial byte JoystickGetHat(Joystick* joystick, int hat);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 886, Column 31 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
-        public partial byte JoystickGetHat(ref Joystick joystick, int hat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
@@ -11675,34 +10825,9 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickGetBall(Joystick* joystick, int ball, ref int dx, ref int dy);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, int* dx, int* dy);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, int* dx, ref int dy);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, ref int dx, int* dy);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public partial int JoystickGetBall(ref Joystick joystick, int ball, ref int dx, ref int dy);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 923, Column 31 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
         public unsafe partial byte JoystickGetButton(Joystick* joystick, int button);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 923, Column 31 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
-        public partial byte JoystickGetButton(ref Joystick joystick, int button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in SDL_joystick.h")]
@@ -11710,19 +10835,9 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickRumble(Joystick* joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 944, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickRumble")]
-        public partial int JoystickRumble(ref Joystick joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 969, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickRumbleTriggers")]
         public unsafe partial int JoystickRumbleTriggers(Joystick* joystick, ushort left_rumble, ushort right_rumble, uint duration_ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 969, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickRumbleTriggers")]
-        public partial int JoystickRumbleTriggers(ref Joystick joystick, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 982, Column 34 in SDL_joystick.h")]
@@ -11730,19 +10845,9 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool JoystickHasLED(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickHasLED")]
-        public partial SdlBool JoystickHasLED(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 994, Column 34 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickHasRumble")]
         public unsafe partial SdlBool JoystickHasRumble(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 994, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickHasRumble")]
-        public partial SdlBool JoystickHasRumble(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1006, Column 34 in SDL_joystick.h")]
@@ -11750,19 +10855,9 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool JoystickHasRumbleTriggers(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1006, Column 34 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickHasRumbleTriggers")]
-        public partial SdlBool JoystickHasRumbleTriggers(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1022, Column 29 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSetLED")]
         public unsafe partial int JoystickSetLED(Joystick* joystick, byte red, byte green, byte blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1022, Column 29 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickSetLED")]
-        public partial int JoystickSetLED(ref Joystick joystick, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in SDL_joystick.h")]
@@ -11790,19 +10885,9 @@ namespace Silk.NET.SDL
         public unsafe partial void JoystickClose(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1045, Column 30 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickClose")]
-        public partial void JoystickClose(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1056, Column 48 in SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
         public unsafe partial JoystickPowerLevel JoystickCurrentPowerLevel(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1056, Column 48 in SDL_joystick.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
-        public partial JoystickPowerLevel JoystickCurrentPowerLevel(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 143, Column 30 in SDL_sensor.h")]
@@ -11867,25 +10952,9 @@ namespace Silk.NET.SDL
         public unsafe partial string SensorGetNameS(Sensor* sensor);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 37 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public unsafe partial byte* SensorGetName(ref Sensor sensor);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 37 in SDL_sensor.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public partial string SensorGetNameS(ref Sensor sensor);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 40 in SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetType")]
         public unsafe partial SensorType SensorGetType(Sensor* sensor);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 236, Column 40 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetType")]
-        public partial SensorType SensorGetType(ref Sensor sensor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 29 in SDL_sensor.h")]
@@ -11893,19 +10962,9 @@ namespace Silk.NET.SDL
         public unsafe partial int SensorGetNonPortableType(Sensor* sensor);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 246, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetNonPortableType")]
-        public partial int SensorGetNonPortableType(ref Sensor sensor);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 256, Column 38 in SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetInstanceID")]
         public unsafe partial int SensorGetInstanceID(Sensor* sensor);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 256, Column 38 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetInstanceID")]
-        public partial int SensorGetInstanceID(ref Sensor sensor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 270, Column 29 in SDL_sensor.h")]
@@ -11916,16 +10975,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 270, Column 29 in SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetData")]
         public unsafe partial int SensorGetData(Sensor* sensor, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 270, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetData")]
-        public unsafe partial int SensorGetData(ref Sensor sensor, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 270, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetData")]
-        public partial int SensorGetData(ref Sensor sensor, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
@@ -11948,34 +10997,9 @@ namespace Silk.NET.SDL
         public unsafe partial int SensorGetDataWithTimestamp(Sensor* sensor, ref ulong timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
-        public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ulong* timestamp, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
-        public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ulong* timestamp, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
-        public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ref ulong timestamp, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
-        public partial int SensorGetDataWithTimestamp(ref Sensor sensor, ref ulong timestamp, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 296, Column 30 in SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorClose")]
         public unsafe partial void SensorClose(Sensor* sensor);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 296, Column 30 in SDL_sensor.h")]
-        [NativeApi(EntryPoint = "SDL_SensorClose")]
-        public partial void SensorClose(ref Sensor sensor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 309, Column 30 in SDL_sensor.h")]
@@ -12044,17 +11068,6 @@ namespace Silk.NET.SDL
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public unsafe partial string GameControllerMappingS(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 255, Column 32 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public unsafe partial byte* GameControllerMapping(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 255, Column 32 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public partial string GameControllerMappingS(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 273, Column 34 in SDL_gamecontroller.h")]
@@ -12126,17 +11139,6 @@ namespace Silk.NET.SDL
         public unsafe partial string GameControllerNameS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 410, Column 37 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public unsafe partial byte* GameControllerName(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 410, Column 37 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public partial string GameControllerNameS(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 427, Column 37 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerPath")]
         public unsafe partial byte* GameControllerPath(GameController* gamecontroller);
@@ -12148,25 +11150,9 @@ namespace Silk.NET.SDL
         public unsafe partial string GameControllerPathS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 427, Column 37 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerPath")]
-        public unsafe partial byte* GameControllerPath(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 427, Column 37 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerPath")]
-        public partial string GameControllerPathS(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 440, Column 48 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
         public unsafe partial GameControllerType GameControllerGetType(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 440, Column 48 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
-        public partial GameControllerType GameControllerGetType(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 29 in SDL_gamecontroller.h")]
@@ -12174,19 +11160,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GameControllerGetPlayerIndex(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 452, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetPlayerIndex")]
-        public partial int GameControllerGetPlayerIndex(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 463, Column 30 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
         public unsafe partial void GameControllerSetPlayerIndex(GameController* gamecontroller, int player_index);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 463, Column 30 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
-        public partial void GameControllerSetPlayerIndex(ref GameController gamecontroller, int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 475, Column 32 in SDL_gamecontroller.h")]
@@ -12194,19 +11170,9 @@ namespace Silk.NET.SDL
         public unsafe partial ushort GameControllerGetVendor(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 475, Column 32 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetVendor")]
-        public partial ushort GameControllerGetVendor(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 487, Column 32 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
         public unsafe partial ushort GameControllerGetProduct(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 487, Column 32 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
-        public partial ushort GameControllerGetProduct(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 499, Column 32 in SDL_gamecontroller.h")]
@@ -12214,19 +11180,9 @@ namespace Silk.NET.SDL
         public unsafe partial ushort GameControllerGetProductVersion(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 499, Column 32 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetProductVersion")]
-        public partial ushort GameControllerGetProductVersion(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 32 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetFirmwareVersion")]
         public unsafe partial ushort GameControllerGetFirmwareVersion(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 511, Column 32 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetFirmwareVersion")]
-        public partial ushort GameControllerGetFirmwareVersion(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 38 in SDL_gamecontroller.h")]
@@ -12240,35 +11196,14 @@ namespace Silk.NET.SDL
         public unsafe partial string GameControllerGetSerialS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 38 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
-        public unsafe partial byte* GameControllerGetSerial(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 38 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
-        public partial string GameControllerGetSerialS(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
         public unsafe partial SdlBool GameControllerGetAttached(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 539, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
-        public partial SdlBool GameControllerGetAttached(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 39 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
         public unsafe partial Joystick* GameControllerGetJoystick(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 560, Column 39 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
-        public unsafe partial Joystick* GameControllerGetJoystick(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 29 in SDL_gamecontroller.h")]
@@ -12312,29 +11247,14 @@ namespace Silk.NET.SDL
         public unsafe partial GameControllerButtonBind GameControllerGetBindForAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 667, Column 1 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetBindForAxis")]
-        public partial GameControllerButtonBind GameControllerGetBindForAxis(ref GameController gamecontroller, GameControllerAxis axis);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 1 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
         public unsafe partial SdlBool GameControllerHasAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 683, Column 1 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
-        public partial SdlBool GameControllerHasAxis(ref GameController gamecontroller, GameControllerAxis axis);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 703, Column 1 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
         public unsafe partial short GameControllerGetAxis(GameController* gamecontroller, GameControllerAxis axis);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 703, Column 1 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
-        public partial short GameControllerGetAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in SDL_gamecontroller.h")]
@@ -12368,19 +11288,9 @@ namespace Silk.NET.SDL
         public unsafe partial GameControllerButtonBind GameControllerGetBindForButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 781, Column 1 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetBindForButton")]
-        public partial GameControllerButtonBind GameControllerGetBindForButton(ref GameController gamecontroller, GameControllerButton button);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 796, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
         public unsafe partial SdlBool GameControllerHasButton(GameController* gamecontroller, GameControllerButton button);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 796, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
-        public partial SdlBool GameControllerHasButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 31 in SDL_gamecontroller.h")]
@@ -12388,29 +11298,14 @@ namespace Silk.NET.SDL
         public unsafe partial byte GameControllerGetButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 31 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetButton")]
-        public partial byte GameControllerGetButton(ref GameController gamecontroller, GameControllerButton button);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 819, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpads")]
         public unsafe partial int GameControllerGetNumTouchpads(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 819, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpads")]
-        public partial int GameControllerGetNumTouchpads(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 827, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpadFingers")]
         public unsafe partial int GameControllerGetNumTouchpadFingers(GameController* gamecontroller, int touchpad);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 827, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpadFingers")]
-        public partial int GameControllerGetNumTouchpadFingers(ref GameController gamecontroller, int touchpad);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
@@ -12533,134 +11428,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, float* pressure);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
         public unsafe partial SdlBool GameControllerHasSensor(GameController* gamecontroller, SensorType type);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 845, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
-        public partial SdlBool GameControllerHasSensor(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 857, Column 29 in SDL_gamecontroller.h")]
@@ -12668,29 +11438,14 @@ namespace Silk.NET.SDL
         public unsafe partial int GameControllerSetSensorEnabled(GameController* gamecontroller, SensorType type, SdlBool enabled);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 857, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerSetSensorEnabled")]
-        public partial int GameControllerSetSensorEnabled(ref GameController gamecontroller, SensorType type, SdlBool enabled);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 868, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
         public unsafe partial SdlBool GameControllerIsSensorEnabled(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 868, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
-        public partial SdlBool GameControllerIsSensorEnabled(ref GameController gamecontroller, SensorType type);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 880, Column 31 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataRate")]
         public unsafe partial float GameControllerGetSensorDataRate(GameController* gamecontroller, SensorType type);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 880, Column 31 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataRate")]
-        public partial float GameControllerGetSensorDataRate(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 896, Column 29 in SDL_gamecontroller.h")]
@@ -12701,16 +11456,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 896, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
         public unsafe partial int GameControllerGetSensorData(GameController* gamecontroller, SensorType type, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 896, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
-        public unsafe partial int GameControllerGetSensorData(ref GameController gamecontroller, SensorType type, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 896, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
-        public partial int GameControllerGetSensorData(ref GameController gamecontroller, SensorType type, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
@@ -12733,34 +11478,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(GameController* gamecontroller, SensorType type, ref ulong timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
-        public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ulong* timestamp, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
-        public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ulong* timestamp, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
-        public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ref ulong timestamp, float* data, int num_values);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
-        public partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ref ulong timestamp, ref float data, int num_values);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 935, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
         public unsafe partial int GameControllerRumble(GameController* gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 935, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
-        public partial int GameControllerRumble(ref GameController gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 960, Column 29 in SDL_gamecontroller.h")]
@@ -12768,19 +11488,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GameControllerRumbleTriggers(GameController* gamecontroller, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 960, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerRumbleTriggers")]
-        public partial int GameControllerRumbleTriggers(ref GameController gamecontroller, ushort left_rumble, ushort right_rumble, uint duration_ms);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 971, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
         public unsafe partial SdlBool GameControllerHasLED(GameController* gamecontroller);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 971, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
-        public partial SdlBool GameControllerHasLED(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 984, Column 34 in SDL_gamecontroller.h")]
@@ -12788,29 +11498,14 @@ namespace Silk.NET.SDL
         public unsafe partial SdlBool GameControllerHasRumble(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 984, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasRumble")]
-        public partial SdlBool GameControllerHasRumble(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 997, Column 34 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasRumbleTriggers")]
         public unsafe partial SdlBool GameControllerHasRumbleTriggers(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 997, Column 34 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerHasRumbleTriggers")]
-        public partial SdlBool GameControllerHasRumbleTriggers(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 29 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetLED")]
         public unsafe partial int GameControllerSetLED(GameController* gamecontroller, byte red, byte green, byte blue);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1010, Column 29 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerSetLED")]
-        public partial int GameControllerSetLED(ref GameController gamecontroller, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
@@ -12838,11 +11533,6 @@ namespace Silk.NET.SDL
         public unsafe partial void GameControllerClose(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 30 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerClose")]
-        public partial void GameControllerClose(ref GameController gamecontroller);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1049, Column 37 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForButton(GameController* gamecontroller, GameControllerButton button);
@@ -12854,17 +11544,6 @@ namespace Silk.NET.SDL
         public unsafe partial string GameControllerGetAppleSFSymbolsNameForButtonS(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1049, Column 37 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
-        public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForButton(ref GameController gamecontroller, GameControllerButton button);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1049, Column 37 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
-        public partial string GameControllerGetAppleSFSymbolsNameForButtonS(ref GameController gamecontroller, GameControllerButton button);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 37 in SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForAxis(GameController* gamecontroller, GameControllerAxis axis);
@@ -12874,17 +11553,6 @@ namespace Silk.NET.SDL
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public unsafe partial string GameControllerGetAppleSFSymbolsNameForAxisS(GameController* gamecontroller, GameControllerAxis axis);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 37 in SDL_gamecontroller.h")]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
-        public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForAxis(ref GameController gamecontroller, GameControllerAxis axis);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 37 in SDL_gamecontroller.h")]
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
-        public partial string GameControllerGetAppleSFSymbolsNameForAxisS(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 83, Column 29 in SDL_touch.h")]
@@ -13244,11 +11912,6 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticIndex(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 905, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticIndex")]
-        public partial int HapticIndex(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 916, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_MouseIsHaptic")]
         public partial int MouseIsHaptic();
@@ -13264,19 +11927,9 @@ namespace Silk.NET.SDL
         public unsafe partial int JoystickIsHaptic(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 943, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_JoystickIsHaptic")]
-        public partial int JoystickIsHaptic(ref Joystick joystick);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 966, Column 37 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticOpenFromJoystick")]
         public unsafe partial Haptic* HapticOpenFromJoystick(Joystick* joystick);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 966, Column 37 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticOpenFromJoystick")]
-        public unsafe partial Haptic* HapticOpenFromJoystick(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 978, Column 30 in SDL_haptic.h")]
@@ -13284,19 +11937,9 @@ namespace Silk.NET.SDL
         public unsafe partial void HapticClose(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 978, Column 30 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticClose")]
-        public partial void HapticClose(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 996, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumEffects")]
         public unsafe partial int HapticNumEffects(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticNumEffects")]
-        public partial int HapticNumEffects(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1013, Column 29 in SDL_haptic.h")]
@@ -13304,29 +11947,14 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticNumEffectsPlaying(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1013, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticNumEffectsPlaying")]
-        public partial int HapticNumEffectsPlaying(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1027, Column 38 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticQuery")]
         public unsafe partial uint HapticQuery(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1027, Column 38 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticQuery")]
-        public partial uint HapticQuery(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1042, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumAxes")]
         public unsafe partial int HapticNumAxes(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1042, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticNumAxes")]
-        public partial int HapticNumAxes(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1058, Column 29 in SDL_haptic.h")]
@@ -13339,16 +11967,6 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticEffectSupported(Haptic* haptic, ref HapticEffect effect);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1058, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticEffectSupported")]
-        public unsafe partial int HapticEffectSupported(ref Haptic haptic, HapticEffect* effect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1058, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticEffectSupported")]
-        public partial int HapticEffectSupported(ref Haptic haptic, ref HapticEffect effect);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1077, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
         public unsafe partial int HapticNewEffect(Haptic* haptic, HapticEffect* effect);
@@ -13357,16 +11975,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1077, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
         public unsafe partial int HapticNewEffect(Haptic* haptic, ref HapticEffect effect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1077, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
-        public unsafe partial int HapticNewEffect(ref Haptic haptic, HapticEffect* effect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1077, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
-        public partial int HapticNewEffect(ref Haptic haptic, ref HapticEffect effect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1101, Column 29 in SDL_haptic.h")]
@@ -13379,24 +11987,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticUpdateEffect(Haptic* haptic, int effect, ref HapticEffect data);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1101, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticUpdateEffect")]
-        public unsafe partial int HapticUpdateEffect(ref Haptic haptic, int effect, HapticEffect* data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1101, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticUpdateEffect")]
-        public partial int HapticUpdateEffect(ref Haptic haptic, int effect, ref HapticEffect data);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1127, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRunEffect")]
         public unsafe partial int HapticRunEffect(Haptic* haptic, int effect, uint iterations);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1127, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticRunEffect")]
-        public partial int HapticRunEffect(ref Haptic haptic, int effect, uint iterations);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1146, Column 29 in SDL_haptic.h")]
@@ -13404,19 +11997,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticStopEffect(Haptic* haptic, int effect);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1146, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticStopEffect")]
-        public partial int HapticStopEffect(ref Haptic haptic, int effect);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1162, Column 30 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticDestroyEffect")]
         public unsafe partial void HapticDestroyEffect(Haptic* haptic, int effect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1162, Column 30 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticDestroyEffect")]
-        public partial void HapticDestroyEffect(ref Haptic haptic, int effect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1180, Column 29 in SDL_haptic.h")]
@@ -13424,19 +12007,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticGetEffectStatus(Haptic* haptic, int effect);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1180, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticGetEffectStatus")]
-        public partial int HapticGetEffectStatus(ref Haptic haptic, int effect);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1202, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticSetGain")]
         public unsafe partial int HapticSetGain(Haptic* haptic, int gain);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1202, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticSetGain")]
-        public partial int HapticSetGain(ref Haptic haptic, int gain);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1221, Column 29 in SDL_haptic.h")]
@@ -13444,19 +12017,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticSetAutocenter(Haptic* haptic, int autocenter);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1221, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticSetAutocenter")]
-        public partial int HapticSetAutocenter(ref Haptic haptic, int autocenter);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1241, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticPause")]
         public unsafe partial int HapticPause(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1241, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticPause")]
-        public partial int HapticPause(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1256, Column 29 in SDL_haptic.h")]
@@ -13464,19 +12027,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticUnpause(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1256, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticUnpause")]
-        public partial int HapticUnpause(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1267, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticStopAll")]
         public unsafe partial int HapticStopAll(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1267, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticStopAll")]
-        public partial int HapticStopAll(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1283, Column 29 in SDL_haptic.h")]
@@ -13484,19 +12037,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticRumbleSupported(Haptic* haptic);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1283, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticRumbleSupported")]
-        public partial int HapticRumbleSupported(ref Haptic haptic);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1299, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleInit")]
         public unsafe partial int HapticRumbleInit(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1299, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticRumbleInit")]
-        public partial int HapticRumbleInit(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1316, Column 29 in SDL_haptic.h")]
@@ -13504,19 +12047,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HapticRumblePlay(Haptic* haptic, float strength, uint length);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1316, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticRumblePlay")]
-        public partial int HapticRumblePlay(ref Haptic haptic, float strength, uint length);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1331, Column 29 in SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleStop")]
         public unsafe partial int HapticRumbleStop(Haptic* haptic);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1331, Column 29 in SDL_haptic.h")]
-        [NativeApi(EntryPoint = "SDL_HapticRumbleStop")]
-        public partial int HapticRumbleStop(ref Haptic haptic);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 29 in SDL_hidapi.h")]
@@ -13624,21 +12157,6 @@ namespace Silk.NET.SDL
         public unsafe partial int HidReadTimeout(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 290, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
-        public unsafe partial int HidReadTimeout(ref HidDevice dev, byte* data, nuint length, int milliseconds);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 290, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
-        public partial int HidReadTimeout(ref HidDevice dev, ref byte data, nuint length, int milliseconds);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 290, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
-        public partial int HidReadTimeout(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length, int milliseconds);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public unsafe partial int HidRead(HidDevice* dev, byte* data, nuint length);
@@ -13654,29 +12172,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HidRead(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 310, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read")]
-        public unsafe partial int HidRead(ref HidDevice dev, byte* data, nuint length);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 310, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read")]
-        public partial int HidRead(ref HidDevice dev, ref byte data, nuint length);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 310, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_read")]
-        public partial int HidRead(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_set_nonblocking")]
         public unsafe partial int HidSetNonblocking(HidDevice* dev, int nonblock);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 328, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_set_nonblocking")]
-        public partial int HidSetNonblocking(ref HidDevice dev, int nonblock);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in SDL_hidapi.h")]
@@ -13724,29 +12222,9 @@ namespace Silk.NET.SDL
         public unsafe partial int HidGetFeatureReport(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 374, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
-        public unsafe partial int HidGetFeatureReport(ref HidDevice dev, byte* data, nuint length);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 374, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
-        public partial int HidGetFeatureReport(ref HidDevice dev, ref byte data, nuint length);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 374, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
-        public partial int HidGetFeatureReport(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 383, Column 30 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_close")]
         public unsafe partial void HidClose(HidDevice* dev);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 383, Column 30 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_close")]
-        public partial void HidClose(ref HidDevice dev);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in SDL_hidapi.h")]
@@ -13764,21 +12242,6 @@ namespace Silk.NET.SDL
         public unsafe partial int HidGetManufacturerString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 395, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
-        public unsafe partial int HidGetManufacturerString(ref HidDevice dev, char* @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 395, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
-        public partial int HidGetManufacturerString(ref HidDevice dev, ref char @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 395, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
-        public partial int HidGetManufacturerString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(HidDevice* dev, char* @string, nuint maxlen);
@@ -13792,21 +12255,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
-        public unsafe partial int HidGetProductString(ref HidDevice dev, char* @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
-        public partial int HidGetProductString(ref HidDevice dev, ref char @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
-        public partial int HidGetProductString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in SDL_hidapi.h")]
@@ -13824,21 +12272,6 @@ namespace Silk.NET.SDL
         public unsafe partial int HidGetSerialNumberString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
-        public unsafe partial int HidGetSerialNumberString(ref HidDevice dev, char* @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
-        public partial int HidGetSerialNumberString(ref HidDevice dev, ref char @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
-        public partial int HidGetSerialNumberString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(HidDevice* dev, int string_index, char* @string, nuint maxlen);
@@ -13852,21 +12285,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(HidDevice* dev, int string_index, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
-        public unsafe partial int HidGetIndexedString(ref HidDevice dev, int string_index, char* @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
-        public partial int HidGetIndexedString(ref HidDevice dev, int string_index, ref char @string, nuint maxlen);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
-        [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
-        public partial int HidGetIndexedString(ref HidDevice dev, int string_index, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 441, Column 30 in SDL_hidapi.h")]
@@ -14482,11 +12900,6 @@ namespace Silk.NET.SDL
         public unsafe partial void* MetalCreateView(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 66, Column 39 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_CreateView")]
-        public unsafe partial void* MetalCreateView(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 78, Column 30 in SDL_metal.h")]
         [NativeApi(EntryPoint = "SDL_Metal_DestroyView")]
         public unsafe partial void MetalDestroyView(void* view);
@@ -14525,26 +12938,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
         [NativeApi(EntryPoint = "SDL_Metal_GetDrawableSize")]
         public unsafe partial void MetalGetDrawableSize(Window* window, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_GetDrawableSize")]
-        public unsafe partial void MetalGetDrawableSize(ref Window window, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_GetDrawableSize")]
-        public unsafe partial void MetalGetDrawableSize(ref Window window, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_GetDrawableSize")]
-        public unsafe partial void MetalGetDrawableSize(ref Window window, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_GetDrawableSize")]
-        public partial void MetalGetDrawableSize(ref Window window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 78, Column 40 in SDL_power.h")]
@@ -14607,11 +13000,6 @@ namespace Silk.NET.SDL
         public unsafe partial Renderer* CreateRenderer(Window* window, int index, uint flags);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 227, Column 40 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_CreateRenderer")]
-        public unsafe partial Renderer* CreateRenderer(ref Window window, int index, uint flags);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 249, Column 40 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_CreateSoftwareRenderer")]
         public unsafe partial Renderer* CreateSoftwareRenderer(Surface* surface);
@@ -14627,19 +13015,9 @@ namespace Silk.NET.SDL
         public unsafe partial Renderer* GetRenderer(Window* window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 262, Column 40 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderer")]
-        public unsafe partial Renderer* GetRenderer(ref Window window);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 273, Column 38 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetWindow")]
         public unsafe partial Window* RenderGetWindow(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 273, Column 38 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetWindow")]
-        public unsafe partial Window* RenderGetWindow(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 29 in SDL_render.h")]
@@ -14650,16 +13028,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 288, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRendererInfo")]
         public unsafe partial int GetRendererInfo(Renderer* renderer, ref RendererInfo info);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 288, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererInfo")]
-        public unsafe partial int GetRendererInfo(ref Renderer renderer, RendererInfo* info);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 288, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererInfo")]
-        public partial int GetRendererInfo(ref Renderer renderer, ref RendererInfo info);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 308, Column 29 in SDL_render.h")]
@@ -14682,34 +13050,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GetRendererOutputSize(Renderer* renderer, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 308, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererOutputSize")]
-        public unsafe partial int GetRendererOutputSize(ref Renderer renderer, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 308, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererOutputSize")]
-        public unsafe partial int GetRendererOutputSize(ref Renderer renderer, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 308, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererOutputSize")]
-        public unsafe partial int GetRendererOutputSize(ref Renderer renderer, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 308, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRendererOutputSize")]
-        public partial int GetRendererOutputSize(ref Renderer renderer, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 39 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_CreateTexture")]
         public unsafe partial Texture* CreateTexture(Renderer* renderer, uint format, int access, int w, int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 333, Column 39 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_CreateTexture")]
-        public unsafe partial Texture* CreateTexture(ref Renderer renderer, uint format, int access, int w, int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 362, Column 39 in SDL_render.h")]
@@ -14720,16 +13063,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 362, Column 39 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_CreateTextureFromSurface")]
         public unsafe partial Texture* CreateTextureFromSurface(Renderer* renderer, ref Surface surface);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 362, Column 39 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_CreateTextureFromSurface")]
-        public unsafe partial Texture* CreateTextureFromSurface(ref Renderer renderer, Surface* surface);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 362, Column 39 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_CreateTextureFromSurface")]
-        public unsafe partial Texture* CreateTextureFromSurface(ref Renderer renderer, ref Surface surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
@@ -14812,94 +13145,9 @@ namespace Silk.NET.SDL
         public unsafe partial int QueryTexture(Texture* texture, ref uint format, ref int access, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, int* access, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, int* access, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, int* access, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, int* access, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, ref int access, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, ref int access, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, ref int access, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, uint* format, ref int access, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, int* access, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, int* access, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, int* access, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, int* access, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, ref int access, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, ref int access, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public unsafe partial int QueryTexture(ref Texture texture, ref uint format, ref int access, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 386, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_QueryTexture")]
-        public partial int QueryTexture(ref Texture texture, ref uint format, ref int access, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 414, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureColorMod")]
         public unsafe partial int SetTextureColorMod(Texture* texture, byte r, byte g, byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 414, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureColorMod")]
-        public partial int SetTextureColorMod(ref Texture texture, byte r, byte g, byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
@@ -15037,149 +13285,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, byte* g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, byte* g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, ref byte g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, ref byte g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, byte* g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, byte* g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, ref byte g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, ref byte g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 433, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 458, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureAlphaMod")]
         public unsafe partial int SetTextureAlphaMod(Texture* texture, byte alpha);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 458, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureAlphaMod")]
-        public partial int SetTextureAlphaMod(ref Texture texture, byte alpha);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 474, Column 29 in SDL_render.h")]
@@ -15197,29 +13305,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GetTextureAlphaMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 474, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureAlphaMod")]
-        public unsafe partial int GetTextureAlphaMod(ref Texture texture, byte* alpha);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 474, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureAlphaMod")]
-        public partial int GetTextureAlphaMod(ref Texture texture, ref byte alpha);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 474, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureAlphaMod")]
-        public partial int GetTextureAlphaMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 493, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureBlendMode")]
         public unsafe partial int SetTextureBlendMode(Texture* texture, BlendMode blendMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 493, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureBlendMode")]
-        public partial int SetTextureBlendMode(ref Texture texture, BlendMode blendMode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in SDL_render.h")]
@@ -15232,24 +13320,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GetTextureBlendMode(Texture* texture, ref BlendMode blendMode);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 508, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureBlendMode")]
-        public unsafe partial int GetTextureBlendMode(ref Texture texture, BlendMode* blendMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 508, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureBlendMode")]
-        public partial int GetTextureBlendMode(ref Texture texture, ref BlendMode blendMode);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureScaleMode")]
         public unsafe partial int SetTextureScaleMode(Texture* texture, ScaleMode scaleMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureScaleMode")]
-        public partial int SetTextureScaleMode(ref Texture texture, ScaleMode scaleMode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 29 in SDL_render.h")]
@@ -15262,16 +13335,6 @@ namespace Silk.NET.SDL
         public unsafe partial int GetTextureScaleMode(Texture* texture, ref ScaleMode scaleMode);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 538, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureScaleMode")]
-        public unsafe partial int GetTextureScaleMode(ref Texture texture, ScaleMode* scaleMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 538, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureScaleMode")]
-        public partial int GetTextureScaleMode(ref Texture texture, ref ScaleMode scaleMode);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
         public unsafe partial int SetTextureUserData(Texture* texture, void* userdata);
@@ -15282,24 +13345,9 @@ namespace Silk.NET.SDL
         public unsafe partial int SetTextureUserData<T0>(Texture* texture, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
-        public unsafe partial int SetTextureUserData(ref Texture texture, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
-        public partial int SetTextureUserData<T0>(ref Texture texture, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 32 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureUserData")]
         public unsafe partial void* GetTextureUserData(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 566, Column 32 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetTextureUserData")]
-        public unsafe partial void* GetTextureUserData(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
@@ -16187,19 +14235,9 @@ namespace Silk.NET.SDL
         public unsafe partial void UnlockTexture(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 743, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockTexture")]
-        public partial void UnlockTexture(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 755, Column 34 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderTargetSupported")]
         public unsafe partial SdlBool RenderTargetSupported(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 755, Column 34 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderTargetSupported")]
-        public partial SdlBool RenderTargetSupported(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 779, Column 29 in SDL_render.h")]
@@ -16207,39 +14245,14 @@ namespace Silk.NET.SDL
         public unsafe partial int SetRenderTarget(Renderer* renderer, Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 779, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetRenderTarget")]
-        public unsafe partial int SetRenderTarget(Renderer* renderer, ref Texture texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 779, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetRenderTarget")]
-        public unsafe partial int SetRenderTarget(ref Renderer renderer, Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 779, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetRenderTarget")]
-        public partial int SetRenderTarget(ref Renderer renderer, ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 795, Column 39 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderTarget")]
         public unsafe partial Texture* GetRenderTarget(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 795, Column 39 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderTarget")]
-        public unsafe partial Texture* GetRenderTarget(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetLogicalSize")]
         public unsafe partial int RenderSetLogicalSize(Renderer* renderer, int w, int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 823, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderSetLogicalSize")]
-        public partial int RenderSetLogicalSize(ref Renderer renderer, int w, int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 30 in SDL_render.h")]
@@ -16262,44 +14275,14 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderGetLogicalSize(Renderer* renderer, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetLogicalSize")]
-        public unsafe partial void RenderGetLogicalSize(ref Renderer renderer, int* w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetLogicalSize")]
-        public unsafe partial void RenderGetLogicalSize(ref Renderer renderer, int* w, ref int h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetLogicalSize")]
-        public unsafe partial void RenderGetLogicalSize(ref Renderer renderer, ref int w, int* h);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetLogicalSize")]
-        public partial void RenderGetLogicalSize(ref Renderer renderer, ref int w, ref int h);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 863, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetIntegerScale")]
         public unsafe partial int RenderSetIntegerScale(Renderer* renderer, SdlBool enable);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 863, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderSetIntegerScale")]
-        public partial int RenderSetIntegerScale(ref Renderer renderer, SdlBool enable);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 877, Column 34 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetIntegerScale")]
         public unsafe partial SdlBool RenderGetIntegerScale(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 34 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetIntegerScale")]
-        public partial SdlBool RenderGetIntegerScale(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 895, Column 29 in SDL_render.h")]
@@ -16332,16 +14315,6 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderGetViewport(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public unsafe partial void RenderGetViewport(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public partial void RenderGetViewport(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 926, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
         public unsafe partial int RenderSetClipRect(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect);
@@ -16372,34 +14345,14 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderGetClipRect(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 942, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public unsafe partial void RenderGetClipRect(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 942, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public partial void RenderGetClipRect(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 957, Column 34 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderIsClipEnabled")]
         public unsafe partial SdlBool RenderIsClipEnabled(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 957, Column 34 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderIsClipEnabled")]
-        public partial SdlBool RenderIsClipEnabled(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 982, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetScale")]
         public unsafe partial int RenderSetScale(Renderer* renderer, float scaleX, float scaleY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderSetScale")]
-        public partial int RenderSetScale(ref Renderer renderer, float scaleX, float scaleY);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 996, Column 30 in SDL_render.h")]
@@ -16422,26 +14375,6 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderGetScale(Renderer* renderer, ref float scaleX, ref float scaleY);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetScale")]
-        public unsafe partial void RenderGetScale(ref Renderer renderer, float* scaleX, float* scaleY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetScale")]
-        public unsafe partial void RenderGetScale(ref Renderer renderer, float* scaleX, ref float scaleY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetScale")]
-        public unsafe partial void RenderGetScale(ref Renderer renderer, ref float scaleX, float* scaleY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 996, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetScale")]
-        public partial void RenderGetScale(ref Renderer renderer, ref float scaleX, ref float scaleY);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
         public unsafe partial void RenderWindowToLogical(Renderer* renderer, int windowX, int windowY, float* logicalX, float* logicalY);
@@ -16460,26 +14393,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
         public unsafe partial void RenderWindowToLogical(Renderer* renderer, int windowX, int windowY, ref float logicalX, ref float logicalY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
-        public unsafe partial void RenderWindowToLogical(ref Renderer renderer, int windowX, int windowY, float* logicalX, float* logicalY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
-        public unsafe partial void RenderWindowToLogical(ref Renderer renderer, int windowX, int windowY, float* logicalX, ref float logicalY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
-        public unsafe partial void RenderWindowToLogical(ref Renderer renderer, int windowX, int windowY, ref float logicalX, float* logicalY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1020, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderWindowToLogical")]
-        public partial void RenderWindowToLogical(ref Renderer renderer, int windowX, int windowY, ref float logicalX, ref float logicalY);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1046, Column 30 in SDL_render.h")]
@@ -16502,34 +14415,9 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderLogicalToWindow(Renderer* renderer, float logicalX, float logicalY, ref int windowX, ref int windowY);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1046, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderLogicalToWindow")]
-        public unsafe partial void RenderLogicalToWindow(ref Renderer renderer, float logicalX, float logicalY, int* windowX, int* windowY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1046, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderLogicalToWindow")]
-        public unsafe partial void RenderLogicalToWindow(ref Renderer renderer, float logicalX, float logicalY, int* windowX, ref int windowY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1046, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderLogicalToWindow")]
-        public unsafe partial void RenderLogicalToWindow(ref Renderer renderer, float logicalX, float logicalY, ref int windowX, int* windowY);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1046, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderLogicalToWindow")]
-        public partial void RenderLogicalToWindow(ref Renderer renderer, float logicalX, float logicalY, ref int windowX, ref int windowY);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetRenderDrawColor")]
         public unsafe partial int SetRenderDrawColor(Renderer* renderer, byte r, byte g, byte b, byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetRenderDrawColor")]
-        public partial int SetRenderDrawColor(ref Renderer renderer, byte r, byte g, byte b, byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
@@ -16937,419 +14825,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1102, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetRenderDrawBlendMode")]
         public unsafe partial int SetRenderDrawBlendMode(Renderer* renderer, BlendMode blendMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1128, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetRenderDrawBlendMode")]
-        public partial int SetRenderDrawBlendMode(ref Renderer renderer, BlendMode blendMode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1143, Column 29 in SDL_render.h")]
@@ -17362,34 +14840,14 @@ namespace Silk.NET.SDL
         public unsafe partial int GetRenderDrawBlendMode(Renderer* renderer, ref BlendMode blendMode);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawBlendMode")]
-        public unsafe partial int GetRenderDrawBlendMode(ref Renderer renderer, BlendMode* blendMode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GetRenderDrawBlendMode")]
-        public partial int GetRenderDrawBlendMode(ref Renderer renderer, ref BlendMode blendMode);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1160, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderClear")]
         public unsafe partial int RenderClear(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1160, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderClear")]
-        public partial int RenderClear(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1187, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawPoint")]
         public unsafe partial int RenderDrawPoint(Renderer* renderer, int x, int y);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1187, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderDrawPoint")]
-        public partial int RenderDrawPoint(ref Renderer renderer, int x, int y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1213, Column 29 in SDL_render.h")]
@@ -17415,11 +14873,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1244, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawLine")]
         public unsafe partial int RenderDrawLine(Renderer* renderer, int x1, int y1, int x2, int y2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1244, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderDrawLine")]
-        public partial int RenderDrawLine(ref Renderer renderer, int x1, int y1, int x2, int y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1270, Column 29 in SDL_render.h")]
@@ -17767,11 +15220,6 @@ namespace Silk.NET.SDL
         public unsafe partial int RenderDrawPointF(Renderer* renderer, float x, float y);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1472, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderDrawPointF")]
-        public partial int RenderDrawPointF(ref Renderer renderer, float x, float y);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1485, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawPointsF")]
         public unsafe partial int RenderDrawPointsF(Renderer* renderer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FPoint* points, int count);
@@ -17795,11 +15243,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1501, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawLineF")]
         public unsafe partial int RenderDrawLineF(Renderer* renderer, float x1, float y1, float x2, float y2);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1501, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderDrawLineF")]
-        public partial int RenderDrawLineF(ref Renderer renderer, float x1, float y1, float x2, float y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 29 in SDL_render.h")]
@@ -18587,19 +16030,9 @@ namespace Silk.NET.SDL
         public unsafe partial void RenderPresent(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderPresent")]
-        public partial void RenderPresent(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1763, Column 30 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_DestroyTexture")]
         public unsafe partial void DestroyTexture(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1763, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyTexture")]
-        public partial void DestroyTexture(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1777, Column 30 in SDL_render.h")]
@@ -18607,19 +16040,9 @@ namespace Silk.NET.SDL
         public unsafe partial void DestroyRenderer(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1777, Column 30 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyRenderer")]
-        public partial void DestroyRenderer(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1808, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFlush")]
         public unsafe partial int RenderFlush(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1808, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderFlush")]
-        public partial int RenderFlush(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1846, Column 29 in SDL_render.h")]
@@ -18642,34 +16065,9 @@ namespace Silk.NET.SDL
         public unsafe partial int GLBindTexture(Texture* texture, ref float texw, ref float texh);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1846, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GL_BindTexture")]
-        public unsafe partial int GLBindTexture(ref Texture texture, float* texw, float* texh);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1846, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GL_BindTexture")]
-        public unsafe partial int GLBindTexture(ref Texture texture, float* texw, ref float texh);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1846, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GL_BindTexture")]
-        public unsafe partial int GLBindTexture(ref Texture texture, ref float texw, float* texh);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1846, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GL_BindTexture")]
-        public partial int GLBindTexture(ref Texture texture, ref float texw, ref float texh);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1861, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GL_UnbindTexture")]
         public unsafe partial int GLUnbindTexture(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1861, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_GL_UnbindTexture")]
-        public partial int GLUnbindTexture(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1877, Column 31 in SDL_render.h")]
@@ -18677,29 +16075,14 @@ namespace Silk.NET.SDL
         public unsafe partial void* RenderGetMetalLayer(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1877, Column 31 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalLayer")]
-        public unsafe partial void* RenderGetMetalLayer(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1898, Column 31 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetMetalCommandEncoder")]
         public unsafe partial void* RenderGetMetalCommandEncoder(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1898, Column 31 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalCommandEncoder")]
-        public unsafe partial void* RenderGetMetalCommandEncoder(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1909, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetVSync")]
         public unsafe partial int RenderSetVSync(Renderer* renderer, int vsync);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1909, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderSetVSync")]
-        public partial int RenderSetVSync(ref Renderer renderer, int vsync);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 38 in SDL_shape.h")]
@@ -18747,26 +16130,6 @@ namespace Silk.NET.SDL
         public unsafe partial int SetWindowShape(Window* window, ref Surface shape, ref WindowShapeModeVal shape_mode);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 128, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowShape")]
-        public unsafe partial int SetWindowShape(ref Window window, Surface* shape, WindowShapeModeVal* shape_mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 128, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowShape")]
-        public unsafe partial int SetWindowShape(ref Window window, Surface* shape, ref WindowShapeModeVal shape_mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 128, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowShape")]
-        public unsafe partial int SetWindowShape(ref Window window, ref Surface shape, WindowShapeModeVal* shape_mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 128, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowShape")]
-        public partial int SetWindowShape(ref Window window, ref Surface shape, ref WindowShapeModeVal shape_mode);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 147, Column 29 in SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_GetShapedWindowMode")]
         public unsafe partial int GetShapedWindowMode(Window* window, WindowShapeModeVal* shape_mode);
@@ -18775,16 +16138,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 147, Column 29 in SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_GetShapedWindowMode")]
         public unsafe partial int GetShapedWindowMode(Window* window, ref WindowShapeModeVal shape_mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 147, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_GetShapedWindowMode")]
-        public unsafe partial int GetShapedWindowMode(ref Window window, WindowShapeModeVal* shape_mode);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 147, Column 29 in SDL_shape.h")]
-        [NativeApi(EntryPoint = "SDL_GetShapedWindowMode")]
-        public partial int GetShapedWindowMode(ref Window window, ref WindowShapeModeVal shape_mode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
@@ -18811,30 +16164,14 @@ namespace Silk.NET.SDL
         public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 91, Column 43 in SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_RenderGetD3D9Device")]
-        public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 107, Column 39 in SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 107, Column 39 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
-        public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 39 in SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 127, Column 39 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
-        public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 151, Column 34 in SDL_system.h")]
@@ -18869,16 +16206,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, PfnFreeFunc callback, void* callbackParam);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 30 in SDL_system.h")]

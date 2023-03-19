@@ -1976,33 +1976,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, ID2D1ColorContext** colorContext)
-        {
-            var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[21])(@this, wicColorContextPtr, colorContext);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromWicColorContext(ref IWICColorContext wicColorContext, ref ID2D1ColorContext* colorContext)
-        {
-            var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IWICColorContext* wicColorContextPtr = &wicColorContext)
-            {
-                fixed (ID2D1ColorContext** colorContextPtr = &colorContext)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, IWICColorContext*, ID2D1ColorContext**, int>)@this->LpVtbl[21])(@this, wicColorContextPtr, colorContextPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckFeatureSupport(Feature feature, void* featureSupportData, uint featureSupportDataSize)
         {
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2474,14 +2447,6 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateColorContextFromWicColorContext(wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromWicColorContext<TI0>(ref IWICColorContext wicColorContext, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1EffectContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateColorContextFromWicColorContext(ref wicColorContext, (ID2D1ColorContext**) colorContext.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

@@ -24856,22 +24856,6 @@ namespace Silk.NET.Direct3D.Compilers
             return thisApi.DecompressShaders(in pSrcData.GetPinnableReference(), SrcDataSize, uNumShaders, uStartIndex, ref pIndices.GetPinnableReference(), uFlags, ref ppShaders, ref pTotalShaders.GetPinnableReference());
         }
 
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 1 in d3dcompiler.h")]
-        public static unsafe int Disassemble10Effect(this D3DCompiler thisApi, Span<ID3D10Effect> pEffect, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly)
-        {
-            // SpanOverloader
-            return thisApi.Disassemble10Effect(ref pEffect.GetPinnableReference(), Flags, ppDisassembly);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 1 in d3dcompiler.h")]
-        public static unsafe int Disassemble10Effect(this D3DCompiler thisApi, Span<ID3D10Effect> pEffect, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly)
-        {
-            // SpanOverloader
-            return thisApi.Disassemble10Effect(ref pEffect.GetPinnableReference(), Flags, ref ppDisassembly);
-        }
-
     }
 }
 

@@ -625,30 +625,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceSetLoggingCallback(this Dawn thisApi, Span<Device> device, PfnLoggingCallback callback, void* userdata)
-        {
-            // SpanOverloader
-            thisApi.DeviceSetLoggingCallback(ref device.GetPinnableReference(), callback, userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceSetLoggingCallback<T0>(this Dawn thisApi, Span<Device> device, PfnLoggingCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DeviceSetLoggingCallback(ref device.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1770, Column 18 in dawn-webgpu.h")]
-        public static unsafe void DeviceTick(this Dawn thisApi, Span<Device> device)
-        {
-            // SpanOverloader
-            thisApi.DeviceTick(ref device.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1771, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceValidateTextureDescriptor(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
