@@ -89,16 +89,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial nuint AdapterEnumerateFeatures(Adapter* adapter, ref FeatureName features);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1423, Column 20 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterEnumerateFeatures")]
-        public unsafe partial nuint AdapterEnumerateFeatures(ref Adapter adapter, FeatureName* features);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1423, Column 20 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterEnumerateFeatures")]
-        public partial nuint AdapterEnumerateFeatures(ref Adapter adapter, ref FeatureName features);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
         public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(Adapter* adapter, SupportedLimits* limits);
@@ -107,16 +97,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
         public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(Adapter* adapter, ref SupportedLimits limits);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public unsafe partial Silk.NET.Core.Bool32 AdapterGetLimits(ref Adapter adapter, SupportedLimits* limits);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1424, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterGetLimits")]
-        public partial Silk.NET.Core.Bool32 AdapterGetLimits(ref Adapter adapter, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
@@ -129,24 +109,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void AdapterGetProperties(Adapter* adapter, ref AdapterProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterGetProperties")]
-        public unsafe partial void AdapterGetProperties(ref Adapter adapter, AdapterProperties* properties);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1425, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterGetProperties")]
-        public partial void AdapterGetProperties(ref Adapter adapter, ref AdapterProperties properties);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1426, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterHasFeature")]
         public unsafe partial Silk.NET.Core.Bool32 AdapterHasFeature(Adapter* adapter, FeatureName feature);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1426, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuAdapterHasFeature")]
-        public partial Silk.NET.Core.Bool32 AdapterHasFeature(ref Adapter adapter, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
@@ -259,19 +224,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void BufferDestroy(Buffer* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1436, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferDestroy")]
-        public partial void BufferDestroy(ref Buffer buffer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1437, Column 26 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferGetConstMappedRange")]
         public unsafe partial void* BufferGetConstMappedRange(Buffer* buffer, nuint offset, nuint size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1437, Column 26 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferGetConstMappedRange")]
-        public unsafe partial void* BufferGetConstMappedRange(ref Buffer buffer, nuint offset, nuint size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1438, Column 32 in webgpu.h")]
@@ -279,19 +234,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial BufferMapState BufferGetMapState(Buffer* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1438, Column 32 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferGetMapState")]
-        public partial BufferMapState BufferGetMapState(ref Buffer buffer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1439, Column 20 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferGetMappedRange")]
         public unsafe partial void* BufferGetMappedRange(Buffer* buffer, nuint offset, nuint size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1439, Column 20 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferGetMappedRange")]
-        public unsafe partial void* BufferGetMappedRange(ref Buffer buffer, nuint offset, nuint size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1440, Column 22 in webgpu.h")]
@@ -299,19 +244,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial ulong BufferGetSize(Buffer* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1440, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferGetSize")]
-        public partial ulong BufferGetSize(ref Buffer buffer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1441, Column 29 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferGetUsage")]
         public unsafe partial BufferUsage BufferGetUsage(Buffer* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1441, Column 29 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferGetUsage")]
-        public partial BufferUsage BufferGetUsage(ref Buffer buffer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
@@ -322,16 +257,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
         public unsafe partial void BufferMapAsync<T0>(Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public unsafe partial void BufferMapAsync(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
-        public partial void BufferMapAsync<T0>(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
@@ -367,11 +292,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1444, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferUnmap")]
         public unsafe partial void BufferUnmap(Buffer* buffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1444, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuBufferUnmap")]
-        public partial void BufferUnmap(ref Buffer buffer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1447, Column 18 in webgpu.h")]
@@ -449,59 +369,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void CommandEncoderClearBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong offset, ulong size);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderClearBuffer")]
-        public unsafe partial void CommandEncoderClearBuffer(CommandEncoder* commandEncoder, ref Buffer buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderClearBuffer")]
-        public unsafe partial void CommandEncoderClearBuffer(ref CommandEncoder commandEncoder, Buffer* buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1452, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderClearBuffer")]
-        public partial void CommandEncoderClearBuffer(ref CommandEncoder commandEncoder, ref Buffer buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
         public unsafe partial void CommandEncoderCopyBufferToBuffer(CommandEncoder* commandEncoder, Buffer* source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(CommandEncoder* commandEncoder, Buffer* source, ulong sourceOffset, ref Buffer destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(CommandEncoder* commandEncoder, ref Buffer source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(CommandEncoder* commandEncoder, ref Buffer source, ulong sourceOffset, ref Buffer destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(ref CommandEncoder commandEncoder, Buffer* source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(ref CommandEncoder commandEncoder, Buffer* source, ulong sourceOffset, ref Buffer destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public unsafe partial void CommandEncoderCopyBufferToBuffer(ref CommandEncoder commandEncoder, ref Buffer source, ulong sourceOffset, Buffer* destination, ulong destinationOffset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1453, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderCopyBufferToBuffer")]
-        public partial void CommandEncoderCopyBufferToBuffer(ref CommandEncoder commandEncoder, ref Buffer source, ulong sourceOffset, ref Buffer destination, ulong destinationOffset, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 18 in webgpu.h")]
@@ -799,11 +669,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void CommandEncoderPopDebugGroup(CommandEncoder* commandEncoder);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1459, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderPopDebugGroup")]
-        public partial void CommandEncoderPopDebugGroup(ref CommandEncoder commandEncoder);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1460, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderPushDebugGroup")]
         public unsafe partial void CommandEncoderPushDebugGroup(CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* groupLabel);
@@ -837,41 +702,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
         public unsafe partial void CommandEncoderResolveQuerySet(CommandEncoder* commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(CommandEncoder* commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, ref Buffer destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(CommandEncoder* commandEncoder, ref QuerySet querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(CommandEncoder* commandEncoder, ref QuerySet querySet, uint firstQuery, uint queryCount, ref Buffer destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(ref CommandEncoder commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(ref CommandEncoder commandEncoder, QuerySet* querySet, uint firstQuery, uint queryCount, ref Buffer destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public unsafe partial void CommandEncoderResolveQuerySet(ref CommandEncoder commandEncoder, ref QuerySet querySet, uint firstQuery, uint queryCount, Buffer* destination, ulong destinationOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderResolveQuerySet")]
-        public partial void CommandEncoderResolveQuerySet(ref CommandEncoder commandEncoder, ref QuerySet querySet, uint firstQuery, uint queryCount, ref Buffer destination, ulong destinationOffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1462, Column 18 in webgpu.h")]
@@ -909,39 +739,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void CommandEncoderWriteTimestamp(CommandEncoder* commandEncoder, QuerySet* querySet, uint queryIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderWriteTimestamp")]
-        public unsafe partial void CommandEncoderWriteTimestamp(CommandEncoder* commandEncoder, ref QuerySet querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderWriteTimestamp")]
-        public unsafe partial void CommandEncoderWriteTimestamp(ref CommandEncoder commandEncoder, QuerySet* querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1463, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuCommandEncoderWriteTimestamp")]
-        public partial void CommandEncoderWriteTimestamp(ref CommandEncoder commandEncoder, ref QuerySet querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePassEncoderBeginPipelineStatisticsQuery")]
         public unsafe partial void ComputePassEncoderBeginPipelineStatisticsQuery(ComputePassEncoder* computePassEncoder, QuerySet* querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderBeginPipelineStatisticsQuery")]
-        public unsafe partial void ComputePassEncoderBeginPipelineStatisticsQuery(ComputePassEncoder* computePassEncoder, ref QuerySet querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderBeginPipelineStatisticsQuery")]
-        public unsafe partial void ComputePassEncoderBeginPipelineStatisticsQuery(ref ComputePassEncoder computePassEncoder, QuerySet* querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1466, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderBeginPipelineStatisticsQuery")]
-        public partial void ComputePassEncoderBeginPipelineStatisticsQuery(ref ComputePassEncoder computePassEncoder, ref QuerySet querySet, uint queryIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1467, Column 18 in webgpu.h")]
@@ -949,29 +749,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void ComputePassEncoderDispatchWorkgroups(ComputePassEncoder* computePassEncoder, uint workgroupCountX, uint workgroupCountY, uint workgroupCountZ);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1467, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderDispatchWorkgroups")]
-        public partial void ComputePassEncoderDispatchWorkgroups(ref ComputePassEncoder computePassEncoder, uint workgroupCountX, uint workgroupCountY, uint workgroupCountZ);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePassEncoderDispatchWorkgroupsIndirect")]
         public unsafe partial void ComputePassEncoderDispatchWorkgroupsIndirect(ComputePassEncoder* computePassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderDispatchWorkgroupsIndirect")]
-        public unsafe partial void ComputePassEncoderDispatchWorkgroupsIndirect(ComputePassEncoder* computePassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderDispatchWorkgroupsIndirect")]
-        public unsafe partial void ComputePassEncoderDispatchWorkgroupsIndirect(ref ComputePassEncoder computePassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderDispatchWorkgroupsIndirect")]
-        public partial void ComputePassEncoderDispatchWorkgroupsIndirect(ref ComputePassEncoder computePassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1469, Column 18 in webgpu.h")]
@@ -979,19 +759,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void ComputePassEncoderEnd(ComputePassEncoder* computePassEncoder);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1469, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderEnd")]
-        public partial void ComputePassEncoderEnd(ref ComputePassEncoder computePassEncoder);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1470, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePassEncoderEndPipelineStatisticsQuery")]
         public unsafe partial void ComputePassEncoderEndPipelineStatisticsQuery(ComputePassEncoder* computePassEncoder);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1470, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderEndPipelineStatisticsQuery")]
-        public partial void ComputePassEncoderEndPipelineStatisticsQuery(ref ComputePassEncoder computePassEncoder);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1471, Column 18 in webgpu.h")]
@@ -1027,11 +797,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1472, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePassEncoderPopDebugGroup")]
         public unsafe partial void ComputePassEncoderPopDebugGroup(ComputePassEncoder* computePassEncoder);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1472, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderPopDebugGroup")]
-        public partial void ComputePassEncoderPopDebugGroup(ref ComputePassEncoder computePassEncoder);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1473, Column 18 in webgpu.h")]
@@ -1139,29 +904,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void ComputePassEncoderSetPipeline(ComputePassEncoder* computePassEncoder, ComputePipeline* pipeline);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderSetPipeline")]
-        public unsafe partial void ComputePassEncoderSetPipeline(ComputePassEncoder* computePassEncoder, ref ComputePipeline pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderSetPipeline")]
-        public unsafe partial void ComputePassEncoderSetPipeline(ref ComputePassEncoder computePassEncoder, ComputePipeline* pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1476, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePassEncoderSetPipeline")]
-        public partial void ComputePassEncoderSetPipeline(ref ComputePassEncoder computePassEncoder, ref ComputePipeline pipeline);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1479, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuComputePipelineGetBindGroupLayout")]
         public unsafe partial BindGroupLayout* ComputePipelineGetBindGroupLayout(ComputePipeline* computePipeline, uint groupIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1479, Column 33 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuComputePipelineGetBindGroupLayout")]
-        public unsafe partial BindGroupLayout* ComputePipelineGetBindGroupLayout(ref ComputePipeline computePipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1480, Column 18 in webgpu.h")]
@@ -1569,11 +1314,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void DeviceDestroy(Device* device);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1498, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceDestroy")]
-        public partial void DeviceDestroy(ref Device device);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceEnumerateFeatures")]
         public unsafe partial nuint DeviceEnumerateFeatures(Device* device, FeatureName* features);
@@ -1582,16 +1322,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceEnumerateFeatures")]
         public unsafe partial nuint DeviceEnumerateFeatures(Device* device, ref FeatureName features);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceEnumerateFeatures")]
-        public unsafe partial nuint DeviceEnumerateFeatures(ref Device device, FeatureName* features);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1499, Column 20 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceEnumerateFeatures")]
-        public partial nuint DeviceEnumerateFeatures(ref Device device, ref FeatureName features);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
@@ -1604,34 +1334,14 @@ namespace Silk.NET.WebGPU
         public unsafe partial Silk.NET.Core.Bool32 DeviceGetLimits(Device* device, ref SupportedLimits limits);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public unsafe partial Silk.NET.Core.Bool32 DeviceGetLimits(ref Device device, SupportedLimits* limits);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1500, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceGetLimits")]
-        public partial Silk.NET.Core.Bool32 DeviceGetLimits(ref Device device, ref SupportedLimits limits);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1501, Column 23 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceGetQueue")]
         public unsafe partial Queue* DeviceGetQueue(Device* device);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1501, Column 23 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceGetQueue")]
-        public unsafe partial Queue* DeviceGetQueue(ref Device device);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1502, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceHasFeature")]
         public unsafe partial Silk.NET.Core.Bool32 DeviceHasFeature(Device* device, FeatureName feature);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1502, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceHasFeature")]
-        public partial Silk.NET.Core.Bool32 DeviceHasFeature(ref Device device, FeatureName feature);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
@@ -1644,24 +1354,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope(ref Device device, PfnErrorCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
-        public partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1504, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePushErrorScope")]
         public unsafe partial void DevicePushErrorScope(Device* device, ErrorFilter filter);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1504, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePushErrorScope")]
-        public partial void DevicePushErrorScope(ref Device device, ErrorFilter filter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
@@ -1672,16 +1367,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
         public unsafe partial void DeviceSetDeviceLostCallback<T0>(Device* device, PfnDeviceLostCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
-        public unsafe partial void DeviceSetDeviceLostCallback(ref Device device, PfnDeviceLostCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
-        public partial void DeviceSetDeviceLostCallback<T0>(ref Device device, PfnDeviceLostCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
@@ -1724,16 +1409,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void DeviceSetUncapturedErrorCallback<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceSetUncapturedErrorCallback")]
-        public unsafe partial void DeviceSetUncapturedErrorCallback(ref Device device, PfnErrorCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDeviceSetUncapturedErrorCallback")]
-        public partial void DeviceSetUncapturedErrorCallback<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 25 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceCreateSurface")]
         public unsafe partial Surface* InstanceCreateSurface(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDescriptor* descriptor);
@@ -1757,11 +1432,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceProcessEvents")]
         public unsafe partial void InstanceProcessEvents(Instance* instance);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1511, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuInstanceProcessEvents")]
-        public partial void InstanceProcessEvents(ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
@@ -1844,29 +1514,14 @@ namespace Silk.NET.WebGPU
         public unsafe partial void QuerySetDestroy(QuerySet* querySet);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1518, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQuerySetDestroy")]
-        public partial void QuerySetDestroy(ref QuerySet querySet);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1519, Column 22 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQuerySetGetCount")]
         public unsafe partial uint QuerySetGetCount(QuerySet* querySet);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1519, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQuerySetGetCount")]
-        public partial uint QuerySetGetCount(ref QuerySet querySet);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1520, Column 27 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQuerySetGetType")]
         public unsafe partial QueryType QuerySetGetType(QuerySet* querySet);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 27 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQuerySetGetType")]
-        public partial QueryType QuerySetGetType(ref QuerySet querySet);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1521, Column 18 in webgpu.h")]
@@ -1909,16 +1564,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void QueueOnSubmittedWorkDone<T0>(Queue* queue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
-        public unsafe partial void QueueOnSubmittedWorkDone(ref Queue queue, PfnQueueWorkDoneCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
-        public partial void QueueOnSubmittedWorkDone<T0>(ref Queue queue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSetLabel")]
         public unsafe partial void QueueSetLabel(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
@@ -1957,16 +1602,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueSubmit")]
         public unsafe partial void QueueSubmit(Queue* queue, uint commandCount, ref CommandBuffer* commands);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, CommandBuffer** commands);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1526, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuQueueSubmit")]
-        public unsafe partial void QueueSubmit(ref Queue queue, uint commandCount, ref CommandBuffer* commands);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
@@ -2199,19 +1834,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderBundleEncoderDraw(RenderBundleEncoder* renderBundleEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1531, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDraw")]
-        public partial void RenderBundleEncoderDraw(ref RenderBundleEncoder renderBundleEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndexed")]
         public unsafe partial void RenderBundleEncoderDrawIndexed(RenderBundleEncoder* renderBundleEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1532, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndexed")]
-        public partial void RenderBundleEncoderDrawIndexed(ref RenderBundleEncoder renderBundleEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
@@ -2219,39 +1844,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderBundleEncoderDrawIndexedIndirect(RenderBundleEncoder* renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndexedIndirect")]
-        public unsafe partial void RenderBundleEncoderDrawIndexedIndirect(RenderBundleEncoder* renderBundleEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndexedIndirect")]
-        public unsafe partial void RenderBundleEncoderDrawIndexedIndirect(ref RenderBundleEncoder renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1533, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndexedIndirect")]
-        public partial void RenderBundleEncoderDrawIndexedIndirect(ref RenderBundleEncoder renderBundleEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndirect")]
         public unsafe partial void RenderBundleEncoderDrawIndirect(RenderBundleEncoder* renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndirect")]
-        public unsafe partial void RenderBundleEncoderDrawIndirect(RenderBundleEncoder* renderBundleEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndirect")]
-        public unsafe partial void RenderBundleEncoderDrawIndirect(ref RenderBundleEncoder renderBundleEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1534, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderDrawIndirect")]
-        public partial void RenderBundleEncoderDrawIndirect(ref RenderBundleEncoder renderBundleEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1535, Column 30 in webgpu.h")]
@@ -2307,11 +1902,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1537, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderBundleEncoderPopDebugGroup")]
         public unsafe partial void RenderBundleEncoderPopDebugGroup(RenderBundleEncoder* renderBundleEncoder);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1537, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderPopDebugGroup")]
-        public partial void RenderBundleEncoderPopDebugGroup(ref RenderBundleEncoder renderBundleEncoder);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1538, Column 18 in webgpu.h")]
@@ -2389,21 +1979,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderBundleEncoderSetIndexBuffer(RenderBundleEncoder* renderBundleEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetIndexBuffer")]
-        public unsafe partial void RenderBundleEncoderSetIndexBuffer(RenderBundleEncoder* renderBundleEncoder, ref Buffer buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetIndexBuffer")]
-        public unsafe partial void RenderBundleEncoderSetIndexBuffer(ref RenderBundleEncoder renderBundleEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1540, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetIndexBuffer")]
-        public partial void RenderBundleEncoderSetIndexBuffer(ref RenderBundleEncoder renderBundleEncoder, ref Buffer buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1541, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetLabel")]
         public unsafe partial void RenderBundleEncoderSetLabel(RenderBundleEncoder* renderBundleEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
@@ -2439,39 +2014,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderBundleEncoderSetPipeline(RenderBundleEncoder* renderBundleEncoder, RenderPipeline* pipeline);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetPipeline")]
-        public unsafe partial void RenderBundleEncoderSetPipeline(RenderBundleEncoder* renderBundleEncoder, ref RenderPipeline pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetPipeline")]
-        public unsafe partial void RenderBundleEncoderSetPipeline(ref RenderBundleEncoder renderBundleEncoder, RenderPipeline* pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1542, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetPipeline")]
-        public partial void RenderBundleEncoderSetPipeline(ref RenderBundleEncoder renderBundleEncoder, ref RenderPipeline pipeline);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetVertexBuffer")]
         public unsafe partial void RenderBundleEncoderSetVertexBuffer(RenderBundleEncoder* renderBundleEncoder, uint slot, Buffer* buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetVertexBuffer")]
-        public unsafe partial void RenderBundleEncoderSetVertexBuffer(RenderBundleEncoder* renderBundleEncoder, uint slot, ref Buffer buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetVertexBuffer")]
-        public unsafe partial void RenderBundleEncoderSetVertexBuffer(ref RenderBundleEncoder renderBundleEncoder, uint slot, Buffer* buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1543, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderBundleEncoderSetVertexBuffer")]
-        public partial void RenderBundleEncoderSetVertexBuffer(ref RenderBundleEncoder renderBundleEncoder, uint slot, ref Buffer buffer, ulong offset, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
@@ -2479,29 +2024,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderBeginOcclusionQuery(RenderPassEncoder* renderPassEncoder, uint queryIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1546, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderBeginOcclusionQuery")]
-        public partial void RenderPassEncoderBeginOcclusionQuery(ref RenderPassEncoder renderPassEncoder, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderBeginPipelineStatisticsQuery")]
         public unsafe partial void RenderPassEncoderBeginPipelineStatisticsQuery(RenderPassEncoder* renderPassEncoder, QuerySet* querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderBeginPipelineStatisticsQuery")]
-        public unsafe partial void RenderPassEncoderBeginPipelineStatisticsQuery(RenderPassEncoder* renderPassEncoder, ref QuerySet querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderBeginPipelineStatisticsQuery")]
-        public unsafe partial void RenderPassEncoderBeginPipelineStatisticsQuery(ref RenderPassEncoder renderPassEncoder, QuerySet* querySet, uint queryIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1547, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderBeginPipelineStatisticsQuery")]
-        public partial void RenderPassEncoderBeginPipelineStatisticsQuery(ref RenderPassEncoder renderPassEncoder, ref QuerySet querySet, uint queryIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
@@ -2509,19 +2034,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderDraw(RenderPassEncoder* renderPassEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1548, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDraw")]
-        public partial void RenderPassEncoderDraw(ref RenderPassEncoder renderPassEncoder, uint vertexCount, uint instanceCount, uint firstVertex, uint firstInstance);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1549, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndexed")]
         public unsafe partial void RenderPassEncoderDrawIndexed(RenderPassEncoder* renderPassEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1549, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndexed")]
-        public partial void RenderPassEncoderDrawIndexed(ref RenderPassEncoder renderPassEncoder, uint indexCount, uint instanceCount, uint firstIndex, int baseVertex, uint firstInstance);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
@@ -2529,39 +2044,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderDrawIndexedIndirect(RenderPassEncoder* renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndexedIndirect")]
-        public unsafe partial void RenderPassEncoderDrawIndexedIndirect(RenderPassEncoder* renderPassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndexedIndirect")]
-        public unsafe partial void RenderPassEncoderDrawIndexedIndirect(ref RenderPassEncoder renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndexedIndirect")]
-        public partial void RenderPassEncoderDrawIndexedIndirect(ref RenderPassEncoder renderPassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndirect")]
         public unsafe partial void RenderPassEncoderDrawIndirect(RenderPassEncoder* renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndirect")]
-        public unsafe partial void RenderPassEncoderDrawIndirect(RenderPassEncoder* renderPassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndirect")]
-        public unsafe partial void RenderPassEncoderDrawIndirect(ref RenderPassEncoder renderPassEncoder, Buffer* indirectBuffer, ulong indirectOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1551, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderDrawIndirect")]
-        public partial void RenderPassEncoderDrawIndirect(ref RenderPassEncoder renderPassEncoder, ref Buffer indirectBuffer, ulong indirectOffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1552, Column 18 in webgpu.h")]
@@ -2569,29 +2054,14 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderEnd(RenderPassEncoder* renderPassEncoder);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1552, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderEnd")]
-        public partial void RenderPassEncoderEnd(ref RenderPassEncoder renderPassEncoder);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1553, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderEndOcclusionQuery")]
         public unsafe partial void RenderPassEncoderEndOcclusionQuery(RenderPassEncoder* renderPassEncoder);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1553, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderEndOcclusionQuery")]
-        public partial void RenderPassEncoderEndOcclusionQuery(ref RenderPassEncoder renderPassEncoder);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1554, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderEndPipelineStatisticsQuery")]
         public unsafe partial void RenderPassEncoderEndPipelineStatisticsQuery(RenderPassEncoder* renderPassEncoder);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1554, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderEndPipelineStatisticsQuery")]
-        public partial void RenderPassEncoderEndPipelineStatisticsQuery(ref RenderPassEncoder renderPassEncoder);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
@@ -2602,16 +2072,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
         public unsafe partial void RenderPassEncoderExecuteBundles(RenderPassEncoder* renderPassEncoder, uint bundleCount, ref RenderBundle* bundles);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundleCount, RenderBundle** bundles);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1555, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderExecuteBundles")]
-        public unsafe partial void RenderPassEncoderExecuteBundles(ref RenderPassEncoder renderPassEncoder, uint bundleCount, ref RenderBundle* bundles);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1556, Column 18 in webgpu.h")]
@@ -2647,11 +2107,6 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1557, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderPopDebugGroup")]
         public unsafe partial void RenderPassEncoderPopDebugGroup(RenderPassEncoder* renderPassEncoder);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1557, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderPopDebugGroup")]
-        public partial void RenderPassEncoderPopDebugGroup(ref RenderPassEncoder renderPassEncoder);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1558, Column 18 in webgpu.h")]
@@ -2749,21 +2204,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderSetIndexBuffer(RenderPassEncoder* renderPassEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetIndexBuffer")]
-        public unsafe partial void RenderPassEncoderSetIndexBuffer(RenderPassEncoder* renderPassEncoder, ref Buffer buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetIndexBuffer")]
-        public unsafe partial void RenderPassEncoderSetIndexBuffer(ref RenderPassEncoder renderPassEncoder, Buffer* buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1561, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetIndexBuffer")]
-        public partial void RenderPassEncoderSetIndexBuffer(ref RenderPassEncoder renderPassEncoder, ref Buffer buffer, IndexFormat format, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1562, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetLabel")]
         public unsafe partial void RenderPassEncoderSetLabel(RenderPassEncoder* renderPassEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
@@ -2799,29 +2239,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderSetPipeline(RenderPassEncoder* renderPassEncoder, RenderPipeline* pipeline);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPipeline")]
-        public unsafe partial void RenderPassEncoderSetPipeline(RenderPassEncoder* renderPassEncoder, ref RenderPipeline pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPipeline")]
-        public unsafe partial void RenderPassEncoderSetPipeline(ref RenderPassEncoder renderPassEncoder, RenderPipeline* pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1563, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPipeline")]
-        public partial void RenderPassEncoderSetPipeline(ref RenderPassEncoder renderPassEncoder, ref RenderPipeline pipeline);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1564, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetScissorRect")]
         public unsafe partial void RenderPassEncoderSetScissorRect(RenderPassEncoder* renderPassEncoder, uint x, uint y, uint width, uint height);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1564, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetScissorRect")]
-        public partial void RenderPassEncoderSetScissorRect(ref RenderPassEncoder renderPassEncoder, uint x, uint y, uint width, uint height);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1565, Column 18 in webgpu.h")]
@@ -2829,29 +2249,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderSetStencilReference(RenderPassEncoder* renderPassEncoder, uint reference);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1565, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetStencilReference")]
-        public partial void RenderPassEncoderSetStencilReference(ref RenderPassEncoder renderPassEncoder, uint reference);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetVertexBuffer")]
         public unsafe partial void RenderPassEncoderSetVertexBuffer(RenderPassEncoder* renderPassEncoder, uint slot, Buffer* buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetVertexBuffer")]
-        public unsafe partial void RenderPassEncoderSetVertexBuffer(RenderPassEncoder* renderPassEncoder, uint slot, ref Buffer buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetVertexBuffer")]
-        public unsafe partial void RenderPassEncoderSetVertexBuffer(ref RenderPassEncoder renderPassEncoder, uint slot, Buffer* buffer, ulong offset, ulong size);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1566, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetVertexBuffer")]
-        public partial void RenderPassEncoderSetVertexBuffer(ref RenderPassEncoder renderPassEncoder, uint slot, ref Buffer buffer, ulong offset, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1567, Column 18 in webgpu.h")]
@@ -2859,19 +2259,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void RenderPassEncoderSetViewport(RenderPassEncoder* renderPassEncoder, float x, float y, float width, float height, float minDepth, float maxDepth);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1567, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetViewport")]
-        public partial void RenderPassEncoderSetViewport(ref RenderPassEncoder renderPassEncoder, float x, float y, float width, float height, float minDepth, float maxDepth);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1570, Column 33 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPipelineGetBindGroupLayout")]
         public unsafe partial BindGroupLayout* RenderPipelineGetBindGroupLayout(RenderPipeline* renderPipeline, uint groupIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1570, Column 33 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPipelineGetBindGroupLayout")]
-        public unsafe partial BindGroupLayout* RenderPipelineGetBindGroupLayout(ref RenderPipeline renderPipeline, uint groupIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1571, Column 18 in webgpu.h")]
@@ -2944,16 +2334,6 @@ namespace Silk.NET.WebGPU
         public unsafe partial void ShaderModuleGetCompilationInfo<T0>(ShaderModule* shaderModule, PfnCompilationInfoCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuShaderModuleGetCompilationInfo")]
-        public unsafe partial void ShaderModuleGetCompilationInfo(ref ShaderModule shaderModule, PfnCompilationInfoCallback callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuShaderModuleGetCompilationInfo")]
-        public partial void ShaderModuleGetCompilationInfo<T0>(ref ShaderModule shaderModule, PfnCompilationInfoCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuShaderModuleSetLabel")]
         public unsafe partial void ShaderModuleSetLabel(ShaderModule* shaderModule, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
@@ -2989,39 +2369,14 @@ namespace Silk.NET.WebGPU
         public unsafe partial TextureFormat SurfaceGetPreferredFormat(Surface* surface, Adapter* adapter);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSurfaceGetPreferredFormat")]
-        public unsafe partial TextureFormat SurfaceGetPreferredFormat(Surface* surface, ref Adapter adapter);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSurfaceGetPreferredFormat")]
-        public unsafe partial TextureFormat SurfaceGetPreferredFormat(ref Surface surface, Adapter* adapter);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1581, Column 31 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSurfaceGetPreferredFormat")]
-        public partial TextureFormat SurfaceGetPreferredFormat(ref Surface surface, ref Adapter adapter);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1584, Column 29 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSwapChainGetCurrentTextureView")]
         public unsafe partial TextureView* SwapChainGetCurrentTextureView(SwapChain* swapChain);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1584, Column 29 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSwapChainGetCurrentTextureView")]
-        public unsafe partial TextureView* SwapChainGetCurrentTextureView(ref SwapChain swapChain);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1585, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSwapChainPresent")]
         public unsafe partial void SwapChainPresent(SwapChain* swapChain);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1585, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSwapChainPresent")]
-        public partial void SwapChainPresent(ref SwapChain swapChain);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1588, Column 29 in webgpu.h")]
@@ -3049,19 +2404,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial void TextureDestroy(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1589, Column 18 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureDestroy")]
-        public partial void TextureDestroy(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1590, Column 22 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureGetDepthOrArrayLayers")]
         public unsafe partial uint TextureGetDepthOrArrayLayers(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1590, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetDepthOrArrayLayers")]
-        public partial uint TextureGetDepthOrArrayLayers(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1591, Column 34 in webgpu.h")]
@@ -3069,19 +2414,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial TextureDimension TextureGetDimension(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1591, Column 34 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetDimension")]
-        public partial TextureDimension TextureGetDimension(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1592, Column 31 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureGetFormat")]
         public unsafe partial TextureFormat TextureGetFormat(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1592, Column 31 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetFormat")]
-        public partial TextureFormat TextureGetFormat(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1593, Column 22 in webgpu.h")]
@@ -3089,19 +2424,9 @@ namespace Silk.NET.WebGPU
         public unsafe partial uint TextureGetHeight(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1593, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetHeight")]
-        public partial uint TextureGetHeight(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1594, Column 22 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureGetMipLevelCount")]
         public unsafe partial uint TextureGetMipLevelCount(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1594, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetMipLevelCount")]
-        public partial uint TextureGetMipLevelCount(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1595, Column 22 in webgpu.h")]
@@ -3109,29 +2434,14 @@ namespace Silk.NET.WebGPU
         public unsafe partial uint TextureGetSampleCount(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1595, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetSampleCount")]
-        public partial uint TextureGetSampleCount(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1596, Column 30 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureGetUsage")]
         public unsafe partial TextureUsage TextureGetUsage(Texture* texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1596, Column 30 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetUsage")]
-        public partial TextureUsage TextureGetUsage(ref Texture texture);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 22 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureGetWidth")]
         public unsafe partial uint TextureGetWidth(Texture* texture);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 22 in webgpu.h")]
-        [NativeApi(EntryPoint = "wgpuTextureGetWidth")]
-        public partial uint TextureGetWidth(ref Texture texture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1598, Column 18 in webgpu.h")]

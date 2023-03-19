@@ -25,38 +25,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 186, Column 6 in wgpu.h")]
-        public static unsafe void GenerateReport(this Wgpu thisApi, Span<Instance> instance, GlobalReport* report)
-        {
-            // SpanOverloader
-            thisApi.GenerateReport(ref instance.GetPinnableReference(), report);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 186, Column 6 in wgpu.h")]
-        public static unsafe void GenerateReport(this Wgpu thisApi, Span<Instance> instance, Span<GlobalReport> report)
-        {
-            // SpanOverloader
-            thisApi.GenerateReport(ref instance.GetPinnableReference(), ref report.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 188, Column 21 in wgpu.h")]
-        public static unsafe ulong QueueSubmitForIndex(this Wgpu thisApi, Span<Queue> queue, uint commandCount, CommandBuffer** commands)
-        {
-            // SpanOverloader
-            return thisApi.QueueSubmitForIndex(ref queue.GetPinnableReference(), commandCount, commands);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 188, Column 21 in wgpu.h")]
-        public static unsafe ulong QueueSubmitForIndex(this Wgpu thisApi, Span<Queue> queue, uint commandCount, ref CommandBuffer* commands)
-        {
-            // SpanOverloader
-            return thisApi.QueueSubmitForIndex(ref queue.GetPinnableReference(), commandCount, ref commands);
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 191, Column 6 in wgpu.h")]
         public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
         {
@@ -94,54 +62,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         {
             // SpanOverloader
             thisApi.SurfaceGetCapabilities(surface, adapter, ref capabilities.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Surface* surface, Span<Adapter> adapter, SurfaceCapabilities* capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(surface, ref adapter.GetPinnableReference(), capabilities);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Surface* surface, Span<Adapter> adapter, Span<SurfaceCapabilities> capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(surface, ref adapter.GetPinnableReference(), ref capabilities.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Span<Surface> surface, Adapter* adapter, SurfaceCapabilities* capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(ref surface.GetPinnableReference(), adapter, capabilities);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Span<Surface> surface, Adapter* adapter, Span<SurfaceCapabilities> capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(ref surface.GetPinnableReference(), adapter, ref capabilities.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Span<Surface> surface, Span<Adapter> adapter, SurfaceCapabilities* capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(ref surface.GetPinnableReference(), ref adapter.GetPinnableReference(), capabilities);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
-        public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Span<Surface> surface, Span<Adapter> adapter, Span<SurfaceCapabilities> capabilities)
-        {
-            // SpanOverloader
-            thisApi.SurfaceGetCapabilities(ref surface.GetPinnableReference(), ref adapter.GetPinnableReference(), ref capabilities.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
