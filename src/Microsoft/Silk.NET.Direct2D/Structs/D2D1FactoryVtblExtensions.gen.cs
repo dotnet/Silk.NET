@@ -584,34 +584,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, DrawingStateDescription*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int>)@this->LpVtbl[12])(@this, drawingStateDescription, textRenderingParamsPtr, drawingStateBlock);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-        {
-            fixed (ID2D1DrawingStateBlock** drawingStateBlockPtr = &drawingStateBlock)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, DrawingStateDescription*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int>)@this->LpVtbl[12])(@this, drawingStateDescription, textRenderingParamsPtr, drawingStateBlockPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -638,40 +611,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DrawingStateDescription* drawingStateDescriptionPtr = &drawingStateDescription)
-        {
-            fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, DrawingStateDescription*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int>)@this->LpVtbl[12])(@this, drawingStateDescriptionPtr, textRenderingParamsPtr, drawingStateBlock);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DrawingStateDescription* drawingStateDescriptionPtr = &drawingStateDescription)
-        {
-            fixed (IDWriteRenderingParams* textRenderingParamsPtr = &textRenderingParams)
-            {
-                fixed (ID2D1DrawingStateBlock** drawingStateBlockPtr = &drawingStateBlock)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, DrawingStateDescription*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int>)@this->LpVtbl[12])(@this, drawingStateDescriptionPtr, textRenderingParamsPtr, drawingStateBlockPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -719,67 +659,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmap* targetPtr = &target)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, IWICBitmap*, RenderTargetProperties*, ID2D1RenderTarget**, int>)@this->LpVtbl[13])(@this, targetPtr, renderTargetProperties, renderTarget);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmap* targetPtr = &target)
-        {
-            fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, IWICBitmap*, RenderTargetProperties*, ID2D1RenderTarget**, int>)@this->LpVtbl[13])(@this, targetPtr, renderTargetProperties, renderTargetPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmap* targetPtr = &target)
-        {
-            fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, IWICBitmap*, RenderTargetProperties*, ID2D1RenderTarget**, int>)@this->LpVtbl[13])(@this, targetPtr, renderTargetPropertiesPtr, renderTarget);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IWICBitmap* targetPtr = &target)
-        {
-            fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
-            {
-                fixed (ID2D1RenderTarget** renderTargetPtr = &renderTarget)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Factory*, IWICBitmap*, RenderTargetProperties*, ID2D1RenderTarget**, int>)@this->LpVtbl[13])(@this, targetPtr, renderTargetPropertiesPtr, renderTargetPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1404,31 +1284,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateDrawingStateBlock(drawingStateDescription, ref textRenderingParams.GetPinnableReference(), drawingStateBlock);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateDrawingStateBlock(drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateDrawingStateBlock(drawingStateDescription, ref textRenderingParams.GetPinnableReference(), ref drawingStateBlock);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1452,31 +1308,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), drawingStateBlock);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateDrawingStateBlock(in drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), ref drawingStateBlock);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1508,55 +1340,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, Span<IWICBitmap> target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), renderTargetProperties, renderTarget);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target, renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, Span<IWICBitmap> target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), renderTargetProperties, ref renderTarget);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, Span<IWICBitmap> target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), renderTarget);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, ref IWICBitmap target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, Span<IWICBitmap> target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), ref renderTarget);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
