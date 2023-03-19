@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLORMATRIX_ALPHA_MODE")]
     public enum ColormatrixAlphaMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Premultiplied\"")]
         [NativeName("Name", "D2D1_COLORMATRIX_ALPHA_MODE_PREMULTIPLIED")]
         ColormatrixAlphaModePremultiplied = 0x1,

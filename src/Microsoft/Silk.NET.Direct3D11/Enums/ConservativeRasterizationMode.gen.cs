@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_MODE")]
     public enum ConservativeRasterizationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Off\"")]
         [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_MODE_OFF")]
         ConservativeRasterizationModeOff = 0x0,

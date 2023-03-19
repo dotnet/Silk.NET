@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DVS_ADDRESSMODE_TYPE")]
     public enum VSAddressmodeType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Absolute\"")]
         [NativeName("Name", "D3DVS_ADDRMODE_ABSOLUTE")]
         VSAddrmodeAbsolute = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_DPICOMPENSATION_PROP")]
     public enum DpicompensationProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InterpolationMode\"")]
         [NativeName("Name", "D2D1_DPICOMPENSATION_PROP_INTERPOLATION_MODE")]
         DpicompensationPropInterpolationMode = 0x0,

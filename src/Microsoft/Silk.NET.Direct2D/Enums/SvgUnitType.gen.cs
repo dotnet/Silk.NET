@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SVG_UNIT_TYPE")]
     public enum SvgUnitType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"UserSpaceOnUse\"")]
         [NativeName("Name", "D2D1_SVG_UNIT_TYPE_USER_SPACE_ON_USE")]
         SvgUnitTypeUserSpaceOnUse = 0x0,

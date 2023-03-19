@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_joystick_L98_C9")]
     [NativeName("Name", "SDL_JoystickPowerLevel")]
     public enum JoystickPowerLevel : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "SDL_JOYSTICK_POWER_UNKNOWN")]
         JoystickPowerUnknown = unchecked((int) 0xFFFFFFFFFFFFFFFF),

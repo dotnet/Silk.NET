@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "D3DSCANLINEORDERING")]
     public enum Scanlineordering : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3DSCANLINEORDERING_UNKNOWN")]
         ScanlineorderingUnknown = 0x0,

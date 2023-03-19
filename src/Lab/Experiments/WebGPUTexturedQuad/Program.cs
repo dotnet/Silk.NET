@@ -201,7 +201,7 @@ public static unsafe class WebGPUTexturedQuad
             {
                 Format          = TextureFormat.Rgba8Unorm,
                 Dimension       = TextureViewDimension.TextureViewDimension2D,
-                Aspect          = TextureAspect.None,
+                Aspect          = TextureAspect.All,
                 MipLevelCount   = 1,
                 ArrayLayerCount = 1,
                 BaseArrayLayer  = 0,
@@ -227,7 +227,7 @@ public static unsafe class WebGPUTexturedQuad
                         var imageCopyTexture = new ImageCopyTexture
                         {
                             Texture  = _Texture,
-                            Aspect   = TextureAspect.None,
+                            Aspect   = TextureAspect.All,
                             MipLevel = 0,
                             Origin   = new Origin3D(0, (uint) i, 0)
                         };
@@ -381,7 +381,7 @@ public static unsafe class WebGPUTexturedQuad
                 {
                     SrcFactor = BlendFactor.SrcAlpha,
                     DstFactor = BlendFactor.OneMinusSrcAlpha,
-                    Operation = BlendOperation.None
+                    Operation = BlendOperation.Add
                 },
                 Alpha = new BlendComponent
                 {

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DirectStorage
 {
-    [Flags]
     [NativeName("Name", "DSTORAGE_GET_REQUEST_FLAGS")]
     public enum GetRequestFlags : uint
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Custom\"")]
         [NativeName("Name", "DSTORAGE_GET_REQUEST_FLAG_SELECT_CUSTOM")]
         GetRequestFlagSelectCustom = 0x1,

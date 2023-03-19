@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DSHADER_ADDRESSMODE_TYPE")]
     public enum ShaderAddressmodeType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Absolute\"")]
         [NativeName("Name", "D3DSHADER_ADDRMODE_ABSOLUTE")]
         ShaderAddrmodeAbsolute = 0x0,

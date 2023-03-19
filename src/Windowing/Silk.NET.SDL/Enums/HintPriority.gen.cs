@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_hints_L2394_C9")]
     [NativeName("Name", "SDL_HintPriority")]
     public enum HintPriority : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "SDL_HINT_DEFAULT")]
         HintDefault = 0x0,

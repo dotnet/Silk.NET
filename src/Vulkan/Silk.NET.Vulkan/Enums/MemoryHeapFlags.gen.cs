@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MultiInstanceBitKhr\"")]
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
         MemoryHeapMultiInstanceBitKhr = 2,
-        [Obsolete("Deprecated in favour of \"Reserved2BitKhr\"")]
-        [NativeName("Name", "VK_MEMORY_HEAP_RESERVED_2_BIT_KHR")]
-        MemoryHeapReserved2BitKhr = 4,
         [Obsolete("Deprecated in favour of \"MultiInstanceBit\"")]
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT")]
         MemoryHeapMultiInstanceBit = 2,
+        [Obsolete("Deprecated in favour of \"SeuSafeBit\"")]
+        [NativeName("Name", "VK_MEMORY_HEAP_SEU_SAFE_BIT")]
+        MemoryHeapSeuSafeBit = 4,
         [NativeName("Name", "VK_MEMORY_HEAP_DEVICE_LOCAL_BIT")]
         DeviceLocalBit = 1,
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
         MultiInstanceBitKhr = 2,
-        [NativeName("Name", "VK_MEMORY_HEAP_RESERVED_2_BIT_KHR")]
-        Reserved2BitKhr = 4,
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT")]
         MultiInstanceBit = 2,
+        [NativeName("Name", "VK_MEMORY_HEAP_SEU_SAFE_BIT")]
+        SeuSafeBit = 4,
     }
 }

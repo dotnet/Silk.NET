@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_FIGURE_BEGIN")]
     public enum FigureBegin : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Filled\"")]
         [NativeName("Name", "D2D1_FIGURE_BEGIN_FILLED")]
         FigureBeginFilled = 0x0,

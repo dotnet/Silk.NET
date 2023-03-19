@@ -36,10 +36,16 @@ namespace Silk.NET.OpenGL.Legacy
         PackLsbFirst = 0xD01,
         [NativeName("Name", "GL_PACK_ROW_LENGTH")]
         PackRowLength = 0xD02,
+        [NativeName("Name", "GL_PACK_ROW_LENGTH_NV")]
+        PackRowLengthNV = 0xD02,
         [NativeName("Name", "GL_PACK_SKIP_ROWS")]
         PackSkipRows = 0xD03,
+        [NativeName("Name", "GL_PACK_SKIP_ROWS_NV")]
+        PackSkipRowsNV = 0xD03,
         [NativeName("Name", "GL_PACK_SKIP_PIXELS")]
         PackSkipPixels = 0xD04,
+        [NativeName("Name", "GL_PACK_SKIP_PIXELS_NV")]
+        PackSkipPixelsNV = 0xD04,
         [NativeName("Name", "GL_PACK_ALIGNMENT")]
         PackAlignment = 0xD05,
         [NativeName("Name", "GL_PACK_SKIP_IMAGES")]

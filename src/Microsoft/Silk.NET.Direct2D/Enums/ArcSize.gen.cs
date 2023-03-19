@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_ARC_SIZE")]
     public enum ArcSize : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Small\"")]
         [NativeName("Name", "D2D1_ARC_SIZE_SMALL")]
         ArcSizeSmall = 0x0,

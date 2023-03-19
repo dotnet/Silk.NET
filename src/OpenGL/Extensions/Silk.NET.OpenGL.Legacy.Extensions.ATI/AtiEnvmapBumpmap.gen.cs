@@ -78,9 +78,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 
         public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname)
         {
-            // NonKhrReturnTypeOverloader
-            GetTexBumpParameter(pname, out int silkRet);
-            return silkRet;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetTexBumpParameter(pname, &ret);
+            return ret;
         }
 
         public AtiEnvmapBumpmap(INativeContext ctx)

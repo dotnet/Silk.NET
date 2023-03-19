@@ -23,51 +23,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaskIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void ColorMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
         [NativeApi(EntryPoint = "glDisableIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void DisableIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index);
 
@@ -87,22 +42,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetIntegerIndexedvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetIntegerIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);

@@ -24,11 +24,9 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoEncodeH264CapabilitiesExt,
             void* pNext = null,
             VideoEncodeH264CapabilityFlagsEXT? flags = null,
-            VideoEncodeH264InputModeFlagsEXT? inputModeFlags = null,
-            VideoEncodeH264OutputModeFlagsEXT? outputModeFlags = null,
-            byte? maxPPictureL0ReferenceCount = null,
-            byte? maxBPictureL0ReferenceCount = null,
-            byte? maxL1ReferenceCount = null,
+            uint? maxPPictureL0ReferenceCount = null,
+            uint? maxBPictureL0ReferenceCount = null,
+            uint? maxL1ReferenceCount = null,
             Bool32? motionVectorsOverPicBoundariesFlag = null,
             uint? maxBytesPerPicDenom = null,
             uint? maxBitsPerMbDenom = null,
@@ -49,16 +47,6 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
-            }
-
-            if (inputModeFlags is not null)
-            {
-                InputModeFlags = inputModeFlags.Value;
-            }
-
-            if (outputModeFlags is not null)
-            {
-                OutputModeFlags = outputModeFlags.Value;
             }
 
             if (maxPPictureL0ReferenceCount is not null)
@@ -118,30 +106,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public VideoEncodeH264CapabilityFlagsEXT Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Name", "inputModeFlags")]
-        public VideoEncodeH264InputModeFlagsEXT InputModeFlags;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Name", "outputModeFlags")]
-        public VideoEncodeH264OutputModeFlagsEXT OutputModeFlags;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxPPictureL0ReferenceCount")]
-        public byte MaxPPictureL0ReferenceCount;
+        public uint MaxPPictureL0ReferenceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxBPictureL0ReferenceCount")]
-        public byte MaxBPictureL0ReferenceCount;
+        public uint MaxBPictureL0ReferenceCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxL1ReferenceCount")]
-        public byte MaxL1ReferenceCount;
+        public uint MaxL1ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]

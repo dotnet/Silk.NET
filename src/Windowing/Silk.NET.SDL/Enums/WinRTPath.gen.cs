@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_system_L475_C9")]
     [NativeName("Name", "SDL_WinRT_Path")]
     public enum WinRTPath : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"InstalledLocation\"")]
         [NativeName("Name", "SDL_WINRT_PATH_INSTALLED_LOCATION")]
         WinrtPathInstalledLocation = 0x0,

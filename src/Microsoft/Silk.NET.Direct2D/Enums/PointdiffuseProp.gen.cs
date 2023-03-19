@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_POINTDIFFUSE_PROP")]
     public enum PointdiffuseProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"LightPosition\"")]
         [NativeName("Name", "D2D1_POINTDIFFUSE_PROP_LIGHT_POSITION")]
         PointdiffusePropLightPosition = 0x0,

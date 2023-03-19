@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
+    [Flags]
     [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.weight")]
     public enum DeviceSideAvcMotionEstimationWeight : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_QUARTER_INTEL")]
         Quarter = 0x10,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_THIRD_INTEL")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "tagGLOBALOPT_UNMARSHALING_POLICY_VALUES")]
     public enum TagGLOBALOPTUNMARSHALINGPOLICYVALUES : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "COMGLB_UNMARSHALING_POLICY_NORMAL")]
         ComglbUnmarshalingPolicyNormal = 0x0,

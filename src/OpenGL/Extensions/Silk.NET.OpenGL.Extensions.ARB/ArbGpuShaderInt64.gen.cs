@@ -188,6 +188,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glUniform4ui64vARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
 
+        public unsafe long GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader

@@ -41,6 +41,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             DeleteNames(identifier, (uint) names.Length, in names.GetPinnableReference());
         }
 
+        public unsafe uint GenName([Flow(FlowDirection.In)] AMD identifier)
+        {
+            const uint num = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GenNames(identifier, num, &ret);
+            return ret;
+        }
+
         public unsafe void GenNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
         {
             // ImplicitCountSpanOverloader

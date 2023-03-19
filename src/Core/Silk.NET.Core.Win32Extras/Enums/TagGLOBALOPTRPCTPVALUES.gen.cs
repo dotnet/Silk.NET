@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "tagGLOBALOPT_RPCTP_VALUES")]
     public enum TagGLOBALOPTRPCTPVALUES : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"DefaultPool\"")]
         [NativeName("Name", "COMGLB_RPC_THREADPOOL_SETTING_DEFAULT_POOL")]
         ComglbRpcThreadpoolSettingDefaultPool = 0x0,

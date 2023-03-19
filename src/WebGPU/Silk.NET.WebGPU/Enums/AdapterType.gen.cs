@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUAdapterType")]
     public enum AdapterType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUAdapterType_DiscreteGPU")]
         DiscreteGpu = 0x0,
         [NativeName("Name", "WGPUAdapterType_IntegratedGPU")]

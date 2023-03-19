@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION")]
     public enum DirectionalblurOptimization : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Speed\"")]
         [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_SPEED")]
         DirectionalblurOptimizationSpeed = 0x0,

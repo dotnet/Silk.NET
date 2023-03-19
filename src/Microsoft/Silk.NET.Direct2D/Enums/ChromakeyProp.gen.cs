@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_CHROMAKEY_PROP")]
     public enum ChromakeyProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Color\"")]
         [NativeName("Name", "D2D1_CHROMAKEY_PROP_COLOR")]
         ChromakeyPropColor = 0x0,

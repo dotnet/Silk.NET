@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_MORPHOLOGY_MODE")]
     public enum MorphologyMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Erode\"")]
         [NativeName("Name", "D2D1_MORPHOLOGY_MODE_ERODE")]
         MorphologyModeErode = 0x0,

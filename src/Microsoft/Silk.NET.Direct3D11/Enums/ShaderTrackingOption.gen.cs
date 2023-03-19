@@ -13,8 +13,6 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_SHADER_TRACKING_OPTION")]
     public enum ShaderTrackingOption : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Ignore\"")]
         [NativeName("Name", "D3D11_SHADER_TRACKING_OPTION_IGNORE")]
         ShaderTrackingOptionIgnore = 0x0,

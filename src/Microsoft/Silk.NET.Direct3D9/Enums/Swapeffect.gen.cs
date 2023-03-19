@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DSWAPEFFECT")]
     public enum Swapeffect : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Discard\"")]
         [NativeName("Name", "D3DSWAPEFFECT_DISCARD")]
         SwapeffectDiscard = 0x1,

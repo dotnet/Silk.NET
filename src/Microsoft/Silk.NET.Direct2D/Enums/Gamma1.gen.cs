@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_GAMMA1")]
     public enum Gamma1 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"G22\"")]
         [NativeName("Name", "D2D1_GAMMA1_G22")]
         Gamma1G22 = 0x0,

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "DWRITE_MEASURING_MODE")]
     public enum DwriteMeasuringMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Natural\"")]
         [NativeName("Name", "DWRITE_MEASURING_MODE_NATURAL")]
         DwriteMeasuringModeNatural = 0x0,

@@ -191,6 +191,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
+        public unsafe float GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // ImplicitCountSpanOverloader

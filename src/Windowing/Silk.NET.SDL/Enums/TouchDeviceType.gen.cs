@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_touch_L44_C9")]
     [NativeName("Name", "SDL_TouchDeviceType")]
     public enum TouchDeviceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_INVALID")]
         TouchDeviceInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),

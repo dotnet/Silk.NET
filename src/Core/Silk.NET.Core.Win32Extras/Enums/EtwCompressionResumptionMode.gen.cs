@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_evntrace_L863_C9")]
     [NativeName("Name", "ETW_COMPRESSION_RESUMPTION_MODE")]
     public enum EtwCompressionResumptionMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "EtwCompressionModeRestart")]
         EtwCompressionModeRestart = 0x0,
         [NativeName("Name", "EtwCompressionModeNoDisable")]

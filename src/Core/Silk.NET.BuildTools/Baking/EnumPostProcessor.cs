@@ -8,6 +8,7 @@ using Humanizer;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Baking;
 
@@ -17,6 +18,7 @@ public static class EnumPostProcessor
 
     public static void Process(Profile profile, BindTask task)
     {
+        AddFlagsAttribute(profile);
         StripCommonPrefix(profile, task);
         AddNoneFlags(profile);
     }
@@ -26,6 +28,7 @@ public static class EnumPostProcessor
         foreach (var @enum in from project in profile.Projects.Values
                  from @enum in project.Enums
                  where @enum.Attributes.Any(x => x.Name is "System.Flags" or "Flags") &&
+                       !@enum.HasDefaultValue() &&
                        @enum.Tokens.All(x => x.Name is not "None")
                  select @enum)
         {
@@ -139,6 +142,18 @@ public static class EnumPostProcessor
                     @enum.Tokens.AddRange(newEnums);
                 }
             }
+        }
+    }
+
+    private static void AddFlagsAttribute(Profile profile)
+    {
+        foreach (var @enum in from project in profile.Projects.Values
+                 from @enum in project.Enums
+                 where @enum.Attributes.All(x => x.Name is not "Flags" and not "System.Flags") &&
+                       @enum.IsProbablyABitmask()
+                 select @enum)
+        {
+            @enum.Attributes.Add(new Attribute { Name = "Flags" });
         }
     }
 }

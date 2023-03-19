@@ -142,12 +142,6 @@ namespace Silk.NET.Vulkan
         AndroidSurfaceCreateInfoKhr = 1000008000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR")]
         Win32SurfaceCreateInfoKhr = 1000009000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_NATIVE_BUFFER_ANDROID")]
-        NativeBufferAndroid = 1000010000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_SWAPCHAIN_IMAGE_CREATE_INFO_ANDROID")]
-        SwapchainImageCreateInfoAndroid = 1000010001,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENTATION_PROPERTIES_ANDROID")]
-        PhysicalDevicePresentationPropertiesAndroid = 1000010002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT")]
         DebugReportCallbackCreateInfoExt = 1000011000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_REPORT_CREATE_INFO_EXT")]
@@ -234,16 +228,12 @@ namespace Silk.NET.Vulkan
         VideoEncodeH264DpbSlotInfoExt = 1000038004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_EXT")]
         VideoEncodeH264NaluSliceInfoExt = 1000038005,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_EMIT_PICTURE_PARAMETERS_INFO_EXT")]
-        VideoEncodeH264EmitPictureParametersInfoExt = 1000038006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_EXT")]
         VideoEncodeH264ProfileInfoExt = 1000038007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH264RateControlInfoExt = 1000038008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_EXT")]
         VideoEncodeH264RateControlLayerInfoExt = 1000038009,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_REFERENCE_LISTS_INFO_EXT")]
-        VideoEncodeH264ReferenceListsInfoExt = 1000038010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_EXT")]
         VideoEncodeH265CapabilitiesExt = 1000039000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT")]
@@ -256,12 +246,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeH265DpbSlotInfoExt = 1000039004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_EXT")]
         VideoEncodeH265NaluSliceSegmentInfoExt = 1000039005,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_EMIT_PICTURE_PARAMETERS_INFO_EXT")]
-        VideoEncodeH265EmitPictureParametersInfoExt = 1000039006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_EXT")]
         VideoEncodeH265ProfileInfoExt = 1000039007,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_REFERENCE_LISTS_INFO_EXT")]
-        VideoEncodeH265ReferenceListsInfoExt = 1000039008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_EXT")]
         VideoEncodeH265RateControlInfoExt = 1000039009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_EXT")]
@@ -526,6 +512,8 @@ namespace Silk.NET.Vulkan
         PerformanceCounterKhr = 1000116005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_DESCRIPTION_KHR")]
         PerformanceCounterDescriptionKhr = 1000116006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PERFORMANCE_QUERY_RESERVATION_INFO_KHR")]
+        PerformanceQueryReservationInfoKhr = 1000116007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES_KHR")]
         PhysicalDevicePointClippingPropertiesKhr = 1000117000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO_KHR")]
@@ -1014,6 +1002,10 @@ namespace Silk.NET.Vulkan
         PipelineExecutableStatisticKhr = 1000269004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR")]
         PipelineExecutableInternalRepresentationKhr = 1000269005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR")]
+        MemoryMapInfoKhr = 1000271000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR")]
+        MemoryUnmapInfoKhr = 1000271001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT")]
         PhysicalDeviceShaderAtomicFloat2FeaturesExt = 1000273000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT")]
@@ -1114,12 +1106,14 @@ namespace Silk.NET.Vulkan
         VideoEncodeCapabilitiesKhr = 1000299003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_USAGE_INFO_KHR")]
         VideoEncodeUsageInfoKhr = 1000299004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR")]
+        QueryPoolVideoEncodeFeedbackCreateInfoKhr = 1000299005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV")]
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_RESERVED_QCOM")]
-        ReservedQCom = 1000309000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_QUERY_LOW_LATENCY_SUPPORT_NV")]
+        QueryLowLatencySupportNV = 1000310000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECT_CREATE_INFO_EXT")]
         ExportMetalObjectCreateInfoExt = 1000311000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECTS_INFO_EXT")]
@@ -1424,6 +1418,12 @@ namespace Silk.NET.Vulkan
         DeviceBufferMemoryRequirementsKhr = 1000413002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
         DeviceImageMemoryRequirementsKhr = 1000413003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM")]
+        PhysicalDeviceShaderCorePropertiesArm = 1000415000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT")]
+        PhysicalDeviceImageSlicedViewOf3DFeaturesExt = 1000418000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_SLICED_CREATE_INFO_EXT")]
+        ImageViewSlicedCreateInfoExt = 1000418001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_SET_HOST_MAPPING_FEATURES_VALVE")]
         PhysicalDeviceDescriptorSetHostMappingFeaturesValve = 1000420000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_SET_BINDING_REFERENCE_VALVE")]
@@ -1526,6 +1526,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceShaderCoreBuiltinsPropertiesArm = 1000497001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_LIBRARY_GROUP_HANDLES_FEATURES_EXT")]
         PhysicalDevicePipelineLibraryGroupHandlesFeaturesExt = 1000498000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_RENDER_AREAS_FEATURES_QCOM")]
+        PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCom = 1000510000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_RENDER_AREAS_RENDER_PASS_BEGIN_INFO_QCOM")]
+        MultiviewPerViewRenderAreasRenderPassBeginInfoQCom = 1000510001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]
@@ -1864,5 +1868,65 @@ namespace Silk.NET.Vulkan
         DeviceBufferMemoryRequirements = 1000413002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS")]
         DeviceImageMemoryRequirements = 1000413003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PRIVATE_VENDOR_INFO_RESERVED_OFFSET_0_NV")]
+        PrivateVendorInfoReservedOffset0NV = 1000051000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_REFRESH_OBJECT_LIST_KHR")]
+        RefreshObjectListKhr = 1000308000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_FENCE_SCI_SYNC_INFO_NV")]
+        ImportFenceSciSyncInfoNV = 1000373000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_FENCE_SCI_SYNC_INFO_NV")]
+        ExportFenceSciSyncInfoNV = 1000373001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_FENCE_GET_SCI_SYNC_INFO_NV")]
+        FenceGetSciSyncInfoNV = 1000373002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SCI_SYNC_ATTRIBUTES_INFO_NV")]
+        SciSyncAttributesInfoNV = 1000373003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_SCI_SYNC_INFO_NV")]
+        ImportSemaphoreSciSyncInfoNV = 1000373004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_SCI_SYNC_INFO_NV")]
+        ExportSemaphoreSciSyncInfoNV = 1000373005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_GET_SCI_SYNC_INFO_NV")]
+        SemaphoreGetSciSyncInfoNV = 1000373006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SCI_SYNC_FEATURES_NV")]
+        PhysicalDeviceExternalSciSyncFeaturesNV = 1000373007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_MEMORY_SCI_BUF_INFO_NV")]
+        ImportMemorySciBufInfoNV = 1000374000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_MEMORY_SCI_BUF_INFO_NV")]
+        ExportMemorySciBufInfoNV = 1000374001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_GET_SCI_BUF_INFO_NV")]
+        MemoryGetSciBufInfoNV = 1000374002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_SCI_BUF_PROPERTIES_NV")]
+        MemorySciBufPropertiesNV = 1000374003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_SCI_BUF_FEATURES_NV")]
+        PhysicalDeviceExternalMemorySciBufFeaturesNV = 1000374004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SCI_BUF_FEATURES_NV")]
+        PhysicalDeviceExternalSciBufFeaturesNV = 1000374004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_APPLICATION_PARAMETERS_EXT")]
+        ApplicationParametersExt = 1000435000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_SCI_SYNC_POOL_CREATE_INFO_NV")]
+        SemaphoreSciSyncPoolCreateInfoNV = 1000489000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_SCI_SYNC_CREATE_INFO_NV")]
+        SemaphoreSciSyncCreateInfoNV = 1000489001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SCI_SYNC_2_FEATURES_NV")]
+        PhysicalDeviceExternalSciSync2FeaturesNV = 1000489002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_SEMAPHORE_SCI_SYNC_POOL_RESERVATION_CREATE_INFO_NV")]
+        DeviceSemaphoreSciSyncPoolReservationCreateInfoNV = 1000489003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_FEATURES")]
+        PhysicalDeviceVulkanSC10Features = 1000298000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_PROPERTIES")]
+        PhysicalDeviceVulkanSC10Properties = 1000298001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_OBJECT_RESERVATION_CREATE_INFO")]
+        DeviceObjectReservationCreateInfo = 1000298002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_RESERVATION_CREATE_INFO")]
+        CommandPoolMemoryReservationCreateInfo = 1000298003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_CONSUMPTION")]
+        CommandPoolMemoryConsumption = 1000298004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_POOL_SIZE")]
+        PipelinePoolSize = 1000298005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_FAULT_DATA")]
+        FaultData = 1000298007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_FAULT_CALLBACK_INFO")]
+        FaultCallbackInfo = 1000298008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_OFFLINE_CREATE_INFO")]
+        PipelineOfflineCreateInfo = 1000298010,
     }
 }

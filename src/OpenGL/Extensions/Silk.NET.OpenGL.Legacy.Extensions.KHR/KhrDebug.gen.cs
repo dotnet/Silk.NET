@@ -33,22 +33,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -57,22 +45,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -81,22 +57,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -105,22 +69,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] byte* buf);
@@ -2649,19 +2601,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2673,19 +2613,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2697,19 +2625,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2721,19 +2637,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -7404,6 +7308,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             return ret;
         }
 
+        [System.Obsolete("Deprecated in version ")]
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
+        {
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
+        }
+
         public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
         {
             // NonKhrReturnTypeOverloader
@@ -7457,14 +7370,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);
-            return silkRet;
-        }
-
-        [System.Obsolete("Deprecated in version ")]
-        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
             return silkRet;
         }
 

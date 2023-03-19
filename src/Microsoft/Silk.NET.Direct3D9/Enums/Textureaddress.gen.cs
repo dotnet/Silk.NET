@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DTEXTUREADDRESS")]
     public enum Textureaddress : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Wrap\"")]
         [NativeName("Name", "D3DTADDRESS_WRAP")]
         TaddressWrap = 0x1,

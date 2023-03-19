@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_TINT_PROP")]
     public enum TintProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Color\"")]
         [NativeName("Name", "D2D1_TINT_PROP_COLOR")]
         TintPropColor = 0x0,

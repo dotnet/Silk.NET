@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags]
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0012")]
     public enum MIDLMIDLItfDxva2api000000000012 : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PictureParametersBufferType\"")]
         [NativeName("Name", "DXVA2_PictureParametersBufferType")]
         DXVA2PictureParametersBufferType = 0x0,

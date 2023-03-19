@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_YCBCR_PROP")]
     public enum YcbcrProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"ChromaSubsampling\"")]
         [NativeName("Name", "D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING")]
         YcbcrPropChromaSubsampling = 0x0,

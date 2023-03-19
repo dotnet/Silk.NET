@@ -37,7 +37,7 @@ namespace Silk.NET.Windowing
                     ", ",
                     Platforms.Select
                     (
-                        x => x.GetType().Name + (x.IsViewOnly ? " - view only" :
+                        x => GetName(x) + (x.IsViewOnly ? " - view only" :
                             !x.IsApplicable ? " - not applicable" : string.Empty)
                     )
                 );
@@ -47,6 +47,12 @@ namespace Silk.NET.Windowing
             }
         }
 
+#if NETSTANDARD2_1
+        private static string GetName(IWindowPlatform x) => x.Name;
+#else
+        private static string GetName(IWindowPlatform x) => x.GetType().Name;
+#endif
+        
         static Window()
         {
             try

@@ -24,7 +24,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public object Load(Stream stream)
         {
-            return VulkanSpecification.LoadFromXmlStream(stream);
+            Console.WriteLine("Loading raw Vulkan/OpenXR specification...");
+            var spec = VulkanSpecification.LoadFromXmlStream(stream);
+            Console.WriteLine("Specialising specification...");
+            spec.Specialise();
+            return spec;
         }
 
         /// <inheritdoc />
@@ -34,32 +38,36 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var structs = ConvertStructs(spec, task);
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
-                foreach (var (_, s) in structs)
+                foreach (var ((api, k), s) in structs)
                 {
-                    yield return new Struct
+                    if (api == feature || api is null && !structs.Keys.Any(x => x.Item1 is not null && x.Item2 == k))
                     {
-                        Attributes = s.Attributes,
-                        ExtensionName = "Core",
-                        Fields = s.Fields,
-                        Functions = s.Functions,
-                        Name = s.Name,
-                        NativeName = s.NativeName,
-                        ProfileName = feature,
-                        ProfileVersion = null
-                    };
+                        yield return new Struct
+                        {
+                            Attributes = s.Attributes,
+                            ExtensionName = "Core",
+                            Fields = s.Fields,
+                            Functions = s.Functions,
+                            Name = s.Name,
+                            NativeName = s.NativeName,
+                            ProfileName = feature,
+                            ProfileVersion = null
+                        };
+                    }
                 }
             }
         }
 
-        private Dictionary<string, Struct> ConvertStructs(VulkanSpecification spec, BindTask task)
+        private Dictionary<(string?, string), Struct> ConvertStructs(VulkanSpecification spec, BindTask task)
         {
             var prefix = task.FunctionPrefix;
-            var ret = new Dictionary<string, Struct>();
+            var ret = new Dictionary<(string?, string), Struct>();
+            var allApis = new List<string>();
 
             // Gets all aliases of a struct, no matter where in an alias chain we start
             // Note this could be simpler if we just assume we only need to check $VKALIASES, but this 
             // version is bombproof.
-            IReadOnlyList<Struct> GetAllAliasesFromName(string structName)
+            IReadOnlyList<Struct> GetAllAliasesFromName(string? api, string structName)
             {
                 var todo = new Queue<string>();
                 todo.Enqueue(structName);
@@ -68,8 +76,19 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 while (todo.Any())
                 {
                     structName = todo.Dequeue();
-                    if (!ret.TryGetValue(structName, out var s))
+                    if (!ret.TryGetValue((api, structName), out var s) &&
+                        !ret.TryGetValue((null, structName), out s))
                     {
+                        if (api is null)
+                        {
+                            // This is probably fine? Something to be said about crossing api boundaries though...
+                            // Basically if api is null that means we're trying to get aliases for a generic struct
+                            // included in all APIs, but the onus is on the user to only assume we're putting generic
+                            // things into that alised struct, not letting api-specific things leak out to the generic
+                            // struct we return here.
+                            return allApis.SelectMany(x => GetAllAliasesFromName(x, structName)).ToList();
+                        }
+
                         result[structName] = null;
                         continue;
                     }
@@ -111,7 +130,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             // Opposite way round lookup of what aliases exist for this key-struct
             // i.e. if VkB is an alias of VkA, and VkC is an alias of VkA, then aliases has [VkA]={VkB,VkC}
-            var aliases = new Dictionary<string, List<string>>();
+            var aliases = new Dictionary<(string?, string), List<string>>();
             // Holds any chain starts for chains we haven't seen yet (should rarely be needed).
             var chainExtensions = new List<(Struct, IReadOnlyList<string>)>();
             foreach (var s in spec.Structures)
@@ -119,10 +138,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 // Build aliases dictionary
                 if (!string.IsNullOrWhiteSpace(s.Alias))
                 {
-                    if (!aliases.TryGetValue(s.Alias, out var aList))
+                    if (!aliases.TryGetValue((s.Api, s.Alias), out var aList))
                     {
                         aList = new();
-                        aliases[s.Alias] = aList;
+                        aliases[(s.Api, s.Alias)] = aList;
                     }
 
                     aList.Add(s.Name);
@@ -161,7 +180,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         )
                         .ToList(),
                     Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
-                    NativeName = s.Name
+                    NativeName = s.Name,
+                    ProfileName = s.Api
                 };
 
                 // Find the STYpe field (and it's position, which is required for IChainable
@@ -202,13 +222,24 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 }
 
-                ret.Add(s.Name, @struct);
+                ret.Add((s.Api, s.Name), @struct);
             }
 
-            // Create Aliases
-            foreach (var (structName, aList) in aliases)
+            foreach (var ((api, k), v) in aliases)
             {
-                if (!ret.TryGetValue(structName, out var @struct))
+                if (api is not null && aliases.TryGetValue((null, k), out var vGeneric))
+                {
+                    aliases[(api, k)] = v.Concat(vGeneric).Distinct().ToList();
+                }
+            }
+            
+            allApis.AddRange(ret.Select(x => x.Key.Item1).Where(x => x is not null).Distinct());
+
+            // Create Aliases
+            foreach (var ((api, structName), aList) in aliases)
+            {
+                if (!ret.TryGetValue((api, structName), out var @struct) &&
+                    !ret.TryGetValue((null, structName), out @struct))
                 {
                     continue;
                 }
@@ -221,22 +252,31 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         new()
                         {
                             Name = "BuildToolsIntrinsic",
-                            Arguments = new() {"$VKALIASOF", @struct.NativeName}
+                            Arguments = new() {"$VKALIASOF", @struct.NativeName, @struct.ProfileName}
                         }
                     );
                     // Create a clone for the alias
-                    ret.Add(alias, aliasStruct);
+                    ret.Add((api, alias), aliasStruct);
                 }
 
                 // Now that we've finished cloning we can add the build intrinsic to the root struct.
-                @struct.Attributes.Add
-                (
-                    new()
-                    {
-                        Name = "BuildToolsIntrinsic",
-                        Arguments = new[] {"$VKALIASES"}.Concat(aList).ToList()
-                    }
-                );
+                var existingAttr = @struct.Attributes
+                    .FirstOrDefault(x => x.Name == "BuildToolsIntrinsic" && x.Arguments[0] == "$VKALIASES");
+                if (existingAttr is not null)
+                {
+                    existingAttr.Arguments.AddRange(aList);
+                }
+                else
+                {
+                    @struct.Attributes.Add
+                    (
+                        new()
+                        {
+                            Name = "BuildToolsIntrinsic",
+                            Arguments = new[] { "$VKALIASES" }.Concat(aList).ToList()
+                        }
+                    );
+                }
             }
 
             // Add chain extensions, we have to do this now to account for aliases, we
@@ -245,9 +285,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 foreach (var (@struct, chainNames) in chainExtensions)
                 {
                     // Get all the aliases of this struct (including this one)
-                    var allStructs = GetAllAliasesFromName(@struct.NativeName);
+                    var allStructs = GetAllAliasesFromName(@struct.ProfileName, @struct.NativeName);
                     // Get all the chains this struct extends (including their aliases)
-                    var chains = chainNames.SelectMany(n => GetAllAliasesFromName(n)).ToArray();
+                    var chains = chainNames.SelectMany(n => GetAllAliasesFromName(@struct.ProfileName, n)).ToArray();
 
                     // Add $VKEXTENDSCHAIN build tools intrinsic attribute to all versions of this struct
                     Attribute attribute = null;
@@ -299,7 +339,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 ret.Add
                 (
-                    h.Name, new Struct
+                    (h.Api, h.Name), new Struct
                     {
                         Fields = new List<Field>
                         {
@@ -315,7 +355,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 ret.Add
                 (
-                    u.Name, new Struct
+                    (u.Api, u.Name), new Struct
                     {
                         Attributes = new List<Attribute>
                         {
@@ -427,9 +467,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 foreach (var name in feature.CommandNames)
                 {
-                    if (functions.ContainsKey(name))
+                    if (functions.TryGetValue((feature.Api, name), out var function) ||
+                        functions.TryGetValue((null, name), out function))
                     {
-                        var function = functions[name];
                         yield return new Function
                         {
                             ExtensionName = "Core",
@@ -451,9 +491,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     foreach (var api in extension.Supported)
                     {
-                        if (functions.ContainsKey(name))
+                        if (functions.TryGetValue((api, name), out var function) ||
+                            functions.TryGetValue((null, name), out function))
                         {
-                            var function = functions[name];
                             yield return new Function
                             {
                                 ExtensionName = TrimName(extension.Name, task),
@@ -471,14 +511,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
-        private Dictionary<string, Function> ConvertFunctions(VulkanSpecification spec, BindTask task)
+        private Dictionary<(string?, string), Function> ConvertFunctions(VulkanSpecification spec, BindTask task)
         {
-            var ret = new Dictionary<string, Function>();
+            var ret = new Dictionary<(string?, string), Function>();
             foreach (var function in spec.Commands)
             {
                 ret.Add
                 (
-                    function.Name, new Function
+                    (function.Api, function.Name), new Function
                     {
                         Name = Naming.Translate
                             (NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix), task.FunctionPrefix),
@@ -509,29 +549,27 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            task.InjectTypeMap(spec.BaseTypes);
             var enums = ConvertEnums(spec, task);
-            var tm = new Dictionary<string, string>();
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
-                foreach (var (_, e) in enums)
+                foreach (var ((api, _), e) in enums)
                 {
-                    tm[e.NativeName] = e.Name.Replace("FlagBits", "Flags");
-                    yield return new Enum
+                    if (api == feature || api == null)
                     {
-                        Attributes = e.Attributes,
-                        ExtensionName = "Core",
-                        Name = e.Name.Replace("FlagBits", "Flags"),
-                        NativeName = e.NativeName.Replace("FlagBits", "Flags"),
-                        ProfileName = feature,
-                        ProfileVersion = null,
-                        Tokens = e.Tokens,
-                        EnumBaseType = e.EnumBaseType
-                    };
+                        yield return new Enum
+                        {
+                            Attributes = e.Attributes,
+                            ExtensionName = "Core",
+                            Name = e.Name.Replace("FlagBits", "Flags"),
+                            NativeName = e.NativeName.Replace("FlagBits", "Flags"),
+                            ProfileName = feature,
+                            ProfileVersion = null,
+                            Tokens = e.Tokens,
+                            EnumBaseType = e.EnumBaseType
+                        };
+                    }
                 }
             }
-
-            task.InjectTypeMap(tm);
         }
 
         /// <inheritdoc />
@@ -621,17 +659,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
 
-        private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, BindTask task)
+        private Dictionary<(string?, string), Enum> ConvertEnums(VulkanSpecification spec, BindTask task)
         {
-            var ret = new Dictionary<string, Enum>();
+            var ret = new Dictionary<(string?, string), Enum>();
             foreach (var e in spec.Enums)
             {
                 ret.Add
                 (
-                    e.Name,
+                    (e.Api, e.Name),
                     new Enum
                     {
-                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix), NativeName = e.Name,
+                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix),
+                        NativeName = e.Name,
                         Tokens = e.Values.Select
                             (
                                 x => new Token
@@ -659,13 +698,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 );
             }
 
-            task.InjectTypeMap
-            (
-                spec.Typedefs.Where
-                        (typedef => typedef.Type == "VkFlags" && !ret.ContainsKey(typedef.Requires ?? "__SilkNetNull"))
-                    .ToDictionary(typedef => typedef.Name, typedef => typedef.Type)
-            );
-
             return ret;
         }
 
@@ -675,6 +707,83 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             var trimmed = token.StartsWith(@enum) ? token.Substring(@enum.Length) : token;
             return Digits.Contains(trimmed[0]) ? token : trimmed;
+        }
+
+        public IEnumerable<ConverterTypemap> ReadTypedefs(object obj, BindTask task)
+        {
+            var spec = (VulkanSpecification) obj;
+            foreach (var api in spec.Enums.Select(x => x.Api).Distinct())
+            {
+                yield return new ConverterTypemap
+                (
+                    spec.Enums
+                        .Where(x => x.Api == api && x.Name.Contains("FlagBits"))
+                        .ToDictionary
+                        (
+                            x => x.Name,
+                            x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
+                                .Replace("FlagBits", "Flags")
+                        ),
+                    api
+                );
+                
+                // No idea why this is needed but I broke everything in that for some reason all struct members
+                // containing flag enums just became uint again (VkFlags). This shouldn't be needed, but oh well it
+                // works for now.
+                yield return new ConverterTypemap
+                (
+                    spec.Enums
+                        .Where(x => x.Api == api || x.Api is null)
+                        .ToDictionary
+                        (
+                            x => x.Name.Replace("FlagBits", "Flags"),
+                            x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
+                                .Replace("FlagBits", "Flags")
+                        ),
+                    api
+                );
+
+                yield return new ConverterTypemap
+                (
+                    spec.Typedefs
+                        .Where(x => x.Api == api && spec.Enums.All(y => y.Name.Replace("FlagBits", "Flags") != x.Name))
+                        .ToDictionary(x => x.Name, x => x.Type),
+                    api
+                );
+                
+                // Shouldn't be needed?!?!?!!? Wtaf??!?!!
+                yield return new ConverterTypemap
+                (
+                    spec.Handles
+                        .Where(x => x.Api == api || x.Api is null)
+                        .ToDictionary
+                        (
+                            x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
+                        ),
+                    api
+                );
+                yield return new ConverterTypemap
+                (
+                    spec.Structures
+                        .Where(x => x.Api == api || x.Api is null)
+                        .ToDictionary
+                        (
+                            x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
+                        ),
+                    api
+                );
+                yield return new ConverterTypemap
+                (
+                    spec.Unions
+                        .Where(x => x.Api == api || x.Api is null)
+                        .ToDictionary
+                        (
+                            x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
+                        ),
+                    api
+                );
+            }
+            yield return new ConverterTypemap(spec.BaseTypes, null);
         }
     }
 }

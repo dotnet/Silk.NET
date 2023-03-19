@@ -196,17 +196,18 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             return ret;
         }
 
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInteger64(pname, &ret);
+            return ret;
+        }
+
         public unsafe uint GenQueries([Flow(FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenQueries(n, out uint silkRet);
-            return silkRet;
-        }
-
-        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger64(pname, out long silkRet);
             return silkRet;
         }
 

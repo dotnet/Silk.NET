@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP")]
     public enum TemperatureandtintProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Temperature\"")]
         [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_TEMPERATURE")]
         TemperatureandtintPropTemperature = 0x0,

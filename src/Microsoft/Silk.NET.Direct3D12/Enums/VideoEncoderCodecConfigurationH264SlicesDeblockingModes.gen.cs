@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_SLICES_DEBLOCKING_MODES")]
     public enum VideoEncoderCodecConfigurationH264SlicesDeblockingModes : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Mode0AllLumaChromaSliceBlockEdgesAlwaysFiltered\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_SLICES_DEBLOCKING_MODE_0_ALL_LUMA_CHROMA_SLICE_BLOCK_EDGES_ALWAYS_FILTERED")]
         VideoEncoderCodecConfigurationH264SlicesDeblockingMode0AllLumaChromaSliceBlockEdgesAlwaysFiltered = 0x0,

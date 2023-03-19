@@ -25,9 +25,10 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             VideoEncodeCapabilityFlagsKHR? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlModes = null,
-            byte? rateControlLayerCount = null,
-            byte? qualityLevelCount = null,
-            Extent2D? inputImageDataFillAlignment = null
+            uint? maxRateControlLayers = null,
+            uint? maxQualityLevels = null,
+            Extent2D? inputImageDataFillAlignment = null,
+            VideoEncodeFeedbackFlagsKHR? supportedEncodeFeedbackFlags = null
         ) : this()
         {
             if (sType is not null)
@@ -50,19 +51,24 @@ namespace Silk.NET.Vulkan
                 RateControlModes = rateControlModes.Value;
             }
 
-            if (rateControlLayerCount is not null)
+            if (maxRateControlLayers is not null)
             {
-                RateControlLayerCount = rateControlLayerCount.Value;
+                MaxRateControlLayers = maxRateControlLayers.Value;
             }
 
-            if (qualityLevelCount is not null)
+            if (maxQualityLevels is not null)
             {
-                QualityLevelCount = qualityLevelCount.Value;
+                MaxQualityLevels = maxQualityLevels.Value;
             }
 
             if (inputImageDataFillAlignment is not null)
             {
                 InputImageDataFillAlignment = inputImageDataFillAlignment.Value;
+            }
+
+            if (supportedEncodeFeedbackFlags is not null)
+            {
+                SupportedEncodeFeedbackFlags = supportedEncodeFeedbackFlags.Value;
             }
         }
 
@@ -87,20 +93,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "rateControlModes")]
         public VideoEncodeRateControlModeFlagsKHR RateControlModes;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "rateControlLayerCount")]
-        public byte RateControlLayerCount;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxRateControlLayers")]
+        public uint MaxRateControlLayers;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "qualityLevelCount")]
-        public byte QualityLevelCount;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxQualityLevels")]
+        public uint MaxQualityLevels;
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "inputImageDataFillAlignment")]
         public Extent2D InputImageDataFillAlignment;
+/// <summary></summary>
+        [NativeName("Type", "VkVideoEncodeFeedbackFlagsKHR")]
+        [NativeName("Type.Name", "VkVideoEncodeFeedbackFlagsKHR")]
+        [NativeName("Name", "supportedEncodeFeedbackFlags")]
+        public VideoEncodeFeedbackFlagsKHR SupportedEncodeFeedbackFlags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

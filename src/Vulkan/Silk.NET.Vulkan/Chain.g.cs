@@ -6901,10 +6901,21 @@ public abstract unsafe partial class Chain
 }
 
 /// <summary>
+/// Represents a 1 element long structure chain.
+/// </summary>
+public interface IChain<TChain> : IDisposable, IReadOnlyList<IChainable>
+{
+    /// <summary>
+    /// The first structure in the structure chain.
+    /// </summary>
+    TChain Head { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
-public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
+public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>, IChain<TChain>
     where TChain : unmanaged, IChainable
 {
     /// <summary>
@@ -7232,11 +7243,22 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
 }
 
 /// <summary>
+/// Represents a 2 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1> : IChain<TChain>
+{
+    /// <summary>
+    /// Structure no. 2 in the structure chain.
+    /// </summary>
+    T1 Item1 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
 /// <typeparam name="T1">Type of Item 1.</typeparam>
-public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T1>>
+public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T1>>, IChain<TChain, T1>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
 {
@@ -7708,12 +7730,23 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
 }
 
 /// <summary>
+/// Represents a 3 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2> : IChain<TChain, T1>
+{
+    /// <summary>
+    /// Structure no. 3 in the structure chain.
+    /// </summary>
+    T2 Item2 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
 /// <typeparam name="T1">Type of Item 1.</typeparam>
 /// <typeparam name="T2">Type of Item 2.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChain, T1, T2>>
+public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChain, T1, T2>>, IChain<TChain, T1, T2>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -8251,13 +8284,24 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
 }
 
 /// <summary>
+/// Represents a 4 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3> : IChain<TChain, T1, T2>
+{
+    /// <summary>
+    /// Structure no. 4 in the structure chain.
+    /// </summary>
+    T3 Item3 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
 /// <typeparam name="T1">Type of Item 1.</typeparam>
 /// <typeparam name="T2">Type of Item 2.</typeparam>
 /// <typeparam name="T3">Type of Item 3.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<TChain, T1, T2, T3>>
+public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<TChain, T1, T2, T3>>, IChain<TChain, T1, T2, T3>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -8861,6 +8905,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
 }
 
 /// <summary>
+/// Represents a 5 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4> : IChain<TChain, T1, T2, T3>
+{
+    /// <summary>
+    /// Structure no. 5 in the structure chain.
+    /// </summary>
+    T4 Item4 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -8868,7 +8923,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
 /// <typeparam name="T2">Type of Item 2.</typeparam>
 /// <typeparam name="T3">Type of Item 3.</typeparam>
 /// <typeparam name="T4">Type of Item 4.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4>>, IChain<TChain, T1, T2, T3, T4>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -9538,6 +9593,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
 }
 
 /// <summary>
+/// Represents a 6 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5> : IChain<TChain, T1, T2, T3, T4>
+{
+    /// <summary>
+    /// Structure no. 6 in the structure chain.
+    /// </summary>
+    T5 Item5 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -9546,7 +9612,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
 /// <typeparam name="T3">Type of Item 3.</typeparam>
 /// <typeparam name="T4">Type of Item 4.</typeparam>
 /// <typeparam name="T5">Type of Item 5.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5>>, IChain<TChain, T1, T2, T3, T4, T5>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -10282,6 +10348,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
 }
 
 /// <summary>
+/// Represents a 7 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6> : IChain<TChain, T1, T2, T3, T4, T5>
+{
+    /// <summary>
+    /// Structure no. 7 in the structure chain.
+    /// </summary>
+    T6 Item6 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -10291,7 +10368,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
 /// <typeparam name="T4">Type of Item 4.</typeparam>
 /// <typeparam name="T5">Type of Item 5.</typeparam>
 /// <typeparam name="T6">Type of Item 6.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6>>, IChain<TChain, T1, T2, T3, T4, T5, T6>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -11093,6 +11170,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
 }
 
 /// <summary>
+/// Represents a 8 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IChain<TChain, T1, T2, T3, T4, T5, T6>
+{
+    /// <summary>
+    /// Structure no. 8 in the structure chain.
+    /// </summary>
+    T7 Item7 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -11103,7 +11191,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
 /// <typeparam name="T5">Type of Item 5.</typeparam>
 /// <typeparam name="T6">Type of Item 6.</typeparam>
 /// <typeparam name="T7">Type of Item 7.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -11971,6 +12059,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
 }
 
 /// <summary>
+/// Represents a 9 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7>
+{
+    /// <summary>
+    /// Structure no. 9 in the structure chain.
+    /// </summary>
+    T8 Item8 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -11982,7 +12081,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
 /// <typeparam name="T6">Type of Item 6.</typeparam>
 /// <typeparam name="T7">Type of Item 7.</typeparam>
 /// <typeparam name="T8">Type of Item 8.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -12916,6 +13015,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
 }
 
 /// <summary>
+/// Represents a 10 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>
+{
+    /// <summary>
+    /// Structure no. 10 in the structure chain.
+    /// </summary>
+    T9 Item9 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -12928,7 +13038,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
 /// <typeparam name="T7">Type of Item 7.</typeparam>
 /// <typeparam name="T8">Type of Item 8.</typeparam>
 /// <typeparam name="T9">Type of Item 9.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -13928,6 +14038,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
 }
 
 /// <summary>
+/// Represents a 11 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>
+{
+    /// <summary>
+    /// Structure no. 11 in the structure chain.
+    /// </summary>
+    T10 Item10 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -13941,7 +14062,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
 /// <typeparam name="T8">Type of Item 8.</typeparam>
 /// <typeparam name="T9">Type of Item 9.</typeparam>
 /// <typeparam name="T10">Type of Item 10.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -15007,6 +15128,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 }
 
 /// <summary>
+/// Represents a 12 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>
+{
+    /// <summary>
+    /// Structure no. 12 in the structure chain.
+    /// </summary>
+    T11 Item11 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -15021,7 +15153,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T9">Type of Item 9.</typeparam>
 /// <typeparam name="T10">Type of Item 10.</typeparam>
 /// <typeparam name="T11">Type of Item 11.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -16153,6 +16285,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 }
 
 /// <summary>
+/// Represents a 13 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>
+{
+    /// <summary>
+    /// Structure no. 13 in the structure chain.
+    /// </summary>
+    T12 Item12 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -16168,7 +16311,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T10">Type of Item 10.</typeparam>
 /// <typeparam name="T11">Type of Item 11.</typeparam>
 /// <typeparam name="T12">Type of Item 12.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -17366,6 +17509,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 }
 
 /// <summary>
+/// Represents a 14 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
+{
+    /// <summary>
+    /// Structure no. 14 in the structure chain.
+    /// </summary>
+    T13 Item13 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -17382,7 +17536,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T11">Type of Item 11.</typeparam>
 /// <typeparam name="T12">Type of Item 12.</typeparam>
 /// <typeparam name="T13">Type of Item 13.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -18646,6 +18800,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 }
 
 /// <summary>
+/// Represents a 15 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>
+{
+    /// <summary>
+    /// Structure no. 15 in the structure chain.
+    /// </summary>
+    T14 Item14 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -18663,7 +18828,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T12">Type of Item 12.</typeparam>
 /// <typeparam name="T13">Type of Item 13.</typeparam>
 /// <typeparam name="T14">Type of Item 14.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable
@@ -19993,6 +20158,17 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 }
 
 /// <summary>
+/// Represents a 16 element long structure chain.
+/// </summary>
+public interface IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>
+{
+    /// <summary>
+    /// Structure no. 16 in the structure chain.
+    /// </summary>
+    T15 Item15 { get; }
+}
+
+/// <summary>
 /// A <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
@@ -20011,7 +20187,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T13">Type of Item 13.</typeparam>
 /// <typeparam name="T14">Type of Item 14.</typeparam>
 /// <typeparam name="T15">Type of Item 15.</typeparam>
-public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>>
+public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>>, IChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>
     where TChain : unmanaged, IChainable
     where T1 : unmanaged,  IChainable
     where T2 : unmanaged,  IChainable

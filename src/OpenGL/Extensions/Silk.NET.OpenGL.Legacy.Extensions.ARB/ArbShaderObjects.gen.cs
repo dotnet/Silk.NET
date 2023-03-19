@@ -365,35 +365,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glUseProgramObjectARB", Convention = CallingConvention.Winapi)]
         public partial void UseProgramObject([Flow(FlowDirection.In)] uint programObj);
@@ -737,31 +719,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_COPY_FLAGS")]
     public enum CopyFlags : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NoOverwrite\"")]
         [NativeName("Name", "D3D11_COPY_NO_OVERWRITE")]
         CopyNoOverwrite = 0x1,

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "BufferStorageMask")]
     public enum BufferStorageMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_DYNAMIC_STORAGE_BIT")]
         DynamicStorageBit = 0x100,
         [NativeName("Name", "GL_DYNAMIC_STORAGE_BIT_EXT")]

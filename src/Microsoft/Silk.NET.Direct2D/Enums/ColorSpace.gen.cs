@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_COLOR_SPACE")]
     public enum ColorSpace : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Custom\"")]
         [NativeName("Name", "D2D1_COLOR_SPACE_CUSTOM")]
         ColorSpaceCustom = 0x0,

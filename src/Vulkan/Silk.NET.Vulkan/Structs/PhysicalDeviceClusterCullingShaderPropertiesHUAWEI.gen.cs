@@ -23,7 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PhysicalDeviceClusterCullingShaderPropertiesHuawei,
             void* pNext = null,
-            uint? maxOutputClusterCount = null
+            uint? maxOutputClusterCount = null,
+            ulong? indirectBufferOffsetAlignment = null
         ) : this()
         {
             if (sType is not null)
@@ -39,6 +40,11 @@ namespace Silk.NET.Vulkan
             if (maxOutputClusterCount is not null)
             {
                 MaxOutputClusterCount = maxOutputClusterCount.Value;
+            }
+
+            if (indirectBufferOffsetAlignment is not null)
+            {
+                IndirectBufferOffsetAlignment = indirectBufferOffsetAlignment.Value;
             }
         }
 
@@ -67,6 +73,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxOutputClusterCount")]
         public uint MaxOutputClusterCount;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "indirectBufferOffsetAlignment")]
+        public ulong IndirectBufferOffsetAlignment;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

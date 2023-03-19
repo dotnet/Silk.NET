@@ -160,19 +160,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void ProgramUniformMatrix2(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void ProgramUniformMatrix2x3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void ProgramUniformMatrix2x3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
@@ -184,19 +172,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void ProgramUniformMatrix2x4(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void ProgramUniformMatrix3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void ProgramUniformMatrix3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
@@ -208,19 +184,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void ProgramUniformMatrix3x2(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void ProgramUniformMatrix3x4(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void ProgramUniformMatrix3x4(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
@@ -232,31 +196,13 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void ProgramUniformMatrix4(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void ProgramUniformMatrix4x2(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void ProgramUniformMatrix4x2(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
         public static unsafe void ProgramUniformMatrix4x3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void ProgramUniformMatrix4x3(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());

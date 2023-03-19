@@ -57,9 +57,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateSubsampledBitExt\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
         ImageCreateSubsampledBitExt = 16384,
-        [Obsolete("Deprecated in favour of \"CreateReserved19BitExt\"")]
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_19_BIT_EXT")]
-        ImageCreateReserved19BitExt = 524288,
         [Obsolete("Deprecated in favour of \"CreateDescriptorBufferCaptureReplayBitExt\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
         ImageCreateDescriptorBufferCaptureReplayBitExt = 65536,
@@ -121,8 +118,6 @@ namespace Silk.NET.Vulkan
         CreateAliasBitKhr = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
         CreateSubsampledBitExt = 16384,
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_19_BIT_EXT")]
-        CreateReserved19BitExt = 524288,
         [NativeName("Name", "VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
         CreateDescriptorBufferCaptureReplayBitExt = 65536,
         [NativeName("Name", "VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_BORDER_MODE")]
     public enum BorderMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Soft\"")]
         [NativeName("Name", "D2D1_BORDER_MODE_SOFT")]
         BorderModeSoft = 0x0,

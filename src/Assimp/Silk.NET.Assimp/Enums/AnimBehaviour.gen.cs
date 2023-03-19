@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiAnimBehaviour")]
     public enum AnimBehaviour : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Default\"")]
         [NativeName("Name", "aiAnimBehaviour_DEFAULT")]
         AnimBehaviourDefault = 0x0,

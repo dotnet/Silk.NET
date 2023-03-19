@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -52,5 +53,14 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all constants in the specification.</returns>
         IEnumerable<Constant> ReadConstants(object obj, BindTask task);
+
+        /// <summary>
+        /// Reads the typedefs from the specification.
+        /// </summary>
+        /// <param name="obj">The specification to read from.</param>
+        /// <param name="task">The options to use while reading.</param>
+        /// <returns>A list of all the typedefs in the specification.</returns>
+        IEnumerable<ConverterTypemap> ReadTypedefs(object obj, BindTask task)
+            => Enumerable.Empty<ConverterTypemap>();
     }
 }

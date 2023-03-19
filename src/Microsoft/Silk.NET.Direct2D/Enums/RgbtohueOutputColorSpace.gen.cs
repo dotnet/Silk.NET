@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE")]
     public enum RgbtohueOutputColorSpace : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"HueSaturationValue\"")]
         [NativeName("Name", "D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_VALUE")]
         RgbtohueOutputColorSpaceHueSaturationValue = 0x0,

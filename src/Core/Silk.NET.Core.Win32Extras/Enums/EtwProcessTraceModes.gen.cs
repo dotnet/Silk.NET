@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "ETW_PROCESS_TRACE_MODES")]
     public enum EtwProcessTraceModes : int
     {

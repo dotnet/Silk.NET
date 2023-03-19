@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_TRI_STATE")]
     public enum TriState : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D12_TRI_STATE_UNKNOWN")]
         TriStateUnknown = unchecked((int) 0xFFFFFFFFFFFFFFFF),

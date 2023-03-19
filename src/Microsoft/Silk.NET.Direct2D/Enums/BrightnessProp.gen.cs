@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_BRIGHTNESS_PROP")]
     public enum BrightnessProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"WhitePoint\"")]
         [NativeName("Name", "D2D1_BRIGHTNESS_PROP_WHITE_POINT")]
         BrightnessPropWhitePoint = 0x0,

@@ -2799,6 +2799,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
             return ret;
         }
 
+        public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName)
+        {
+            // ReturnTypeOverloader
+            uint ret = default;
+            GetPerfQueryIdByName(queryName, &ret);
+            return ret;
+        }
+
         public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Count(Parameter = "queryNameLength"), Flow(FlowDirection.Out)] Span<byte> queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask)
         {
             // ImplicitCountSpanOverloader
@@ -4223,13 +4231,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
         {
             // NonKhrReturnTypeOverloader
             GetPerfQueryIdByName(out queryName, out uint silkRet);
-            return silkRet;
-        }
-
-        public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName)
-        {
-            // NonKhrReturnTypeOverloader
-            GetPerfQueryIdByName(queryName, out uint silkRet);
             return silkRet;
         }
 

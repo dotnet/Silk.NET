@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_messagebox_L73_C9")]
     [NativeName("Name", "SDL_MessageBoxColorType")]
     public enum MessageBoxColorType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Background\"")]
         [NativeName("Name", "SDL_MESSAGEBOX_COLOR_BACKGROUND")]
         MessageboxColorBackground = 0x0,

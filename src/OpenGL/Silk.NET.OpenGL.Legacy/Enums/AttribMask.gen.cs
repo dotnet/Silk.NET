@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "AttribMask")]
     public enum AttribMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [System.Obsolete]
         [NativeName("Name", "GL_CURRENT_BIT")]
         CurrentBit = 0x1,

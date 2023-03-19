@@ -33,22 +33,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -57,22 +45,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -81,22 +57,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -105,22 +69,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsertARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] byte* buf);
@@ -2504,19 +2456,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2528,19 +2468,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2552,19 +2480,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -2576,19 +2492,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] ARB severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);

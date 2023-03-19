@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Assimp
 {
-    [Flags]
     [NativeName("Name", "aiLightSourceType")]
     public enum LightSourceType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Undefined\"")]
         [NativeName("Name", "aiLightSource_UNDEFINED")]
         LightSourceUndefined = 0x0,

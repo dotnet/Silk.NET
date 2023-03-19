@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_HISTOGRAM_PROP")]
     public enum HistogramProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NumBins\"")]
         [NativeName("Name", "D2D1_HISTOGRAM_PROP_NUM_BINS")]
         HistogramPropNumBins = 0x0,

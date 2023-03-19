@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DCOMPOSERECTSOP")]
     public enum Composerectsop : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Copy\"")]
         [NativeName("Name", "D3DCOMPOSERECTS_COPY")]
         ComposerectsCopy = 0x1,

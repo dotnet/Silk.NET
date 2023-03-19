@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ImageCreateInfo? imageCreateInfo = null,
             FormatFeatureFlags? requiredFormatFeatures = null,
-            uint? flags = null,
+            ImageFormatConstraintsFlagsFUCHSIA? flags = null,
             ulong? sysmemPixelFormat = null,
             uint? colorSpaceCount = null,
             SysmemColorSpaceFUCHSIA* pColorSpaces = null
@@ -96,7 +96,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkImageFormatConstraintsFlagsFUCHSIA")]
         [NativeName("Type.Name", "VkImageFormatConstraintsFlagsFUCHSIA")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public ImageFormatConstraintsFlagsFUCHSIA Flags;
 /// <summary></summary>
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

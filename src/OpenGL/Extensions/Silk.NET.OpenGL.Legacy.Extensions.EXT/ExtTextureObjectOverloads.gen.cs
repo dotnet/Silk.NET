@@ -34,24 +34,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, textures, out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), residences);
-        }
-
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
         public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
         {
             // SpanOverloader
@@ -65,24 +47,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         }
 
         public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, textures, out residences.GetPinnableReference());
-        }
-
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-        {
-            // SpanOverloader
-            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), residences);
-        }
-
-        public static unsafe bool AreTexturesResident(this ExtTextureObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
         {
             // SpanOverloader
             return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());

@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
+    [Flags]
     [NativeName("Name", "VkQueueGlobalPriorityEXT")]
     public enum QueueGlobalPriorityEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"LowKhr\"")]
         [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
         QueueGlobalPriorityLowKhr = 128,

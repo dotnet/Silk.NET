@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L68_C9")]
     [NativeName("Name", "SDL_BitmapOrder")]
     public enum BitmapOrder : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "SDL_BITMAPORDER_NONE")]
         BitmaporderNone = 0x0,
         [NativeName("Name", "SDL_BITMAPORDER_4321")]

@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE")]
     public enum VideoProcessorNominalRange : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"RangeUndefined\"")]
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_UNDEFINED")]
         VideoProcessorNominalRangeUndefined = 0x0,

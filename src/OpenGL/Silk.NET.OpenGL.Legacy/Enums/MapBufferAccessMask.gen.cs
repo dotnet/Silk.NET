@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "MapBufferAccessMask")]
     public enum MapBufferAccessMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [Obsolete("Deprecated in favour of \"ReadBit\"")]
         [NativeName("Name", "GL_MAP_READ_BIT")]
         MapReadBit = 0x1,

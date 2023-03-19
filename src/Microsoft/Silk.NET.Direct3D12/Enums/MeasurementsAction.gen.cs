@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_MEASUREMENTS_ACTION")]
     public enum MeasurementsAction : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"KeepAll\"")]
         [NativeName("Name", "D3D12_MEASUREMENTS_ACTION_KEEP_ALL")]
         MeasurementsActionKeepAll = 0x0,

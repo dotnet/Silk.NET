@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glTexPageCommitmentEXT", Convention = CallingConvention.Winapi)]
         public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool commit);
 
-        [NativeApi(EntryPoint = "glTexPageCommitmentEXT", Convention = CallingConvention.Winapi)]
-        public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean commit);
-
         public ExtSparseTexture(INativeContext ctx)
             : base(ctx)
         {

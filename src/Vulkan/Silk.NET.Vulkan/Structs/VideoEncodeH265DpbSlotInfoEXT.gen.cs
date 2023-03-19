@@ -17,13 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH265DpbSlotInfoEXT")]
-    public unsafe partial struct VideoEncodeH265DpbSlotInfoEXT : IChainable
+    public unsafe partial struct VideoEncodeH265DpbSlotInfoEXT : IExtendsChain<VideoReferenceSlotInfoKHR>
     {
         public VideoEncodeH265DpbSlotInfoEXT
         (
             StructureType? sType = StructureType.VideoEncodeH265DpbSlotInfoExt,
             void* pNext = null,
-            sbyte? slotIndex = null,
             Video.StdVideoEncodeH265ReferenceInfo* pStdReferenceInfo = null
         ) : this()
         {
@@ -35,11 +34,6 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
-            }
-
-            if (slotIndex is not null)
-            {
-                SlotIndex = slotIndex.Value;
             }
 
             if (pStdReferenceInfo is not null)
@@ -58,11 +52,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "slotIndex")]
-        public sbyte SlotIndex;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH265ReferenceInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH265ReferenceInfo")]

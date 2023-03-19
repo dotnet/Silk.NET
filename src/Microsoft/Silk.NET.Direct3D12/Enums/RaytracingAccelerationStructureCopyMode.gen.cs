@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE")]
     public enum RaytracingAccelerationStructureCopyMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Clone\"")]
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE_CLONE")]
         RaytracingAccelerationStructureCopyModeClone = 0x0,

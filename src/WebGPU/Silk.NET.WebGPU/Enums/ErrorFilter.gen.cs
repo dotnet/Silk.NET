@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUErrorFilter")]
     public enum ErrorFilter : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUErrorFilter_Validation")]
         Validation = 0x0,
         [NativeName("Name", "WGPUErrorFilter_OutOfMemory")]

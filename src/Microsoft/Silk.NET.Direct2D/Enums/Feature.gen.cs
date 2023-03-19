@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_FEATURE")]
     public enum Feature : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Doubles\"")]
         [NativeName("Name", "D2D1_FEATURE_DOUBLES")]
         FeatureDoubles = 0x0,

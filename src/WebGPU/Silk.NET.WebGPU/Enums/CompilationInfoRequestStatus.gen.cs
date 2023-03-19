@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUCompilationInfoRequestStatus")]
     public enum CompilationInfoRequestStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUCompilationInfoRequestStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUCompilationInfoRequestStatus_Error")]

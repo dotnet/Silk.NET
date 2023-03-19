@@ -41,12 +41,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] in bool pointer);
 
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] Boolean* pointer);
-
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
-        public partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] in Boolean pointer);
-
         [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -93,9 +87,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
-            return silkRet;
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
         }
 
         public ExtVertexArray(INativeContext ctx)

@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageCompressionFixedRateFlagsEXT")]
     public enum ImageCompressionFixedRateFlagsEXT : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"RateNoneExt\"")]
         [NativeName("Name", "VK_IMAGE_COMPRESSION_FIXED_RATE_NONE_EXT")]
         ImageCompressionFixedRateNoneExt = 0,

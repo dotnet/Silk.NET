@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D9
 {
-    [Flags]
     [NativeName("Name", "_D3DLIGHTTYPE")]
     public enum Lighttype : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Point\"")]
         [NativeName("Name", "D3DLIGHT_POINT")]
         LightPoint = 0x1,

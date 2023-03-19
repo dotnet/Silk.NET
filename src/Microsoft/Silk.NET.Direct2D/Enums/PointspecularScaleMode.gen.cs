@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_POINTSPECULAR_SCALE_MODE")]
     public enum PointspecularScaleMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_POINTSPECULAR_SCALE_MODE_NEAREST_NEIGHBOR")]
         PointspecularScaleModeNearestNeighbor = 0x0,

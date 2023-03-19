@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags]
     [NativeName("Name", "DXGI_SWAP_EFFECT")]
     public enum SwapEffect : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Discard\"")]
         [NativeName("Name", "DXGI_SWAP_EFFECT_DISCARD")]
         SwapEffectDiscard = 0x0,

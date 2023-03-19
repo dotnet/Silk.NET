@@ -15,14 +15,9 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Reserved0BitKhr\"")]
-        [NativeName("Name", "VK_RENDER_PASS_CREATE_RESERVED_0_BIT_KHR")]
-        RenderPassCreateReserved0BitKhr = 1,
         [Obsolete("Deprecated in favour of \"TransformBitQCom\"")]
         [NativeName("Name", "VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
         RenderPassCreateTransformBitQCom = 2,
-        [NativeName("Name", "VK_RENDER_PASS_CREATE_RESERVED_0_BIT_KHR")]
-        Reserved0BitKhr = 1,
         [NativeName("Name", "VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
         TransformBitQCom = 2,
     }

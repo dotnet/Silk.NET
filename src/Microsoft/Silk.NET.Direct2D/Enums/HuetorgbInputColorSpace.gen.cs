@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_HUETORGB_INPUT_COLOR_SPACE")]
     public enum HuetorgbInputColorSpace : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"HueSaturationValue\"")]
         [NativeName("Name", "D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_VALUE")]
         HuetorgbInputColorSpaceHueSaturationValue = 0x0,

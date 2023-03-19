@@ -1,1 +1,3 @@
 #nullable enable
+Silk.NET.SilkTouch.MarshalContext.EntryPoint.get -> string!
+Silk.NET.SilkTouch.MarshalContext.MarshalContext(Microsoft.CodeAnalysis.Compilation! compilation, Microsoft.CodeAnalysis.IMethodSymbol! methodSymbol, string! entryPoint) -> void

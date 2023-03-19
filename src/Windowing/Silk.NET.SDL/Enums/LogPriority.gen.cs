@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_log_L102_C9")]
     [NativeName("Name", "SDL_LogPriority")]
     public enum LogPriority : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "SDL_LOG_PRIORITY_VERBOSE")]
         LogPriorityVerbose = 0x1,
         [NativeName("Name", "SDL_LOG_PRIORITY_DEBUG")]

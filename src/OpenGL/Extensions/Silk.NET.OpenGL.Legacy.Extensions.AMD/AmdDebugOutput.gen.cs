@@ -33,22 +33,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsertAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] byte* buf);
@@ -362,19 +350,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             DebugMessageEnable(category, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageEnable(category, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageEnable(category, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageEnable(category, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);

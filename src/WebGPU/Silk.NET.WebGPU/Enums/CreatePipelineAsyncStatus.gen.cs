@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUCreatePipelineAsyncStatus")]
     public enum CreatePipelineAsyncStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Success")]
         Success = 0x0,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_ValidationError")]

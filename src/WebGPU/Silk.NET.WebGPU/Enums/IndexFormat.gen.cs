@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUIndexFormat")]
     public enum IndexFormat : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUIndexFormat_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUIndexFormat_Uint16")]

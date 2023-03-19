@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGLES
 {
+    [Flags]
     [NativeName("Name", "BufferBitQCOM")]
     public enum BufferBitQCOM : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_COLOR_BUFFER_BIT0_QCOM")]
         ColorBufferBit0QCom = 0x1,
         [NativeName("Name", "GL_COLOR_BUFFER_BIT1_QCOM")]

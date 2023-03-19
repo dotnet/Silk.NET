@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_GEOMETRY_RELATION")]
     public enum GeometryRelation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D2D1_GEOMETRY_RELATION_UNKNOWN")]
         GeometryRelationUnknown = 0x0,

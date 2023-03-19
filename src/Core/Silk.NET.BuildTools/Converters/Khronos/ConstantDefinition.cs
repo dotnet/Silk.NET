@@ -27,6 +27,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The comment of the constant.
         /// </summary>
         public string Comment { get; }
+        
+        /// <summary>
+        /// The specific API this constant is applicable to.
+        /// </summary>
+        public string? Api { get; }
 
         /// <summary>
         /// Creates a new constant definition.
@@ -34,12 +39,13 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of the constant.</param>
         /// <param name="value">The value of the constant.</param>
         /// <param name="comment">The comment of the constant.</param>
-        public ConstantDefinition(string name, string value, string comment)
+        public ConstantDefinition(string name, string value, string comment, string api)
         {
             Name = name;
             Value = value.Replace("ULL", "ul").Replace("LL", "l");
             Type = ParseType(value);
             Comment = comment;
+            Api = api;
         }
 
         /// <summary>
@@ -77,14 +83,15 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias")?.Value)
                 );
 
-                return new ConstantDefinition(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
+                return new ConstantDefinition(xe.Attribute("name")?.Value, ret.Value, ret.Comment, ret.Api);
             }
 
             var name = xe.GetNameAttribute();
             var value = xe.Attribute("value")?.Value;
             var comment = xe.Attribute("comment")?.Value;
+            var api = xe.Attribute("api")?.Value;
 
-            return new ConstantDefinition(name, value, comment);
+            return new ConstantDefinition(name, value, comment, api);
         }
     }
 

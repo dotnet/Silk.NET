@@ -156,30 +156,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
@@ -202,30 +178,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogramARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] double* v);
@@ -324,30 +276,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
@@ -370,30 +298,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmaxARB", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* values);
@@ -860,30 +764,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
         public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
@@ -908,28 +788,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public unsafe double GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query)
         {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
@@ -938,16 +803,43 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
         }
 
+        public unsafe double GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // ImplicitCountSpanOverloader
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
         }
 
+        public unsafe double GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // ImplicitCountSpanOverloader
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe double GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
@@ -1028,30 +920,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
         public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
@@ -1076,34 +944,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public unsafe float GetnPixelMap([Flow(FlowDirection.In)] ARB map)
         {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnPixelMap(map, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
         {
             // ImplicitCountSpanOverloader
             GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe float GetnPixelMap([Flow(FlowDirection.In)] PixelMap map)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnPixelMap(map, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
@@ -1493,6 +1355,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
         }
 
+        public unsafe float GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // ImplicitCountSpanOverloader
@@ -1695,34 +1566,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -1745,34 +1588,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
@@ -1835,34 +1650,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -1885,34 +1672,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);

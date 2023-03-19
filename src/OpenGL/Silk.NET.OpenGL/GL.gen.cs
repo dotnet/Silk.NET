@@ -693,30 +693,6 @@ namespace Silk.NET.OpenGL
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
@@ -739,30 +715,6 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] double* v);
@@ -861,30 +813,6 @@ namespace Silk.NET.OpenGL
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
@@ -907,30 +835,6 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] float* values);
@@ -1692,13 +1596,7 @@ namespace Silk.NET.OpenGL
         public partial void TextureStorage2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorage2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTextureStorage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TextureStorage2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTextureStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorage2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureStorage3D", Convention = CallingConvention.Winapi)]
         public partial void TextureStorage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
@@ -1710,13 +1608,7 @@ namespace Silk.NET.OpenGL
         public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTextureStorage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTextureStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
@@ -1806,13 +1698,7 @@ namespace Silk.NET.OpenGL
         public partial void VertexArrayAttribFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
         [NativeApi(EntryPoint = "glVertexArrayAttribFormat", Convention = CallingConvention.Winapi)]
-        public partial void VertexArrayAttribFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
-
-        [NativeApi(EntryPoint = "glVertexArrayAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexArrayAttribFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
-
-        [NativeApi(EntryPoint = "glVertexArrayAttribFormat", Convention = CallingConvention.Winapi)]
-        public partial void VertexArrayAttribFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
         [NativeApi(EntryPoint = "glVertexArrayAttribIFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexArrayAttribIFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint relativeoffset);
@@ -2379,22 +2265,10 @@ namespace Silk.NET.OpenGL
         public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -2403,22 +2277,10 @@ namespace Silk.NET.OpenGL
         public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -2427,22 +2289,10 @@ namespace Silk.NET.OpenGL
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -2451,22 +2301,10 @@ namespace Silk.NET.OpenGL
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
-
-        [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] byte* buf);
@@ -5400,49 +5238,25 @@ namespace Silk.NET.OpenGL
         public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureView", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
@@ -5463,13 +5277,7 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
         [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
-
-        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
-
-        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
         [NativeApi(EntryPoint = "glVertexAttribIFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint relativeoffset);
@@ -5497,18 +5305,6 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
-
-        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] GLEnum access, [Flow(FlowDirection.In)] GLEnum format);
-
-        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] GLEnum access, [Flow(FlowDirection.In)] InternalFormat format);
-
-        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] GLEnum format);
-
-        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
 
         [NativeApi(EntryPoint = "glDrawArraysInstancedBaseInstance", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
@@ -6038,23 +5834,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6062,23 +5846,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6086,23 +5858,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6110,23 +5870,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6134,23 +5882,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6158,23 +5894,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6182,23 +5906,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6206,23 +5918,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -6230,23 +5930,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glReleaseShaderCompiler", Convention = CallingConvention.Winapi)]
         public partial void ReleaseShaderCompiler();
@@ -6818,23 +6506,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
         [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
@@ -6842,23 +6518,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
         [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
@@ -6866,23 +6530,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
         [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
@@ -6890,35 +6542,17 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
         [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
         [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformSubroutines([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
@@ -7413,13 +7047,7 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP1ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP1ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
@@ -7428,34 +7056,16 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP1uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
         [NativeApi(EntryPoint = "glVertexAttribP2ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP2ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP2ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
@@ -7464,34 +7074,16 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP2uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
         [NativeApi(EntryPoint = "glVertexAttribP3ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP3ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP3ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
@@ -7500,34 +7092,16 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP3uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
         [NativeApi(EntryPoint = "glVertexAttribP4ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4ui", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4ui", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
@@ -7536,22 +7110,10 @@ namespace Silk.NET.OpenGL
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
-
-        [NativeApi(EntryPoint = "glVertexAttribP4uiv", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] in uint value);
 
         [NativeApi(EntryPoint = "glVertexP2ui", Convention = CallingConvention.Winapi)]
         public partial void VertexP2([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint value);
@@ -7908,49 +7470,25 @@ namespace Silk.NET.OpenGL
         public partial void TexImage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage2DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
         public partial void TexImage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexImage3DMultisample", Convention = CallingConvention.Winapi)]
-        public partial void TexImage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glWaitSync", Convention = CallingConvention.Winapi)]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
@@ -8246,51 +7784,6 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
-
-        [NativeApi(EntryPoint = "glColorMaski", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
-
         [NativeApi(EntryPoint = "glDeleteFramebuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers);
 
@@ -8508,22 +8001,10 @@ namespace Silk.NET.OpenGL
         public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
-        public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
         public partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleani_v", Convention = CallingConvention.Winapi)]
-        public partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetFragDataLocation", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
@@ -9100,23 +8581,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x3fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2x4fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -9124,23 +8593,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x2fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3x4fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -9148,23 +8605,11 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x2fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4x3fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glAttachShader", Convention = CallingConvention.Winapi)]
         public partial void AttachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader);
@@ -9862,35 +9307,17 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glUniformMatrix2fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix2fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix3fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix3fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
         [NativeApi(EntryPoint = "glUniformMatrix4fv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4fv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
-
-        [NativeApi(EntryPoint = "glUniformMatrix4fv", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glUseProgram", Convention = CallingConvention.Winapi)]
         public partial void UseProgram([Flow(FlowDirection.In)] uint program);
@@ -10085,13 +9512,7 @@ namespace Silk.NET.OpenGL
         public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribPointer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glVertexAttribPointer", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glVertexAttribPointer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glBeginQuery", Convention = CallingConvention.Winapi)]
         public partial void BeginQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint id);
@@ -10657,9 +10078,6 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glSampleCoverage", Convention = CallingConvention.Winapi)]
         public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        [NativeApi(EntryPoint = "glSampleCoverage", Convention = CallingConvention.Winapi)]
-        public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
-
         [NativeApi(EntryPoint = "glCopyTexSubImage3D", Convention = CallingConvention.Winapi)]
         public partial void CopyTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
@@ -11062,51 +10480,6 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
 
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-        [NativeApi(EntryPoint = "glColorMask", Convention = CallingConvention.Winapi)]
-        public partial void ColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
         [NativeApi(EntryPoint = "glCullFace", Convention = CallingConvention.Winapi)]
         public partial void CullFace([Flow(FlowDirection.In)] GLEnum mode);
 
@@ -11121,9 +10494,6 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glDepthMask", Convention = CallingConvention.Winapi)]
         public partial void DepthMask([Flow(FlowDirection.In)] bool flag);
-
-        [NativeApi(EntryPoint = "glDepthMask", Convention = CallingConvention.Winapi)]
-        public partial void DepthMask([Flow(FlowDirection.In)] Boolean flag);
 
         [NativeApi(EntryPoint = "glDepthRange", Convention = CallingConvention.Winapi)]
         public partial void DepthRange([Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
@@ -11165,22 +10535,10 @@ namespace Silk.NET.OpenGL
         public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
-        public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out Boolean data);
-
-        [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
         public partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
-
-        [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Boolean* data);
-
-        [NativeApi(EntryPoint = "glGetBooleanv", Convention = CallingConvention.Winapi)]
-        public partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetDoublev", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDouble([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* data);
@@ -11919,6 +11277,15 @@ namespace Silk.NET.OpenGL
             CreateProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
         }
 
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] GLEnum target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateQueries([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // ImplicitCountSpanOverloader
@@ -11929,6 +11296,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] QueryTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
@@ -11985,6 +11361,15 @@ namespace Silk.NET.OpenGL
             CreateSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
         }
 
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] GLEnum target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateTextures([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
         {
             // ImplicitCountSpanOverloader
@@ -11995,6 +11380,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
@@ -12201,30 +11595,6 @@ namespace Silk.NET.OpenGL
             GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
         public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
@@ -12244,30 +11614,6 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
@@ -12297,30 +11643,6 @@ namespace Silk.NET.OpenGL
             GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
         public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
@@ -12340,30 +11662,6 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
-        }
-
-        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
@@ -12724,6 +12022,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             GetnTexImage(target, level, format, type, (uint) (pixels.Length * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
+        }
+
+        public unsafe double GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> @params)
@@ -13314,19 +12621,7 @@ namespace Silk.NET.OpenGL
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -13338,19 +12633,7 @@ namespace Silk.NET.OpenGL
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -13362,19 +12645,7 @@ namespace Silk.NET.OpenGL
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -13386,19 +12657,7 @@ namespace Silk.NET.OpenGL
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
         }
 
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
-        {
-            // ImplicitCountSpanOverloader
-            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
-        }
-
-        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // ImplicitCountSpanOverloader
             DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
@@ -17964,10 +17223,28 @@ namespace Silk.NET.OpenGL
             return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -17976,10 +17253,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -17988,10 +17283,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -18000,10 +17313,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -18109,6 +17440,14 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
+        }
+
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
             // ReturnTypeOverloader
             void* ret = default;
@@ -18667,19 +18006,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18691,19 +18018,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix2x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix2x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18715,19 +18030,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix2x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix2x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18739,19 +18042,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18763,19 +18054,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix3x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix3x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18787,19 +18066,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix3x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix3x4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18811,19 +18078,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix4(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18835,19 +18090,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix4x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix4x2(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -18859,19 +18102,7 @@ namespace Silk.NET.OpenGL
             ProgramUniformMatrix4x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             ProgramUniformMatrix4x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19114,19 +18345,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19138,19 +18357,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19162,19 +18369,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19186,31 +18381,13 @@ namespace Silk.NET.OpenGL
             UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19268,6 +18445,14 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe long GetInteger64([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInteger64(pname, &ret);
+            return ret;
+        }
+
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             long ret = default;
@@ -19890,19 +19075,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19914,19 +19087,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -19938,19 +19099,7 @@ namespace Silk.NET.OpenGL
             UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -20532,31 +19681,13 @@ namespace Silk.NET.OpenGL
             UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
-        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
         public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // ImplicitCountSpanOverloader
-            UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
-        }
-
-        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
             UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
@@ -20963,7 +20094,23 @@ namespace Silk.NET.OpenGL
             return ret;
         }
 
+        public unsafe bool GetBoolean([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            bool ret = default;
+            GetBoolean(pname, &ret);
+            return ret;
+        }
+
         public unsafe double GetDouble([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            double ret = default;
+            GetDouble(pname, &ret);
+            return ret;
+        }
+
+        public unsafe double GetDouble([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             double ret = default;
@@ -20979,7 +20126,23 @@ namespace Silk.NET.OpenGL
             return ret;
         }
 
+        public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            float ret = default;
+            GetFloat(pname, &ret);
+            return ret;
+        }
+
         public unsafe int GetInteger([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInteger(pname, &ret);
+            return ret;
+        }
+
+        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             int ret = default;
@@ -21323,34 +20486,6 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -21373,34 +20508,6 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
@@ -21463,34 +20570,6 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -21513,34 +20592,6 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
@@ -22205,13 +21256,6 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
-        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
-            return silkRet;
-        }
-
         public unsafe int GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname)
         {
             // NonKhrReturnTypeOverloader
@@ -22804,13 +21848,6 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetBufferParameter(target, pname, out long silkRet);
-            return silkRet;
-        }
-
-        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger64(pname, out long silkRet);
             return silkRet;
         }
 
@@ -23679,34 +22716,6 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GenTextures(n, out uint silkRet);
-            return silkRet;
-        }
-
-        public unsafe bool GetBoolean([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetBoolean(pname, out bool silkRet);
-            return silkRet;
-        }
-
-        public unsafe double GetDouble([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetDouble(pname, out double silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFloat(pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger(pname, out int silkRet);
             return silkRet;
         }
 

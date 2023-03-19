@@ -56,6 +56,15 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM", Convention = CallingConvention.Winapi)]
         public partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string driverControlString);
 
+        public unsafe uint GetDriverControl([Flow(FlowDirection.Out)] int* num)
+        {
+            const uint size = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GetDriverControl(num, size, &ret);
+            return ret;
+        }
+
         public unsafe void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
         {
             // ImplicitCountSpanOverloader

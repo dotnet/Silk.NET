@@ -24,25 +24,13 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
         public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glTexStorage3DMultisampleOES", Convention = CallingConvention.Winapi)]
-        public partial void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         public OesTextureStorageMultisample2dArray(INativeContext ctx)
             : base(ctx)

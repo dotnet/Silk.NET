@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION")]
     public enum D3DRootSignatureVersion : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Version1\"")]
         [NativeName("Name", "D3D_ROOT_SIGNATURE_VERSION_1")]
         D3DRootSignatureVersion1 = 0x1,

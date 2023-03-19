@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_SHADER_VERSION_TYPE")]
     public enum ShaderVersionType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"PixelShader\"")]
         [NativeName("Name", "D3D11_SHVER_PIXEL_SHADER")]
         ShverPixelShader = 0x0,

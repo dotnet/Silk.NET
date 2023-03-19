@@ -26,12 +26,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glBindImageTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] int format);
 
-        [NativeApi(EntryPoint = "glBindImageTextureEXT", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] EXT access, [Flow(FlowDirection.In)] int format);
-
-        [NativeApi(EntryPoint = "glBindImageTextureEXT", Convention = CallingConvention.Winapi)]
-        public partial void BindImageTexture([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] int format);
-
         [NativeApi(EntryPoint = "glMemoryBarrierEXT", Convention = CallingConvention.Winapi)]
         public partial void MemoryBarrier([Flow(FlowDirection.In)] uint barriers);
 

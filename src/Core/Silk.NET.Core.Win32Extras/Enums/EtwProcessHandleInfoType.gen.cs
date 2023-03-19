@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags]
     [NativeName("Name", "_ETW_PROCESS_HANDLE_INFO_TYPE")]
     public enum EtwProcessHandleInfoType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "EtwQueryPartitionInformation")]
         EtwQueryPartitionInformation = 0x1,
         [NativeName("Name", "EtwQueryPartitionInformationV2")]

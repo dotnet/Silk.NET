@@ -8,13 +8,15 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string Requires { get; }
         public string BitValues { get; }
         public string Type { get; }
+        public string? Api { get; }
 
-        public TypedefDefinition(string name, string requires, string type, string bitValues = null)
+        public TypedefDefinition(string name, string requires, string type, string bitValues = null, string? api = null)
         {
             Name = name;
             Requires = requires;
             Type = type;
             BitValues = bitValues;
+            Api = api;
         }
 
         public static TypedefDefinition CreateFromXml(XElement xe)
@@ -23,7 +25,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var requires = xe.Attribute("requires")?.Value;
             var type = xe.GetTypeElement();
             var bitValues = xe.Attribute("bitvalues")?.Value;
-            return new(name, requires, type, bitValues);
+            var api = xe.Attribute("api")?.Value;
+            return new(name, requires, type, bitValues, api);
         }
 
         public override string ToString()

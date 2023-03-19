@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
-    [Flags]
     [NativeName("Name", "D3D11_CLEAR_FLAG")]
     public enum ClearFlag : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Depth\"")]
         [NativeName("Name", "D3D11_CLEAR_DEPTH")]
         ClearDepth = 0x1,

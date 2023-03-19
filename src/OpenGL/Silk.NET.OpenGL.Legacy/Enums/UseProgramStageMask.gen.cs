@@ -9,9 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [Flags]
     [NativeName("Name", "UseProgramStageMask")]
     public enum UseProgramStageMask : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "GL_VERTEX_SHADER_BIT")]
         VertexShaderBit = 0x1,
         [NativeName("Name", "GL_VERTEX_SHADER_BIT_EXT")]

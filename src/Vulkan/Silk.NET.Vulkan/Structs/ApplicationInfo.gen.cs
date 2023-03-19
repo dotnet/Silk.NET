@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkApplicationInfo")]
-    public unsafe partial struct ApplicationInfo : IChainable
+    public unsafe partial struct ApplicationInfo : IChainStart
     {
         public ApplicationInfo
         (
@@ -113,6 +113,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ApplicationInfo Chain(
+            out ApplicationInfo capture)
+        {
+            capture = new ApplicationInfo(StructureType.ApplicationInfo);
+            return ref capture;
         }
     }
 }

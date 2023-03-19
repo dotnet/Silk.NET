@@ -24,6 +24,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The parent of this handle.
         /// </summary>
         public string Parent { get; }
+        
+        /// <summary>
+        /// The specific API this handle is applicable to.
+        /// </summary>
+        public string? Api { get; }
 
         /// <summary>
         /// Create a new HandleDefinition.
@@ -31,11 +36,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of this handle.</param>
         /// <param name="canBeDispatched">Whether or not this handle can be dispatched.</param>
         /// <param name="parent">The parent of this handle.</param>
-        public HandleDefinition(string name, bool canBeDispatched, string parent)
+        public HandleDefinition(string name, bool canBeDispatched, string parent, string? api)
         {
             Name = name;
             CanBeDispatched = canBeDispatched;
             Parent = parent;
+            Api = api;
         }
 
         /// <summary>
@@ -59,14 +65,15 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .FirstOrDefault(x => x.GetNameElementOrNull() == xe.Attribute("alias")?.Value) ?? throw new Exception("wat")
                 );
                 
-                return new HandleDefinition(xe.GetNameAttribute(), ret.CanBeDispatched, ret.Parent);
+                return new HandleDefinition(xe.GetNameAttribute(), ret.CanBeDispatched, ret.Parent, ret.Api);
             }
             
             var name = xe.GetNameElement();
             var canBeDispatched = xe.GetTypeElement() == "VK_DEFINE_HANDLE";
             var parent = xe.Attribute("parent")?.Value;
+            var api = xe.Attribute("api")?.Value;
 
-            return new HandleDefinition(name, canBeDispatched, parent);
+            return new HandleDefinition(name, canBeDispatched, parent, api);
         }
     }
 }

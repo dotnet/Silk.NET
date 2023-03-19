@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan.Video
             byte? spsVideoParameterSetId = null,
             byte? ppsSeqParameterSetId = null,
             byte? ppsPicParameterSetId = null,
-            int? picOrderCntVal = null,
-            byte? temporalId = null
+            byte? temporalId = null,
+            int? picOrderCntVal = null
         ) : this()
         {
             if (flags is not null)
@@ -55,14 +55,14 @@ namespace Silk.NET.Vulkan.Video
                 PpsPicParameterSetId = ppsPicParameterSetId.Value;
             }
 
-            if (picOrderCntVal is not null)
-            {
-                PicOrderCntVal = picOrderCntVal.Value;
-            }
-
             if (temporalId is not null)
             {
                 TemporalId = temporalId.Value;
+            }
+
+            if (picOrderCntVal is not null)
+            {
+                PicOrderCntVal = picOrderCntVal.Value;
             }
         }
 
@@ -92,14 +92,14 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "pps_pic_parameter_set_id")]
         public byte PpsPicParameterSetId;
 
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "PicOrderCntVal")]
-        public int PicOrderCntVal;
-
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "TemporalId")]
         public byte TemporalId;
+
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "PicOrderCntVal")]
+        public int PicOrderCntVal;
     }
 }

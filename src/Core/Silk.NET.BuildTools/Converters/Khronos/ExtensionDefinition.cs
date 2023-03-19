@@ -100,7 +100,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var enumExtensions = new List<EnumExtensionValue>();
             var commandNames = new List<string>();
             var typeNames = new List<string>();
-            var supported = xe.Attribute("supported")?.Value.Split('|');
+            var supported = xe.Attribute("supported")?.Value.Split('|').SelectMany(x => x.Split(',')).ToArray();
 
             foreach (var require in xe.Elements("require"))
             {

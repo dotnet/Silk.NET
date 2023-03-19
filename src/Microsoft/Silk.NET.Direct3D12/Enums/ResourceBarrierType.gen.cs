@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_RESOURCE_BARRIER_TYPE")]
     public enum ResourceBarrierType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Transition\"")]
         [NativeName("Name", "D3D12_RESOURCE_BARRIER_TYPE_TRANSITION")]
         ResourceBarrierTypeTransition = 0x0,

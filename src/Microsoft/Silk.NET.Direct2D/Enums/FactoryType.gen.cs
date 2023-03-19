@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_FACTORY_TYPE")]
     public enum FactoryType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"SingleThreaded\"")]
         [NativeName("Name", "D2D1_FACTORY_TYPE_SINGLE_THREADED")]
         FactoryTypeSingleThreaded = 0x0,

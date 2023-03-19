@@ -21,9 +21,6 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"RequireFullSubgroupsBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
         PipelineShaderStageCreateRequireFullSubgroupsBitExt = 2,
-        [Obsolete("Deprecated in favour of \"Reserved3BitKhr\"")]
-        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR")]
-        PipelineShaderStageCreateReserved3BitKhr = 8,
         [Obsolete("Deprecated in favour of \"AllowVaryingSubgroupSizeBit\"")]
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
         PipelineShaderStageCreateAllowVaryingSubgroupSizeBit = 1,
@@ -34,8 +31,6 @@ namespace Silk.NET.Vulkan
         AllowVaryingSubgroupSizeBitExt = 1,
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
         RequireFullSubgroupsBitExt = 2,
-        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR")]
-        Reserved3BitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
         AllowVaryingSubgroupSizeBit = 1,
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT")]

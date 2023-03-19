@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE")]
     public enum StrokeTransformType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_NORMAL")]
         StrokeTransformTypeNormal = 0x0,

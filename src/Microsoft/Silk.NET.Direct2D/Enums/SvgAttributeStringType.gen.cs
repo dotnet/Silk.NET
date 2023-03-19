@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_SVG_ATTRIBUTE_STRING_TYPE")]
     public enum SvgAttributeStringType : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Svg\"")]
         [NativeName("Name", "D2D1_SVG_ATTRIBUTE_STRING_TYPE_SVG")]
         SvgAttributeStringTypeSvg = 0x0,

@@ -52,6 +52,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
+        public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            // ReturnTypeOverloader
+            float ret = default;
+            GetSharpenTexFunc(target, &ret);
+            return ret;
+        }
+
         public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
@@ -62,13 +70,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         {
             // ImplicitCountSpanOverloader
             SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
-        }
-
-        public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target)
-        {
-            // NonKhrReturnTypeOverloader
-            GetSharpenTexFunc(target, out float silkRet);
-            return silkRet;
         }
 
         public SgisSharpenTexture(INativeContext ctx)

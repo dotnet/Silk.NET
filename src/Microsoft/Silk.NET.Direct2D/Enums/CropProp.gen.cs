@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_CROP_PROP")]
     public enum CropProp : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Rect\"")]
         [NativeName("Name", "D2D1_CROP_PROP_RECT")]
         CropPropRect = 0x0,

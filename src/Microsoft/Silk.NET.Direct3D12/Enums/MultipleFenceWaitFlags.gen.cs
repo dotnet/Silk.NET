@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
-    [Flags]
     [NativeName("Name", "D3D12_MULTIPLE_FENCE_WAIT_FLAGS")]
     public enum MultipleFenceWaitFlags : int
     {

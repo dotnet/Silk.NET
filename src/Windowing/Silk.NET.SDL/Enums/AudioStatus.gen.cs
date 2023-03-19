@@ -9,13 +9,10 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L684_C9")]
     [NativeName("Name", "SDL_AudioStatus")]
     public enum AudioStatus : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"Stopped\"")]
         [NativeName("Name", "SDL_AUDIO_STOPPED")]
         AudioStopped = 0x0,

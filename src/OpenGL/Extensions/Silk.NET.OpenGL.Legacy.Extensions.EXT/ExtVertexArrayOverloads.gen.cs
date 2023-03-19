@@ -22,12 +22,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.EdgeFlagPointer(stride, count, in pointer.GetPinnableReference());
         }
 
-        public static unsafe void EdgeFlagPointer(this ExtVertexArray thisApi, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] ReadOnlySpan<Boolean> pointer)
-        {
-            // SpanOverloader
-            thisApi.EdgeFlagPointer(stride, count, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

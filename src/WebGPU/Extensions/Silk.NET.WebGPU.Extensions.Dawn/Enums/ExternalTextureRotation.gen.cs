@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [Flags]
     [NativeName("Name", "WGPUExternalTextureRotation")]
     public enum ExternalTextureRotation : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUExternalTextureRotation_Rotate0Degrees")]
         Rotate0Degrees = 0x0,
         [NativeName("Name", "WGPUExternalTextureRotation_Rotate90Degrees")]

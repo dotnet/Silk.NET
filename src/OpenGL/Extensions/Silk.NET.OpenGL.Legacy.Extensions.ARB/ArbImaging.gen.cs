@@ -744,30 +744,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
@@ -790,30 +766,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
         public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogram", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogramParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogramParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -888,30 +840,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
@@ -934,30 +862,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
         public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmax", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmaxParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmaxParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -1203,49 +1107,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void Histogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] bool sink);
 
         [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
-        public partial void Histogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] Boolean sink);
-
-        [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
         public partial void Histogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] bool sink);
-
-        [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
-        public partial void Histogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] Boolean sink);
 
         [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
         public partial void Histogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] bool sink);
 
         [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
-        public partial void Histogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] Boolean sink);
-
-        [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
         public partial void Histogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] bool sink);
-
-        [NativeApi(EntryPoint = "glHistogram", Convention = CallingConvention.Winapi)]
-        public partial void Histogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] Boolean sink);
 
         [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
         public partial void Minmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] bool sink);
 
         [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
-        public partial void Minmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] Boolean sink);
-
-        [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
         public partial void Minmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] bool sink);
-
-        [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
-        public partial void Minmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] Boolean sink);
 
         [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
         public partial void Minmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] bool sink);
 
         [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
-        public partial void Minmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] Boolean sink);
-
-        [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
         public partial void Minmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] bool sink);
-
-        [NativeApi(EntryPoint = "glMinmax", Convention = CallingConvention.Winapi)]
-        public partial void Minmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] Boolean sink);
 
         [NativeApi(EntryPoint = "glResetHistogram", Convention = CallingConvention.Winapi)]
         public partial void ResetHistogram([Flow(FlowDirection.In)] ARB target);
@@ -1647,34 +1527,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -1697,34 +1549,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetHistogram(target, reset, format, type, out T0 silkRet);
@@ -1787,34 +1611,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
@@ -1837,34 +1633,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         }
 
         public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetMinmax(target, reset, format, type, out T0 silkRet);

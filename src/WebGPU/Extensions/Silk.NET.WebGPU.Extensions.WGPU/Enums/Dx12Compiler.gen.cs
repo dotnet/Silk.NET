@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.WebGPU.Extensions.WGPU
 {
-    [Flags]
     [NativeName("Name", "WGPUDx12Compiler")]
     public enum Dx12Compiler : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [NativeName("Name", "WGPUDx12Compiler_Undefined")]
         Undefined = 0x0,
         [NativeName("Name", "WGPUDx12Compiler_Fxc")]

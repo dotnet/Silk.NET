@@ -114,5 +114,7 @@ namespace Silk.NET.Vulkan
         DescriptorUpdateTemplate = 1000085000,
         [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
         PrivateDataSlot = 1000295000,
+        [NativeName("Name", "VK_OBJECT_TYPE_SEMAPHORE_SCI_SYNC_POOL_NV")]
+        SemaphoreSciSyncPoolNV = 1000489000,
     }
 }

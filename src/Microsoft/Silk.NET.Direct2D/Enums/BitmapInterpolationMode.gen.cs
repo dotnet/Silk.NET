@@ -9,12 +9,9 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct2D
 {
-    [Flags]
     [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE")]
     public enum BitmapInterpolationMode : int
     {
-        [NativeName("Name", "")]
-        None = 0,
         [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
         [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         BitmapInterpolationModeNearestNeighbor = 0x0,
