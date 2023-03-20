@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgPointCollectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
+    public static unsafe int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgPointCollectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
+    public static int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,7 +249,7 @@ public unsafe static class D2D1SvgPointCollectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> points, uint pointsCount, uint startIndex)
+    public static int UpdatePoints(this ComPtr<ID2D1SvgPointCollection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> points, uint pointsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

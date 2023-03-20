@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FIGURE_END")]
     public enum FigureEnd : int
     {
-        [Obsolete("Deprecated in favour of \"Open\"")]
-        [NativeName("Name", "D2D1_FIGURE_END_OPEN")]
-        FigureEndOpen = 0x0,
-        [Obsolete("Deprecated in favour of \"Closed\"")]
-        [NativeName("Name", "D2D1_FIGURE_END_CLOSED")]
-        FigureEndClosed = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_FIGURE_END_FORCE_DWORD")]
-        FigureEndForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_FIGURE_END_OPEN")]
         Open = 0x0,
         [NativeName("Name", "D2D1_FIGURE_END_CLOSED")]

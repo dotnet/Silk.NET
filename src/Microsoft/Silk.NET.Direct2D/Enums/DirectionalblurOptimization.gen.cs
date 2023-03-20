@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION")]
     public enum DirectionalblurOptimization : int
     {
-        [Obsolete("Deprecated in favour of \"Speed\"")]
-        [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_SPEED")]
-        DirectionalblurOptimizationSpeed = 0x0,
-        [Obsolete("Deprecated in favour of \"Balanced\"")]
-        [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED")]
-        DirectionalblurOptimizationBalanced = 0x1,
-        [Obsolete("Deprecated in favour of \"Quality\"")]
-        [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_QUALITY")]
-        DirectionalblurOptimizationQuality = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_FORCE_DWORD")]
-        DirectionalblurOptimizationForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_SPEED")]
         Speed = 0x0,
         [NativeName("Name", "D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED")]

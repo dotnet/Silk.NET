@@ -12,24 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_PRIMITIVE_BLEND")]
     public enum PrimitiveBlend : int
     {
-        [Obsolete("Deprecated in favour of \"SourceOver\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_SOURCE_OVER")]
-        PrimitiveBlendSourceOver = 0x0,
-        [Obsolete("Deprecated in favour of \"Copy\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_COPY")]
-        PrimitiveBlendCopy = 0x1,
-        [Obsolete("Deprecated in favour of \"Min\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_MIN")]
-        PrimitiveBlendMin = 0x2,
-        [Obsolete("Deprecated in favour of \"Add\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_ADD")]
-        PrimitiveBlendAdd = 0x3,
-        [Obsolete("Deprecated in favour of \"Max\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_MAX")]
-        PrimitiveBlendMax = 0x4,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_PRIMITIVE_BLEND_FORCE_DWORD")]
-        PrimitiveBlendForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_PRIMITIVE_BLEND_SOURCE_OVER")]
         SourceOver = 0x0,
         [NativeName("Name", "D2D1_PRIMITIVE_BLEND_COPY")]

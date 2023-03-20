@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_RENDERING_PRIORITY")]
     public enum RenderingPriority : int
     {
-        [Obsolete("Deprecated in favour of \"Normal\"")]
-        [NativeName("Name", "D2D1_RENDERING_PRIORITY_NORMAL")]
-        RenderingPriorityNormal = 0x0,
-        [Obsolete("Deprecated in favour of \"Low\"")]
-        [NativeName("Name", "D2D1_RENDERING_PRIORITY_LOW")]
-        RenderingPriorityLow = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_RENDERING_PRIORITY_FORCE_DWORD")]
-        RenderingPriorityForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_RENDERING_PRIORITY_NORMAL")]
         Normal = 0x0,
         [NativeName("Name", "D2D1_RENDERING_PRIORITY_LOW")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_OVERFLOW")]
     public enum SvgOverflow : int
     {
-        [Obsolete("Deprecated in favour of \"Visible\"")]
-        [NativeName("Name", "D2D1_SVG_OVERFLOW_VISIBLE")]
-        SvgOverflowVisible = 0x0,
-        [Obsolete("Deprecated in favour of \"Hidden\"")]
-        [NativeName("Name", "D2D1_SVG_OVERFLOW_HIDDEN")]
-        SvgOverflowHidden = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SVG_OVERFLOW_FORCE_DWORD")]
-        SvgOverflowForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SVG_OVERFLOW_VISIBLE")]
         Visible = 0x0,
         [NativeName("Name", "D2D1_SVG_OVERFLOW_HIDDEN")]

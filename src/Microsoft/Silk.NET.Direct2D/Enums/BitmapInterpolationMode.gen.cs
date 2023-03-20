@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE")]
     public enum BitmapInterpolationMode : int
     {
-        [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
-        [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
-        BitmapInterpolationModeNearestNeighbor = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_LINEAR")]
-        BitmapInterpolationModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_FORCE_DWORD")]
-        BitmapInterpolationModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "D2D1_BITMAP_INTERPOLATION_MODE_LINEAR")]

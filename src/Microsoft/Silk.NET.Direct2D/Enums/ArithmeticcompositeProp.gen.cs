@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP")]
     public enum ArithmeticcompositeProp : int
     {
-        [Obsolete("Deprecated in favour of \"Coefficients\"")]
-        [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_COEFFICIENTS")]
-        ArithmeticcompositePropCoefficients = 0x0,
-        [Obsolete("Deprecated in favour of \"ClampOutput\"")]
-        [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_CLAMP_OUTPUT")]
-        ArithmeticcompositePropClampOutput = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_FORCE_DWORD")]
-        ArithmeticcompositePropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_COEFFICIENTS")]
         Coefficients = 0x0,
         [NativeName("Name", "D2D1_ARITHMETICCOMPOSITE_PROP_CLAMP_OUTPUT")]

@@ -109,14 +109,14 @@ public unsafe static class D2D1SolidColorBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -152,14 +152,14 @@ public unsafe static class D2D1SolidColorBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
+    public static unsafe void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, void>)@this->LpVtbl[8])(@this, color);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
+    public static void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
@@ -213,7 +213,7 @@ public unsafe static class D2D1SolidColorBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static void SetTransform(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -229,7 +229,7 @@ public unsafe static class D2D1SolidColorBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
+    public static void SetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

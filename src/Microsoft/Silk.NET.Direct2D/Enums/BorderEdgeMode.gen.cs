@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BORDER_EDGE_MODE")]
     public enum BorderEdgeMode : int
     {
-        [Obsolete("Deprecated in favour of \"Clamp\"")]
-        [NativeName("Name", "D2D1_BORDER_EDGE_MODE_CLAMP")]
-        BorderEdgeModeClamp = 0x0,
-        [Obsolete("Deprecated in favour of \"Wrap\"")]
-        [NativeName("Name", "D2D1_BORDER_EDGE_MODE_WRAP")]
-        BorderEdgeModeWrap = 0x1,
-        [Obsolete("Deprecated in favour of \"Mirror\"")]
-        [NativeName("Name", "D2D1_BORDER_EDGE_MODE_MIRROR")]
-        BorderEdgeModeMirror = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_BORDER_EDGE_MODE_FORCE_DWORD")]
-        BorderEdgeModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_BORDER_EDGE_MODE_CLAMP")]
         Clamp = 0x0,
         [NativeName("Name", "D2D1_BORDER_EDGE_MODE_WRAP")]

@@ -140,7 +140,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -161,7 +161,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -173,7 +173,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
+    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -462,7 +462,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -470,7 +470,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -478,7 +478,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -486,7 +486,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, Span<ID2D1Brush> brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, Span<ID2D1Brush> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -494,7 +494,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, Span<ID2D1Brush> brush, float strokeWidth, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, float dashOffset)
+    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, Span<ID2D1Brush> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

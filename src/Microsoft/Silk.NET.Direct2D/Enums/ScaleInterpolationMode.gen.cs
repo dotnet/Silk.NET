@@ -12,27 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE")]
     public enum ScaleInterpolationMode : int
     {
-        [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
-        ScaleInterpolationModeNearestNeighbor = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_LINEAR")]
-        ScaleInterpolationModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"Cubic\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_CUBIC")]
-        ScaleInterpolationModeCubic = 0x2,
-        [Obsolete("Deprecated in favour of \"MultiSampleLinear\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_MULTI_SAMPLE_LINEAR")]
-        ScaleInterpolationModeMultiSampleLinear = 0x3,
-        [Obsolete("Deprecated in favour of \"Anisotropic\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_ANISOTROPIC")]
-        ScaleInterpolationModeAnisotropic = 0x4,
-        [Obsolete("Deprecated in favour of \"HighQualityCubic\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_HIGH_QUALITY_CUBIC")]
-        ScaleInterpolationModeHighQualityCubic = 0x5,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_FORCE_DWORD")]
-        ScaleInterpolationModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "D2D1_SCALE_INTERPOLATION_MODE_LINEAR")]

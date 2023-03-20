@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SHADOW_PROP")]
     public enum ShadowProp : int
     {
-        [Obsolete("Deprecated in favour of \"BlurStandardDeviation\"")]
-        [NativeName("Name", "D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION")]
-        ShadowPropBlurStandardDeviation = 0x0,
-        [Obsolete("Deprecated in favour of \"Color\"")]
-        [NativeName("Name", "D2D1_SHADOW_PROP_COLOR")]
-        ShadowPropColor = 0x1,
-        [Obsolete("Deprecated in favour of \"Optimization\"")]
-        [NativeName("Name", "D2D1_SHADOW_PROP_OPTIMIZATION")]
-        ShadowPropOptimization = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SHADOW_PROP_FORCE_DWORD")]
-        ShadowPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SHADOW_PROP_BLUR_STANDARD_DEVIATION")]
         BlurStandardDeviation = 0x0,
         [NativeName("Name", "D2D1_SHADOW_PROP_COLOR")]

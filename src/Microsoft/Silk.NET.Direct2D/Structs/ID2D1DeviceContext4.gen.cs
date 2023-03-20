@@ -146,7 +146,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -179,7 +179,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmap(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -221,7 +221,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -236,7 +236,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -254,7 +254,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -263,7 +263,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -275,7 +275,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,7 +287,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -302,7 +302,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -314,7 +314,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -329,7 +329,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -344,7 +344,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateBitmapFromWicBitmap(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -362,7 +362,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -371,7 +371,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -383,7 +383,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -395,7 +395,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -410,7 +410,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -422,7 +422,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -437,7 +437,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -452,7 +452,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,7 +470,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,7 +482,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -497,7 +497,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -512,7 +512,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+        public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -545,7 +545,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -563,7 +563,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -581,7 +581,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -602,7 +602,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -611,7 +611,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -623,7 +623,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -635,7 +635,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -650,7 +650,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -662,7 +662,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -677,7 +677,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -692,7 +692,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -710,7 +710,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -722,7 +722,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -737,7 +737,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -752,7 +752,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -770,7 +770,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -785,7 +785,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -803,7 +803,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -821,7 +821,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+        public readonly unsafe int CreateBitmapBrush(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -842,7 +842,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -851,7 +851,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -863,7 +863,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -875,7 +875,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -890,7 +890,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -902,7 +902,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -917,7 +917,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -932,7 +932,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+        public readonly unsafe int CreateSolidColorBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -950,7 +950,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientStopCollection([Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+        public readonly unsafe int CreateGradientStopCollection([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -959,7 +959,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientStopCollection([Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+        public readonly unsafe int CreateGradientStopCollection([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -971,7 +971,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientStopCollection([Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+        public readonly unsafe int CreateGradientStopCollection([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -983,7 +983,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientStopCollection([Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+        public readonly unsafe int CreateGradientStopCollection([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -998,7 +998,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1007,7 +1007,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1031,7 +1031,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1046,7 +1046,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1058,7 +1058,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1073,7 +1073,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1088,7 +1088,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1106,7 +1106,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1118,7 +1118,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1133,7 +1133,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1148,7 +1148,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1166,7 +1166,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1181,7 +1181,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1199,7 +1199,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1217,7 +1217,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+        public readonly unsafe int CreateLinearGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1238,7 +1238,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1247,7 +1247,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1259,7 +1259,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1271,7 +1271,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1286,7 +1286,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1298,7 +1298,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1313,7 +1313,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1328,7 +1328,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1346,7 +1346,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1358,7 +1358,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1373,7 +1373,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1388,7 +1388,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1406,7 +1406,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1421,7 +1421,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1439,7 +1439,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1457,7 +1457,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+        public readonly unsafe int CreateRadialGradientBrush([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1478,7 +1478,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1487,7 +1487,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1499,7 +1499,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1511,7 +1511,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1526,7 +1526,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1538,7 +1538,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1553,7 +1553,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1568,7 +1568,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1586,7 +1586,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1598,7 +1598,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1613,7 +1613,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1628,7 +1628,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1646,7 +1646,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1661,7 +1661,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1679,7 +1679,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1697,7 +1697,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+        public readonly unsafe int CreateCompatibleRenderTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1718,7 +1718,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ID2D1Layer** layer)
+        public readonly unsafe int CreateLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ID2D1Layer** layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1727,7 +1727,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ID2D1Layer* layer)
+        public readonly unsafe int CreateLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1739,7 +1739,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
+        public readonly unsafe int CreateLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1751,7 +1751,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
+        public readonly unsafe int CreateLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1827,14 +1827,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStyle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -1844,7 +1844,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -1854,7 +1854,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -1867,7 +1867,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1877,7 +1877,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1903,7 +1903,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly void DrawRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1919,14 +1919,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
+        public readonly unsafe void FillRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)@this->LpVtbl[17])(@this, rect, brush);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
+        public readonly unsafe void FillRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -1936,7 +1936,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
+        public readonly unsafe void FillRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1946,7 +1946,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
+        public readonly void FillRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1959,14 +1959,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, RoundedRect*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[18])(@this, roundedRect, brush, strokeWidth, strokeStyle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -1976,7 +1976,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -1986,7 +1986,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -1999,7 +1999,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2009,7 +2009,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2022,7 +2022,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2035,7 +2035,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly void DrawRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2051,14 +2051,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush)
+        public readonly unsafe void FillRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, RoundedRect*, ID2D1Brush*, void>)@this->LpVtbl[19])(@this, roundedRect, brush);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRoundedRectangle([Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush)
+        public readonly unsafe void FillRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2068,7 +2068,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush)
+        public readonly unsafe void FillRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2078,7 +2078,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillRoundedRectangle([Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush)
+        public readonly void FillRoundedRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2091,14 +2091,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Ellipse*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[20])(@this, ellipse, brush, strokeWidth, strokeStyle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -2108,7 +2108,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2118,7 +2118,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2131,7 +2131,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2141,7 +2141,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2154,7 +2154,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2167,7 +2167,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+        public readonly void DrawEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2183,14 +2183,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush)
+        public readonly unsafe void FillEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Ellipse*, ID2D1Brush*, void>)@this->LpVtbl[21])(@this, ellipse, brush);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillEllipse([Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush)
+        public readonly unsafe void FillEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2200,7 +2200,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush)
+        public readonly unsafe void FillEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2210,7 +2210,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillEllipse([Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush)
+        public readonly void FillEllipse([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2447,14 +2447,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)@this->LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2464,7 +2464,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2474,7 +2474,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2487,7 +2487,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2497,7 +2497,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2510,7 +2510,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2523,7 +2523,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* brushPtr = &brush)
@@ -2539,7 +2539,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2549,7 +2549,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2562,7 +2562,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2575,7 +2575,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2591,7 +2591,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2604,7 +2604,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2620,7 +2620,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2636,7 +2636,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly void FillOpacityMask(ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2655,14 +2655,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)@this->LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2672,7 +2672,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2682,7 +2682,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2695,7 +2695,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2705,7 +2705,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2718,7 +2718,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2731,7 +2731,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly void DrawBitmap(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2747,14 +2747,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
@@ -2764,7 +2764,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2774,7 +2774,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2787,7 +2787,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2797,7 +2797,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2810,7 +2810,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2823,7 +2823,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2839,7 +2839,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2849,7 +2849,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2862,7 +2862,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2875,7 +2875,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2891,7 +2891,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2904,7 +2904,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2920,7 +2920,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2936,7 +2936,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2955,7 +2955,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2964,7 +2964,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2976,7 +2976,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2988,7 +2988,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3003,7 +3003,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3015,7 +3015,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3030,7 +3030,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3045,7 +3045,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3103,14 +3103,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrush, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
@@ -3120,7 +3120,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -3130,7 +3130,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+        public readonly void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -3143,14 +3143,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+        public readonly unsafe void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[30])(@this, transform);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetTransform([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+        public readonly void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -3290,14 +3290,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushLayer([Flow(FlowDirection.In)] LayerParameters* layerParameters, ID2D1Layer* layer)
+        public readonly unsafe void PushLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] LayerParameters* layerParameters, ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, LayerParameters*, ID2D1Layer*, void>)@this->LpVtbl[40])(@this, layerParameters, layer);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushLayer([Flow(FlowDirection.In)] LayerParameters* layerParameters, ref ID2D1Layer layer)
+        public readonly unsafe void PushLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] LayerParameters* layerParameters, ref ID2D1Layer layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Layer* layerPtr = &layer)
@@ -3307,7 +3307,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushLayer([Flow(FlowDirection.In)] in LayerParameters layerParameters, ID2D1Layer* layer)
+        public readonly unsafe void PushLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LayerParameters layerParameters, ID2D1Layer* layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -3317,7 +3317,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PushLayer([Flow(FlowDirection.In)] in LayerParameters layerParameters, ref ID2D1Layer layer)
+        public readonly void PushLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LayerParameters layerParameters, ref ID2D1Layer layer)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -3419,14 +3419,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushAxisAlignedClip([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
+        public readonly unsafe void PushAxisAlignedClip([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Box2D<float>*, AntialiasMode, void>)@this->LpVtbl[45])(@this, clipRect, antialiasMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PushAxisAlignedClip([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
+        public readonly void PushAxisAlignedClip([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* clipRectPtr = &clipRect)
@@ -3443,14 +3443,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void Clear([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* clearColor)
+        public readonly unsafe void Clear([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* clearColor)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.DXGI.D3Dcolorvalue*, void>)@this->LpVtbl[47])(@this, clearColor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Clear([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue clearColor)
+        public readonly void Clear([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue clearColor)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.D3Dcolorvalue* clearColorPtr = &clearColor)
@@ -3604,7 +3604,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe Silk.NET.Core.Bool32 IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+        public readonly unsafe Silk.NET.Core.Bool32 IsSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Bool32 ret = default;
@@ -3613,7 +3613,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly Silk.NET.Core.Bool32 IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+        public readonly Silk.NET.Core.Bool32 IsSupported([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Bool32 ret = default;
@@ -3625,7 +3625,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3634,7 +3634,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3646,7 +3646,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3658,7 +3658,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3673,7 +3673,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3684,7 +3684,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContext(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3698,7 +3698,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3707,7 +3707,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3719,7 +3719,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3731,7 +3731,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3746,7 +3746,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3757,7 +3757,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
+        public readonly unsafe int CreateColorContextFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3819,7 +3819,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3828,7 +3828,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3840,7 +3840,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3852,7 +3852,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3867,7 +3867,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3879,7 +3879,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3894,7 +3894,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3909,7 +3909,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3975,7 +3975,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3984,7 +3984,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3996,7 +3996,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4008,7 +4008,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4023,7 +4023,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4035,7 +4035,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4050,7 +4050,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4065,7 +4065,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4083,7 +4083,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4095,7 +4095,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4110,7 +4110,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4125,7 +4125,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4143,7 +4143,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4158,7 +4158,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4176,7 +4176,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4194,7 +4194,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+        public readonly unsafe int CreateImageBrush(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4350,7 +4350,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4359,7 +4359,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4371,7 +4371,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
+        public readonly unsafe int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4383,7 +4383,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
+        public readonly int GetGlyphRunWorldBounds(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4449,14 +4449,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetRenderingControls([Flow(FlowDirection.In)] RenderingControls* renderingControls)
+        public readonly unsafe void SetRenderingControls([Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingControls* renderingControls)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, RenderingControls*, void>)@this->LpVtbl[72])(@this, renderingControls);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetRenderingControls([Flow(FlowDirection.In)] in RenderingControls renderingControls)
+        public readonly void SetRenderingControls([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderingControls renderingControls)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RenderingControls* renderingControlsPtr = &renderingControls)
@@ -4515,14 +4515,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)@this->LpVtbl[78])(@this, image, targetOffset, imageRectangle, interpolationMode, compositeMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
@@ -4532,7 +4532,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4542,7 +4542,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4555,7 +4555,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
@@ -4565,7 +4565,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
@@ -4578,7 +4578,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly unsafe void DrawImage(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
@@ -4591,7 +4591,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawImage(ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+        public readonly void DrawImage(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* imagePtr = &image)
@@ -4607,14 +4607,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)@this->LpVtbl[79])(@this, gdiMetafile, targetOffset);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4624,7 +4624,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
+        public readonly unsafe void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
@@ -4634,7 +4634,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
+        public readonly void DrawGdiMetafile(ref ID2D1GdiMetafile gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
@@ -4647,7 +4647,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4656,7 +4656,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ID2D1Effect* effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4668,7 +4668,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
+        public readonly unsafe int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4680,7 +4680,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
+        public readonly int InvalidateEffectInputRectangle(ref ID2D1Effect effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4791,7 +4791,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4800,7 +4800,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4812,7 +4812,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4824,7 +4824,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4839,7 +4839,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4851,7 +4851,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4866,7 +4866,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4881,7 +4881,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4899,7 +4899,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4911,7 +4911,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4926,7 +4926,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4941,7 +4941,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4959,7 +4959,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4974,7 +4974,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4992,7 +4992,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+        public readonly unsafe int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5010,7 +5010,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+        public readonly int GetEffectRequiredInputRectangles(ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5227,7 +5227,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInk([Flow(FlowDirection.In)] InkPoint* startPoint, ID2D1Ink** ink)
+        public readonly unsafe int CreateInk([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkPoint* startPoint, ID2D1Ink** ink)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5236,7 +5236,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInk([Flow(FlowDirection.In)] InkPoint* startPoint, ref ID2D1Ink* ink)
+        public readonly unsafe int CreateInk([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkPoint* startPoint, ref ID2D1Ink* ink)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5248,7 +5248,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInk([Flow(FlowDirection.In)] in InkPoint startPoint, ID2D1Ink** ink)
+        public readonly unsafe int CreateInk([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkPoint startPoint, ID2D1Ink** ink)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5260,7 +5260,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInk([Flow(FlowDirection.In)] in InkPoint startPoint, ref ID2D1Ink* ink)
+        public readonly unsafe int CreateInk([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkPoint startPoint, ref ID2D1Ink* ink)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5275,7 +5275,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInkStyle([Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ID2D1InkStyle** inkStyle)
+        public readonly unsafe int CreateInkStyle([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkStyleProperties* inkStyleProperties, ID2D1InkStyle** inkStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5284,7 +5284,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInkStyle([Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+        public readonly unsafe int CreateInkStyle([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ID2D1InkStyle* inkStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5296,7 +5296,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInkStyle([Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
+        public readonly unsafe int CreateInkStyle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5308,7 +5308,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInkStyle([Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+        public readonly unsafe int CreateInkStyle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5323,7 +5323,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientMesh([Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+        public readonly unsafe int CreateGradientMesh([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5332,7 +5332,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientMesh([Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+        public readonly unsafe int CreateGradientMesh([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5344,7 +5344,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientMesh([Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+        public readonly unsafe int CreateGradientMesh([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5356,7 +5356,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientMesh([Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+        public readonly unsafe int CreateGradientMesh([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5419,7 +5419,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5428,7 +5428,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5440,7 +5440,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5452,7 +5452,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5467,7 +5467,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5479,7 +5479,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5494,7 +5494,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5509,7 +5509,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5527,7 +5527,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5538,7 +5538,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5552,7 +5552,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5566,7 +5566,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5583,7 +5583,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5595,7 +5595,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5610,7 +5610,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5625,7 +5625,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5643,7 +5643,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5658,7 +5658,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5676,7 +5676,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5694,7 +5694,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5715,7 +5715,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5729,7 +5729,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5746,7 +5746,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5763,7 +5763,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5988,7 +5988,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5997,7 +5997,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6009,7 +6009,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6021,7 +6021,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6036,7 +6036,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6048,7 +6048,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6063,7 +6063,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6078,7 +6078,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+        public readonly unsafe int CreateTransformedImageSource(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6178,14 +6178,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawColorBitmapGlyphRun(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ColorBitmapGlyphSnapOption bitmapSnapOption)
+        public readonly unsafe void DrawColorBitmapGlyphRun(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ColorBitmapGlyphSnapOption bitmapSnapOption)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, DwriteGlyphImageFormats, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, DwriteMeasuringMode, ColorBitmapGlyphSnapOption, void>)@this->LpVtbl[100])(@this, glyphImageFormat, baselineOrigin, glyphRun, measuringMode, bitmapSnapOption);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawColorBitmapGlyphRun(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ColorBitmapGlyphSnapOption bitmapSnapOption)
+        public readonly void DrawColorBitmapGlyphRun(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ColorBitmapGlyphSnapOption bitmapSnapOption)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -6195,14 +6195,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext4*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, ID2D1SvgGlyphStyle*, uint, DwriteMeasuringMode, void>)@this->LpVtbl[101])(@this, baselineOrigin, glyphRun, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, measuringMode);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1SvgGlyphStyle* svgGlyphStylePtr = &svgGlyphStyle)
@@ -6212,7 +6212,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
@@ -6222,7 +6222,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
@@ -6235,7 +6235,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -6245,7 +6245,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -6258,7 +6258,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -6271,7 +6271,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -6287,7 +6287,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6296,7 +6296,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6308,7 +6308,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6320,7 +6320,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6335,7 +6335,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6347,7 +6347,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6362,7 +6362,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6377,7 +6377,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6395,7 +6395,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6407,7 +6407,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6422,7 +6422,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6437,7 +6437,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6455,7 +6455,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6470,7 +6470,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6488,7 +6488,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6506,7 +6506,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1Image* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6527,7 +6527,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6536,7 +6536,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6548,7 +6548,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6560,7 +6560,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6575,7 +6575,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6587,7 +6587,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6602,7 +6602,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6617,7 +6617,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6635,7 +6635,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6647,7 +6647,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6662,7 +6662,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6677,7 +6677,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6695,7 +6695,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6710,7 +6710,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6728,7 +6728,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6746,7 +6746,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6767,7 +6767,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6779,7 +6779,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6794,7 +6794,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6809,7 +6809,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6827,7 +6827,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6842,7 +6842,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6860,7 +6860,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6878,7 +6878,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6899,7 +6899,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6914,7 +6914,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6932,7 +6932,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6950,7 +6950,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6971,7 +6971,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6989,7 +6989,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7010,7 +7010,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7031,7 +7031,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7055,7 +7055,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7067,7 +7067,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7082,7 +7082,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7097,7 +7097,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7115,7 +7115,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7130,7 +7130,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7148,7 +7148,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7166,7 +7166,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7187,7 +7187,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7202,7 +7202,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7220,7 +7220,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7238,7 +7238,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7259,7 +7259,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7277,7 +7277,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7298,7 +7298,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7319,7 +7319,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7343,7 +7343,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7358,7 +7358,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7376,7 +7376,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7394,7 +7394,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7415,7 +7415,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7433,7 +7433,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7454,7 +7454,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7475,7 +7475,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ID2D1Brush* defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7499,7 +7499,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7517,7 +7517,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7538,7 +7538,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7559,7 +7559,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7583,7 +7583,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7604,7 +7604,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7628,7 +7628,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7652,7 +7652,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage)
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7696,7 +7696,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmap<TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7704,7 +7704,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmap<TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7712,7 +7712,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7720,7 +7720,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7728,7 +7728,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7736,7 +7736,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7744,7 +7744,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7752,7 +7752,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapFromWicBitmap<TI0>(ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly int CreateBitmapFromWicBitmap<TI0>(ref IWICBitmapSource wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7760,7 +7760,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7768,7 +7768,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7776,7 +7776,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7784,7 +7784,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7792,7 +7792,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<TI0>(ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<TI0>(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7800,7 +7800,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<TI0>(ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<TI0>(ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7808,7 +7808,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7816,7 +7816,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7824,7 +7824,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7832,7 +7832,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7840,7 +7840,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7848,7 +7848,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7856,7 +7856,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7864,7 +7864,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7872,7 +7872,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+        public readonly int CreateBitmapBrush<TI0, TI1>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7880,7 +7880,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7888,7 +7888,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7896,7 +7896,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7904,7 +7904,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7912,7 +7912,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+        public readonly int CreateBitmapBrush<TI0>(ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7920,7 +7920,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7928,7 +7928,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7936,7 +7936,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateSolidColorBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7944,7 +7944,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateSolidColorBrush<TI0>([Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+        public readonly int CreateSolidColorBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7952,7 +7952,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientStopCollection<TI0>([Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateGradientStopCollection<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7960,7 +7960,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateGradientStopCollection<TI0>([Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly int CreateGradientStopCollection<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7968,7 +7968,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7976,7 +7976,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7984,7 +7984,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7992,7 +7992,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8000,7 +8000,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8008,7 +8008,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8016,7 +8016,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateLinearGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8024,7 +8024,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8032,7 +8032,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8040,7 +8040,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLinearGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+        public readonly int CreateLinearGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8048,7 +8048,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8056,7 +8056,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLinearGradientBrush<TI0>([Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+        public readonly int CreateLinearGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8064,7 +8064,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8072,7 +8072,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8080,7 +8080,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8088,7 +8088,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8096,7 +8096,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8104,7 +8104,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8112,7 +8112,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateRadialGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8120,7 +8120,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8128,7 +8128,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8136,7 +8136,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateRadialGradientBrush<TI0, TI1>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+        public readonly int CreateRadialGradientBrush<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8144,7 +8144,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8152,7 +8152,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateRadialGradientBrush<TI0>([Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+        public readonly int CreateRadialGradientBrush<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8160,7 +8160,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8168,7 +8168,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8176,7 +8176,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8184,7 +8184,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8192,7 +8192,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8200,7 +8200,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8208,7 +8208,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8216,7 +8216,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateCompatibleRenderTarget<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+        public readonly int CreateCompatibleRenderTarget<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8224,7 +8224,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLayer<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+        public readonly unsafe int CreateLayer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8232,7 +8232,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLayer<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+        public readonly int CreateLayer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8272,7 +8272,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle<TI0, TI1>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly unsafe void DrawRectangle<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8280,7 +8280,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8288,7 +8288,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRectangle<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe void DrawRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8296,7 +8296,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRectangle<TI0, TI1>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly void DrawRectangle<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8304,7 +8304,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRectangle<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8312,7 +8312,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRectangle<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly void DrawRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8320,7 +8320,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRectangle<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8328,7 +8328,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillRectangle<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void FillRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8336,7 +8336,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle<TI0, TI1>([Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly unsafe void DrawRoundedRectangle<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8344,7 +8344,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle<TI0>([Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8352,7 +8352,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawRoundedRectangle<TI0>([Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe void DrawRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8360,7 +8360,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRoundedRectangle<TI0, TI1>([Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly void DrawRoundedRectangle<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8368,7 +8368,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRoundedRectangle<TI0>([Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8376,7 +8376,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawRoundedRectangle<TI0>([Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly void DrawRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8384,7 +8384,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillRoundedRectangle<TI0>([Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8392,7 +8392,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillRoundedRectangle<TI0>([Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void FillRoundedRectangle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8400,7 +8400,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse<TI0, TI1>([Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly unsafe void DrawEllipse<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8408,7 +8408,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse<TI0>([Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8416,7 +8416,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawEllipse<TI0>([Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe void DrawEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8424,7 +8424,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawEllipse<TI0, TI1>([Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+        public readonly void DrawEllipse<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8432,7 +8432,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawEllipse<TI0>([Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8440,7 +8440,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawEllipse<TI0>([Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly void DrawEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8448,7 +8448,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillEllipse<TI0>([Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8456,7 +8456,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillEllipse<TI0>([Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void FillEllipse<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8600,7 +8600,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8608,7 +8608,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8616,7 +8616,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+        public readonly unsafe void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8624,7 +8624,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+        public readonly void FillOpacityMask<TI0, TI1>(ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8632,7 +8632,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8640,7 +8640,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8648,7 +8648,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8656,7 +8656,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly void FillOpacityMask<TI0>(ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8664,7 +8664,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8672,7 +8672,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8680,7 +8680,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8688,7 +8688,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void FillOpacityMask<TI0>(ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8696,7 +8696,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8704,7 +8704,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8712,7 +8712,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8720,7 +8720,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly void DrawBitmap<TI0>(ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8728,7 +8728,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8736,7 +8736,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8744,7 +8744,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8752,7 +8752,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8760,7 +8760,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8768,7 +8768,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8776,7 +8776,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8784,7 +8784,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA<TI0>([Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8792,7 +8792,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8800,7 +8800,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8808,7 +8808,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8816,7 +8816,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawTextA<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8840,7 +8840,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8848,7 +8848,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8856,7 +8856,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushLayer<TI0>([Flow(FlowDirection.In)] LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+        public readonly unsafe void PushLayer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8864,7 +8864,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void PushLayer<TI0>([Flow(FlowDirection.In)] in LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+        public readonly void PushLayer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8888,7 +8888,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly unsafe int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8896,7 +8896,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8904,7 +8904,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContext<TI0>(ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8912,7 +8912,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly unsafe int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8920,7 +8920,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8928,7 +8928,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateColorContextFromFilename<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+        public readonly int CreateColorContextFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8952,7 +8952,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8960,7 +8960,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8968,7 +8968,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8976,7 +8976,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBitmapFromDxgiSurface<TI0>(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly int CreateBitmapFromDxgiSurface<TI0>(ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9001,7 +9001,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9009,7 +9009,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9017,7 +9017,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9025,7 +9025,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9033,7 +9033,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+        public readonly unsafe int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9041,7 +9041,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9049,7 +9049,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+        public readonly int CreateImageBrush<TI0, TI1>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9057,7 +9057,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9065,7 +9065,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9073,7 +9073,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9081,7 +9081,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+        public readonly unsafe int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9089,7 +9089,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+        public readonly int CreateImageBrush<TI0>(ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9161,7 +9161,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9169,7 +9169,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9177,7 +9177,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe void DrawImage<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9185,7 +9185,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawImage<TI0>(ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly void DrawImage<TI0>(ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9193,7 +9193,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGdiMetafile<TI0>(ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+        public readonly unsafe void DrawGdiMetafile<TI0>(ComPtr<TI0> gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9201,7 +9201,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawGdiMetafile<TI0>(ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+        public readonly void DrawGdiMetafile<TI0>(ComPtr<TI0> gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9209,7 +9209,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int InvalidateEffectInputRectangle<TI0>(ComPtr<TI0> effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int InvalidateEffectInputRectangle<TI0>(ComPtr<TI0> effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9217,7 +9217,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InvalidateEffectInputRectangle<TI0>(ComPtr<TI0> effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly int InvalidateEffectInputRectangle<TI0>(ComPtr<TI0> effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9257,7 +9257,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9265,7 +9265,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9273,7 +9273,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9281,7 +9281,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9289,7 +9289,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9297,7 +9297,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9305,7 +9305,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly unsafe int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9313,7 +9313,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+        public readonly int GetEffectRequiredInputRectangles<TI0>(ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9425,7 +9425,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInk<TI0>([Flow(FlowDirection.In)] InkPoint* startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
+        public readonly unsafe int CreateInk<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkPoint* startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9433,7 +9433,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInk<TI0>([Flow(FlowDirection.In)] in InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
+        public readonly int CreateInk<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9441,7 +9441,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInkStyle<TI0>([Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly unsafe int CreateInkStyle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9449,7 +9449,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInkStyle<TI0>([Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+        public readonly int CreateInkStyle<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9457,7 +9457,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGradientMesh<TI0>([Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
+        public readonly unsafe int CreateGradientMesh<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9465,7 +9465,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateGradientMesh<TI0>([Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
+        public readonly int CreateGradientMesh<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9489,7 +9489,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9497,7 +9497,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9505,7 +9505,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9513,7 +9513,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9521,7 +9521,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9529,7 +9529,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9537,7 +9537,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9545,7 +9545,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9553,7 +9553,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9561,7 +9561,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9569,7 +9569,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9577,7 +9577,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9681,7 +9681,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource<TI0, TI1>(ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
+        public readonly unsafe int CreateTransformedImageSource<TI0, TI1>(ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9689,7 +9689,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource<TI0>(ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedImageSource<TI0>(ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9697,7 +9697,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateTransformedImageSource<TI0, TI1>(ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
+        public readonly int CreateTransformedImageSource<TI0, TI1>(ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9705,7 +9705,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource<TI0>(ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedImageSource<TI0>(ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9713,7 +9713,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedImageSource<TI0>(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedImageSource<TI0>(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9721,7 +9721,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateTransformedImageSource<TI0>(ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
+        public readonly int CreateTransformedImageSource<TI0>(ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9769,7 +9769,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun<TI0, TI1>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe void DrawSvgGlyphRun<TI0, TI1>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9777,7 +9777,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9785,7 +9785,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9793,7 +9793,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawSvgGlyphRun<TI0, TI1>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly void DrawSvgGlyphRun<TI0, TI1>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9801,7 +9801,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9809,7 +9809,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly void DrawSvgGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9817,7 +9817,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9825,7 +9825,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9833,7 +9833,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9841,7 +9841,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9849,7 +9849,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9857,7 +9857,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9865,7 +9865,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9873,7 +9873,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float dpiX, float dpiY, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9881,7 +9881,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9889,7 +9889,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9897,7 +9897,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9905,7 +9905,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9913,7 +9913,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9921,7 +9921,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9929,7 +9929,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9937,7 +9937,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9945,7 +9945,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9953,7 +9953,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9961,7 +9961,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9969,7 +9969,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9977,7 +9977,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9985,7 +9985,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9993,7 +9993,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10001,7 +10001,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10009,7 +10009,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10017,7 +10017,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10025,7 +10025,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10033,7 +10033,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10041,7 +10041,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10049,7 +10049,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10057,7 +10057,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10065,7 +10065,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10073,7 +10073,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10081,7 +10081,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10089,7 +10089,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10097,7 +10097,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10105,7 +10105,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10113,7 +10113,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10121,7 +10121,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10129,7 +10129,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10137,7 +10137,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10145,7 +10145,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10153,7 +10153,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10161,7 +10161,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10169,7 +10169,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10177,7 +10177,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10185,7 +10185,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10193,7 +10193,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10201,7 +10201,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10209,7 +10209,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10217,7 +10217,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10225,7 +10225,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10233,7 +10233,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10241,7 +10241,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10249,7 +10249,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10257,7 +10257,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10265,7 +10265,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10273,7 +10273,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ComPtr<TI0> defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10281,7 +10281,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10289,7 +10289,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10297,7 +10297,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
+        public readonly int GetSvgGlyphImage<TI0, TI1>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI1> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI1>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10305,7 +10305,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ComPtr<TI0> svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ID2D1CommandList* glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10313,7 +10313,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly unsafe int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10321,7 +10321,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
+        public readonly int GetSvgGlyphImage<TI0>(Silk.NET.Maths.Vector2D<float> glyphOrigin, ref IDWriteFontFace fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref ID2D1Brush defaultFillBrush, ref ID2D1SvgGlyphStyle svgGlyphStyle, uint colorPaletteIndex, ref Silk.NET.Maths.Matrix3X2<float> glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

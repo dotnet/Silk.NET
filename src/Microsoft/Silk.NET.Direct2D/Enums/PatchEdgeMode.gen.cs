@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_PATCH_EDGE_MODE")]
     public enum PatchEdgeMode : int
     {
-        [Obsolete("Deprecated in favour of \"Aliased\"")]
-        [NativeName("Name", "D2D1_PATCH_EDGE_MODE_ALIASED")]
-        PatchEdgeModeAliased = 0x0,
-        [Obsolete("Deprecated in favour of \"Antialiased\"")]
-        [NativeName("Name", "D2D1_PATCH_EDGE_MODE_ANTIALIASED")]
-        PatchEdgeModeAntialiased = 0x1,
-        [Obsolete("Deprecated in favour of \"AliasedInflated\"")]
-        [NativeName("Name", "D2D1_PATCH_EDGE_MODE_ALIASED_INFLATED")]
-        PatchEdgeModeAliasedInflated = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_PATCH_EDGE_MODE_FORCE_DWORD")]
-        PatchEdgeModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_PATCH_EDGE_MODE_ALIASED")]
         Aliased = 0x0,
         [NativeName("Name", "D2D1_PATCH_EDGE_MODE_ANTIALIASED")]

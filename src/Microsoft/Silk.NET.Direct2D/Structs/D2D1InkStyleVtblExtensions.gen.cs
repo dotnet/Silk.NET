@@ -102,14 +102,14 @@ public unsafe static class D2D1InkStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1InkStyle*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[4])(@this, transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -185,7 +185,7 @@ public unsafe static class D2D1InkStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static void SetNibTransform(this ComPtr<ID2D1InkStyle> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

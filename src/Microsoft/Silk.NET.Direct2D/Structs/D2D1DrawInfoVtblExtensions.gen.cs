@@ -117,7 +117,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
+    public static unsafe int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -138,7 +138,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -170,7 +170,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
+    public static unsafe int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -179,7 +179,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -223,7 +223,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -256,7 +256,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -271,7 +271,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -313,7 +313,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -358,7 +358,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -391,7 +391,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -406,7 +406,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -424,7 +424,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,7 +442,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
+    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -488,7 +488,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -512,7 +512,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -528,7 +528,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -536,7 +536,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -544,7 +544,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -552,7 +552,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -560,7 +560,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -568,7 +568,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -576,7 +576,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -584,7 +584,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -592,7 +592,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -600,7 +600,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -608,7 +608,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -616,7 +616,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -624,7 +624,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -632,7 +632,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -640,7 +640,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexRange vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -648,7 +648,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -656,7 +656,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -664,7 +664,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -672,7 +672,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -680,7 +680,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -688,7 +688,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexRange* vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -696,7 +696,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -704,7 +704,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
+    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

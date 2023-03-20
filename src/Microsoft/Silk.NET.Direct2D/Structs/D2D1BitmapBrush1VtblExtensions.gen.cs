@@ -109,14 +109,14 @@ public unsafe static class D2D1BitmapBrush1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1BitmapBrush1*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -283,7 +283,7 @@ public unsafe static class D2D1BitmapBrush1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static void SetTransform(this ComPtr<ID2D1BitmapBrush1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

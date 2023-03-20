@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_HISTOGRAM_PROP")]
     public enum HistogramProp : int
     {
-        [Obsolete("Deprecated in favour of \"NumBins\"")]
-        [NativeName("Name", "D2D1_HISTOGRAM_PROP_NUM_BINS")]
-        HistogramPropNumBins = 0x0,
-        [Obsolete("Deprecated in favour of \"ChannelSelect\"")]
-        [NativeName("Name", "D2D1_HISTOGRAM_PROP_CHANNEL_SELECT")]
-        HistogramPropChannelSelect = 0x1,
-        [Obsolete("Deprecated in favour of \"HistogramOutput\"")]
-        [NativeName("Name", "D2D1_HISTOGRAM_PROP_HISTOGRAM_OUTPUT")]
-        HistogramPropHistogramOutput = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_HISTOGRAM_PROP_FORCE_DWORD")]
-        HistogramPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_HISTOGRAM_PROP_NUM_BINS")]
         NumBins = 0x0,
         [NativeName("Name", "D2D1_HISTOGRAM_PROP_CHANNEL_SELECT")]

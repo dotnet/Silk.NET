@@ -12,24 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE")]
     public enum StraightenScaleMode : int
     {
-        [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR")]
-        StraightenScaleModeNearestNeighbor = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_LINEAR")]
-        StraightenScaleModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"Cubic\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_CUBIC")]
-        StraightenScaleModeCubic = 0x2,
-        [Obsolete("Deprecated in favour of \"MultiSampleLinear\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_MULTI_SAMPLE_LINEAR")]
-        StraightenScaleModeMultiSampleLinear = 0x3,
-        [Obsolete("Deprecated in favour of \"Anisotropic\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_ANISOTROPIC")]
-        StraightenScaleModeAnisotropic = 0x4,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_FORCE_DWORD")]
-        StraightenScaleModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "D2D1_STRAIGHTEN_SCALE_MODE_LINEAR")]

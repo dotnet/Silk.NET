@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_UNIT_MODE")]
     public enum UnitMode : int
     {
-        [Obsolete("Deprecated in favour of \"Dips\"")]
-        [NativeName("Name", "D2D1_UNIT_MODE_DIPS")]
-        UnitModeDips = 0x0,
-        [Obsolete("Deprecated in favour of \"Pixels\"")]
-        [NativeName("Name", "D2D1_UNIT_MODE_PIXELS")]
-        UnitModePixels = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_UNIT_MODE_FORCE_DWORD")]
-        UnitModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_UNIT_MODE_DIPS")]
         Dips = 0x0,
         [NativeName("Name", "D2D1_UNIT_MODE_PIXELS")]

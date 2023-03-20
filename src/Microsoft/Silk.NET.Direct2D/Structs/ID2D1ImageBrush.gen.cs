@@ -141,14 +141,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+        public readonly unsafe void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetTransform([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
+        public readonly void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -222,14 +222,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetSourceRectangle([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+        public readonly unsafe void SetSourceRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1ImageBrush*, Silk.NET.Maths.Box2D<float>*, void>)@this->LpVtbl[12])(@this, sourceRectangle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetSourceRectangle([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+        public readonly void SetSourceRectangle([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
         {
             var @this = (ID2D1ImageBrush*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)

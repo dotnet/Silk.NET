@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP")]
     public enum D2D12DaffinetransformProp : int
     {
-        [Obsolete("Deprecated in favour of \"InterpolationMode\"")]
-        [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE")]
-        D2D12DaffinetransformPropInterpolationMode = 0x0,
-        [Obsolete("Deprecated in favour of \"BorderMode\"")]
-        [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_BORDER_MODE")]
-        D2D12DaffinetransformPropBorderMode = 0x1,
-        [Obsolete("Deprecated in favour of \"TransformMatrix\"")]
-        [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_TRANSFORM_MATRIX")]
-        D2D12DaffinetransformPropTransformMatrix = 0x2,
-        [Obsolete("Deprecated in favour of \"Sharpness\"")]
-        [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_SHARPNESS")]
-        D2D12DaffinetransformPropSharpness = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_FORCE_DWORD")]
-        D2D12DaffinetransformPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE")]
         InterpolationMode = 0x0,
         [NativeName("Name", "D2D1_2DAFFINETRANSFORM_PROP_BORDER_MODE")]

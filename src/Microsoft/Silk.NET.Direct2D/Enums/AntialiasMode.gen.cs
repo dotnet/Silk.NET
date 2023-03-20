@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_ANTIALIAS_MODE")]
     public enum AntialiasMode : int
     {
-        [Obsolete("Deprecated in favour of \"PerPrimitive\"")]
-        [NativeName("Name", "D2D1_ANTIALIAS_MODE_PER_PRIMITIVE")]
-        AntialiasModePerPrimitive = 0x0,
-        [Obsolete("Deprecated in favour of \"Aliased\"")]
-        [NativeName("Name", "D2D1_ANTIALIAS_MODE_ALIASED")]
-        AntialiasModeAliased = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_ANTIALIAS_MODE_FORCE_DWORD")]
-        AntialiasModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_ANTIALIAS_MODE_PER_PRIMITIVE")]
         PerPrimitive = 0x0,
         [NativeName("Name", "D2D1_ANTIALIAS_MODE_ALIASED")]

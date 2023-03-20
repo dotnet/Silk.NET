@@ -12,12 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SATURATION_PROP")]
     public enum SaturationProp : int
     {
-        [Obsolete("Deprecated in favour of \"Saturation\"")]
-        [NativeName("Name", "D2D1_SATURATION_PROP_SATURATION")]
-        SaturationPropSaturation = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SATURATION_PROP_FORCE_DWORD")]
-        SaturationPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SATURATION_PROP_SATURATION")]
         Saturation = 0x0,
         [NativeName("Name", "D2D1_SATURATION_PROP_FORCE_DWORD")]

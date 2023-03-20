@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS")]
     public enum ImageSourceFromDxgiOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE")]
-        ImageSourceFromDxgiOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"LowQualityPrimaryConversion\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_LOW_QUALITY_PRIMARY_CONVERSION")]
-        ImageSourceFromDxgiOptionsLowQualityPrimaryConversion = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_FORCE_DWORD")]
-        ImageSourceFromDxgiOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS_LOW_QUALITY_PRIMARY_CONVERSION")]
