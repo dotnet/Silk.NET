@@ -1375,6 +1375,142 @@
             ]
         },
         {
+            "profileName": "DirectWrite",
+            "sources": [
+                "build/include/silk.net.directwrite.dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_2.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_3.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dwrite",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "typemap-native",
+                "no-obsolete-enum"
+            ],
+            "converter": {},
+            "prefix": "DWRITE_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dcommon.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_3.h"
+                ],
+                "classes": {
+                    "silk.net.directwrite.dcommon.h": "[Core]DWrite",
+                    "dwrite.h": "[Core]DWrite",
+                    "dwrite_1.h": "[Core]DWrite",
+                    "dwrite_2.h": "[Core]DWrite",
+                    "dwrite_3.h": "[Core]DWrite"
+                }
+            },
+            "exclude": [
+                "D2D_VECTOR_2F",
+                "D2D_VECTOR_3F",
+                "D2D_VECTOR_4F",
+                "D2D_POINT_2U",
+                "D2D_POINT_2F",
+                "D2D_POINT_2L",
+                "D2D_RECT_F",
+                "D2D_RECT_U",
+                "D2D_RECT_L",
+                "D2D_SIZE_F",
+                "D2D_SIZE_U",
+                "D2D_MATRIX_3X2_F",
+                "D2D_MATRIX_4X3_F",
+                "D2D_MATRIX_4X4_F",
+                "D2D_MATRIX_5X4_F",
+                "D2D1_POINT_2U",
+                "D2D1_POINT_2F",
+                "D2D1_POINT_2L",
+                "D2D1_RECT_F",
+                "D2D1_RECT_U",
+                "D2D1_RECT_L",
+                "D2D1_SIZE_F",
+                "D2D1_SIZE_U",
+                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
+                "IDXGISurface",
+                "D2D1_ALPHA_MODE",
+                "D2D1_PIXEL_FORMAT",
+                "ID2D1SimplifiedGeometrySink",
+                "_D3DCOLORVALUE"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "silk.net.directwrite.dcommon",
+                    "dwrite",
+                    "dwrite_1",
+                    "dwrite_2",
+                    "dwrite_3"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DirectWrite",
+            "extensionsNamespace": "Silk.NET.DirectWrite.Extensions",
+            "overloadExclusions": {
+                "RefOverloader": [
+                    "GetGlyphs",
+                    "GetJustifiedGlyphs",
+                    "GetGlyphPlacements",
+                    "GetGdiCompatibleGlyphPlacements",
+                    "ApplyCharacterSpacing",
+                    "GetTextComplexity",
+                    "GetJustificationOpportunities",
+                    "JustifyGlyphAdvances",
+                    "CheckTypographicFeature"
+                ]
+            },
+            "nameContainer": {
+                "linux-x64": "libdwrite.so",
+                "win-x64": "DWrite.dll",
+                "win-x86": "DWrite.dll",
+                "osx-x64": "libdwrite.dylib",
+                "android": "libdwrite.so",
+                "iOS": "__Internal",
+                "className": "DWriteLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "IDXGISurface": "Silk.NET.DXGI.IDXGISurface",
+                    "D2D1_ALPHA_MODE": "Silk.NET.Direct2D.AlphaMode",
+                    "D2D1PixelFormat": "Silk.NET.Direct2D.PixelFormat",
+                    "ID2D1SimplifiedGeometrySink": "Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink",
+                    "_FILETIME": "Silk.NET.Core.Win32Extras.Filetime",
+                    "tagLOGFONTW": "void",
+                    "tagLOGFONTA": "void",
+                    "tagFONTSIGNATURE": "void"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "D3D11",
             "sources": [
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11.h",
