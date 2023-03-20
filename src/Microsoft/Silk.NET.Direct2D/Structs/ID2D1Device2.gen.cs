@@ -206,6 +206,198 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControl);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+            {
+                fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlProperties, printControlPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+            {
+                fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControl);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+            {
+                fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                {
+                    fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactory, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControl);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlProperties, printControlPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControl);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                {
+                    fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTarget, printControlPropertiesPtr, printControlPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControl);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+                {
+                    fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlProperties, printControlPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ID2D1PrintControl** printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+                {
+                    fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControl);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ID2D1PrintControl* printControl)
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IWICImagingFactory* wicFactoryPtr = &wicFactory)
+            {
+                fixed (IPrintDocumentPackageTarget* documentTargetPtr = &documentTarget)
+                {
+                    fixed (PrintControlProperties* printControlPropertiesPtr = &printControlProperties)
+                    {
+                        fixed (ID2D1PrintControl** printControlPtr = &printControl)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID2D1Device2*, IWICImagingFactory*, IPrintDocumentPackageTarget*, PrintControlProperties*, ID2D1PrintControl**, int>)@this->LpVtbl[5])(@this, wicFactoryPtr, documentTargetPtr, printControlPropertiesPtr, printControlPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly void SetMaximumTextureMemory(ulong maximumInBytes)
         {
             var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -321,6 +513,54 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreatePrintControl(wicFactory, documentTarget, in printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, ref documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(IWICImagingFactory* wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(wicFactory, ref documentTarget, in printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, IPrintDocumentPackageTarget* documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, documentTarget, in printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrintControlProperties* printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, ref documentTarget, printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePrintControl<TI0>(ref IWICImagingFactory wicFactory, ref IPrintDocumentPackageTarget documentTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in PrintControlProperties printControlProperties, ref ComPtr<TI0> printControl) where TI0 : unmanaged, IComVtbl<ID2D1PrintControl>, IComVtbl<TI0>
+        {
+            var @this = (ID2D1Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePrintControl(ref wicFactory, ref documentTarget, in printControlProperties, (ID2D1PrintControl**) printControl.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
