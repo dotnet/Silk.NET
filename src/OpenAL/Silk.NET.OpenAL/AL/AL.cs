@@ -339,7 +339,7 @@ namespace Silk.NET.OpenAL
         {
             SearchPathContainer searchPaths = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(searchPaths.GetLibraryName()), null);
+                (CreateDefaultContext(searchPaths.GetLibraryNames()), null);
             var ret = new AL(ctx);
             ret._soft = soft;
             ret._searchPaths = searchPaths;

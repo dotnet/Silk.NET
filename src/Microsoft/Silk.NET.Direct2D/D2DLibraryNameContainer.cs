@@ -11,21 +11,21 @@ namespace Silk.NET.Direct2D
     internal class D2DLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libd2d1.so";
+        public override string[] Linux => new[] { "libd2d1.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libd2d1.dylib";
+        public override string[] MacOS => new[] { "libd2d1.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libd2d1.so";
+        public override string[] Android => new[] { "libd2d1.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "d2d1.dll";
+        public override string[] Windows64 => new[] { "d2d1.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "d2d1.dll";
+        public override string[] Windows86 => new[] { "d2d1.dll" };
     }
 }

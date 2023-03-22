@@ -11,21 +11,21 @@ namespace Silk.NET.GLFW
     internal class GlfwLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libglfw.so.3.3";
+        public override string[] Linux => new[] { "libglfw.so.3.3" };
 
         /// <inheritdoc />
-        public override string MacOS => "libglfw.3.dylib";
+        public override string[] MacOS => new[] { "libglfw.3.dylib" };
 
         /// <inheritdoc />
-        public override string Android => Linux;
+        public override string[] Android => Linux;
 
         /// <inheritdoc />
-        public override string IOS => MacOS;
+        public override string[] IOS => MacOS;
 
         /// <inheritdoc />
-        public override string Windows64 => "glfw3.dll";
+        public override string[] Windows64 => new[] { "glfw3.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "glfw3.dll";
+        public override string[] Windows86 => new[] { "glfw3.dll" };
     }
 }

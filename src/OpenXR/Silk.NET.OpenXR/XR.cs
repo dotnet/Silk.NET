@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR
         }
         public static XR GetApi()
         {
-            return new XR(CreateDefaultContext(new OpenXRLibraryNameContainer().GetLibraryName()));
+            return new XR(CreateDefaultContext(new OpenXRLibraryNameContainer().GetLibraryNames()));
         }
 
         [Obsolete("Use IsInstanceExtensionPresent instead.", true)]

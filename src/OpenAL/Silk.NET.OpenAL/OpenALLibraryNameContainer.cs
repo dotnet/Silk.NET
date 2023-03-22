@@ -11,21 +11,21 @@ namespace Silk.NET.OpenAL
     internal class OpenALLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libopenal.so.1";
+        public override string[] Linux => new[] { "libopenal.so.1" };
 
         /// <inheritdoc />
-        public override string MacOS => "/System/Library/Frameworks/OpenAL.framework/OpenAL";
+        public override string[] MacOS => new[] { "/System/Library/Frameworks/OpenAL.framework/OpenAL" };
 
         /// <inheritdoc />
-        public override string Android => Linux;
+        public override string[] Android => Linux;
 
         /// <inheritdoc />
-        public override string IOS => MacOS;
+        public override string[] IOS => MacOS;
 
         /// <inheritdoc />
-        public override string Windows86 => "openal32.dll";
+        public override string[] Windows86 => new[] { "openal32.dll" };
 
         /// <inheritdoc />
-        public override string Windows64 => "openal32.dll";
+        public override string[] Windows64 => new[] { "openal32.dll" };
     }
 }

@@ -11,21 +11,21 @@ namespace Silk.NET.DXGI
     internal class DXGILibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libDXGI.so";
+        public override string[] Linux => new[] { "libDXGI.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libDXGI.dylib";
+        public override string[] MacOS => new[] { "libDXGI.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libDXGI.so";
+        public override string[] Android => new[] { "libDXGI.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal"; // __Internal relies on a SilkTouch override.
+        public override string[] IOS => new[] { "__Internal" }; // __Internal relies on a SilkTouch override.
 
         /// <inheritdoc />
-        public override string Windows64 => "DXGI.dll";
+        public override string[] Windows64 => new[] { "DXGI.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "DXGI.dll";
+        public override string[] Windows86 => new[] { "DXGI.dll" };
     }
 }

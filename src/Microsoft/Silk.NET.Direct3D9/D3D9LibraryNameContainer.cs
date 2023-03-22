@@ -11,21 +11,21 @@ namespace Silk.NET.Direct3D9
     internal class D3D9LibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libd3d9.so";
+        public override string[] Linux => new[] { "libd3d9.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libd3d9.dylib";
+        public override string[] MacOS => new[] { "libd3d9.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libd3d9.so";
+        public override string[] Android => new[] { "libd3d9.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "d3d9.dll";
+        public override string[] Windows64 => new[] { "d3d9.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "d3d9.dll";
+        public override string[] Windows86 => new[] { "d3d9.dll" };
     }
 }

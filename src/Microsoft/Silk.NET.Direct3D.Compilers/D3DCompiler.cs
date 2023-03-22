@@ -12,7 +12,7 @@ namespace Silk.NET.Direct3D.Compilers
     {
         public static D3DCompiler GetApi()
         {
-             return new D3DCompiler(CreateDefaultContext(new D3DCompilerLibraryNameContainer().GetLibraryName()));
+             return new D3DCompiler(CreateDefaultContext(new D3DCompilerLibraryNameContainer().GetLibraryNames()));
         }
 
         public bool TryGetExtension<T>(out T ext)

@@ -17,7 +17,7 @@ namespace Silk.NET.DirectStorage
     {
         public static DStorage GetApi()
         {
-             return new(CreateDefaultContext(new DStorageLibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new DStorageLibraryNameContainer().GetLibraryNames()));
         }
 
         public bool TryGetExtension<T>(out T ext)

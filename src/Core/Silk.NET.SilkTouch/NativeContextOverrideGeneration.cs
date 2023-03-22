@@ -49,6 +49,8 @@ namespace Silk.NET.SilkTouch
                                     IdentifierName("n")))))
             );
 
+            StatementSyntax arrLast = last;
+
             foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
             {
                 var name = NameGenerator.Name($"OVERRIDE_{attId}");
@@ -61,6 +63,41 @@ namespace Silk.NET.SilkTouch
                         var matchId = (int) x2.ConstructorArguments[0].Value!;
                         return matchId != attId;
                     })).ToArray(), comp.SyntaxTrees?.FirstOrDefault()?.IsNet5OrGreater() ?? false)));
+                arrLast = IfStatement
+                (
+                    InvocationExpression
+                    (
+                        MemberAccessExpression
+                        (
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            IdentifierName("System.Linq.Enumerable"),
+                            IdentifierName("Contains")
+                        ),
+                        ArgumentList
+                        (
+                            SingletonSeparatedList
+                            (
+                                Argument
+                                (
+                                    IdentifierName("n")
+                                )
+                            ).Add
+                            (
+                                Argument
+                                (
+                                    LiteralExpression
+                                    (
+                                        SyntaxKind.StringLiteralExpression,
+                                        Literal(lib)
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
+                    ElseClause(arrLast)
+                );
+
                 last = IfStatement
                 (
                     BinaryExpression
@@ -85,6 +122,47 @@ namespace Silk.NET.SilkTouch
                         )
                     )
                     .WithBody(Block(last))
+                .WithAttributeLists(
+                    SingletonList
+                    (
+                        AttributeList
+                        (
+                            SingletonSeparatedList
+                            (
+                                Attribute
+                                (
+                                    ParseName("System.ObsoleteAttribute"),
+                                    AttributeArgumentList
+                                    (
+                                        SingletonSeparatedList
+                                        (
+                                            AttributeArgument
+                                            (
+                                                LiteralExpression(SyntaxKind.StringLiteralExpression,
+                                                Literal("This function is obsolete!")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ))
+            );
+
+            members.Add
+            (
+                MethodDeclaration(IdentifierName("INativeContext"), Identifier("CreateDefaultContext"))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SingletonSeparatedList
+                            (Parameter(Identifier("n")).WithType(ArrayType(PredefinedType(Token(SyntaxKind.StringKeyword)), SingletonList(ArrayRankSpecifier()))))
+                        )
+                    )
+                    .WithBody(Block(arrLast))
             );
         }
 
