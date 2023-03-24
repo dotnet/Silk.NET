@@ -3,13 +3,17 @@ on:
   push:
     branches:
       - 'main'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+        submodules: 'true'
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
@@ -22,19 +26,19 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.102
-    - name: Checkout Website Branch
-      run: |
-        git fetch --all
-        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
-        git config --local user.name "The Silk.NET Automaton"
-        git merge --allow-unrelated-histories -s ours origin/ci/github-pages
-        git checkout ci/github-pages
-        git reset --hard main
-        git submodule init
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
-    - name: Push to Website Branch
-      run: |
-        git add -f docs/
-        git commit -am "Push latest built GitHub Pages site"
-        git push
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: "docs"
+  Deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
