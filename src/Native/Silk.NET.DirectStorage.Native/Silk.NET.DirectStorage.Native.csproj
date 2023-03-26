@@ -18,7 +18,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="runtimes\win-x64\native\dstorage.dll" PackagePath="runtimes\win-x64\native\dstorage.dll" />
     <Content Include="runtimes\win-x86\native\dstorage.dll" PackagePath="runtimes\win-x86\native\dstorage.dll" />
     <Content Include="runtimes\win-arm\native\dstorage.dll" PackagePath="runtimes\win-arm\native\dstorage.dll" />
