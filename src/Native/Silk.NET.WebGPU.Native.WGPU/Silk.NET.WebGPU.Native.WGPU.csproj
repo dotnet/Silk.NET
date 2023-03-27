@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="build\net461\$(PackageId).targets" PackagePath="build\net461\$(PackageId).targets" />
     <Content Include="runtimes\linux-x86\native\libwgpu_native.so" PackagePath="runtimes\linux-x86\native\libwgpu_native.so" />
     <Content Include="runtimes\linux-x64\native\libwgpu_native.so" PackagePath="runtimes\linux-x64\native\libwgpu_native.so" />
     <Content Include="runtimes\osx-x64\native\libwgpu_native.dylib" PackagePath="runtimes\osx-x64\native\libwgpu_native.dylib" />
