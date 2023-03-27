@@ -53,10 +53,6 @@ namespace Silk.NET.Core.Native
         // This means that the GlobalMemory is only freed when the user calls Free.
         private static readonly ConcurrentDictionary<nint, GlobalMemory> _marshalledMemory = new();
 
-        // In addition, we should keep track of the memory we allocate dedicated to string arrays. If we don't, we won't
-        // know to free the individual strings allocated within memory.
-        private static readonly ConcurrentDictionary<GlobalMemory, int> _stringArrays = new();
-
         // Other kinds of GCHandle-pinned pointers may be passed into Free, like delegate pointers for example which
         // must have GCHandles allocated on older runtimes to avoid an ExecutionEngineException.
         // We should keep track of those.
@@ -94,15 +90,6 @@ namespace Silk.NET.Core.Native
             if (val is null)
             {
                 return ret;
-            }
-
-            if (_stringArrays.TryRemove(val, out var numStrings))
-            {
-                var span = val.AsSpan<nint>();
-                for (var i = 0; i < numStrings; i++)
-                {
-                    Free(span[i]);
-                }
             }
 
             val.Dispose();
@@ -364,7 +351,7 @@ namespace Silk.NET.Core.Native
             NativeStringEncoding e = NativeStringEncoding.Ansi
         )
         {
-            var memory = GlobalMemory.Allocate(input.Count * IntPtr.Size);
+            var memory = GlobalMemory.AllocateForStringArray(input.Count * IntPtr.Size, input.Count);
             var span = memory.AsSpan<nint>();
             for (var i = 0; i < input.Count; i++)
             {
@@ -386,7 +373,7 @@ namespace Silk.NET.Core.Native
             Func<string, nint> customStringMarshaller
         )
         {
-            var memory = GlobalMemory.Allocate(input.Count * IntPtr.Size);
+            var memory = GlobalMemory.AllocateForStringArray(input.Count * IntPtr.Size, input.Count);
             var span = memory.AsSpan<nint>();
             for (var i = 0; i < input.Count; i++)
             {
@@ -409,7 +396,6 @@ namespace Silk.NET.Core.Native
         )
         {
             var memory = StringArrayToMemory(input, encoding);
-            _stringArrays.TryAdd(memory, input.Count);
             return RegisterMemory(memory);
         }
 
@@ -426,7 +412,6 @@ namespace Silk.NET.Core.Native
         )
         {
             var memory = StringArrayToMemory(input, customStringMarshaller);
-            _stringArrays.TryAdd(memory, input.Count);
             return RegisterMemory(memory);
         }
 
