@@ -14,11 +14,14 @@ namespace Silk.NET.Core.Native
     {    
         // Actual object
         private readonly object _memoryObject;
+        private          int    _stringArrayCount;
+        private          bool   _freed = false;
 
-        private GlobalMemory(object memoryObject, int length)
+        private GlobalMemory(object memoryObject, int length, int stringArrayCount = 0)
         {
             _memoryObject = memoryObject;
             Length = length;
+            _stringArrayCount = stringArrayCount;
         }
 
         /// <summary>
@@ -120,6 +123,17 @@ namespace Silk.NET.Core.Native
 
         private unsafe void Free()
         {
+            if (_stringArrayCount != 0)
+            {
+                var span = AsSpan<IntPtr>();
+                for (var index = 0; index < _stringArrayCount; index++)
+                {
+                    var intPtr = span[index];
+                    SilkMarshal.Free(intPtr);
+                }
+
+                _stringArrayCount = 0;
+            }
             switch (_memoryObject)
             {
                 case HGlobal hGlobal:
@@ -145,6 +159,8 @@ namespace Silk.NET.Core.Native
                 }
 #endif
             }
+
+            _freed = true;
         }
 
         /// <inheritdoc />
@@ -172,6 +188,15 @@ namespace Silk.NET.Core.Native
             new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
 #else
             new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
+#endif
+
+        internal static GlobalMemory AllocateForStringArray(int length, int count) =>
+#if NET6_0_OR_GREATER
+            new GlobalMemory(new NativeMemoryPtr(length), length > 0 ? length : 1, count);
+#elif NET5_0
+            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length, count);
+#else
+            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1, count);
 #endif
 
         // Encapsulations different kinds of memory
