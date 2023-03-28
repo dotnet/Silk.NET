@@ -11,21 +11,21 @@ namespace Silk.NET.Vulkan
     internal class VulkanLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libvulkan.so.1";
+        public override string[] Linux => new[] { "libvulkan.so.1" };
 
         /// <inheritdoc />
-        public override string MacOS => "libvulkan.dylib";
+        public override string[] MacOS => new[] { "libvulkan.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libvulkan.so";
+        public override string[] Android => new[] { "libvulkan.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "vulkan-1.dll";
+        public override string[] Windows64 => new[] { "vulkan-1.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "vulkan-1.dll";
+        public override string[] Windows86 => new[] { "vulkan-1.dll" };
     }
 }

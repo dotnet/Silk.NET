@@ -11,21 +11,21 @@ namespace Silk.NET.DXVA
     internal class DXVA2LibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libdxva2.so";
+        public override string[] Linux => new[] { "libdxva2.so" };
     
         /// <inheritdoc />
-        public override string MacOS => "libdxva2.dylib";
+        public override string[] MacOS => new[] { "libdxva2.dylib" };
     
         /// <inheritdoc />
-        public override string Android => "libdxva2.so";
+        public override string[] Android => new[] { "libdxva2.so" };
     
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
     
         /// <inheritdoc />
-        public override string Windows64 => "dxva2.dll";
+        public override string[] Windows64 => new[] { "dxva2.dll" };
     
         /// <inheritdoc />
-        public override string Windows86 => "dxva2.dll";
+        public override string[] Windows86 => new[] { "dxva2.dll" };
     }
 }

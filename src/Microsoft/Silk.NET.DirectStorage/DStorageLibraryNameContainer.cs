@@ -11,21 +11,21 @@ namespace Silk.NET.DirectStorage
     internal class DStorageLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libdstorage.so";
+        public override string[] Linux => new[] { "libdstorage.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libdstorage.dylib";
+        public override string[] MacOS => new[] { "libdstorage.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libdstorage.so";
+        public override string[] Android => new[] { "libdstorage.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "dstorage.dll";
+        public override string[] Windows64 => new[] { "dstorage.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "dstorage.dll";
+        public override string[] Windows86 => new[] { "dstorage.dll" };
     }
 }

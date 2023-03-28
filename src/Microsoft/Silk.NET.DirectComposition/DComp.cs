@@ -17,7 +17,7 @@ namespace Silk.NET.DirectComposition
     {
         public static DComp GetApi()
         {
-             return new(CreateDefaultContext(new DCompLibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new DCompLibraryNameContainer().GetLibraryNames()));
         }
 
         public bool TryGetExtension<T>(out T ext)

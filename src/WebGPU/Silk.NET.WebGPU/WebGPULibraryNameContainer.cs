@@ -11,21 +11,21 @@ namespace Silk.NET.WebGPU
     internal class WebGPULibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libwgpu_native.so";
+        public override string[] Linux => new[] { "libwgpu_native.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libwgpu_native.dylib";
+        public override string[] MacOS => new[] { "libwgpu_native.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libwgpu_native.so";
+        public override string[] Android => new[] { "libwgpu_native.so" };
 
         /// <inheritdoc />
-        public override string IOS => "";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "libwgpu_native.dll";
+        public override string[] Windows64 => new[] { "libwgpu_native.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "libwgpu_native.dll";
+        public override string[] Windows86 => new[] { "libwgpu_native.dll" };
     }
 }

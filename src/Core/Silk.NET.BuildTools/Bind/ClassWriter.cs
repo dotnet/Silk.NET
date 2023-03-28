@@ -39,22 +39,22 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    internal class {task.Task.NameContainer.ClassName} : SearchPathContainer");
             sw.WriteLine("    {");
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Linux => \"{task.Task.NameContainer.Linux}\";");
+            sw.WriteLine($"        public override string[] Linux => new[] {{ \"{task.Task.NameContainer.Linux}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
+            sw.WriteLine($"        public override string[] MacOS => new[] {{ \"{task.Task.NameContainer.MacOS}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Android => \"{task.Task.NameContainer.Android}\";");
+            sw.WriteLine($"        public override string[] Android => new[] {{ \"{task.Task.NameContainer.Android}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string IOS => \"{task.Task.NameContainer.IOS}\";");
+            sw.WriteLine($"        public override string[] IOS => {{ \"{task.Task.NameContainer.IOS}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows64 => \"{task.Task.NameContainer.Windows64}\";");
+            sw.WriteLine($"        public override string[] Windows64 => {{ \"{task.Task.NameContainer.Windows64}\" }};");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows86 => \"{task.Task.NameContainer.Windows86}\";");
+            sw.WriteLine($"        public override string[] Windows86 => {{ \"{task.Task.NameContainer.Windows86}\" }};");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }
@@ -264,7 +264,7 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine
                             (
                                 $"             return new(CreateDefaultContext" +
-                                $"(new {task.Task.NameContainer.ClassName}().GetLibraryName()));"
+                                $"(new {task.Task.NameContainer.ClassName}().GetLibraryNames()));"
                             );
                         }
                         else

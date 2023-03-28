@@ -12,7 +12,7 @@ namespace Silk.NET.DXGI
     {
         public static DXGI GetApi()
         {
-             return new DXGI(CreateDefaultContext(new DXGILibraryNameContainer().GetLibraryName()));
+             return new DXGI(CreateDefaultContext(new DXGILibraryNameContainer().GetLibraryNames()));
         }
 
         public bool TryGetExtension<T>(out T ext)

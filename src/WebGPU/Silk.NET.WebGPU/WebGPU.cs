@@ -17,7 +17,7 @@ namespace Silk.NET.WebGPU
     {
         public static WebGPU GetApi()
         {
-             return new(CreateDefaultContext(new WebGPULibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new WebGPULibraryNameContainer().GetLibraryNames()));
         }
 
         [Obsolete("Use TryGetDeviceExtension!")]
