@@ -44,6 +44,9 @@
             - Fixed XInput GetApi not being implemented. (thanks @ohtorobinson)
             - Fixed TransparentBuffer not being applied correctly without specifying a PreferredBitDepth. (thanks @MarioGK)
             - Fixed wide string marshalling.
+            - Add ANGLE constants to GLFW
+            - Improved support for Silk.NET.Windowing under reflection-free NativeAOT
+            - Fix copying of native libraries under .NET Framework 4.6.1
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
