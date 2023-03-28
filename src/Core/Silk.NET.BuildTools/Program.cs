@@ -114,16 +114,23 @@ namespace Silk.NET.BuildTools
                 {
                     if (kvp.Value.Success)
                     {
+                        Console.ForegroundColor = ConsoleColor.Green;
+
                         Console.WriteLine
                             ($"Task \"{kvp.Key}\" took {kvp.Value.Time.TotalSeconds} second(s) to complete.");
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
+
                         Console.WriteLine
                             ($"Task \"{kvp.Key}\" failed after {kvp.Value.Time.TotalSeconds} second(s).");
                         failedJobs++;
                     }
                 }
+                //reset the colour
+                Console.ResetColor();
+
                 Console.WriteLine();
                 Console.WriteLine($"In total, this particular job took {jobSw.Elapsed.TotalSeconds} second(s) to complete.");
                 Console.WriteLine();
