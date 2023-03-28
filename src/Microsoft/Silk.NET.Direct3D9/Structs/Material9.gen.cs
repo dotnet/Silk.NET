@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D9
     {
         public Material9
         (
-            Colorvalue? diffuse = null,
-            Colorvalue? ambient = null,
-            Colorvalue? specular = null,
-            Colorvalue? emissive = null,
+            Silk.NET.DXGI.D3Dcolorvalue? diffuse = null,
+            Silk.NET.DXGI.D3Dcolorvalue? ambient = null,
+            Silk.NET.DXGI.D3Dcolorvalue? specular = null,
+            Silk.NET.DXGI.D3Dcolorvalue? emissive = null,
             float? power = null
         ) : this()
         {
@@ -58,22 +58,22 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Diffuse")]
-        public Colorvalue Diffuse;
+        public Silk.NET.DXGI.D3Dcolorvalue Diffuse;
 
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Ambient")]
-        public Colorvalue Ambient;
+        public Silk.NET.DXGI.D3Dcolorvalue Ambient;
 
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Specular")]
-        public Colorvalue Specular;
+        public Silk.NET.DXGI.D3Dcolorvalue Specular;
 
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Emissive")]
-        public Colorvalue Emissive;
+        public Silk.NET.DXGI.D3Dcolorvalue Emissive;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

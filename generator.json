@@ -1753,7 +1753,8 @@
             "exclude": [
                 "__AnonymousRecord_d3d9types_L93_C9",
                 "__AnonymousRecord_d3d9types_L92_C5",
-                "_D3DMATRIX"
+                "_D3DMATRIX",
+                "_D3DCOLORVALUE"
             ],
             "rename": {
                 "_D3D_OMAC": "D3DOMac"
@@ -2114,7 +2115,6 @@
                     "D2D_MATRIX_3X2_F": "Silk.NET.Maths.Matrix3X2<float>",
                     "D2D_RECT_F": "Silk.NET.Maths.Rectangle<float>",
                     "D3DMATRIX": "Silk.NET.Maths.Matrix4X4<float>",
-                    "_D3DCOLORVALUE": "Silk.NET.DXGI.D3Dcolorvalue",
                     "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
                     "DXGI_ALPHA_MODE": "Silk.NET.DXGI.AlphaMode",
                     "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",

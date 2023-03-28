@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D9
         public Light9
         (
             Lighttype? type = null,
-            Colorvalue? diffuse = null,
-            Colorvalue? specular = null,
-            Colorvalue? ambient = null,
+            Silk.NET.DXGI.D3Dcolorvalue? diffuse = null,
+            Silk.NET.DXGI.D3Dcolorvalue? specular = null,
+            Silk.NET.DXGI.D3Dcolorvalue? ambient = null,
             Vector? position = null,
             Vector? direction = null,
             float? range = null,
@@ -111,17 +111,17 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Diffuse")]
-        public Colorvalue Diffuse;
+        public Silk.NET.DXGI.D3Dcolorvalue Diffuse;
 
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Specular")]
-        public Colorvalue Specular;
+        public Silk.NET.DXGI.D3Dcolorvalue Specular;
 
         [NativeName("Type", "D3DCOLORVALUE")]
         [NativeName("Type.Name", "D3DCOLORVALUE")]
         [NativeName("Name", "Ambient")]
-        public Colorvalue Ambient;
+        public Silk.NET.DXGI.D3Dcolorvalue Ambient;
 
         [NativeName("Type", "D3DVECTOR")]
         [NativeName("Type.Name", "D3DVECTOR")]
