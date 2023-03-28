@@ -43,6 +43,8 @@ namespace Tutorial
             window.Closing += OnClose;
 
             window.Run();
+
+            window.Dispose();
         }
 
         private static void OnLoad()

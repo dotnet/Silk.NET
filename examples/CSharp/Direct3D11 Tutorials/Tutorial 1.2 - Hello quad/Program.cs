@@ -107,6 +107,9 @@ compiler.Dispose();
 d3d11.Dispose();
 dxgi.Dispose();
 
+//dispose the window, and its internal resources
+window.Dispose();
+
 unsafe void OnLoad()
 {
     // Set-up input context.
