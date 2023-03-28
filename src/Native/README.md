@@ -16,3 +16,4 @@ compatibility with the rest of your solution:
 - Silk.NET.Assimp.Native: BSD-3-Clause
 - Silk.NET.SDL.Native and Silk.NET.GLFW.Native: Zlib
 - Silk.NET.OpenAL.Soft.Native: LGPL-2.0-or-later
+- Silk.NET.WebGPU.Native.WGPU: MIT/Apache-2.0

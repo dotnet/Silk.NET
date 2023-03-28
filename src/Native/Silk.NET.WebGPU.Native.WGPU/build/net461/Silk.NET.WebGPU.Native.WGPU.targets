@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NET_WebGPU_Native_WGPU_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NET_WebGPU_Native_WGPU_IsWindows>
+    <_Silk_NET_WebGPU_Native_WGPU_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NET_WebGPU_Native_WGPU_IsMacOS>
+    <_Silk_NET_WebGPU_Native_WGPU_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NET_WebGPU_Native_WGPU_IsLinux>
+
+    <_Silk_NET_WebGPU_Native_WGPU_NativeRuntime Condition=" '$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == '' And '$(_Silk_NET_WebGPU_Native_WGPU_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Silk_NET_WebGPU_Native_WGPU_NativeRuntime>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeRuntime Condition=" '$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == '' And '$(_Silk_NET_WebGPU_Native_WGPU_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NET_WebGPU_Native_WGPU_NativeRuntime>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeRuntime Condition=" '$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == '' And '$(_Silk_NET_WebGPU_Native_WGPU_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Silk_NET_WebGPU_Native_WGPU_NativeRuntime>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeRuntime Condition=" '$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == '' And '$(_Silk_NET_WebGPU_Native_WGPU_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Silk_NET_WebGPU_Native_WGPU_NativeRuntime>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeRuntime Condition=" '$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == '' And '$(_Silk_NET_WebGPU_Native_WGPU_IsWindows)' == 'true' And '$(PlatformTarget)' == 'arm64'">win-arm64</_Silk_NET_WebGPU_Native_WGPU_NativeRuntime>
+
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'win-x86'">wgpu_native.dll</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'win-x64'">wgpu_native.dll</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'win-arm64'">wgpu_native.dll</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'osx-x64'">libwgpu_native.dylib</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'osx-arm64'">libwgpu_native.dylib</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'linux-x86'">libwgpu_native.so</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+    <_Silk_NET_WebGPU_Native_WGPU_NativeLibName Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' == 'linux-x64'">libwgpu_native.so</_Silk_NET_WebGPU_Native_WGPU_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NET_WebGPU_Native_WGPU_NativeRuntime)\native\$(_Silk_NET_WebGPU_Native_WGPU_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
