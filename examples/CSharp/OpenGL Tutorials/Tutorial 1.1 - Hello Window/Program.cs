@@ -24,6 +24,8 @@ namespace Tutorial
 
             //Run the window.
             window.Run();
+
+            window.Dispose();
         }
 
 

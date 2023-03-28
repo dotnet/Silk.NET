@@ -74,6 +74,8 @@ namespace ImGui
 
             // Now that everything's defined, let's run this bad boy!
             window.Run();
+
+            window.Dispose();
         }
     }
 }

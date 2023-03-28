@@ -9,13 +9,13 @@
 
     <ItemGroup>
         <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
-        <PackageReference Include="Silk.NET.Assimp" Version="*" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
         <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
         <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+        <ProjectReference Include="..\..\..\..\src\Assimp\Silk.NET.Assimp\Silk.NET.Assimp.csproj" />
     </ItemGroup>
 
     <ItemGroup>

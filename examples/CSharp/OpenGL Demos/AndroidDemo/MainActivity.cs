@@ -65,6 +65,8 @@ namespace AndroidDemo
             view.Closing += OnClose;
 
             view.Run();
+
+            view.Dispose();
         }
 
         private static unsafe void OnLoad()

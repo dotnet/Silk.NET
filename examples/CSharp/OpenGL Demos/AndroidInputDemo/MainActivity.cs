@@ -54,6 +54,8 @@ namespace AndroidInputDemo
             view.Render += OnRender;
             view.Closing += OnClose;
             view.Run();
+
+            view.Dispose();
         }
 
         private unsafe static void OnLoad()
