@@ -1334,7 +1334,8 @@
                 "D2D1_RECT_L",
                 "D2D1_SIZE_F",
                 "D2D1_SIZE_U",
-                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch"
+                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
+                "IDXGISurface"
             ],
             "rename": {
             },
@@ -1369,6 +1370,9 @@
                 "className": "D2DLibraryNameContainer"
             },
             "typeMaps": [
+                {
+                    "IDXGISurface": "Silk.NET.DXGI.IDXGISurface"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
