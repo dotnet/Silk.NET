@@ -327,7 +327,7 @@ namespace Silk.NET.BuildTools.Bind
                         structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile
                     );
                 }
-                else if (!(structField.Count is null))
+                else if (structField.Count is not null)
                 {
                     if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
                     {
