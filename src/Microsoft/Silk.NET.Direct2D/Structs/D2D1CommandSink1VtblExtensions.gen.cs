@@ -139,7 +139,7 @@ public unsafe static class D2D1CommandSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTransform(this ComPtr<ID2D1CommandSink1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe int SetTransform(this ComPtr<ID2D1CommandSink1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1445,7 +1445,7 @@ public unsafe static class D2D1CommandSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<ID2D1CommandSink1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static int SetTransform(this ComPtr<ID2D1CommandSink1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

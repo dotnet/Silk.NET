@@ -165,7 +165,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+        public readonly unsafe int SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1CommandSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -16,30 +16,30 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [NativeName("Name", "StdVideoEncodeH264RefMgmtFlags")]
-    public unsafe partial struct StdVideoEncodeH264RefMgmtFlags
+    [NativeName("Name", "StdVideoEncodeH264ReferenceListsInfoFlags")]
+    public unsafe partial struct StdVideoEncodeH264ReferenceListsInfoFlags
     {
-        public StdVideoEncodeH264RefMgmtFlags
+        public StdVideoEncodeH264ReferenceListsInfoFlags
         (
-            uint? refPicListModificationL0Flag = null,
-            uint? refPicListModificationL1Flag = null
+            uint? refPicListModificationFlagL0 = null,
+            uint? refPicListModificationFlagL1 = null
         ) : this()
         {
-            if (refPicListModificationL0Flag is not null)
+            if (refPicListModificationFlagL0 is not null)
             {
-                RefPicListModificationL0Flag = refPicListModificationL0Flag.Value;
+                RefPicListModificationFlagL0 = refPicListModificationFlagL0.Value;
             }
 
-            if (refPicListModificationL1Flag is not null)
+            if (refPicListModificationFlagL1 is not null)
             {
-                RefPicListModificationL1Flag = refPicListModificationL1Flag.Value;
+                RefPicListModificationFlagL1 = refPicListModificationFlagL1.Value;
             }
         }
 
 
         private uint _bitfield1;
 
-        public uint RefPicListModificationL0Flag
+        public uint RefPicListModificationFlagL0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -47,7 +47,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint RefPicListModificationL1Flag
+        public uint RefPicListModificationFlagL1
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);

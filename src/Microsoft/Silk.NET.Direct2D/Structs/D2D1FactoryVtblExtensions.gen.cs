@@ -584,7 +584,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -611,7 +611,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -659,7 +659,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1284,7 +1284,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1308,7 +1308,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1340,7 +1340,7 @@ public unsafe static class D2D1FactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

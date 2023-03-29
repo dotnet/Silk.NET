@@ -584,7 +584,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -611,7 +611,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -659,7 +659,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1028,7 +1028,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1040,7 +1040,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1052,7 +1052,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1067,7 +1067,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1076,7 +1076,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1088,7 +1088,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1099,7 +1099,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1111,7 +1111,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1126,7 +1126,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1678,7 +1678,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1702,7 +1702,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1734,7 +1734,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1990,7 +1990,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1998,7 +1998,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2006,7 +2006,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2014,7 +2014,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2022,7 +2022,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2030,7 +2030,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2038,7 +2038,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Span<Guid> classId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

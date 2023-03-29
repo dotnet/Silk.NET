@@ -305,7 +305,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+        public readonly unsafe int CreateSharedBitmap(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2730,7 +2730,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* @stringPtr = &@string)
@@ -2782,7 +2782,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawTextA([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2847,7 +2847,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrush, measuringMode);
@@ -2864,7 +2864,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetTransform([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
+        public readonly unsafe void SetTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[30])(@this, transform);
@@ -3503,7 +3503,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+        public readonly unsafe int CreateBitmapFromDxgiSurface(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5049,7 +5049,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+        public readonly unsafe int CreateLookupTable3D(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5815,7 +5815,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
+        public readonly unsafe void DrawSvgGlyphRun(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, DwriteMeasuringMode measuringMode)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext5*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, ID2D1SvgGlyphStyle*, uint, DwriteMeasuringMode, void>)@this->LpVtbl[101])(@this, baselineOrigin, glyphRun, defaultFillBrush, svgGlyphStyle, colorPaletteIndex, measuringMode);
@@ -5855,7 +5855,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
+        public readonly unsafe int GetColorBitmapGlyphImage(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1Image** glyphImage)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5963,7 +5963,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
+        public readonly unsafe int GetSvgGlyphImage(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ID2D1Brush* defaultFillBrush, ID2D1SvgGlyphStyle* svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ID2D1CommandList** glyphImage)
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6690,7 +6690,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+        public readonly unsafe int CreateSharedBitmap<TI0>(Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7674,7 +7674,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7690,7 +7690,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawTextA<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawTextA<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7714,7 +7714,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe void DrawGlyphRun<TI0>(Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7722,7 +7722,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void PushLayer<TI0>([Flow(FlowDirection.In)] LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+        public readonly unsafe void PushLayer<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -7810,7 +7810,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly unsafe int CreateBitmapFromDxgiSurface<TI0>(Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8339,7 +8339,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8643,7 +8643,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly unsafe int GetColorBitmapGlyphImage<TI0>(DwriteGlyphImageFormats glyphImageFormat, Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float dpiX, float dpiY, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI0> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8675,7 +8675,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
+        public readonly unsafe int GetSvgGlyphImage<TI0, TI1, TI2>(Silk.NET.Maths.Vector2D<float> glyphOrigin, IDWriteFontFace* fontFace, float fontEmSize, ushort glyphIndex, Silk.NET.Core.Bool32 isSideways, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ComPtr<TI0> defaultFillBrush, ComPtr<TI1> svgGlyphStyle, uint colorPaletteIndex, Silk.NET.Maths.Matrix3X2<float>* glyphTransform, ref ComPtr<TI2> glyphImage) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SvgGlyphStyle>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID2D1CommandList>, IComVtbl<TI2>
         {
             var @this = (ID2D1DeviceContext5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -2889,7 +2889,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+        public readonly unsafe int CreateLookupTable3D<TI0>(BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
