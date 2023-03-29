@@ -354,7 +354,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.1 - Hello Window
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.2 - Hello quad", "examples\CSharp\OpenGL Tutorials\Tutorial 1.2 - Hello quad\Tutorial 1.2 - Hello quad.csproj", "{FDC37D4C-0CA1-4D98-92B4-4DB5CADB1BD2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.3 - Abstraction", "examples\CSharp\OpenGL Tutorials\Tutorial 1.3 - Abstractions\Tutorial 1.3 - Abstraction.csproj", "{69321DDA-65DF-412F-BDDA-9306B8EE98D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.4 - Abstraction", "examples\CSharp\OpenGL Tutorials\Tutorial 1.4 - Abstractions\Tutorial 1.4 - Abstraction.csproj", "{69321DDA-65DF-412F-BDDA-9306B8EE98D0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.5 - Transformations", "examples\CSharp\OpenGL Tutorials\Tutorial 1.5 - Transformations\Tutorial 1.5 - Transformations.csproj", "{4270B2E3-5CA2-4DB8-B3D9-D99F161A0016}"
 EndProject
