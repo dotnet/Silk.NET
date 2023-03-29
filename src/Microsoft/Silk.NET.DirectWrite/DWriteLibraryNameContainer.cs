@@ -11,21 +11,21 @@ namespace Silk.NET.DirectWrite
     internal class DWriteLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libdwrite.so";
+        public override string[] Linux => new[] { "libdwrite.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libdwrite.dylib";
+        public override string[] MacOS => new[] { "libdwrite.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libdwrite.so";
+        public override string[] Android => new[] { "libdwrite.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "DWrite.dll";
+        public override string[] Windows64 => new[] { "DWrite.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "DWrite.dll";
+        public override string[] Windows86 => new[] { "DWrite.dll" };
     }
 }
