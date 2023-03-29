@@ -12,6 +12,6 @@ namespace Silk.NET.Direct3D11
     internal class D3D11Sdl2LibraryNameContainer : D3D11LibraryNameContainer
     {
         /// <inheritdoc />
-        public override string[] Linux => base.Linux.Concat(new[] { "sdl2-libdxvk_d3d11.so" }).ToArray();
+        public override string[] Linux => new[] { "sdl2-libdxvk_d3d11.so" }.Concat(base.Linux).ToArray();
     }
 }

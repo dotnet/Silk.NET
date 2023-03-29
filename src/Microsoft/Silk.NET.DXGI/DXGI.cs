@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -22,7 +23,9 @@ namespace Silk.NET.DXGI
                         throw new PlatformNotSupportedException("The Win32 swapchain provider is only supported on Windows! Use the GetApi(INativeWindow) overload, or specify this correctly per platform!");
                     }
                     
-                    return new DXGI(CreateDefaultContext(forceDxvk ? "dxvk-" : string.Empty + new DXGILibraryNameContainer().GetLibraryNames()));
+                    var names = new DXGILibraryNameContainer().GetLibraryNames();
+
+                    return new DXGI(CreateDefaultContext(names.Select(x => forceDxvk ? $"dxvk-{x}" : x).ToArray()));
                 case DXSwapchainProvider.Glfw:
                     if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                     {

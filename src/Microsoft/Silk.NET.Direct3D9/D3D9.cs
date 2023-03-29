@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -22,7 +23,9 @@ namespace Silk.NET.Direct3D9
                         throw new PlatformNotSupportedException("The Win32 swapchain provider is only supported on Windows! Use the GetApi(INativeWindow) overload, or specify this correctly per platform!");
                     }
                     
-                    return new D3D9(CreateDefaultContext(forceDxvk ? "dxvk-" : string.Empty + new D3D9LibraryNameContainer().GetLibraryNames()));
+                    var names = new D3D9LibraryNameContainer().GetLibraryNames();
+
+                    return new D3D9(CreateDefaultContext(names.Select(x => forceDxvk ? $"dxvk-{x}" : x).ToArray()));
                 case DXSwapchainProvider.Glfw:
                     if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                     {

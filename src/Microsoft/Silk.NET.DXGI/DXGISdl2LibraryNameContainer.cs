@@ -9,5 +9,5 @@ namespace Silk.NET.DXGI;
 
 internal class DXGISdl2LibraryNameContainer : DXGILibraryNameContainer
 {
-    public override string[] Linux => base.Linux.Concat(new[] { "sdl2-libdxvk_dxgi.so" }).ToArray();
+    public override string[] Linux => new[] { "sdl2-libdxvk_dxgi.so" }.Concat(base.Linux).ToArray();
 }

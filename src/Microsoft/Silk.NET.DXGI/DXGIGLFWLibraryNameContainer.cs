@@ -9,5 +9,5 @@ namespace Silk.NET.DXGI;
 
 internal class DXGIGLFWLibraryNameContainer : DXGILibraryNameContainer
 {
-    public override string[] Linux => base.Linux.Concat(new[] { "glfw-libdxvk_dxgi.so" }).ToArray();
+    public override string[] Linux => new[] { "glfw-libdxvk_dxgi.so" }.Concat(base.Linux).ToArray();
 }
