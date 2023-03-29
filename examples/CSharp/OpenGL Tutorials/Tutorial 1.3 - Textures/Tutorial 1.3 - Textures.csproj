@@ -8,16 +8,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <!--<ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+        <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
         <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
-        <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />-->
+        <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
-
-    <!-- Temporary! This is just so I can load and run the project without building from source. -->
+    
     <ItemGroup>
-      <PackageReference Include="Silk.NET.Windowing" Version="2.16.0" />
-      <PackageReference Include="Silk.NET.Input" Version="2.16.0" />
-      <PackageReference Include="Silk.NET.OpenGL" Version="2.16.0" />
+      <PackageReference Include="StbImageSharp" Version="2.27.13" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Update="silk.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
