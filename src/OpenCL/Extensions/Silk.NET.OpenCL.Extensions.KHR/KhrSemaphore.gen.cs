@@ -150,12 +150,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSemaphoreInfo([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSemaphoreInfo<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetSemaphoreInfo<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
-
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSemaphoreInfo([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
@@ -163,14 +157,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSemaphoreInfo([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
-
-        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSemaphoreInfo<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        [NativeApi(EntryPoint = "clGetSemaphoreInfoKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetSemaphoreInfo<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clReleaseSemaphoreKHR", Convention = CallingConvention.Winapi)]
         public partial int ReleaseSemaphore([Flow(FlowDirection.In)] nint sema_object);

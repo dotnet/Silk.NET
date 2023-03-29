@@ -138,55 +138,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI usage);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage);
-
-        [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI preserve);
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve);
-
-        [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVariantArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
         [NativeApi(EntryPoint = "glVariantArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
-
-        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
-        }
-
-        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
-        }
-
-        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
-        }
-
-        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
-        }
 
         public unsafe float GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname)
         {

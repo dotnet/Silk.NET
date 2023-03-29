@@ -337,66 +337,6 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pReservedPtr = &pReserved)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pReservedPtr = &pReserved)
-        {
-            fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pReservedPtr = &pReserved)
-        {
-            fixed (uint* pCountPtr = &pCount)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pReservedPtr = &pReserved)
-        {
-            fixed (uint* pCountPtr = &pCount)
-            {
-                fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
         var @this = thisVtbl.Handle;
@@ -457,78 +397,6 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
     {
         var @this = thisVtbl.Handle;
@@ -582,78 +450,6 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
                 fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                    }
                 }
             }
         }
@@ -725,90 +521,6 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
                         ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-            {
-                fixed (void* pReservedPtr = &pReserved)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-            {
-                fixed (void* pReservedPtr = &pReserved)
-                {
-                    fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-            {
-                fixed (void* pReservedPtr = &pReserved)
-                {
-                    fixed (uint* pCountPtr = &pCount)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* GuidPtr = &Guid)
-        {
-            fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
-            {
-                fixed (void* pReservedPtr = &pReserved)
-                {
-                    fixed (uint* pCountPtr = &pCount)
-                    {
-                        fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                        }
                     }
                 }
             }
@@ -1434,243 +1146,138 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Guid* Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, pCount, ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, pCount, ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReserved, pCount, ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReserved, pCount, ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, void* pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetDecoderConfigurations<T0>(this ComPtr<IDirectXVideoDecoderService> thisVtbl, Span<Guid> Guid, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoDesc> pVideoDesc, Span<T0> pReserved, Span<uint> pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>

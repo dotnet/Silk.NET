@@ -147,62 +147,11 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int NegotiateKeyExchange<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint DataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)@this->LpVtbl[5])(@this, DataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int Query(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)@this->LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutput);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pOutputPtr = &pOutput)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)@this->LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutputPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pInputPtr = &pInput)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)@this->LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutput);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pInputPtr = &pInput)
-        {
-            fixed (void* pOutputPtr = &pOutput)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)@this->LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutputPtr);
-            }
-        }
         return ret;
     }
 
@@ -223,33 +172,6 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
         fixed (AuthenticatedchannelConfigureOutput* pOutputPtr = &pOutput)
         {
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)@this->LpVtbl[7])(@this, InputSize, pInput, pOutputPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pInputPtr = &pInput)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)@this->LpVtbl[7])(@this, InputSize, pInputPtr, pOutput);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedchannelConfigureOutput pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pInputPtr = &pInput)
-        {
-            fixed (AuthenticatedchannelConfigureOutput* pOutputPtr = &pOutput)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)@this->LpVtbl[7])(@this, InputSize, pInputPtr, pOutputPtr);
-            }
         }
         return ret;
     }
@@ -296,59 +218,12 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int NegotiateKeyExchange<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] Span<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->NegotiateKeyExchange(DataSize, ref pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Query(InputSize, pInput, OutputSize, ref pOutput.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Query(InputSize, in pInput.GetPinnableReference(), OutputSize, pOutput);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Query(InputSize, in pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, Span<AuthenticatedchannelConfigureOutput> pOutput)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Configure(InputSize, pInput, ref pOutput.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Configure(InputSize, in pInput.GetPinnableReference(), pOutput);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Configure(InputSize, in pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
+        fixed (void* pInputSpp = pInput)
+            return @this->Configure(InputSize, pInputSpp, ref pOutput.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

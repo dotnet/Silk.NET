@@ -87,10 +87,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        public unsafe partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
+        public partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] in ulong value);
 
         public unsafe ulong GetInteger([Flow(FlowDirection.In)] NV value)
         {
@@ -106,10 +106,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             ProgramUniform(program, location, (uint) value.Length, in value.GetPinnableReference());
         }
 
-        public unsafe void Uniform([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        public unsafe void Uniform([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform(location, (uint) value.Length, in value.GetPinnableReference());
+            Uniform(location, (uint) value.Length*1, in value.GetPinnableReference());
         }
 
         public unsafe ulong GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname)

@@ -126,18 +126,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -150,21 +138,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -172,21 +145,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -207,41 +165,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-            }
             return ret;
         }
 
@@ -253,21 +181,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -422,137 +335,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, uint* pValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pValuePtr = &pValue)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, ref uint pValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pValuePtr = &pValue)
-            {
-                fixed (uint* pValueSizePtr = &pValueSize)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSizePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                fixed (uint* pValueSizePtr = &pValueSize)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSizePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int FindValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                fixed (void* pValuePtr = &pValue)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSize);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int FindValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                fixed (void* pValuePtr = &pValue)
-                {
-                    fixed (uint* pValueSizePtr = &pValueSize)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)@this->LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSizePtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int StoreValue([Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize)
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)@this->LpVtbl[9])(@this, pKey, KeySize, pValue, ValueSize);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int StoreValue<T0>([Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] in T0 pValue, uint ValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pValuePtr = &pValue)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)@this->LpVtbl[9])(@this, pKey, KeySize, pValuePtr, ValueSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int StoreValue<T0>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)@this->LpVtbl[9])(@this, pKeyPtr, KeySize, pValue, ValueSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int StoreValue<T0, T1>([Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] in T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pKeyPtr = &pKey)
-            {
-                fixed (void* pValuePtr = &pValue)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)@this->LpVtbl[9])(@this, pKeyPtr, KeySize, pValuePtr, ValueSize);
-                }
-            }
             return ret;
         }
 

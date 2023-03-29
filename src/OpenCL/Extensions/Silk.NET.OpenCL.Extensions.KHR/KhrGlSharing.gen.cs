@@ -145,22 +145,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial int GetGlcontextInfo([Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGlcontextInfo([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGlcontextInfo([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
-
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] GlContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
@@ -172,27 +160,11 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGlcontextInfo([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGlcontextInfo([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clGetGLContextInfoKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetGlcontextInfo<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetGLObjectInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGlobjectInfo([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.Out)] GlObjectType* gl_object_type, [Flow(FlowDirection.Out)] uint* gl_object_name);
@@ -228,12 +200,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGltextureInfo([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] GlTextureInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGltextureInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] GlTextureInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
-        public partial int GetGltextureInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] GlTextureInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
-
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (GlTextureInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGltextureInfo([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
@@ -241,14 +207,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (GlTextureInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGltextureInfo([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
-
-        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (GlTextureInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetGltextureInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (GlTextureInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        [NativeApi(EntryPoint = "clGetGLTextureInfo", Convention = CallingConvention.Winapi)]
-        public partial int GetGltextureInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         public KhrGlSharing(INativeContext ctx)
             : base(ctx)

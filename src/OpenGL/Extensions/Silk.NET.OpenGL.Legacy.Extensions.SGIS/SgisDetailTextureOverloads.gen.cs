@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     public static class SgisDetailTextureOverloads
     {
-        public static unsafe void DetailTexFunc(this SgisDetailTexture thisApi, [Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        public static unsafe void DetailTexFunc(this SgisDetailTexture thisApi, [Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // SpanOverloader
             thisApi.DetailTexFunc(target, n, in points.GetPinnableReference());
         }
 
-        public static unsafe void DetailTexFunc(this SgisDetailTexture thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        public static unsafe void DetailTexFunc(this SgisDetailTexture thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // SpanOverloader
             thisApi.DetailTexFunc(target, n, in points.GetPinnableReference());

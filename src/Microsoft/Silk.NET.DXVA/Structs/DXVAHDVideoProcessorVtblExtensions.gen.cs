@@ -94,35 +94,11 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[3])(@this, State, DataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetVideoProcessBltState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pData);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pDataPtr);
-        }
         return ret;
     }
 
@@ -136,35 +112,11 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetVideoProcessStreamState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
-        }
         return ret;
     }
 
@@ -239,38 +191,6 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetVideoProcessBltState(State, DataSize, in pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, Span<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetVideoProcessBltState(State, DataSize, ref pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetVideoProcessStreamState(StreamNumber, State, DataSize, in pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, Span<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetVideoProcessStreamState(StreamNumber, State, DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

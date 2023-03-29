@@ -23,9 +23,6 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         [NativeApi(EntryPoint = "glDebugMessageCallbackKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] void* userParam);
 
-        [NativeApi(EntryPoint = "glDebugMessageCallbackKHR", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] in T0 userParam) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glDebugMessageControlKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
@@ -2486,24 +2483,6 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label);
 
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glGetPointervKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] KHR pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -2536,15 +2515,6 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
 
         [NativeApi(EntryPoint = "glObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
-
-        [NativeApi(EntryPoint = "glObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte label) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glObjectPtrLabelKHR", Convention = CallingConvention.Winapi)]
-        public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPopDebugGroupKHR", Convention = CallingConvention.Winapi)]
         public partial void PopDebugGroup();
@@ -7175,30 +7145,6 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             GetObjectPtrLabel(ptr, (uint) label.Length, out length, out label.GetPinnableReference());
         }
 
-        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
-        }
-
         public unsafe void* GetPointer([Flow(FlowDirection.In)] KHR pname)
         {
             // ReturnTypeOverloader
@@ -7232,20 +7178,6 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(ptr, bufSize, out length, out byte silkRet);
-            return silkRet;
-        }
-
-        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetObjectPtrLabel(in ptr, bufSize, length, out byte silkRet);
-            return silkRet;
-        }
-
-        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);
             return silkRet;
         }
 

@@ -1228,472 +1228,270 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.CommandCopyImageToBuffer(command_buffer, command_queue, src_image, dst_buffer, in src_origin.GetPinnableReference(), in region.GetPinnableReference(), dst_offset, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* patternSpp = pattern)
+                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
+        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
-        }
-
-        public static unsafe int CommandFillImage<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fill_color, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(FlowDirection.Out)] Span<uint> sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CommandFillImage(command_buffer, command_queue, image, in fill_color.GetPinnableReference(), in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            fixed (void* fill_colorSpp = fill_color)
+                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandNdrangeKernel(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] NdrangeKernelCommandProperties* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] Span<nint> mutable_handle)
@@ -3480,43 +3278,27 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.EnqueueCommandBuffer(num_queues, out queues.GetPinnableReference(), command_buffer, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
-        public static unsafe int GetCommandBufferInfo(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] CommandBufferInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
+        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] CommandBufferInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
-        }
-
-        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] CommandBufferInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
-        }
-
-        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] CommandBufferInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
+            fixed (void* param_valueSpp = param_value)
+                return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (CommandBufferInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetCommandBufferInfo(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
+        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
+            fixed (void* param_valueSpp = param_value)
+                return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_valueSpp, param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (CommandBufferInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
+        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (CommandBufferInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetCommandBufferInfo<T0>(this KhrCommandBuffer thisApi, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
+            fixed (void* param_valueSpp = param_value)
+                return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
         }
 
     }

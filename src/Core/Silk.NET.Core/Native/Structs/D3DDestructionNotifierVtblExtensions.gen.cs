@@ -106,33 +106,6 @@ public unsafe static class D3DDestructionNotifierVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterDestructionCallback<T0>(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, ref T0 pData, uint* pCallbackID) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)@this->LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int RegisterDestructionCallback<T0>(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, ref T0 pData, ref uint pCallbackID) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (uint* pCallbackIDPtr = &pCallbackID)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)@this->LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static int UnregisterDestructionCallback(this ComPtr<ID3DDestructionNotifier> thisVtbl, uint callbackID)
     {
         var @this = thisVtbl.Handle;
@@ -167,27 +140,12 @@ public unsafe static class D3DDestructionNotifierVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterDestructionCallback(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, void* pData, Span<uint> pCallbackID)
+    public static int RegisterDestructionCallback<T0>(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, Span<T0> pData, Span<uint> pCallbackID) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterDestructionCallback(callbackFn, pData, ref pCallbackID.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterDestructionCallback<T0>(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, Span<T0> pData, uint* pCallbackID) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterDestructionCallback(callbackFn, ref pData.GetPinnableReference(), pCallbackID);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int RegisterDestructionCallback<T0>(this ComPtr<ID3DDestructionNotifier> thisVtbl, PfnDestructionCallback callbackFn, Span<T0> pData, Span<uint> pCallbackID) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterDestructionCallback(callbackFn, ref pData.GetPinnableReference(), ref pCallbackID.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->RegisterDestructionCallback(callbackFn, pDataSpp, ref pCallbackID.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

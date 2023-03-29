@@ -129,18 +129,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -153,21 +141,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -175,21 +148,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -210,41 +168,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-            }
             return ret;
         }
 
@@ -256,21 +184,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -986,18 +899,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, Feature, void*, uint, int>)@this->LpVtbl[13])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateDescriptorHeap([Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1157,66 +1058,6 @@ namespace Silk.NET.Direct3D12
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
-            {
-                fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
-                    }
                 }
             }
             return ret;
@@ -3536,66 +3377,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* NTHandlePtr = &NTHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* NTHandlePtr = &NTHandle)
-            {
-                fixed (void** ppvObjPtr = &ppvObj)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, ref Guid riid, void** ppvObj) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* NTHandlePtr = &NTHandle)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, ref Guid riid, ref void* ppvObj) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* NTHandlePtr = &NTHandle)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjPtr = &ppvObj)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int OpenSharedHandleByName([Flow(FlowDirection.In)] char* Name, uint Access, void** pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5672,83 +5453,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)@this->LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
-            {
-                fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)@this->LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)@this->LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)@this->LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEventOnMultipleFenceCompletion([Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEvent);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>([Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hEventPtr = &hEvent)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
-            }
             return ret;
         }
 
@@ -5760,21 +5469,6 @@ namespace Silk.NET.Direct3D12
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEvent);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>([Flow(FlowDirection.In)] ID3D12Fence** ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ulong* pFenceValuesPtr = &pFenceValues)
-            {
-                fixed (void* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
-                }
             }
             return ret;
         }
@@ -5792,21 +5486,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>([Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
-            {
-                fixed (void* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEventOnMultipleFenceCompletion([Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5816,24 +5495,6 @@ namespace Silk.NET.Direct3D12
                 fixed (ulong* pFenceValuesPtr = &pFenceValues)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEvent);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>([Flow(FlowDirection.In)] in ID3D12Fence* ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
-            {
-                fixed (ulong* pFenceValuesPtr = &pFenceValues)
-                {
-                    fixed (void* hEventPtr = &hEvent)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)@this->LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
-                    }
                 }
             }
             return ret;
@@ -6216,15 +5877,6 @@ namespace Silk.NET.Direct3D12
             // ComPtrOverloader
             ppvRootSignature = default;
             return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvRootSignature.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateRootSignature<T0, TI0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvRootSignature = default;
-            return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature, blobLengthInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvRootSignature.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -6723,15 +6375,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OpenSharedHandle<T0, TI0>(ref T0 NTHandle, out ComPtr<TI0> ppvObj) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppvObj = default;
-            return @this->OpenSharedHandle(ref NTHandle, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObj.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly int MakeResident<TI0>(uint NumObjects, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -7124,15 +6767,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePipelineLibrary<T0, TI0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            ppPipelineLibrary = default;
-            return @this->CreatePipelineLibrary(in pLibraryBlob, BlobLength, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineLibrary.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEventOnMultipleFenceCompletion<TI0>([Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -7141,27 +6775,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0, TI0>([Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), pFenceValues, NumFences, Flags, ref hEvent);
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEventOnMultipleFenceCompletion<TI0>([Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), in pFenceValues, NumFences, Flags, hEvent);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetEventOnMultipleFenceCompletion<T0, TI0>([Flow(FlowDirection.In)] ref ComPtr<TI0> ppFences, [Flow(FlowDirection.In)] in ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), in pFenceValues, NumFences, Flags, ref hEvent);
         }
 
         /// <summary>To be documented.</summary>
@@ -7330,15 +6948,6 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(@this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateRootSignature<T0, TI0>(uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreateRootSignature(nodeMask, in pBlobWithRootSignature, blobLengthInBytes, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
@@ -7550,15 +7159,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> OpenSharedHandle<T0, TI0>(ref T0 NTHandle) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->OpenSharedHandle(ref NTHandle, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly ComPtr<TI0> CreateFence<TI0>(ulong InitialValue, FenceFlags Flags) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -7627,15 +7227,6 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(@this->CreatePipelineLibrary(pLibraryBlob, BlobLength, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreatePipelineLibrary<T0, TI0>([Flow(FlowDirection.In)] in T0 pLibraryBlob, nuint BlobLength) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->CreatePipelineLibrary(in pLibraryBlob, BlobLength, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 

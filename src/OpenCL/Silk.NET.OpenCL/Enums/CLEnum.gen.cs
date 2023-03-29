@@ -2446,6 +2446,16 @@ namespace Silk.NET.OpenCL
         MipmapLevel = 0x2005,
         [NativeName("Name", "CL_GL_MIPMAP_LEVEL")]
         GLMipmapLevel = 0x2005,
+        [NativeName("Name", "CL_ICDL_OCL_VERSION")]
+        OclVersion = 0x1,
+        [NativeName("Name", "CL_ICDL_OCL_VERSION")]
+        IcdlOclVersion = 0x1,
+        [NativeName("Name", "CL_ICDL_VERSION")]
+        IcdlVersion = 0x2,
+        [NativeName("Name", "CL_ICDL_NAME")]
+        IcdlName = 0x3,
+        [NativeName("Name", "CL_ICDL_VENDOR")]
+        IcdlVendor = 0x4,
         [NativeName("Name", "CL_LAYER_API_VERSION")]
         ApiVersion = 0x4240,
         [NativeName("Name", "CL_LAYER_API_VERSION")]

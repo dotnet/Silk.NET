@@ -133,10 +133,11 @@ namespace Silk.NET.BuildTools.Overloading
                 foreach (var (spanParamIndex, countParamIndex) in counts)
                 {
                     var lengthParam = $"({original.Parameters[countParamIndex].Type}) " + (
-                        original.Parameters[spanParamIndex].Type.IsGenericTypeParameterReference
-                            ? $"({original.Parameters[spanParamIndex].Name}.Length * " +
-                              $"Unsafe.SizeOf<{original.Parameters[spanParamIndex].Type.Name}>())"
-                            : $"{original.Parameters[spanParamIndex].Name}.Length");
+                                          original.Parameters[spanParamIndex].Type.IsGenericTypeParameterReference
+                                              ? $"({original.Parameters[spanParamIndex].Name}.Length * " +
+                                                $"Unsafe.SizeOf<{original.Parameters[spanParamIndex].Type.Name}>())"
+                                              : $"{original.Parameters[spanParamIndex].Name}.Length") +
+                                      original.Parameters[spanParamIndex].Count!.Expression;
                     parameters[countParamIndex] = null;
                     invocationParameters[countParamIndex] = lengthParam;
                 }

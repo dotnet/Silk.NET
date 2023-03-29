@@ -154,33 +154,6 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromPinned<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncoding);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromPinned<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int MoveToBlob(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] void* pData, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
@@ -229,66 +202,6 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncoding);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (IMalloc* pIMallocPtr = &pIMalloc)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncoding);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (IMalloc* pIMallocPtr = &pIMalloc)
-            {
-                fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateBlob(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] void* pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
@@ -305,33 +218,6 @@ public unsafe static class DxcUtilsVtblExtensions
         fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pData, size, codePage, pBlobEncodingPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncoding);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)@this->LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
-            }
         }
         return ret;
     }
@@ -5059,27 +4945,12 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromPinned<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobFromPinned<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBlobFromPinned(in pData.GetPinnableReference(), size, codePage, pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateBlobFromPinned<T0, TI0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBlobFromPinned(in pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromPinned<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBlobFromPinned(in pData.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+        fixed (void* pDataSpp = pData)
+            return @this->CreateBlobFromPinned(pDataSpp, size, codePage, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -5091,6 +4962,15 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pData, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : struct
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        fixed (void* pDataSpp = pData)
+            return @this->MoveToBlob(pDataSpp, pIMalloc, size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MoveToBlob<TI0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] void* pData, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -5099,11 +4979,12 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] void* pData, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
+    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pData, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MoveToBlob(pData, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+        fixed (void* pDataSpp = pData)
+            return @this->MoveToBlob(pDataSpp, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -5115,67 +4996,12 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] void* pData, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pData, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MoveToBlob(pData, ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->MoveToBlob(in pData.GetPinnableReference(), pIMalloc, size, codePage, pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int MoveToBlob<T0, TI0, TI1>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->MoveToBlob(in pData, (IMalloc*) pIMalloc.Handle, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->MoveToBlob(in pData.GetPinnableReference(), pIMalloc, size, codePage, ref pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0, TI0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->MoveToBlob(in pData, (IMalloc*) pIMalloc.Handle, size, codePage, ref pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->MoveToBlob(in pData.GetPinnableReference(), ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int MoveToBlob<T0, TI0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->MoveToBlob(in pData, ref pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int MoveToBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->MoveToBlob(in pData.GetPinnableReference(), ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+        fixed (void* pDataSpp = pData)
+            return @this->MoveToBlob(pDataSpp, ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>
@@ -5187,27 +5013,12 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBlob(in pData.GetPinnableReference(), size, codePage, pBlobEncoding);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateBlob<T0, TI0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] in T0 pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBlob(in pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlob<T0>(this ComPtr<IDxcUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBlob(in pData.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+        fixed (void* pDataSpp = pData)
+            return @this->CreateBlob(pDataSpp, size, codePage, ref pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>

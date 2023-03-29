@@ -261,7 +261,14 @@ namespace Silk.NET.BuildTools.Common.Functions
                     else if (parameter.Count.IsReference)
                     {
                         // ReSharper disable once PossibleNullReferenceException
-                        attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                        if (parameter.Count.Expression is not null)
+                        {
+                            attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\", Expression = \"{parameter.Count.Expression}\")");
+                        }
+                        else
+                        {
+                            attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                        }
                     }
                 }
 

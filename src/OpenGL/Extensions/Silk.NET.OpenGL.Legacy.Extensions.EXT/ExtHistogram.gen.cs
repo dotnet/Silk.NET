@@ -24,49 +24,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetHistogramEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetHistogramParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetHistogramParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -120,49 +96,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
-
-        [NativeApi(EntryPoint = "glGetMinmaxEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetMinmaxParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMinmaxParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -248,62 +200,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glResetMinmaxEXT", Convention = CallingConvention.Winapi)]
         public partial void ResetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target);
 
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetHistogram(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
         public unsafe float GetHistogramParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
         {
             // NonKhrReturnTypeOverloader
@@ -329,62 +225,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // NonKhrReturnTypeOverloader
             GetHistogramParameter(target, pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
-            return silkRet;
-        }
-
-        public unsafe T0 GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            GetMinmax(target, reset, format, type, out T0 silkRet);
             return silkRet;
         }
 

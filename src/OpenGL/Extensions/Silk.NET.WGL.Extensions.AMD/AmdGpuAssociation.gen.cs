@@ -50,9 +50,6 @@ namespace Silk.NET.WGL.Extensions.AMD
         [NativeApi(EntryPoint = "wglGetGPUInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetGpuinfo([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] int property, [Flow(FlowDirection.In)] AMD dataType, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "wglGetGPUInfoAMD", Convention = CallingConvention.Winapi)]
-        public partial int GetGpuinfo<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] int property, [Flow(FlowDirection.In)] AMD dataType, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "wglMakeAssociatedContextCurrentAMD", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 MakeAssociatedContextCurrent([Flow(FlowDirection.In)] nint hglrc);
 

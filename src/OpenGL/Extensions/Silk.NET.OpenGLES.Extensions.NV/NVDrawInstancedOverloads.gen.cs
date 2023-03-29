@@ -16,28 +16,25 @@ namespace Silk.NET.OpenGLES.Extensions.NV
 {
     public static class NVDrawInstancedOverloads
     {
-        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] NV type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : struct
         {
             // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+            fixed (void* indicesSpp = indices)
+                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, primcount);
         }
 
-        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] NV type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : struct
         {
             // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+            fixed (void* indicesSpp = indices)
+                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, primcount);
         }
 
-        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] NV type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : struct
         {
             // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void DrawElementsInstanced<T0>(this NVDrawInstanced thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+            fixed (void* indicesSpp = indices)
+                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, primcount);
         }
 
     }

@@ -172,15 +172,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] MicromapEXT* pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WriteMicromapsProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] in MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] in MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         public unsafe Result BuildMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapBuildInfoEXT> pInfos)
@@ -204,24 +196,10 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] MicromapEXT* pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return WriteMicromapsProperties(device, micromapCount, pMicromaps, queryType, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
-        }
-
-        /// <summary>To be documented.</summary>
         public unsafe Result WriteMicromapsProperties([Count(Count = 0)] Device device, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapEXT> pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
         {
             // ImplicitCountSpanOverloader
             return WriteMicromapsProperties(device, (uint) pMicromaps.Length, in pMicromaps.GetPinnableReference(), queryType, dataSize, pData, stride);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapEXT> pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return WriteMicromapsProperties(device, (uint) pMicromaps.Length, in pMicromaps.GetPinnableReference(), queryType, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>

@@ -94,18 +94,6 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterSoftwareDevice<T0>(this ComPtr<IDirect3D9> thisVtbl, ref T0 pInitializeFunction) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pInitializeFunctionPtr = &pInitializeFunction)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunctionPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static uint GetAdapterCount(this ComPtr<IDirect3D9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
@@ -344,14 +332,6 @@ public unsafe static class Direct3D9VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int RegisterSoftwareDevice<T0>(this ComPtr<IDirect3D9> thisVtbl, Span<T0> pInitializeFunction) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterSoftwareDevice(ref pInitializeFunction.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

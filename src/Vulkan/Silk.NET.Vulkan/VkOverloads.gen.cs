@@ -1056,13 +1056,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void UpdateDescriptorSetWithTemplate<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.UpdateDescriptorSetWithTemplate(device, descriptorSet, descriptorUpdateTemplate, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result AllocateCommandBuffers(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] Span<CommandBuffer> pCommandBuffers)
         {
             // SpanOverloader
@@ -1364,13 +1357,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdPushConstants<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.CmdPushConstants(commandBuffer, layout, stageFlags, offset, size, ref pValues.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void CmdResolveImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
         {
             // SpanOverloader
@@ -1396,13 +1382,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             thisApi.CmdSetViewport(commandBuffer, firstViewport, viewportCount, in pViewports.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdUpdateBuffer<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3086,31 +3065,11 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, pDataSize, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetQueryPoolResults<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, ref pData.GetPinnableReference(), stride, flags);
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>

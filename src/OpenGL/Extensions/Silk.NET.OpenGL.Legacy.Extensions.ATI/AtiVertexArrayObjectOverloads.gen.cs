@@ -112,28 +112,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
             thisApi.GetVariantArrayObject(id, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe uint NewObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged
+        public static unsafe uint NewObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.NewObjectBuffer(size, in pointer.GetPinnableReference(), usage);
+            fixed (void* pointerSpp = pointer)
+                return thisApi.NewObjectBuffer(size, pointerSpp, usage);
         }
 
-        public static unsafe uint NewObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
+        public static unsafe void UpdateObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.NewObjectBuffer(size, in pointer.GetPinnableReference(), usage);
-        }
-
-        public static unsafe void UpdateObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.UpdateObjectBuffer(buffer, offset, size, in pointer.GetPinnableReference(), preserve);
-        }
-
-        public static unsafe void UpdateObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.UpdateObjectBuffer(buffer, offset, size, in pointer.GetPinnableReference(), preserve);
+            fixed (void* pointerSpp = pointer)
+                thisApi.UpdateObjectBuffer(buffer, offset, size, pointerSpp, preserve);
         }
 
     }

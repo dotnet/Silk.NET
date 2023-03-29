@@ -135,33 +135,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Read<T0>(ref T0 pv, uint cb, uint* pcbRead) where T0 : unmanaged
-        {
-            var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pvPtr = &pv)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbRead);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Read<T0>(ref T0 pv, uint cb, ref uint pcbRead) where T0 : unmanaged
-        {
-            var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pvPtr = &pv)
-            {
-                fixed (uint* pcbReadPtr = &pcbRead)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -178,33 +151,6 @@ namespace Silk.NET.Core.Win32Extras
             fixed (uint* pcbWrittenPtr = &pcbWritten)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
-        {
-            var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pvPtr = &pv)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
-        {
-            var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pvPtr = &pv)
-            {
-                fixed (uint* pcbWrittenPtr = &pcbWritten)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
-                }
             }
             return ret;
         }

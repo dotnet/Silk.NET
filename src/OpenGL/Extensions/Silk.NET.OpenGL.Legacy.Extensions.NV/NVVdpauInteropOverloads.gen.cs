@@ -34,64 +34,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.VdpaugetSurface(surface, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
         }
 
-        public static unsafe void Vdpauinit<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] void* vdpDevice, [Flow(FlowDirection.In)] ReadOnlySpan<T0> getProcAddress) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Vdpauinit(vdpDevice, in getProcAddress.GetPinnableReference());
-        }
-
-        public static unsafe void Vdpauinit<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpDevice, [Flow(FlowDirection.In)] void* getProcAddress) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Vdpauinit(in vdpDevice.GetPinnableReference(), getProcAddress);
-        }
-
-        public static unsafe void Vdpauinit<T0, T1>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpDevice, [Flow(FlowDirection.In)] ReadOnlySpan<T1> getProcAddress) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Vdpauinit(in vdpDevice.GetPinnableReference(), in getProcAddress.GetPinnableReference());
-        }
-
         public static unsafe void VdpaumapSurfaces(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] uint numSurfaces, [Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] ReadOnlySpan<nint> surfaces)
         {
             // SpanOverloader
             thisApi.VdpaumapSurfaces(numSurfaces, in surfaces.GetPinnableReference());
         }
 
-        public static unsafe nint VdpauregisterOutputSurface(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames)
+        public static unsafe nint VdpauregisterOutputSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] Span<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.VdpauregisterOutputSurface(vdpSurface, target, numTextureNames, in textureNames.GetPinnableReference());
+            fixed (void* vdpSurfaceSpp = vdpSurface)
+                return thisApi.VdpauregisterOutputSurface(vdpSurfaceSpp, target, numTextureNames, in textureNames.GetPinnableReference());
         }
 
-        public static unsafe nint VdpauregisterOutputSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged
+        public static unsafe nint VdpauregisterVideoSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] Span<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.VdpauregisterOutputSurface(in vdpSurface.GetPinnableReference(), target, numTextureNames, textureNames);
-        }
-
-        public static unsafe nint VdpauregisterOutputSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterOutputSurface(in vdpSurface.GetPinnableReference(), target, numTextureNames, in textureNames.GetPinnableReference());
-        }
-
-        public static unsafe nint VdpauregisterVideoSurface(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames)
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurface(vdpSurface, target, numTextureNames, in textureNames.GetPinnableReference());
-        }
-
-        public static unsafe nint VdpauregisterVideoSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurface(in vdpSurface.GetPinnableReference(), target, numTextureNames, textureNames);
-        }
-
-        public static unsafe nint VdpauregisterVideoSurface<T0>(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.VdpauregisterVideoSurface(in vdpSurface.GetPinnableReference(), target, numTextureNames, in textureNames.GetPinnableReference());
+            fixed (void* vdpSurfaceSpp = vdpSurface)
+                return thisApi.VdpauregisterVideoSurface(vdpSurfaceSpp, target, numTextureNames, in textureNames.GetPinnableReference());
         }
 
         public static unsafe void VdpauunmapSurfaces(this NVVdpauInterop thisApi, [Flow(FlowDirection.In)] uint numSurface, [Count(Parameter = "numSurface"), Flow(FlowDirection.In)] ReadOnlySpan<nint> surfaces)

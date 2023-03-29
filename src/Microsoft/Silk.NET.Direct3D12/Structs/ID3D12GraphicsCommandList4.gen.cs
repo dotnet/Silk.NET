@@ -141,18 +141,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -165,21 +153,6 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -187,21 +160,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -222,41 +180,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-            }
             return ret;
         }
 
@@ -268,21 +196,6 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -1142,30 +1055,10 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pSrcDataPtr = &pSrcData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pSrcDataPtr = &pSrcData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -1681,30 +1574,10 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataPtr = &pData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pDataPtr, Size);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void BeginEvent(uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void BeginEvent<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataPtr = &pData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pDataPtr, Size);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -2457,35 +2330,12 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void InitializeMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommand, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void InitializeMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersData, InitializationParametersDataSizeInBytes);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void InitializeMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
-            {
-                fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
-                }
             }
         }
 
@@ -2497,35 +2347,12 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommand, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ExecuteMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void ExecuteMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
-            {
-                fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
-                }
             }
         }
 
@@ -3397,27 +3224,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void InitializeMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->InitializeMetaCommand((ID3D12MetaCommand*) pMetaCommand.Handle, in pInitializationParametersData, InitializationParametersDataSizeInBytes);
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ExecuteMetaCommand<TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             @this->ExecuteMetaCommand((ID3D12MetaCommand*) pMetaCommand.Handle, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void ExecuteMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
-        {
-            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            @this->ExecuteMetaCommand((ID3D12MetaCommand*) pMetaCommand.Handle, in pExecutionParametersData, ExecutionParametersDataSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>

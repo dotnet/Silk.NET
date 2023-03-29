@@ -12,14 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
+namespace Silk.NET.OpenXR.Extensions.ML
 {
-    public static class AppleTextureRangeOverloads
+    public static class MLCompatOverloads
     {
-        public static unsafe void TextureRange<T0>(this AppleTextureRange thisApi, [Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSpaceFromCoordinateFrameUidml(this MLCompat thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] CoordinateSpaceCreateInfoML createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
-            thisApi.TextureRange(target, length, in pointer.GetPinnableReference());
+            return thisApi.CreateSpaceFromCoordinateFrameUidml(session, createInfo, ref space.GetPinnableReference());
         }
 
     }

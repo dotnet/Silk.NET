@@ -1537,18 +1537,6 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guid, DataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoDevice2> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -1556,21 +1544,6 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* guidPtr = &guid)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
-            }
         }
         return ret;
     }
@@ -3793,35 +3766,11 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, FeatureVideo Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, FeatureVideo, void*, uint, int>)@this->LpVtbl[24])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int NegotiateCryptoSessionKeyExchangeMT(this ComPtr<ID3D11VideoDevice2> thisVtbl, ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pData);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int NegotiateCryptoSessionKeyExchangeMT<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pDataPtr);
-        }
         return ret;
     }
 
@@ -3833,21 +3782,6 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int NegotiateCryptoSessionKeyExchangeMT<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ref ID3D11CryptoSession pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pDataPtr);
-            }
         }
         return ret;
     }
@@ -4954,27 +4888,12 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
@@ -6010,14 +5929,6 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, FeatureVideo Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int NegotiateCryptoSessionKeyExchangeMT<TI0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ComPtr<TI0> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -6026,35 +5937,12 @@ public unsafe static class D3D11VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int NegotiateCryptoSessionKeyExchangeMT<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int NegotiateCryptoSessionKeyExchangeMT<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->NegotiateCryptoSessionKeyExchangeMT(pCryptoSession, flags, DataSize, ref pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int NegotiateCryptoSessionKeyExchangeMT<T0, TI0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, ComPtr<TI0> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->NegotiateCryptoSessionKeyExchangeMT((ID3D11CryptoSession*) pCryptoSession.Handle, flags, DataSize, ref pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int NegotiateCryptoSessionKeyExchangeMT(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->NegotiateCryptoSessionKeyExchangeMT(ref pCryptoSession.GetPinnableReference(), flags, DataSize, pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int NegotiateCryptoSessionKeyExchangeMT<T0>(this ComPtr<ID3D11VideoDevice2> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, Span<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->NegotiateCryptoSessionKeyExchangeMT(ref pCryptoSession.GetPinnableReference(), flags, DataSize, ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->NegotiateCryptoSessionKeyExchangeMT(ref pCryptoSession.GetPinnableReference(), flags, DataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>

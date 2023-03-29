@@ -1,5 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+
+
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
@@ -12,16 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
+namespace Silk.NET.OpenXR
 {
-    public static class SgixIglooInterfaceOverloads
+    [NativeName("Name", "XrSpaceUserFB")]
+    public unsafe partial struct SpaceUserFB
     {
-        public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
+        public SpaceUserFB
+        (
+            ulong? handle = null
+        ) : this()
         {
-            // SpanOverloader
-            thisApi.IglooInterface(pname, in @params.GetPinnableReference());
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
 }
-

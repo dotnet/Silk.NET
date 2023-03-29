@@ -58,25 +58,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetVertexAttribI(index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void Uniform1(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void Uniform1(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.Uniform1(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform2(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void Uniform2(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.Uniform2(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform3(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void Uniform3(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.Uniform3(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform4(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void Uniform4(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.Uniform4(location, count, in value.GetPinnableReference());
@@ -152,6 +152,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribIPointer<T0>(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        {
+            // SpanOverloader
+            fixed (void* pointerSpp = pointer)
+                thisApi.VertexAttribIPointer(index, size, type, stride, pointerSpp);
         }
 
     }

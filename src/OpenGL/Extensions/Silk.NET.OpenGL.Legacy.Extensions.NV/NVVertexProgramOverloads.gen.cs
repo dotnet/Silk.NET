@@ -256,25 +256,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramParameter4(target, index, in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.ProgramParameters4(target, index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.ProgramParameters4(target, index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ProgramParameters4(target, index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void ProgramParameters4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ProgramParameters4(target, index, count, in v.GetPinnableReference());
@@ -370,6 +370,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.VertexAttrib4(index, in v.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribPointer<T0>(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] VertexAttribEnumNV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        {
+            // SpanOverloader
+            fixed (void* pointerSpp = pointer)
+                thisApi.VertexAttribPointer(index, fsize, type, stride, pointerSpp);
+        }
+
         public static unsafe void VertexAttribs1(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
@@ -388,61 +395,61 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.VertexAttribs1(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs2(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs2(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void VertexAttribs2(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs2(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs3(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs3(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void VertexAttribs3(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs3(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs4(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs4(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs4(index, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
+        public static unsafe void VertexAttribs4(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
         {
             // SpanOverloader
             thisApi.VertexAttribs4(index, count, in v.GetPinnableReference());

@@ -122,35 +122,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, [Flow(FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pParametersPtr = &pParameters)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)@this->LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetEffectParameters(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, void* pParameters, uint ParametersByteSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, ref T0 pParameters, uint ParametersByteSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pParametersPtr = &pParameters)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
-        }
         return ret;
     }
 
@@ -469,22 +445,6 @@ public unsafe static class XAudio2VoiceVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->GetEffectState(EffectIndex, ref pEnabled.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetEffectParameters(EffectIndex, in pParameters.GetPinnableReference(), ParametersByteSize, OperationSet);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, Span<T0> pParameters, uint ParametersByteSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetEffectParameters(EffectIndex, ref pParameters.GetPinnableReference(), ParametersByteSize);
     }
 
     /// <summary>To be documented.</summary>

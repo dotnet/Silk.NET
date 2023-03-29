@@ -16,6 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     public static class AppleElementArrayOverloads
     {
+        public static unsafe void ElementPointer<T0>(this AppleElementArray thisApi, [Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        {
+            // SpanOverloader
+            fixed (void* pointerSpp = pointer)
+                thisApi.ElementPointer(type, pointerSpp);
+        }
+
         public static unsafe void MultiDrawElementArray(this AppleElementArray thisApi, [Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
         {
             // SpanOverloader

@@ -45,66 +45,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
+        public static unsafe Result GetBufferOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetBufferOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        public static unsafe void GetDescriptor<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorGetInfoEXT> pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetBufferOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetBufferOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetBufferOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetBufferOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetBufferOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetBufferOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetDescriptor<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorGetInfoEXT* pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetDescriptor(device, pDescriptorInfo, dataSize, ref pDescriptor.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetDescriptor(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorGetInfoEXT> pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pDescriptor)
-        {
-            // SpanOverloader
-            thisApi.GetDescriptor(device, in pDescriptorInfo.GetPinnableReference(), dataSize, pDescriptor);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetDescriptor<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorGetInfoEXT> pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetDescriptor(device, in pDescriptorInfo.GetPinnableReference(), dataSize, ref pDescriptor.GetPinnableReference());
+            fixed (void* pDescriptorSpp = pDescriptor)
+                thisApi.GetDescriptor(device, in pDescriptorInfo.GetPinnableReference(), dataSize, pDescriptorSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -122,66 +83,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetImageOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetImageOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetImageOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
+        public static unsafe Result GetImageViewOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageViewCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetImageOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetImageViewOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetSamplerOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetImageOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageViewOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetImageViewOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageViewOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageViewCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetImageViewOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetImageViewOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageViewCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetImageViewOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSamplerOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetSamplerOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSamplerOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetSamplerOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSamplerOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SamplerCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetSamplerOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), ref pData.GetPinnableReference());
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetSamplerOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
         }
 
     }

@@ -412,67 +412,67 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ShaderSource(shaderObj, count, in @string, in length.GetPinnableReference());
         }
 
-        public static unsafe void Uniform1(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void Uniform1(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.Uniform1(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform1(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void Uniform1(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.Uniform1(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void Uniform2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.Uniform2(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void Uniform2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.Uniform2(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void Uniform3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.Uniform3(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void Uniform3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.Uniform3(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void Uniform4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.Uniform4(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void Uniform4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.Uniform4(location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void UniformMatrix2(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void UniformMatrix3(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
         }
 
-        public static unsafe void UniformMatrix4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void UniformMatrix4(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());

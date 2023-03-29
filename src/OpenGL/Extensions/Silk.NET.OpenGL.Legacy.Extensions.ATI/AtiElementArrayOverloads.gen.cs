@@ -12,14 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WGL.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
-    public static class NVVertexArrayRangeOverloads
+    public static class AtiElementArrayOverloads
     {
-        public static unsafe void FreeMemory<T0>(this NVVertexArrayRange thisApi, [Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        public static unsafe void ElementPointer<T0>(this AtiElementArray thisApi, [Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
         {
             // SpanOverloader
-            thisApi.FreeMemory(out pointer.GetPinnableReference());
+            fixed (void* pointerSpp = pointer)
+                thisApi.ElementPointer(type, pointerSpp);
         }
 
     }

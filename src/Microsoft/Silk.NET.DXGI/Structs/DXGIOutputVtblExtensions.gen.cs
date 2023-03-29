@@ -94,18 +94,6 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -113,21 +101,6 @@ public unsafe static class DXGIOutputVtblExtensions
         fixed (Guid* NamePtr = &Name)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* NamePtr = &Name)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-            }
         }
         return ret;
     }
@@ -190,18 +163,6 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -209,21 +170,6 @@ public unsafe static class DXGIOutputVtblExtensions
         fixed (uint* pDataSizePtr = &pDataSize)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (uint* pDataSizePtr = &pDataSize)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
-            }
         }
         return ret;
     }
@@ -241,21 +187,6 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* NamePtr = &Name)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -265,24 +196,6 @@ public unsafe static class DXGIOutputVtblExtensions
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* NamePtr = &Name)
-        {
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                }
             }
         }
         return ret;
@@ -702,27 +615,12 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
@@ -766,59 +664,30 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutput> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>

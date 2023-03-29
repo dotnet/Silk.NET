@@ -182,5 +182,17 @@ namespace Silk.NET.OpenXR
         ErrorSpatialAnchorNameNotFoundMsft = unchecked((int) -1000142001),
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]
         ErrorSpatialAnchorNameInvalidMsft = unchecked((int) -1000142002),
+        [NativeName("Name", "XR_ERROR_SPACE_MAPPING_INSUFFICIENT_FB")]
+        ErrorSpaceMappingInsufficientFB = unchecked((int) -1000169000),
+        [NativeName("Name", "XR_ERROR_SPACE_LOCALIZATION_FAILED_FB")]
+        ErrorSpaceLocalizationFailedFB = unchecked((int) -1000169001),
+        [NativeName("Name", "XR_ERROR_SPACE_NETWORK_TIMEOUT_FB")]
+        ErrorSpaceNetworkTimeoutFB = unchecked((int) -1000169002),
+        [NativeName("Name", "XR_ERROR_SPACE_NETWORK_REQUEST_FAILED_FB")]
+        ErrorSpaceNetworkRequestFailedFB = unchecked((int) -1000169003),
+        [NativeName("Name", "XR_ERROR_SPACE_CLOUD_STORAGE_DISABLED_FB")]
+        ErrorSpaceCloudStorageDisabledFB = unchecked((int) -1000169004),
+        [NativeName("Name", "XR_ERROR_HINT_ALREADY_SET_QCOM")]
+        ErrorHintAlreadySetQCom = unchecked((int) -1000306000),
     }
 }

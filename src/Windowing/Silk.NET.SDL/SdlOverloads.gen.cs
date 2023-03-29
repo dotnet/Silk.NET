@@ -17,22 +17,6 @@ namespace Silk.NET.SDL
     public static class SdlOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 441, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Realloc<T0>(this Sdl thisApi, Span<T0> mem, nuint size) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Realloc(ref mem.GetPinnableReference(), size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 442, Column 30 in SDL_stdinc.h")]
-        public static unsafe void Free<T0>(this Sdl thisApi, Span<T0> mem) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Free(ref mem.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
@@ -318,134 +302,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.Setenv(name, in value.GetPinnableReference(), overwrite);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 30 in SDL_stdinc.h")]
-        public static unsafe void Qsort<T0>(this Sdl thisApi, Span<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Qsort(ref @base.GetPinnableReference(), nmemb, size, compare);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] void* key, [Flow(FlowDirection.In)] ReadOnlySpan<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Bsearch(key, in @base.GetPinnableReference(), nmemb, size, compare);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Bsearch(in key.GetPinnableReference(), @base, nmemb, size, compare);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0, T1>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(FlowDirection.In)] ReadOnlySpan<T1> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Bsearch(in key.GetPinnableReference(), in @base.GetPinnableReference(), nmemb, size, compare);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 514, Column 32 in SDL_stdinc.h")]
-        public static unsafe ushort Crc16<T0>(this Sdl thisApi, ushort crc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Crc16(crc, in data.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 515, Column 32 in SDL_stdinc.h")]
-        public static unsafe uint Crc32<T0>(this Sdl thisApi, uint crc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Crc32(crc, in data.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 517, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memset<T0>(this Sdl thisApi, Span<T0> dst, int c, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memset(ref dst.GetPinnableReference(), c, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memcpy<T0>(this Sdl thisApi, void* dst, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcpy(dst, in src.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memcpy<T0>(this Sdl thisApi, Span<T0> dst, [Flow(FlowDirection.In)] void* src, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcpy(ref dst.GetPinnableReference(), src, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memcpy<T0, T1>(this Sdl thisApi, Span<T0> dst, [Flow(FlowDirection.In)] ReadOnlySpan<T1> src, nuint len) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcpy(ref dst.GetPinnableReference(), in src.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memmove<T0>(this Sdl thisApi, void* dst, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memmove(dst, in src.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memmove<T0>(this Sdl thisApi, Span<T0> dst, [Flow(FlowDirection.In)] void* src, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memmove(ref dst.GetPinnableReference(), src, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 561, Column 31 in SDL_stdinc.h")]
-        public static unsafe void* Memmove<T0, T1>(this Sdl thisApi, Span<T0> dst, [Flow(FlowDirection.In)] ReadOnlySpan<T1> src, nuint len) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memmove(ref dst.GetPinnableReference(), in src.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
-        public static unsafe int Memcmp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] void* s1, [Flow(FlowDirection.In)] ReadOnlySpan<T0> s2, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcmp(s1, in s2.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
-        public static unsafe int Memcmp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> s1, [Flow(FlowDirection.In)] void* s2, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcmp(in s1.GetPinnableReference(), s2, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 562, Column 29 in SDL_stdinc.h")]
-        public static unsafe int Memcmp<T0, T1>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> s1, [Flow(FlowDirection.In)] ReadOnlySpan<T1> s2, nuint len) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.Memcmp(in s1.GetPinnableReference(), in s2.GetPinnableReference(), len);
         }
 
         /// <summary>To be documented.</summary>
@@ -5073,22 +4929,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 219, Column 38 in SDL_surface.h")]
-        public static unsafe Surface* CreateRGBSurfaceFrom<T0>(this Sdl thisApi, Span<T0> pixels, int width, int height, int depth, int pitch, uint Rmask, uint Gmask, uint Bmask, uint Amask) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateRGBSurfaceFrom(ref pixels.GetPinnableReference(), width, height, depth, pitch, Rmask, Gmask, Bmask, Amask);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 257, Column 38 in SDL_surface.h")]
-        public static unsafe Surface* CreateRGBSurfaceWithFormatFrom<T0>(this Sdl thisApi, Span<T0> pixels, int width, int height, int depth, int pitch, uint format) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateRGBSurfaceWithFormatFrom(ref pixels.GetPinnableReference(), width, height, depth, pitch, format);
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 274, Column 30 in SDL_surface.h")]
         public static unsafe void FreeSurface(this Sdl thisApi, Span<Surface> surface)
         {
@@ -5758,54 +5598,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.ConvertSurfaceFormat(ref src.GetPinnableReference(), pixel_format, flags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 719, Column 29 in SDL_surface.h")]
-        public static unsafe int ConvertPixels<T0>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] void* src, int src_pitch, uint dst_format, Span<T0> dst, int dst_pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ConvertPixels(width, height, src_format, src, src_pitch, dst_format, ref dst.GetPinnableReference(), dst_pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 719, Column 29 in SDL_surface.h")]
-        public static unsafe int ConvertPixels<T0>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ConvertPixels(width, height, src_format, in src.GetPinnableReference(), src_pitch, dst_format, dst, dst_pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 719, Column 29 in SDL_surface.h")]
-        public static unsafe int ConvertPixels<T0, T1>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, int src_pitch, uint dst_format, Span<T1> dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ConvertPixels(width, height, src_format, in src.GetPinnableReference(), src_pitch, dst_format, ref dst.GetPinnableReference(), dst_pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
-        public static unsafe int PremultiplyAlpha<T0>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] void* src, int src_pitch, uint dst_format, Span<T0> dst, int dst_pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.PremultiplyAlpha(width, height, src_format, src, src_pitch, dst_format, ref dst.GetPinnableReference(), dst_pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
-        public static unsafe int PremultiplyAlpha<T0>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, int src_pitch, uint dst_format, void* dst, int dst_pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.PremultiplyAlpha(width, height, src_format, in src.GetPinnableReference(), src_pitch, dst_format, dst, dst_pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 745, Column 29 in SDL_surface.h")]
-        public static unsafe int PremultiplyAlpha<T0, T1>(this Sdl thisApi, int width, int height, uint src_format, [Flow(FlowDirection.In)] ReadOnlySpan<T0> src, int src_pitch, uint dst_format, Span<T1> dst, int dst_pitch) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.PremultiplyAlpha(width, height, src_format, in src.GetPinnableReference(), src_pitch, dst_format, ref dst.GetPinnableReference(), dst_pitch);
         }
 
         /// <summary>To be documented.</summary>
@@ -6817,14 +6609,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 801, Column 38 in SDL_video.h")]
-        public static unsafe Window* CreateWindowFrom<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateWindowFrom(in data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 817, Column 32 in SDL_video.h")]
         public static unsafe uint GetWindowID(this Sdl thisApi, Span<Window> window)
         {
@@ -6906,82 +6690,47 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [Flow(FlowDirection.In)] byte* name, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowData(window, name, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetWindowData(window, in name.GetPinnableReference(), userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData(this Sdl thisApi, Window* window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, void* userdata)
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowData(window, in name.GetPinnableReference(), userdata);
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetWindowData(window, name, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] byte* name, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowData(window, in name.GetPinnableReference(), ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetWindowData(ref window.GetPinnableReference(), name, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowData(window, name, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetWindowData(ref window.GetPinnableReference(), in name.GetPinnableReference(), userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] byte* name, void* userdata)
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), name, userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] byte* name, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), name, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, void* userdata)
-        {
-            // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), in name.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), in name.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, void* userdata)
-        {
-            // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), name, userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 906, Column 31 in SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowData(ref window.GetPinnableReference(), name, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetWindowData(ref window.GetPinnableReference(), name, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -8098,26 +7847,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
+        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, PfnHitTest callback, Span<T0> callback_data) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetWindowHitTest(window, callback, ref callback_data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        public static unsafe int SetWindowHitTest(this Sdl thisApi, Span<Window> window, PfnHitTest callback, void* callback_data)
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, callback_data);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, ref callback_data.GetPinnableReference());
+            fixed (void* callback_dataSpp = callback_data)
+                return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, callback_dataSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -8178,26 +7912,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        public static unsafe int GLMakeCurrent<T0>(this Sdl thisApi, Window* window, Span<T0> context) where T0 : unmanaged
+        public static unsafe int GLMakeCurrent<T0>(this Sdl thisApi, Span<Window> window, Span<T0> context) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GLMakeCurrent(window, ref context.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        public static unsafe int GLMakeCurrent(this Sdl thisApi, Span<Window> window, void* context)
-        {
-            // SpanOverloader
-            return thisApi.GLMakeCurrent(ref window.GetPinnableReference(), context);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        public static unsafe int GLMakeCurrent<T0>(this Sdl thisApi, Span<Window> window, Span<T0> context) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GLMakeCurrent(ref window.GetPinnableReference(), ref context.GetPinnableReference());
+            fixed (void* contextSpp = context)
+                return thisApi.GLMakeCurrent(ref window.GetPinnableReference(), contextSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -8262,14 +7981,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             thisApi.GLSwapWindow(ref window.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2137, Column 30 in SDL_video.h")]
-        public static unsafe void GLDeleteContext<T0>(this Sdl thisApi, Span<T0> context) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GLDeleteContext(ref context.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -8411,46 +8122,21 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] byte* name, uint style, Span<T0> hInst) where T0 : unmanaged
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, uint style, Span<T0> hInst) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
+            fixed (void* hInstSpp = hInst)
+                return thisApi.RegisterApp(in name.GetPinnableReference(), style, hInstSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, uint style, void* hInst)
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, Span<T0> hInst) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RegisterApp(in name.GetPinnableReference(), style, hInst);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RegisterApp(in name.GetPinnableReference(), style, ref hInst.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, Span<T0> hInst) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 232, Column 29 in SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, PfnMainFunc mainFunction, Span<T0> reserved) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WinRTRunApp(mainFunction, ref reserved.GetPinnableReference());
+            fixed (void* hInstSpp = hInst)
+                return thisApi.RegisterApp(name, style, hInstSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -8566,14 +8252,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 226, Column 30 in SDL_assert.h")]
-        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, PfnAssertionHandler handler, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetAssertionHandler(handler, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 106, Column 34 in SDL_atomic.h")]
         public static unsafe SdlBool AtomicTryLock(this Sdl thisApi, Span<int> @lock)
         {
@@ -8631,66 +8309,21 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, void** a, void* oldval, Span<T0> newval) where T0 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0, T1>(this Sdl thisApi, ref void* a, Span<T0> oldval, Span<T1> newval) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.AtomicCASPtr(a, oldval, ref newval.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, void** a, Span<T0> oldval, void* newval) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicCASPtr(a, ref oldval.GetPinnableReference(), newval);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0, T1>(this Sdl thisApi, void** a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicCASPtr(a, ref oldval.GetPinnableReference(), ref newval.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, void* oldval, Span<T0> newval) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicCASPtr(ref a, oldval, ref newval.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, Span<T0> oldval, void* newval) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicCASPtr(ref a, ref oldval.GetPinnableReference(), newval);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        public static unsafe SdlBool AtomicCASPtr<T0, T1>(this Sdl thisApi, ref void* a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicCASPtr(ref a, ref oldval.GetPinnableReference(), ref newval.GetPinnableReference());
+            fixed (void* oldvalSpp = oldval)
+            fixed (void* newvalSpp = newval)
+                return thisApi.AtomicCASPtr(ref a, oldvalSpp, newvalSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
-        public static unsafe void* AtomicSetPtr<T0>(this Sdl thisApi, void** a, Span<T0> v) where T0 : unmanaged
+        public static unsafe void* AtomicSetPtr<T0>(this Sdl thisApi, ref void* a, Span<T0> v) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.AtomicSetPtr(a, ref v.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
-        public static unsafe void* AtomicSetPtr<T0>(this Sdl thisApi, ref void* a, Span<T0> v) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AtomicSetPtr(ref a, ref v.GetPinnableReference());
+            fixed (void* vSpp = v)
+                return thisApi.AtomicSetPtr(ref a, vSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -8847,66 +8480,38 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] byte* name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
+            fixed (void* dataSpp = data)
+                return thisApi.CreateThread(fn, in name.GetPinnableReference(), dataSpp, pfnBeginThread, pfnEndThread);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThread(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread)
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CreateThread(fn, in name.GetPinnableReference(), data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 127, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, in name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 127, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
+            fixed (void* dataSpp = data)
+                return thisApi.CreateThread(fn, name, dataSpp, pfnBeginThread, pfnEndThread);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 132, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] byte* name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
+            fixed (void* dataSpp = data)
+                return thisApi.CreateThreadWithStackSize(fn, in name.GetPinnableReference(), stacksize, dataSpp, pfnBeginThread, pfnEndThread);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 132, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, nuint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread)
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, in name.GetPinnableReference(), stacksize, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 132, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, in name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 132, Column 1 in SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
+            fixed (void* dataSpp = data)
+                return thisApi.CreateThreadWithStackSize(fn, name, stacksize, dataSpp, pfnBeginThread, pfnEndThread);
         }
 
         /// <summary>To be documented.</summary>
@@ -8955,14 +8560,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             thisApi.DetachThread(ref thread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 447, Column 29 in SDL_thread.h")]
-        public static unsafe int TLSSet<T0>(this Sdl thisApi, uint id, [Flow(FlowDirection.In)] ReadOnlySpan<T0> value, PfnFreeFunc destructor) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TLSSet(id, in value.GetPinnableReference(), destructor);
         }
 
         /// <summary>To be documented.</summary>
@@ -9239,50 +8836,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1035, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamPut<T0>(this Sdl thisApi, AudioStream* stream, [Flow(FlowDirection.In)] ReadOnlySpan<T0> buf, int len) where T0 : unmanaged
+        public static unsafe int AudioStreamPut<T0>(this Sdl thisApi, Span<AudioStream> stream, [Flow(FlowDirection.In)] Span<T0> buf, int len) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.AudioStreamPut(stream, in buf.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamPut(this Sdl thisApi, Span<AudioStream> stream, [Flow(FlowDirection.In)] void* buf, int len)
-        {
-            // SpanOverloader
-            return thisApi.AudioStreamPut(ref stream.GetPinnableReference(), buf, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamPut<T0>(this Sdl thisApi, Span<AudioStream> stream, [Flow(FlowDirection.In)] ReadOnlySpan<T0> buf, int len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AudioStreamPut(ref stream.GetPinnableReference(), in buf.GetPinnableReference(), len);
+            fixed (void* bufSpp = buf)
+                return thisApi.AudioStreamPut(ref stream.GetPinnableReference(), bufSpp, len);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamGet<T0>(this Sdl thisApi, AudioStream* stream, Span<T0> buf, int len) where T0 : unmanaged
+        public static unsafe int AudioStreamGet<T0>(this Sdl thisApi, Span<AudioStream> stream, Span<T0> buf, int len) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.AudioStreamGet(stream, ref buf.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamGet(this Sdl thisApi, Span<AudioStream> stream, void* buf, int len)
-        {
-            // SpanOverloader
-            return thisApi.AudioStreamGet(ref stream.GetPinnableReference(), buf, len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        public static unsafe int AudioStreamGet<T0>(this Sdl thisApi, Span<AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AudioStreamGet(ref stream.GetPinnableReference(), ref buf.GetPinnableReference(), len);
+            fixed (void* bufSpp = buf)
+                return thisApi.AudioStreamGet(ref stream.GetPinnableReference(), bufSpp, len);
         }
 
         /// <summary>To be documented.</summary>
@@ -9398,22 +8965,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1229, Column 29 in SDL_audio.h")]
-        public static unsafe int QueueAudio<T0>(this Sdl thisApi, uint dev, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, uint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueueAudio(dev, in data.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1277, Column 32 in SDL_audio.h")]
-        public static unsafe uint DequeueAudio<T0>(this Sdl thisApi, uint dev, Span<T0> data, uint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DequeueAudio(dev, ref data.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 53, Column 29 in SDL_clipboard.h")]
         public static unsafe int SetClipboardText(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> text)
         {
@@ -9427,22 +8978,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.SetPrimarySelectionText(in text.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 560, Column 32 in SDL_cpuinfo.h")]
-        public static unsafe void* SIMDRealloc<T0>(this Sdl thisApi, Span<T0> mem, nuint len) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SIMDRealloc(ref mem.GetPinnableReference(), len);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 584, Column 30 in SDL_cpuinfo.h")]
-        public static unsafe void SIMDFree<T0>(this Sdl thisApi, Span<T0> ptr) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SIMDFree(ref ptr.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10103,26 +9638,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in SDL_joystick.h")]
-        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Joystick* joystick, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Span<Joystick> joystick, [Flow(FlowDirection.In)] Span<T0> data, int size) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.JoystickSendEffect(joystick, in data.GetPinnableReference(), size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1034, Column 29 in SDL_joystick.h")]
-        public static unsafe int JoystickSendEffect(this Sdl thisApi, Span<Joystick> joystick, [Flow(FlowDirection.In)] void* data, int size)
-        {
-            // SpanOverloader
-            return thisApi.JoystickSendEffect(ref joystick.GetPinnableReference(), data, size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1034, Column 29 in SDL_joystick.h")]
-        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Span<Joystick> joystick, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.JoystickSendEffect(ref joystick.GetPinnableReference(), in data.GetPinnableReference(), size);
+            fixed (void* dataSpp = data)
+                return thisApi.JoystickSendEffect(ref joystick.GetPinnableReference(), dataSpp, size);
         }
 
         /// <summary>To be documented.</summary>
@@ -10991,26 +10511,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
-        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, GameController* gamecontroller, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, Span<GameController> gamecontroller, [Flow(FlowDirection.In)] Span<T0> data, int size) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GameControllerSendEffect(gamecontroller, in data.GetPinnableReference(), size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
-        public static unsafe int GameControllerSendEffect(this Sdl thisApi, Span<GameController> gamecontroller, [Flow(FlowDirection.In)] void* data, int size)
-        {
-            // SpanOverloader
-            return thisApi.GameControllerSendEffect(ref gamecontroller.GetPinnableReference(), data, size);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
-        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, Span<GameController> gamecontroller, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GameControllerSendEffect(ref gamecontroller.GetPinnableReference(), in data.GetPinnableReference(), size);
+            fixed (void* dataSpp = data)
+                return thisApi.GameControllerSendEffect(ref gamecontroller.GetPinnableReference(), dataSpp, size);
         }
 
         /// <summary>To be documented.</summary>
@@ -11102,14 +10607,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1024, Column 30 in SDL_events.h")]
-        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetEventFilter(filter, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1042, Column 34 in SDL_events.h")]
         public static unsafe SdlBool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, void** userdata)
         {
@@ -11123,30 +10620,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.GetEventFilter(ref filter.GetPinnableReference(), ref userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1071, Column 30 in SDL_events.h")]
-        public static unsafe void AddEventWatch<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddEventWatch(filter, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1087, Column 30 in SDL_events.h")]
-        public static unsafe void DelEventWatch<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelEventWatch(filter, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1106, Column 30 in SDL_events.h")]
-        public static unsafe void FilterEvents<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FilterEvents(filter, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11863,66 +11336,38 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2524, Column 30 in SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                thisApi.AddHintCallback(in name.GetPinnableReference(), callback, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2524, Column 30 in SDL_hints.h")]
-        public static unsafe void AddHintCallback(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, void* userdata)
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            thisApi.AddHintCallback(in name.GetPinnableReference(), callback, userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2524, Column 30 in SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(in name.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2524, Column 30 in SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                thisApi.AddHintCallback(name, callback, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2540, Column 30 in SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            thisApi.DelHintCallback(name, callback, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                thisApi.DelHintCallback(in name.GetPinnableReference(), callback, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2540, Column 30 in SDL_hints.h")]
-        public static unsafe void DelHintCallback(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, void* userdata)
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            thisApi.DelHintCallback(in name.GetPinnableReference(), callback, userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2540, Column 30 in SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(in name.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2540, Column 30 in SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(name, callback, ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                thisApi.DelHintCallback(name, callback, userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -11935,42 +11380,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
-        public static unsafe void* LoadFunction(this Sdl thisApi, void* handle, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.LoadFunction(handle, in name.GetPinnableReference());
+            fixed (void* handleSpp = handle)
+                return thisApi.LoadFunction(handleSpp, in name.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
-        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [Flow(FlowDirection.In)] byte* name) where T0 : unmanaged
+        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.LoadFunction(ref handle.GetPinnableReference(), name);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
-        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.LoadFunction(ref handle.GetPinnableReference(), in name.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 92, Column 31 in SDL_loadso.h")]
-        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.LoadFunction(ref handle.GetPinnableReference(), name);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 105, Column 30 in SDL_loadso.h")]
-        public static unsafe void UnloadObject<T0>(this Sdl thisApi, Span<T0> handle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.UnloadObject(ref handle.GetPinnableReference());
+            fixed (void* handleSpp = handle)
+                return thisApi.LoadFunction(handleSpp, name);
         }
 
         /// <summary>To be documented.</summary>
@@ -12091,14 +11514,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             thisApi.LogGetOutputFunction(ref callback.GetPinnableReference(), ref userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 393, Column 30 in SDL_log.h")]
-        public static unsafe void LogSetOutputFunction<T0>(this Sdl thisApi, PfnLogOutputFunction callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.LogSetOutputFunction(callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12243,22 +11658,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.MetalCreateView(ref window.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 78, Column 30 in SDL_metal.h")]
-        public static unsafe void MetalDestroyView<T0>(this Sdl thisApi, Span<T0> view) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MetalDestroyView(ref view.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 87, Column 31 in SDL_metal.h")]
-        public static unsafe void* MetalGetLayer<T0>(this Sdl thisApi, Span<T0> view) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.MetalGetLayer(ref view.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13223,26 +12622,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        public static unsafe int SetTextureUserData<T0>(this Sdl thisApi, Texture* texture, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe int SetTextureUserData<T0>(this Sdl thisApi, Span<Texture> texture, Span<T0> userdata) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetTextureUserData(texture, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        public static unsafe int SetTextureUserData(this Sdl thisApi, Span<Texture> texture, void* userdata)
-        {
-            // SpanOverloader
-            return thisApi.SetTextureUserData(ref texture.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        public static unsafe int SetTextureUserData<T0>(this Sdl thisApi, Span<Texture> texture, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetTextureUserData(ref texture.GetPinnableReference(), ref userdata.GetPinnableReference());
+            fixed (void* userdataSpp = userdata)
+                return thisApi.SetTextureUserData(ref texture.GetPinnableReference(), userdataSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -13255,58 +12639,29 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.UpdateTexture(texture, rect, in pixels.GetPinnableReference(), pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.UpdateTexture(texture, in rect.GetPinnableReference(), pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] void* pixels, int pitch)
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(FlowDirection.In)] Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.UpdateTexture(texture, in rect.GetPinnableReference(), pixels, pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.UpdateTexture(ref texture.GetPinnableReference(), rect, pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.UpdateTexture(texture, in rect.GetPinnableReference(), in pixels.GetPinnableReference(), pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(FlowDirection.In)] void* pixels, int pitch)
-        {
-            // SpanOverloader
-            return thisApi.UpdateTexture(ref texture.GetPinnableReference(), rect, pixels, pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels, int pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UpdateTexture(ref texture.GetPinnableReference(), rect, in pixels.GetPinnableReference(), pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] void* pixels, int pitch)
-        {
-            // SpanOverloader
-            return thisApi.UpdateTexture(ref texture.GetPinnableReference(), in rect.GetPinnableReference(), pixels, pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 597, Column 29 in SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels, int pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UpdateTexture(ref texture.GetPinnableReference(), in rect.GetPinnableReference(), in pixels.GetPinnableReference(), pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.UpdateTexture(ref texture.GetPinnableReference(), in rect.GetPinnableReference(), pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
@@ -17327,562 +16682,308 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
+        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] Span<T0> indices, int num_indices, int size_indices) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderGeometryRaw(renderer, ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), texture, in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] float* xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), xy, xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] Color* color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, color, color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] float* uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, uv, uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] void* indices, int num_indices, int size_indices)
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indices, num_indices, size_indices);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1674, Column 29 in SDL_render.h")]
-        public static unsafe int RenderGeometryRaw<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, [Flow(FlowDirection.In)] ReadOnlySpan<float> xy, int xy_stride, [Flow(FlowDirection.In)] ReadOnlySpan<Color> color, int color_stride, [Flow(FlowDirection.In)] ReadOnlySpan<float> uv, int uv_stride, int num_vertices, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, int num_indices, int size_indices) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, in indices.GetPinnableReference(), num_indices, size_indices);
+            fixed (void* indicesSpp = indices)
+                return thisApi.RenderGeometryRaw(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), in xy.GetPinnableReference(), xy_stride, in color.GetPinnableReference(), color_stride, in uv.GetPinnableReference(), uv_stride, num_vertices, indicesSpp, num_indices, size_indices);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderReadPixels(renderer, rect, format, ref pixels.GetPinnableReference(), pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.RenderReadPixels(renderer, in rect.GetPinnableReference(), format, pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Renderer* renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, void* pixels, int pitch)
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, uint format, Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderReadPixels(renderer, in rect.GetPinnableReference(), format, pixels, pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), rect, format, pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.RenderReadPixels(renderer, in rect.GetPinnableReference(), format, ref pixels.GetPinnableReference(), pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, uint format, void* pixels, int pitch)
-        {
-            // SpanOverloader
-            return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), rect, format, pixels, pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), rect, format, ref pixels.GetPinnableReference(), pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, void* pixels, int pitch)
-        {
-            // SpanOverloader
-            return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), in rect.GetPinnableReference(), format, pixels, pitch);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1708, Column 29 in SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), in rect.GetPinnableReference(), format, ref pixels.GetPinnableReference(), pitch);
+            fixed (void* pixelsSpp = pixels)
+                return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), in rect.GetPinnableReference(), format, pixelsSpp, pitch);
         }
 
         /// <summary>To be documented.</summary>
@@ -18102,15 +17203,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, PfnWindowsMessageHook callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetWindowsMessageHook(callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 91, Column 43 in SDL_system.h")]
         [ExcludeFromOverride(0)]
         public static unsafe IDirect3DDevice9* RenderGetD3D9Device(this Sdl thisApi, Span<Renderer> renderer)
@@ -18164,26 +17256,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
+        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(window, interval, callback, ref callbackParam.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, void* callbackParam)
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, callbackParam);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, ref callbackParam.GetPinnableReference());
+            fixed (void* callbackParamSpp = callbackParam)
+                return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, callbackParamSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -18202,14 +17279,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.AndroidShowToast(in message.GetPinnableReference(), duration, gravity, xoffset, yoffset);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 196, Column 37 in SDL_timer.h")]
-        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, PfnTimerCallback callback, Span<T0> param) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AddTimer(interval, callback, ref param.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

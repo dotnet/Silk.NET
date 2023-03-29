@@ -267,25 +267,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
-
-        [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
-
-        [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderOp1EXT", Convention = CallingConvention.Winapi)]
         public partial void ShaderOp1([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1);

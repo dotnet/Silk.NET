@@ -150,66 +150,6 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* srcDataPtr = &srcData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmap);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* srcDataPtr = &srcData)
-        {
-            fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmapPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* srcDataPtr = &srcData)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmap);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* srcDataPtr = &srcData)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmapPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
@@ -366,66 +306,6 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* dataPtr = &data)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapProperties, bitmap);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* dataPtr = &data)
-        {
-            fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapProperties, bitmapPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* dataPtr = &data)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapPropertiesPtr, bitmap);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* dataPtr = &data)
-        {
-            fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapPropertiesPtr, bitmapPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
@@ -479,78 +359,6 @@ public unsafe static class D2D1DeviceContextVtblExtensions
                 fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, data, bitmapPropertiesPtr, bitmapPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void* dataPtr = &data)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapProperties, bitmap);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void* dataPtr = &data)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapProperties, bitmapPtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void* dataPtr = &data)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapPropertiesPtr, bitmap);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void* dataPtr = &data)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapPropertiesPtr, bitmapPtr);
-                    }
                 }
             }
         }
@@ -5028,11 +4836,21 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] Span<T0> srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties.GetPinnableReference(), bitmap);
+        fixed (void* srcDataSpp = srcData)
+            return @this->CreateBitmap(size, srcDataSpp, pitch, bitmapProperties, ref bitmap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] Span<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        fixed (void* srcDataSpp = srcData)
+            return @this->CreateBitmap(size, srcDataSpp, pitch, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -5044,59 +4862,12 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] Span<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties.GetPinnableReference(), ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, bitmapProperties, bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBitmap(size, in srcData, pitch, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, in bitmapProperties.GetPinnableReference(), bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateBitmap(size, in srcData, pitch, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, in bitmapProperties.GetPinnableReference(), ref bitmap);
+        fixed (void* srcDataSpp = srcData)
+            return @this->CreateBitmap(size, srcDataSpp, pitch, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -5188,11 +4959,21 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(riid, dataSpp, bitmapProperties, ref bitmap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(riid, dataSpp, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -5204,67 +4985,21 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), ref bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(riid, dataSpp, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), bitmapProperties, bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateSharedBitmap(riid, ref data, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateSharedBitmap(riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, bitmapProperties, bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, bitmapProperties, bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -5276,19 +5011,21 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, bitmapProperties, ref bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, bitmapProperties, ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, in bitmapProperties.GetPinnableReference(), bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -5300,59 +5037,12 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, in bitmapProperties.GetPinnableReference(), ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), bitmapProperties, bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateSharedBitmap(ref riid, ref data, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateSharedBitmap(ref riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
+        fixed (void* dataSpp = data)
+            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>

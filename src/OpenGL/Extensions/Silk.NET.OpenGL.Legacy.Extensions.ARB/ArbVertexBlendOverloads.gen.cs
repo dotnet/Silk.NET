@@ -64,6 +64,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
+        public static unsafe void WeightPointer<T0>(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        {
+            // SpanOverloader
+            fixed (void* pointerSpp = pointer)
+                thisApi.WeightPointer(size, type, stride, pointerSpp);
+        }
+
     }
 }
 

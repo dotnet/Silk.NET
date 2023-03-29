@@ -28,28 +28,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             thisApi.GenPerfMonitors(n, out monitors.GetPinnableReference());
         }
 
-        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] uint* data, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> bytesWritten)
+        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize", Expression = " / 4"), Flow(FlowDirection.Out)] uint* data, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> bytesWritten)
         {
             // SpanOverloader
             thisApi.GetPerfMonitorCounterData(monitor, pname, dataSize, data, out bytesWritten.GetPinnableReference());
         }
 
-        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten)
+        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten)
         {
             // SpanOverloader
             thisApi.GetPerfMonitorCounterData(monitor, pname, dataSize, out data.GetPinnableReference(), bytesWritten);
         }
 
-        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> bytesWritten)
+        public static unsafe void GetPerfMonitorCounterData(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint dataSize, [Count(Parameter = "dataSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> bytesWritten)
         {
             // SpanOverloader
             thisApi.GetPerfMonitorCounterData(monitor, pname, dataSize, out data.GetPinnableReference(), out bytesWritten.GetPinnableReference());
-        }
-
-        public static unsafe void GetPerfMonitorCounterInfo<T0>(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetPerfMonitorCounterInfo(group, counter, pname, out data.GetPinnableReference());
         }
 
         public static unsafe void GetPerfMonitorCounters(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)

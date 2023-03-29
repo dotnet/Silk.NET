@@ -1,5 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+
+
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
@@ -12,16 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
+namespace Silk.NET.OpenXR
 {
-    public static class GremedyStringMarkerOverloads
+    [NativeName("Name", "XrEyeTrackerFB")]
+    public unsafe partial struct EyeTrackerFB
     {
-        public static unsafe void StringMarker<T0>(this GremedyStringMarker thisApi, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public EyeTrackerFB
+        (
+            ulong? handle = null
+        ) : this()
         {
-            // SpanOverloader
-            thisApi.StringMarker(len, in @string.GetPinnableReference());
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
 }
-

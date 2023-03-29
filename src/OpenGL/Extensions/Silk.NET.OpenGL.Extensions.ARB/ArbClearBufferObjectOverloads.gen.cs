@@ -16,196 +16,214 @@ namespace Silk.NET.OpenGL.Extensions.ARB
 {
     public static class ArbClearBufferObjectOverloads
     {
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferData(target, internalformat, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] Span<T0> data) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
-        }
-
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
-        }
-
-        public static unsafe void ClearBufferSubData<T0>(this ArbClearBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, dataSpp);
         }
 
     }

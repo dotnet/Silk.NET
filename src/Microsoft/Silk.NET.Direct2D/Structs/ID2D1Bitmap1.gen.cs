@@ -435,18 +435,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyFromMemory<T0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRect, srcDataPtr, pitch);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CopyFromMemory([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(FlowDirection.In)] void* srcData, uint pitch)
         {
             var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -454,21 +442,6 @@ namespace Silk.NET.Direct2D
             fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcData, pitch);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CopyFromMemory<T0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-        {
-            var @this = (ID2D1Bitmap1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
-            {
-                fixed (void* srcDataPtr = &srcData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap1*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcDataPtr, pitch);
-                }
             }
             return ret;
         }

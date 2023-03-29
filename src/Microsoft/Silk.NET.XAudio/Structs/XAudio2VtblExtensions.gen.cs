@@ -972,35 +972,12 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] DebugConfiguration* pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        fixed (void* pReservedPtr = &pReserved)
-        {
-            ((delegate* unmanaged[Stdcall]<IXAudio2*, DebugConfiguration*, void*, void>)@this->LpVtbl[12])(@this, pDebugConfiguration, pReservedPtr);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] in DebugConfiguration pDebugConfiguration, void* pReserved)
     {
         var @this = thisVtbl.Handle;
         fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
         {
             ((delegate* unmanaged[Stdcall]<IXAudio2*, DebugConfiguration*, void*, void>)@this->LpVtbl[12])(@this, pDebugConfigurationPtr, pReserved);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] in DebugConfiguration pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
-        {
-            fixed (void* pReservedPtr = &pReserved)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2*, DebugConfiguration*, void*, void>)@this->LpVtbl[12])(@this, pDebugConfigurationPtr, pReservedPtr);
-            }
         }
     }
 
@@ -1406,27 +1383,12 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] DebugConfiguration* pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
+    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DebugConfiguration> pDebugConfiguration, Span<T0> pReserved) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetDebugConfiguration(pDebugConfiguration, ref pReserved.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DebugConfiguration> pDebugConfiguration, void* pReserved)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->SetDebugConfiguration(in pDebugConfiguration.GetPinnableReference(), pReserved);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DebugConfiguration> pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->SetDebugConfiguration(in pDebugConfiguration.GetPinnableReference(), ref pReserved.GetPinnableReference());
+        fixed (void* pReservedSpp = pReserved)
+            @this->SetDebugConfiguration(in pDebugConfiguration.GetPinnableReference(), pReservedSpp);
     }
 
     /// <summary>To be documented.</summary>

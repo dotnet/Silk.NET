@@ -88,25 +88,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramEnvParameterI4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        public static unsafe void ProgramEnvParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // SpanOverloader
             thisApi.ProgramEnvParametersI4(target, index, count, in @params.GetPinnableReference());
@@ -136,25 +136,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramLocalParameterI4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParametersI4(target, index, count, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        public static unsafe void ProgramLocalParametersI4(this NVGpuProgram4 thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // SpanOverloader
             thisApi.ProgramLocalParametersI4(target, index, count, in @params.GetPinnableReference());

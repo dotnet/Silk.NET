@@ -294,28 +294,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void ProgramParameter4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glProgramParameters4dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glProgramParameters4dvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double v);
+        public partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glProgramParameters4dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glProgramParameters4dvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double v);
+        public partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glProgramParameters4fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glProgramParameters4fvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float v);
+        public partial void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glProgramParameters4fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glProgramParameters4fvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float v);
+        public partial void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glRequestResidentProgramsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void RequestResidentProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs);
@@ -498,64 +498,64 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void VertexAttribs1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2dvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double v);
+        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2fvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float v);
+        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2svNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs2svNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in short v);
+        public partial void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3dvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double v);
+        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3fvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float v);
+        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3svNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs3svNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in short v);
+        public partial void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4dvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double v);
+        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4fvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float v);
+        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4svNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4svNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in short v);
+        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4ubvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] byte* v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4ubvNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte v);
+        public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] in byte v);
 
         [NativeApi(EntryPoint = "glVertexAttribs4ubvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string v);
@@ -647,28 +647,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             LoadProgram(target, id, (uint) program.Length, in program.GetPinnableReference());
         }
 
-        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
         public unsafe void RequestResidentProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
@@ -701,64 +701,64 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             VertexAttribs1(index, (uint) v.Length, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
-        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
         }
 
         public unsafe uint GenProgram([Flow(FlowDirection.In)] uint n)

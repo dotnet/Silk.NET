@@ -400,18 +400,6 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* srcDataPtr = &srcData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRect, srcDataPtr, pitch);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CopyFromMemory(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(FlowDirection.In)] void* srcData, uint pitch)
     {
         var @this = thisVtbl.Handle;
@@ -419,21 +407,6 @@ public unsafe static class D2D1BitmapVtblExtensions
         fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcData, pitch);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(FlowDirection.In)] in T0 srcData, uint pitch) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Maths.Box2D<uint>* dstRectPtr = &dstRect)
-        {
-            fixed (void* srcDataPtr = &srcData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1Bitmap*, Silk.NET.Maths.Box2D<uint>*, void*, uint, int>)@this->LpVtbl[10])(@this, dstRectPtr, srcDataPtr, pitch);
-            }
         }
         return ret;
     }
@@ -672,27 +645,12 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch) where T0 : unmanaged
+    public static int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> dstRect, [Flow(FlowDirection.In)] Span<T0> srcData, uint pitch) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CopyFromMemory(dstRect, in srcData.GetPinnableReference(), pitch);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromMemory(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> dstRect, [Flow(FlowDirection.In)] void* srcData, uint pitch)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CopyFromMemory(in dstRect.GetPinnableReference(), srcData, pitch);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> dstRect, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CopyFromMemory(in dstRect.GetPinnableReference(), in srcData.GetPinnableReference(), pitch);
+        fixed (void* srcDataSpp = srcData)
+            return @this->CopyFromMemory(in dstRect.GetPinnableReference(), srcDataSpp, pitch);
     }
 
     /// <summary>To be documented.</summary>

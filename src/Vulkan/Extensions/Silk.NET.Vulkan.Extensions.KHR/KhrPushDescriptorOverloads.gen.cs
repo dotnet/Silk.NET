@@ -23,13 +23,6 @@ namespace Silk.NET.Vulkan.Extensions.KHR
             thisApi.CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, in pDescriptorWrites.GetPinnableReference());
         }
 
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdPushDescriptorSetWithTemplate<T0>(this KhrPushDescriptor thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.CmdPushDescriptorSetWithTemplate(commandBuffer, descriptorUpdateTemplate, layout, set, ref pData.GetPinnableReference());
-        }
-
     }
 }
 

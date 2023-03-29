@@ -329,24 +329,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, ref pData.GetPinnableReference(), stride);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
-        {
-            // SpanOverloader
-            return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pData, stride);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, ref pData.GetPinnableReference(), stride);
+            fixed (void* pDataSpp = pData)
+                return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pDataSpp, stride);
         }
 
     }

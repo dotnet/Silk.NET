@@ -1756,22 +1756,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
             thisApi.GetPerfCounterInfo(queryId, counterId, counterNameLength, out counterName.GetPinnableReference(), counterDescLength, out counterDesc.GetPinnableReference(), out counterOffset.GetPinnableReference(), out counterDataSize.GetPinnableReference(), out counterTypeEnum.GetPinnableReference(), out counterDataTypeEnum.GetPinnableReference(), out rawCounterMaxValue.GetPinnableReference());
         }
 
-        public static unsafe void GetPerfQueryData(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten)
+        public static unsafe void GetPerfQueryData<T0>(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, data, out bytesWritten.GetPinnableReference());
-        }
-
-        public static unsafe void GetPerfQueryData<T0>(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, out data.GetPinnableReference(), bytesWritten);
-        }
-
-        public static unsafe void GetPerfQueryData<T0>(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetPerfQueryData(queryHandle, flags, dataSize, out data.GetPinnableReference(), out bytesWritten.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.GetPerfQueryData(queryHandle, flags, dataSize, dataSpp, out bytesWritten.GetPinnableReference());
         }
 
         public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] Span<uint> queryId)

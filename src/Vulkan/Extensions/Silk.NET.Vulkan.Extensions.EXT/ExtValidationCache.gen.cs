@@ -66,15 +66,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT", Convention = CallingConvention.Winapi)]

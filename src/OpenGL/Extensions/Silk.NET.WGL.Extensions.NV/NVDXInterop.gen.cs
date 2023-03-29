@@ -35,20 +35,11 @@ namespace Silk.NET.WGL.Extensions.NV
         [NativeApi(EntryPoint = "wglDXOpenDeviceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial nint DxopenDevice([Flow(FlowDirection.Out)] void* dxDevice);
 
-        [NativeApi(EntryPoint = "wglDXOpenDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial nint DxopenDevice<T0>([Flow(FlowDirection.Out)] out T0 dxDevice) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "wglDXRegisterObjectNV", Convention = CallingConvention.Winapi)]
         public unsafe partial nint DxregisterObject([Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.Out)] void* dxObject, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] NV access);
 
-        [NativeApi(EntryPoint = "wglDXRegisterObjectNV", Convention = CallingConvention.Winapi)]
-        public partial nint DxregisterObject<T0>([Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.Out)] out T0 dxObject, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] NV access) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "wglDXSetResourceShareHandleNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 DxsetResourceShareHandle([Flow(FlowDirection.Out)] void* dxObject, [Flow(FlowDirection.In)] nint shareHandle);
-
-        [NativeApi(EntryPoint = "wglDXSetResourceShareHandleNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DxsetResourceShareHandle<T0>([Flow(FlowDirection.Out)] out T0 dxObject, [Flow(FlowDirection.In)] nint shareHandle) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "wglDXUnlockObjectsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 DxunlockObjects([Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.In)] int count, [Flow(FlowDirection.Out)] nint* hObjects);

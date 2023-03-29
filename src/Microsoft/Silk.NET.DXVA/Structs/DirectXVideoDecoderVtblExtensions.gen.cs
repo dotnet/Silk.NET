@@ -700,18 +700,6 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginFrame<T0>(this ComPtr<IDirectXVideoDecoder> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, ref T0 pvPVPData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pvPVPDataPtr = &pvPVPData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, void*, int>)@this->LpVtbl[7])(@this, pRenderTarget, pvPVPDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int BeginFrame(this ComPtr<IDirectXVideoDecoder> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, void* pvPVPData)
     {
         var @this = thisVtbl.Handle;
@@ -719,21 +707,6 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
         fixed (Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTargetPtr = &pRenderTarget)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, void*, int>)@this->LpVtbl[7])(@this, pRenderTargetPtr, pvPVPData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int BeginFrame<T0>(this ComPtr<IDirectXVideoDecoder> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, ref T0 pvPVPData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTargetPtr = &pRenderTarget)
-        {
-            fixed (void* pvPVPDataPtr = &pvPVPData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, void*, int>)@this->LpVtbl[7])(@this, pRenderTargetPtr, pvPVPDataPtr);
-            }
         }
         return ret;
     }
@@ -1070,27 +1043,12 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginFrame<T0>(this ComPtr<IDirectXVideoDecoder> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<T0> pvPVPData) where T0 : unmanaged
+    public static int BeginFrame<T0>(this ComPtr<IDirectXVideoDecoder> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<T0> pvPVPData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BeginFrame(pRenderTarget, ref pvPVPData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int BeginFrame(this ComPtr<IDirectXVideoDecoder> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, void* pvPVPData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->BeginFrame(ref pRenderTarget.GetPinnableReference(), pvPVPData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int BeginFrame<T0>(this ComPtr<IDirectXVideoDecoder> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<T0> pvPVPData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->BeginFrame(ref pRenderTarget.GetPinnableReference(), ref pvPVPData.GetPinnableReference());
+        fixed (void* pvPVPDataSpp = pvPVPData)
+            return @this->BeginFrame(ref pRenderTarget.GetPinnableReference(), pvPVPDataSpp);
     }
 
     /// <summary>To be documented.</summary>

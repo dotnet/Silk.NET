@@ -18,25 +18,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryHostPointerProperties = new(StructureType.MemoryHostPointerPropertiesExt);")]
-        public static unsafe Result GetMemoryHostPointerProperties(this ExtExternalMemoryHost thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties)
+        public static unsafe Result GetMemoryHostPointerProperties<T0>(this ExtExternalMemoryHost thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] Span<T0> pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetMemoryHostPointerProperties(device, handleType, pHostPointer, out pMemoryHostPointerProperties.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryHostPointerProperties<T0>(this ExtExternalMemoryHost thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] Span<T0> pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetMemoryHostPointerProperties(device, handleType, ref pHostPointer.GetPinnableReference(), pMemoryHostPointerProperties);
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pMemoryHostPointerProperties = new(StructureType.MemoryHostPointerPropertiesExt);")]
-        public static unsafe Result GetMemoryHostPointerProperties<T0>(this ExtExternalMemoryHost thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] Span<T0> pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetMemoryHostPointerProperties(device, handleType, ref pHostPointer.GetPinnableReference(), out pMemoryHostPointerProperties.GetPinnableReference());
+            fixed (void* pHostPointerSpp = pHostPointer)
+                return thisApi.GetMemoryHostPointerProperties(device, handleType, pHostPointerSpp, out pMemoryHostPointerProperties.GetPinnableReference());
         }
 
     }

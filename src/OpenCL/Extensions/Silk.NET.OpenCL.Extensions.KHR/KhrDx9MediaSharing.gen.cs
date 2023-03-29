@@ -26,12 +26,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -39,14 +33,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueAcquireDX9MediaSurfacesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireDX9MediaSurfaces([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
@@ -109,18 +95,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial int GetDeviceIDsFromDX9MediaAdapter([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] uint* media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
         [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] uint* media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] uint* media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] out uint num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] uint* media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] uint* media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out uint num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDeviceIDsFromDX9MediaAdapter([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
@@ -131,18 +105,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 
         [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDeviceIDsFromDX9MediaAdapter([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] void* media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out uint num_devices);
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] out uint num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clGetDeviceIDsFromDX9MediaAdapterKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetDeviceIDsFromDX9MediaAdapter<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint num_media_adapters, [Flow(FlowDirection.Out)] out uint media_adapter_type, [Flow(FlowDirection.Out)] out T0 media_adapters, [Flow(FlowDirection.In)] uint media_adapter_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out uint num_devices) where T0 : unmanaged;
 
         public KhrDx9MediaSharing(INativeContext ctx)
             : base(ctx)

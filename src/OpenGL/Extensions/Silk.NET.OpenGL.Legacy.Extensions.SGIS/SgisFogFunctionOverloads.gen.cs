@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     public static class SgisFogFunctionOverloads
     {
-        public static unsafe void FogFunc(this SgisFogFunction thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        public static unsafe void FogFunc(this SgisFogFunction thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // SpanOverloader
             thisApi.FogFunc(n, in points.GetPinnableReference());

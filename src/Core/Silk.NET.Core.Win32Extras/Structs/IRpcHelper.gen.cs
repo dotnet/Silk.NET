@@ -153,33 +153,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetIIDFromOBJREF<T0>(ref T0 pObjRef, Guid** piid) where T0 : unmanaged
-        {
-            var @this = (IRpcHelper*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pObjRefPtr = &pObjRef)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IRpcHelper*, void*, Guid**, int>)@this->LpVtbl[4])(@this, pObjRefPtr, piid);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetIIDFromOBJREF<T0>(ref T0 pObjRef, ref Guid* piid) where T0 : unmanaged
-        {
-            var @this = (IRpcHelper*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pObjRefPtr = &pObjRef)
-            {
-                fixed (Guid** piidPtr = &piid)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IRpcHelper*, void*, Guid**, int>)@this->LpVtbl[4])(@this, pObjRefPtr, piidPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcHelper*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

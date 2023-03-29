@@ -64,28 +64,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.GetMapAttribParameter(target, index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
+        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, pointsSpp);
         }
 
-        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
+        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, pointsSpp);
         }
 
-        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
+        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
-        }
-
-        public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, pointsSpp);
         }
 
         public static unsafe void GetMapParameter(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<int> @params)
@@ -136,28 +133,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.GetMapParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
+        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, pointsSpp);
         }
 
-        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
+        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, pointsSpp);
         }
 
-        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
+        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] Span<T0> points) where T0 : struct
         {
             // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
-        }
-
-        public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, pointsSpp);
         }
 
         public static unsafe void MapParameter(this NVEvaluators thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)

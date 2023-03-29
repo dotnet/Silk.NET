@@ -133,35 +133,11 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[6])(@this, Type, pDataPtr, DataSize);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pData, DataSize);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pDataPtr, DataSize);
-        }
         return ret;
     }
 
@@ -204,22 +180,6 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->AssertResourceState(ref pResource.GetPinnableReference(), Subresource, State);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint DataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->SetDebugParameter(Type, in pData.GetPinnableReference(), DataSize);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
     }
 
     /// <summary>To be documented.</summary>

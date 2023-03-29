@@ -112,28 +112,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetProgramLocalParameter(target, index, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetProgramString(target, pname, @stringSpp);
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetProgramString(target, pname, @stringSpp);
         }
 
-        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
+        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
-        }
-
-        public static unsafe void GetProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetProgramString(target, pname, @stringSpp);
         }
 
         public static unsafe void GetVertexAttrib(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
@@ -220,28 +217,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ProgramLocalParameter4(target, index, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.ProgramString(target, format, len, @stringSpp);
         }
 
-        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.ProgramString(target, format, len, @stringSpp);
         }
 
-        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : struct
         {
             // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
-        }
-
-        public static unsafe void ProgramString<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramFormat format, [Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.ProgramString(target, format, len, @stringSpp);
         }
 
         public static unsafe void VertexAttrib1(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
@@ -380,6 +374,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         {
             // SpanOverloader
             thisApi.VertexAttrib4N(index, in v.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribPointer<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        {
+            // SpanOverloader
+            fixed (void* pointerSpp = pointer)
+                thisApi.VertexAttribPointer(index, size, type, normalized, stride, pointerSpp);
         }
 
     }

@@ -182,66 +182,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmap);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapProperties, bitmapPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmap);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* srcDataPtr = &srcData)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>, void*, uint, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[4])(@this, size, srcDataPtr, pitch, bitmapPropertiesPtr, bitmapPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBitmapFromWicBitmap(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -398,66 +338,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* dataPtr = &data)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapProperties, bitmap);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* dataPtr = &data)
-            {
-                fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapProperties, bitmapPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* dataPtr = &data)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapPropertiesPtr, bitmap);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* dataPtr = &data)
-            {
-                fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                {
-                    fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riid, dataPtr, bitmapPropertiesPtr, bitmapPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateSharedBitmap(ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
         {
             var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -511,78 +391,6 @@ namespace Silk.NET.Direct2D
                     fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
                     {
                         ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, data, bitmapPropertiesPtr, bitmapPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* dataPtr = &data)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapProperties, bitmap);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* dataPtr = &data)
-                {
-                    fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapProperties, bitmapPtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* dataPtr = &data)
-                {
-                    fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapPropertiesPtr, bitmap);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* dataPtr = &data)
-                {
-                    fixed (BitmapProperties* bitmapPropertiesPtr = &bitmapProperties)
-                    {
-                        fixed (ID2D1Bitmap** bitmapPtr = &bitmap)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Guid*, void*, BitmapProperties*, ID2D1Bitmap**, int>)@this->LpVtbl[6])(@this, riidPtr, dataPtr, bitmapPropertiesPtr, bitmapPtr);
-                        }
                     }
                 }
             }
@@ -3667,22 +3475,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateBitmap(size, in srcData, pitch, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateBitmap<T0, TI0>(Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateBitmap(size, in srcData, pitch, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBitmapFromWicBitmap<TI0>(IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3731,22 +3523,6 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateSharedBitmap(riid, ref data, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateSharedBitmap(riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateSharedBitmap<TI0>(ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
         {
             var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3760,22 +3536,6 @@ namespace Silk.NET.Direct2D
             var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateSharedBitmap(ref riid, data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateSharedBitmap(ref riid, ref data, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateSharedBitmap<T0, TI0>(ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
-        {
-            var @this = (ID2D1DCRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateSharedBitmap(ref riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

@@ -210,16 +210,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(Guid* uExtent, Guid* riid, uint* pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataBufferPtr = &pDataBuffer)
-            {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSize, pDataBufferPtr);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientFillBuffer(Guid* uExtent, Guid* riid, ref uint pDataSize, void* pDataBuffer)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -230,38 +220,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(Guid* uExtent, Guid* riid, ref uint pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientFillBuffer(Guid* uExtent, ref Guid riid, uint* pDataSize, void* pDataBuffer)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBuffer);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(Guid* uExtent, ref Guid riid, uint* pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr);
-                }
             }
         }
 
@@ -279,41 +243,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(Guid* uExtent, ref Guid riid, ref uint pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientFillBuffer(ref Guid uExtent, Guid* riid, uint* pDataSize, void* pDataBuffer)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBuffer);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(ref Guid uExtent, Guid* riid, uint* pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr);
-                }
             }
         }
 
@@ -331,22 +266,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(ref Guid uExtent, Guid* riid, ref uint pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientFillBuffer(ref Guid uExtent, ref Guid riid, uint* pDataSize, void* pDataBuffer)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -355,22 +274,6 @@ namespace Silk.NET.Core.Win32Extras
                 fixed (Guid* riidPtr = &riid)
                 {
                     ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBuffer);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientFillBuffer<T0>(ref Guid uExtent, ref Guid riid, uint* pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr);
-                    }
                 }
             }
         }
@@ -392,39 +295,10 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClientFillBuffer<T0>(ref Guid uExtent, ref Guid riid, ref uint pDataSize, ref T0 pDataBuffer) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (void* pDataBufferPtr = &pDataBuffer)
-                        {
-                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)@this->LpVtbl[4])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr);
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientNotify(Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientNotify<T0>(Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataBufferPtr = &pDataBuffer)
-            {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -438,38 +312,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientNotify<T0>(Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ClientNotify(ref Guid uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ClientNotify<T0>(ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
-                }
             }
         }
 
@@ -487,36 +335,10 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClientNotify<T0>(ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerNotify(Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerNotify<T0>(Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataBufferPtr = &pDataBuffer)
-            {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep);
-            }
         }
 
         /// <summary>To be documented.</summary>
@@ -526,19 +348,6 @@ namespace Silk.NET.Core.Win32Extras
             fixed (Guid* riidPtr = &riid)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerNotify<T0>(Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
-                }
             }
         }
 
@@ -553,19 +362,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerNotify<T0>(ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerNotify(ref Guid uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -574,22 +370,6 @@ namespace Silk.NET.Core.Win32Extras
                 fixed (Guid* riidPtr = &riid)
                 {
                     ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void ServerNotify<T0>(ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
-                    }
                 }
             }
         }
@@ -694,16 +474,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(Guid* uExtent, Guid* riid, uint* pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (void* pDataBufferPtr = &pDataBuffer)
-            {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSize, pDataBufferPtr, hrFault);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerFillBuffer(Guid* uExtent, Guid* riid, ref uint pDataSize, void* pDataBuffer, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -714,38 +484,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(Guid* uExtent, Guid* riid, ref uint pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riid, pDataSizePtr, pDataBufferPtr, hrFault);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerFillBuffer(Guid* uExtent, ref Guid riid, uint* pDataSize, void* pDataBuffer, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* riidPtr = &riid)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBuffer, hrFault);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(Guid* uExtent, ref Guid riid, uint* pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSize, pDataBufferPtr, hrFault);
-                }
             }
         }
 
@@ -763,41 +507,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(Guid* uExtent, ref Guid riid, ref uint pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtent, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerFillBuffer(ref Guid uExtent, Guid* riid, uint* pDataSize, void* pDataBuffer, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* uExtentPtr = &uExtent)
             {
                 ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBuffer, hrFault);
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(ref Guid uExtent, Guid* riid, uint* pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (void* pDataBufferPtr = &pDataBuffer)
-                {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSize, pDataBufferPtr, hrFault);
-                }
             }
         }
 
@@ -810,22 +525,6 @@ namespace Silk.NET.Core.Win32Extras
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBuffer, hrFault);
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(ref Guid uExtent, Guid* riid, ref uint pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riid, pDataSizePtr, pDataBufferPtr, hrFault);
-                    }
                 }
             }
         }
@@ -844,22 +543,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ServerFillBuffer<T0>(ref Guid uExtent, ref Guid riid, uint* pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void* pDataBufferPtr = &pDataBuffer)
-                    {
-                        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSize, pDataBufferPtr, hrFault);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe void ServerFillBuffer(ref Guid uExtent, ref Guid riid, ref uint pDataSize, void* pDataBuffer, int hrFault)
         {
             var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -870,25 +553,6 @@ namespace Silk.NET.Core.Win32Extras
                     fixed (uint* pDataSizePtr = &pDataSize)
                     {
                         ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBuffer, hrFault);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void ServerFillBuffer<T0>(ref Guid uExtent, ref Guid riid, ref uint pDataSize, ref T0 pDataBuffer, int hrFault) where T0 : unmanaged
-        {
-            var @this = (IChannelHook*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Guid* uExtentPtr = &uExtent)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (void* pDataBufferPtr = &pDataBuffer)
-                        {
-                            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint*, void*, int, void>)@this->LpVtbl[8])(@this, uExtentPtr, riidPtr, pDataSizePtr, pDataBufferPtr, hrFault);
-                        }
                     }
                 }
             }

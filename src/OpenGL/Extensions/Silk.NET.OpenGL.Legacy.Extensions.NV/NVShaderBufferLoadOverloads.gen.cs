@@ -58,7 +58,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramUniform(program, location, count, in value.GetPinnableReference());
         }
 
-        public static unsafe void Uniform(this NVShaderBufferLoad thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        public static unsafe void Uniform(this NVShaderBufferLoad thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
         {
             // SpanOverloader
             thisApi.Uniform(location, count, in value.GetPinnableReference());
