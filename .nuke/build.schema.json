@@ -152,7 +152,8 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
-              "VulkanLoader"
+              "VulkanLoader",
+              "Wgpu"
             ]
           }
         },
@@ -188,7 +189,8 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
-              "VulkanLoader"
+              "VulkanLoader",
+              "Wgpu"
             ]
           }
         },
