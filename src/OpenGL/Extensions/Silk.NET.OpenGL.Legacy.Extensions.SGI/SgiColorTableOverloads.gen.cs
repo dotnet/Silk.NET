@@ -19,85 +19,99 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
         }
 
         public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
@@ -163,37 +177,43 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetColorTable(target, format, type, tableSpp);
         }
 
         public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged

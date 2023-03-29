@@ -19,133 +19,155 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* tableSpp = table)
+                thisApi.GetnColorTable(target, format, type, bufSize, tableSpp);
         }
 
         public static unsafe void GetnColorTable<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnColorTable(target, format, type, bufSize, out table.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetnCompressedTexImage(target, lod, bufSize, imgSpp);
         }
 
         public static unsafe void GetnCompressedTexImage<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnCompressedTexImage(target, lod, bufSize, out img.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnCompressedTexImage<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnCompressedTexImage(target, lod, bufSize, out img.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* imageSpp = image)
+                thisApi.GetnConvolutionFilter(target, format, type, bufSize, imageSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnConvolutionFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ConvolutionTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnConvolutionFilter(target, format, type, bufSize, out image.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnHistogram(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnHistogram<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
@@ -247,43 +269,50 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+            fixed (void* valuesSpp = values)
+                thisApi.GetnMinmax(target, reset, format, type, bufSize, valuesSpp);
         }
 
         public static unsafe void GetnMinmax<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
@@ -343,85 +372,113 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1, T2>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
+            fixed (void* rowSpp = row)
+            fixed (void* columnSpp = column)
+            fixed (void* spanSpp = span)
+                thisApi.GetnSeparableFilter(target, format, type, rowBufSize, rowSpp, columnBufSize, columnSpp, spanSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0, T1, T2>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
         }
 
         public static unsafe void GetnSeparableFilter<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* row, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* column, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
@@ -751,13 +808,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
         }
 
         public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
         }
 
         public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged

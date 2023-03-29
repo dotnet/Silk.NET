@@ -103,32 +103,10 @@ public unsafe static class MallocVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* Realloc<T0>(this ComPtr<IMalloc> thisVtbl, ref T0 pv, nuint cb) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        void* ret = default;
-        fixed (void* pvPtr = &pv)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, nuint, void*>)@this->LpVtbl[4])(@this, pvPtr, cb);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe void Free(this ComPtr<IMalloc> thisVtbl, void* pv)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Cdecl]<IMalloc*, void*, void>)@this->LpVtbl[5])(@this, pv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void Free<T0>(this ComPtr<IMalloc> thisVtbl, ref T0 pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        fixed (void* pvPtr = &pv)
-        {
-            ((delegate* unmanaged[Cdecl]<IMalloc*, void*, void>)@this->LpVtbl[5])(@this, pvPtr);
-        }
     }
 
     /// <summary>To be documented.</summary>
@@ -141,35 +119,11 @@ public unsafe static class MallocVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static nuint GetSize<T0>(this ComPtr<IMalloc> thisVtbl, ref T0 pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        nuint ret = default;
-        fixed (void* pvPtr = &pv)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, nuint>)@this->LpVtbl[6])(@this, pvPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int DidAlloc(this ComPtr<IMalloc> thisVtbl, void* pv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, int>)@this->LpVtbl[7])(@this, pv);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int DidAlloc<T0>(this ComPtr<IMalloc> thisVtbl, ref T0 pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pvPtr = &pv)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, int>)@this->LpVtbl[7])(@this, pvPtr);
-        }
         return ret;
     }
 
@@ -203,38 +157,6 @@ public unsafe static class MallocVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe void* Realloc<T0>(this ComPtr<IMalloc> thisVtbl, Span<T0> pv, nuint cb) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->Realloc(ref pv.GetPinnableReference(), cb);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void Free<T0>(this ComPtr<IMalloc> thisVtbl, Span<T0> pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->Free(ref pv.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static nuint GetSize<T0>(this ComPtr<IMalloc> thisVtbl, Span<T0> pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetSize(ref pv.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int DidAlloc<T0>(this ComPtr<IMalloc> thisVtbl, Span<T0> pv) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->DidAlloc(ref pv.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

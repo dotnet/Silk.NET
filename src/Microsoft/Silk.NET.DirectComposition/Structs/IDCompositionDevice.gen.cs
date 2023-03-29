@@ -255,33 +255,6 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurfaceFromHandle<T0>(ref T0 handle, Silk.NET.Core.Native.IUnknown** surface) where T0 : unmanaged
-        {
-            var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* handlePtr = &handle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, void*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, handlePtr, surface);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurfaceFromHandle<T0>(ref T0 handle, ref Silk.NET.Core.Native.IUnknown* surface) where T0 : unmanaged
-        {
-            var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* handlePtr = &handle)
-            {
-                fixed (Silk.NET.Core.Native.IUnknown** surfacePtr = &surface)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, void*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, handlePtr, surfacePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateSurfaceFromHwnd(nint hwnd, Silk.NET.Core.Native.IUnknown** surface)
         {
             var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -718,14 +691,6 @@ namespace Silk.NET.DirectComposition
             var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateSurfaceFromHandle(handle, (Silk.NET.Core.Native.IUnknown**) surface.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateSurfaceFromHandle<T0, TI0>(ref T0 handle, ref ComPtr<TI0> surface) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-        {
-            var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateSurfaceFromHandle(ref handle, (Silk.NET.Core.Native.IUnknown**) surface.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

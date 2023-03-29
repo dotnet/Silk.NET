@@ -67,13 +67,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, pointsSpp);
         }
 
         public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapTypeNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, out points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.GetMapControlPoints(target, index, type, ustride, vstride, packed, pointsSpp);
         }
 
         public static unsafe void GetMapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EvalTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> points) where T0 : unmanaged
@@ -139,13 +141,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int uorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, pointsSpp);
         }
 
         public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapTypeNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int uorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, in points.GetPinnableReference());
+            fixed (void* pointsSpp = points)
+                thisApi.MapControlPoints(target, index, type, ustride, vstride, uorder, vorder, packed, pointsSpp);
         }
 
         public static unsafe void MapControlPoints<T0>(this NVEvaluators thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EvalTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int uorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> points) where T0 : unmanaged

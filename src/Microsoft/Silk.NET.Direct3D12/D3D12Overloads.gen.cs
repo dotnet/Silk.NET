@@ -53,7 +53,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
-            return thisApi.CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+            fixed (void* pSrcDataSpp = pSrcData)
+                return thisApi.CreateRootSignatureDeserializer(pSrcDataSpp, SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
         }
 
         /// <summary>To be documented.</summary>
@@ -61,7 +62,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
-            return thisApi.CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+            fixed (void* pSrcDataSpp = pSrcData)
+                return thisApi.CreateRootSignatureDeserializer(pSrcDataSpp, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
         }
 
         /// <summary>To be documented.</summary>
@@ -133,7 +135,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
-            return thisApi.CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+            fixed (void* pSrcDataSpp = pSrcData)
+                return thisApi.CreateVersionedRootSignatureDeserializer(pSrcDataSpp, SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
         }
 
         /// <summary>To be documented.</summary>
@@ -141,7 +144,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
-            return thisApi.CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+            fixed (void* pSrcDataSpp = pSrcData)
+                return thisApi.CreateVersionedRootSignatureDeserializer(pSrcDataSpp, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
         }
 
         /// <summary>To be documented.</summary>
@@ -245,7 +249,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int EnableExperimentalFeatures(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, Span<uint> pConfigurationStructSizes)
         {
             // SpanOverloader
-            return thisApi.EnableExperimentalFeatures(NumFeatures, pIIDs, pConfigurationStructs, ref pConfigurationStructSizes.GetPinnableReference());
+            fixed (void* pConfigurationStructsSpp = pConfigurationStructs)
+                return thisApi.EnableExperimentalFeatures(NumFeatures, pIIDs, pConfigurationStructsSpp, ref pConfigurationStructSizes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -253,7 +258,8 @@ namespace Silk.NET.Direct3D12
         public static unsafe int EnableExperimentalFeatures<T0>(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, Span<T0> pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.EnableExperimentalFeatures(NumFeatures, pIIDs, ref pConfigurationStructs.GetPinnableReference(), pConfigurationStructSizes);
+            fixed (void* pConfigurationStructsSpp = pConfigurationStructs)
+                return thisApi.EnableExperimentalFeatures(NumFeatures, in pIIDs.GetPinnableReference(), pConfigurationStructsSpp, pConfigurationStructSizes);
         }
 
         /// <summary>To be documented.</summary>

@@ -4711,25 +4711,29 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
+            fixed (void* ptrSpp = ptr)
+                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label)
         {
             // SpanOverloader
-            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
+            fixed (void* ptrSpp = ptr)
+                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label)
         {
             // SpanOverloader
-            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), label);
+            fixed (void* ptrSpp = ptr)
+                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), label);
         }
 
         public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+            fixed (void* ptrSpp = ptr)
+                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label)
@@ -4789,7 +4793,8 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         public static unsafe void ObjectPtrLabel(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
-            thisApi.ObjectPtrLabel(ptr, length, in label.GetPinnableReference());
+            fixed (void* ptrSpp = ptr)
+                thisApi.ObjectPtrLabel(ptrSpp, length, in label.GetPinnableReference());
         }
 
         public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label) where T0 : unmanaged

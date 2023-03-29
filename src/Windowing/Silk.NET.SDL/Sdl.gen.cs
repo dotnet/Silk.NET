@@ -1007,19 +1007,9 @@ namespace Silk.NET.SDL
         public unsafe partial void* Realloc(void* mem, nuint size);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 441, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_realloc")]
-        public unsafe partial void* Realloc<T0>(ref T0 mem, nuint size) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 442, Column 30 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_free")]
         public unsafe partial void Free(void* mem);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 442, Column 30 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_free")]
-        public partial void Free<T0>(ref T0 mem) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
@@ -1275,11 +1265,6 @@ namespace Silk.NET.SDL
         public unsafe partial void Qsort(void* @base, nuint nmemb, nuint size, PfnVvVvI compare);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 489, Column 30 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_qsort")]
-        public partial void Qsort<T0>(ref T0 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_bsearch")]
         public unsafe partial void* Bsearch([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare);
@@ -1398,11 +1383,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 517, Column 31 in SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memset")]
         public unsafe partial void* Memset(void* dst, int c, nuint len);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 517, Column 31 in SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_memset")]
-        public unsafe partial void* Memset<T0>(ref T0 dst, int c, nuint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 559, Column 31 in SDL_stdinc.h")]
@@ -6461,19 +6441,9 @@ namespace Silk.NET.SDL
         public unsafe partial Surface* CreateRGBSurfaceFrom(void* pixels, int width, int height, int depth, int pitch, uint Rmask, uint Gmask, uint Bmask, uint Amask);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 219, Column 38 in SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_CreateRGBSurfaceFrom")]
-        public unsafe partial Surface* CreateRGBSurfaceFrom<T0>(ref T0 pixels, int width, int height, int depth, int pitch, uint Rmask, uint Gmask, uint Bmask, uint Amask) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 257, Column 38 in SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_CreateRGBSurfaceWithFormatFrom")]
         public unsafe partial Surface* CreateRGBSurfaceWithFormatFrom(void* pixels, int width, int height, int depth, int pitch, uint format);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 257, Column 38 in SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_CreateRGBSurfaceWithFormatFrom")]
-        public unsafe partial Surface* CreateRGBSurfaceWithFormatFrom<T0>(ref T0 pixels, int width, int height, int depth, int pitch, uint format) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 274, Column 30 in SDL_surface.h")]
@@ -8998,17 +8968,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(Window* window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
         public unsafe partial int SetWindowHitTest(ref Window window, PfnHitTest callback, void* callback_data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1748, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public partial int SetWindowHitTest<T0>(ref Window window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1762, Column 29 in SDL_video.h")]
@@ -9133,17 +9093,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
-        public unsafe partial int GLMakeCurrent<T0>(Window* window, ref T0 context) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
         public unsafe partial int GLMakeCurrent(ref Window window, void* context);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2018, Column 29 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_MakeCurrent")]
-        public partial int GLMakeCurrent<T0>(ref Window window, ref T0 context) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2029, Column 37 in SDL_video.h")]
@@ -9219,11 +9169,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 2137, Column 30 in SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_DeleteContext")]
         public unsafe partial void GLDeleteContext(void* context);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2137, Column 30 in SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_DeleteContext")]
-        public partial void GLDeleteContext<T0>(ref T0 context) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 109, Column 29 in SDL_vulkan.h")]
@@ -9404,12 +9349,6 @@ namespace Silk.NET.SDL
         public unsafe partial int WinRTRunApp(PfnMainFunc mainFunction, void* reserved);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 232, Column 29 in SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public partial int WinRTRunApp<T0>(PfnMainFunc mainFunction, ref T0 reserved) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 248, Column 29 in SDL_main.h")]
         [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
         public unsafe partial int UIKitRunApp(int argc, byte** argv, PfnMainFunc mainFunction);
@@ -9519,11 +9458,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 226, Column 30 in SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
         public unsafe partial void SetAssertionHandler(PfnAssertionHandler handler, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 226, Column 30 in SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public partial void SetAssertionHandler<T0>(PfnAssertionHandler handler, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 245, Column 46 in SDL_assert.h")]
@@ -9638,37 +9572,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0>(void** a, void* oldval, ref T0 newval) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0>(void** a, ref T0 oldval, void* newval) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0, T1>(void** a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
         public unsafe partial SdlBool AtomicCASPtr(ref void* a, void* oldval, void* newval);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0>(ref void* a, void* oldval, ref T0 newval) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0>(ref void* a, ref T0 oldval, void* newval) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 371, Column 34 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0, T1>(ref void* a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
@@ -9678,17 +9582,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
-        public unsafe partial void* AtomicSetPtr<T0>(void** a, ref T0 v) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
         public unsafe partial void* AtomicSetPtr(ref void* a, void* v);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 388, Column 31 in SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
-        public unsafe partial void* AtomicSetPtr<T0>(ref void* a, ref T0 v) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 404, Column 31 in SDL_atomic.h")]
@@ -10383,17 +10277,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public unsafe partial int AudioStreamGet<T0>(AudioStream* stream, ref T0 buf, int len) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
         public unsafe partial int AudioStreamGet(ref AudioStream stream, void* buf, int len);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1054, Column 29 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public partial int AudioStreamGet<T0>(ref AudioStream stream, ref T0 buf, int len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1072, Column 29 in SDL_audio.h")]
@@ -10539,11 +10423,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1277, Column 32 in SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_DequeueAudio")]
         public unsafe partial uint DequeueAudio(uint dev, void* data, uint len);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1277, Column 32 in SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_DequeueAudio")]
-        public partial uint DequeueAudio<T0>(uint dev, ref T0 data, uint len) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1311, Column 32 in SDL_audio.h")]
@@ -10758,19 +10637,9 @@ namespace Silk.NET.SDL
         public unsafe partial void* SIMDRealloc(void* mem, nuint len);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 560, Column 32 in SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDRealloc")]
-        public unsafe partial void* SIMDRealloc<T0>(ref T0 mem, nuint len) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 584, Column 30 in SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_SIMDFree")]
         public unsafe partial void SIMDFree(void* ptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 584, Column 30 in SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDFree")]
-        public partial void SIMDFree<T0>(ref T0 ptr) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 64, Column 38 in SDL_keyboard.h")]
@@ -13038,11 +12907,6 @@ namespace Silk.NET.SDL
         public unsafe partial void SetEventFilter(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1024, Column 30 in SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public partial void SetEventFilter<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1042, Column 34 in SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
         public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, void** userdata);
@@ -13068,29 +12932,14 @@ namespace Silk.NET.SDL
         public unsafe partial void AddEventWatch(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1071, Column 30 in SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_AddEventWatch")]
-        public partial void AddEventWatch<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1087, Column 30 in SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_DelEventWatch")]
         public unsafe partial void DelEventWatch(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1087, Column 30 in SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_DelEventWatch")]
-        public partial void DelEventWatch<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1106, Column 30 in SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_FilterEvents")]
         public unsafe partial void FilterEvents(PfnEventFilter filter, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1106, Column 30 in SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_FilterEvents")]
-        public partial void FilterEvents<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 31 in SDL_events.h")]
@@ -14147,11 +13996,6 @@ namespace Silk.NET.SDL
         public unsafe partial void UnloadObject(void* handle);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 105, Column 30 in SDL_loadso.h")]
-        [NativeApi(EntryPoint = "SDL_UnloadObject")]
-        public partial void UnloadObject<T0>(ref T0 handle) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 123, Column 30 in SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogSetAllPriority")]
         public partial void LogSetAllPriority(LogPriority priority);
@@ -14362,11 +14206,6 @@ namespace Silk.NET.SDL
         public unsafe partial void LogSetOutputFunction(PfnLogOutputFunction callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 393, Column 30 in SDL_log.h")]
-        [NativeApi(EntryPoint = "SDL_LogSetOutputFunction")]
-        public partial void LogSetOutputFunction<T0>(PfnLogOutputFunction callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 140, Column 29 in SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowMessageBox")]
         public unsafe partial int ShowMessageBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] MessageBoxData* messageboxdata, int* buttonid);
@@ -14492,19 +14331,9 @@ namespace Silk.NET.SDL
         public unsafe partial void MetalDestroyView(void* view);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 78, Column 30 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_DestroyView")]
-        public partial void MetalDestroyView<T0>(ref T0 view) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 87, Column 31 in SDL_metal.h")]
         [NativeApi(EntryPoint = "SDL_Metal_GetLayer")]
         public unsafe partial void* MetalGetLayer(void* view);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 87, Column 31 in SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_GetLayer")]
-        public unsafe partial void* MetalGetLayer<T0>(ref T0 view) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 102, Column 30 in SDL_metal.h")]
@@ -15279,17 +15108,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
-        public unsafe partial int SetTextureUserData<T0>(Texture* texture, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
         public unsafe partial int SetTextureUserData(ref Texture texture, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 552, Column 29 in SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_SetTextureUserData")]
-        public partial int SetTextureUserData<T0>(ref Texture texture, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 566, Column 32 in SDL_render.h")]
@@ -18793,12 +18612,6 @@ namespace Silk.NET.SDL
         public unsafe partial void SetWindowsMessageHook(PfnWindowsMessageHook callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 56, Column 30 in SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public partial void SetWindowsMessageHook<T0>(PfnWindowsMessageHook callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 75, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_Direct3D9GetAdapterIndex")]
@@ -18868,17 +18681,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, PfnFreeFunc callback, void* callbackParam);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 225, Column 29 in SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 30 in SDL_system.h")]
@@ -19102,11 +18905,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 196, Column 37 in SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_AddTimer")]
         public unsafe partial int AddTimer(uint interval, PfnTimerCallback callback, void* param);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 196, Column 37 in SDL_timer.h")]
-        [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public partial int AddTimer<T0>(uint interval, PfnTimerCallback callback, ref T0 param) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 34 in SDL_timer.h")]

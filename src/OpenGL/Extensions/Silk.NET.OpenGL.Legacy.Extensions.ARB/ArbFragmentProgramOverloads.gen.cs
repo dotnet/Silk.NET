@@ -115,13 +115,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetProgramString(target, pname, @stringSpp);
         }
 
         public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetProgramString(target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetProgramString(target, pname, @stringSpp);
         }
 
         public static unsafe void GetProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
@@ -187,13 +189,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.ProgramString(target, format, len, @stringSpp);
         }
 
         public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ProgramString(target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.ProgramString(target, format, len, @stringSpp);
         }
 
         public static unsafe void ProgramString<T0>(this ArbFragmentProgram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged

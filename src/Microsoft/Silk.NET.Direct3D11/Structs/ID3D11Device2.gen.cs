@@ -2691,66 +2691,6 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hResourcePtr = &hResource)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hResourcePtr = &hResource)
-            {
-                fixed (void** ppResourcePtr = &ppResource)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, ref Guid ReturnedInterface, void** ppResource) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hResourcePtr = &hResource)
-            {
-                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, ref Guid ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* hResourcePtr = &hResource)
-            {
-                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
-                {
-                    fixed (void** ppResourcePtr = &ppResource)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
-                    }
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckFormatSupport(Silk.NET.DXGI.Format Format, uint* pFormatSupport)
         {
             var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -42563,35 +42503,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Feature, void*, uint, int>)@this->LpVtbl[33])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pData);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pDataPtr);
-            }
             return ret;
         }
 
@@ -42608,21 +42524,6 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (uint* pDataSizePtr = &pDataSize)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSizePtr, pDataPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -42630,21 +42531,6 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* guidPtr = &guid)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device2*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -46024,15 +45910,6 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(@this->OpenSharedResource(hResource, out ComPtr<TI0> silkRet));
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> OpenSharedResource<T0, TI0>(ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-        {
-            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 

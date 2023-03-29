@@ -19,439 +19,512 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferData(buffer, internalformat, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, dataSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SizedInternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage1D(texunit, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage2D(texunit, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage1D(texture, target, level, internalformat, width, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage2D(texture, target, level, internalformat, width, height, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CompressedTextureImage3D(texture, target, level, internalformat, width, height, depth, border, imageSize, in bits.GetPinnableReference());
+            fixed (void* bitsSpp = bits)
+                thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bitsSpp);
         }
 
         public static unsafe void CompressedTextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
@@ -571,19 +644,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetCompressedMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Computed = "target, lod"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetCompressedMultiTexImage(texunit, target, lod, out img.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetCompressedMultiTexImage(texunit, target, lod, imgSpp);
         }
 
         public static unsafe void GetCompressedMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Computed = "target, lod"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetCompressedMultiTexImage(texunit, target, lod, out img.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetCompressedMultiTexImage(texunit, target, lod, imgSpp);
         }
 
         public static unsafe void GetCompressedMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Computed = "target, lod"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetCompressedMultiTexImage(texunit, target, lod, out img.GetPinnableReference());
+            fixed (void* imgSpp = img)
+                thisApi.GetCompressedMultiTexImage(texunit, target, lod, imgSpp);
         }
 
         public static unsafe void GetCompressedMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int lod, [Count(Computed = "target, lod"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
@@ -919,85 +995,99 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetMultiTexImage(texunit, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetMultiTexImage(texunit, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetMultiTexImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
@@ -1429,13 +1519,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetNamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "program, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetNamedProgramString(program, target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetNamedProgramString(program, target, pname, @stringSpp);
         }
 
         public static unsafe void GetNamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "program, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetNamedProgramString(program, target, pname, out @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.GetNamedProgramString(program, target, pname, @stringSpp);
         }
 
         public static unsafe void GetNamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "program, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> @string) where T0 : unmanaged
@@ -1465,37 +1557,43 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetTextureImage(texture, target, level, format, type, out pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.GetTextureImage(texture, target, level, format, type, pixelsSpp);
         }
 
         public static unsafe void GetTextureImage<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, level, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
@@ -2017,553 +2115,645 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage1D(texunit, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage2D(texunit, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexImage3D(texunit, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -2785,277 +2975,323 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage1D(texunit, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.MultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* dataSpp = data)
+                thisApi.NamedBufferData(buffer, size, dataSpp, usage);
         }
 
         public static unsafe void MultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureUnit texunit, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -3187,13 +3423,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void NamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.NamedProgramString(program, target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.NamedProgramString(program, target, format, len, @stringSpp);
         }
 
         public static unsafe void NamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.NamedProgramString(program, target, format, len, in @string.GetPinnableReference());
+            fixed (void* @stringSpp = @string)
+                thisApi.NamedProgramString(program, target, format, len, @stringSpp);
         }
 
         public static unsafe void NamedProgramString<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
@@ -3415,265 +3653,309 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage1D(texture, target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage2D(texture, target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureImage3D(texture, target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -3799,121 +4081,141 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage1D(texture, target, level, xoffset, width, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+            fixed (void* pixelsSpp = pixels)
+                thisApi.TextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
         }
 
         public static unsafe void TextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged

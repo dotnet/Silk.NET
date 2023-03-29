@@ -17,13 +17,6 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVDeviceDiagnosticCheckpointsOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetCheckpoint<T0>(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Span<T0> pCheckpointMarker) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.CmdSetCheckpoint(commandBuffer, ref pCheckpointMarker.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {

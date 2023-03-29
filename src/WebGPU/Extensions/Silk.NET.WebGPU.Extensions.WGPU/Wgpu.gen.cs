@@ -86,11 +86,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public unsafe partial void SetLogCallback(PfnLogCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 193, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuSetLogCallback")]
-        public partial void SetLogCallback<T0>(PfnLogCallback callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 195, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuSetLogLevel")]
         public partial void SetLogLevel(LogLevel level);

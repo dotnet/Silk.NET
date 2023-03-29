@@ -19,19 +19,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
+            fixed (void* dataSpp = data)
+                thisApi.BufferData(target, size, dataSpp, usage);
         }
 
         public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
+            fixed (void* dataSpp = data)
+                thisApi.BufferData(target, size, dataSpp, usage);
         }
 
         public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
+            fixed (void* dataSpp = data)
+                thisApi.BufferData(target, size, dataSpp, usage);
         }
 
         public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged

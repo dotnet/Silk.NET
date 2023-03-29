@@ -339,7 +339,9 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CompressBuffer(uncompressedData, uncompressedDataSize, compressionSetting, compressedBuffer, compressedBufferSize, ref compressedDataSize.GetPinnableReference());
+        fixed (void* uncompressedDataSpp = uncompressedData)
+        fixed (void* compressedBufferSpp = compressedBuffer)
+            return @this->CompressBuffer(uncompressedDataSpp, uncompressedDataSize, compressionSetting, compressedBufferSpp, compressedBufferSize, ref compressedDataSize.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

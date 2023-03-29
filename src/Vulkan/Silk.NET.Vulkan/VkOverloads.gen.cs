@@ -3086,31 +3086,11 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, pDataSize, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetQueryPoolResults<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, ref pData.GetPinnableReference(), stride, flags);
+            fixed (void* pDataSpp = pData)
+                return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pDataSpp);
         }
 
         /// <summary>To be documented.</summary>

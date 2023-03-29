@@ -19,175 +19,204 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.CoverStrokePathInstanced(numPaths, pathNameType, paths, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.CoverStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.CoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, coverMode, transformType, transformValues);
         }
 
         public static unsafe void CoverStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
@@ -331,37 +360,43 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void GetPathMetric(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> metrics)
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out metrics.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, out metrics.GetPinnableReference());
         }
 
         public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* metrics) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, metrics);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, metrics);
         }
 
         public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> metrics) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, out metrics.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, out metrics.GetPinnableReference());
         }
 
         public static unsafe void GetPathMetric(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> metrics)
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out metrics.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, metrics);
         }
 
         public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* metrics) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, metrics);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, out metrics.GetPinnableReference());
         }
 
         public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> metrics) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, out metrics.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, pathsSpp, pathBase, stride, metrics);
         }
 
         public static unsafe void GetPathMetric(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> metrics)
@@ -439,85 +474,99 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void GetPathSpacing(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing)
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing)
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing)
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing)
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathListMode pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing)
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, out returnedSpacing.GetPinnableReference());
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathListMode pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* returnedSpacing) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
+            fixed (void* pathsSpp = paths)
+                thisApi.GetPathSpacing(pathListMode, numPaths, pathNameType, pathsSpp, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
         }
 
         public static unsafe void GetPathSpacing<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathListMode pathListMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float advanceScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float kerningScale, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> returnedSpacing) where T0 : unmanaged
@@ -799,55 +848,64 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathCommands(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PathCoordType> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)
@@ -901,151 +959,191 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+            fixed (void* charcodesSpp = charcodes)
+                thisApi.PathGlyph(firstPathName, fontTarget, fontNameSpp, fontStyle, numGlyphs, type, charcodesSpp, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                return thisApi.PathGlyphIndexArray(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                return thisApi.PathGlyphIndexRange(fontTarget, fontNameSpp, fontStyle, pathParameterTemplate, emScale, out baseAndCount.GetPinnableReference());
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                return thisApi.PathGlyphIndexRange(fontTarget, fontNameSpp, fontStyle, pathParameterTemplate, emScale, baseAndCount);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                return thisApi.PathGlyphIndexRange(fontTarget, fontNameSpp, fontStyle, pathParameterTemplate, emScale, out baseAndCount.GetPinnableReference());
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontStyle fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+            fixed (void* fontNameSpp = fontName)
+                thisApi.PathGlyphRange(firstPathName, fontTarget, fontNameSpp, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint firstPathName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fontStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* charcodes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV handleMissingGlyphs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathParameterTemplate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float emScale) where T0 : unmanaged
@@ -1315,61 +1413,71 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void PathString<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathString(path, format, length, in pathString.GetPinnableReference());
+            fixed (void* pathStringSpp = pathString)
+                thisApi.PathString(path, format, length, pathStringSpp);
         }
 
         public static unsafe void PathString<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathStringFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathString(path, format, length, in pathString.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* coords)
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coords);
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
+            fixed (void* coordsSpp = coords)
+                thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, coordsSpp);
         }
 
         public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint path, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandStart, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint commandsToDelete, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PathCoordType* commands, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numCoords, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
@@ -1519,403 +1627,470 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, transformValues);
         }
 
         public static unsafe void StencilFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilStrokePathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int reference, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilStrokePathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, reference, mask, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, pathsSpp, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathFillMode fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, transformValues);
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, in transformValues.GetPinnableReference());
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> transformValues)
         {
             // SpanOverloader
-            thisApi.StencilThenCoverFillPathInstanced(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, in transformValues.GetPinnableReference());
+            fixed (void* pathsSpp = paths)
+                thisApi.StencilThenCoverStrokePathInstanced(numPaths, pathNameType, pathsSpp, pathBase, reference, mask, coverMode, transformType, transformValues);
         }
 
         public static unsafe void StencilThenCoverFillPathInstanced<T0>(this NVPathRendering thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numPaths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pathBase, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV fillMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint mask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InstancedPathCoverMode coverMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* transformValues) where T0 : unmanaged

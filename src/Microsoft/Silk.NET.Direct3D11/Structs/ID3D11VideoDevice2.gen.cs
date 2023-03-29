@@ -3825,35 +3825,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckFeatureSupport<T0>(FeatureVideo Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-        {
-            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, FeatureVideo, void*, uint, int>)@this->LpVtbl[24])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
         public readonly unsafe int NegotiateCryptoSessionKeyExchangeMT(ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pData);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int NegotiateCryptoSessionKeyExchangeMT<T0>(ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pDataPtr);
-            }
             return ret;
         }
 
@@ -3865,21 +3841,6 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pData);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int NegotiateCryptoSessionKeyExchangeMT<T0>(ref ID3D11CryptoSession pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
-        {
-            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
-            {
-                fixed (void* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)@this->LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pDataPtr);
-                }
             }
             return ret;
         }
@@ -4335,14 +4296,6 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->NegotiateCryptoSessionKeyExchangeMT((ID3D11CryptoSession*) pCryptoSession.Handle, flags, DataSize, pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int NegotiateCryptoSessionKeyExchangeMT<T0, TI0>(ComPtr<TI0> pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
-        {
-            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->NegotiateCryptoSessionKeyExchangeMT((ID3D11CryptoSession*) pCryptoSession.Handle, flags, DataSize, ref pData);
         }
 
         /// <summary>To be documented.</summary>

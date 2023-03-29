@@ -133,13 +133,15 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM type, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
+            fixed (void* texelsSpp = texels)
+                thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texelsSpp);
         }
 
         public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
+            fixed (void* texelsSpp = texels)
+                thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texelsSpp);
         }
 
         public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM type, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged

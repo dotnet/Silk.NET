@@ -109,7 +109,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileA<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -117,7 +118,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileA(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
         {
             // SpanOverloader
-            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileA(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -125,7 +127,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileA<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileA(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -133,7 +136,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileA(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
         {
             // SpanOverloader
-            return thisApi.CreateFileA(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -189,7 +193,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileW<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -197,7 +202,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileW(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
         {
             // SpanOverloader
-            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileW(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -205,7 +211,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileW<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileW(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -213,7 +220,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* CreateFileW(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
         {
             // SpanOverloader
-            return thisApi.CreateFileW(in lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+            fixed (void* hTemplateFileSpp = hTemplateFile)
+                return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFileSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -353,22 +361,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 191, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindClose<T0>(this Windows thisApi, Span<T0> hFindFile) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindClose(ref hFindFile.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 204, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindCloseChangeNotification<T0>(this Windows thisApi, Span<T0> hChangeHandle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindCloseChangeNotification(ref hChangeHandle.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 1 in fileapi.h")]
         public static unsafe void* FindFirstChangeNotificationA(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter)
         {
@@ -453,7 +445,9 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+            fixed (void* lpFindFileDataSpp = lpFindFileData)
+            fixed (void* lpSearchFilterSpp = lpSearchFilter)
+                return thisApi.FindFirstFileExA(in lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileDataSpp, fSearchOp, lpSearchFilterSpp, dwAdditionalFlags);
         }
 
         /// <summary>To be documented.</summary>
@@ -533,7 +527,9 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+            fixed (void* lpFindFileDataSpp = lpFindFileData)
+            fixed (void* lpSearchFilterSpp = lpSearchFilter)
+                return thisApi.FindFirstFileExW(in lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileDataSpp, fSearchOp, lpSearchFilterSpp, dwAdditionalFlags);
         }
 
         /// <summary>To be documented.</summary>
@@ -617,107 +613,39 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 312, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextChangeNotification<T0>(this Windows thisApi, Span<T0> hChangeHandle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextChangeNotification(ref hChangeHandle.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileA(this Windows thisApi, void* hFindFile, Span<Win32FindDataa> lpFindFileData)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileA<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataa> lpFindFileData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileA(hFindFile, ref lpFindFileData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 325, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileA<T0>(this Windows thisApi, Span<T0> hFindFile, Win32FindDataa* lpFindFileData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileA(ref hFindFile.GetPinnableReference(), lpFindFileData);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 325, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileA<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataa> lpFindFileData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileA(ref hFindFile.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+            fixed (void* hFindFileSpp = hFindFile)
+                return thisApi.FindNextFileA(hFindFileSpp, ref lpFindFileData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileW(this Windows thisApi, void* hFindFile, Span<Win32FindDataw> lpFindFileData)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileW<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataw> lpFindFileData) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileW(hFindFile, ref lpFindFileData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 333, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileW<T0>(this Windows thisApi, Span<T0> hFindFile, Win32FindDataw* lpFindFileData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileW(ref hFindFile.GetPinnableReference(), lpFindFileData);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 333, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileW<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataw> lpFindFileData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileW(ref hFindFile.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+            fixed (void* hFindFileSpp = hFindFile)
+                return thisApi.FindNextFileW(hFindFileSpp, ref lpFindFileData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW(this Windows thisApi, void* hFindVolume, Span<char> lpszVolumeName, uint cchBufferLength)
+        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, Span<char> lpszVolumeName, uint cchBufferLength) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextVolumeW(hFindVolume, ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+            fixed (void* hFindVolumeSpp = hFindVolume)
+                return thisApi.FindNextVolumeW(hFindVolumeSpp, ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, char* lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), lpszVolumeName, cchBufferLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 352, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, Span<char> lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 352, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), lpszVolumeName, cchBufferLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 365, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindVolumeClose<T0>(this Windows thisApi, Span<T0> hFindVolume) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindVolumeClose(ref hFindVolume.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 378, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FlushFileBuffers<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FlushFileBuffers(ref hFile.GetPinnableReference());
+            fixed (void* hFindVolumeSpp = hFindVolume)
+                return thisApi.FindNextVolumeW(hFindVolumeSpp, lpszVolumeName, cchBufferLength);
         }
 
         /// <summary>To be documented.</summary>
@@ -1909,7 +1837,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 GetFileAttributesExA<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.GetFileAttributesExA(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+            fixed (void* lpFileInformationSpp = lpFileInformation)
+                return thisApi.GetFileAttributesExA(in lpFileName.GetPinnableReference(), fInfoLevelId, lpFileInformationSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -1941,7 +1870,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 GetFileAttributesExW<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.GetFileAttributesExW(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+            fixed (void* lpFileInformationSpp = lpFileInformation)
+                return thisApi.GetFileAttributesExW(in lpFileName.GetPinnableReference(), fInfoLevelId, lpFileInformationSpp);
         }
 
         /// <summary>To be documented.</summary>
@@ -1970,266 +1900,128 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileInformationByHandle(this Windows thisApi, void* hFile, Span<ByHandleFileInformation> lpFileInformation)
+        public static unsafe Silk.NET.Core.Bool32 GetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, Span<ByHandleFileInformation> lpFileInformation) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileInformationByHandle(hFile, ref lpFileInformation.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 644, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, ByHandleFileInformation* lpFileInformation) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileInformationByHandle(ref hFile.GetPinnableReference(), lpFileInformation);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 644, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, Span<ByHandleFileInformation> lpFileInformation) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileInformationByHandle(ref hFile.GetPinnableReference(), ref lpFileInformation.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileInformationByHandle(hFileSpp, ref lpFileInformation.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 658, Column 1 in fileapi.h")]
-        public static unsafe uint GetFileSize(this Windows thisApi, void* hFile, Span<uint> lpFileSizeHigh)
+        public static unsafe uint GetFileSize<T0>(this Windows thisApi, Span<T0> hFile, Span<uint> lpFileSizeHigh) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileSize(hFile, ref lpFileSizeHigh.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 658, Column 1 in fileapi.h")]
-        public static unsafe uint GetFileSize<T0>(this Windows thisApi, Span<T0> hFile, uint* lpFileSizeHigh) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileSize(ref hFile.GetPinnableReference(), lpFileSizeHigh);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 658, Column 1 in fileapi.h")]
-        public static unsafe uint GetFileSize<T0>(this Windows thisApi, Span<T0> hFile, Span<uint> lpFileSizeHigh) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileSize(ref hFile.GetPinnableReference(), ref lpFileSizeHigh.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileSize(hFileSpp, ref lpFileSizeHigh.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 672, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileSizeEx(this Windows thisApi, void* hFile, Span<long> lpFileSize)
+        public static unsafe Silk.NET.Core.Bool32 GetFileSizeEx<T0>(this Windows thisApi, Span<T0> hFile, Span<long> lpFileSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileSizeEx(hFile, ref lpFileSize.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 672, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileSizeEx<T0>(this Windows thisApi, Span<T0> hFile, long* lpFileSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileSizeEx(ref hFile.GetPinnableReference(), lpFileSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 672, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileSizeEx<T0>(this Windows thisApi, Span<T0> hFile, Span<long> lpFileSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileSizeEx(ref hFile.GetPinnableReference(), ref lpFileSize.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 680, Column 1 in fileapi.h")]
-        public static unsafe uint GetFileType<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileType(ref hFile.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileSizeEx(hFileSpp, ref lpFileSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 689, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleA(this Windows thisApi, void* hFile, Span<byte> lpszFilePath, uint cchFilePath, uint dwFlags)
+        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, Span<byte> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleA(hFile, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFinalPathNameByHandleA(hFileSpp, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 689, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, byte* lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, Span<byte> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFinalPathNameByHandleA(hFileSpp, lpszFilePath, cchFilePath, dwFlags);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleW(this Windows thisApi, void* hFile, Span<char> lpszFilePath, uint cchFilePath, uint dwFlags)
+        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleW(hFile, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFinalPathNameByHandleW(hFileSpp, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 699, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 699, Column 1 in fileapi.h")]
-        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFinalPathNameByHandleW(hFileSpp, lpszFilePath, cchFilePath, dwFlags);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, lpLastWriteTime);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 716, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetFileTime(hFileSpp, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2482,26 +2274,11 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 AreShortNamesEnabled(this Windows thisApi, void* Handle, Span<int> Enabled)
+        public static unsafe Silk.NET.Core.Bool32 AreShortNamesEnabled<T0>(this Windows thisApi, Span<T0> Handle, Span<int> Enabled) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.AreShortNamesEnabled(Handle, ref Enabled.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 823, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 AreShortNamesEnabled<T0>(this Windows thisApi, Span<T0> Handle, int* Enabled) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AreShortNamesEnabled(ref Handle.GetPinnableReference(), Enabled);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 823, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 AreShortNamesEnabled<T0>(this Windows thisApi, Span<T0> Handle, Span<int> Enabled) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AreShortNamesEnabled(ref Handle.GetPinnableReference(), ref Enabled.GetPinnableReference());
+            fixed (void* HandleSpp = Handle)
+                return thisApi.AreShortNamesEnabled(HandleSpp, ref Enabled.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2698,1122 +2475,641 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 875, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.GetVolumeInformationByHandleW(hFileSpp, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -5545,35 +4841,12 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 LockFile<T0>(this Windows thisApi, Span<T0> hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.LockFile(ref hFile.GetPinnableReference(), dwFileOffsetLow, dwFileOffsetHigh, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh);
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 941, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 LockFileEx(this Windows thisApi, void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 LockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.LockFileEx(hFile, dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 941, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 LockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.LockFileEx(ref hFile.GetPinnableReference(), dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 941, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 LockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.LockFileEx(ref hFile.GetPinnableReference(), dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.LockFileEx(hFileSpp, dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -5618,298 +4891,105 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.ReadFile(hFileSpp, lpBufferSpp, nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.ReadFile(hFileSpp, lpBufferSpp, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 979, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.ReadFile(hFileSpp, lpBufferSpp, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileEx(hFile, lpBuffer, nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 991, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.ReadFileEx(hFileSpp, lpBufferSpp, nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, aSegmentArray, nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, lpReserved, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1003, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.ReadFileScatter(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -5929,14 +5009,6 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1033, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetEndOfFile<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetEndOfFile(ref hFile.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 1 in fileapi.h")]
         public static unsafe Silk.NET.Core.Bool32 SetFileAttributesA(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> lpFileName, uint dwFileAttributes)
         {
@@ -5953,75 +5025,21 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileInformationByHandle<T0>(this Windows thisApi, void* hFile, FileInfoByHandleClass FileInformationClass, Span<T0> lpFileInformation, uint dwBufferSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFileInformationByHandle(hFile, FileInformationClass, ref lpFileInformation.GetPinnableReference(), dwBufferSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFileInformationByHandle(ref hFile.GetPinnableReference(), FileInformationClass, lpFileInformation, dwBufferSize);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileInformationByHandle<T0, T1>(this Windows thisApi, Span<T0> hFile, FileInfoByHandleClass FileInformationClass, Span<T1> lpFileInformation, uint dwBufferSize) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFileInformationByHandle(ref hFile.GetPinnableReference(), FileInformationClass, ref lpFileInformation.GetPinnableReference(), dwBufferSize);
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1075, Column 1 in fileapi.h")]
-        public static unsafe uint SetFilePointer(this Windows thisApi, void* hFile, int lDistanceToMove, Span<int> lpDistanceToMoveHigh, uint dwMoveMethod)
+        public static unsafe uint SetFilePointer<T0>(this Windows thisApi, Span<T0> hFile, int lDistanceToMove, Span<int> lpDistanceToMoveHigh, uint dwMoveMethod) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetFilePointer(hFile, lDistanceToMove, ref lpDistanceToMoveHigh.GetPinnableReference(), dwMoveMethod);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1075, Column 1 in fileapi.h")]
-        public static unsafe uint SetFilePointer<T0>(this Windows thisApi, Span<T0> hFile, int lDistanceToMove, int* lpDistanceToMoveHigh, uint dwMoveMethod) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFilePointer(ref hFile.GetPinnableReference(), lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1075, Column 1 in fileapi.h")]
-        public static unsafe uint SetFilePointer<T0>(this Windows thisApi, Span<T0> hFile, int lDistanceToMove, Span<int> lpDistanceToMoveHigh, uint dwMoveMethod) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFilePointer(ref hFile.GetPinnableReference(), lDistanceToMove, ref lpDistanceToMoveHigh.GetPinnableReference(), dwMoveMethod);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFilePointer(hFileSpp, lDistanceToMove, ref lpDistanceToMoveHigh.GetPinnableReference(), dwMoveMethod);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1085, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFilePointerEx(this Windows thisApi, void* hFile, long liDistanceToMove, Span<long> lpNewFilePointer, uint dwMoveMethod)
+        public static unsafe Silk.NET.Core.Bool32 SetFilePointerEx<T0>(this Windows thisApi, Span<T0> hFile, long liDistanceToMove, Span<long> lpNewFilePointer, uint dwMoveMethod) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetFilePointerEx(hFile, liDistanceToMove, ref lpNewFilePointer.GetPinnableReference(), dwMoveMethod);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1085, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFilePointerEx<T0>(this Windows thisApi, Span<T0> hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFilePointerEx(ref hFile.GetPinnableReference(), liDistanceToMove, lpNewFilePointer, dwMoveMethod);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1085, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFilePointerEx<T0>(this Windows thisApi, Span<T0> hFile, long liDistanceToMove, Span<long> lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFilePointerEx(ref hFile.GetPinnableReference(), liDistanceToMove, ref lpNewFilePointer.GetPinnableReference(), dwMoveMethod);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFilePointerEx(hFileSpp, liDistanceToMove, ref lpNewFilePointer.GetPinnableReference(), dwMoveMethod);
         }
 
         /// <summary>To be documented.</summary>
@@ -6029,7 +5047,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, lpCreationTime, lpLastAccessTime, in lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, lpCreationTime, lpLastAccessTime, in lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6037,7 +5056,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, lpCreationTime, in lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, lpCreationTime, in lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
@@ -6045,7 +5065,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, lpCreationTime, in lpLastAccessTime.GetPinnableReference(), in lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, lpCreationTime, in lpLastAccessTime.GetPinnableReference(), in lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6053,7 +5074,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, in lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, in lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
@@ -6061,7 +5083,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, in lpCreationTime.GetPinnableReference(), lpLastAccessTime, in lpLastWriteTime.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, in lpCreationTime.GetPinnableReference(), lpLastAccessTime, in lpLastWriteTime.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6069,7 +5092,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 SetFileTime(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpCreationTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Filetime> lpLastAccessTime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* lpLastWriteTime)
         {
             // SpanOverloader
-            return thisApi.SetFileTime(hFile, in lpCreationTime.GetPinnableReference(), in lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.SetFileTime(hFileSpp, in lpCreationTime.GetPinnableReference(), in lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
         }
 
         /// <summary>To be documented.</summary>
@@ -6162,26 +5186,11 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 UnlockFileEx(this Windows thisApi, void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 UnlockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.UnlockFileEx(hFile, dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1128, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 UnlockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UnlockFileEx(ref hFile.GetPinnableReference(), dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1128, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 UnlockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UnlockFileEx(ref hFile.GetPinnableReference(), dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.UnlockFileEx(hFileSpp, dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6189,7 +5198,9 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 WriteFile(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped)
         {
             // SpanOverloader
-            return thisApi.WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.WriteFile(hFileSpp, lpBufferSpp, nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6197,7 +5208,9 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe Silk.NET.Core.Bool32 WriteFile(this Windows thisApi, void* hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Overlapped* lpOverlapped)
         {
             // SpanOverloader
-            return thisApi.WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+            fixed (void* lpBufferSpp = lpBuffer)
+                return thisApi.WriteFile(hFileSpp, lpBufferSpp, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
@@ -6362,122 +5375,65 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, aSegmentArray, nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, lpReserved, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1161, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+            fixed (void* hFileSpp = hFile)
+                return thisApi.WriteFileGather(hFileSpp, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6674,34 +5630,20 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange(this Windows thisApi, void* FileHandle, Span<byte> OverlappedRangeStart, uint Length)
+        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, Span<byte> OverlappedRangeStart, uint Length) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetFileIoOverlappedRange(FileHandle, ref OverlappedRangeStart.GetPinnableReference(), Length);
+            fixed (void* FileHandleSpp = FileHandle)
+                return thisApi.SetFileIoOverlappedRange(FileHandleSpp, ref OverlappedRangeStart.GetPinnableReference(), Length);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, byte* OverlappedRangeStart, uint Length) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), OverlappedRangeStart, Length);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1265, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, Span<byte> OverlappedRangeStart, uint Length) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), ref OverlappedRangeStart.GetPinnableReference(), Length);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1265, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), OverlappedRangeStart, Length);
+            fixed (void* FileHandleSpp = FileHandle)
+                return thisApi.SetFileIoOverlappedRange(FileHandleSpp, OverlappedRangeStart, Length);
         }
 
         /// <summary>To be documented.</summary>
@@ -6773,7 +5715,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe void* FindFirstStreamW<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* lpFileName, StreamInfoLevels InfoLevel, Span<T0> lpFindStreamData, uint dwFlags) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.FindFirstStreamW(lpFileName, InfoLevel, ref lpFindStreamData.GetPinnableReference(), dwFlags);
+            fixed (void* lpFindStreamDataSpp = lpFindStreamData)
+                return thisApi.FindFirstStreamW(in lpFileName.GetPinnableReference(), InfoLevel, lpFindStreamDataSpp, dwFlags);
         }
 
         /// <summary>To be documented.</summary>
@@ -6946,82 +5889,47 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW(this Windows thisApi, void* hFindStream, uint* StringLength, Span<char> LinkName)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, Span<char> LinkName) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileNameW(hFindStream, StringLength, ref LinkName.GetPinnableReference());
+            fixed (void* hFindStreamSpp = hFindStream)
+                return thisApi.FindNextFileNameW(hFindStreamSpp, StringLength, ref LinkName.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, char* LinkName)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), LinkName);
+            fixed (void* hFindStreamSpp = hFindStream)
+                return thisApi.FindNextFileNameW(hFindStreamSpp, StringLength, LinkName);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, Span<char> LinkName)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, char* LinkName) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+            fixed (void* hFindStreamSpp = hFindStream)
+                return thisApi.FindNextFileNameW(hFindStreamSpp, ref StringLength.GetPinnableReference(), LinkName);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, Span<char> LinkName) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), LinkName);
+            fixed (void* hFindStreamSpp = hFindStream)
+                return thisApi.FindNextFileNameW(hFindStreamSpp, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, char* LinkName) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, LinkName);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, Span<char> LinkName) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, ref LinkName.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, LinkName);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, char* LinkName) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), LinkName);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, Span<char> LinkName) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1386, Column 1 in fileapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), LinkName);
+            fixed (void* hFindStreamSpp = hFindStream)
+                return thisApi.FindNextFileNameW(hFindStreamSpp, ref StringLength.GetPinnableReference(), LinkName);
         }
 
         /// <summary>To be documented.</summary>
@@ -8857,179 +7765,23 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 39, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 CloseHandle<T0>(this Windows thisApi, Span<T0> hObject) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CloseHandle(ref hObject.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, void* hSourceHandle, Span<T0> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
+        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1, T2>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, Span<T2> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : struct where T1 : struct where T2 : struct
         {
             // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, void* hSourceHandle, Span<T0> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, Span<T1> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, Span<T1> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, Span<T1> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, Span<T1> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1, T2>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, Span<T2> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 46, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 DuplicateHandle<T0, T1, T2>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, Span<T2> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 65, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 CompareObjectHandles<T0>(this Windows thisApi, void* hFirstObjectHandle, Span<T0> hSecondObjectHandle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CompareObjectHandles(hFirstObjectHandle, ref hSecondObjectHandle.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 65, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 CompareObjectHandles<T0>(this Windows thisApi, Span<T0> hFirstObjectHandle, void* hSecondObjectHandle) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CompareObjectHandles(ref hFirstObjectHandle.GetPinnableReference(), hSecondObjectHandle);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 65, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 CompareObjectHandles<T0, T1>(this Windows thisApi, Span<T0> hFirstObjectHandle, Span<T1> hSecondObjectHandle) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CompareObjectHandles(ref hFirstObjectHandle.GetPinnableReference(), ref hSecondObjectHandle.GetPinnableReference());
+            fixed (void* hSourceProcessHandleSpp = hSourceProcessHandle)
+            fixed (void* hSourceHandleSpp = hSourceHandle)
+            fixed (void* hTargetProcessHandleSpp = hTargetProcessHandle)
+                return thisApi.DuplicateHandle(hSourceProcessHandleSpp, hSourceHandleSpp, hTargetProcessHandleSpp, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetHandleInformation(this Windows thisApi, void* hObject, Span<uint> lpdwFlags)
+        public static unsafe Silk.NET.Core.Bool32 GetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, Span<uint> lpdwFlags) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.GetHandleInformation(hObject, ref lpdwFlags.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 79, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, uint* lpdwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetHandleInformation(ref hObject.GetPinnableReference(), lpdwFlags);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 79, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 GetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, Span<uint> lpdwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetHandleInformation(ref hObject.GetPinnableReference(), ref lpdwFlags.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 87, Column 1 in handleapi.h")]
-        public static unsafe Silk.NET.Core.Bool32 SetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, uint dwMask, uint dwFlags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetHandleInformation(ref hObject.GetPinnableReference(), dwMask, dwFlags);
+            fixed (void* hObjectSpp = hObject)
+                return thisApi.GetHandleInformation(hObjectSpp, ref lpdwFlags.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10346,58 +9098,29 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, ISequentialStream* This, void* pv, uint cb, Span<uint> pcbRead)
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(This, pv, cb, ref pcbRead.GetPinnableReference());
+            fixed (void* pvSpp = pv)
+                return thisApi.ISequentialStreamReadProxy(This, pvSpp, cb, ref pcbRead.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(This, ref pv.GetPinnableReference(), cb, pcbRead);
+            fixed (void* pvSpp = pv)
+                return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pvSpp, cb, pcbRead);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, ISequentialStream* This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(This, ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, uint* pcbRead)
-        {
-            // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pv, cb, pcbRead);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy(this Windows thisApi, Span<ISequentialStream> This, void* pv, uint cb, Span<uint> pcbRead)
-        {
-            // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pv, cb, ref pcbRead.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, pcbRead);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 8480, Column 41 in objidlbase.h")]
-        public static unsafe int ISequentialStreamReadProxy<T0>(this Windows thisApi, Span<ISequentialStream> This, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+            fixed (void* pvSpp = pv)
+                return thisApi.ISequentialStreamReadProxy(ref This.GetPinnableReference(), pvSpp, cb, ref pcbRead.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10485,7 +9208,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe int ISequentialStreamWriteProxy(this Windows thisApi, ISequentialStream* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
         {
             // SpanOverloader
-            return thisApi.ISequentialStreamWriteProxy(This, pv, cb, ref pcbWritten.GetPinnableReference());
+            fixed (void* pvSpp = pv)
+                return thisApi.ISequentialStreamWriteProxy(This, pvSpp, cb, ref pcbWritten.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10493,7 +9217,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe int ISequentialStreamWriteProxy<T0>(this Windows thisApi, ISequentialStream* This, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.ISequentialStreamWriteProxy(This, in pv.GetPinnableReference(), cb, pcbWritten);
+            fixed (void* pvSpp = pv)
+                return thisApi.ISequentialStreamWriteProxy(ref This.GetPinnableReference(), pvSpp, cb, pcbWritten);
         }
 
         /// <summary>To be documented.</summary>
@@ -11506,114 +10231,30 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, void* InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, Span<uint> ReturnLength)
+        public static unsafe uint EnumerateTraceGuidsEx<T0, T1>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, InBuffer, InBufferSize, OutBuffer, OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, void* InBuffer, uint InBufferSize, Span<T0> OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, InBuffer, InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, void* InBuffer, uint InBufferSize, Span<T0> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, InBuffer, InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, Span<T0> InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, ref InBuffer.GetPinnableReference(), InBufferSize, OutBuffer, OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, Span<T0> InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, ref InBuffer.GetPinnableReference(), InBufferSize, OutBuffer, OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0, T1>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, ref InBuffer.GetPinnableReference(), InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2370, Column 1 in evntrace.h")]
-        public static unsafe uint EnumerateTraceGuidsEx<T0, T1>(this Windows thisApi, TraceQueryInfoClass TraceQueryInfoClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, ref InBuffer.GetPinnableReference(), InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2422, Column 1 in evntrace.h")]
-        public static unsafe uint TraceSetInformation<T0>(this Windows thisApi, ulong SessionHandle, TraceQueryInfoClass InformationClass, Span<T0> TraceInformation, uint InformationLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TraceSetInformation(SessionHandle, InformationClass, ref TraceInformation.GetPinnableReference(), InformationLength);
+            fixed (void* InBufferSpp = InBuffer)
+            fixed (void* OutBufferSpp = OutBuffer)
+                return thisApi.EnumerateTraceGuidsEx(TraceQueryInfoClass, InBufferSpp, InBufferSize, OutBufferSpp, OutBufferSize, ref ReturnLength.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2434, Column 1 in evntrace.h")]
-        public static unsafe uint TraceQueryInformation(this Windows thisApi, ulong SessionHandle, TraceQueryInfoClass InformationClass, void* TraceInformation, uint InformationLength, Span<uint> ReturnLength)
+        public static unsafe uint TraceQueryInformation<T0>(this Windows thisApi, ulong SessionHandle, TraceQueryInfoClass InformationClass, Span<T0> TraceInformation, uint InformationLength, Span<uint> ReturnLength) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.TraceQueryInformation(SessionHandle, InformationClass, TraceInformation, InformationLength, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2434, Column 1 in evntrace.h")]
-        public static unsafe uint TraceQueryInformation<T0>(this Windows thisApi, ulong SessionHandle, TraceQueryInfoClass InformationClass, Span<T0> TraceInformation, uint InformationLength, uint* ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TraceQueryInformation(SessionHandle, InformationClass, ref TraceInformation.GetPinnableReference(), InformationLength, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2434, Column 1 in evntrace.h")]
-        public static unsafe uint TraceQueryInformation<T0>(this Windows thisApi, ulong SessionHandle, TraceQueryInfoClass InformationClass, Span<T0> TraceInformation, uint InformationLength, Span<uint> ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TraceQueryInformation(SessionHandle, InformationClass, ref TraceInformation.GetPinnableReference(), InformationLength, ref ReturnLength.GetPinnableReference());
+            fixed (void* TraceInformationSpp = TraceInformation)
+                return thisApi.TraceQueryInformation(SessionHandle, InformationClass, TraceInformationSpp, InformationLength, ref ReturnLength.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 1 in evntrace.h")]
-        public static unsafe uint CreateTraceInstanceId(this Windows thisApi, void* RegHandle, Span<EventInstanceInfo> InstInfo)
+        public static unsafe uint CreateTraceInstanceId<T0>(this Windows thisApi, Span<T0> RegHandle, Span<EventInstanceInfo> InstInfo) where T0 : struct
         {
             // SpanOverloader
-            return thisApi.CreateTraceInstanceId(RegHandle, ref InstInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2456, Column 1 in evntrace.h")]
-        public static unsafe uint CreateTraceInstanceId<T0>(this Windows thisApi, Span<T0> RegHandle, EventInstanceInfo* InstInfo) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateTraceInstanceId(ref RegHandle.GetPinnableReference(), InstInfo);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2456, Column 1 in evntrace.h")]
-        public static unsafe uint CreateTraceInstanceId<T0>(this Windows thisApi, Span<T0> RegHandle, Span<EventInstanceInfo> InstInfo) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateTraceInstanceId(ref RegHandle.GetPinnableReference(), ref InstInfo.GetPinnableReference());
+            fixed (void* RegHandleSpp = RegHandle)
+                return thisApi.CreateTraceInstanceId(RegHandleSpp, ref InstInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11685,7 +10326,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11693,7 +10335,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11701,7 +10344,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11709,7 +10353,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11717,7 +10362,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11725,7 +10371,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11733,7 +10380,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11741,7 +10389,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11749,7 +10398,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11757,7 +10407,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11765,7 +10416,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11773,7 +10425,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11781,7 +10434,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11789,7 +10443,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11797,7 +10452,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11805,7 +10461,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11813,7 +10470,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11821,7 +10479,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11829,7 +10488,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11837,7 +10497,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11845,7 +10506,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11853,7 +10515,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11861,7 +10524,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11869,7 +10533,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11877,7 +10542,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11885,7 +10551,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11893,7 +10560,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11901,7 +10569,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11909,7 +10578,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11917,7 +10587,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11925,7 +10596,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11933,7 +10605,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11941,7 +10614,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11949,7 +10623,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11957,7 +10632,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11965,7 +10641,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11973,7 +10650,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11981,7 +10659,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -11989,7 +10668,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11997,7 +10677,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12005,7 +10686,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12013,7 +10695,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12021,7 +10704,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12029,7 +10713,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12037,7 +10722,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12045,7 +10731,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12053,7 +10740,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12061,7 +10749,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12069,7 +10758,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12077,7 +10767,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12085,7 +10776,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12093,7 +10785,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12101,7 +10794,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12109,7 +10803,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12117,7 +10812,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12125,7 +10821,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12133,7 +10830,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12141,7 +10839,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12149,7 +10848,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12157,7 +10857,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12165,7 +10866,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12173,7 +10875,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12181,7 +10884,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12189,7 +10893,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12197,7 +10902,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12205,7 +10911,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12213,7 +10920,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12221,7 +10929,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -12229,7 +10938,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -12237,7 +10947,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13357,7 +12068,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13365,7 +12077,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13373,7 +12086,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13381,7 +12095,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13389,7 +12104,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13397,7 +12113,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13405,7 +12122,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13413,7 +12131,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13421,7 +12140,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13429,7 +12149,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13437,7 +12158,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13445,7 +12167,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13453,7 +12176,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13461,7 +12185,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13469,7 +12194,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13477,7 +12203,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13485,7 +12212,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13493,7 +12221,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13501,7 +12230,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13509,7 +12239,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13517,7 +12248,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13525,7 +12257,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13533,7 +12266,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13541,7 +12275,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13549,7 +12284,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13557,7 +12293,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13565,7 +12302,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13573,7 +12311,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13581,7 +12320,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13589,7 +12329,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13597,7 +12338,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13605,7 +12347,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13613,7 +12356,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13621,7 +12365,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13629,7 +12374,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13637,7 +12383,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13645,7 +12392,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13653,7 +12401,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13661,7 +12410,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13669,7 +12419,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13677,7 +12428,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13685,7 +12437,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13693,7 +12446,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13701,7 +12455,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13709,7 +12464,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13717,7 +12473,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13725,7 +12482,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13733,7 +12491,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13741,7 +12500,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13749,7 +12509,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13757,7 +12518,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13765,7 +12527,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13773,7 +12536,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13781,7 +12545,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13789,7 +12554,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13797,7 +12563,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13805,7 +12572,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13813,7 +12581,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13821,7 +12590,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13829,7 +12599,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13837,7 +12608,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13845,7 +12617,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13853,7 +12626,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13861,7 +12635,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13869,7 +12644,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), in MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13877,7 +12653,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13885,7 +12662,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13893,7 +12671,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13901,7 +12680,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, in MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13909,7 +12689,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
         }
 
         /// <summary>To be documented.</summary>
@@ -13917,7 +12698,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
+            fixed (void* RequestContextSpp = RequestContext)
+                return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContextSpp, in ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -13934,14 +12716,6 @@ namespace Silk.NET.Core.Win32Extras
         {
             // SpanOverloader
             return thisApi.EnumerateTraceGuids(ref GuidPropertiesArray, PropertyArrayCount, ref GuidCount.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2580, Column 1 in evntrace.h")]
-        public static unsafe ulong GetTraceLoggerHandle<T0>(this Windows thisApi, Span<T0> Buffer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetTraceLoggerHandle(ref Buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14117,7 +12891,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, void* MemoryPartitionHandle, Span<TraceLogfileHeader> LogFileHeader)
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, MemoryPartitionHandle, ref LogFileHeader.GetPinnableReference());
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, MemoryPartitionHandleSpp, ref LogFileHeader.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14125,7 +12900,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, Span<T0> MemoryPartitionHandle, TraceLogfileHeader* LogFileHeader) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, ref MemoryPartitionHandle.GetPinnableReference(), LogFileHeader);
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandleSpp, LogFileHeader);
         }
 
         /// <summary>To be documented.</summary>
@@ -14133,7 +12909,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, Span<T0> MemoryPartitionHandle, Span<TraceLogfileHeader> LogFileHeader) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, ref MemoryPartitionHandle.GetPinnableReference(), ref LogFileHeader.GetPinnableReference());
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandleSpp, ref LogFileHeader.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14141,7 +12918,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EtwOpenTraceOptions> Options, nuint AllocationSize, void* MemoryPartitionHandle, TraceLogfileHeader* LogFileHeader)
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandle, LogFileHeader);
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), Options, AllocationSize, MemoryPartitionHandleSpp, LogFileHeader);
         }
 
         /// <summary>To be documented.</summary>
@@ -14149,7 +12927,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EtwOpenTraceOptions> Options, nuint AllocationSize, void* MemoryPartitionHandle, Span<TraceLogfileHeader> LogFileHeader)
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandle, ref LogFileHeader.GetPinnableReference());
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), Options, AllocationSize, MemoryPartitionHandleSpp, ref LogFileHeader.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14157,7 +12936,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EtwOpenTraceOptions> Options, nuint AllocationSize, Span<T0> MemoryPartitionHandle, TraceLogfileHeader* LogFileHeader) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, ref MemoryPartitionHandle.GetPinnableReference(), LogFileHeader);
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandleSpp, LogFileHeader);
         }
 
         /// <summary>To be documented.</summary>
@@ -14165,7 +12945,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EtwOpenTraceOptions> Options, nuint AllocationSize, Span<T0> MemoryPartitionHandle, Span<TraceLogfileHeader> LogFileHeader) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, ref MemoryPartitionHandle.GetPinnableReference(), ref LogFileHeader.GetPinnableReference());
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandleSpp, ref LogFileHeader.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14173,7 +12954,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, void* MemoryPartitionHandle, TraceLogfileHeader* LogFileHeader)
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), Options, AllocationSize, MemoryPartitionHandle, LogFileHeader);
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, MemoryPartitionHandleSpp, LogFileHeader);
         }
 
         /// <summary>To be documented.</summary>
@@ -14181,7 +12963,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, void* MemoryPartitionHandle, Span<TraceLogfileHeader> LogFileHeader)
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), Options, AllocationSize, MemoryPartitionHandle, ref LogFileHeader.GetPinnableReference());
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, Options, AllocationSize, MemoryPartitionHandleSpp, ref LogFileHeader.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -14189,7 +12972,8 @@ namespace Silk.NET.Core.Win32Extras
         public static unsafe ulong OpenTraceFromRealTimeLoggerWithAllocationOptions<T0>(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> LoggerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EtwOpenTraceOptions* Options, nuint AllocationSize, Span<T0> MemoryPartitionHandle, TraceLogfileHeader* LogFileHeader) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(in LoggerName.GetPinnableReference(), Options, AllocationSize, ref MemoryPartitionHandle.GetPinnableReference(), LogFileHeader);
+            fixed (void* MemoryPartitionHandleSpp = MemoryPartitionHandle)
+                return thisApi.OpenTraceFromRealTimeLoggerWithAllocationOptions(LoggerName, in Options.GetPinnableReference(), AllocationSize, MemoryPartitionHandleSpp, LogFileHeader);
         }
 
         /// <summary>To be documented.</summary>
@@ -14394,58 +13178,12 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, void* InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, Span<uint> ReturnLength)
+        public static unsafe uint QueryTraceProcessingHandle<T0, T1>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : struct where T1 : struct
         {
             // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, InBuffer, InBufferSize, OutBuffer, OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, void* InBuffer, uint InBufferSize, Span<T0> OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, InBuffer, InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, void* InBuffer, uint InBufferSize, Span<T0> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, InBuffer, InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, Span<T0> InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, ref InBuffer.GetPinnableReference(), InBufferSize, OutBuffer, OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, Span<T0> InBuffer, uint InBufferSize, void* OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, ref InBuffer.GetPinnableReference(), InBufferSize, OutBuffer, OutBufferSize, ref ReturnLength.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0, T1>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, uint* ReturnLength) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, ref InBuffer.GetPinnableReference(), InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ReturnLength);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2749, Column 1 in evntrace.h")]
-        public static unsafe uint QueryTraceProcessingHandle<T0, T1>(this Windows thisApi, ulong ProcessingHandle, EtwProcessHandleInfoType InformationClass, Span<T0> InBuffer, uint InBufferSize, Span<T1> OutBuffer, uint OutBufferSize, Span<uint> ReturnLength) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, ref InBuffer.GetPinnableReference(), InBufferSize, ref OutBuffer.GetPinnableReference(), OutBufferSize, ref ReturnLength.GetPinnableReference());
+            fixed (void* InBufferSpp = InBuffer)
+            fixed (void* OutBufferSpp = OutBuffer)
+                return thisApi.QueryTraceProcessingHandle(ProcessingHandle, InformationClass, InBufferSpp, InBufferSize, OutBufferSpp, OutBufferSize, ref ReturnLength.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

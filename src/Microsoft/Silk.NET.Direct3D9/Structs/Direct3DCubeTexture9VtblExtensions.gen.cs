@@ -175,33 +175,6 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Guid* refguid, ref T0 pData, uint* pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Guid* refguid, ref T0 pData, ref uint pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            fixed (uint* pSizeOfDataPtr = &pSizeOfData)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDirect3DCubeTexture9> thisVtbl, ref Guid refguid, void* pData, uint* pSizeOfData)
     {
         var @this = thisVtbl.Handle;
@@ -223,39 +196,6 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
             fixed (uint* pSizeOfDataPtr = &pSizeOfData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, ref Guid refguid, ref T0 pData, uint* pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* refguidPtr = &refguid)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, ref Guid refguid, ref T0 pData, ref uint pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* refguidPtr = &refguid)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                fixed (uint* pSizeOfDataPtr = &pSizeOfData)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
-                }
             }
         }
         return ret;
@@ -526,7 +466,8 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(refguid, in pData.GetPinnableReference(), SizeOfData, Flags);
+        fixed (void* pDataSpp = pData)
+            return @this->SetPrivateData(ref refguid.GetPinnableReference(), pDataSpp, SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -534,7 +475,8 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref refguid.GetPinnableReference(), pData, SizeOfData, Flags);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(refguid, pDataSpp, ref pSizeOfData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -542,63 +484,17 @@ public unsafe static class Direct3DCubeTexture9VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref refguid.GetPinnableReference(), in pData.GetPinnableReference(), SizeOfData, Flags);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref refguid.GetPinnableReference(), pDataSpp, pSizeOfData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Guid* refguid, void* pData, Span<uint> pSizeOfData)
+    public static int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Span<Guid> refguid, Span<T0> pData, Span<uint> pSizeOfData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(refguid, pData, ref pSizeOfData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Guid* refguid, Span<T0> pData, uint* pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(refguid, ref pData.GetPinnableReference(), pSizeOfData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Guid* refguid, Span<T0> pData, Span<uint> pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(refguid, ref pData.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Span<Guid> refguid, void* pData, uint* pSizeOfData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref refguid.GetPinnableReference(), pData, pSizeOfData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Span<Guid> refguid, void* pData, Span<uint> pSizeOfData)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref refguid.GetPinnableReference(), pData, ref pSizeOfData.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Span<Guid> refguid, Span<T0> pData, uint* pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), pSizeOfData);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDirect3DCubeTexture9> thisVtbl, Span<Guid> refguid, Span<T0> pData, Span<uint> pSizeOfData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref refguid.GetPinnableReference(), pDataSpp, ref pSizeOfData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

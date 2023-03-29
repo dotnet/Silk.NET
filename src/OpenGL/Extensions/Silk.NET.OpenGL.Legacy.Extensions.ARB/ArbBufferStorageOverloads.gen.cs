@@ -19,13 +19,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+            fixed (void* dataSpp = data)
+                thisApi.BufferStorage(target, size, dataSpp, flags);
         }
 
         public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+            fixed (void* dataSpp = data)
+                thisApi.BufferStorage(target, size, dataSpp, flags);
         }
 
         public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged

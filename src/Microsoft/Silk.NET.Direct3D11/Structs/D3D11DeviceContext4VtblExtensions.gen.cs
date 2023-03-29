@@ -111,18 +111,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -135,21 +123,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (uint* pDataSizePtr = &pDataSize)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext4> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -157,21 +130,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* guidPtr = &guid)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
-            }
         }
         return ret;
     }
@@ -814,18 +772,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetData(this ComPtr<ID3D11DeviceContext4> thisVtbl, ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
     {
         var @this = thisVtbl.Handle;
@@ -833,21 +779,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
         fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pData, DataSize, GetDataFlags);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pDataPtr, DataSize, GetDataFlags);
-            }
         }
         return ret;
     }
@@ -8825,16 +8756,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ContextType ContextType, ref T0 hEvent) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        fixed (void* hEventPtr = &hEvent)
-        {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext4*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
-        }
-    }
-
-    /// <summary>To be documented.</summary>
     public static void SetHardwareProtectionState(this ComPtr<ID3D11DeviceContext4> thisVtbl, Silk.NET.Core.Bool32 HwProtectionEnable)
     {
         var @this = thisVtbl.Handle;
@@ -8934,31 +8855,34 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9438,35 +9362,12 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ID3D11Asynchronous* pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<ID3D11Asynchronous> pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetData(pAsync, ref pData.GetPinnableReference(), DataSize, GetDataFlags);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetData<T0, TI0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ComPtr<TI0> pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->GetData((ID3D11Asynchronous*) pAsync.Handle, ref pData, DataSize, GetDataFlags);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetData(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<ID3D11Asynchronous> pAsync, void* pData, uint DataSize, uint GetDataFlags)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetData(ref pAsync.GetPinnableReference(), pData, DataSize, GetDataFlags);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<ID3D11Asynchronous> pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetData(ref pAsync.GetPinnableReference(), ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+        fixed (void* pDataSpp = pData)
+            return @this->GetData(ref pAsync.GetPinnableReference(), pDataSpp, DataSize, GetDataFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -10114,7 +10015,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateSubresource(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+        fixed (void* pSrcDataSpp = pSrcData)
+            @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcDataSpp, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -11930,7 +11832,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateSubresource1(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
+        fixed (void* pSrcDataSpp = pSrcData)
+            @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcDataSpp, SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15682,7 +15585,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), in pSourceTileData.GetPinnableReference(), Flags);
+        fixed (void* pSourceTileDataSpp = pSourceTileData)
+            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileDataSpp, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15698,7 +15602,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
+        fixed (void* pSourceTileDataSpp = pSourceTileData)
+            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), pSourceTileDataSpp, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15706,7 +15611,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
+        fixed (void* pSourceTileDataSpp = pSourceTileData)
+            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileDataSpp, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15835,14 +15741,6 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginEventInt(in pLabel.GetPinnableReference(), Data);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext4> thisVtbl, ContextType ContextType, Span<T0> hEvent) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        @this->Flush1(ContextType, ref hEvent.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

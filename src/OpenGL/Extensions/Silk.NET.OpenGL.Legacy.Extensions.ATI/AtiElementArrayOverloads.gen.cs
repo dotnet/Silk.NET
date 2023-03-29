@@ -12,14 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
-    public static class GremedyStringMarkerOverloads
+    public static class AtiElementArrayOverloads
     {
-        public static unsafe void StringMarker<T0>(this GremedyStringMarker thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.StringMarker(len, in @string.GetPinnableReference());
+            fixed (void* pointerSpp = pointer)
+                thisApi.ElementPointer(type, pointerSpp);
         }
 
     }

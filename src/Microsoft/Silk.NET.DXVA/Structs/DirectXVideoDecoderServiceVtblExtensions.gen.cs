@@ -1438,7 +1438,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1446,7 +1447,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1454,7 +1456,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1462,7 +1465,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1470,7 +1474,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1478,7 +1483,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, pVideoDesc, ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1486,7 +1492,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1494,7 +1501,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1502,7 +1510,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1510,7 +1519,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), pReserved, ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1518,7 +1528,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), pVideoDesc, pReservedSpp, ref pCount.GetPinnableReference(), ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1526,7 +1537,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), pCount, ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1534,7 +1546,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, pCount, ref ppConfigs);
     }
 
     /// <summary>To be documented.</summary>
@@ -1542,7 +1555,8 @@ public unsafe static class DirectXVideoDecoderServiceVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDecoderConfigurations(Guid, in pVideoDesc.GetPinnableReference(), ref pReserved.GetPinnableReference(), ref pCount.GetPinnableReference(), ref ppConfigs);
+        fixed (void* pReservedSpp = pReserved)
+            return @this->GetDecoderConfigurations(ref Guid.GetPinnableReference(), in pVideoDesc.GetPinnableReference(), pReservedSpp, ref pCount.GetPinnableReference(), ppConfigs);
     }
 
     /// <summary>To be documented.</summary>

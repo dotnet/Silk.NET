@@ -106,33 +106,6 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pvDestContextPtr = &pvDestContext)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pvDestContextPtr = &pvDestContext)
-        {
-            fixed (Guid* pClsidPtr = &pClsid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IStdMarshalInfo> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -158,27 +131,12 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, void* pvDestContext, Span<Guid> pClsid)
+    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, Span<T0> pvDestContext, Span<Guid> pClsid) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetClassForHandler(dwDestContext, pvDestContext, ref pClsid.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, Span<T0> pvDestContext, Guid* pClsid) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetClassForHandler(dwDestContext, ref pvDestContext.GetPinnableReference(), pClsid);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, Span<T0> pvDestContext, Span<Guid> pClsid) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetClassForHandler(dwDestContext, ref pvDestContext.GetPinnableReference(), ref pClsid.GetPinnableReference());
+        fixed (void* pvDestContextSpp = pvDestContext)
+            return @this->GetClassForHandler(dwDestContext, pvDestContextSpp, ref pClsid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

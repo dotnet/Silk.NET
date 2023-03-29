@@ -2659,66 +2659,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* hResourcePtr = &hResource)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* hResourcePtr = &hResource)
-        {
-            fixed (void** ppResourcePtr = &ppResource)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, void** ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* hResourcePtr = &hResource)
-        {
-            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* hResourcePtr = &hResource)
-        {
-            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
-            {
-                fixed (void** ppResourcePtr = &ppResource)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
-                }
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CheckFormatSupport(this ComPtr<ID3D11Device1> thisVtbl, Silk.NET.DXGI.Format Format, uint* pFormatSupport)
     {
         var @this = thisVtbl.Handle;
@@ -42531,35 +42471,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11Device1> thisVtbl, Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Feature, void*, uint, int>)@this->LpVtbl[33])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pData);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pDataPtr);
-        }
         return ret;
     }
 
@@ -42576,21 +42492,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (uint* pDataSizePtr = &pDataSize)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSizePtr, pDataPtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -42598,21 +42499,6 @@ public unsafe static class D3D11Device1VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pData);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* guidPtr = &guid)
-        {
-            fixed (void* pDataPtr = &pData)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pDataPtr);
-            }
         }
         return ret;
     }
@@ -44196,7 +44082,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInputLayout(pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature.GetPinnableReference(), BytecodeLength, ppInputLayout);
+        fixed (void* pShaderBytecodeWithInputSignatureSpp = pShaderBytecodeWithInputSignature)
+            return @this->CreateInputLayout(pInputElementDescs, NumElements, pShaderBytecodeWithInputSignatureSpp, BytecodeLength, ref ppInputLayout);
     }
 
     /// <summary>To be documented.</summary>
@@ -44284,7 +44171,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppVertexShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateVertexShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppVertexShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44380,7 +44268,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44476,7 +44365,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44492,7 +44382,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44500,7 +44391,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44516,7 +44408,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44532,7 +44425,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44548,7 +44442,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44556,7 +44451,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44572,7 +44468,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44588,7 +44485,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44604,7 +44502,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44612,7 +44511,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44628,7 +44528,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44644,7 +44545,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44908,7 +44810,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppPixelShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreatePixelShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppPixelShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -45004,7 +44907,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppHullShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateHullShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppHullShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -45100,7 +45004,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppDomainShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateDomainShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppDomainShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -45196,7 +45101,8 @@ public unsafe static class D3D11Device1VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppComputeShader);
+        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
+            return @this->CreateComputeShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppComputeShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -45521,60 +45427,30 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource(hResource, ref ReturnedInterface.GetPinnableReference(), ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource(hResourceSpp, ReturnedInterface, ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, void** ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource(hResource, ref ReturnedInterface.GetPinnableReference(), ref ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource(hResourceSpp, ref ReturnedInterface.GetPinnableReference(), ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, ref void* ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ReturnedInterface, ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppResource = default;
-        return @this->OpenSharedResource(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ReturnedInterface, ref ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, void** ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ref ReturnedInterface.GetPinnableReference(), ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ref ReturnedInterface.GetPinnableReference(), ref ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource(hResourceSpp, ref ReturnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -59362,31 +59238,34 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11Device1> thisVtbl, Feature Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+        fixed (void* pDataSpp = pData)
+            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -59763,60 +59642,30 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> returnedInterface, void** ppResource)
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, ref void* ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource1(hResource, ref returnedInterface.GetPinnableReference(), ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource1(hResourceSpp, returnedInterface, ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> returnedInterface, ref void* ppResource)
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, void** ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource1(hResource, ref returnedInterface.GetPinnableReference(), ref ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource1(hResourceSpp, ref returnedInterface.GetPinnableReference(), ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, void** ppResource) where T0 : unmanaged
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, ref void* ppResource) where T0 : struct
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), returnedInterface, ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int OpenSharedResource1<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppResource = default;
-        return @this->OpenSharedResource1(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), returnedInterface, ref ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, void** ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), ref returnedInterface.GetPinnableReference(), ppResource);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, ref void* ppResource) where T0 : unmanaged
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), ref returnedInterface.GetPinnableReference(), ref ppResource);
+        fixed (void* hResourceSpp = hResource)
+            return @this->OpenSharedResource1(hResourceSpp, ref returnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -59925,15 +59774,6 @@ public unsafe static class D3D11Device1VtblExtensions
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->OpenSharedResource(hResource, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

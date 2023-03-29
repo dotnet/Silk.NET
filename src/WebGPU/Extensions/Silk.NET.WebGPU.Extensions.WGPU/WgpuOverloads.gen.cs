@@ -81,14 +81,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 193, Column 6 in wgpu.h")]
-        public static unsafe void SetLogCallback<T0>(this Wgpu thisApi, PfnLogCallback callback, Span<T0> userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetLogCallback(callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 6 in wgpu.h")]
         public static unsafe void SurfaceGetCapabilities(this Wgpu thisApi, Surface* surface, Adapter* adapter, Span<SurfaceCapabilities> capabilities)
         {

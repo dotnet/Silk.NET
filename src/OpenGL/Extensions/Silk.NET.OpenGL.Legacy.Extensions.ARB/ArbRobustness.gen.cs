@@ -851,7 +851,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe void GetnMap([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> v)
         {
             // ImplicitCountSpanOverloader
-            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+            GetnMap(target, query, (uint) v.Length / 8, out v.GetPinnableReference());
         }
 
         public unsafe void GetnMap([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> v)
@@ -977,7 +977,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe void GetnPixelMap([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> values)
         {
             // ImplicitCountSpanOverloader
-            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+            GetnPixelMap(map, (uint) values.Length / 4, out values.GetPinnableReference());
         }
 
         public unsafe void GetnPixelMap([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> values)

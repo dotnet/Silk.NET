@@ -62,7 +62,9 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetKernelSubGroupInfo(this KhrSubgroups thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint in_kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint in_device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* input_value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            return thisApi.GetKernelSubGroupInfo(in_kernel, in_device, param_name, input_value_size, input_value, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
+            fixed (void* input_valueSpp = input_value)
+            fixed (void* param_valueSpp = param_value)
+                return thisApi.GetKernelSubGroupInfo(in_kernel, in_device, param_name, input_value_size, input_valueSpp, param_value_size, param_valueSpp, param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

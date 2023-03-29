@@ -115,7 +115,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public static unsafe uint NewObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.NewObjectBuffer(size, in pointer.GetPinnableReference(), usage);
+            fixed (void* pointerSpp = pointer)
+                return thisApi.NewObjectBuffer(size, pointerSpp, usage);
         }
 
         public static unsafe uint NewObjectBuffer<T0>(this AtiVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged

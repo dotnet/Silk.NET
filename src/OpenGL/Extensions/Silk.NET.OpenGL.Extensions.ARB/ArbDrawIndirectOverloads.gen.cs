@@ -19,19 +19,22 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public static unsafe void DrawArraysIndirect<T0>(this ArbDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.DrawArraysIndirect(mode, in indirect.GetPinnableReference());
+            fixed (void* indirectSpp = indirect)
+                thisApi.DrawArraysIndirect(mode, indirectSpp);
         }
 
         public static unsafe void DrawArraysIndirect<T0>(this ArbDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.DrawArraysIndirect(mode, in indirect.GetPinnableReference());
+            fixed (void* indirectSpp = indirect)
+                thisApi.DrawElementsIndirect(mode, type, indirectSpp);
         }
 
         public static unsafe void DrawElementsIndirect<T0>(this ArbDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.DrawElementsIndirect(mode, type, in indirect.GetPinnableReference());
+            fixed (void* indirectSpp = indirect)
+                thisApi.DrawElementsIndirect(mode, type, indirectSpp);
         }
 
         public static unsafe void DrawElementsIndirect<T0>(this ArbDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged

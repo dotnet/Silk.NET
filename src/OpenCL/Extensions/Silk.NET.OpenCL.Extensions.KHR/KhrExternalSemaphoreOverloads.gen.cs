@@ -38,7 +38,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetSemaphoreHandleForType(this KhrExternalSemaphore thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sema_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint handle_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint handle_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* handle_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> handle_size_ret)
         {
             // SpanOverloader
-            return thisApi.GetSemaphoreHandleForType(sema_object, device, handle_type, handle_size, handle_ptr, out handle_size_ret.GetPinnableReference());
+            fixed (void* handle_ptrSpp = handle_ptr)
+                return thisApi.GetSemaphoreHandleForType(sema_object, device, handle_type, handle_size, handle_ptrSpp, handle_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (ExternalSemaphoreHandleType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

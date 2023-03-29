@@ -61,7 +61,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public static unsafe nint VdpauregisterOutputSurface(this NVVdpauInterop thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> textureNames)
         {
             // SpanOverloader
-            return thisApi.VdpauregisterOutputSurface(vdpSurface, target, numTextureNames, in textureNames.GetPinnableReference());
+            fixed (void* vdpSurfaceSpp = vdpSurface)
+                return thisApi.VdpauregisterOutputSurface(vdpSurfaceSpp, target, numTextureNames, in textureNames.GetPinnableReference());
         }
 
         public static unsafe nint VdpauregisterOutputSurface<T0>(this NVVdpauInterop thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> vdpSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* textureNames) where T0 : unmanaged

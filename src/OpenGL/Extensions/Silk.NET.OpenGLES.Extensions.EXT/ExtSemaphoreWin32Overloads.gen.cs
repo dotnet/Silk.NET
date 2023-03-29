@@ -19,7 +19,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, out handle.GetPinnableReference());
+            fixed (void* handleSpp = handle)
+                thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, handleSpp);
         }
 
         public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint semaphore, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
