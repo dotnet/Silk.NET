@@ -14,9 +14,15 @@ using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
-    [Parameter("Code-signing service username")] readonly string SignUsername;
-    [Parameter("Code-signing service password")] readonly string SignPassword;
-    bool CanCodeSign => !string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword);
+    [Parameter("Code-signing service Azure Key Vault certificate")] readonly string AkvCertificate;
+    [Parameter("Code-signing service Azure Key Vault client ID")] readonly string AkvClientId;
+    [Parameter("Code-signing service Azure Key Vault client secret")] readonly string AkvClientSecret;
+    [Parameter("Code-signing service Azure Key Vault tenant ID")] readonly string AkvTenant;
+    [Parameter("Code-signing service Azure Key Vault URL")] readonly string AkvVaultUrl;
+
+    bool CanCodeSign => !string.IsNullOrWhiteSpace(AkvCertificate) && !string.IsNullOrWhiteSpace(AkvClientId) &&
+                        !string.IsNullOrWhiteSpace(AkvClientSecret) && !string.IsNullOrWhiteSpace(AkvTenant) &&
+                        !string.IsNullOrWhiteSpace(AkvVaultUrl);
 
     Target SignPackages => CommonTarget
     (
@@ -34,7 +40,7 @@ partial class Build
 
                     var outputs = Enumerable.Empty<Output>();
                     var basePath = RootDirectory / "build" / "codesigning";
-                    var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
+                    var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "sign.exe" : "sign");
                     if (!File.Exists(execPath))
                     {
                         outputs = outputs.Concat
@@ -42,7 +48,8 @@ partial class Build
                             DotNetToolInstall
                             (
                                 s => s.SetToolInstallationPath(basePath / "tool")
-                                    .SetPackageName("SignClient")
+                                    .SetPackageName("sign")
+                                    .SetVersion("0.9.0-beta.23063.3")
                             )
                         );
                     }
@@ -51,46 +58,22 @@ partial class Build
                     (
                         outputs, (current, pkg) => current.Concat
                         (
-                            // TODO this doesn't work for some reason
-                            //    > C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\tool\SignClient.exe sign \
-                            // --config C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\config.json \
-                            // --input C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\output_packages\Silk.NET.2.11.0.nupkg \
-                            // --baseDirectory C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\output_packages \
-                            // --fileList C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\filelist.txt \
-                            // --secret [hidden] \
-                            // --user *** \
-                            // --name Silk.NET \
-                            // --description Silk.NET \
-                            // --descriptionUrl https://github.com/dotnet/Silk.NET
-                            // @ C:\Users\perks\Documents\_Silk.NET\Silk.NET
-                            // Error output:
-                            // --name parameter is required
-                            // SignClientSign
-                            // (
-                            //     s => s.SetProcessToolPath(execPath)
-                            //         .SetBaseDirectory(PackageDirectory)
-                            //         .SetInput(pkg)
-                            //         .SetConfig(basePath / "config.json")
-                            //         .SetFileList(basePath / "filelist.txt")
-                            //         .SetUsername(SignUsername)
-                            //         .SetSecret(SignPassword)
-                            //         .SetName("Silk.NET")
-                            //         .SetDescription("Silk.NET")
-                            //         .SetDescriptionUrl("https://github.com/dotnet/Silk.NET")
-                            // )
                             StartProcess
                             (
                                 execPath,
-                                "sign " +
-                                $"--baseDirectory {PackageDirectory} " +
-                                $"--input \"{pkg}\" " +
-                                $"--config \"{basePath / "config.json"}\" " +
-                                $"--filelist \"{basePath / "filelist.txt"}\" " +
-                                $"--user \"{SignUsername}\" " +
-                                $"--secret \"{SignPassword}\" " +
-                                "--name \"Silk.NET\" " +
+                                $"sign code azure-key-vault \"{pkg}\" " +
+                                "--timestamp-url http://timestamp.digicert.com " +
+                                $"--base-directory \"{PackageDirectory}\" " +
+                                $"--file-list \"{basePath / "filelist.txt"}\" " +
+                                "--publisher-name \".NET Foundation\" " +
                                 "--description \"Silk.NET\" " +
-                                "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+                                "--description-url \"https://github.com/dotnet/Silk.NET\" " +
+                                $"--azure-key-vault-certificate \"{AkvCertificate}\" " +
+                                $"--azure-key-vault-client-id \"{AkvClientId}\" " +
+                                $"--azure-key-vault-client-secret \"{AkvClientSecret}\" " +
+                                $"--azure-key-vault-tenant-id \"{AkvTenant}\" " +
+                                $"--azure-key-vault-url \"{AkvVaultUrl}\" "
+
                             ).AssertZeroExitCode().Output
                         )
                     );
