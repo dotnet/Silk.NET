@@ -25,7 +25,7 @@ namespace Tutorial
         {
             WindowOptions options = WindowOptions.Default;
             options.Size = new Vector2D<int>(800, 600);
-            options.Title = "1.2 - Drawing a Quad";
+            options.Title = "1.3 - Textures";
 
             _window = Window.Create(options);
 
