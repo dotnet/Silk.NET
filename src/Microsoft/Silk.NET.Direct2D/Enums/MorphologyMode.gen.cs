@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_MORPHOLOGY_MODE")]
     public enum MorphologyMode : int
     {
-        [Obsolete("Deprecated in favour of \"Erode\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_MODE_ERODE")]
-        MorphologyModeErode = 0x0,
-        [Obsolete("Deprecated in favour of \"Dilate\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_MODE_DILATE")]
-        MorphologyModeDilate = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_MODE_FORCE_DWORD")]
-        MorphologyModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_MORPHOLOGY_MODE_ERODE")]
         Erode = 0x0,
         [NativeName("Name", "D2D1_MORPHOLOGY_MODE_DILATE")]

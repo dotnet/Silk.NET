@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE")]
     public enum ColorInterpolationMode : int
     {
-        [Obsolete("Deprecated in favour of \"Straight\"")]
-        [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT")]
-        ColorInterpolationModeStraight = 0x0,
-        [Obsolete("Deprecated in favour of \"Premultiplied\"")]
-        [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED")]
-        ColorInterpolationModePremultiplied = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD")]
-        ColorInterpolationModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT")]
         Straight = 0x0,
         [NativeName("Name", "D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED")]

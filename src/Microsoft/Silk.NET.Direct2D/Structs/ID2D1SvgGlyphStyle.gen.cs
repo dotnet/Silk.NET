@@ -169,7 +169,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetStroke(ID2D1Brush* brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
+        public readonly unsafe int SetStroke(ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetStroke(ID2D1Brush* brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
+        public readonly unsafe int SetStroke(ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetStroke(ref ID2D1Brush brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
+        public readonly unsafe int SetStroke(ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -202,7 +202,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetStroke(ref ID2D1Brush brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
+        public readonly int SetStroke(ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset)
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -467,7 +467,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly unsafe int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -475,7 +475,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+        public readonly int SetStroke<TI0>(ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgGlyphStyle*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

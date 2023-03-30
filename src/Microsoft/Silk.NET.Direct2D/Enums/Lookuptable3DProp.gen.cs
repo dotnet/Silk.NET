@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP")]
     public enum Lookuptable3DProp : int
     {
-        [Obsolete("Deprecated in favour of \"Lut\"")]
-        [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_LUT")]
-        Lookuptable3DPropLut = 0x0,
-        [Obsolete("Deprecated in favour of \"AlphaMode\"")]
-        [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_ALPHA_MODE")]
-        Lookuptable3DPropAlphaMode = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_FORCE_DWORD")]
-        Lookuptable3DPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_LUT")]
         Lut = 0x0,
         [NativeName("Name", "D2D1_LOOKUPTABLE3D_PROP_ALPHA_MODE")]

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
@@ -19,6 +20,7 @@ namespace Silk.NET.BuildTools.Cpp
     {
         public static IEnumerable<ImplementedFunction> GetHelperFunctions
         (
+            BindState task,
             Struct @struct,
             Profile profile,
             bool thisInScope = false,
@@ -26,7 +28,7 @@ namespace Silk.NET.BuildTools.Cpp
         )
         {
             var sb = new StringBuilder();
-            var all = GetWithVariants(@struct.Vtbl, profile).ToList();
+            var all = GetWithVariants(@struct.Vtbl, profile, task.Task).ToList();
             foreach (var vtblFunction in all)
             {
                 sb.Clear();
@@ -36,7 +38,7 @@ namespace Silk.NET.BuildTools.Cpp
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
             }
 
-            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], null))
+            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], task.Task.OverloaderExclusions))
             {
                 if (!thisInScope)
                 {
@@ -56,7 +58,8 @@ namespace Silk.NET.BuildTools.Cpp
         public static IEnumerable<(Function Original, Function New)> GetWithVariants
         (
             IEnumerable<Function> functions,
-            Profile profile
+            Profile profile,
+            BindTask task
         )
         {
             var enumerable = GetOriginals(functions);
@@ -68,7 +71,7 @@ namespace Silk.NET.BuildTools.Cpp
             foreach (var overload in enumerable)
             {
                 foreach (var final in SimpleReturnOverloader.GetWithOverloads
-                    (overload.New, profile, Overloader.ReturnOverloaders))
+                    (overload.New, profile, Overloader.ReturnOverloaders.Filter(overload.New, task.OverloaderExclusions)))
                 {
                     yield return (overload.Original, final);
                 }
@@ -88,7 +91,7 @@ namespace Silk.NET.BuildTools.Cpp
                 foreach (var function in functions)
                 {
                     foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                        (function.Item2, profile, overloaders))
+                        (function.Item2, profile, overloaders.Filter(function.Item2, task.OverloaderExclusions)))
                     {
                         yield return (function.Item1, overload);
                     }

@@ -142,14 +142,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescription([Flow(FlowDirection.In)] BlendDescription* description)
+        public readonly unsafe void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendDescription* description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[6])(@this, description);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescription([Flow(FlowDirection.In)] in BlendDescription description)
+        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] in BlendDescription description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BlendDescription* descriptionPtr = &description)

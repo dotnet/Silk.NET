@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_PIXEL_OPTIONS")]
     public enum PixelOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_PIXEL_OPTIONS_NONE")]
-        PixelOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"TrivialSampling\"")]
-        [NativeName("Name", "D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING")]
-        PixelOptionsTrivialSampling = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_PIXEL_OPTIONS_FORCE_DWORD")]
-        PixelOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_PIXEL_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING")]

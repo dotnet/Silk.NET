@@ -13,18 +13,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CHANNEL_DEPTH")]
     public enum ChannelDepth : int
     {
-        [Obsolete("Deprecated in favour of \"DepthDefault\"")]
-        [NativeName("Name", "D2D1_CHANNEL_DEPTH_DEFAULT")]
-        ChannelDepthDefault = 0x0,
-        [Obsolete("Deprecated in favour of \"Depth1\"")]
-        [NativeName("Name", "D2D1_CHANNEL_DEPTH_1")]
-        ChannelDepth1 = 0x1,
-        [Obsolete("Deprecated in favour of \"Depth4\"")]
-        [NativeName("Name", "D2D1_CHANNEL_DEPTH_4")]
-        ChannelDepth4 = 0x4,
-        [Obsolete("Deprecated in favour of \"DepthForceDword\"")]
-        [NativeName("Name", "D2D1_CHANNEL_DEPTH_FORCE_DWORD")]
-        ChannelDepthForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_CHANNEL_DEPTH_DEFAULT")]
         DepthDefault = 0x0,
         [NativeName("Name", "D2D1_CHANNEL_DEPTH_1")]

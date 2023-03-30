@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SHARPEN_PROP")]
     public enum SharpenProp : int
     {
-        [Obsolete("Deprecated in favour of \"Sharpness\"")]
-        [NativeName("Name", "D2D1_SHARPEN_PROP_SHARPNESS")]
-        SharpenPropSharpness = 0x0,
-        [Obsolete("Deprecated in favour of \"Threshold\"")]
-        [NativeName("Name", "D2D1_SHARPEN_PROP_THRESHOLD")]
-        SharpenPropThreshold = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SHARPEN_PROP_FORCE_DWORD")]
-        SharpenPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SHARPEN_PROP_SHARPNESS")]
         Sharpness = 0x0,
         [NativeName("Name", "D2D1_SHARPEN_PROP_THRESHOLD")]

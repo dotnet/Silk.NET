@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_MAP_OPTIONS")]
     public enum MapOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_MAP_OPTIONS_NONE")]
-        MapOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Read\"")]
-        [NativeName("Name", "D2D1_MAP_OPTIONS_READ")]
-        MapOptionsRead = 0x1,
-        [Obsolete("Deprecated in favour of \"Write\"")]
-        [NativeName("Name", "D2D1_MAP_OPTIONS_WRITE")]
-        MapOptionsWrite = 0x2,
-        [Obsolete("Deprecated in favour of \"Discard\"")]
-        [NativeName("Name", "D2D1_MAP_OPTIONS_DISCARD")]
-        MapOptionsDiscard = 0x4,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_MAP_OPTIONS_FORCE_DWORD")]
-        MapOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_MAP_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_MAP_OPTIONS_READ")]

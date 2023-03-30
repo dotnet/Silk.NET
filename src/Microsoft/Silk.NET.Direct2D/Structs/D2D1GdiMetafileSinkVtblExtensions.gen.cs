@@ -85,7 +85,7 @@ public unsafe static class D2D1GdiMetafileSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessRecord(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(FlowDirection.In)] void* recordData, uint recordDataSize)
+    public static unsafe int ProcessRecord(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* recordData, uint recordDataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D2D1GdiMetafileSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -131,7 +131,7 @@ public unsafe static class D2D1GdiMetafileSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> recordData, uint recordDataSize) where T0 : unmanaged
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink> thisVtbl, uint recordType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> recordData, uint recordDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

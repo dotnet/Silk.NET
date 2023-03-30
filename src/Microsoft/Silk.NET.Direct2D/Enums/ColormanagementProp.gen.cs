@@ -12,27 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP")]
     public enum ColormanagementProp : int
     {
-        [Obsolete("Deprecated in favour of \"SourceColorContext\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_SOURCE_COLOR_CONTEXT")]
-        ColormanagementPropSourceColorContext = 0x0,
-        [Obsolete("Deprecated in favour of \"SourceRenderingIntent\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_SOURCE_RENDERING_INTENT")]
-        ColormanagementPropSourceRenderingIntent = 0x1,
-        [Obsolete("Deprecated in favour of \"DestinationColorContext\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_DESTINATION_COLOR_CONTEXT")]
-        ColormanagementPropDestinationColorContext = 0x2,
-        [Obsolete("Deprecated in favour of \"DestinationRenderingIntent\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_DESTINATION_RENDERING_INTENT")]
-        ColormanagementPropDestinationRenderingIntent = 0x3,
-        [Obsolete("Deprecated in favour of \"AlphaMode\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_ALPHA_MODE")]
-        ColormanagementPropAlphaMode = 0x4,
-        [Obsolete("Deprecated in favour of \"Quality\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_QUALITY")]
-        ColormanagementPropQuality = 0x5,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_FORCE_DWORD")]
-        ColormanagementPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_SOURCE_COLOR_CONTEXT")]
         SourceColorContext = 0x0,
         [NativeName("Name", "D2D1_COLORMANAGEMENT_PROP_SOURCE_RENDERING_INTENT")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_WINDOW_STATE")]
     public enum WindowState : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_WINDOW_STATE_NONE")]
-        WindowStateNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Occluded\"")]
-        [NativeName("Name", "D2D1_WINDOW_STATE_OCCLUDED")]
-        WindowStateOccluded = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_WINDOW_STATE_FORCE_DWORD")]
-        WindowStateForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_WINDOW_STATE_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_WINDOW_STATE_OCCLUDED")]

@@ -18,7 +18,7 @@ namespace Silk.NET.Direct2D
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 190, Column 5 in d2d1_2.h")]
-        public static unsafe float D2D1ComputeMaximumScaleFactor(this D2D thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
+        public static unsafe float D2D1ComputeMaximumScaleFactor(this D2D thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
         {
             // SpanOverloader
             return thisApi.D2D1ComputeMaximumScaleFactor(in matrix.GetPinnableReference());
@@ -26,7 +26,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1Device** d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1Device** d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(dxgiDevice, in creationProperties.GetPinnableReference(), d2dDevice);
@@ -34,7 +34,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1Device* d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Silk.NET.DXGI.IDXGIDevice* dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1Device* d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(dxgiDevice, in creationProperties.GetPinnableReference(), ref d2dDevice);
@@ -42,7 +42,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(FlowDirection.In)] CreationProperties* creationProperties, ID2D1Device** d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CreationProperties* creationProperties, ID2D1Device** d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(ref dxgiDevice.GetPinnableReference(), creationProperties, d2dDevice);
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(FlowDirection.In)] CreationProperties* creationProperties, ref ID2D1Device* d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CreationProperties* creationProperties, ref ID2D1Device* d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(ref dxgiDevice.GetPinnableReference(), creationProperties, ref d2dDevice);
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1Device** d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1Device** d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(ref dxgiDevice.GetPinnableReference(), in creationProperties.GetPinnableReference(), d2dDevice);
@@ -66,7 +66,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2449, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1Device* d2dDevice)
+        public static unsafe int D2D1CreateDevice(this D2D thisApi, Span<Silk.NET.DXGI.IDXGIDevice> dxgiDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1Device* d2dDevice)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDevice(ref dxgiDevice.GetPinnableReference(), in creationProperties.GetPinnableReference(), ref d2dDevice);
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1DeviceContext** d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1DeviceContext** d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(dxgiSurface, in creationProperties.GetPinnableReference(), d2dDeviceContext);
@@ -82,7 +82,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(dxgiSurface, in creationProperties.GetPinnableReference(), ref d2dDeviceContext);
@@ -90,7 +90,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CreationProperties* creationProperties, ID2D1DeviceContext** d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(ref dxgiSurface.GetPinnableReference(), creationProperties, d2dDeviceContext);
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CreationProperties* creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(ref dxgiSurface.GetPinnableReference(), creationProperties, ref d2dDeviceContext);
@@ -106,7 +106,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1DeviceContext** d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ID2D1DeviceContext** d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(ref dxgiSurface.GetPinnableReference(), in creationProperties.GetPinnableReference(), d2dDeviceContext);
@@ -114,7 +114,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2456, Column 5 in d2d1_1.h")]
-        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
+        public static unsafe int D2D1CreateDeviceContext(this D2D thisApi, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CreationProperties> creationProperties, ref ID2D1DeviceContext* d2dDeviceContext)
         {
             // SpanOverloader
             return thisApi.D2D1CreateDeviceContext(ref dxgiSurface.GetPinnableReference(), in creationProperties.GetPinnableReference(), ref d2dDeviceContext);
@@ -122,7 +122,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2463, Column 5 in d2d1_1.h")]
-        public static unsafe Silk.NET.DXGI.D3Dcolorvalue D2D1ConvertColorSpace(this D2D thisApi, ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
+        public static unsafe Silk.NET.DXGI.D3Dcolorvalue D2D1ConvertColorSpace(this D2D thisApi, ColorSpace sourceColorSpace, ColorSpace destinationColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
         {
             // SpanOverloader
             return thisApi.D2D1ConvertColorSpace(sourceColorSpace, destinationColorSpace, in color.GetPinnableReference());
@@ -154,7 +154,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Guid* riid, [Flow(FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, void** ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Guid* riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, void** ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, riid, in pFactoryOptions.GetPinnableReference(), ppIFactory);
@@ -162,7 +162,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Guid* riid, [Flow(FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, ref void* ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Guid* riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, ref void* ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, riid, in pFactoryOptions.GetPinnableReference(), ref ppIFactory);
@@ -170,7 +170,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(FlowDirection.In)] FactoryOptions* pFactoryOptions, void** ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FactoryOptions* pFactoryOptions, void** ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, ref riid.GetPinnableReference(), pFactoryOptions, ppIFactory);
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(FlowDirection.In)] FactoryOptions* pFactoryOptions, ref void* ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FactoryOptions* pFactoryOptions, ref void* ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, ref riid.GetPinnableReference(), pFactoryOptions, ref ppIFactory);
@@ -186,7 +186,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, void** ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, void** ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, ref riid.GetPinnableReference(), in pFactoryOptions.GetPinnableReference(), ppIFactory);
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3667, Column 5 in d2d1.h")]
-        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, ref void* ppIFactory)
+        public static unsafe int D2D1CreateFactory(this D2D thisApi, FactoryType factoryType, Span<Guid> riid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FactoryOptions> pFactoryOptions, ref void* ppIFactory)
         {
             // SpanOverloader
             return thisApi.D2D1CreateFactory(factoryType, ref riid.GetPinnableReference(), in pFactoryOptions.GetPinnableReference(), ref ppIFactory);
@@ -218,7 +218,7 @@ namespace Silk.NET.Direct2D
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3691, Column 5 in d2d1.h")]
-        public static unsafe Silk.NET.Core.Bool32 D2D1IsMatrixInvertible(this D2D thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
+        public static unsafe Silk.NET.Core.Bool32 D2D1IsMatrixInvertible(this D2D thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> matrix)
         {
             // SpanOverloader
             return thisApi.D2D1IsMatrixInvertible(in matrix.GetPinnableReference());

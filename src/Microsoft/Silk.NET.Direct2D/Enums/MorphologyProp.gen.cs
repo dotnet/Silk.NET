@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_MORPHOLOGY_PROP")]
     public enum MorphologyProp : int
     {
-        [Obsolete("Deprecated in favour of \"Mode\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_PROP_MODE")]
-        MorphologyPropMode = 0x0,
-        [Obsolete("Deprecated in favour of \"Width\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_PROP_WIDTH")]
-        MorphologyPropWidth = 0x1,
-        [Obsolete("Deprecated in favour of \"Height\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_PROP_HEIGHT")]
-        MorphologyPropHeight = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_MORPHOLOGY_PROP_FORCE_DWORD")]
-        MorphologyPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_MORPHOLOGY_PROP_MODE")]
         Mode = 0x0,
         [NativeName("Name", "D2D1_MORPHOLOGY_PROP_WIDTH")]

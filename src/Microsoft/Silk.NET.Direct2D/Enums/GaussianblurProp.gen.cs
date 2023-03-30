@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP")]
     public enum GaussianblurProp : int
     {
-        [Obsolete("Deprecated in favour of \"StandardDeviation\"")]
-        [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION")]
-        GaussianblurPropStandardDeviation = 0x0,
-        [Obsolete("Deprecated in favour of \"Optimization\"")]
-        [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION")]
-        GaussianblurPropOptimization = 0x1,
-        [Obsolete("Deprecated in favour of \"BorderMode\"")]
-        [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_BORDER_MODE")]
-        GaussianblurPropBorderMode = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_FORCE_DWORD")]
-        GaussianblurPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION")]
         StandardDeviation = 0x0,
         [NativeName("Name", "D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "DWRITE_MEASURING_MODE")]
     public enum DwriteMeasuringMode : int
     {
-        [Obsolete("Deprecated in favour of \"Natural\"")]
-        [NativeName("Name", "DWRITE_MEASURING_MODE_NATURAL")]
-        DwriteMeasuringModeNatural = 0x0,
-        [Obsolete("Deprecated in favour of \"GdiClassic\"")]
-        [NativeName("Name", "DWRITE_MEASURING_MODE_GDI_CLASSIC")]
-        DwriteMeasuringModeGdiClassic = 0x1,
-        [Obsolete("Deprecated in favour of \"GdiNatural\"")]
-        [NativeName("Name", "DWRITE_MEASURING_MODE_GDI_NATURAL")]
-        DwriteMeasuringModeGdiNatural = 0x2,
         [NativeName("Name", "DWRITE_MEASURING_MODE_NATURAL")]
         Natural = 0x0,
         [NativeName("Name", "DWRITE_MEASURING_MODE_GDI_CLASSIC")]

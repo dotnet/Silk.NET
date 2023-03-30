@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CHANNEL_SELECTOR")]
     public enum ChannelSelector : int
     {
-        [Obsolete("Deprecated in favour of \"R\"")]
-        [NativeName("Name", "D2D1_CHANNEL_SELECTOR_R")]
-        ChannelSelectorR = 0x0,
-        [Obsolete("Deprecated in favour of \"G\"")]
-        [NativeName("Name", "D2D1_CHANNEL_SELECTOR_G")]
-        ChannelSelectorG = 0x1,
-        [Obsolete("Deprecated in favour of \"B\"")]
-        [NativeName("Name", "D2D1_CHANNEL_SELECTOR_B")]
-        ChannelSelectorB = 0x2,
-        [Obsolete("Deprecated in favour of \"A\"")]
-        [NativeName("Name", "D2D1_CHANNEL_SELECTOR_A")]
-        ChannelSelectorA = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_CHANNEL_SELECTOR_FORCE_DWORD")]
-        ChannelSelectorForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_CHANNEL_SELECTOR_R")]
         R = 0x0,
         [NativeName("Name", "D2D1_CHANNEL_SELECTOR_G")]

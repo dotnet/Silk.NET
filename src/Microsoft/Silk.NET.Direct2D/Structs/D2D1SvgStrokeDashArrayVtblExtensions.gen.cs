@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, uint startIndex)
+    public static unsafe int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,7 +249,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

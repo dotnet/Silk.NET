@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_LINE_CAP")]
     public enum SvgLineCap : int
     {
-        [Obsolete("Deprecated in favour of \"Butt\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_CAP_BUTT")]
-        SvgLineCapButt = 0x0,
-        [Obsolete("Deprecated in favour of \"Square\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_CAP_SQUARE")]
-        SvgLineCapSquare = 0x1,
-        [Obsolete("Deprecated in favour of \"Round\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_CAP_ROUND")]
-        SvgLineCapRound = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_CAP_FORCE_DWORD")]
-        SvgLineCapForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SVG_LINE_CAP_BUTT")]
         Butt = 0x0,
         [NativeName("Name", "D2D1_SVG_LINE_CAP_SQUARE")]

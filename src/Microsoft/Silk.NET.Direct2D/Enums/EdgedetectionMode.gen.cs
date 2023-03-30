@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_EDGEDETECTION_MODE")]
     public enum EdgedetectionMode : int
     {
-        [Obsolete("Deprecated in favour of \"Sobel\"")]
-        [NativeName("Name", "D2D1_EDGEDETECTION_MODE_SOBEL")]
-        EdgedetectionModeSobel = 0x0,
-        [Obsolete("Deprecated in favour of \"Prewitt\"")]
-        [NativeName("Name", "D2D1_EDGEDETECTION_MODE_PREWITT")]
-        EdgedetectionModePrewitt = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_EDGEDETECTION_MODE_FORCE_DWORD")]
-        EdgedetectionModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_EDGEDETECTION_MODE_SOBEL")]
         Sobel = 0x0,
         [NativeName("Name", "D2D1_EDGEDETECTION_MODE_PREWITT")]
