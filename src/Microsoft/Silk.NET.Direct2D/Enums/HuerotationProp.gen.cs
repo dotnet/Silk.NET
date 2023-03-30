@@ -12,12 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_HUEROTATION_PROP")]
     public enum HuerotationProp : int
     {
-        [Obsolete("Deprecated in favour of \"Angle\"")]
-        [NativeName("Name", "D2D1_HUEROTATION_PROP_ANGLE")]
-        HuerotationPropAngle = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_HUEROTATION_PROP_FORCE_DWORD")]
-        HuerotationPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_HUEROTATION_PROP_ANGLE")]
         Angle = 0x0,
         [NativeName("Name", "D2D1_HUEROTATION_PROP_FORCE_DWORD")]

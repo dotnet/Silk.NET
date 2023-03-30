@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT")]
     public enum ColormanagementRenderingIntent : int
     {
-        [Obsolete("Deprecated in favour of \"Perceptual\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL")]
-        ColormanagementRenderingIntentPerceptual = 0x0,
-        [Obsolete("Deprecated in favour of \"RelativeColorimetric\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_RELATIVE_COLORIMETRIC")]
-        ColormanagementRenderingIntentRelativeColorimetric = 0x1,
-        [Obsolete("Deprecated in favour of \"Saturation\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_SATURATION")]
-        ColormanagementRenderingIntentSaturation = 0x2,
-        [Obsolete("Deprecated in favour of \"AbsoluteColorimetric\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC")]
-        ColormanagementRenderingIntentAbsoluteColorimetric = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_FORCE_DWORD")]
-        ColormanagementRenderingIntentForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL")]
         Perceptual = 0x0,
         [NativeName("Name", "D2D1_COLORMANAGEMENT_RENDERING_INTENT_RELATIVE_COLORIMETRIC")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_ATLAS_PROP")]
     public enum AtlasProp : int
     {
-        [Obsolete("Deprecated in favour of \"InputRect\"")]
-        [NativeName("Name", "D2D1_ATLAS_PROP_INPUT_RECT")]
-        AtlasPropInputRect = 0x0,
-        [Obsolete("Deprecated in favour of \"InputPaddingRect\"")]
-        [NativeName("Name", "D2D1_ATLAS_PROP_INPUT_PADDING_RECT")]
-        AtlasPropInputPaddingRect = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_ATLAS_PROP_FORCE_DWORD")]
-        AtlasPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_ATLAS_PROP_INPUT_RECT")]
         InputRect = 0x0,
         [NativeName("Name", "D2D1_ATLAS_PROP_INPUT_PADDING_RECT")]

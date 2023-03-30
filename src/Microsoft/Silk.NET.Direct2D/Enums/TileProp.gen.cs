@@ -12,12 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_TILE_PROP")]
     public enum TileProp : int
     {
-        [Obsolete("Deprecated in favour of \"Rect\"")]
-        [NativeName("Name", "D2D1_TILE_PROP_RECT")]
-        TilePropRect = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_TILE_PROP_FORCE_DWORD")]
-        TilePropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_TILE_PROP_RECT")]
         Rect = 0x0,
         [NativeName("Name", "D2D1_TILE_PROP_FORCE_DWORD")]

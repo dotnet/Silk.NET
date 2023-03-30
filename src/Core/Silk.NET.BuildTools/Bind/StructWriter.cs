@@ -458,7 +458,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                         (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
+                         (ComVtblProcessor.GetHelperFunctions(task, @struct, profile)))
             {
                 if (function.Signature.Kind == SignatureKind.PotentiallyConflictingOverload)
                 {
@@ -603,7 +603,7 @@ namespace Silk.NET.BuildTools.Bind
                 vt.WriteLine();
                 vt.WriteLine($"public unsafe static class {className}");
                 vt.WriteLine("{");
-                foreach (var helper in ComVtblProcessor.GetHelperFunctions(@struct, profile, true))
+                foreach (var helper in ComVtblProcessor.GetHelperFunctions(task, @struct, profile, true))
                 {
                     using (var sr = new StringReader(helper.Signature.Doc))
                     {

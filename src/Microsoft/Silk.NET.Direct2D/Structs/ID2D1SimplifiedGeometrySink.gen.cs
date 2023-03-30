@@ -132,14 +132,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AddLines([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount)
+        public readonly unsafe void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1SimplifiedGeometrySink*, Silk.NET.Maths.Vector2D<float>*, uint, void>)@this->LpVtbl[6])(@this, points, pointsCount);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddLines([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
+        public readonly void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
@@ -149,14 +149,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AddBeziers([Flow(FlowDirection.In)] BezierSegment* beziers, uint beziersCount)
+        public readonly unsafe void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] BezierSegment* beziers, uint beziersCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1SimplifiedGeometrySink*, BezierSegment*, uint, void>)@this->LpVtbl[7])(@this, beziers, beziersCount);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddBeziers([Flow(FlowDirection.In)] in BezierSegment beziers, uint beziersCount)
+        public readonly void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] in BezierSegment beziers, uint beziersCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BezierSegment* beziersPtr = &beziers)

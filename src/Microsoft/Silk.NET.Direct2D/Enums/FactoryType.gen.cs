@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FACTORY_TYPE")]
     public enum FactoryType : int
     {
-        [Obsolete("Deprecated in favour of \"SingleThreaded\"")]
-        [NativeName("Name", "D2D1_FACTORY_TYPE_SINGLE_THREADED")]
-        FactoryTypeSingleThreaded = 0x0,
-        [Obsolete("Deprecated in favour of \"MultiThreaded\"")]
-        [NativeName("Name", "D2D1_FACTORY_TYPE_MULTI_THREADED")]
-        FactoryTypeMultiThreaded = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_FACTORY_TYPE_FORCE_DWORD")]
-        FactoryTypeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_FACTORY_TYPE_SINGLE_THREADED")]
         SingleThreaded = 0x0,
         [NativeName("Name", "D2D1_FACTORY_TYPE_MULTI_THREADED")]

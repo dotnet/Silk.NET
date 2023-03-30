@@ -181,7 +181,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UpdatePoints([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
+        public readonly unsafe int UpdatePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdatePoints([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
+        public readonly int UpdatePoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPointCollection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

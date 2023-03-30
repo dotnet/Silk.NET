@@ -12,24 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BLEND_OPERATION")]
     public enum BlendOperation : int
     {
-        [Obsolete("Deprecated in favour of \"Add\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_ADD")]
-        BlendOperationAdd = 0x1,
-        [Obsolete("Deprecated in favour of \"Subtract\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_SUBTRACT")]
-        BlendOperationSubtract = 0x2,
-        [Obsolete("Deprecated in favour of \"RevSubtract\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_REV_SUBTRACT")]
-        BlendOperationRevSubtract = 0x3,
-        [Obsolete("Deprecated in favour of \"Min\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_MIN")]
-        BlendOperationMin = 0x4,
-        [Obsolete("Deprecated in favour of \"Max\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_MAX")]
-        BlendOperationMax = 0x5,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_BLEND_OPERATION_FORCE_DWORD")]
-        BlendOperationForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_BLEND_OPERATION_ADD")]
         Add = 0x1,
         [NativeName("Name", "D2D1_BLEND_OPERATION_SUBTRACT")]

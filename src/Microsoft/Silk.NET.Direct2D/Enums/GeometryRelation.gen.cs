@@ -12,24 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_GEOMETRY_RELATION")]
     public enum GeometryRelation : int
     {
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_UNKNOWN")]
-        GeometryRelationUnknown = 0x0,
-        [Obsolete("Deprecated in favour of \"Disjoint\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_DISJOINT")]
-        GeometryRelationDisjoint = 0x1,
-        [Obsolete("Deprecated in favour of \"IsContained\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_IS_CONTAINED")]
-        GeometryRelationIsContained = 0x2,
-        [Obsolete("Deprecated in favour of \"Contains\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_CONTAINS")]
-        GeometryRelationContains = 0x3,
-        [Obsolete("Deprecated in favour of \"Overlap\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_OVERLAP")]
-        GeometryRelationOverlap = 0x4,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_GEOMETRY_RELATION_FORCE_DWORD")]
-        GeometryRelationForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_GEOMETRY_RELATION_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D2D1_GEOMETRY_RELATION_DISJOINT")]

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_BORDER_MODE")]
     public enum BorderMode : int
     {
-        [Obsolete("Deprecated in favour of \"Soft\"")]
-        [NativeName("Name", "D2D1_BORDER_MODE_SOFT")]
-        BorderModeSoft = 0x0,
-        [Obsolete("Deprecated in favour of \"Hard\"")]
-        [NativeName("Name", "D2D1_BORDER_MODE_HARD")]
-        BorderModeHard = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_BORDER_MODE_FORCE_DWORD")]
-        BorderModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_BORDER_MODE_SOFT")]
         Soft = 0x0,
         [NativeName("Name", "D2D1_BORDER_MODE_HARD")]

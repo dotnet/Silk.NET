@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SVG_DISPLAY")]
     public enum SvgDisplay : int
     {
-        [Obsolete("Deprecated in favour of \"Inline\"")]
-        [NativeName("Name", "D2D1_SVG_DISPLAY_INLINE")]
-        SvgDisplayInline = 0x0,
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_SVG_DISPLAY_NONE")]
-        SvgDisplayNone = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SVG_DISPLAY_FORCE_DWORD")]
-        SvgDisplayForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SVG_DISPLAY_INLINE")]
         Inline = 0x0,
         [NativeName("Name", "D2D1_SVG_DISPLAY_NONE")]

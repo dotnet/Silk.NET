@@ -114,7 +114,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ProcessRecord(uint recordType, [Flow(FlowDirection.In)] void* recordData, uint recordDataSize)
+        public readonly unsafe int ProcessRecord(uint recordType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* recordData, uint recordDataSize)
         {
             var @this = (ID2D1GdiMetafileSink1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -123,7 +123,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessRecord<T0>(uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
+        public readonly int ProcessRecord<T0>(uint recordType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
         {
             var @this = (ID2D1GdiMetafileSink1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

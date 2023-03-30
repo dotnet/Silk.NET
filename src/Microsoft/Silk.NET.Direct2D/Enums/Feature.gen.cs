@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FEATURE")]
     public enum Feature : int
     {
-        [Obsolete("Deprecated in favour of \"Doubles\"")]
-        [NativeName("Name", "D2D1_FEATURE_DOUBLES")]
-        FeatureDoubles = 0x0,
-        [Obsolete("Deprecated in favour of \"D3D10XHardwareOptions\"")]
-        [NativeName("Name", "D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS")]
-        FeatureD3D10XHardwareOptions = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_FEATURE_FORCE_DWORD")]
-        FeatureForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_FEATURE_DOUBLES")]
         Doubles = 0x0,
         [NativeName("Name", "D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS")]

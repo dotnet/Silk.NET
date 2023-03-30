@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj" />
+    <ProjectReference Include="..\Silk.NET.DXGI\Silk.NET.DXGI.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_VERTEX_USAGE")]
     public enum VertexUsage : int
     {
-        [Obsolete("Deprecated in favour of \"Static\"")]
-        [NativeName("Name", "D2D1_VERTEX_USAGE_STATIC")]
-        VertexUsageStatic = 0x0,
-        [Obsolete("Deprecated in favour of \"Dynamic\"")]
-        [NativeName("Name", "D2D1_VERTEX_USAGE_DYNAMIC")]
-        VertexUsageDynamic = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_VERTEX_USAGE_FORCE_DWORD")]
-        VertexUsageForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_VERTEX_USAGE_STATIC")]
         Static = 0x0,
         [NativeName("Name", "D2D1_VERTEX_USAGE_DYNAMIC")]

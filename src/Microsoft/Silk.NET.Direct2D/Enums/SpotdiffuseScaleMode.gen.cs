@@ -12,27 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE")]
     public enum SpotdiffuseScaleMode : int
     {
-        [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR")]
-        SpotdiffuseScaleModeNearestNeighbor = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_LINEAR")]
-        SpotdiffuseScaleModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"Cubic\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_CUBIC")]
-        SpotdiffuseScaleModeCubic = 0x2,
-        [Obsolete("Deprecated in favour of \"MultiSampleLinear\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_MULTI_SAMPLE_LINEAR")]
-        SpotdiffuseScaleModeMultiSampleLinear = 0x3,
-        [Obsolete("Deprecated in favour of \"Anisotropic\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_ANISOTROPIC")]
-        SpotdiffuseScaleModeAnisotropic = 0x4,
-        [Obsolete("Deprecated in favour of \"HighQualityCubic\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_HIGH_QUALITY_CUBIC")]
-        SpotdiffuseScaleModeHighQualityCubic = 0x5,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_FORCE_DWORD")]
-        SpotdiffuseScaleModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "D2D1_SPOTDIFFUSE_SCALE_MODE_LINEAR")]

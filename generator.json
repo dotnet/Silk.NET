@@ -1267,7 +1267,8 @@
             "cacheKey": "d2d",
             "controlDescriptors": [
                 "convert-windows-only",
-                "typemap-native"
+                "typemap-native",
+                "no-obsolete-enum"
             ],
             "converter": {},
             "prefix": "D2D1_",
@@ -1333,7 +1334,8 @@
                 "D2D1_RECT_L",
                 "D2D1_SIZE_F",
                 "D2D1_SIZE_U",
-                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch"
+                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
+                "IDXGISurface"
             ],
             "rename": {
             },
@@ -1368,6 +1370,145 @@
                 "className": "D2DLibraryNameContainer"
             },
             "typeMaps": [
+                {
+                    "IDXGISurface": "Silk.NET.DXGI.IDXGISurface"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "DirectWrite",
+            "sources": [
+                "build/include/silk.net.directwrite.dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_2.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_3.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dwrite",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "typemap-native",
+                "no-obsolete-enum"
+            ],
+            "converter": {},
+            "prefix": "DWRITE_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dcommon.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dwrite_3.h"
+                ],
+                "classes": {
+                    "silk.net.directwrite.dcommon.h": "[Core]DWrite",
+                    "dwrite.h": "[Core]DWrite",
+                    "dwrite_1.h": "[Core]DWrite",
+                    "dwrite_2.h": "[Core]DWrite",
+                    "dwrite_3.h": "[Core]DWrite"
+                }
+            },
+            "exclude": [
+                "D2D_VECTOR_2F",
+                "D2D_VECTOR_3F",
+                "D2D_VECTOR_4F",
+                "D2D_POINT_2U",
+                "D2D_POINT_2F",
+                "D2D_POINT_2L",
+                "D2D_RECT_F",
+                "D2D_RECT_U",
+                "D2D_RECT_L",
+                "D2D_SIZE_F",
+                "D2D_SIZE_U",
+                "D2D_MATRIX_3X2_F",
+                "D2D_MATRIX_4X3_F",
+                "D2D_MATRIX_4X4_F",
+                "D2D_MATRIX_5X4_F",
+                "D2D1_POINT_2U",
+                "D2D1_POINT_2F",
+                "D2D1_POINT_2L",
+                "D2D1_RECT_F",
+                "D2D1_RECT_U",
+                "D2D1_RECT_L",
+                "D2D1_SIZE_F",
+                "D2D1_SIZE_U",
+                "D2D1GetGradientMeshInteriorPointsFromCoonsPatch",
+                "IDXGISurface",
+                "D2D1_ALPHA_MODE",
+                "D2D1_PIXEL_FORMAT",
+                "ID2D1SimplifiedGeometrySink",
+                "_D3DCOLORVALUE"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "silk.net.directwrite.dcommon",
+                    "dwrite",
+                    "dwrite_1",
+                    "dwrite_2",
+                    "dwrite_3"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DirectWrite",
+            "extensionsNamespace": "Silk.NET.DirectWrite.Extensions",
+            "overloadExclusions": {
+                "RefOverloader": [
+                    "GetGlyphs",
+                    "GetJustifiedGlyphs",
+                    "GetGlyphPlacements",
+                    "GetGdiCompatibleGlyphPlacements",
+                    "ApplyCharacterSpacing",
+                    "GetTextComplexity",
+                    "GetJustificationOpportunities",
+                    "JustifyGlyphAdvances",
+                    "CheckTypographicFeature"
+                ]
+            },
+            "nameContainer": {
+                "linux-x64": "libdwrite.so",
+                "win-x64": "DWrite.dll",
+                "win-x86": "DWrite.dll",
+                "osx-x64": "libdwrite.dylib",
+                "android": "libdwrite.so",
+                "iOS": "__Internal",
+                "className": "DWriteLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "IDXGISurface": "Silk.NET.DXGI.IDXGISurface",
+                    "D2D1_ALPHA_MODE": "Silk.NET.Direct2D.AlphaMode",
+                    "D2D1PixelFormat": "Silk.NET.Direct2D.PixelFormat",
+                    "ID2D1SimplifiedGeometrySink": "Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink",
+                    "_FILETIME": "Silk.NET.Core.Win32Extras.Filetime",
+                    "tagLOGFONTW": "void",
+                    "tagLOGFONTA": "void",
+                    "tagFONTSIGNATURE": "void"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -1612,7 +1753,8 @@
             "exclude": [
                 "__AnonymousRecord_d3d9types_L93_C9",
                 "__AnonymousRecord_d3d9types_L92_C5",
-                "_D3DMATRIX"
+                "_D3DMATRIX",
+                "_D3DCOLORVALUE"
             ],
             "rename": {
                 "_D3D_OMAC": "D3DOMac"
@@ -1973,7 +2115,6 @@
                     "D2D_MATRIX_3X2_F": "Silk.NET.Maths.Matrix3X2<float>",
                     "D2D_RECT_F": "Silk.NET.Maths.Rectangle<float>",
                     "D3DMATRIX": "Silk.NET.Maths.Matrix4X4<float>",
-                    "_D3DCOLORVALUE": "Silk.NET.DXGI.D3Dcolorvalue",
                     "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
                     "DXGI_ALPHA_MODE": "Silk.NET.DXGI.AlphaMode",
                     "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
@@ -2118,92 +2259,6 @@
             "typeMaps": [
                 {
                 },
-                {
-                    "$include.dxTypemap": "build/dx_typemap.json",
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
-                }
-            ]
-        },
-        {
-            "profileName": "D2D1",
-            "sources": [
-                "src/Microsoft/Silk.NET.Direct2D1/D2D1.h"
-            ],
-            "mode": "Clang",
-            "cacheDir": "build/cache",
-            "cacheKey": "d2d1",
-            "controlDescriptors": [
-                "convert-windows-only",
-                "Currently disabled due to bakery bugs.",
-                "no-convert",
-                "no-bind",
-                "typemap-native"
-            ],
-            "converter": {},
-            "prefix": "D2D1",
-            "clang": {
-                "args": [
-                    "--language=c++",
-                    "--std=c++17",
-                    "-m32",
-                    "-Wno-expansion-to-defined",
-                    "-Wno-ignored-attributes",
-                    "-Wno-ignored-pragma-intrinsic",
-                    "-Wno-nonportable-include-path",
-                    "-Wno-pragma-pack",
-                    "-I$windowsSdkIncludes",
-                    "-Ibuild/include"
-                ],
-                "traverse": [
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
-                ],
-                "classes": {
-                    "D2D1.h": "[Core]D2D1"
-                }
-            },
-            "exclude": [
-            ],
-            "rename": {
-            },
-            "bakery": {
-                "profileNames": [
-                    "D2D1"
-                ]
-            },
-            "output": {
-                "mode": "Default",
-                "path": "src/Microsoft",
-                "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
-            },
-            "namespace": "Silk.NET.Direct2D1",
-            "extensionsNamespace": "Silk.NET.Direct2D1.Extensions",
-            "nameContainer": {
-                "linux-x64": "libd2d1.so",
-                "win-x64": "d2d1.dll",
-                "win-x86": "d2d1.dll",
-                "osx-x64": "libd2d1.dylib",
-                "android": "libd2d1.so",
-                "iOS": "__Internal",
-                "className": "D2D1LibraryNameContainer"
-            },
-            "typeMaps": [
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"

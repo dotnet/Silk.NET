@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_ARC_SIZE")]
     public enum ArcSize : int
     {
-        [Obsolete("Deprecated in favour of \"Small\"")]
-        [NativeName("Name", "D2D1_ARC_SIZE_SMALL")]
-        ArcSizeSmall = 0x0,
-        [Obsolete("Deprecated in favour of \"Large\"")]
-        [NativeName("Name", "D2D1_ARC_SIZE_LARGE")]
-        ArcSizeLarge = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_ARC_SIZE_FORCE_DWORD")]
-        ArcSizeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_ARC_SIZE_SMALL")]
         Small = 0x0,
         [NativeName("Name", "D2D1_ARC_SIZE_LARGE")]

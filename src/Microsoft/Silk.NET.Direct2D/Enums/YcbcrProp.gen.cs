@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_YCBCR_PROP")]
     public enum YcbcrProp : int
     {
-        [Obsolete("Deprecated in favour of \"ChromaSubsampling\"")]
-        [NativeName("Name", "D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING")]
-        YcbcrPropChromaSubsampling = 0x0,
-        [Obsolete("Deprecated in favour of \"TransformMatrix\"")]
-        [NativeName("Name", "D2D1_YCBCR_PROP_TRANSFORM_MATRIX")]
-        YcbcrPropTransformMatrix = 0x1,
-        [Obsolete("Deprecated in favour of \"InterpolationMode\"")]
-        [NativeName("Name", "D2D1_YCBCR_PROP_INTERPOLATION_MODE")]
-        YcbcrPropInterpolationMode = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_YCBCR_PROP_FORCE_DWORD")]
-        YcbcrPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING")]
         ChromaSubsampling = 0x0,
         [NativeName("Name", "D2D1_YCBCR_PROP_TRANSFORM_MATRIX")]

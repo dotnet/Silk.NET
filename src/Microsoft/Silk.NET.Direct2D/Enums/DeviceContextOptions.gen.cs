@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS")]
     public enum DeviceContextOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS_NONE")]
-        DeviceContextOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"EnableMultithreadedOptimizations\"")]
-        [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS")]
-        DeviceContextOptionsEnableMultithreadedOptimizations = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD")]
-        DeviceContextOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS")]

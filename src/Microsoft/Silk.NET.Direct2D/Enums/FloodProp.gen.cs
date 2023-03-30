@@ -12,12 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FLOOD_PROP")]
     public enum FloodProp : int
     {
-        [Obsolete("Deprecated in favour of \"Color\"")]
-        [NativeName("Name", "D2D1_FLOOD_PROP_COLOR")]
-        FloodPropColor = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_FLOOD_PROP_FORCE_DWORD")]
-        FloodPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_FLOOD_PROP_COLOR")]
         Color = 0x0,
         [NativeName("Name", "D2D1_FLOOD_PROP_FORCE_DWORD")]
