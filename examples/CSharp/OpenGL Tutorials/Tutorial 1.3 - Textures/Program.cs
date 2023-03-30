@@ -6,6 +6,9 @@ using Silk.NET.Windowing;
 using Silk.NET.OpenGL;
 using StbImageSharp;
 
+// Textures!
+// In this tutorial, you'll learn how to load and render textures.
+
 namespace Tutorial
 {
     public class Program
