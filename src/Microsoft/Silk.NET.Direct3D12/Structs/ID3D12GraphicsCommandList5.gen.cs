@@ -243,7 +243,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -252,7 +252,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -276,7 +276,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -291,7 +291,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -300,7 +300,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -324,7 +324,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -339,7 +339,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
+        public readonly unsafe int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -348,7 +348,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -360,7 +360,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -563,14 +563,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -580,7 +580,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -590,7 +590,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -603,7 +603,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -613,7 +613,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -626,7 +626,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -639,7 +639,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
+        public readonly void CopyTextureRegion([Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -695,14 +695,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
@@ -712,7 +712,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -722,7 +722,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -735,7 +735,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -758,7 +758,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -771,7 +771,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -787,7 +787,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -797,7 +797,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -810,7 +810,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -823,7 +823,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -839,7 +839,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -852,7 +852,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -868,7 +868,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -884,7 +884,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -950,14 +950,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] Viewport* pViewports)
+        public readonly unsafe void RSSetViewports(uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Viewport* pViewports)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewports);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] in Viewport pViewports)
+        public readonly void RSSetViewports(uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Viewport pViewports)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Viewport* pViewportsPtr = &pViewports)
@@ -967,14 +967,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1025,14 +1025,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ResourceBarrier(uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
+        public readonly unsafe void ResourceBarrier(uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceBarrier* pBarriers)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ResourceBarrier(uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
+        public readonly void ResourceBarrier(uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceBarrier pBarriers)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -1059,14 +1059,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ID3D12DescriptorHeap** ppDescriptorHeaps)
+        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12DescriptorHeap** ppDescriptorHeaps)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] in ID3D12DescriptorHeap* ppDescriptorHeaps)
+        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12DescriptorHeap* ppDescriptorHeaps)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12DescriptorHeap** ppDescriptorHeapsPtr = &ppDescriptorHeaps)
@@ -1138,14 +1138,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetComputeRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
+        public readonly unsafe void SetComputeRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+        public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
@@ -1155,14 +1155,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
+        public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+        public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
@@ -1214,14 +1214,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetIndexBuffer([Flow(FlowDirection.In)] IndexBufferView* pView)
+        public readonly unsafe void IASetIndexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] IndexBufferView* pView)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pView);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void IASetIndexBuffer([Flow(FlowDirection.In)] in IndexBufferView pView)
+        public readonly void IASetIndexBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] in IndexBufferView pView)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IndexBufferView* pViewPtr = &pView)
@@ -1231,14 +1231,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] VertexBufferView* pViews)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in VertexBufferView pViews)
+        public readonly void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VertexBufferView pViews)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VertexBufferView* pViewsPtr = &pViews)
@@ -1248,14 +1248,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] StreamOutputBufferView* pViews)
+        public readonly unsafe void SOSetTargets(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StreamOutputBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SOSetTargets(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in StreamOutputBufferView pViews)
+        public readonly void SOSetTargets(uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in StreamOutputBufferView pViews)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (StreamOutputBufferView* pViewsPtr = &pViews)
@@ -1265,14 +1265,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
@@ -1282,7 +1282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
@@ -1292,7 +1292,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
@@ -1305,14 +1305,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1322,14 +1322,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1339,7 +1339,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorRGBAPtr = &ColorRGBA)
@@ -1349,7 +1349,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorRGBAPtr = &ColorRGBA)
@@ -1362,14 +1362,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1379,7 +1379,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* ValuesPtr = &Values)
@@ -1389,7 +1389,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* ValuesPtr = &Values)
@@ -1402,7 +1402,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1412,7 +1412,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1425,7 +1425,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1438,7 +1438,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1454,14 +1454,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1471,7 +1471,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ValuesPtr = &Values)
@@ -1481,7 +1481,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ValuesPtr = &Values)
@@ -1494,7 +1494,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1504,7 +1504,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1517,7 +1517,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1530,7 +1530,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
+        public readonly void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1546,14 +1546,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegion);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -1563,7 +1563,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
+        public readonly unsafe void DiscardResource(ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1573,7 +1573,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardResource(ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
+        public readonly void DiscardResource(ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1677,14 +1677,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetMarker(uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+        public readonly unsafe void SetMarker(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+        public readonly void SetMarker<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
@@ -1694,14 +1694,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginEvent(uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+        public readonly unsafe void BeginEvent(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEvent<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+        public readonly void BeginEvent<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
@@ -1810,14 +1810,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
@@ -1827,7 +1827,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -1837,7 +1837,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -1850,7 +1850,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1860,7 +1860,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1873,7 +1873,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1886,7 +1886,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1902,7 +1902,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1912,7 +1912,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1925,7 +1925,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1938,7 +1938,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1954,7 +1954,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1967,7 +1967,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1983,7 +1983,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1999,7 +1999,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2018,14 +2018,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)@this->LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
@@ -2035,7 +2035,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -2045,7 +2045,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -2058,7 +2058,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2068,7 +2068,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2081,7 +2081,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2094,7 +2094,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2110,7 +2110,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2120,7 +2120,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2133,7 +2133,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2146,7 +2146,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2162,7 +2162,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2175,7 +2175,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2191,7 +2191,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2207,7 +2207,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2349,14 +2349,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
+        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[66])(@this, Count, pParams, pModes);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
+        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateMode pModes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -2366,7 +2366,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
+        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -2376,7 +2376,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void WriteBufferImmediate(uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
+        public readonly void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateMode pModes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -2406,14 +2406,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, RenderPassRenderTargetDesc*, RenderPassDepthStencilDesc*, RenderPassFlags, void>)@this->LpVtbl[68])(@this, NumRenderTargets, pRenderTargets, pDepthStencil, Flags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(FlowDirection.In)] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RenderPassDepthStencilDesc* pDepthStencilPtr = &pDepthStencil)
@@ -2423,7 +2423,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(FlowDirection.In)] in RenderPassRenderTargetDesc pRenderTargets, [Flow(FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
@@ -2433,7 +2433,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginRenderPass(uint NumRenderTargets, [Flow(FlowDirection.In)] in RenderPassRenderTargetDesc pRenderTargets, [Flow(FlowDirection.In)] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+        public readonly void BeginRenderPass(uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
@@ -2453,14 +2453,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void InitializeMetaCommand(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
+        public readonly unsafe void InitializeMetaCommand(ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommand, pInitializationParametersData, InitializationParametersDataSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void InitializeMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+        public readonly unsafe void InitializeMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
@@ -2470,7 +2470,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void InitializeMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
+        public readonly unsafe void InitializeMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2480,7 +2480,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void InitializeMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+        public readonly void InitializeMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2493,14 +2493,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteMetaCommand(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
+        public readonly unsafe void ExecuteMetaCommand(ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommand, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+        public readonly unsafe void ExecuteMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
@@ -2510,7 +2510,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
+        public readonly unsafe void ExecuteMetaCommand(ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2520,7 +2520,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+        public readonly void ExecuteMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2533,14 +2533,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
+        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, BuildRaytracingAccelerationStructureDesc*, uint, RaytracingAccelerationStructurePostbuildInfoDesc*, void>)@this->LpVtbl[72])(@this, pDesc, NumPostbuildInfoDescs, pPostbuildInfoDescs);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescsPtr = &pPostbuildInfoDescs)
@@ -2550,7 +2550,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(FlowDirection.In)] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
+        public readonly unsafe void BuildRaytracingAccelerationStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
@@ -2560,7 +2560,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BuildRaytracingAccelerationStructure([Flow(FlowDirection.In)] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+        public readonly void BuildRaytracingAccelerationStructure([Flow(Silk.NET.Core.Native.FlowDirection.In)] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
@@ -2573,14 +2573,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(FlowDirection.In)] ulong* pSourceAccelerationStructureData)
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pSourceAccelerationStructureData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, RaytracingAccelerationStructurePostbuildInfoDesc*, uint, ulong*, void>)@this->LpVtbl[73])(@this, pDesc, NumSourceAccelerationStructures, pSourceAccelerationStructureData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(FlowDirection.In)] in ulong pSourceAccelerationStructureData)
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pSourceAccelerationStructureData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ulong* pSourceAccelerationStructureDataPtr = &pSourceAccelerationStructureData)
@@ -2590,7 +2590,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(FlowDirection.In)] ulong* pSourceAccelerationStructureData)
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pSourceAccelerationStructureData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
@@ -2600,7 +2600,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(FlowDirection.In)] in ulong pSourceAccelerationStructureData)
+        public readonly void EmitRaytracingAccelerationStructurePostbuildInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ulong pSourceAccelerationStructureData)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
@@ -2637,14 +2637,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DispatchRays([Flow(FlowDirection.In)] DispatchRaysDesc* pDesc)
+        public readonly unsafe void DispatchRays([Flow(Silk.NET.Core.Native.FlowDirection.In)] DispatchRaysDesc* pDesc)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, DispatchRaysDesc*, void>)@this->LpVtbl[76])(@this, pDesc);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DispatchRays([Flow(FlowDirection.In)] in DispatchRaysDesc pDesc)
+        public readonly void DispatchRays([Flow(Silk.NET.Core.Native.FlowDirection.In)] in DispatchRaysDesc pDesc)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DispatchRaysDesc* pDescPtr = &pDesc)
@@ -2654,14 +2654,14 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetShadingRate(ShadingRate baseShadingRate, [Flow(FlowDirection.In)] ShadingRateCombiner* combiners)
+        public readonly unsafe void RSSetShadingRate(ShadingRate baseShadingRate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateCombiner* combiners)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ShadingRate, ShadingRateCombiner*, void>)@this->LpVtbl[77])(@this, baseShadingRate, combiners);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetShadingRate(ShadingRate baseShadingRate, [Flow(FlowDirection.In)] in ShadingRateCombiner combiners)
+        public readonly void RSSetShadingRate(ShadingRate baseShadingRate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShadingRateCombiner combiners)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ShadingRateCombiner* combinersPtr = &combiners)
@@ -2697,7 +2697,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2705,7 +2705,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2802,7 +2802,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2810,7 +2810,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2818,7 +2818,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2826,7 +2826,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2834,7 +2834,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2842,7 +2842,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2850,7 +2850,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2858,7 +2858,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2866,7 +2866,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2874,7 +2874,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2882,7 +2882,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2890,7 +2890,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2938,7 +2938,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescriptorHeaps<TI0>(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
+        public readonly void SetDescriptorHeaps<TI0>(uint NumDescriptorHeaps, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2962,7 +2962,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2970,7 +2970,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2978,7 +2978,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2986,7 +2986,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2994,7 +2994,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3002,7 +3002,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3010,7 +3010,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3018,7 +3018,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3026,7 +3026,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3034,7 +3034,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3146,7 +3146,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3154,7 +3154,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3162,7 +3162,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3170,7 +3170,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3178,7 +3178,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3186,7 +3186,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3194,7 +3194,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3202,7 +3202,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3210,7 +3210,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3218,7 +3218,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly void AtomicCopyBufferUINT<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3226,7 +3226,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3234,7 +3234,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3242,7 +3242,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3250,7 +3250,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void AtomicCopyBufferUINT<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3258,7 +3258,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3266,7 +3266,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1, TI2>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3274,7 +3274,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3282,7 +3282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3290,7 +3290,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3298,7 +3298,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3306,7 +3306,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3314,7 +3314,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3322,7 +3322,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3330,7 +3330,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        public readonly void AtomicCopyBufferUINT64<TI0, TI1>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3338,7 +3338,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3346,7 +3346,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3354,7 +3354,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly unsafe void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3362,7 +3362,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void AtomicCopyBufferUINT64<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3426,7 +3426,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void InitializeMetaCommand<TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+        public readonly unsafe void InitializeMetaCommand<TI0>(ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3434,7 +3434,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void InitializeMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+        public readonly void InitializeMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3442,7 +3442,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteMetaCommand<TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+        public readonly unsafe void ExecuteMetaCommand<TI0>(ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3450,7 +3450,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+        public readonly void ExecuteMetaCommand<T0, TI0>(ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

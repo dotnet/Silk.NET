@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     public static class AtiFragmentShaderOverloads
     {
-        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dst, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());
         }
 
-        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(FlowDirection.In)] FragmentShaderConATI dst, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShaderConATI dst, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());

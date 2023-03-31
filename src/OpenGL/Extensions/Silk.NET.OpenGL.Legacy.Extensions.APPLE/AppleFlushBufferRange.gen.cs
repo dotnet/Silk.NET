@@ -21,13 +21,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_flush_buffer_range";
         [NativeApi(EntryPoint = "glBufferParameteriAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void BufferParameter([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
+        public partial void BufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+        public partial void FlushMappedBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+        public partial void FlushMappedBufferRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
 
         public AppleFlushBufferRange(INativeContext ctx)
             : base(ctx)

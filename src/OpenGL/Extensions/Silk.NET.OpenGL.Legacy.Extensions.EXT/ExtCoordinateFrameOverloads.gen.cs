@@ -16,61 +16,61 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtCoordinateFrameOverloads
     {
-        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> v)
+        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<sbyte> v)
         {
             // SpanOverloader
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void Binormal3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> v)
+        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<sbyte> v)
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());
         }
 
-        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());

@@ -26,87 +26,87 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdOpticalFlowExecuteNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdOpticalFlowExecute([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowExecuteInfoNV* pExecuteInfo);
+        public unsafe partial void CmdOpticalFlowExecute([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowExecuteInfoNV* pExecuteInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdOpticalFlowExecuteNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdOpticalFlowExecute([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowExecuteInfoNV pExecuteInfo);
+        public partial void CmdOpticalFlowExecute([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowExecuteInfoNV pExecuteInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] OpticalFlowSessionNV* pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowSessionNV* pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out OpticalFlowSessionNV pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowSessionNV pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] OpticalFlowSessionNV* pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowSessionNV* pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out OpticalFlowSessionNV pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowSessionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowSessionNV pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] OpticalFlowSessionNV* pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowSessionNV* pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out OpticalFlowSessionNV pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowSessionNV pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] OpticalFlowSessionNV* pSession);
+        public unsafe partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowSessionNV* pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out OpticalFlowSessionNV pSession);
+        public partial Result CreateOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowSessionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowSessionNV pSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyOpticalFlowSessionNV", Convention = CallingConvention.Winapi)]
-        public partial void DestroyOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+        public partial void DestroyOpticalFlowSession([Count(Count = 0)] Device device, [Count(Count = 0)] OpticalFlowSessionNV session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] uint* pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OpticalFlowImageFormatPropertiesNV* pImageFormatProperties);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.OpticalFlowImageFormatPropertiesNV);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceOpticalFlowImageFormatsNV", Convention = CallingConvention.Winapi)]
+        public partial Result GetPhysicalDeviceOpticalFlowImageFormats([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in OpticalFlowImageFormatInfoNV pOpticalFlowImageFormatInfo, [Count(Count = 0)] ref uint pFormatCount, [Count(Parameter = "pFormatCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out OpticalFlowImageFormatPropertiesNV pImageFormatProperties);
 
         public NVOpticalFlow(INativeContext ctx)
             : base(ctx)

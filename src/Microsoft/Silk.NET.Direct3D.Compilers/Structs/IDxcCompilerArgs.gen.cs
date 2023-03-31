@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArguments([Flow(FlowDirection.In)] char** pArguments, uint argCount)
+        public readonly unsafe int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -138,7 +138,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArguments([Flow(FlowDirection.In)] in char* pArguments, uint argCount)
+        public readonly unsafe int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -150,7 +150,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArgumentsUTF8([Flow(FlowDirection.In)] byte** pArguments, uint argCount)
+        public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArgumentsUTF8([Flow(FlowDirection.In)] in byte* pArguments, uint argCount)
+        public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddDefines([Flow(FlowDirection.In)] Define* pDefines, uint defineCount)
+        public readonly unsafe int AddDefines([Flow(Silk.NET.Core.Native.FlowDirection.In)] Define* pDefines, uint defineCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddDefines([Flow(FlowDirection.In)] in Define pDefines, uint defineCount)
+        public readonly int AddDefines([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Define pDefines, uint defineCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddArguments([Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount)
+        public readonly int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -213,7 +213,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddArgumentsUTF8([Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount)
+        public readonly int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader

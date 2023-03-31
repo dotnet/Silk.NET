@@ -16,49 +16,49 @@ namespace Silk.NET.WGL.Extensions.I3D
 {
     public static class I3DImageBufferOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, pEvent, pAddress, in pSize.GetPinnableReference(), count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, pEvent, in pAddress.GetPinnableReference(), pSize, count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] nint* pEvent, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, pEvent, in pAddress.GetPinnableReference(), in pSize.GetPinnableReference(), count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, in pEvent.GetPinnableReference(), pAddress, pSize, count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(FlowDirection.In)] nint* pAddress, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, in pEvent.GetPinnableReference(), pAddress, in pSize.GetPinnableReference(), count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(FlowDirection.In)] uint* pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, in pEvent.GetPinnableReference(), in pAddress.GetPinnableReference(), pSize, count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 AssociateImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pEvent, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.AssociateImageBufferEventsI3D(hDC, in pEvent.GetPinnableReference(), in pAddress.GetPinnableReference(), in pSize.GetPinnableReference(), count);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(FlowDirection.In)] uint count)
+        public static unsafe Silk.NET.Core.Bool32 ReleaseImageBufferEventsI3D(this I3DImageBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> pAddress, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count)
         {
             // SpanOverloader
             return thisApi.ReleaseImageBufferEventsI3D(hDC, in pAddress.GetPinnableReference(), count);

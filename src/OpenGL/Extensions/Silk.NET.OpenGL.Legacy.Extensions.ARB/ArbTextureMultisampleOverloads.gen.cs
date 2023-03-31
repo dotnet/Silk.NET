@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbTextureMultisampleOverloads
     {
-        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
+        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> val)
         {
             // SpanOverloader
             thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
         }
 
-        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
+        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> val)
         {
             // SpanOverloader
             thisApi.GetMultisample(pname, index, out val.GetPinnableReference());

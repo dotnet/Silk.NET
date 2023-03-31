@@ -465,7 +465,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] byte* pDescription)
+    public static unsafe int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] in byte pDescription)
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -497,7 +497,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
+    public static unsafe int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -506,7 +506,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -518,7 +518,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -728,7 +728,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -736,7 +736,7 @@ public unsafe static class D3D12InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -21,16 +21,16 @@ namespace Silk.NET.WGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_render_texture";
         [NativeApi(EntryPoint = "wglBindTexImageARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindTexImage([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int iBuffer);
+        public partial Silk.NET.Core.Bool32 BindTexImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iBuffer);
 
         [NativeApi(EntryPoint = "wglReleaseTexImageARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 ReleaseTexImage([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int iBuffer);
+        public partial Silk.NET.Core.Bool32 ReleaseTexImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iBuffer);
 
         [NativeApi(EntryPoint = "wglSetPbufferAttribARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int* piAttribList);
+        public unsafe partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
         [NativeApi(EntryPoint = "wglSetPbufferAttribARB", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] in int piAttribList);
+        public partial Silk.NET.Core.Bool32 SetPbufferAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribList);
 
         public ArbRenderTexture(INativeContext ctx)
             : base(ctx)

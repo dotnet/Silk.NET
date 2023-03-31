@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
     {
         public const string ExtensionName = "NV_fragment_coverage_to_color";
         [NativeApi(EntryPoint = "glFragmentCoverageColorNV", Convention = CallingConvention.Winapi)]
-        public partial void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
+        public partial void FragmentCoverageColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint color);
 
         public NVFragmentCoverageToColor(INativeContext ctx)
             : base(ctx)

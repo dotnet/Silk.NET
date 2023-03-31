@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
 {
     public static class NVScissorExclusiveOverloads
     {
-        public static unsafe void ScissorExclusiveArray(this NVScissorExclusive thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void ScissorExclusiveArray(this NVScissorExclusive thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.ScissorExclusiveArray(first, count, in v.GetPinnableReference());

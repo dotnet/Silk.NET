@@ -21,66 +21,66 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     {
         public const string ExtensionName = "SGIS_pixel_texture";
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameteriSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameteriSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterivSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTexGenParameterfvSGIS", Convention = CallingConvention.Winapi)]
-        public partial void PixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
-        public unsafe int GetPixelTexGenParameter([Flow(FlowDirection.In)] SGIS pname)
+        public unsafe int GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname)
         {
             // ReturnTypeOverloader
             int ret = default;
@@ -88,7 +88,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
-        public unsafe int GetPixelTexGenParameter([Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname)
+        public unsafe int GetPixelTexGenParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTexGenParameterNameSGIS pname)
         {
             // ReturnTypeOverloader
             int ret = default;

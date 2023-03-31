@@ -193,7 +193,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -415,14 +415,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
+    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ResourceBarrier* pBarriers)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriers);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ResourceBarrier pBarriers)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -432,14 +432,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -449,7 +449,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -459,7 +459,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -563,14 +563,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+    public static unsafe void SetMarker(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -580,14 +580,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
+    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -604,14 +604,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
@@ -621,7 +621,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -631,7 +631,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -644,7 +644,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -654,7 +654,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -667,7 +667,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -680,7 +680,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
+    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -696,14 +696,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[22])(@this, Count, pParams, pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -713,7 +713,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -723,7 +723,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -736,14 +736,14 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)@this->LpVtbl[23])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
@@ -753,7 +753,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -763,7 +763,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -776,7 +776,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -786,7 +786,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -799,7 +799,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -812,7 +812,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
+    public static void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -909,7 +909,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -917,7 +917,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -925,7 +925,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -933,7 +933,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -941,7 +941,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -949,7 +949,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -957,7 +957,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -965,7 +965,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -973,7 +973,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1022,7 +1022,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceBarrier> pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResourceBarrier> pBarriers)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1030,7 +1030,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1038,7 +1038,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1046,7 +1046,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1054,7 +1054,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1062,7 +1062,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12Resource> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1166,7 +1166,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1174,7 +1174,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1182,7 +1182,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1190,7 +1190,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1198,7 +1198,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1206,7 +1206,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1214,7 +1214,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1222,7 +1222,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1230,7 +1230,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static void ProcessFrames<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1238,7 +1238,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1246,7 +1246,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1254,7 +1254,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+    public static unsafe void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1262,7 +1262,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
+    public static void ProcessFrames(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1270,7 +1270,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1278,7 +1278,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1286,7 +1286,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1294,7 +1294,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1302,7 +1302,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1310,7 +1310,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1318,7 +1318,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1326,7 +1326,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1334,7 +1334,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1342,7 +1342,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+    public static void ProcessFrames1<TI0>(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1350,7 +1350,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1358,7 +1358,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1366,7 +1366,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+    public static unsafe void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1374,7 +1374,7 @@ public unsafe static class D3D12VideoProcessCommandList1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
+    public static void ProcessFrames1(this ComPtr<ID3D12VideoProcessCommandList1> thisVtbl, Span<ID3D12VideoProcessor> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessOutputStreamArguments> pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProcessInputStreamArguments1> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

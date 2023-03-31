@@ -24,33 +24,33 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial int GetInstruments();
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
+        public unsafe partial void InstrumentsBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* buffer);
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX", Convention = CallingConvention.Winapi)]
-        public partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out int buffer);
+        public partial void InstrumentsBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int buffer);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX", Convention = CallingConvention.Winapi)]
-        public unsafe partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
+        public unsafe partial int PollInstruments([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* marker_p);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX", Convention = CallingConvention.Winapi)]
-        public partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);
+        public partial int PollInstruments([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int marker_p);
 
         [NativeApi(EntryPoint = "glReadInstrumentsSGIX", Convention = CallingConvention.Winapi)]
-        public partial void ReadInstruments([Flow(FlowDirection.In)] int marker);
+        public partial void ReadInstruments([Flow(Silk.NET.Core.Native.FlowDirection.In)] int marker);
 
         [NativeApi(EntryPoint = "glStartInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial void StartInstruments();
 
         [NativeApi(EntryPoint = "glStopInstrumentsSGIX", Convention = CallingConvention.Winapi)]
-        public partial void StopInstruments([Flow(FlowDirection.In)] int marker);
+        public partial void StopInstruments([Flow(Silk.NET.Core.Native.FlowDirection.In)] int marker);
 
-        public unsafe void InstrumentsBuffer([Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer)
+        public unsafe void InstrumentsBuffer([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> buffer)
         {
             // ImplicitCountSpanOverloader
             InstrumentsBuffer((uint) buffer.Length, out buffer.GetPinnableReference());
         }
 
-        public unsafe int InstrumentsBuffer([Flow(FlowDirection.In)] uint size)
+        public unsafe int InstrumentsBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size)
         {
             // NonKhrReturnTypeOverloader
             InstrumentsBuffer(size, out int silkRet);

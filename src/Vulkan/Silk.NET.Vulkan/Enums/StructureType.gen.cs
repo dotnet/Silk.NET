@@ -1400,6 +1400,12 @@ namespace Silk.NET.Vulkan
         MicromapBuildSizesInfoExt = 1000396008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_OPACITY_MICROMAP_EXT")]
         AccelerationStructureTrianglesOpacityMicromapExt = 1000396009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_FEATURES_NV")]
+        PhysicalDeviceDisplacementMicromapFeaturesNV = 1000397000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_PROPERTIES_NV")]
+        PhysicalDeviceDisplacementMicromapPropertiesNV = 1000397001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_DISPLACEMENT_MICROMAP_NV")]
+        AccelerationStructureTrianglesDisplacementMicromapNV = 1000397002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_FEATURES_HUAWEI")]
         PhysicalDeviceClusterCullingShaderFeaturesHuawei = 1000404000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_PROPERTIES_HUAWEI")]

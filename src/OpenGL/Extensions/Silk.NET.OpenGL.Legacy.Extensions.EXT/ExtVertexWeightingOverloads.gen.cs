@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtVertexWeightingOverloads
     {
-        public static unsafe void VertexWeight(this ExtVertexWeighting thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<float> weight)
+        public static unsafe void VertexWeight(this ExtVertexWeighting thisApi, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> weight)
         {
             // SpanOverloader
             thisApi.VertexWeight(in weight.GetPinnableReference());

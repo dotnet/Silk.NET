@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_compute_shader";
         [NativeApi(EntryPoint = "glDispatchCompute", Convention = CallingConvention.Winapi)]
-        public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
+        public partial void DispatchCompute([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_z);
 
         [NativeApi(EntryPoint = "glDispatchComputeIndirect", Convention = CallingConvention.Winapi)]
-        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
+        public partial void DispatchComputeIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint indirect);
 
         public ArbComputeShader(INativeContext ctx)
             : base(ctx)

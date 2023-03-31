@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrVideoEncodeQueueOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdEncodeVideo(this KhrVideoEncodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoEncodeInfoKHR> pEncodeInfo)
+        public static unsafe void CmdEncodeVideo(this KhrVideoEncodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoEncodeInfoKHR> pEncodeInfo)
         {
             // SpanOverloader
             thisApi.CmdEncodeVideo(commandBuffer, in pEncodeInfo.GetPinnableReference());

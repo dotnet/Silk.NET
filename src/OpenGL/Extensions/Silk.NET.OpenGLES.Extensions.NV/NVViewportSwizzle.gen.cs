@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_viewport_swizzle";
         [NativeApi(EntryPoint = "glViewportSwizzleNV", Convention = CallingConvention.Winapi)]
-        public partial void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
+        public partial void ViewportSwizzle([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV swizzlex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV swizzley, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV swizzlez, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV swizzlew);
 
         public NVViewportSwizzle(INativeContext ctx)
             : base(ctx)

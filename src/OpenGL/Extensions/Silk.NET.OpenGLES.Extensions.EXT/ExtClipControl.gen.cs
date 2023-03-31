@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_clip_control";
         [NativeApi(EntryPoint = "glClipControlEXT", Convention = CallingConvention.Winapi)]
-        public partial void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
+        public partial void ClipControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT depth);
 
         public ExtClipControl(INativeContext ctx)
             : base(ctx)

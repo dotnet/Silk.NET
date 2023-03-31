@@ -26,11 +26,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetWinrtDisplayNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+        public unsafe partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetWinrtDisplayNV", Convention = CallingConvention.Winapi)]
-        public partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+        public partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DisplayKHR pDisplay);
 
         public NVAcquireWinrtDisplay(INativeContext ctx)
             : base(ctx)

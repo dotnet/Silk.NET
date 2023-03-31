@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
     {
         public const string ExtensionName = "SUN_mesh_array";
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN", Convention = CallingConvention.Winapi)]
-        public partial void DrawMeshArrays([Flow(FlowDirection.In)] SUN mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
+        public partial void DrawMeshArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] SUN mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width);
 
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN", Convention = CallingConvention.Winapi)]
-        public partial void DrawMeshArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
+        public partial void DrawMeshArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width);
 
         public SunMeshArray(INativeContext ctx)
             : base(ctx)

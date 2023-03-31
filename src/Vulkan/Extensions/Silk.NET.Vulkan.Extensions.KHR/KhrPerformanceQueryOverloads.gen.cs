@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrPerformanceQueryOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result AcquireProfilingLock(this KhrPerformanceQuery thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AcquireProfilingLockInfoKHR> pInfo)
+        public static unsafe Result AcquireProfilingLock(this KhrPerformanceQuery thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AcquireProfilingLockInfoKHR> pInfo)
         {
             // SpanOverloader
             return thisApi.AcquireProfilingLock(device, in pInfo.GetPinnableReference());
@@ -73,21 +73,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<uint> pNumPasses)
+        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> pNumPasses)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(physicalDevice, pPerformanceQueryCreateInfo, out pNumPasses.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] uint* pNumPasses)
+        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pNumPasses)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(physicalDevice, in pPerformanceQueryCreateInfo.GetPinnableReference(), pNumPasses);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<uint> pNumPasses)
+        public static unsafe void GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> pNumPasses)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(physicalDevice, in pPerformanceQueryCreateInfo.GetPinnableReference(), out pNumPasses.GetPinnableReference());

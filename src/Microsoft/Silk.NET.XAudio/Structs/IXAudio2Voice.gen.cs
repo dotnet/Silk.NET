@@ -56,7 +56,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputVoices([Flow(FlowDirection.In)] VoiceSends* pSendList)
+        public readonly unsafe int SetOutputVoices([Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -65,7 +65,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputVoices([Flow(FlowDirection.In)] in VoiceSends pSendList)
+        public readonly int SetOutputVoices([Flow(Silk.NET.Core.Native.FlowDirection.In)] in VoiceSends pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -77,7 +77,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEffectChain([Flow(FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int SetEffectChain([Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -86,7 +86,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetEffectChain([Flow(FlowDirection.In)] in EffectChain pEffectChain)
+        public readonly int SetEffectChain([Flow(Silk.NET.Core.Native.FlowDirection.In)] in EffectChain pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -133,7 +133,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEffectParameters(uint EffectIndex, [Flow(FlowDirection.In)] void* pParameters, uint ParametersByteSize, uint OperationSet)
+        public readonly unsafe int SetEffectParameters(uint EffectIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParameters, uint ParametersByteSize, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -142,7 +142,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetEffectParameters<T0>(uint EffectIndex, [Flow(FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+        public readonly int SetEffectParameters<T0>(uint EffectIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -175,7 +175,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFilterParameters([Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetFilterParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -184,7 +184,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFilterParameters([Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
+        public readonly int SetFilterParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -213,7 +213,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -222,7 +222,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -246,7 +246,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
+        public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -327,7 +327,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetChannelVolumes(uint Channels, [Flow(FlowDirection.In)] float* pVolumes, uint OperationSet)
+        public readonly unsafe int SetChannelVolumes(uint Channels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetChannelVolumes(uint Channels, [Flow(FlowDirection.In)] in float pVolumes, uint OperationSet)
+        public readonly int SetChannelVolumes(uint Channels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -365,7 +365,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -374,7 +374,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -386,7 +386,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -398,7 +398,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
+        public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -460,7 +460,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        public readonly unsafe int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FilterParameters* pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -468,7 +468,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        public readonly int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -492,7 +492,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        public readonly unsafe int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -500,7 +500,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        public readonly int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

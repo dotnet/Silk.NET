@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_conservative_raster_pre_snap_triangles";
         [NativeApi(EntryPoint = "glConservativeRasterParameteriNV", Convention = CallingConvention.Winapi)]
-        public partial void ConservativeRasterParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param);
+        public partial void ConservativeRasterParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         public NVConservativeRasterPreSnapTriangles(INativeContext ctx)
             : base(ctx)

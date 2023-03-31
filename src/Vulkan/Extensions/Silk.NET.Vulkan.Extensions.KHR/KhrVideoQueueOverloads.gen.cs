@@ -17,140 +17,140 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrVideoQueueOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result BindVideoSessionMemory(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos)
+        public static unsafe Result BindVideoSessionMemory(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos)
         {
             // SpanOverloader
             return thisApi.BindVideoSessionMemory(device, videoSession, bindSessionMemoryInfoCount, in pBindSessionMemoryInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBeginVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoBeginCodingInfoKHR> pBeginInfo)
+        public static unsafe void CmdBeginVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoBeginCodingInfoKHR> pBeginInfo)
         {
             // SpanOverloader
             thisApi.CmdBeginVideoCoding(commandBuffer, in pBeginInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdControlVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoCodingControlInfoKHR> pCodingControlInfo)
+        public static unsafe void CmdControlVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoCodingControlInfoKHR> pCodingControlInfo)
         {
             // SpanOverloader
             thisApi.CmdControlVideoCoding(commandBuffer, in pCodingControlInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdEndVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoEndCodingInfoKHR> pEndCodingInfo)
+        public static unsafe void CmdEndVideoCoding(this KhrVideoQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoEndCodingInfoKHR> pEndCodingInfo)
         {
             // SpanOverloader
             thisApi.CmdEndVideoCoding(commandBuffer, in pEndCodingInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, pCreateInfo, pAllocator, out pVideoSession.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionKHR* pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, pCreateInfo, in pAllocator.GetPinnableReference(), pVideoSession);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pVideoSession.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionKHR* pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, in pCreateInfo.GetPinnableReference(), pAllocator, pVideoSession);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pVideoSession.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionKHR* pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pVideoSession);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
+        public static unsafe Result CreateVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionKHR> pVideoSession)
         {
             // SpanOverloader
             return thisApi.CreateVideoSession(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pVideoSession.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, pCreateInfo, pAllocator, out pVideoSessionParameters.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, pCreateInfo, in pAllocator.GetPinnableReference(), pVideoSessionParameters);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pVideoSessionParameters.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, in pCreateInfo.GetPinnableReference(), pAllocator, pVideoSessionParameters);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pVideoSessionParameters.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pVideoSessionParameters);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
+        public static unsafe Result CreateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionParametersCreateInfoKHR> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionParametersKHR> pVideoSessionParameters)
         {
             // SpanOverloader
             return thisApi.CreateVideoSessionParameters(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pVideoSessionParameters.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        public static unsafe void DestroyVideoSession(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyVideoSession(device, videoSession, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        public static unsafe void DestroyVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyVideoSessionParameters(device, videoSessionParameters, in pAllocator.GetPinnableReference());
@@ -158,14 +158,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileInfoKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProfileInfoKHR* pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, pVideoProfile, out pCapabilities.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, in pVideoProfile.GetPinnableReference(), pCapabilities);
@@ -173,7 +173,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
+        public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoProfileInfoKHR> pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoCapabilities(physicalDevice, in pVideoProfile.GetPinnableReference(), out pCapabilities.GetPinnableReference());
@@ -181,14 +181,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, pVideoFormatInfo, pVideoFormatPropertyCount, out pVideoFormatProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, pVideoFormatInfo, ref pVideoFormatPropertyCount.GetPinnableReference(), pVideoFormatProperties);
@@ -196,14 +196,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, pVideoFormatInfo, ref pVideoFormatPropertyCount.GetPinnableReference(), out pVideoFormatProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, in pVideoFormatInfo.GetPinnableReference(), pVideoFormatPropertyCount, pVideoFormatProperties);
@@ -211,14 +211,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, in pVideoFormatInfo.GetPinnableReference(), pVideoFormatPropertyCount, out pVideoFormatProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, in pVideoFormatInfo.GetPinnableReference(), ref pVideoFormatPropertyCount.GetPinnableReference(), pVideoFormatProperties);
@@ -226,7 +226,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
-        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
+        public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceVideoFormatProperties(physicalDevice, in pVideoFormatInfo.GetPinnableReference(), ref pVideoFormatPropertyCount.GetPinnableReference(), out pVideoFormatProperties.GetPinnableReference());
@@ -234,14 +234,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
         {
             // SpanOverloader
             return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, pMemoryRequirementsCount, out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoSessionMemoryRequirementsKHR* pMemoryRequirements)
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionMemoryRequirementsKHR* pMemoryRequirements)
         {
             // SpanOverloader
             return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pMemoryRequirementsCount.GetPinnableReference(), pMemoryRequirements);
@@ -249,14 +249,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.VideoSessionMemoryRequirementsKhr);")]
-        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
+        public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pMemoryRequirementsCount, [Count(Parameter = "pMemoryRequirementsCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VideoSessionMemoryRequirementsKHR> pMemoryRequirements)
         {
             // SpanOverloader
             return thisApi.GetVideoSessionMemoryRequirements(device, videoSession, ref pMemoryRequirementsCount.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoSessionParametersUpdateInfoKHR> pUpdateInfo)
+        public static unsafe Result UpdateVideoSessionParameters(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VideoSessionParametersUpdateInfoKHR> pUpdateInfo)
         {
             // SpanOverloader
             return thisApi.UpdateVideoSessionParameters(device, videoSessionParameters, in pUpdateInfo.GetPinnableReference());

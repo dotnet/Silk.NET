@@ -25,14 +25,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
-        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
+        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData(queue, pCheckpointDataCount, out pCheckpointData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData)
+        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CheckpointDataNV* pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData(queue, ref pCheckpointDataCount.GetPinnableReference(), pCheckpointData);
@@ -40,7 +40,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
-        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
+        public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData(queue, ref pCheckpointDataCount.GetPinnableReference(), out pCheckpointData.GetPinnableReference());

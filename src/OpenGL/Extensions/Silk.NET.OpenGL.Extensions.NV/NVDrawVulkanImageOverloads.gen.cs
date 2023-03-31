@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
 {
     public static class NVDrawVulkanImageOverloads
     {
-        public static unsafe nint GetVkProcAddr(this NVDrawVulkanImage thisApi, [Count(Computed = "name"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+        public static unsafe nint GetVkProcAddr(this NVDrawVulkanImage thisApi, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
             return thisApi.GetVkProcAddr(in name.GetPinnableReference());

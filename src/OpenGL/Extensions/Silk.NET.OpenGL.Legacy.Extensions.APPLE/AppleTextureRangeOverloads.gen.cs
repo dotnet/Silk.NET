@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     public static class AppleTextureRangeOverloads
     {
-        public static unsafe void TextureRange<T0>(this AppleTextureRange thisApi, [Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        public static unsafe void TextureRange<T0>(this AppleTextureRange thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.TextureRange(target, length, in pointer.GetPinnableReference());

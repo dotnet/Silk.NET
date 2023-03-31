@@ -21,43 +21,43 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_swap_group";
         [NativeApi(EntryPoint = "wglBindSwapBarrierNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindSwapBarrier([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint barrier);
+        public partial Silk.NET.Core.Bool32 BindSwapBarrier([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint barrier);
 
         [NativeApi(EntryPoint = "wglJoinSwapGroupNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 JoinSwapGroup([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint group);
+        public partial Silk.NET.Core.Bool32 JoinSwapGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group);
 
         [NativeApi(EntryPoint = "wglQueryFrameCountNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryFrameCount([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* count);
+        public unsafe partial Silk.NET.Core.Bool32 QueryFrameCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* count);
 
         [NativeApi(EntryPoint = "wglQueryFrameCountNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryFrameCount([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint count);
+        public partial Silk.NET.Core.Bool32 QueryFrameCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint count);
 
         [NativeApi(EntryPoint = "wglQueryMaxSwapGroupsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* maxGroups, [Flow(FlowDirection.Out)] uint* maxBarriers);
+        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxBarriers);
 
         [NativeApi(EntryPoint = "wglQueryMaxSwapGroupsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* maxGroups, [Flow(FlowDirection.Out)] out uint maxBarriers);
+        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint maxBarriers);
 
         [NativeApi(EntryPoint = "wglQueryMaxSwapGroupsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint maxGroups, [Flow(FlowDirection.Out)] uint* maxBarriers);
+        public unsafe partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxBarriers);
 
         [NativeApi(EntryPoint = "wglQueryMaxSwapGroupsNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint maxGroups, [Flow(FlowDirection.Out)] out uint maxBarriers);
+        public partial Silk.NET.Core.Bool32 QueryMaxSwapGroups([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint maxBarriers);
 
         [NativeApi(EntryPoint = "wglQuerySwapGroupNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* group, [Flow(FlowDirection.Out)] uint* barrier);
+        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* barrier);
 
         [NativeApi(EntryPoint = "wglQuerySwapGroupNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* group, [Flow(FlowDirection.Out)] out uint barrier);
+        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint barrier);
 
         [NativeApi(EntryPoint = "wglQuerySwapGroupNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint group, [Flow(FlowDirection.Out)] uint* barrier);
+        public unsafe partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* barrier);
 
         [NativeApi(EntryPoint = "wglQuerySwapGroupNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint group, [Flow(FlowDirection.Out)] out uint barrier);
+        public partial Silk.NET.Core.Bool32 QuerySwapGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint barrier);
 
         [NativeApi(EntryPoint = "wglResetFrameCountNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 ResetFrameCount([Flow(FlowDirection.In)] nint hDC);
+        public partial Silk.NET.Core.Bool32 ResetFrameCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC);
 
         public NVSwapGroup(INativeContext ctx)
             : base(ctx)

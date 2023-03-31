@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_compute_variable_group_size";
         [NativeApi(EntryPoint = "glDispatchComputeGroupSizeARB", Convention = CallingConvention.Winapi)]
-        public partial void DispatchComputeGroupSize([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z, [Flow(FlowDirection.In)] uint group_size_x, [Flow(FlowDirection.In)] uint group_size_y, [Flow(FlowDirection.In)] uint group_size_z);
+        public partial void DispatchComputeGroupSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_groups_z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group_size_x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group_size_y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group_size_z);
 
         public ArbComputeVariableGroupSize(INativeContext ctx)
             : base(ctx)

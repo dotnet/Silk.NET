@@ -18,7 +18,7 @@ namespace Silk.NET.DirectStorage
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1148, Column 16 in dstorage.h")]
-        public static unsafe int SetConfiguration(this DStorage thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Configuration> configuration)
+        public static unsafe int SetConfiguration(this DStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Configuration> configuration)
         {
             // SpanOverloader
             return thisApi.SetConfiguration(in configuration.GetPinnableReference());

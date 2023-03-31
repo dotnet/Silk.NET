@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_stencil_two_side";
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT", Convention = CallingConvention.Winapi)]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
+        public partial void ActiveStencilFace([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT face);
 
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT", Convention = CallingConvention.Winapi)]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] TriangleFace face);
+        public partial void ActiveStencilFace([Flow(Silk.NET.Core.Native.FlowDirection.In)] TriangleFace face);
 
         public ExtStencilTwoSide(INativeContext ctx)
             : base(ctx)

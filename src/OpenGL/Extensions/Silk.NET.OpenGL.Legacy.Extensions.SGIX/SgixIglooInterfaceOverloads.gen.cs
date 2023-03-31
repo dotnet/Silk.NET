@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     public static class SgixIglooInterfaceOverloads
     {
-        public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
+        public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.IglooInterface(pname, in @params.GetPinnableReference());

@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGLES.Extensions.NV
 {
     public static class NVShadingRateImageOverloads
     {
-        public static unsafe void GetShadingRateImagePalette(this NVShadingRateImage thisApi, [Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry, [Count(Count = 1), Flow(FlowDirection.Out)] Span<NV> rate)
+        public static unsafe void GetShadingRateImagePalette(this NVShadingRateImage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint entry, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<NV> rate)
         {
             // SpanOverloader
             thisApi.GetShadingRateImagePalette(viewport, entry, out rate.GetPinnableReference());
         }
 
-        public static unsafe void GetShadingRateSampleLocation(this NVShadingRateImage thisApi, [Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] Span<int> location)
+        public static unsafe void GetShadingRateSampleLocation(this NVShadingRateImage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV rate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> location)
         {
             // SpanOverloader
             thisApi.GetShadingRateSampleLocation(rate, samples, index, out location.GetPinnableReference());
         }
 
-        public static unsafe void ShadingRateImagePalette(this NVShadingRateImage thisApi, [Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<NV> rates)
+        public static unsafe void ShadingRateImagePalette(this NVShadingRateImage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NV> rates)
         {
             // SpanOverloader
             thisApi.ShadingRateImagePalette(viewport, first, count, in rates.GetPinnableReference());
         }
 
-        public static unsafe void ShadingRateSampleOrderCustom(this NVShadingRateImage thisApi, [Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ReadOnlySpan<int> locations)
+        public static unsafe void ShadingRateSampleOrderCustom(this NVShadingRateImage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV rate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> locations)
         {
             // SpanOverloader
             thisApi.ShadingRateSampleOrderCustom(rate, samples, in locations.GetPinnableReference());

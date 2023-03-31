@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
-        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
+        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceCooperativeMatrixProperties(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] CooperativeMatrixPropertiesNV* pProperties)
+        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CooperativeMatrixPropertiesNV* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceCooperativeMatrixProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.CooperativeMatrixPropertiesNV);")]
-        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
+        public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceCooperativeMatrixProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());

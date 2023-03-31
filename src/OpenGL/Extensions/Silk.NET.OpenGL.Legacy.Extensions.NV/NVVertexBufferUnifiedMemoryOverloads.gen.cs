@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVVertexBufferUnifiedMemoryOverloads
     {
-        public static unsafe void GetIntegerui64(this NVVertexBufferUnifiedMemory thisApi, [Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] Span<ulong> result)
+        public static unsafe void GetIntegerui64(this NVVertexBufferUnifiedMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ulong> result)
         {
             // SpanOverloader
             thisApi.GetIntegerui64(value, index, out result.GetPinnableReference());

@@ -22,44 +22,44 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_multi_draw";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawInfoEXT* pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+        public unsafe partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MultiDrawInfoEXT* pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawInfoEXT pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+        public partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MultiDrawInfoEXT pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
+        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* pVertexOffset);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
+        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int pVertexOffset);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
+        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* pVertexOffset);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
+        public partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int pVertexOffset);
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawInfoEXT> pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride)
+        public unsafe void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MultiDrawInfoEXT> pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride)
         {
             // ImplicitCountSpanOverloader
             CmdDrawMult(commandBuffer, (uint) pVertexInfo.Length, in pVertexInfo.GetPinnableReference(), instanceCount, firstInstance, stride);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset)
+        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* pVertexOffset)
         {
             // ImplicitCountSpanOverloader
             CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, pVertexOffset);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset)
+        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int pVertexOffset)
         {
             // ImplicitCountSpanOverloader
             CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, in pVertexOffset);

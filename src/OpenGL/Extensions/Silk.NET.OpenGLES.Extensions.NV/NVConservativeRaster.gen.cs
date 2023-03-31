@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_conservative_raster";
         [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV", Convention = CallingConvention.Winapi)]
-        public partial void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
+        public partial void SubpixelPrecisionBias([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint xbits, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ybits);
 
         public NVConservativeRaster(INativeContext ctx)
             : base(ctx)

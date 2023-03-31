@@ -85,7 +85,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] char* pFilename, IDxcBlob** ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pFilename, IDxcBlob** ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] char* pFilename, ref IDxcBlob* ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pFilename, ref IDxcBlob* ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] in char pFilename, IDxcBlob** ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pFilename, IDxcBlob** ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] in char pFilename, ref IDxcBlob* ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pFilename, ref IDxcBlob* ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,7 +183,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] char* pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static unsafe int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -191,7 +191,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFilename, IDxcBlob** ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pFilename, IDxcBlob** ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -199,7 +199,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] in char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -207,7 +207,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFilename, ref IDxcBlob* ppIncludeSource)
+    public static unsafe int LoadSource(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pFilename, ref IDxcBlob* ppIncludeSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -215,7 +215,7 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static int LoadSource<TI0>(this ComPtr<IDxcIncludeHandler> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

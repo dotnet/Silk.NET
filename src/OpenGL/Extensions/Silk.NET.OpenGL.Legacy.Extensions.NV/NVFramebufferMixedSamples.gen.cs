@@ -21,24 +21,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_framebuffer_mixed_samples";
         [NativeApi(EntryPoint = "glCoverageModulationNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
+        public partial void CoverageModulation([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV components);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float v);
+        public partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out float v);
+        public partial void GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float v);
 
         [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
-        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        public partial void RasterSamples([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool fixedsamplelocations);
 
-        public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
             CoverageModulationTable((uint) v.Length, in v.GetPinnableReference());
@@ -53,7 +53,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public unsafe float GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize)
+        public unsafe float GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize)
         {
             // NonKhrReturnTypeOverloader
             GetCoverageModulationTable(bufSize, out float silkRet);

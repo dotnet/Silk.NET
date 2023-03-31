@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     public static class AppleVertexArrayRangeOverloads
     {
-        public static unsafe void FlushVertexArrayRange<T0>(this AppleVertexArrayRange thisApi, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        public static unsafe void FlushVertexArrayRange<T0>(this AppleVertexArrayRange thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.FlushVertexArrayRange(length, out pointer.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayRange<T0>(this AppleVertexArrayRange thisApi, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        public static unsafe void VertexArrayRange<T0>(this AppleVertexArrayRange thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.VertexArrayRange(length, out pointer.GetPinnableReference());

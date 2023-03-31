@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbDrawBuffersOverloads
     {
-        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)
+        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ARB> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
         }
 
-        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
+        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
         {
             // SpanOverloader
             thisApi.DrawBuffers(n, in bufs.GetPinnableReference());

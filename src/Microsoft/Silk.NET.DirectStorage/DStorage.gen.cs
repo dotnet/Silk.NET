@@ -35,12 +35,12 @@ namespace Silk.NET.DirectStorage
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1148, Column 16 in dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.StdCall)]
-        public unsafe partial int SetConfiguration([Flow(FlowDirection.In)] Configuration* configuration);
+        public unsafe partial int SetConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] Configuration* configuration);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1148, Column 16 in dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.StdCall)]
-        public partial int SetConfiguration([Flow(FlowDirection.In)] in Configuration configuration);
+        public partial int SetConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] in Configuration configuration);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1158, Column 16 in dstorage.h")]

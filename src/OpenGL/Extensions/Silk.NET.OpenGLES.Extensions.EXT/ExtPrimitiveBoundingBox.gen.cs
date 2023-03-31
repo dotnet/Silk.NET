@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_primitive_bounding_box";
         [NativeApi(EntryPoint = "glPrimitiveBoundingBoxEXT", Convention = CallingConvention.Winapi)]
-        public partial void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
+        public partial void PrimitiveBoundingBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] float minX, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float minY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float minZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float minW, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float maxX, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float maxY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float maxZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float maxW);
 
         public ExtPrimitiveBoundingBox(INativeContext ctx)
             : base(ctx)

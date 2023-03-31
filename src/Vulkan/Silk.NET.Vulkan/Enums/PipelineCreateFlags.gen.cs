@@ -105,6 +105,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateRayTracingOpacityMicromapBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
         PipelineCreateRayTracingOpacityMicromapBitExt = 16777216,
+        [Obsolete("Deprecated in favour of \"CreateRayTracingDisplacementMicromapBitNV\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV")]
+        PipelineCreateRayTracingDisplacementMicromapBitNV = 268435456,
         [Obsolete("Deprecated in favour of \"CreateNoProtectedAccessBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
         PipelineCreateNoProtectedAccessBitExt = 134217728,
@@ -186,6 +189,8 @@ namespace Silk.NET.Vulkan
         CreateDepthStencilAttachmentFeedbackLoopBitExt = 67108864,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
         CreateRayTracingOpacityMicromapBitExt = 16777216,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV")]
+        CreateRayTracingDisplacementMicromapBitNV = 268435456,
         [NativeName("Name", "VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
         CreateNoProtectedAccessBitExt = 134217728,
         [NativeName("Name", "VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]

@@ -21,37 +21,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_cull_vertex";
         [NativeApi(EntryPoint = "glCullParameterdvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glCullParameterdvEXT", Convention = CallingConvention.Winapi)]
-        public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
+        public partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out double @params);
 
         [NativeApi(EntryPoint = "glCullParameterdvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glCullParameterdvEXT", Convention = CallingConvention.Winapi)]
-        public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
+        public partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out double @params);
 
         [NativeApi(EntryPoint = "glCullParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glCullParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
+        public partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glCullParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glCullParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
+        public partial void CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
-        public unsafe double CullParameter([Flow(FlowDirection.In)] EXT pname)
+        public unsafe double CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname)
         {
             // NonKhrReturnTypeOverloader
             CullParameter(pname, out double silkRet);
             return silkRet;
         }
 
-        public unsafe double CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname)
+        public unsafe double CullParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CullParameterEXT pname)
         {
             // NonKhrReturnTypeOverloader
             CullParameter(pname, out double silkRet);

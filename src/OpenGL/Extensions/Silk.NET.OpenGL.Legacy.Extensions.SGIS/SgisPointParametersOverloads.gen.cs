@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     public static class SgisPointParametersOverloads
     {
-        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());
