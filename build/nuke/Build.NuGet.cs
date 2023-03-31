@@ -20,7 +20,7 @@ partial class Build
     [Parameter("NuGet password")] readonly string NugetPassword;
     static string PackageDirectory => RootDirectory / "build" / "output_packages";
 
-    static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.exe")
+    static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
         .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
 
     Target PushToNuGet => CommonTarget
