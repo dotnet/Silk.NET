@@ -19,57 +19,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public static unsafe void DrawElementsBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElementsBaseVertex(mode, start, end, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElementsBaseVertex(mode, start, end, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawRangeElementsBaseVertex<T0>(this ArbDrawElementsBaseVertex thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged

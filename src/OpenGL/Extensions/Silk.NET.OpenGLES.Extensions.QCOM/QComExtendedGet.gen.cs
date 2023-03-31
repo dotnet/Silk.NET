@@ -128,6 +128,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetTexSubImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
+        public partial void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glExtGetTexturesQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetTextures([Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* textures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int maxTextures, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numTextures);
 

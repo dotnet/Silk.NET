@@ -478,13 +478,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttrib4N(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribPointer<T0>(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.VertexAttribPointer(index, size, type, normalized, stride, pointerSpp);
-        }
-
     }
 }
 

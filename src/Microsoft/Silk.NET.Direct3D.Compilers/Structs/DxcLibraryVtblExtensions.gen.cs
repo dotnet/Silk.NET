@@ -964,8 +964,7 @@ public unsafe static class DxcLibraryVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pTextSpp = pText)
-            return @this->CreateBlobWithEncodingOnMalloc(pTextSpp, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+        return @this->CreateBlobWithEncodingOnMalloc(pText, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>

@@ -234,6 +234,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -241,6 +253,21 @@ namespace Silk.NET.DXGI
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                }
             }
             return ret;
         }
@@ -258,6 +285,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -267,6 +309,24 @@ namespace Silk.NET.DXGI
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
+                {
+                    fixed (void* pDataPtr = &pData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                    }
                 }
             }
             return ret;
@@ -1073,6 +1133,18 @@ namespace Silk.NET.DXGI
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetHDRMetaData<T0>(Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pMetaDataPtr = &pMetaData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
+            }
             return ret;
         }
 

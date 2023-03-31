@@ -38,8 +38,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         public static unsafe nint CreateFromDX9MediaSurface(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* resource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sharedHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint plane, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* resourceSpp = resource)
-                return thisApi.CreateFromDX9MediaSurface(context, flags, resourceSpp, sharedHandle, plane, errcode_ret);
+            return thisApi.CreateFromDX9MediaSurface(context, flags, resource, sharedHandle, plane, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -143,15 +142,13 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
@@ -188,88 +185,77 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9<T0>(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, out dx9_object.GetPinnableReference(), dx9_device_set, num_entries, devices, num_devices);
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9<T0>(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, out dx9_object.GetPinnableReference(), dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9<T0>(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, out dx9_object.GetPinnableReference(), dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9<T0>(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSource dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, out dx9_object.GetPinnableReference(), dx9_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_devices)
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_object, dx9_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceIDsFromDX9<T0>(this IntelDx9MediaSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dx9_device_source, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dx9_object, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Dx9DeviceSet dx9_device_set, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dx9_objectSpp = dx9_object)
-                return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, dx9_objectSpp, dx9_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+            return thisApi.GetDeviceIDsFromDX9(platform, dx9_device_source, out dx9_object.GetPinnableReference(), dx9_device_set, num_entries, devices, num_devices);
         }
 
         [Obsolete("The \"ungrouped\" enums (INTEL) are deprecated in favour of the \"grouped\" enums (Dx9DeviceSource, Dx9DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

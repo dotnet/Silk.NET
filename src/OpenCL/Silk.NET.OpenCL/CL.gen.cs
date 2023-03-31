@@ -332,6 +332,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
         public partial nint CreateBufferWithProperties<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MemProperties properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
+        public partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateBufferWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -428,6 +434,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
         public partial nint CreateBufferWithProperties<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CLEnum properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
+        public partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateImageWithProperties([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -523,6 +537,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
         public partial nint CreateImageWithProperties<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in MemProperties properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageDesc image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImageWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImageWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in MemProperties properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
@@ -908,11 +928,22 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
         public partial nint CreateImageWithProperties<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in CLEnum properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageDesc image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImageWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImageWithProperties", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImageWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in CLEnum properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetContextDestructorCallback", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetContextDestructorCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetContextDestructorCallback", Convention = CallingConvention.Winapi)]
         public partial int SetContextDestructorCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSetContextDestructorCallback", Convention = CallingConvention.Winapi)]
+        public partial int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetProgramReleaseCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
@@ -920,11 +951,17 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback", Convention = CallingConvention.Winapi)]
         public partial int SetProgramReleaseCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clSetProgramReleaseCallback", Convention = CallingConvention.Winapi)]
+        public partial int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetProgramSpecializationConstant", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetProgramSpecializationConstant([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint spec_id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint spec_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* spec_value);
 
         [NativeApi(EntryPoint = "clSetProgramSpecializationConstant", Convention = CallingConvention.Winapi)]
         public partial int SetProgramSpecializationConstant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint spec_id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint spec_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 spec_value) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSetProgramSpecializationConstant", Convention = CallingConvention.Winapi)]
+        public partial int SetProgramSpecializationConstant<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] nuint spec_size, [Flow(FlowDirection.In)] in T0 spec_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithIL", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateProgramWithIL([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -937,6 +974,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateProgramWithIL", Convention = CallingConvention.Winapi)]
         public partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateProgramWithIL", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateProgramWithIL<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in T0 il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateProgramWithIL", Convention = CallingConvention.Winapi)]
+        public partial nint CreateProgramWithIL<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in T0 il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMigrateMem", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueSvmmigrateMem([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* sizes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemMigrationFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
@@ -1092,6 +1135,24 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelSubGroupInfo<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 input_value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T1 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelSubGroupInfo param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T1 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelSubGroupInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* input_value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -1123,6 +1184,30 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelSubGroupInfo<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 input_value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T1 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelSubGroupInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint input_value_size, [Flow(FlowDirection.In)] in T0 input_value, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T1 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clCloneKernel", Convention = CallingConvention.Winapi)]
         public unsafe partial nint OneKernel([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint source_kernel, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -1265,6 +1350,42 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmfree<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T1 user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T1 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T1 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T1 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMFree", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] out T0 svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] out T1 user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueSvmmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -1288,6 +1409,18 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmmap<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] MapFlags flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
@@ -1320,6 +1453,22 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmmap<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clEnqueueSVMMap", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueSvmmemcpy([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
@@ -1369,6 +1518,42 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmmemcpy<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] in T1 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] in T1 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemcpy<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] in T1 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemcpy", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmmemcpy<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] in T1 src_ptr, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueSvmmemFill([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -1417,6 +1602,42 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmmemFill<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T1 pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] in T1 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] in T1 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmmemFill<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] in T1 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMMemFill", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmmemFill<T0, T1>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] in T1 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged where T1 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueSvmunmap([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -1441,6 +1662,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
         public partial int EnqueueSvmunmap<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmunmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmunmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueSvmunmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueSVMUnmap", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueSvmunmap<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.Out)] out T0 svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetPipeInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pipe, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipeInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -1452,6 +1685,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
         public partial int GetPipeInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pipe, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipeInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetPipeInfo<T0>([Flow(FlowDirection.In)] nint pipe, [Flow(FlowDirection.In)] PipeInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetPipeInfo<T0>([Flow(FlowDirection.In)] nint pipe, [Flow(FlowDirection.In)] PipeInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PipeInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
@@ -1469,17 +1708,31 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
         public partial int GetPipeInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pipe, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PipeInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetPipeInfo<T0>([Flow(FlowDirection.In)] nint pipe, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PipeInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetPipeInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetPipeInfo<T0>([Flow(FlowDirection.In)] nint pipe, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetKernelArgSVMPointer", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetKernelArgSvmpointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* arg_value);
 
         [NativeApi(EntryPoint = "clSetKernelArgSVMPointer", Convention = CallingConvention.Winapi)]
         public partial int SetKernelArgSvmpointer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 arg_value) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clSetKernelArgSVMPointer", Convention = CallingConvention.Winapi)]
+        public partial int SetKernelArgSvmpointer<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] in T0 arg_value) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetKernelExecInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelExecInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* param_value);
 
         [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
         public partial int SetKernelExecInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelExecInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 param_value) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
+        public partial int SetKernelExecInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] KernelExecInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] in T0 param_value) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelExecInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
@@ -1488,6 +1741,10 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelExecInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
         public partial int SetKernelExecInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 param_value) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelExecInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clSetKernelExecInfo", Convention = CallingConvention.Winapi)]
+        public partial int SetKernelExecInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] in T0 param_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSVMAlloc", Convention = CallingConvention.Winapi)]
         public unsafe partial void* Svmalloc([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvmMemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint alignment);
@@ -1501,6 +1758,9 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clSVMFree", Convention = CallingConvention.Winapi)]
         public partial void Svmfree<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 svm_pointer) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSVMFree", Convention = CallingConvention.Winapi)]
+        public partial void Svmfree<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] out T0 svm_pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram", Convention = CallingConvention.Winapi)]
         public unsafe partial int CompileProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
@@ -1646,6 +1906,9 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCompileProgram", Convention = CallingConvention.Winapi)]
         public unsafe partial int CompileProgram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clCompileProgram", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint device_list, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in nint input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -1693,6 +1956,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageDesc image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
@@ -1757,6 +2026,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageDesc image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateProgramWithBuiltInKernel([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* kernel_names, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -1854,6 +2131,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueFillBuffer", Convention = CallingConvention.Winapi)]
         public partial int EnqueueFillBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueFillBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillBuffer", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueFillBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueFillImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -1950,6 +2239,54 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
         public partial int EnqueueFillImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueFillImage", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueMarkerWithWaitList", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueMarkerWithWaitList([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -2039,6 +2376,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelArgInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelArgInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] KernelArgInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] KernelArgInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelArgInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -2054,6 +2397,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelArgInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelArgInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram", Convention = CallingConvention.Winapi)]
         public unsafe partial nint LinkProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -2199,6 +2550,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clLinkProgram", Convention = CallingConvention.Winapi)]
         public partial nint LinkProgram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clLinkProgram", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint LinkProgram<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint device_list, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in nint input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clLinkProgram", Convention = CallingConvention.Winapi)]
+        public partial nint LinkProgram<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint device_list, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in nint input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clReleaseDevice", Convention = CallingConvention.Winapi)]
         public partial int ReleaseDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device);
 
@@ -2219,6 +2576,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
         public partial nint CreateSubBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferCreateType buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateSubBuffer<T0>([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] BufferCreateType buffer_create_type, [Flow(FlowDirection.In)] in T0 buffer_create_info, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
+        public partial nint CreateSubBuffer<T0>([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] BufferCreateType buffer_create_type, [Flow(FlowDirection.In)] in T0 buffer_create_info, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
@@ -2267,6 +2630,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
         public partial nint CreateSubBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateSubBuffer<T0>([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] in T0 buffer_create_info, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateSubBuffer", Convention = CallingConvention.Winapi)]
+        public partial nint CreateSubBuffer<T0>([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] in T0 buffer_create_info, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateUserEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateUserEvent([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -2562,6 +2933,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueReadBufferRect", Convention = CallingConvention.Winapi)]
         public partial int EnqueueReadBufferRect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueReadBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBufferRect", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueWriteBufferRect([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -2754,17 +3137,35 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
         public partial int EnqueueWriteBufferRect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint buffer_origin, [Flow(FlowDirection.In)] in nuint host_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint buffer_row_pitch, [Flow(FlowDirection.In)] nuint buffer_slice_pitch, [Flow(FlowDirection.In)] nuint host_row_pitch, [Flow(FlowDirection.In)] nuint host_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetEventCallback", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetEventCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int command_exec_callback_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] EventNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetEventCallback", Convention = CallingConvention.Winapi)]
         public partial int SetEventCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int command_exec_callback_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] EventNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clSetEventCallback", Convention = CallingConvention.Winapi)]
+        public partial int SetEventCallback<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] EventNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetMemObjectDestructorCallback([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback", Convention = CallingConvention.Winapi)]
         public partial int SetMemObjectDestructorCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback", Convention = CallingConvention.Winapi)]
+        public partial int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetUserEventStatus", Convention = CallingConvention.Winapi)]
         public partial int SetUserEventStatus([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int execution_status);
@@ -2805,6 +3206,9 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clBuildProgram", Convention = CallingConvention.Winapi)]
         public partial int BuildProgram<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clBuildProgram", Convention = CallingConvention.Winapi)]
+        public partial int BuildProgram<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint device_list, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -2816,6 +3220,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
         public partial nint CreateBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateBuffer<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
+        public partial nint CreateBuffer<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
@@ -2832,6 +3242,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
         public partial nint CreateBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateBuffer<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateBuffer", Convention = CallingConvention.Winapi)]
+        public partial nint CreateBuffer<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateCommandQueue", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueProperties properties, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -2895,6 +3313,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateContext", Convention = CallingConvention.Winapi)]
         public partial nint CreateContext<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clCreateContext", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateContext<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateContext", Convention = CallingConvention.Winapi)]
+        public partial nint CreateContext<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in nint devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateContextFromType([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceType device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -2918,6 +3342,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
         public partial nint CreateContextFromType<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceType device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateContextFromType<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] DeviceType device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
+        public partial nint CreateContextFromType<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] DeviceType device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
@@ -2951,6 +3381,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
         public partial nint CreateContextFromType<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateContextFromType<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateContextFromType", Convention = CallingConvention.Winapi)]
+        public partial nint CreateContextFromType<T0>([Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateImage2D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -2974,6 +3412,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage2D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage2D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
@@ -3007,6 +3451,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage2D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage2D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage2D", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage2D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateImage3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
@@ -3030,6 +3482,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage3D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage3D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
@@ -3062,6 +3520,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
         public partial nint CreateImage3D<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageFormat image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint CreateImage3D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateImage3D", Convention = CallingConvention.Winapi)]
+        public partial nint CreateImage3D<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in ImageFormat image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateKernel", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateKernel([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* kernel_name, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
@@ -4504,6 +4970,54 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueNativeKernel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueNativeKernel", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueNativeKernel<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(FlowDirection.Out)] out T0 args, [Flow(FlowDirection.In)] nuint cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_list, [Flow(FlowDirection.In)] in void* args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueNDRangeKernel", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueNdrangeKernel([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint work_dim, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* global_work_offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* global_work_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* local_work_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -4624,6 +5138,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueReadBuffer", Convention = CallingConvention.Winapi)]
         public partial int EnqueueReadBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueReadBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadBuffer", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueReadBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReadImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -4720,6 +5246,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
         public partial int EnqueueReadImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint row_pitch, [Flow(FlowDirection.In)] nuint slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint row_pitch, [Flow(FlowDirection.In)] nuint slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueReadImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint row_pitch, [Flow(FlowDirection.In)] nuint slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueReadImage", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueReadImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint row_pitch, [Flow(FlowDirection.In)] nuint slice_pitch, [Flow(FlowDirection.Out)] out T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueTask", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueTask([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
 
@@ -4756,6 +5294,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueUnmapMemObject", Convention = CallingConvention.Winapi)]
         public partial int EnqueueUnmapMemObject<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 mapped_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueUnmapMemObject", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueUnmapMemObject<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.Out)] out T0 mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueUnmapMemObject", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueUnmapMemObject<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.Out)] out T0 mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueUnmapMemObject", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueUnmapMemObject<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.Out)] out T0 mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueUnmapMemObject", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueUnmapMemObject<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.Out)] out T0 mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clEnqueueWaitForEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueWaitForEvents([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_list);
 
@@ -4785,6 +5335,18 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clEnqueueWriteBuffer", Convention = CallingConvention.Winapi)]
         public partial int EnqueueWriteBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteBuffer", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueWriteBuffer<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueWriteImage([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event);
@@ -4882,6 +5444,18 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
         public partial int EnqueueWriteImage<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nuint region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint @event) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint input_row_pitch, [Flow(FlowDirection.In)] nuint input_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint input_row_pitch, [Flow(FlowDirection.In)] nuint input_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial int EnqueueWriteImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint input_row_pitch, [Flow(FlowDirection.In)] nuint input_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clEnqueueWriteImage", Convention = CallingConvention.Winapi)]
+        public partial int EnqueueWriteImage<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint input_row_pitch, [Flow(FlowDirection.In)] nuint input_slice_pitch, [Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clFinish", Convention = CallingConvention.Winapi)]
         public partial int Finish([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue);
 
@@ -4900,6 +5474,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
         public partial int GetCommandQueueInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandQueueInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetCommandQueueInfo<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] CommandQueueInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetCommandQueueInfo<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] CommandQueueInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (CommandQueueInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetCommandQueueInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -4916,6 +5496,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
         public partial int GetCommandQueueInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (CommandQueueInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetCommandQueueInfo<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (CommandQueueInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetCommandQueueInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetCommandQueueInfo<T0>([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetContextInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ContextInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -4927,6 +5515,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
         public partial int GetContextInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ContextInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetContextInfo<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetContextInfo<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ContextInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
@@ -4943,6 +5537,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
         public partial int GetContextInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetContextInfo<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetContextInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetContextInfo<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetDeviceIDs", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDeviceIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceType device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_devices);
@@ -4984,6 +5586,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
         public partial int GetDeviceInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetDeviceInfo<T0>([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] DeviceInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetDeviceInfo<T0>([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] DeviceInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (DeviceInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDeviceInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -5000,6 +5608,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
         public partial int GetDeviceInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (DeviceInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetDeviceInfo<T0>([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (DeviceInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetDeviceInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetDeviceInfo<T0>([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetEventInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5011,6 +5627,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
         public partial int GetEventInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EventInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetEventInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] EventInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetEventInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] EventInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (EventInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
@@ -5028,6 +5650,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
         public partial int GetEventInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (EventInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetEventInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (EventInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetEventInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetEventInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetEventProfilingInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProfilingInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5039,6 +5669,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
         public partial int GetEventProfilingInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProfilingInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] ProfilingInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] ProfilingInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProfilingInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
@@ -5055,6 +5691,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProfilingInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
         public partial int GetEventProfilingInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProfilingInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProfilingInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetEventProfilingInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] nint @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress", Convention = CallingConvention.Winapi)]
         public unsafe partial void* GetExtensionFunctionAddress([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* func_name);
@@ -5077,6 +5721,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
         public partial int GetImageInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetImageInfo<T0>([Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ImageInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetImageInfo<T0>([Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ImageInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ImageInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetImageInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -5093,6 +5743,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
         public partial int GetImageInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ImageInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetImageInfo<T0>([Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ImageInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetImageInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetImageInfo<T0>([Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5104,6 +5762,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] KernelInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] KernelInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
@@ -5121,6 +5785,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetKernelWorkGroupInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelWorkGroupInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5132,6 +5804,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelWorkGroupInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KernelWorkGroupInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelWorkGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelWorkGroupInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelWorkGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KernelWorkGroupInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelWorkGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
@@ -5149,6 +5827,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
         public partial int GetKernelWorkGroupInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelWorkGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetKernelWorkGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelWorkGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetKernelWorkGroupInfo<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetMemObjectInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5160,6 +5846,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
         public partial int GetMemObjectInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetMemObjectInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] MemInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetMemObjectInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] MemInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
@@ -5176,6 +5868,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
         public partial int GetMemObjectInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetMemObjectInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetMemObjectInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetMemObjectInfo<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetPlatformIDs", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetPlatformIDs([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_platforms);
@@ -5201,6 +5901,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
         public partial int GetPlatformInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PlatformInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetPlatformInfo<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] PlatformInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetPlatformInfo<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] PlatformInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PlatformInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetPlatformInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
@@ -5217,6 +5923,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
         public partial int GetPlatformInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PlatformInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetPlatformInfo<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PlatformInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetPlatformInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetPlatformInfo<T0>([Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetProgramBuildInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramBuildInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5228,6 +5942,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
         public partial int GetProgramBuildInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramBuildInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetProgramBuildInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ProgramBuildInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetProgramBuildInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ProgramBuildInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramBuildInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
@@ -5245,6 +5965,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
         public partial int GetProgramBuildInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramBuildInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetProgramBuildInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramBuildInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetProgramBuildInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetProgramBuildInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetProgramInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5256,6 +5984,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
         public partial int GetProgramInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetProgramInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] ProgramInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetProgramInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] ProgramInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
@@ -5273,6 +6007,14 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
         public partial int GetProgramInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetProgramInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetProgramInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetProgramInfo<T0>([Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSamplerInfo([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret);
 
@@ -5284,6 +6026,12 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
         public partial int GetSamplerInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetSamplerInfo<T0>([Flow(FlowDirection.In)] nint sampler, [Flow(FlowDirection.In)] SamplerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetSamplerInfo<T0>([Flow(FlowDirection.In)] nint sampler, [Flow(FlowDirection.In)] SamplerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (SamplerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
@@ -5300,6 +6048,14 @@ namespace Silk.NET.OpenCL
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (SamplerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
         public partial int GetSamplerInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (SamplerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
+        public unsafe partial int GetSamplerInfo<T0>([Flow(FlowDirection.In)] nint sampler, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (SamplerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        [NativeApi(EntryPoint = "clGetSamplerInfo", Convention = CallingConvention.Winapi)]
+        public partial int GetSamplerInfo<T0>([Flow(FlowDirection.In)] nint sampler, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetSupportedImageFormats", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSupportedImageFormats([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemObjectType image_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] ImageFormat* image_formats, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_image_formats);
@@ -5438,6 +6194,9 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clSetKernelArg", Convention = CallingConvention.Winapi)]
         public partial int SetKernelArg<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint arg_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 arg_value) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clSetKernelArg", Convention = CallingConvention.Winapi)]
+        public partial int SetKernelArg<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] nuint arg_size, [Flow(FlowDirection.In)] in T0 arg_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clUnloadCompiler", Convention = CallingConvention.Winapi)]
         public partial int UnloadCompiler();

@@ -32,6 +32,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
             StringMarker((uint) @string.Length, in @string.GetPinnableReference());
         }
 
+        [NativeApi(EntryPoint = "glStringMarkerGREMEDY", Convention = CallingConvention.Winapi)]
+        public partial void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] in T0 @string) where T0 : unmanaged;
+
+        public unsafe void StringMarker<T0>([Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            StringMarker((uint) @string.Length, in @string.GetPinnableReference());
+        }
+
         public GremedyStringMarker(INativeContext ctx)
             : base(ctx)
         {

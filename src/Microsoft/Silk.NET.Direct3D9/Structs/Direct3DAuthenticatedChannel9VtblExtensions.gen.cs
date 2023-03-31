@@ -296,7 +296,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] Span<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : struct
+    public static int NegotiateKeyExchange<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

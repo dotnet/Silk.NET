@@ -19,39 +19,31 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         public static unsafe int EnqueueSvmfree(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueSvmfree(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, out user_data.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, out user_data.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
@@ -160,97 +152,79 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         public static unsafe int EnqueueSvmmap(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueSvmmemcpy(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmunmap(command_queue, svm_ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, in src_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmunmap(command_queue, svm_ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, in src_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this ArmSharedVirtualMemory thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged

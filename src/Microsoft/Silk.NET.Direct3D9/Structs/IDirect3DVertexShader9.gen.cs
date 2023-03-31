@@ -153,6 +153,33 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFunction<T0>(ref T0 arg0, uint* pSizeOfData) where T0 : unmanaged
+        {
+            var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* arg0Ptr = &arg0)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)@this->LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFunction<T0>(ref T0 arg0, ref uint pSizeOfData) where T0 : unmanaged
+        {
+            var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* arg0Ptr = &arg0)
+            {
+                fixed (uint* pSizeOfDataPtr = &pSizeOfData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)@this->LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

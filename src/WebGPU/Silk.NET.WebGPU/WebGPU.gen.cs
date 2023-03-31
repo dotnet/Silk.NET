@@ -189,6 +189,11 @@ namespace Silk.NET.WebGPU
         public partial void AdapterRequestDevice<T0>(ref Adapter adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuAdapterRequestDevice")]
+        public partial void AdapterRequestDevice<T0>(ref Adapter adapter, [Flow(FlowDirection.In)] in DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1430, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBindGroupSetLabel")]
         public unsafe partial void BindGroupSetLabel(BindGroup* bindGroup, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
@@ -316,7 +321,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
+        public unsafe partial void BufferMapAsync<T0>(Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
         public unsafe partial void BufferMapAsync(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuBufferMapAsync")]
+        public partial void BufferMapAsync<T0>(ref Buffer buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1443, Column 18 in webgpu.h")]
@@ -1319,6 +1334,11 @@ namespace Silk.NET.WebGPU
         public partial void DeviceCreateComputePipelineAsync<T0>(ref Device device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1488, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceCreateComputePipelineAsync")]
+        public partial void DeviceCreateComputePipelineAsync<T0>(ref Device device, [Flow(FlowDirection.In)] in ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1489, Column 32 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreatePipelineLayout")]
         public unsafe partial PipelineLayout* DeviceCreatePipelineLayout(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutDescriptor* descriptor);
@@ -1437,6 +1457,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateRenderPipelineAsync")]
         public partial void DeviceCreateRenderPipelineAsync<T0>(ref Device device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1493, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceCreateRenderPipelineAsync")]
+        public partial void DeviceCreateRenderPipelineAsync<T0>(ref Device device, [Flow(FlowDirection.In)] in RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1494, Column 25 in webgpu.h")]
@@ -1616,7 +1641,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
+        public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
         public unsafe partial Silk.NET.Core.Bool32 DevicePopErrorScope(ref Device device, PfnErrorCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDevicePopErrorScope")]
+        public partial Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1504, Column 18 in webgpu.h")]
@@ -1636,7 +1671,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
+        public unsafe partial void DeviceSetDeviceLostCallback<T0>(Device* device, PfnDeviceLostCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
         public unsafe partial void DeviceSetDeviceLostCallback(ref Device device, PfnDeviceLostCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetDeviceLostCallback")]
+        public partial void DeviceSetDeviceLostCallback<T0>(ref Device device, PfnDeviceLostCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1506, Column 18 in webgpu.h")]
@@ -1676,7 +1721,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceSetUncapturedErrorCallback")]
+        public unsafe partial void DeviceSetUncapturedErrorCallback<T0>(Device* device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetUncapturedErrorCallback")]
         public unsafe partial void DeviceSetUncapturedErrorCallback(ref Device device, PfnErrorCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetUncapturedErrorCallback")]
+        public partial void DeviceSetUncapturedErrorCallback<T0>(ref Device device, PfnErrorCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 25 in webgpu.h")]
@@ -1747,6 +1802,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceRequestAdapter")]
         public partial void InstanceRequestAdapter<T0>(ref Instance instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in RequestAdapterOptions options, PfnRequestAdapterCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1512, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuInstanceRequestAdapter")]
+        public partial void InstanceRequestAdapter<T0>(ref Instance instance, [Flow(FlowDirection.In)] in RequestAdapterOptions options, PfnRequestAdapterCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 18 in webgpu.h")]
@@ -1846,7 +1906,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public unsafe partial void QueueOnSubmittedWorkDone<T0>(Queue* queue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
         public unsafe partial void QueueOnSubmittedWorkDone(ref Queue queue, PfnQueueWorkDoneCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public partial void QueueOnSubmittedWorkDone<T0>(ref Queue queue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1525, Column 18 in webgpu.h")]
@@ -1937,6 +2007,11 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueWriteBuffer")]
         public partial void QueueWriteBuffer<T0>(ref Queue queue, ref Buffer buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, nuint size) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1527, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueWriteBuffer")]
+        public partial void QueueWriteBuffer<T0>(ref Queue queue, ref Buffer buffer, ulong bufferOffset, [Flow(FlowDirection.In)] in T0 data, nuint size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
@@ -2097,6 +2172,26 @@ namespace Silk.NET.WebGPU
         [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueWriteTexture")]
         public partial void QueueWriteTexture<T0>(ref Queue queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in TextureDataLayout dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Extent3D writeSize) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueWriteTexture")]
+        public unsafe partial void QueueWriteTexture<T0>(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in T0 data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueWriteTexture")]
+        public unsafe partial void QueueWriteTexture<T0>(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in T0 data, nuint dataSize, [Flow(FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(FlowDirection.In)] in Extent3D writeSize) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueWriteTexture")]
+        public unsafe partial void QueueWriteTexture<T0>(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in T0 data, nuint dataSize, [Flow(FlowDirection.In)] in TextureDataLayout dataLayout, [Flow(FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1528, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueWriteTexture")]
+        public partial void QueueWriteTexture<T0>(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in T0 data, nuint dataSize, [Flow(FlowDirection.In)] in TextureDataLayout dataLayout, [Flow(FlowDirection.In)] in Extent3D writeSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1531, Column 18 in webgpu.h")]
@@ -2846,7 +2941,17 @@ namespace Silk.NET.WebGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
         [NativeApi(EntryPoint = "wgpuShaderModuleGetCompilationInfo")]
+        public unsafe partial void ShaderModuleGetCompilationInfo<T0>(ShaderModule* shaderModule, PfnCompilationInfoCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuShaderModuleGetCompilationInfo")]
         public unsafe partial void ShaderModuleGetCompilationInfo(ref ShaderModule shaderModule, PfnCompilationInfoCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuShaderModuleGetCompilationInfo")]
+        public partial void ShaderModuleGetCompilationInfo<T0>(ref ShaderModule shaderModule, PfnCompilationInfoCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1578, Column 18 in webgpu.h")]

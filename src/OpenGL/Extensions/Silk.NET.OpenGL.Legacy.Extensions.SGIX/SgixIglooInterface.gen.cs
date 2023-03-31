@@ -26,6 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glIglooInterfaceSGIX", Convention = CallingConvention.Winapi)]
         public partial void IglooInterface<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 @params) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glIglooInterfaceSGIX", Convention = CallingConvention.Winapi)]
+        public partial void IglooInterface<T0>([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in T0 @params) where T0 : unmanaged;
+
         public SgixIglooInterface(INativeContext ctx)
             : base(ctx)
         {

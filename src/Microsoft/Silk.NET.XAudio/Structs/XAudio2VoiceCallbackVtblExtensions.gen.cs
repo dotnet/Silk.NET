@@ -47,10 +47,30 @@ public unsafe static class XAudio2VoiceCallbackVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void OnBufferStart<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, ref T0 pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pBufferContextPtr = &pBufferContext)
+        {
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)@this->LpVtbl[3])(@this, pBufferContextPtr);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void OnBufferEnd(this ComPtr<IXAudio2VoiceCallback> thisVtbl, void* pBufferContext)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)@this->LpVtbl[4])(@this, pBufferContext);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnBufferEnd<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, ref T0 pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pBufferContextPtr = &pBufferContext)
+        {
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)@this->LpVtbl[4])(@this, pBufferContextPtr);
+        }
     }
 
     /// <summary>To be documented.</summary>
@@ -61,10 +81,62 @@ public unsafe static class XAudio2VoiceCallbackVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void OnLoopEnd<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, ref T0 pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pBufferContextPtr = &pBufferContext)
+        {
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)@this->LpVtbl[5])(@this, pBufferContextPtr);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void OnVoiceError(this ComPtr<IXAudio2VoiceCallback> thisVtbl, void* pBufferContext, int Error)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, int, void>)@this->LpVtbl[6])(@this, pBufferContext, Error);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnVoiceError<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, ref T0 pBufferContext, int Error) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pBufferContextPtr = &pBufferContext)
+        {
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, int, void>)@this->LpVtbl[6])(@this, pBufferContextPtr, Error);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnBufferStart<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, Span<T0> pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->OnBufferStart(ref pBufferContext.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnBufferEnd<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, Span<T0> pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->OnBufferEnd(ref pBufferContext.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnLoopEnd<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, Span<T0> pBufferContext) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->OnLoopEnd(ref pBufferContext.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OnVoiceError<T0>(this ComPtr<IXAudio2VoiceCallback> thisVtbl, Span<T0> pBufferContext, int Error) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->OnVoiceError(ref pBufferContext.GetPinnableReference(), Error);
     }
 
 }

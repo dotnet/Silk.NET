@@ -19,15 +19,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public static unsafe void DrawElementsInstanced<T0>(this ArbDrawInstanced thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, primcount);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
         }
 
         public static unsafe void DrawElementsInstanced<T0>(this ArbDrawInstanced thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, primcount);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
         }
 
         public static unsafe void DrawElementsInstanced<T0>(this ArbDrawInstanced thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount) where T0 : unmanaged

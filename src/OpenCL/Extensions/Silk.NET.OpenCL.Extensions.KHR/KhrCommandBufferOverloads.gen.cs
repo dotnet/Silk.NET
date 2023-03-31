@@ -1231,260 +1231,223 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, patternSpp, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, pattern, pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillBuffer<T0>(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            return thisApi.CommandFillBuffer(command_buffer, command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, sync_point_wait_list, out sync_point.GetPinnableReference(), out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), sync_point, out mutable_handle.GetPinnableReference());
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* mutable_handle)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
+            return thisApi.CommandFillImage(command_buffer, command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_sync_points_in_wait_list, in sync_point_wait_list.GetPinnableReference(), out sync_point.GetPinnableReference(), mutable_handle);
         }
 
         public static unsafe int CommandFillImage(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> sync_point_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> sync_point, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> mutable_handle)
@@ -3539,8 +3502,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetCommandBufferInfo(this KhrCommandBuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetCommandBufferInfo(command_buffer, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (CommandBufferInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

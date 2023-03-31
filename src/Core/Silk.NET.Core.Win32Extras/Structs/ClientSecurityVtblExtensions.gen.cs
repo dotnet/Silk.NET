@@ -5470,6 +5470,18 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pAuthInfoPtr = &pAuthInfo)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, ref char pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
     {
         var @this = thisVtbl.Handle;
@@ -5477,6 +5489,21 @@ public unsafe static class ClientSecurityVtblExtensions
         fixed (char* pServerPrincNamePtr = &pServerPrincName)
         {
             ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, ref char pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (char* pServerPrincNamePtr = &pServerPrincName)
+        {
+            fixed (void* pAuthInfoPtr = &pAuthInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+            }
         }
         return ret;
     }
@@ -5493,6 +5520,20 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        var pServerPrincNamePtr = (byte*) SilkMarshal.StringToPtr(pServerPrincName, NativeStringEncoding.UTF8);
+        fixed (void* pAuthInfoPtr = &pAuthInfo)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, byte*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+        }
+        SilkMarshal.Free((nint)pServerPrincNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, ref Silk.NET.Core.Native.IUnknown pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
     {
         var @this = thisVtbl.Handle;
@@ -5500,6 +5541,21 @@ public unsafe static class ClientSecurityVtblExtensions
         fixed (Silk.NET.Core.Native.IUnknown* pProxyPtr = &pProxy)
         {
             ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxyPtr, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, ref Silk.NET.Core.Native.IUnknown pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.IUnknown* pProxyPtr = &pProxy)
+        {
+            fixed (void* pAuthInfoPtr = &pAuthInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxyPtr, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+            }
         }
         return ret;
     }
@@ -5520,6 +5576,24 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, ref Silk.NET.Core.Native.IUnknown pProxy, uint dwAuthnSvc, uint dwAuthzSvc, ref char pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.IUnknown* pProxyPtr = &pProxy)
+        {
+            fixed (char* pServerPrincNamePtr = &pServerPrincName)
+            {
+                fixed (void* pAuthInfoPtr = &pAuthInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxyPtr, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, ref Silk.NET.Core.Native.IUnknown pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
     {
         var @this = thisVtbl.Handle;
@@ -5528,6 +5602,23 @@ public unsafe static class ClientSecurityVtblExtensions
         {
         var pServerPrincNamePtr = (byte*) SilkMarshal.StringToPtr(pServerPrincName, NativeStringEncoding.UTF8);
             ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, byte*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxyPtr, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+        SilkMarshal.Free((nint)pServerPrincNamePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, ref Silk.NET.Core.Native.IUnknown pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Native.IUnknown* pProxyPtr = &pProxy)
+        {
+        var pServerPrincNamePtr = (byte*) SilkMarshal.StringToPtr(pServerPrincName, NativeStringEncoding.UTF8);
+            fixed (void* pAuthInfoPtr = &pAuthInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IClientSecurity*, Silk.NET.Core.Native.IUnknown*, uint, uint, byte*, uint, uint, void*, uint, int>)@this->LpVtbl[4])(@this, pProxyPtr, dwAuthnSvc, dwAuthzSvc, pServerPrincNamePtr, dwAuthnLevel, dwImpLevel, pAuthInfoPtr, dwCapabilities);
+            }
         SilkMarshal.Free((nint)pServerPrincNamePtr);
         }
         return ret;
@@ -10191,12 +10282,27 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : struct
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pAuthInfoSpp = pAuthInfo)
-            return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, pAuthInfoSpp, dwCapabilities);
+        return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0, TI0>(this ComPtr<IClientSecurity> thisVtbl, ComPtr<TI0> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetBlanket((Silk.NET.Core.Native.IUnknown*) pProxy.Handle, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo, dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
     }
 
     /// <summary>To be documented.</summary>
@@ -10208,12 +10314,19 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : struct
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pAuthInfoSpp = pAuthInfo)
-            return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfoSpp, dwCapabilities);
+        return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetBlanket<T0, TI0>(this ComPtr<IClientSecurity> thisVtbl, ComPtr<TI0> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, ref char pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->SetBlanket((Silk.NET.Core.Native.IUnknown*) pProxy.Handle, dwAuthnSvc, dwAuthzSvc, ref pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo, dwCapabilities);
     }
 
     /// <summary>To be documented.</summary>
@@ -10225,30 +10338,67 @@ public unsafe static class ClientSecurityVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : struct
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Silk.NET.Core.Native.IUnknown* pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pAuthInfoSpp = pAuthInfo)
-            return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfoSpp, dwCapabilities);
+        return @this->SetBlanket(pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : struct
+    public static int SetBlanket<T0, TI0>(this ComPtr<IClientSecurity> thisVtbl, ComPtr<TI0> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, ref T0 pAuthInfo, uint dwCapabilities) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pAuthInfoSpp = pAuthInfo)
-            return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, pAuthInfoSpp, dwCapabilities);
+        // ComPtrOverloader
+        return @this->SetBlanket((Silk.NET.Core.Native.IUnknown*) pProxy.Handle, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo, dwCapabilities);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : struct
+    public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pAuthInfoSpp = pAuthInfo)
-            return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfoSpp, dwCapabilities);
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, char* pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, Span<char> pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, ref pServerPrincName.GetPinnableReference(), dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetBlanket(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, void* pAuthInfo, uint dwCapabilities)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetBlanket<T0>(this ComPtr<IClientSecurity> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pProxy, uint dwAuthnSvc, uint dwAuthzSvc, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pServerPrincName, uint dwAuthnLevel, uint dwImpLevel, Span<T0> pAuthInfo, uint dwCapabilities) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetBlanket(ref pProxy.GetPinnableReference(), dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, ref pAuthInfo.GetPinnableReference(), dwCapabilities);
     }
 
     /// <summary>To be documented.</summary>

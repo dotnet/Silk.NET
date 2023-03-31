@@ -48,16 +48,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
+            return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         public static unsafe Result GetAccelerationStructureOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.GetBufferOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
+            return thisApi.GetAccelerationStructureOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
         }
 
         /// <summary>To be documented.</summary>
@@ -127,16 +125,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public static unsafe Result GetImageOpaqueCaptureDescriptorData<T0>(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCaptureDescriptorDataInfoEXT* pInfo, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.GetImageOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
+            return thisApi.GetImageOpaqueCaptureDescriptorData(device, pInfo, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
         public static unsafe Result GetImageOpaqueCaptureDescriptorData(this ExtDescriptorBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCaptureDescriptorDataInfoEXT> pInfo, [Count(Count = 0)] void* pData)
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.GetImageViewOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pDataSpp);
+            return thisApi.GetImageOpaqueCaptureDescriptorData(device, in pInfo.GetPinnableReference(), pData);
         }
 
         /// <summary>To be documented.</summary>

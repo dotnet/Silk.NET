@@ -132,6 +132,33 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterDestructionCallback<T0>(PfnDestructionCallback callbackFn, ref T0 pData, uint* pCallbackID) where T0 : unmanaged
+        {
+            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)@this->LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterDestructionCallback<T0>(PfnDestructionCallback callbackFn, ref T0 pData, ref uint pCallbackID) where T0 : unmanaged
+        {
+            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                fixed (uint* pCallbackIDPtr = &pCallbackID)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)@this->LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int UnregisterDestructionCallback(uint callbackID)
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

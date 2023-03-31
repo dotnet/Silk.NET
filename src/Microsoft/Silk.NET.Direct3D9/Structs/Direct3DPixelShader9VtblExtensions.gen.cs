@@ -127,6 +127,33 @@ public unsafe static class Direct3DPixelShader9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetFunction<T0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, ref T0 arg0, uint* pSizeOfData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* arg0Ptr = &arg0)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)@this->LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFunction<T0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, ref T0 arg0, ref uint pSizeOfData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* arg0Ptr = &arg0)
+        {
+            fixed (uint* pSizeOfDataPtr = &pSizeOfData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)@this->LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -160,12 +187,27 @@ public unsafe static class Direct3DPixelShader9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFunction<T0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, Span<T0> arg0, Span<uint> pSizeOfData) where T0 : struct
+    public static unsafe int GetFunction(this ComPtr<IDirect3DPixelShader9> thisVtbl, void* arg0, Span<uint> pSizeOfData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* arg0Spp = arg0)
-            return @this->GetFunction(arg0Spp, ref pSizeOfData.GetPinnableReference());
+        return @this->GetFunction(arg0, ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFunction<T0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, Span<T0> arg0, uint* pSizeOfData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFunction(ref arg0.GetPinnableReference(), pSizeOfData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFunction<T0>(this ComPtr<IDirect3DPixelShader9> thisVtbl, Span<T0> arg0, Span<uint> pSizeOfData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFunction(ref arg0.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

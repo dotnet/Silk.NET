@@ -3626,17 +3626,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* srcDataSpp = srcData)
-            return @this->CreateBitmap(size, srcDataSpp, pitch, bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1RenderTarget> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] Span<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* srcDataSpp = srcData)
-            return @this->CreateBitmap(size, srcDataSpp, pitch, in bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -3796,17 +3786,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* dataSpp = data)
-            return @this->CreateSharedBitmap(riid, dataSpp, bitmapProperties, ref bitmap);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1RenderTarget> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* dataSpp = data)
-            return @this->CreateSharedBitmap(riid, dataSpp, in bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -3822,8 +3802,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* dataSpp = data)
-            return @this->CreateSharedBitmap(riid, dataSpp, in bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -3895,8 +3874,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* dataSpp = data)
-            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, bitmapProperties, ref bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, bitmapProperties, ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -3904,8 +3882,7 @@ public unsafe static class D2D1RenderTargetVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* dataSpp = data)
-            return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), dataSpp, in bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>

@@ -56,6 +56,9 @@ namespace Silk.NET.OpenGL.Extensions.AMD
         [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
         public partial void GetPerfMonitorCounterInfo<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint counter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint group, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* maxActiveCounters, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* counters);
 

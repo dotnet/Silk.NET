@@ -443,16 +443,15 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : struct
+    public static unsafe int Read(this ComPtr<IMarshalingStream> thisVtbl, void* pv, uint cb, Span<uint> pcbRead)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-            return @this->Read(pvSpp, cb, ref pcbRead.GetPinnableReference());
+        return @this->Read(pv, cb, ref pcbRead.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : struct
+    public static unsafe int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

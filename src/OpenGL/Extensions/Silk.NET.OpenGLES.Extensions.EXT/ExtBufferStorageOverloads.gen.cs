@@ -19,15 +19,13 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferStorage(target, size, dataSpp, flags);
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
         public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferStorage(target, size, dataSpp, flags);
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
         public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferStorageTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags) where T0 : unmanaged

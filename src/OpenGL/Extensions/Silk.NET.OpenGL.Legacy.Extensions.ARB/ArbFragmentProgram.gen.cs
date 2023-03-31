@@ -146,6 +146,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetProgramStringARB", Convention = CallingConvention.Winapi)]
         public partial void GetProgramString<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 @string) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glGetProgramStringARB", Convention = CallingConvention.Winapi)]
+        public partial void GetProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out T0 @string) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glIsProgramARB", Convention = CallingConvention.Winapi)]
         public partial bool IsProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program);
 

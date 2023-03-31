@@ -32,6 +32,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
         [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX", Convention = CallingConvention.Winapi)]
         public partial void LgpunamedBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX", Convention = CallingConvention.Winapi)]
+        public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
         public NvxLinkedGpuMulticast(INativeContext ctx)
             : base(ctx)
         {

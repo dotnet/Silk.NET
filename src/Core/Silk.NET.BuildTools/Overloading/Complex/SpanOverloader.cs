@@ -30,7 +30,6 @@ namespace Silk.NET.BuildTools.Overloading
             var applicable = false;
             var invocationParameters = new List<string>();
             var parameters = new List<Parameter>(original.Parameters);
-            var @fixed = new List<string>();
             for (var i = 0; i < original.Parameters.Count; i++)
             {
                 var parameter = original.Parameters[i];
@@ -88,30 +87,6 @@ namespace Silk.NET.BuildTools.Overloading
                         .Build();
                     invocationParameters.Add($"ref {name}.GetPinnableReference()");
                 }
-                else if (parameter.Type.ToString() == "void*")
-                {
-                    applicable = true;
-                    parameters[i] = new ParameterSignatureBuilder(parameter).WithType
-                        (
-                            new Type
-                            {
-                                Name = "Span",
-                                GenericTypes = new List<Type>
-                                {
-                                    new Type
-                                    {
-                                        Name = $"T{@fixed.Count + original.GenericTypeParameters.Count}",
-                                        IsGenericTypeParameterReference = true
-                                    }
-                                },
-                                IsGenericTypeParameterReference = true,
-                                OriginalName = parameter.Type.OriginalName
-                            }
-                        )
-                        .Build();
-                    @fixed.Add($"fixed (void* {name}Spp = {name})");
-                    invocationParameters.Add($"{name}Spp");
-                }
                 else
                 {
                     invocationParameters.Add
@@ -127,16 +102,6 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 var sb = new StringBuilder();
                 sb.AppendLine("// SpanOverloader");
-                foreach (var fix in @fixed)
-                {
-                    sb.AppendLine(fix);
-                }
-
-                if (@fixed.Count > 0)
-                {
-                    sb.Append("    ");
-                }
-
                 if (original.ReturnType.ToString() != "void")
                 {
                     sb.Append("return ");

@@ -19,43 +19,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetHistogram(target, reset, format, type, valuesSpp);
+            thisApi.GetHistogram(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetHistogram<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HistogramTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
@@ -121,43 +115,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* valuesSpp = values)
-                thisApi.GetMinmax(target, reset, format, type, valuesSpp);
+            thisApi.GetMinmax(target, reset, format, type, out values.GetPinnableReference());
         }
 
         public static unsafe void GetMinmax<T0>(this ExtHistogram thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MinmaxTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool reset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> values) where T0 : unmanaged

@@ -190,6 +190,18 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -197,6 +209,21 @@ public unsafe static class DXGIFactory5VtblExtensions
         fixed (uint* pDataSizePtr = &pDataSize)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+            }
         }
         return ret;
     }
@@ -214,6 +241,21 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIFactory5> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -223,6 +265,24 @@ public unsafe static class DXGIFactory5VtblExtensions
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                }
             }
         }
         return ret;
@@ -1573,6 +1633,33 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hResource, Luid* pLuid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (Luid* pLuidPtr = &pLuid)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int RegisterStereoStatusWindow(this ComPtr<IDXGIFactory5> thisVtbl, nint WindowHandle, uint wMsg, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
@@ -1610,6 +1697,33 @@ public unsafe static class DXGIFactory5VtblExtensions
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hEventPtr = &hEvent)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hEventPtr = &hEvent)
+        {
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
+            }
         }
         return ret;
     }
@@ -1659,6 +1773,33 @@ public unsafe static class DXGIFactory5VtblExtensions
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hEventPtr = &hEvent)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hEventPtr = &hEvent)
+        {
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
+            }
         }
         return ret;
     }
@@ -2025,6 +2166,18 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Feature, void*, uint, int>)@this->LpVtbl[28])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDXGIFactory5> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -2114,30 +2267,59 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -3238,12 +3420,27 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hResource, Span<Luid> pLuid) where T0 : struct
+    public static unsafe int GetSharedResourceAdapterLuid(this ComPtr<IDXGIFactory5> thisVtbl, void* hResource, Span<Luid> pLuid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->GetSharedResourceAdapterLuid(hResourceSpp, ref pLuid.GetPinnableReference());
+        return @this->GetSharedResourceAdapterLuid(hResource, ref pLuid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hResource, Luid* pLuid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetSharedResourceAdapterLuid(ref hResource.GetPinnableReference(), pLuid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSharedResourceAdapterLuid<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hResource, Span<Luid> pLuid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetSharedResourceAdapterLuid(ref hResource.GetPinnableReference(), ref pLuid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -3255,12 +3452,27 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : struct
+    public static unsafe int RegisterStereoStatusEvent(this ComPtr<IDXGIFactory5> thisVtbl, void* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hEventSpp = hEvent)
-            return @this->RegisterStereoStatusEvent(hEventSpp, ref pdwCookie.GetPinnableReference());
+        return @this->RegisterStereoStatusEvent(hEvent, ref pdwCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterStereoStatusEvent(ref hEvent.GetPinnableReference(), pdwCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterStereoStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterStereoStatusEvent(ref hEvent.GetPinnableReference(), ref pdwCookie.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -3272,12 +3484,27 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : struct
+    public static unsafe int RegisterOcclusionStatusEvent(this ComPtr<IDXGIFactory5> thisVtbl, void* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hEventSpp = hEvent)
-            return @this->RegisterOcclusionStatusEvent(hEventSpp, ref pdwCookie.GetPinnableReference());
+        return @this->RegisterOcclusionStatusEvent(hEvent, ref pdwCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterOcclusionStatusEvent(ref hEvent.GetPinnableReference(), pdwCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterOcclusionStatusEvent<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterOcclusionStatusEvent(ref hEvent.GetPinnableReference(), ref pdwCookie.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -3552,6 +3779,14 @@ public unsafe static class DXGIFactory5VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->EnumWarpAdapter(ref riid.GetPinnableReference(), ref ppvAdapter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<IDXGIFactory5> thisVtbl, Feature Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>

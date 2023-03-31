@@ -32,6 +32,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectBindlessNV", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawArraysIndirectBindles<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectBindlessNV", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawArraysIndirectBindles<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectBindlessNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirectBindles([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vertexBufferCount);
 
@@ -55,6 +58,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectBindlessNV", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawElementsIndirectBindles<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectBindlessNV", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirectBindles<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged;
 
         public NVBindlessMultiDrawIndirect(INativeContext ctx)
             : base(ctx)

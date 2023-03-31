@@ -168,15 +168,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetGlcontextInfo(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlContextInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         public static unsafe int GetGlcontextInfo<T0>(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlContextInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGlcontextInfo(in properties.GetPinnableReference(), param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         public static unsafe int GetGlcontextInfo<T0>(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlContextInfo param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
@@ -213,24 +211,21 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetGlcontextInfo(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int GetGlcontextInfo<T0>(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int GetGlcontextInfo<T0>(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGlcontextInfo(in properties.GetPinnableReference(), param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetGlcontextInfo(properties, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, KHR) are deprecated in favour of the \"grouped\" enums (ContextProperties, GlContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -322,8 +317,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public static unsafe int GetGltextureInfo(this KhrGlSharing thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetGltextureInfo(memobj, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetGltextureInfo(memobj, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (GlTextureInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

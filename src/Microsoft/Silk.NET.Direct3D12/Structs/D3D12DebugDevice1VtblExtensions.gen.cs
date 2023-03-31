@@ -115,6 +115,18 @@ public unsafe static class D3D12DebugDevice1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetDebugParameter<T0>(this ComPtr<ID3D12DebugDevice1> thisVtbl, DebugDeviceParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugDevice1*, DebugDeviceParameterType, void*, uint, int>)@this->LpVtbl[4])(@this, Type, pDataPtr, DataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int ReportLiveDeviceObjects(this ComPtr<ID3D12DebugDevice1> thisVtbl, RldoFlags Flags)
     {
         var @this = thisVtbl.Handle;

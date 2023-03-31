@@ -219,6 +219,16 @@ public unsafe static class RpcStubBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void DebugServerRelease<T0>(this ComPtr<IRpcStubBuffer> thisVtbl, ref T0 pv) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pvPtr = &pv)
+        {
+            ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, void*, void>)@this->LpVtbl[9])(@this, pvPtr);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IRpcStubBuffer> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -305,6 +315,14 @@ public unsafe static class RpcStubBufferVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->IsIIDSupported(ref riid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DebugServerRelease<T0>(this ComPtr<IRpcStubBuffer> thisVtbl, Span<T0> pv) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->DebugServerRelease(ref pv.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

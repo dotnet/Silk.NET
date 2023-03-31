@@ -141,8 +141,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void AdapterRequestDevice<T0>(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceDescriptor* descriptor, PfnRequestDeviceCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.AdapterRequestDevice(adapter, in descriptor.GetPinnableReference(), callback, userdataSpp);
+            thisApi.AdapterRequestDevice(adapter, descriptor, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -150,8 +149,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void AdapterRequestDevice(this WebGPU thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor, PfnRequestDeviceCallback callback, void* userdata)
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.AdapterRequestDevice(ref adapter.GetPinnableReference(), descriptor, callback, userdataSpp);
+            thisApi.AdapterRequestDevice(adapter, in descriptor.GetPinnableReference(), callback, userdata);
         }
 
         /// <summary>To be documented.</summary>
@@ -308,11 +306,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
-        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Buffer* buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.BufferMapAsync(ref buffer.GetPinnableReference(), mode, offset, size, callback, userdataSpp);
+            thisApi.BufferMapAsync(buffer, mode, offset, size, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
+        public static unsafe void BufferMapAsync(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            thisApi.BufferMapAsync(ref buffer.GetPinnableReference(), mode, offset, size, callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1442, Column 18 in webgpu.h")]
+        public static unsafe void BufferMapAsync<T0>(this WebGPU thisApi, Span<Buffer> buffer, Silk.NET.WebGPU.MapMode mode, nuint offset, nuint size, PfnBufferMapCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.BufferMapAsync(ref buffer.GetPinnableReference(), mode, offset, size, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1504,8 +1517,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void DeviceCreateComputePipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineDescriptor* descriptor, PfnCreateComputePipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceCreateComputePipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdataSpp);
+            thisApi.DeviceCreateComputePipelineAsync(device, descriptor, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1513,8 +1525,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void DeviceCreateComputePipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineDescriptor> descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceCreateComputePipelineAsync(ref device.GetPinnableReference(), descriptor, callback, userdataSpp);
+            thisApi.DeviceCreateComputePipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdata);
         }
 
         /// <summary>To be documented.</summary>
@@ -1658,8 +1669,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void DeviceCreateRenderPipelineAsync<T0>(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPipelineDescriptor* descriptor, PfnCreateRenderPipelineAsyncCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceCreateRenderPipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdataSpp);
+            thisApi.DeviceCreateRenderPipelineAsync(device, descriptor, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1667,8 +1677,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void DeviceCreateRenderPipelineAsync(this WebGPU thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPipelineDescriptor> descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata)
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceCreateRenderPipelineAsync(ref device.GetPinnableReference(), descriptor, callback, userdataSpp);
+            thisApi.DeviceCreateRenderPipelineAsync(device, in descriptor.GetPinnableReference(), callback, userdata);
         }
 
         /// <summary>To be documented.</summary>
@@ -1913,11 +1922,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
-        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                return thisApi.DevicePopErrorScope(ref device.GetPinnableReference(), callback, userdataSpp);
+            return thisApi.DevicePopErrorScope(device, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            return thisApi.DevicePopErrorScope(ref device.GetPinnableReference(), callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1503, Column 18 in webgpu.h")]
+        public static unsafe Silk.NET.Core.Bool32 DevicePopErrorScope<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DevicePopErrorScope(ref device.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1930,11 +1954,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
-        public static unsafe void DeviceSetDeviceLostCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe void DeviceSetDeviceLostCallback<T0>(this WebGPU thisApi, Device* device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceSetDeviceLostCallback(ref device.GetPinnableReference(), callback, userdataSpp);
+            thisApi.DeviceSetDeviceLostCallback(device, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
+        public static unsafe void DeviceSetDeviceLostCallback(this WebGPU thisApi, Span<Device> device, PfnDeviceLostCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            thisApi.DeviceSetDeviceLostCallback(ref device.GetPinnableReference(), callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1505, Column 18 in webgpu.h")]
+        public static unsafe void DeviceSetDeviceLostCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnDeviceLostCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DeviceSetDeviceLostCallback(ref device.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1971,11 +2010,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
-        public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this WebGPU thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.DeviceSetUncapturedErrorCallback(ref device.GetPinnableReference(), callback, userdataSpp);
+            thisApi.DeviceSetUncapturedErrorCallback(device, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
+        public static unsafe void DeviceSetUncapturedErrorCallback(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            thisApi.DeviceSetUncapturedErrorCallback(ref device.GetPinnableReference(), callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1507, Column 18 in webgpu.h")]
+        public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this WebGPU thisApi, Span<Device> device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DeviceSetUncapturedErrorCallback(ref device.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2015,8 +2069,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void InstanceRequestAdapter<T0>(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RequestAdapterOptions* options, PfnRequestAdapterCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.InstanceRequestAdapter(instance, in options.GetPinnableReference(), callback, userdataSpp);
+            thisApi.InstanceRequestAdapter(instance, options, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2024,8 +2077,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void InstanceRequestAdapter(this WebGPU thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RequestAdapterOptions> options, PfnRequestAdapterCallback callback, void* userdata)
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.InstanceRequestAdapter(ref instance.GetPinnableReference(), options, callback, userdataSpp);
+            thisApi.InstanceRequestAdapter(instance, in options.GetPinnableReference(), callback, userdata);
         }
 
         /// <summary>To be documented.</summary>
@@ -2158,11 +2210,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
-        public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Span<Queue> queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Queue* queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.QueueOnSubmittedWorkDone(ref queue.GetPinnableReference(), callback, userdataSpp);
+            thisApi.QueueOnSubmittedWorkDone(queue, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        public static unsafe void QueueOnSubmittedWorkDone(this WebGPU thisApi, Span<Queue> queue, PfnQueueWorkDoneCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            thisApi.QueueOnSubmittedWorkDone(ref queue.GetPinnableReference(), callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1524, Column 18 in webgpu.h")]
+        public static unsafe void QueueOnSubmittedWorkDone<T0>(this WebGPU thisApi, Span<Queue> queue, PfnQueueWorkDoneCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.QueueOnSubmittedWorkDone(ref queue.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2218,8 +2285,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteBuffer<T0>(this WebGPU thisApi, Queue* queue, Buffer* buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint size) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteBuffer(queue, ref buffer.GetPinnableReference(), bufferOffset, dataSpp, size);
+            thisApi.QueueWriteBuffer(queue, buffer, bufferOffset, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
@@ -2227,8 +2293,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteBuffer(this WebGPU thisApi, Queue* queue, Span<Buffer> buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint size)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteBuffer(ref queue.GetPinnableReference(), buffer, bufferOffset, dataSpp, size);
+            thisApi.QueueWriteBuffer(queue, ref buffer.GetPinnableReference(), bufferOffset, data, size);
         }
 
         /// <summary>To be documented.</summary>
@@ -2276,8 +2341,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, destination, dataSpp, dataSize, dataLayout, in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, destination, data, dataSize, dataLayout, in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2285,8 +2349,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, destination, dataSpp, dataSize, in dataLayout.GetPinnableReference(), writeSize);
+            thisApi.QueueWriteTexture(queue, destination, data, dataSize, in dataLayout.GetPinnableReference(), writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2294,8 +2357,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, destination, dataSpp, dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, destination, data, dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2303,8 +2365,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), dataSpp, dataSize, dataLayout, writeSize);
+            thisApi.QueueWriteTexture(queue, destination, in data.GetPinnableReference(), dataSize, dataLayout, writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2312,8 +2373,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), dataSpp, dataSize, dataLayout, in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, destination, in data.GetPinnableReference(), dataSize, dataLayout, in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2321,8 +2381,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), dataSpp, dataSize, in dataLayout.GetPinnableReference(), writeSize);
+            thisApi.QueueWriteTexture(queue, destination, in data.GetPinnableReference(), dataSize, in dataLayout.GetPinnableReference(), writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2330,8 +2389,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), dataSpp, dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, destination, in data.GetPinnableReference(), dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2339,8 +2397,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), destination, dataSpp, dataSize, dataLayout, writeSize);
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), data, dataSize, dataLayout, writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2348,8 +2405,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), destination, dataSpp, dataSize, dataLayout, in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), data, dataSize, dataLayout, in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2357,8 +2413,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), destination, dataSpp, dataSize, in dataLayout.GetPinnableReference(), writeSize);
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), data, dataSize, in dataLayout.GetPinnableReference(), writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2366,8 +2421,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize)
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), destination, dataSpp, dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), data, dataSize, in dataLayout.GetPinnableReference(), in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2375,8 +2429,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), in destination.GetPinnableReference(), dataSpp, dataSize, dataLayout, writeSize);
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), in data.GetPinnableReference(), dataSize, dataLayout, writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -2384,8 +2437,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureDataLayout* dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Extent3D> writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), in destination.GetPinnableReference(), dataSpp, dataSize, dataLayout, in writeSize.GetPinnableReference());
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), in data.GetPinnableReference(), dataSize, dataLayout, in writeSize.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2393,8 +2445,7 @@ namespace Silk.NET.WebGPU
         public static unsafe void QueueWriteTexture<T0>(this WebGPU thisApi, Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageCopyTexture> destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDataLayout> dataLayout, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* writeSize) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.QueueWriteTexture(ref queue.GetPinnableReference(), in destination.GetPinnableReference(), dataSpp, dataSize, in dataLayout.GetPinnableReference(), writeSize);
+            thisApi.QueueWriteTexture(queue, in destination.GetPinnableReference(), in data.GetPinnableReference(), dataSize, in dataLayout.GetPinnableReference(), writeSize);
         }
 
         /// <summary>To be documented.</summary>
@@ -3343,11 +3394,26 @@ namespace Silk.NET.WebGPU
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
-        public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, Span<ShaderModule> shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : struct
+        public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, ShaderModule* shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* userdataSpp = userdata)
-                thisApi.ShaderModuleGetCompilationInfo(ref shaderModule.GetPinnableReference(), callback, userdataSpp);
+            thisApi.ShaderModuleGetCompilationInfo(shaderModule, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
+        public static unsafe void ShaderModuleGetCompilationInfo(this WebGPU thisApi, Span<ShaderModule> shaderModule, PfnCompilationInfoCallback callback, void* userdata)
+        {
+            // SpanOverloader
+            thisApi.ShaderModuleGetCompilationInfo(ref shaderModule.GetPinnableReference(), callback, userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1577, Column 18 in webgpu.h")]
+        public static unsafe void ShaderModuleGetCompilationInfo<T0>(this WebGPU thisApi, Span<ShaderModule> shaderModule, PfnCompilationInfoCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderModuleGetCompilationInfo(ref shaderModule.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

@@ -578,7 +578,17 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceSetLoggingCallback")]
+        public unsafe partial void DeviceSetLoggingCallback<T0>(Device* device, PfnLoggingCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetLoggingCallback")]
         public unsafe partial void DeviceSetLoggingCallback(ref Device device, PfnLoggingCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1768, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuDeviceSetLoggingCallback")]
+        public partial void DeviceSetLoggingCallback<T0>(ref Device device, PfnLoggingCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1770, Column 18 in dawn-webgpu.h")]
@@ -1098,7 +1108,17 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1805, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public unsafe partial void QueueOnSubmittedWorkDone<T0>(Queue* queue, ulong signalValue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1805, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
         public unsafe partial void QueueOnSubmittedWorkDone(ref Queue queue, ulong signalValue, PfnQueueWorkDoneCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1805, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public partial void QueueOnSubmittedWorkDone<T0>(ref Queue queue, ulong signalValue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1810, Column 18 in dawn-webgpu.h")]

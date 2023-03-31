@@ -190,6 +190,18 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -197,6 +209,21 @@ public unsafe static class DXGISwapChain4VtblExtensions
         fixed (uint* pDataSizePtr = &pDataSize)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+            }
         }
         return ret;
     }
@@ -214,6 +241,21 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -223,6 +265,24 @@ public unsafe static class DXGISwapChain4VtblExtensions
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                }
             }
         }
         return ret;
@@ -1033,6 +1093,18 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pMetaDataPtr = &pMetaData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -1122,30 +1194,59 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1486,6 +1587,14 @@ public unsafe static class DXGISwapChain4VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, in pCreationNodeMask.GetPinnableReference(), in ppPresentQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, Span<T0> pMetaData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetHDRMetaData(Type, Size, ref pMetaData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

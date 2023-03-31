@@ -2018,6 +2018,18 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(Feature feature, ref T0 featureSupportData, uint featureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* featureSupportDataPtr = &featureSupportData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext2*, Feature, void*, uint, int>)@this->LpVtbl[22])(@this, feature, featureSupportDataPtr, featureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly Silk.NET.Core.Bool32 IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
         {
             var @this = (ID2D1EffectContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

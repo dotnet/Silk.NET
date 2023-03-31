@@ -104,6 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EvalTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapTypeNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
+        public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
@@ -175,6 +178,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EvalTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MapTypeNV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ustride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint vstride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int uorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int vorder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 points) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
+        public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);

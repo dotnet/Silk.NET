@@ -19,22 +19,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public static unsafe void MultiDrawArraysIndirect<T0>(this AmdMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD mode, [Count(Computed = "primcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.MultiDrawArraysIndirect(mode, indirectSpp, primcount, stride);
+            thisApi.MultiDrawArraysIndirect(mode, in indirect.GetPinnableReference(), primcount, stride);
         }
 
         public static unsafe void MultiDrawArraysIndirect<T0>(this AmdMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Computed = "primcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.MultiDrawElementsIndirect(mode, type, indirectSpp, primcount, stride);
+            thisApi.MultiDrawArraysIndirect(mode, in indirect.GetPinnableReference(), primcount, stride);
         }
 
         public static unsafe void MultiDrawElementsIndirect<T0>(this AmdMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD type, [Count(Computed = "primcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.MultiDrawElementsIndirect(mode, type, indirectSpp, primcount, stride);
+            thisApi.MultiDrawElementsIndirect(mode, type, in indirect.GetPinnableReference(), primcount, stride);
         }
 
         public static unsafe void MultiDrawElementsIndirect<T0>(this AmdMultiDrawIndirect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged

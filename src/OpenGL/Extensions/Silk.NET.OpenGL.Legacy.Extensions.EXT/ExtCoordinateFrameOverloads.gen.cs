@@ -76,13 +76,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.Tangent3(in v.GetPinnableReference());
         }
 
-        public static unsafe void TangentPointer<T0>(this ExtCoordinateFrame thisApi, [Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.TangentPointer(type, stride, pointerSpp);
-        }
-
     }
 }
 

@@ -79,6 +79,13 @@ namespace Silk.NET.Vulkan.Extensions.KHR
             thisApi.DestroyDescriptorUpdateTemplate(device, descriptorUpdateTemplate, in pAllocator.GetPinnableReference());
         }
 
+        /// <summary>To be documented.</summary>
+        public static unsafe void UpdateDescriptorSetWithTemplate<T0>(this KhrDescriptorUpdateTemplate thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.UpdateDescriptorSetWithTemplate(device, descriptorSet, descriptorUpdateTemplate, ref pData.GetPinnableReference());
+        }
+
     }
 }
 

@@ -127,8 +127,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void SetInvariant<T0>(this ExtVertexShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> addr) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* addrSpp = addr)
-                thisApi.SetInvariant(id, type, addrSpp);
+            thisApi.SetInvariant(id, type, in addr.GetPinnableReference());
         }
 
         public static unsafe void SetInvariant<T0>(this ExtVertexShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> addr) where T0 : unmanaged
@@ -195,13 +194,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // SpanOverloader
             thisApi.Variant(id, in addr.GetPinnableReference());
-        }
-
-        public static unsafe void VariantPointer<T0>(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] Span<T0> addr) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* addrSpp = addr)
-                thisApi.VariantPointer(id, type, stride, addrSpp);
         }
 
     }

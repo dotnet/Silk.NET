@@ -207,6 +207,16 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void EnqueueSetEvent<T0>(this ComPtr<IDStorageQueue1> thisVtbl, ref T0 handle) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* handlePtr = &handle)
+        {
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handlePtr);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDStorageQueue1> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -277,6 +287,14 @@ public unsafe static class DStorageQueue1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->Query(ref info.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EnqueueSetEvent<T0>(this ComPtr<IDStorageQueue1> thisVtbl, Span<T0> handle) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->EnqueueSetEvent(ref handle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

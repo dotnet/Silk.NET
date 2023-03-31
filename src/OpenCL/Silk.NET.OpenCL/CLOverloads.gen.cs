@@ -19,15 +19,13 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateBufferWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateBufferWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint CreateBufferWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
@@ -411,88 +409,77 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -627,376 +614,515 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -1145,15 +1271,420 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ilSpp = il)
-                return thisApi.CreateProgramWithIL(context, ilSpp, length, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe int SetContextDestructorCallback<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetContextDestructorCallback(context, pfn_notify, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe int SetProgramReleaseCallback<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetProgramReleaseCallback(program, pfn_notify, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe int SetProgramSpecializationConstant<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] nuint spec_size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> spec_value) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetProgramSpecializationConstant(program, spec_id, spec_size, in spec_value.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateProgramWithIL(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] void* il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateProgramWithIL(context, il, length, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, errcode_ret);
+        }
+
+        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmigrateMem(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* sizes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemMigrationFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
@@ -1408,9 +1939,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetKernelSubGroupInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* input_value, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* input_valueSpp = input_value)
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelSubGroupInfo(kernel, device, param_name, input_value_size, input_valueSpp, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetKernelSubGroupInfo(kernel, device, param_name, input_value_size, input_value, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelSubGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -1581,39 +2110,31 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueSvmfree(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueSvmfree(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_pointersSpp = svm_pointers)
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointersSpp, pfn_free_func, user_dataSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, out user_data.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmfree(command_queue, num_svm_pointers, svm_pointers, pfn_free_func, out user_data.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmfree<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_pointers, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
@@ -1722,104 +2243,85 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueSvmmap(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, svm_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (Bool, MapFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe int EnqueueSvmmap<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_map, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dst_ptrSpp = dst_ptr)
-            fixed (void* src_ptrSpp = src_ptr)
-                return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptrSpp, src_ptrSpp, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmap(command_queue, blocking_map, flags, out svm_ptr.GetPinnableReference(), size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueSvmmemcpy(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueSvmmemFill(command_queue, svm_ptrSpp, patternSpp, pattern_size, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, src_ptr, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmunmap(command_queue, svm_ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, in src_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmunmap(command_queue, svm_ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, in src_ptr.GetPinnableReference(), size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* svm_ptrSpp = svm_ptr)
-                return thisApi.EnqueueSvmunmap(command_queue, svm_ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueSvmmemcpy(command_queue, blocking_copy, dst_ptr, in src_ptr.GetPinnableReference(), size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueSvmmemcpy<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_copy, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* dst_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> src_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
@@ -2030,8 +2532,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetPipeInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint pipe, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetPipeInfo(pipe, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetPipeInfo(pipe, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PipeInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -2064,211 +2565,181 @@ namespace Silk.NET.OpenCL
         public static unsafe int SetKernelExecInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> param_value) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.SetKernelExecInfo(kernel, param_name, param_value_size, param_valueSpp);
+            return thisApi.SetKernelExecInfo(kernel, param_name, param_value_size, in param_value.GetPinnableReference());
         }
 
         public static unsafe void Svmfree<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> svm_pointer) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            thisApi.Svmfree(context, out svm_pointer.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_dataSpp);
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
         public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte* header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
         public static unsafe int CompileProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_headers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** header_include_names, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
@@ -2461,56 +2932,49 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage(context, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage(context, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage(context, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage(context, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -2692,120 +3156,103 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueFillBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueFillBuffer(command_queue, buffer, patternSpp, pattern_size, offset, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, pattern, pattern_size, offset, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueFillBuffer(command_queue, buffer, patternSpp, pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, pattern, pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueFillBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* patternSpp = pattern)
-                return thisApi.EnqueueFillBuffer(command_queue, buffer, patternSpp, pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, pattern, pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, region, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueFillBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueFillBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pattern, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint pattern_size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueFillBuffer(command_queue, buffer, in pattern.GetPinnableReference(), pattern_size, offset, size, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, region, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, origin, in region.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, origin, in region.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* fill_colorSpp = fill_color)
-                return thisApi.EnqueueFillImage(command_queue, image, fill_colorSpp, in origin.GetPinnableReference(), in region.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueFillImage(command_queue, image, fill_color, in origin.GetPinnableReference(), region, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueFillImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* fill_color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
@@ -3071,178 +3518,153 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetKernelArgInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetKernelArgInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelArgInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetKernelArgInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg_index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint LinkProgram<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint LinkProgram(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> device_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* options, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* input_programs, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
@@ -3411,40 +3833,35 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateSubBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* buffer_create_infoSpp = buffer_create_info)
-                return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_infoSpp, errcode_ret);
+            return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_info, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateSubBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* buffer_create_infoSpp = buffer_create_info)
-                return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_infoSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, in buffer_create_info.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateSubBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* buffer_create_infoSpp = buffer_create_info)
-                return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_infoSpp, errcode_ret);
+            return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, in buffer_create_info.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateSubBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferCreateType buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* buffer_create_infoSpp = buffer_create_info)
-                return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_infoSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_info, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateSubBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferCreateType buffer_create_type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> buffer_create_info, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* buffer_create_infoSpp = buffer_create_info)
-                return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, buffer_create_infoSpp, errcode_ret);
+            return thisApi.CreateSubBuffer(buffer, flags, buffer_create_type, in buffer_create_info.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags, BufferCreateType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -3670,470 +4087,403 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), host_origin, in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.BuildProgram(program, num_devices, device_list, in options.GetPinnableReference(), pfn_notify, user_dataSpp);
+            return thisApi.EnqueueReadBufferRect(command_queue, buffer, blocking_read, in buffer_origin.GetPinnableReference(), in host_origin.GetPinnableReference(), in region.GetPinnableReference(), buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_dataSpp);
+            return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), options, pfn_notify, user_dataSpp);
+            return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteBufferRect(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), pfn_notify, user_dataSpp);
+            return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), options, pfn_notify, user_dataSpp);
+            return thisApi.EnqueueWriteBufferRect(command_queue, buffer, blocking_write, buffer_origin, host_origin, region, buffer_row_pitch, buffer_slice_pitch, host_row_pitch, host_slice_pitch, in ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueWriteBufferRect<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* buffer_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* host_origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint buffer_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint host_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
@@ -4584,8 +4934,7 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBuffer(context, flags, size, host_ptrSpp, errcode_ret);
+            return thisApi.CreateBuffer(context, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -4618,64 +4967,55 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateContext(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(properties, num_devices, devices, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContext(properties, num_devices, devices, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateContext<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContext(properties, num_devices, devices, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint CreateContext<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContext(properties, num_devices, devices, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateContext(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, devices, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint CreateContext(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, devices, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateContext<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, in devices.GetPinnableReference(), pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         public static unsafe nint CreateContext<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, in devices.GetPinnableReference(), pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContext(properties, num_devices, in devices.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateContext(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(properties, device_type, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, devices, pfn_notify, user_data, errcode_ret);
         }
 
         public static unsafe nint CreateContext(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContext(in properties.GetPinnableReference(), num_devices, devices, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe nint CreateContext<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_devices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* devices, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
@@ -4760,48 +5100,42 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateContextFromType(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(properties, device_type, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContextFromType(properties, device_type, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateContextFromType<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(properties, device_type, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContextFromType(properties, device_type, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateContextFromType<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, user_dataSpp, errcode_ret);
+            return thisApi.CreateContextFromType(properties, device_type, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateContextFromType(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* user_dataSpp = user_data)
-                return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, user_dataSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, user_data, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateContextFromType(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateContextFromType<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum device_type, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, host_ptrSpp, errcode_ret);
+            return thisApi.CreateContextFromType(in properties.GetPinnableReference(), device_type, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextProperties, DeviceType). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -4857,69 +5191,42 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateImage2D(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage2D<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage2D<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage2D(context, flags, image_format, image_width, image_height, image_row_pitch, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage2D(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImage3D<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage3D(context, flags, image_format, image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImage3D<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage3D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptrSpp, errcode_ret);
-        }
-
-        public static unsafe nint CreateImage3D<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] nuint image_width, [Flow(FlowDirection.In)] nuint image_height, [Flow(FlowDirection.In)] nuint image_depth, [Flow(FlowDirection.In)] nuint image_row_pitch, [Flow(FlowDirection.In)] nuint image_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage3D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage2D(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage3D(context, flags, image_format, image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImage2D<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint image_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImage3D(context, flags, image_format, image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImage2D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_row_pitch, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -7440,99 +7747,85 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, mem_list, in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueNativeKernel(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* argsSpp = args)
-                return thisApi.EnqueueNativeKernel(command_queue, user_func, argsSpp, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueNativeKernel(command_queue, user_func, args, cb_args, num_mem_objects, in mem_list.GetPinnableReference(), in args_mem_loc, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueNativeKernel<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] UserFunction user_func, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb_args, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_mem_objects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* mem_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** args_mem_loc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
@@ -7820,120 +8113,103 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueReadBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadBuffer(command_queue, buffer, blocking_read, offset, size, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), region, row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, region, row_pitch, slice_pitch, out ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueReadImage(command_queue, image, blocking_read, in origin.GetPinnableReference(), in region.GetPinnableReference(), row_pitch, slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueReadImage(command_queue, image, blocking_read, origin, in region.GetPinnableReference(), row_pitch, slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueReadImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_read, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
@@ -8083,15 +8359,13 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueUnmapMemObject(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* mapped_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* mapped_ptrSpp = mapped_ptr)
-                return thisApi.EnqueueUnmapMemObject(command_queue, memobj, mapped_ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueUnmapMemObject(command_queue, memobj, mapped_ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueUnmapMemObject(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* mapped_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* mapped_ptrSpp = mapped_ptr)
-                return thisApi.EnqueueUnmapMemObject(command_queue, memobj, mapped_ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueUnmapMemObject(command_queue, memobj, mapped_ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueUnmapMemObject(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* mapped_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
@@ -8133,127 +8407,109 @@ namespace Silk.NET.OpenCL
         public static unsafe int EnqueueWriteBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteBuffer(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, in ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueWriteBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, in ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, in ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteBuffer<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueWriteBuffer(command_queue, buffer, blocking_write, offset, size, in ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, in ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueWriteImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, in ptr.GetPinnableReference(), num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, in ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), region, input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, region, input_row_pitch, input_slice_pitch, in ptr.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, @event);
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, event_wait_list, out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), @event);
         }
 
         public static unsafe int EnqueueWriteImage(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, in origin.GetPinnableReference(), in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptrSpp, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
+            return thisApi.EnqueueWriteImage(command_queue, image, blocking_write, origin, in region.GetPinnableReference(), input_row_pitch, input_slice_pitch, ptr, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
         public static unsafe int EnqueueWriteImage<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool blocking_write, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint* origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nuint> region, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_row_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint input_slice_pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_events_in_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_wait_list, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event) where T0 : unmanaged
@@ -8398,16 +8654,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetCommandQueueInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetCommandQueueInfo(command_queue, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetCommandQueueInfo(command_queue, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (CommandQueueInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetCommandQueueInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint command_queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetCommandQueueInfo(command_queue, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetCommandQueueInfo(command_queue, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (CommandQueueInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8439,8 +8693,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetContextInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetContextInfo(context, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetContextInfo(context, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ContextInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8518,16 +8771,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetDeviceInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetDeviceInfo(device, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetDeviceInfo(device, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (DeviceInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetDeviceInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetDeviceInfo(device, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetDeviceInfo(device, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (DeviceInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8559,16 +8810,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetEventInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetEventInfo(@event, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetEventInfo(@event, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (EventInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetEventInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetEventInfo(@event, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetEventInfo(@event, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (EventInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8600,8 +8849,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetEventProfilingInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetEventProfilingInfo(@event, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetEventProfilingInfo(@event, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProfilingInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8646,16 +8894,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetImageInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetImageInfo(image, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetImageInfo(image, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ImageInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetImageInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetImageInfo(image, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetImageInfo(image, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ImageInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8687,16 +8933,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetKernelInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelInfo(kernel, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetKernelInfo(kernel, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetKernelInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelInfo(kernel, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetKernelInfo(kernel, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8728,16 +8972,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetKernelWorkGroupInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelWorkGroupInfo(kernel, device, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetKernelWorkGroupInfo(kernel, device, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelWorkGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetKernelWorkGroupInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint kernel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetKernelWorkGroupInfo(kernel, device, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetKernelWorkGroupInfo(kernel, device, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (KernelWorkGroupInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8769,8 +9011,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetMemObjectInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetMemObjectInfo(memobj, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetMemObjectInfo(memobj, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8827,16 +9068,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetPlatformInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetPlatformInfo(platform, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetPlatformInfo(platform, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PlatformInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetPlatformInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetPlatformInfo(platform, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetPlatformInfo(platform, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (PlatformInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8868,16 +9107,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetProgramBuildInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetProgramBuildInfo(program, device, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetProgramBuildInfo(program, device, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramBuildInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetProgramBuildInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetProgramBuildInfo(program, device, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetProgramBuildInfo(program, device, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramBuildInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8909,16 +9146,14 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetProgramInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetProgramInfo(program, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetProgramInfo(program, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
         public static unsafe int GetProgramInfo<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetProgramInfo(program, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetProgramInfo(program, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (ProgramInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
@@ -8950,8 +9185,7 @@ namespace Silk.NET.OpenCL
         public static unsafe int GetSamplerInfo(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sampler, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint param_name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint param_value_size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* param_value, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetSamplerInfo(sampler, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetSamplerInfo(sampler, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (SamplerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]

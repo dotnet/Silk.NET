@@ -19,148 +19,127 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalFormat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.ColorTable(target, internalFormat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.GetColorTable(target, format, type, out data.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.GetColorTable(target, format, type, out data.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.GetColorTable(target, format, type, out data.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.GetColorTable(target, format, type, out data.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.GetColorTable(target, format, type, dataSpp);
+            thisApi.GetColorTable(target, format, type, out data.GetPinnableReference());
         }
 
         public static unsafe void GetColorTable<T0>(this ExtPalettedTexture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged

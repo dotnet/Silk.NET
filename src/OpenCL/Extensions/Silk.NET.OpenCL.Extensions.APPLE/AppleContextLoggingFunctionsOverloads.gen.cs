@@ -19,41 +19,31 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
         public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, private_info, cb, out user_data.GetPinnableReference());
         }
 
         public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStderr(errstr, private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, user_data);
         }
 
         public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
         }
 
         public static unsafe void LogMessagesToStderr(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStdout(errstr, private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_info, cb, user_data);
         }
 
         public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_info, cb, out user_data.GetPinnableReference());
         }
 
         public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint cb, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* user_data) where T0 : unmanaged

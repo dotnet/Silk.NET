@@ -5103,8 +5103,7 @@ public unsafe static class DxcUtilsVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->MoveToBlob(pDataSpp, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+        return @this->MoveToBlob(pData, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
     }
 
     /// <summary>To be documented.</summary>

@@ -4212,8 +4212,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4229,8 +4228,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4246,8 +4244,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4264,8 +4261,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4273,8 +4269,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4282,8 +4277,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4414,8 +4408,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4431,8 +4424,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4448,8 +4440,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4465,8 +4456,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4483,8 +4473,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4492,8 +4481,7 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>

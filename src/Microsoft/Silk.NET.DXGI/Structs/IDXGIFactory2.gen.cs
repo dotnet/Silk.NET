@@ -225,6 +225,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -232,6 +244,21 @@ namespace Silk.NET.DXGI
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                }
             }
             return ret;
         }
@@ -249,6 +276,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -258,6 +300,24 @@ namespace Silk.NET.DXGI
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
+                {
+                    fixed (void* pDataPtr = &pData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                    }
                 }
             }
             return ret;
@@ -1608,6 +1668,33 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, Luid* pLuid) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuid);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (Luid* pLuidPtr = &pLuid)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, Luid*, int>)@this->LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterStereoStatusWindow(nint WindowHandle, uint wMsg, uint* pdwCookie)
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1645,6 +1732,33 @@ namespace Silk.NET.DXGI
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterStereoStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterStereoStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
+                }
             }
             return ret;
         }
@@ -1694,6 +1808,33 @@ namespace Silk.NET.DXGI
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, void*, uint*, int>)@this->LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
+                }
             }
             return ret;
         }

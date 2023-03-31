@@ -121,57 +121,49 @@ namespace Silk.NET.OpenGLES
         public static unsafe void DrawElementsBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsBaseVertex(mode, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsBaseVertex(mode, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstancedBaseVertex(mode, count, type, indicesSpp, instancecount, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElementsBaseVertex(mode, start, end, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawElementsInstancedBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElementsBaseVertex(mode, start, end, count, type, indicesSpp, basevertex);
+            thisApi.DrawElementsInstancedBaseVertex(mode, count, type, in indices.GetPinnableReference(), instancecount, basevertex);
         }
 
         public static unsafe void DrawRangeElementsBaseVertex<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int basevertex) where T0 : unmanaged
@@ -4839,29 +4831,25 @@ namespace Silk.NET.OpenGLES
         public static unsafe void GetObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), label);
+            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), label);
         }
 
         public static unsafe void GetObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
         }
 
         public static unsafe void GetObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label)
@@ -4993,8 +4981,7 @@ namespace Silk.NET.OpenGLES
         public static unsafe void ObjectPtrLabel(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.ObjectPtrLabel(ptrSpp, length, in label.GetPinnableReference());
+            thisApi.ObjectPtrLabel(ptr, length, in label.GetPinnableReference());
         }
 
         public static unsafe void ObjectPtrLabel<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label) where T0 : unmanaged
@@ -5030,15 +5017,13 @@ namespace Silk.NET.OpenGLES
         public static unsafe void ReadnPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
         public static unsafe void ReadnPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
         public static unsafe void ReadnPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
@@ -5140,22 +5125,19 @@ namespace Silk.NET.OpenGLES
         public static unsafe void DrawArraysIndirect<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.DrawArraysIndirect(mode, indirectSpp);
+            thisApi.DrawArraysIndirect(mode, in indirect.GetPinnableReference());
         }
 
         public static unsafe void DrawArraysIndirect<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.DrawElementsIndirect(mode, type, indirectSpp);
+            thisApi.DrawArraysIndirect(mode, in indirect.GetPinnableReference());
         }
 
         public static unsafe void DrawElementsIndirect<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indirectSpp = indirect)
-                thisApi.DrawElementsIndirect(mode, type, indirectSpp);
+            thisApi.DrawElementsIndirect(mode, type, in indirect.GetPinnableReference());
         }
 
         public static unsafe void DrawElementsIndirect<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
@@ -5767,36 +5749,31 @@ namespace Silk.NET.OpenGLES
         public static unsafe void CompressedTexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, dataSpp);
+            thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, dataSpp);
+            thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, dataSpp);
+            thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, dataSpp);
+            thisApi.CompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, dataSpp);
+            thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
@@ -5880,36 +5857,31 @@ namespace Silk.NET.OpenGLES
         public static unsafe void DrawElementsInstanced<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, instancecount);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), instancecount);
         }
 
         public static unsafe void DrawElementsInstanced<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, instancecount);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), instancecount);
         }
 
         public static unsafe void DrawElementsInstanced<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElementsInstanced(mode, count, type, indicesSpp, instancecount);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), instancecount);
         }
 
         public static unsafe void DrawElementsInstanced<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint instancecount) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElements(mode, start, end, count, type, indicesSpp);
+            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), instancecount);
         }
 
         public static unsafe void DrawRangeElements<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawRangeElements(mode, start, end, count, type, indicesSpp);
+            thisApi.DrawRangeElements(mode, start, end, count, type, in indices.GetPinnableReference());
         }
 
         public static unsafe void DrawRangeElements<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
@@ -6173,15 +6145,13 @@ namespace Silk.NET.OpenGLES
         public static unsafe void GetProgramBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.GetProgramBinary(program, bufSize, length, out binaryFormat.GetPinnableReference(), binarySpp);
+            thisApi.GetProgramBinary(program, bufSize, length, binaryFormat, out binary.GetPinnableReference());
         }
 
         public static unsafe void GetProgramBinary(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<GLEnum> binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* binary)
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.GetProgramBinary(program, bufSize, out length.GetPinnableReference(), binaryFormat, binarySpp);
+            thisApi.GetProgramBinary(program, bufSize, length, out binaryFormat.GetPinnableReference(), binary);
         }
 
         public static unsafe void GetProgramBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<GLEnum> binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
@@ -6715,155 +6685,145 @@ namespace Silk.NET.OpenGLES
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixelsSpp);
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage3D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int zoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint depth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -6959,64 +6919,55 @@ namespace Silk.NET.OpenGLES
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferData(target, size, dataSpp, usage);
+            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferData(target, size, dataSpp, usage);
+            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferData(target, size, dataSpp, usage);
+            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferSubData(target, offset, size, dataSpp);
+            thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
         public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, dataSpp);
+            thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
         }
 
         public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, dataSpp);
+            thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, dataSpp);
+            thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, dataSpp);
+            thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, dataSpp);
+            thisApi.CompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, in data.GetPinnableReference());
         }
 
         public static unsafe void CompressedTexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
@@ -7100,15 +7051,13 @@ namespace Silk.NET.OpenGLES
         public static unsafe void DrawElements<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElements(mode, count, type, indicesSpp);
+            thisApi.DrawElements(mode, count, type, in indices.GetPinnableReference());
         }
 
         public static unsafe void DrawElements<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* indicesSpp = indices)
-                thisApi.DrawElements(mode, count, type, indicesSpp);
+            thisApi.DrawElements(mode, count, type, in indices.GetPinnableReference());
         }
 
         public static unsafe void DrawElements<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
@@ -8176,64 +8125,55 @@ namespace Silk.NET.OpenGLES
         public static unsafe void ReadPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.ReadPixels(x, y, width, height, format, type, pixelsSpp);
+            thisApi.ReadPixels(x, y, width, height, format, type, out pixels.GetPinnableReference());
         }
 
         public static unsafe void ReadPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.ReadPixels(x, y, width, height, format, type, pixelsSpp);
+            thisApi.ReadPixels(x, y, width, height, format, type, out pixels.GetPinnableReference());
         }
 
         public static unsafe void ReadPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.ReadPixels(x, y, width, height, format, type, pixelsSpp);
+            thisApi.ReadPixels(x, y, width, height, format, type, out pixels.GetPinnableReference());
         }
 
         public static unsafe void ReadPixels<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binarySpp, length);
+            thisApi.ReadPixels(x, y, width, height, format, type, out pixels.GetPinnableReference());
         }
 
         public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, shaders, binaryFormat, binarySpp, length);
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
         public static unsafe void ShaderBinary(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binarySpp, length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
         public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, shaders, binaryFormat, binarySpp, length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
         public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binarySpp, length);
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
         public static unsafe void ShaderBinary(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
-            fixed (void* binarySpp = binary)
-                thisApi.ShaderBinary(count, shaders, binaryFormat, binarySpp, length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
         public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
@@ -8293,99 +8233,85 @@ namespace Silk.NET.OpenGLES
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, pixelsSpp);
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int border, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -8451,50 +8377,49 @@ namespace Silk.NET.OpenGLES
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pixelsSpp = pixels)
-                thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixelsSpp);
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage2D<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int xoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int yoffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -8591,13 +8516,6 @@ namespace Silk.NET.OpenGLES
         {
             // SpanOverloader
             thisApi.VertexAttrib4(index, in v.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.VertexAttribPointer(index, size, type, normalized, stride, pointerSpp);
         }
 
     }
