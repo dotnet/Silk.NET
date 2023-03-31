@@ -747,7 +747,10 @@
             "exclude": [
                 "XrUuidMSFT",
                 "XrSceneSphereBoundMSFT",
-                "XrVector4sFB"
+                "XrVector4sFB",
+                "XrCoordinateFrameUID",
+                "XrCoordinateSpaceCreateInfoML",
+                "xrCreateSpaceFromCoordinateFrameUIDML"
             ],
             "typeMaps": [
                 {
