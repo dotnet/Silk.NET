@@ -22,6 +22,24 @@ namespace Silk.NET.WGL.Extensions.NV
             return thisApi.DxlockObjects(hDevice, count, out hObjects.GetPinnableReference());
         }
 
+        public static unsafe nint DxopenDevice<T0>(this NVDXInterop thisApi, [Flow(FlowDirection.Out)] Span<T0> dxDevice) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DxopenDevice(out dxDevice.GetPinnableReference());
+        }
+
+        public static unsafe nint DxregisterObject<T0>(this NVDXInterop thisApi, [Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.Out)] Span<T0> dxObject, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] NV access) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DxregisterObject(hDevice, out dxObject.GetPinnableReference(), name, type, access);
+        }
+
+        public static unsafe Silk.NET.Core.Bool32 DxsetResourceShareHandle<T0>(this NVDXInterop thisApi, [Flow(FlowDirection.Out)] Span<T0> dxObject, [Flow(FlowDirection.In)] nint shareHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DxsetResourceShareHandle(out dxObject.GetPinnableReference(), shareHandle);
+        }
+
         public static unsafe Silk.NET.Core.Bool32 DxunlockObjects(this NVDXInterop thisApi, [Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.In)] int count, [Flow(FlowDirection.Out)] Span<nint> hObjects)
         {
             // SpanOverloader

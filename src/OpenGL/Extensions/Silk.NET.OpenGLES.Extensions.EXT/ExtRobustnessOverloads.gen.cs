@@ -28,25 +28,28 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.GetnUniform(program, location, bufSize, out @params.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
+        }
+
+        public static unsafe void ReadnPixels<T0>(this ExtRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
     }

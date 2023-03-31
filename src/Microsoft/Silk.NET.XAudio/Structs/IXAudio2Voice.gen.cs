@@ -142,11 +142,35 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetEffectParameters<T0>(uint EffectIndex, [Flow(FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pParametersPtr = &pParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)@this->LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize) where T0 : unmanaged
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pParametersPtr = &pParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
+            }
             return ret;
         }
 

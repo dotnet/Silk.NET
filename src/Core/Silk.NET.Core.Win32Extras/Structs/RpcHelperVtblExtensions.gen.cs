@@ -127,6 +127,33 @@ public unsafe static class RpcHelperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetIIDFromOBJREF<T0>(this ComPtr<IRpcHelper> thisVtbl, ref T0 pObjRef, Guid** piid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pObjRefPtr = &pObjRef)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IRpcHelper*, void*, Guid**, int>)@this->LpVtbl[4])(@this, pObjRefPtr, piid);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetIIDFromOBJREF<T0>(this ComPtr<IRpcHelper> thisVtbl, ref T0 pObjRef, ref Guid* piid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pObjRefPtr = &pObjRef)
+        {
+            fixed (Guid** piidPtr = &piid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IRpcHelper*, void*, Guid**, int>)@this->LpVtbl[4])(@this, pObjRefPtr, piidPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IRpcHelper> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -160,12 +187,19 @@ public unsafe static class RpcHelperVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetIIDFromOBJREF<T0>(this ComPtr<IRpcHelper> thisVtbl, Span<T0> pObjRef, ref Guid* piid) where T0 : struct
+    public static unsafe int GetIIDFromOBJREF<T0>(this ComPtr<IRpcHelper> thisVtbl, Span<T0> pObjRef, Guid** piid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pObjRefSpp = pObjRef)
-            return @this->GetIIDFromOBJREF(pObjRefSpp, ref piid);
+        return @this->GetIIDFromOBJREF(ref pObjRef.GetPinnableReference(), piid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetIIDFromOBJREF<T0>(this ComPtr<IRpcHelper> thisVtbl, Span<T0> pObjRef, ref Guid* piid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetIIDFromOBJREF(ref pObjRef.GetPinnableReference(), ref piid);
     }
 
     /// <summary>To be documented.</summary>

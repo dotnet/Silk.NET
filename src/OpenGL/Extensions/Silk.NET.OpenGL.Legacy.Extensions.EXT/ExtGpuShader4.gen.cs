@@ -212,25 +212,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform1(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform1(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform2(location, (uint) value.Length*2, in value.GetPinnableReference());
+            Uniform2(location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform3(location, (uint) value.Length*3, in value.GetPinnableReference());
+            Uniform3(location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform4(location, (uint) value.Length*4, in value.GetPinnableReference());
+            Uniform4(location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe uint GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)

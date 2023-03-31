@@ -132,6 +132,33 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassForHandler<T0>(uint dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
+        {
+            var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetClassForHandler<T0>(uint dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
+        {
+            var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                fixed (Guid* pClsidPtr = &pClsid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

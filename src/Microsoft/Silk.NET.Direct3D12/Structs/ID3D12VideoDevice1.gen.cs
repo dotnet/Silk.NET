@@ -123,6 +123,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice1*, FeatureVideo, void*, uint, int>)@this->LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder)
         {
             var @this = (ID3D12VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

@@ -16,6 +16,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     public static class AmdDebugOutputOverloads
     {
+        public static unsafe void DebugMessageCallback<T0>(this AmdDebugOutput thisApi, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback, [Flow(FlowDirection.Out)] Span<T0> userParam) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DebugMessageCallback(callback, out userParam.GetPinnableReference());
+        }
+
         public static unsafe void DebugMessageEnable(this AmdDebugOutput thisApi, [Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
         {
             // SpanOverloader

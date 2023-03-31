@@ -649,6 +649,33 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterMessageCallback<T0>(PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, ref T0 pContext, uint* pCallbackCookie) where T0 : unmanaged
+        {
+            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pContextPtr = &pContext)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)@this->LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterMessageCallback<T0>(PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, ref T0 pContext, ref uint pCallbackCookie) where T0 : unmanaged
+        {
+            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pContextPtr = &pContext)
+            {
+                fixed (uint* pCallbackCookiePtr = &pCallbackCookie)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)@this->LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookiePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int UnregisterMessageCallback(uint CallbackCookie)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

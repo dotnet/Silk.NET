@@ -106,6 +106,93 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvDestContextPtr = &pvDestContext)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvDestContextPtr = &pvDestContext)
+        {
+            fixed (Guid* pCidPtr = &pCid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (Guid* pCidPtr = &pCid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                fixed (Guid* pCidPtr = &pCid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetUnmarshalClass(this ComPtr<IMarshal> thisVtbl, ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid)
     {
         var @this = thisVtbl.Handle;
@@ -133,6 +220,111 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                fixed (Guid* pCidPtr = &pCid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (Guid* pCidPtr = &pCid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    fixed (Guid* pCidPtr = &pCid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetMarshalSizeMax(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize)
     {
         var @this = thisVtbl.Handle;
@@ -149,6 +341,93 @@ public unsafe static class MarshalVtblExtensions
         fixed (uint* pSizePtr = &pSize)
         {
             ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvDestContextPtr = &pvDestContext)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvDestContextPtr = &pvDestContext)
+        {
+            fixed (uint* pSizePtr = &pSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (uint* pSizePtr = &pSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                fixed (uint* pSizePtr = &pSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                }
+            }
         }
         return ret;
     }
@@ -181,11 +460,155 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                fixed (uint* pSizePtr = &pSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (uint* pSizePtr = &pSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    fixed (uint* pSizePtr = &pSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MarshalInterface(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvDestContextPtr = &pvDestContext)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+            }
+        }
         return ret;
     }
 
@@ -197,6 +620,54 @@ public unsafe static class MarshalVtblExtensions
         fixed (Guid* riidPtr = &riid)
         {
             ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                }
+            }
         }
         return ret;
     }
@@ -214,6 +685,54 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (void* pvDestContextPtr = &pvDestContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (void* pvPtr = &pv)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MarshalInterface(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
     {
         var @this = thisVtbl.Handle;
@@ -223,6 +742,63 @@ public unsafe static class MarshalVtblExtensions
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void* pvDestContextPtr = &pvDestContext)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void* pvPtr = &pv)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void* pvPtr = &pv)
+                {
+                    fixed (void* pvDestContextPtr = &pvDestContext)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                    }
+                }
             }
         }
         return ret;
@@ -392,63 +968,243 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<Guid> pCid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetUnmarshalClass(riid, pvSpp, dwDestContext, pvDestContextSpp, mshlflags, ref pCid.GetPinnableReference());
+        return @this->GetUnmarshalClass(riid, pv, dwDestContext, pvDestContext, mshlflags, ref pCid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Guid* pCid) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags, pCid);
+        return @this->GetUnmarshalClass(riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pCid);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags, ref pCid.GetPinnableReference());
+        return @this->GetUnmarshalClass(riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pCid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetMarshalSizeMax(riid, pvSpp, dwDestContext, pvDestContextSpp, mshlflags, ref pSize.GetPinnableReference());
+        return @this->GetUnmarshalClass(riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, pCid);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, uint* pSize) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags, pSize);
+        return @this->GetUnmarshalClass(riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, ref pCid.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : struct where T1 : struct
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags, ref pSize.GetPinnableReference());
+        return @this->GetUnmarshalClass(riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pCid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pCid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags, pCid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<Guid> pCid)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags, ref pCid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pCid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pCid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, pCid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, ref pCid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pCid);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetUnmarshalClass<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<Guid> pCid) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetUnmarshalClass(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pCid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<uint> pSize)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, pv, dwDestContext, pvDestContext, mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<uint> pSize)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags, ref pSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, pSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMarshalSizeMax<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags, Span<uint> pSize) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetMarshalSizeMax(ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags, ref pSize.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -460,13 +1216,59 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : struct where T1 : struct
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->MarshalInterface(pStm, ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags);
+        return @this->MarshalInterface(pStm, riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, riid, pv, dwDestContext, ref pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(pStm, riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, riid, ref pv, dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(pStm, riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, riid, ref pv, dwDestContext, ref pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(pStm, ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags);
     }
 
     /// <summary>To be documented.</summary>
@@ -478,23 +1280,115 @@ public unsafe static class MarshalVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : struct where T1 : struct
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->MarshalInterface(ref pStm.GetPinnableReference(), riid, pvSpp, dwDestContext, pvDestContextSpp, mshlflags);
+        return @this->MarshalInterface(pStm, ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
     }
 
     /// <summary>To be documented.</summary>
-    public static int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : struct where T1 : struct
+    public static unsafe int MarshalInterface<T0, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, ref riid, pv, dwDestContext, ref pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-        fixed (void* pvDestContextSpp = pvDestContext)
-            return @this->MarshalInterface(ref pStm.GetPinnableReference(), ref riid.GetPinnableReference(), pvSpp, dwDestContext, pvDestContextSpp, mshlflags);
+        return @this->MarshalInterface(pStm, ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, ref riid, ref pv, dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(pStm, ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int MarshalInterface<T0, T1, TI0>(this ComPtr<IMarshal> thisVtbl, ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->MarshalInterface((Silk.NET.Core.Win32Extras.IStream*) pStm.Handle, ref riid, ref pv, dwDestContext, ref pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), riid, pv, dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Guid* riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), riid, pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Guid* riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), riid, ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Guid* riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), riid, ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Span<Guid> riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), ref riid.GetPinnableReference(), pv, dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Span<Guid> riid, void* pv, uint dwDestContext, Span<T0> pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), ref riid.GetPinnableReference(), pv, dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MarshalInterface<T0>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, pvDestContext, mshlflags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int MarshalInterface<T0, T1>(this ComPtr<IMarshal> thisVtbl, Span<Silk.NET.Core.Win32Extras.IStream> pStm, Span<Guid> riid, Span<T0> pv, uint dwDestContext, Span<T1> pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->MarshalInterface(ref pStm.GetPinnableReference(), ref riid.GetPinnableReference(), ref pv.GetPinnableReference(), dwDestContext, ref pvDestContext.GetPinnableReference(), mshlflags);
     }
 
     /// <summary>To be documented.</summary>

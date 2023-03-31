@@ -1566,6 +1566,18 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guid, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1573,6 +1585,21 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
+                }
             }
             return ret;
         }

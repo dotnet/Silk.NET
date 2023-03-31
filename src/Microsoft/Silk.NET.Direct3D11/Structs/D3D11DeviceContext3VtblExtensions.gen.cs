@@ -111,6 +111,18 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -123,6 +135,21 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -130,6 +157,21 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -150,11 +192,41 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pData);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+        }
         return ret;
     }
 
@@ -166,6 +238,21 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -727,6 +814,18 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetData(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
     {
         var @this = thisVtbl.Handle;
@@ -734,6 +833,21 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pData, DataSize, GetDataFlags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pDataPtr, DataSize, GetDataFlags);
+            }
         }
         return ret;
     }
@@ -1390,12 +1504,35 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pSrcDataPtr = &pSrcData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
         {
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (Box* pDstBoxPtr = &pDstBox)
+        {
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
         }
     }
 
@@ -1410,6 +1547,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+        {
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
@@ -1418,6 +1568,22 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+        {
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
             }
         }
     }
@@ -3688,12 +3854,35 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pSrcDataPtr = &pSrcData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
         {
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (Box* pDstBoxPtr = &pDstBox)
+        {
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
         }
     }
 
@@ -3708,6 +3897,19 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+        {
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
@@ -3716,6 +3918,22 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+        {
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)@this->LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+                }
             }
         }
     }
@@ -8270,6 +8488,16 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pSourceTileDataPtr = &pSourceTileData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileDataPtr, Flags);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
@@ -8280,12 +8508,38 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
+        {
+            fixed (void* pSourceTileDataPtr = &pSourceTileData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSizePtr, pSourceTileDataPtr, Flags);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
         {
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinatePtr, pDestTileRegionSize, pSourceTileData, Flags);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
+        {
+            fixed (void* pSourceTileDataPtr = &pSourceTileData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinatePtr, pDestTileRegionSize, pSourceTileDataPtr, Flags);
+            }
         }
     }
 
@@ -8303,12 +8557,41 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
+        {
+            fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
+            {
+                fixed (void* pSourceTileDataPtr = &pSourceTileData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResource, pDestTileRegionStartCoordinatePtr, pDestTileRegionSizePtr, pSourceTileDataPtr, Flags);
+                }
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
         {
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
+        {
+            fixed (void* pSourceTileDataPtr = &pSourceTileData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileDataPtr, Flags);
+            }
         }
     }
 
@@ -8321,6 +8604,22 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
             fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinate, pDestTileRegionSizePtr, pSourceTileData, Flags);
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
+        {
+            fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
+            {
+                fixed (void* pSourceTileDataPtr = &pSourceTileData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinate, pDestTileRegionSizePtr, pSourceTileDataPtr, Flags);
+                }
             }
         }
     }
@@ -8339,6 +8638,22 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
+        {
+            fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
+            {
+                fixed (void* pSourceTileDataPtr = &pSourceTileData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinatePtr, pDestTileRegionSize, pSourceTileDataPtr, Flags);
+                }
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
@@ -8349,6 +8664,25 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
                 fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
                 {
                     ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinatePtr, pDestTileRegionSizePtr, pSourceTileData, Flags);
+                }
+            }
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
+        {
+            fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
+            {
+                fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
+                {
+                    fixed (void* pSourceTileDataPtr = &pSourceTileData)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, void*, uint, void>)@this->LpVtbl[137])(@this, pDestTiledResourcePtr, pDestTileRegionStartCoordinatePtr, pDestTileRegionSizePtr, pSourceTileDataPtr, Flags);
+                    }
                 }
             }
         }
@@ -8491,6 +8825,16 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, ref T0 hEvent) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* hEventPtr = &hEvent)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, ContextType, void*, void>)@this->LpVtbl[144])(@this, ContextType, hEventPtr);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static void SetHardwareProtectionState(this ComPtr<ID3D11DeviceContext3> thisVtbl, Silk.NET.Core.Bool32 HwProtectionEnable)
     {
         var @this = thisVtbl.Handle;
@@ -8548,39 +8892,83 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pDataSpp);
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9008,12 +9396,35 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Asynchronous> pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : struct
+    public static unsafe int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Asynchronous* pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetData(ref pAsync.GetPinnableReference(), pDataSpp, DataSize, GetDataFlags);
+        return @this->GetData(pAsync, ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->GetData((ID3D11Asynchronous*) pAsync.Handle, ref pData, DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetData(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Asynchronous> pAsync, void* pData, uint DataSize, uint GetDataFlags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetData(ref pAsync.GetPinnableReference(), pData, DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Asynchronous> pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetData(ref pAsync.GetPinnableReference(), ref pData.GetPinnableReference(), DataSize, GetDataFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -9625,12 +10036,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : struct
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), pSrcDataSpp, SrcRowPitch, SrcDepthPitch);
+        @this->UpdateSubresource(pDstResource, DstSubresource, pDstBox, in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -9642,21 +10068,51 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : struct
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcDataSpp, SrcRowPitch, SrcDepthPitch);
+        @this->UpdateSubresource(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : struct
+    public static void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), pSrcDataSpp, SrcRowPitch, SrcDepthPitch);
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
@@ -11396,12 +11852,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : struct
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource1(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), pSrcDataSpp, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        @this->UpdateSubresource1(pDstResource, DstSubresource, pDstBox, in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource1(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -11413,21 +11884,51 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : struct
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcDataSpp, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        @this->UpdateSubresource1(pDstResource, DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : struct
+    public static void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateSubresource1((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSrcDataSpp = pSrcData)
-            @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), pSrcDataSpp, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateSubresource1(ref pDstResource.GetPinnableReference(), DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch, CopyFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15039,12 +15540,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(pDestTiledResource, pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(pDestTiledResource, pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(pDestTiledResource, pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15056,12 +15572,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(pDestTiledResource, pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, pDestTileRegionStartCoordinate, in pDestTileRegionSize, in pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15073,12 +15604,27 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, in pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15090,39 +15636,83 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(pDestTiledResource, in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), in pSourceTileData.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pDestTileRegionSize, [Flow(FlowDirection.In)] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), pSourceTileDataSpp, Flags);
+        // ComPtrOverloader
+        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, in pDestTileRegionStartCoordinate, in pDestTileRegionSize, in pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] Span<T0> pSourceTileData, uint Flags) where T0 : struct
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pSourceTileDataSpp = pSourceTileData)
-            @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), pSourceTileDataSpp, Flags);
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, in pDestTileRegionSize.GetPinnableReference(), in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] void* pSourceTileData, uint Flags)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), pSourceTileData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pDestTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pDestTileRegionSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSourceTileData, uint Flags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), in pDestTileRegionStartCoordinate.GetPinnableReference(), in pDestTileRegionSize.GetPinnableReference(), in pSourceTileData.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15203,6 +15793,14 @@ public unsafe static class D3D11DeviceContext3VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->BeginEventInt(in pLabel.GetPinnableReference(), Data);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Flush1<T0>(this ComPtr<ID3D11DeviceContext3> thisVtbl, ContextType ContextType, Span<T0> hEvent) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->Flush1(ContextType, ref hEvent.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

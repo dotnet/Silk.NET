@@ -16,48 +16,79 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
 {
     public static class LoaderLayersOverloads
     {
-        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
+        public static unsafe int GetLayerInfo(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetLayerInfo(param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetLayerInfo(param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
+        }
+
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
+        }
+
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (LOADER) are deprecated in favour of the \"grouped\" enums (LayerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : struct
+        public static unsafe int GetLayerInfo(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetLayerInfo(param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetLayerInfo(param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (LOADER) are deprecated in favour of the \"grouped\" enums (LayerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetLayerInfo(param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
-        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] Span<T0> target_dispatch, [Flow(FlowDirection.Out)] uint* num_entries_ret, [Flow(FlowDirection.In)] in void* layer_dispatch_ret) where T0 : struct
+        [Obsolete("The \"ungrouped\" enums (LOADER) are deprecated in favour of the \"grouped\" enums (LayerInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* target_dispatchSpp = target_dispatch)
-                return thisApi.InitLayer(num_entries, target_dispatchSpp, num_entries_ret, in layer_dispatch_ret);
+            return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
-        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] Span<T0> target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] void** layer_dispatch_ret) where T0 : struct
+        public static unsafe int InitLayer(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] void* target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] void** layer_dispatch_ret)
         {
             // SpanOverloader
-            fixed (void* target_dispatchSpp = target_dispatch)
-                return thisApi.InitLayer(num_entries, target_dispatchSpp, out num_entries_ret.GetPinnableReference(), layer_dispatch_ret);
+            return thisApi.InitLayer(num_entries, target_dispatch, out num_entries_ret.GetPinnableReference(), layer_dispatch_ret);
         }
 
-        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] Span<T0> target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] in void* layer_dispatch_ret) where T0 : struct
+        public static unsafe int InitLayer(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] void* target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] in void* layer_dispatch_ret)
         {
             // SpanOverloader
-            fixed (void* target_dispatchSpp = target_dispatch)
-                return thisApi.InitLayer(num_entries, target_dispatchSpp, out num_entries_ret.GetPinnableReference(), in layer_dispatch_ret);
+            return thisApi.InitLayer(num_entries, target_dispatch, out num_entries_ret.GetPinnableReference(), in layer_dispatch_ret);
+        }
+
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(FlowDirection.Out)] uint* num_entries_ret, [Flow(FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), num_entries_ret, layer_dispatch_ret);
+        }
+
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(FlowDirection.Out)] uint* num_entries_ret, [Flow(FlowDirection.In)] in void* layer_dispatch_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), num_entries_ret, in layer_dispatch_ret);
+        }
+
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), out num_entries_ret.GetPinnableReference(), layer_dispatch_ret);
+        }
+
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(FlowDirection.In)] in void* layer_dispatch_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), out num_entries_ret.GetPinnableReference(), in layer_dispatch_ret);
         }
 
     }

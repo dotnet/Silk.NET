@@ -126,6 +126,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, FeatureVideo, void*, uint, int>)@this->LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder)
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2178,6 +2190,138 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateVideoExtensionCommand([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2310,11 +2454,206 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                    {
+                        fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                    {
+                        fixed (Guid* riidPtr = &riid)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+            {
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                    {
+                        fixed (Guid* riidPtr = &riid)
+                        {
+                            fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0>(ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pOutputDataPtr = &pOutputData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0>(ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0, T1>(ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+            {
+                fixed (void* pOutputDataPtr = &pOutputData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                }
+            }
             return ret;
         }
 
@@ -2326,6 +2665,54 @@ namespace Silk.NET.Direct3D12
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0>(ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                fixed (void* pOutputDataPtr = &pOutputData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0>(ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ExecuteExtensionCommand<T0, T1>(ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+                {
+                    fixed (void* pOutputDataPtr = &pOutputData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                    }
+                }
             }
             return ret;
         }
@@ -2958,6 +3345,48 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0, TI1>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, out ComPtr<TI1> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppVideoExtensionCommand = default;
+            return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, riid, ref ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ref ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppVideoExtensionCommand = default;
+            return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateVideoExtensionCommand<TI0, TI1>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, out ComPtr<TI1> ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3000,11 +3429,77 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CreateVideoExtensionCommand<T0, TI0, TI1>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, out ComPtr<TI1> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppVideoExtensionCommand = default;
+            return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, riid, ref ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ref ppVideoExtensionCommand);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppVideoExtensionCommand = default;
+            return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int ExecuteExtensionCommand<TI0>(ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData, OutputDataSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ExecuteExtensionCommand<T0, TI0>(ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, in pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ExecuteExtensionCommand<T0, T1, TI0>(ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, in pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData, OutputDataSizeInBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -3323,6 +3818,24 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI1> CreateVideoExtensionCommand<T0, TI0, TI1>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI1> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe ComPtr<TI1> CreateVideoExtensionCommand<TI0, TI1>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3337,6 +3850,24 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI1> CreateVideoExtensionCommand<T0, TI0, TI1>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI1> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>([Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 

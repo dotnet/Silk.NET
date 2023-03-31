@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glDebugMessageCallbackAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback, [Flow(FlowDirection.Out)] void* userParam);
 
+        [NativeApi(EntryPoint = "glDebugMessageCallbackAMD", Convention = CallingConvention.Winapi)]
+        public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback, [Flow(FlowDirection.Out)] out T0 userParam) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageEnable([Flow(FlowDirection.In)] AMD category, [Flow(FlowDirection.In)] AMD severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
@@ -927,6 +930,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         {
             // ImplicitCountSpanOverloader
             return GetDebugMessageLog((uint) lengths.Length, (uint) message.Length, out categories.GetPinnableReference(), out severities.GetPinnableReference(), out ids.GetPinnableReference(), out lengths.GetPinnableReference(), out message.GetPinnableReference());
+        }
+
+        public unsafe T0 DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            DebugMessageCallback(callback, out T0 silkRet);
+            return silkRet;
         }
 
         public AmdDebugOutput(INativeContext ctx)

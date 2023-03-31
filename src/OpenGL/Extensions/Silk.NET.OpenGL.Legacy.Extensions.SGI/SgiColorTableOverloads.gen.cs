@@ -16,109 +16,100 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
 {
     public static class SgiColorTableOverloads
     {
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
-        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] Span<T0> table) where T0 : struct
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.ColorTable(target, internalformat, width, format, type, tableSpp);
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
+        }
+
+        public static unsafe void ColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> table) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ColorTable(target, internalformat, width, format, type, in table.GetPinnableReference());
         }
 
         public static unsafe void ColorTableParameter(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
@@ -169,53 +160,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
             thisApi.ColorTableParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
-        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : struct
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* tableSpp = table)
-                thisApi.GetColorTable(target, format, type, tableSpp);
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
+        }
+
+        public static unsafe void GetColorTable<T0>(this SgiColorTable thisApi, [Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetColorTable(target, format, type, out table.GetPinnableReference());
         }
 
         public static unsafe void GetColorTableParameter(this SgiColorTable thisApi, [Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)

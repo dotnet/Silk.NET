@@ -142,6 +142,18 @@ public unsafe static class Direct3DQuery9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, ref T0 pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDirect3DQuery9> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -172,6 +184,14 @@ public unsafe static class Direct3DQuery9VtblExtensions
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         return @this->GetDevice((IDirect3DDevice9**) ppDevice.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0>(this ComPtr<IDirect3DQuery9> thisVtbl, Span<T0> pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetData(ref pData.GetPinnableReference(), dwSize, dwGetDataFlags);
     }
 
     /// <summary>To be documented.</summary>

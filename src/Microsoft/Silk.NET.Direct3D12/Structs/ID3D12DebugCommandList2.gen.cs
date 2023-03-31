@@ -162,11 +162,35 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetDebugParameter<T0>(DebugCommandListParameterType Type, [Flow(FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[6])(@this, Type, pDataPtr, DataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDebugParameter(DebugCommandListParameterType Type, void* pData, uint DataSize)
         {
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pData, DataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDebugParameter<T0>(DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)@this->LpVtbl[7])(@this, Type, pDataPtr, DataSize);
+            }
             return ret;
         }
 

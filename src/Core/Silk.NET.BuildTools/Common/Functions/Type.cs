@@ -130,6 +130,15 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <summary>
+        /// Determines whether this type represents a single-level pointer to the given type name.
+        /// </summary>
+        /// <param name="name">The type name.</param>
+        /// <returns>Whether it's a single-level pointer.</returns>
+        public bool IsSinglePointerTo(string name)
+            => Name == name && IndirectionLevels == 1 && !IsIn && !IsOut && !IsByRef &&
+               !IsFunctionPointer && !IsArray && GenericTypes.Count == 0;
+
+        /// <summary>
         /// Returns a value indicating whether this signature represents a void pointer.
         /// </summary>
         /// <returns>A value indicating whether this signature represents a void pointer.</returns>
@@ -141,21 +150,6 @@ namespace Silk.NET.BuildTools.Common.Functions
                        StringComparison.OrdinalIgnoreCase
                    )
                    && IsPointer;
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether this signature represents a void pointer.
-        /// </summary>
-        /// <returns>A value indicating whether this signature represents a void pointer.</returns>
-        public bool IsSingleVoidPointer()
-        {
-            return ToString() == "void*";
-            //return Name.Equals
-            //       (
-            //           typeof(void).Name.ToLowerInvariant(),
-            //           StringComparison.OrdinalIgnoreCase
-            //       )
-            //       && IsPointer;
         }
 
         /// <summary>

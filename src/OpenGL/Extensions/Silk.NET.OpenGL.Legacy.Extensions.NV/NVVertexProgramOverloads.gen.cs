@@ -370,13 +370,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.VertexAttrib4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribPointer<T0>(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] VertexAttribEnumNV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.VertexAttribPointer(index, fsize, type, stride, pointerSpp);
-        }
-
         public static unsafe void VertexAttribs1(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader

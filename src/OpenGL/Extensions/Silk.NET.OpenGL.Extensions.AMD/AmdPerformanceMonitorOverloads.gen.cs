@@ -46,6 +46,12 @@ namespace Silk.NET.OpenGL.Extensions.AMD
             thisApi.GetPerfMonitorCounterData(monitor, pname, dataSize, out data.GetPinnableReference(), out bytesWritten.GetPinnableReference());
         }
 
+        public static unsafe void GetPerfMonitorCounterInfo<T0>(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPerfMonitorCounterInfo(group, counter, pname, out data.GetPinnableReference());
+        }
+
         public static unsafe void GetPerfMonitorCounters(this AmdPerformanceMonitor thisApi, [Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
         {
             // SpanOverloader

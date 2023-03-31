@@ -133,6 +133,10 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public unsafe partial Result GetAccelerationStructureHandle([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureHandleNV", Convention = CallingConvention.Winapi)]
+        public partial Result GetAccelerationStructureHandle<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2KHR* pMemoryRequirements);
 
@@ -153,6 +157,10 @@ namespace Silk.NET.Vulkan.Extensions.NV
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV", Convention = CallingConvention.Winapi)]
+        public partial Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         public unsafe Result BindAccelerationStructureMemory([Count(Count = 0)] Device device, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindAccelerationStructureMemoryInfoNV> pBindInfos)
@@ -208,6 +216,20 @@ namespace Silk.NET.Vulkan.Extensions.NV
         {
             // ImplicitCountSpanOverloader
             return CreateRayTracingPipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetAccelerationStructureHandle<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return GetAccelerationStructureHandle(device, accelerationStructure, (nuint) pData.Length, ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) pData.Length, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

@@ -110,6 +110,8 @@ namespace Silk.NET.Vulkan
         ErrorInvalidVideoStdParametersKhr = unchecked((int) -1000299000),
         [NativeName("Name", "VK_ERROR_COMPRESSION_EXHAUSTED_EXT")]
         ErrorCompressionExhaustedExt = unchecked((int) -1000338000),
+        [NativeName("Name", "VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT")]
+        ErrorIncompatibleShaderBinaryExt = 1000482000,
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY")]
         ErrorOutOfPoolMemory = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE")]

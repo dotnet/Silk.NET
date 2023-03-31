@@ -16,25 +16,28 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     public static class ExtBufferStorageOverloads
     {
-        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : struct
+        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferStorage(target, size, dataSpp, flags);
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
-        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : struct
+        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferStorage(target, size, dataSpp, flags);
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
-        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : struct
+        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.BufferStorage(target, size, dataSpp, flags);
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+        }
+
+        public static unsafe void BufferStorage<T0>(this ExtBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
     }

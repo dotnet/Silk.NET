@@ -1005,6 +1005,33 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInputLayout<T0>([Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInputLayout<T0>([Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+            {
+                fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateInputLayout([Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1026,6 +1053,39 @@ namespace Silk.NET.Direct3D11
                 fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInputLayout<T0>([Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (InputElementDesc* pInputElementDescsPtr = &pInputElementDescs)
+            {
+                fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInputLayout<T0>([Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (InputElementDesc* pInputElementDescsPtr = &pInputElementDescs)
+            {
+                fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+                {
+                    fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+                    }
                 }
             }
             return ret;
@@ -1080,6 +1140,66 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateGeometryShader([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1122,6 +1242,66 @@ namespace Silk.NET.Direct3D11
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+                    }
                 }
             }
             return ret;
@@ -1368,6 +1548,294 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                    {
+                        fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                    {
+                        fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+                {
+                    fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                    {
+                        fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                        {
+                            fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreatePixelShader([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1410,6 +1878,66 @@ namespace Silk.NET.Direct3D11
                 fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+                    }
                 }
             }
             return ret;
@@ -1464,6 +1992,66 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHullShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHullShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHullShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHullShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateDomainShader([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1512,6 +2100,66 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDomainShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDomainShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDomainShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDomainShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateComputeShader([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1554,6 +2202,66 @@ namespace Silk.NET.Direct3D11
                 fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateComputeShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShader);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateComputeShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateComputeShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShader);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateComputeShader<T0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+                    }
                 }
             }
             return ret;
@@ -1980,6 +2688,66 @@ namespace Silk.NET.Direct3D11
                 fixed (void** ppResourcePtr = &ppResource)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, ref Guid ReturnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource<T0>(ref T0 hResource, ref Guid ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+                {
+                    fixed (void** ppResourcePtr = &ppResource)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
+                    }
                 }
             }
             return ret;
@@ -41798,11 +42566,35 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Feature, void*, uint, int>)@this->LpVtbl[33])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pDataPtr);
+            }
             return ret;
         }
 
@@ -41819,6 +42611,21 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSizePtr, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -41826,6 +42633,21 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -41846,11 +42668,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
+                {
+                    fixed (void* pDataPtr = &pData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guid, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guid, DataSize, pDataPtr);
+            }
             return ret;
         }
 
@@ -41862,6 +42714,21 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guidPtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guidPtr, DataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -42393,6 +43260,66 @@ namespace Silk.NET.Direct3D11
                 fixed (void** ppResourcePtr = &ppResource)
                 {
                     ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResource, returnedInterfacePtr, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, Guid* returnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, Guid* returnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, ref Guid returnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, ref Guid returnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* hResourcePtr = &hResource)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    fixed (void** ppResourcePtr = &ppResource)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResourcePtr);
+                    }
                 }
             }
             return ret;
@@ -44327,12 +45254,35 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void WriteToSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
             }
         }
 
@@ -44347,6 +45297,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void WriteToSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44355,6 +45318,22 @@ namespace Silk.NET.Direct3D11
                 fixed (Box* pDstBoxPtr = &pDstBox)
                 {
                     ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void WriteToSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    fixed (void* pSrcDataPtr = &pSrcData)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                    }
                 }
             }
         }
@@ -44395,6 +45374,58 @@ namespace Silk.NET.Direct3D11
                 fixed (Box* pSrcBoxPtr = &pSrcBox)
                 {
                     ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[64])(@this, pDstData, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBox);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBoxPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBox);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    fixed (Box* pSrcBoxPtr = &pSrcBox)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)@this->LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr);
+                    }
                 }
             }
         }
@@ -44737,11 +45768,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInputLayout<T0, TI0>([Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ComPtr<TI0> ppInputLayout) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateInputLayout(pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature, BytecodeLength, (ID3D11InputLayout**) ppInputLayout.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateInputLayout<TI0>([Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ComPtr<TI0> ppInputLayout) where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateInputLayout(in pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, (ID3D11InputLayout**) ppInputLayout.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateInputLayout<T0, TI0>([Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ComPtr<TI0> ppInputLayout) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateInputLayout(in pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature, BytecodeLength, (ID3D11InputLayout**) ppInputLayout.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -44769,6 +45816,30 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CreateVertexShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppVertexShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVertexShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateGeometryShader<TI0, TI1>([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44790,6 +45861,30 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateGeometryShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateGeometryShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -44889,6 +45984,102 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateGeometryShaderWithStreamOutput<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreatePixelShader<TI0, TI1>([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppPixelShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI1>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44910,6 +46101,30 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePixelShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppPixelShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePixelShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -44937,6 +46152,30 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CreateHullShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHullShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppHullShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateHullShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateDomainShader<TI0, TI1>([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppDomainShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI1>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44961,6 +46200,30 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int CreateDomainShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDomainShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppDomainShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateDomainShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateComputeShader<TI0, TI1>([Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppComputeShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI1>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44982,6 +46245,30 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateComputeShader<T0, TI0, TI1>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateComputeShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppComputeShader);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateComputeShader<T0, TI0>([Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -45119,6 +46406,15 @@ namespace Silk.NET.Direct3D11
             // ComPtrOverloader
             ppResource = default;
             return @this->OpenSharedResource(hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int OpenSharedResource<T0, TI0>(ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResource = default;
+            return @this->OpenSharedResource(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -45264,6 +46560,15 @@ namespace Silk.NET.Direct3D11
             // ComPtrOverloader
             ppResource = default;
             return @this->OpenSharedResource1(hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int OpenSharedResource1<T0, TI0>(ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResource = default;
+            return @this->OpenSharedResource1(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -45830,11 +47135,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void WriteToSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void WriteToSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->WriteToSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
         }
 
         /// <summary>To be documented.</summary>
@@ -45851,6 +47172,22 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, in pSrcBox);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0, TI0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ReadFromSubresource(ref pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, pSrcBox);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ReadFromSubresource<T0, TI0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ReadFromSubresource(ref pDstData, DstRowPitch, DstDepthPitch, (ID3D11Resource*) pSrcResource.Handle, SrcSubresource, in pSrcBox);
         }
 
         /// <summary>To be documented.</summary>
@@ -45872,11 +47209,29 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> OpenSharedResource<T0, TI0>(ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe ComPtr<TI0> OpenSharedResource1<TI0>(void* hResource) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
             SilkMarshal.ThrowHResult(@this->OpenSharedResource1(hResource, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> OpenSharedResource1<T0, TI0>(ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->OpenSharedResource1(ref hResource, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 

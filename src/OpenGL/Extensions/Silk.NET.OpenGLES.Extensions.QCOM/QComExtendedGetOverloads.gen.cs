@@ -130,25 +130,28 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             thisApi.ExtGetTexLevelParameter(texture, face, level, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : struct
+        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* texelsSpp = texels)
-                thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texelsSpp);
+            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : struct
+        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* texelsSpp = texels)
-                thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texelsSpp);
+            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : struct
+        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* texelsSpp = texels)
-                thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texelsSpp);
+            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetTexSubImage<T0>(this QComExtendedGet thisApi, [Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out texels.GetPinnableReference());
         }
 
         public static unsafe void ExtGetTextures(this QComExtendedGet thisApi, [Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures)

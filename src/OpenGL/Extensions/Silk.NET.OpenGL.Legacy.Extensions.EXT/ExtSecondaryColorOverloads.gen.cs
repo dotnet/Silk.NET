@@ -64,13 +64,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.SecondaryColor3(in v.GetPinnableReference());
         }
 
-        public static unsafe void SecondaryColorPointer<T0>(this ExtSecondaryColor thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.SecondaryColorPointer(size, type, stride, pointerSpp);
-        }
-
     }
 }
 

@@ -132,6 +132,93 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int CompressBuffer<T0>([Flow(FlowDirection.In)] void* uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T0 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedBufferPtr = &compressedBuffer)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedData, uncompressedDataSize, compressionSetting, compressedBufferPtr, compressedBufferSize, compressedDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompressBuffer<T0>([Flow(FlowDirection.In)] void* uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T0 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedBufferPtr = &compressedBuffer)
+            {
+                fixed (nuint* compressedDataSizePtr = &compressedDataSize)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedData, uncompressedDataSize, compressionSetting, compressedBufferPtr, compressedBufferSize, compressedDataSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompressBuffer<T0>([Flow(FlowDirection.In)] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedDataPtr = &uncompressedData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedDataPtr, uncompressedDataSize, compressionSetting, compressedBuffer, compressedBufferSize, compressedDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompressBuffer<T0>([Flow(FlowDirection.In)] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedDataPtr = &uncompressedData)
+            {
+                fixed (nuint* compressedDataSizePtr = &compressedDataSize)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedDataPtr, uncompressedDataSize, compressionSetting, compressedBuffer, compressedBufferSize, compressedDataSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CompressBuffer<T0, T1>([Flow(FlowDirection.In)] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedDataPtr = &uncompressedData)
+            {
+                fixed (void* compressedBufferPtr = &compressedBuffer)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedDataPtr, uncompressedDataSize, compressionSetting, compressedBufferPtr, compressedBufferSize, compressedDataSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CompressBuffer<T0, T1>([Flow(FlowDirection.In)] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedDataPtr = &uncompressedData)
+            {
+                fixed (void* compressedBufferPtr = &compressedBuffer)
+                {
+                    fixed (nuint* compressedDataSizePtr = &compressedDataSize)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, Compression, void*, nuint, nuint*, int>)@this->LpVtbl[3])(@this, uncompressedDataPtr, uncompressedDataSize, compressionSetting, compressedBufferPtr, compressedBufferSize, compressedDataSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int DecompressBuffer([Flow(FlowDirection.In)] void* compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize)
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -148,6 +235,93 @@ namespace Silk.NET.DirectStorage
             fixed (nuint* uncompressedDataSizePtr = &uncompressedDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedData, compressedDataSize, uncompressedBuffer, uncompressedBufferSize, uncompressedDataSizePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecompressBuffer<T0>([Flow(FlowDirection.In)] void* compressedData, nuint compressedDataSize, ref T0 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedBufferPtr = &uncompressedBuffer)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedData, compressedDataSize, uncompressedBufferPtr, uncompressedBufferSize, uncompressedDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecompressBuffer<T0>([Flow(FlowDirection.In)] void* compressedData, nuint compressedDataSize, ref T0 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* uncompressedBufferPtr = &uncompressedBuffer)
+            {
+                fixed (nuint* uncompressedDataSizePtr = &uncompressedDataSize)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedData, compressedDataSize, uncompressedBufferPtr, uncompressedBufferSize, uncompressedDataSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecompressBuffer<T0>([Flow(FlowDirection.In)] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedDataPtr = &compressedData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedDataPtr, compressedDataSize, uncompressedBuffer, uncompressedBufferSize, uncompressedDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecompressBuffer<T0>([Flow(FlowDirection.In)] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedDataPtr = &compressedData)
+            {
+                fixed (nuint* uncompressedDataSizePtr = &uncompressedDataSize)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedDataPtr, compressedDataSize, uncompressedBuffer, uncompressedBufferSize, uncompressedDataSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecompressBuffer<T0, T1>([Flow(FlowDirection.In)] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedDataPtr = &compressedData)
+            {
+                fixed (void* uncompressedBufferPtr = &uncompressedBuffer)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedDataPtr, compressedDataSize, uncompressedBufferPtr, uncompressedBufferSize, uncompressedDataSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecompressBuffer<T0, T1>([Flow(FlowDirection.In)] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        {
+            var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* compressedDataPtr = &compressedData)
+            {
+                fixed (void* uncompressedBufferPtr = &uncompressedBuffer)
+                {
+                    fixed (nuint* uncompressedDataSizePtr = &uncompressedDataSize)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDStorageCompressionCodec*, void*, nuint, void*, nuint, nuint*, int>)@this->LpVtbl[4])(@this, compressedDataPtr, compressedDataSize, uncompressedBufferPtr, uncompressedBufferSize, uncompressedDataSizePtr);
+                    }
+                }
             }
             return ret;
         }

@@ -168,6 +168,18 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetData<T0>(ref T0 pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged
+        {
+            var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DQuery9*, void*, uint, uint, int>)@this->LpVtbl[7])(@this, pDataPtr, dwSize, dwGetDataFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DQuery9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

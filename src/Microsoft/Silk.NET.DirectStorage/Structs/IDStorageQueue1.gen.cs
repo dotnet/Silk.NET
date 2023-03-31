@@ -236,6 +236,16 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
+        public readonly void EnqueueSetEvent<T0>(ref T0 handle) where T0 : unmanaged
+        {
+            var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* handlePtr = &handle)
+            {
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handlePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

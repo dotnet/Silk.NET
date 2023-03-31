@@ -109,7 +109,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe void Uniform([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe ulong GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname)

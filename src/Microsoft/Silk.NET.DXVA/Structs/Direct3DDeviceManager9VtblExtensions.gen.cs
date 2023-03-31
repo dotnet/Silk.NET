@@ -136,11 +136,35 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CloseDeviceHandle<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[5])(@this, hDevicePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int TestDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[6])(@this, hDevice);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int TestDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[6])(@this, hDevicePtr);
+        }
         return ret;
     }
 
@@ -166,11 +190,50 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int UnlockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Silk.NET.Core.Bool32 fSaveState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, hDevice, fSaveState);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Silk.NET.Core.Bool32 fSaveState) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, hDevicePtr, fSaveState);
+        }
         return ret;
     }
 
@@ -223,6 +286,66 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Guid* riid, void** ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Guid* riid, ref void* ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            fixed (void** ppServicePtr = &ppService)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, ref Guid riid, void** ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, ref Guid riid, ref void* ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hDevicePtr = &hDevice)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppServicePtr = &ppService)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -256,12 +379,43 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : struct
+    public static int CloseDeviceHandle<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hDeviceSpp = hDevice)
-            return @this->LockDevice(hDeviceSpp, ref ppDevice, fBlock);
+        return @this->CloseDeviceHandle(ref hDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int TestDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->TestDevice(ref hDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LockDevice(ref hDevice.GetPinnableReference(), ppDevice, fBlock);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LockDevice(ref hDevice.GetPinnableReference(), ref ppDevice, fBlock);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Silk.NET.Core.Bool32 fSaveState) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->UnlockDevice(ref hDevice.GetPinnableReference(), fSaveState);
     }
 
     /// <summary>To be documented.</summary>
@@ -274,30 +428,60 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Guid* riid, ref void* ppService) where T0 : struct
+    public static unsafe int GetVideoService(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Span<Guid> riid, void** ppService)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hDeviceSpp = hDevice)
-            return @this->GetVideoService(hDeviceSpp, riid, ref ppService);
+        return @this->GetVideoService(hDevice, ref riid.GetPinnableReference(), ppService);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Span<Guid> riid, void** ppService) where T0 : struct
+    public static unsafe int GetVideoService(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Span<Guid> riid, ref void* ppService)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hDeviceSpp = hDevice)
-            return @this->GetVideoService(hDeviceSpp, ref riid.GetPinnableReference(), ppService);
+        return @this->GetVideoService(hDevice, ref riid.GetPinnableReference(), ref ppService);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Span<Guid> riid, ref void* ppService) where T0 : struct
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Guid* riid, void** ppService) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hDeviceSpp = hDevice)
-            return @this->GetVideoService(hDeviceSpp, ref riid.GetPinnableReference(), ref ppService);
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), riid, ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoService<T0, TI0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, out ComPtr<TI0> ppService) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppService = default;
+        return @this->GetVideoService(ref hDevice, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppService.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Guid* riid, ref void* ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), riid, ref ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Span<Guid> riid, void** ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), ref riid.GetPinnableReference(), ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Span<Guid> riid, ref void* ppService) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppService);
     }
 
     /// <summary>To be documented.</summary>
@@ -315,6 +499,15 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->GetVideoService(hDevice, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> GetVideoService<T0, TI0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->GetVideoService(ref hDevice, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

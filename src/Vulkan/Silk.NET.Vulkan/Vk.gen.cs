@@ -1036,6 +1036,10 @@ namespace Silk.NET.Vulkan
         public unsafe partial void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
+        public partial void UpdateDescriptorSetWithTemplate<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
 
@@ -1344,6 +1348,10 @@ namespace Silk.NET.Vulkan
         public unsafe partial void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] void* pValues);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] ref T0 pValues) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResetEvent", Convention = CallingConvention.Winapi)]
         public partial void CmdResetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
 
@@ -1414,6 +1422,10 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdUpdateBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
+        public partial void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
@@ -2689,11 +2701,23 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
+        public partial Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
@@ -3174,6 +3198,13 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public unsafe void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CmdPushConstants(commandBuffer, layout, stageFlags, offset, (uint) pValues.Length, ref pValues.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public unsafe void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
         {
             // ImplicitCountSpanOverloader
@@ -3192,6 +3223,13 @@ namespace Silk.NET.Vulkan
         {
             // ImplicitCountSpanOverloader
             CmdSetViewport(commandBuffer, firstViewport, (uint) pViewports.Length, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, (ulong) pData.Length, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3429,6 +3467,13 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceProperties ret = default;
             GetPhysicalDeviceProperties(physicalDevice, &ret);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, (nuint) pData.Length, ref pData.GetPinnableReference(), stride, flags);
         }
 
         /// <summary>To be documented.</summary>

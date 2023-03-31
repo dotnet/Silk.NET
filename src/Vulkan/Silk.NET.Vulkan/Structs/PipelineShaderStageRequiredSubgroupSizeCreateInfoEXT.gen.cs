@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT")]
     [NativeName("AliasOf", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfo")]
-    public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT : IExtendsChain<PipelineShaderStageCreateInfo>
+    public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT : IExtendsChain<PipelineShaderStageCreateInfo>, IExtendsChain<ShaderCreateInfoEXT>
     {
         public PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
         (

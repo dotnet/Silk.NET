@@ -108,13 +108,25 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         public unsafe partial void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] void* texels);
 
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
+        public partial void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] void* texels);
+
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
+        public partial void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] void* texels);
 
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
+        public partial void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] void* texels);
+
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM", Convention = CallingConvention.Winapi)]
+        public partial void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] out T0 texels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glExtGetTexturesQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetTextures([Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] int* numTextures);
@@ -310,6 +322,34 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         {
             // NonKhrReturnTypeOverloader
             ExtGetTexLevelParameter(texture, face, level, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] QCOM type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, out T0 silkRet);
             return silkRet;
         }
 

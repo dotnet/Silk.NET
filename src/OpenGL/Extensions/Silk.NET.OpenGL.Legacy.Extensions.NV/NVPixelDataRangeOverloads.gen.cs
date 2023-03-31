@@ -16,11 +16,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVPixelDataRangeOverloads
     {
-        public static unsafe void PixelDataRange<T0>(this NVPixelDataRange thisApi, [Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
+        public static unsafe void PixelDataRange<T0>(this NVPixelDataRange thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.PixelDataRange(target, length, pointerSpp);
+            thisApi.PixelDataRange(target, length, in pointer.GetPinnableReference());
+        }
+
+        public static unsafe void PixelDataRange<T0>(this NVPixelDataRange thisApi, [Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PixelDataRange(target, length, in pointer.GetPinnableReference());
         }
 
     }

@@ -120,11 +120,35 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetVideoProcessBltState<T0>(HDBltState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[3])(@this, State, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessBltState(HDBltState State, uint DataSize, void* pData)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessBltState<T0>(HDBltState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pDataPtr);
+            }
             return ret;
         }
 
@@ -138,11 +162,35 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int SetVideoProcessStreamState<T0>(uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessStreamState(uint StreamNumber, HDStreamState State, uint DataSize, void* pData)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessStreamState<T0>(uint StreamNumber, HDStreamState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
+            }
             return ret;
         }
 

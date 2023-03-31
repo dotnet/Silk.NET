@@ -94,6 +94,18 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice> thisVtbl, FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice*, FeatureVideo, void*, uint, int>)@this->LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
@@ -572,6 +584,14 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice> thisVtbl, FeatureVideo FeatureVideo, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CheckFeatureSupport(FeatureVideo, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>

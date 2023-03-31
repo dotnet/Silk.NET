@@ -94,6 +94,18 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -106,6 +118,21 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -113,6 +140,21 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -133,11 +175,41 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+        }
         return ret;
     }
 
@@ -149,6 +221,21 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -1008,10 +1095,30 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pSrcDataPtr = &pSrcData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void SetGraphicsRoot32BitConstants(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pSrcDataPtr = &pSrcData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+        }
     }
 
     /// <summary>To be documented.</summary>
@@ -1527,10 +1634,30 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pDataPtr = &pData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pDataPtr, Size);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void BeginEvent(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pDataPtr = &pData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pDataPtr, Size);
+        }
     }
 
     /// <summary>To be documented.</summary>
@@ -2283,12 +2410,35 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommand, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void InitializeMetaCommand(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersData, InitializationParametersDataSizeInBytes);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+        {
+            fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+            }
         }
     }
 
@@ -2300,12 +2450,35 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
+        {
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommand, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void ExecuteMetaCommand(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
         {
             ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+        }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+        {
+            fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)@this->LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+            }
         }
     }
 
@@ -2490,39 +2663,83 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pDataSpp);
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -3183,6 +3400,22 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->SetComputeRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, in pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->SetGraphicsRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, in pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
+    }
+
+    /// <summary>To be documented.</summary>
     public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<IndexBufferView> pView)
     {
         var @this = thisVtbl.Handle;
@@ -3572,6 +3805,22 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         @this->SetPredication(ref pBuffer.GetPinnableReference(), AlignedBufferOffset, Operation);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->SetMarker(Metadata, in pData.GetPinnableReference(), Size);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->BeginEvent(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
@@ -4319,12 +4568,35 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] Span<T0> pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : struct
+    public static unsafe void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pInitializationParametersDataSpp = pInitializationParametersData)
-            @this->InitializeMetaCommand(ref pMetaCommand.GetPinnableReference(), pInitializationParametersDataSpp, InitializationParametersDataSizeInBytes);
+        @this->InitializeMetaCommand(pMetaCommand, in pInitializationParametersData.GetPinnableReference(), InitializationParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void InitializeMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->InitializeMetaCommand((ID3D12MetaCommand*) pMetaCommand.Handle, in pInitializationParametersData, InitializationParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void InitializeMetaCommand(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->InitializeMetaCommand(ref pMetaCommand.GetPinnableReference(), pInitializationParametersData, InitializationParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->InitializeMetaCommand(ref pMetaCommand.GetPinnableReference(), in pInitializationParametersData.GetPinnableReference(), InitializationParametersDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -4336,12 +4608,35 @@ public unsafe static class D3D12GraphicsCommandList5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] Span<T0> pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : struct
+    public static unsafe void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pExecutionParametersDataSpp = pExecutionParametersData)
-            @this->ExecuteMetaCommand(ref pMetaCommand.GetPinnableReference(), pExecutionParametersDataSpp, ExecutionParametersDataSizeInBytes);
+        @this->ExecuteMetaCommand(pMetaCommand, in pExecutionParametersData.GetPinnableReference(), ExecutionParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(FlowDirection.In)] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        @this->ExecuteMetaCommand((ID3D12MetaCommand*) pMetaCommand.Handle, in pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ExecuteMetaCommand(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->ExecuteMetaCommand(ref pMetaCommand.GetPinnableReference(), pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList5> thisVtbl, Span<ID3D12MetaCommand> pMetaCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        @this->ExecuteMetaCommand(ref pMetaCommand.GetPinnableReference(), in pExecutionParametersData.GetPinnableReference(), ExecutionParametersDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>

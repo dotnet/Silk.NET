@@ -278,7 +278,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
+        public partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         public unsafe Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
@@ -414,10 +422,24 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, (nuint) pData.Length, ref pData.GetPinnableReference(), stride);
+        }
+
+        /// <summary>To be documented.</summary>
         public unsafe Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
         {
             // ImplicitCountSpanOverloader
             return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pData, stride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) pData.Length, ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>

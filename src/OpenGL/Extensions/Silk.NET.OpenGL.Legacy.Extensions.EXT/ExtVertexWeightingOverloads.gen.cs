@@ -22,13 +22,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.VertexWeight(in weight.GetPinnableReference());
         }
 
-        public static unsafe void VertexWeightPointer<T0>(this ExtVertexWeighting thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : struct
-        {
-            // SpanOverloader
-            fixed (void* pointerSpp = pointer)
-                thisApi.VertexWeightPointer(size, type, stride, pointerSpp);
-        }
-
     }
 }
 

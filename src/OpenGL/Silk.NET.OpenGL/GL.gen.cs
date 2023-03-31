@@ -21,19 +21,37 @@ namespace Silk.NET.OpenGL
         public unsafe partial void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawArraysIndirectCount<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawArraysIndirectCount<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPolygonOffsetClamp", Convention = CallingConvention.Winapi)]
         public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
@@ -99,49 +117,97 @@ namespace Silk.NET.OpenGL
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
@@ -201,19 +267,37 @@ namespace Silk.NET.OpenGL
         public unsafe partial void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCopyNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyNamedBufferSubData([Flow(FlowDirection.In)] uint readBuffer, [Flow(FlowDirection.In)] uint writeBuffer, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
@@ -374,8 +458,14 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glGetCompressedTextureImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCompressedTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
+        [NativeApi(EntryPoint = "glGetCompressedTextureImage", Convention = CallingConvention.Winapi)]
+        public partial void GetCompressedTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetCompressedTextureSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCompressedTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetCompressedTextureSubImage", Convention = CallingConvention.Winapi)]
+        public partial void GetCompressedTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetGraphicsResetStatus", Convention = CallingConvention.Winapi)]
         public partial GLEnum GetGraphicsResetStatus();
@@ -418,6 +508,9 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glGetNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glGetNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void GetNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferAttachmentParameteriv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
@@ -471,79 +564,157 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* table);
+
+        [NativeApi(EntryPoint = "glGetnColorTable", Convention = CallingConvention.Winapi)]
+        public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnCompressedTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetnCompressedTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* image);
+
+        [NativeApi(EntryPoint = "glGetnConvolutionFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogram", Convention = CallingConvention.Winapi)]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] double* v);
@@ -621,25 +792,49 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmax", Convention = CallingConvention.Winapi)]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] float* values);
@@ -690,49 +885,241 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span);
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnSeparableFilter", Convention = CallingConvention.Winapi)]
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetnTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnUniformdv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize", Expression = " / 8"), Flow(FlowDirection.Out)] double* @params);
@@ -768,13 +1155,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTextureImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] float* @params);
@@ -852,13 +1251,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTextureSubImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
@@ -978,16 +1389,31 @@ namespace Silk.NET.OpenGL
         public unsafe partial void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glNamedBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage);
+
+        [NativeApi(EntryPoint = "glNamedBufferData", Convention = CallingConvention.Winapi)]
+        public partial void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedBufferStorage([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glNamedBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glNamedBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedBufferStorage([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferStorageMask flags);
+
+        [NativeApi(EntryPoint = "glNamedBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glNamedBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void NamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedFramebufferDrawBuffer", Convention = CallingConvention.Winapi)]
         public partial void NamedFramebufferDrawBuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buf);
@@ -1059,13 +1485,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glReadnPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureBarrier", Convention = CallingConvention.Winapi)]
         public partial void TextureBarrier();
@@ -1176,37 +1614,73 @@ namespace Silk.NET.OpenGL
         public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTextureSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTransformFeedbackBufferBase", Convention = CallingConvention.Winapi)]
         public partial void TransformFeedbackBufferBase([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
@@ -1503,37 +1977,73 @@ namespace Silk.NET.OpenGL
         public unsafe partial void BufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void BufferStorage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferStorageMask flags);
+
+        [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void BufferStorage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferStorageMask flags);
+
+        [NativeApi(EntryPoint = "glBufferStorage", Convention = CallingConvention.Winapi)]
+        public partial void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearTexImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearTexSubImage", Convention = CallingConvention.Winapi)]
+        public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBindVertexBuffer", Convention = CallingConvention.Winapi)]
         public partial void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] uint stride);
@@ -1542,97 +2052,193 @@ namespace Silk.NET.OpenGL
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glClearBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCopyImageSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] GLEnum srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] GLEnum dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth);
@@ -1648,6 +2254,9 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glDebugMessageCallback", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] void* userParam);
+
+        [NativeApi(EntryPoint = "glDebugMessageCallback", Convention = CallingConvention.Winapi)]
+        public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] in T0 userParam) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -4217,6 +4826,24 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label);
 
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPointerv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -4503,19 +5130,37 @@ namespace Silk.NET.OpenGL
         public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glObjectLabel", Convention = CallingConvention.Winapi)]
         public unsafe partial void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label);
@@ -4543,6 +5188,15 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
         public unsafe partial void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
+
+        [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] in byte label) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
+        public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPopDebugGroup", Convention = CallingConvention.Winapi)]
         public partial void PopDebugGroup();
@@ -4662,25 +5316,49 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
@@ -4881,13 +5559,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
         [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
+
+        [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
         [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
+
+        [NativeApi(EntryPoint = "glGetProgramBinary", Convention = CallingConvention.Winapi)]
+        public partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetProgramPipelineiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -4984,6 +5674,9 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glProgramBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glProgramBinary", Convention = CallingConvention.Winapi)]
+        public partial void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glProgramParameteri", Convention = CallingConvention.Winapi)]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value);
@@ -5265,25 +5958,49 @@ namespace Silk.NET.OpenGL
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUseProgramStages", Convention = CallingConvention.Winapi)]
         public partial void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program);
@@ -5457,19 +6174,37 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
+
+        [NativeApi(EntryPoint = "glDrawArraysIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
+
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
+
+        [NativeApi(EntryPoint = "glDrawElementsIndirect", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] in T0 indirect) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawTransformFeedback", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint id);
@@ -6447,37 +7182,73 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+
+        [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glFenceSync", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] GLEnum condition, [Flow(FlowDirection.In)] uint flags);
@@ -6759,13 +7530,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+
+        [NativeApi(EntryPoint = "glDrawElementsInstanced", Convention = CallingConvention.Winapi)]
+        public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -8747,19 +9530,37 @@ namespace Silk.NET.OpenGL
         public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+
+        [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+
+        [NativeApi(EntryPoint = "glBufferData", Convention = CallingConvention.Winapi)]
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDeleteBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* buffers);
@@ -8867,7 +9668,13 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glGetBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void GetBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetBufferSubData", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glGetBufferSubData", Convention = CallingConvention.Winapi)]
+        public partial void GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetQueryiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -9116,79 +9923,157 @@ namespace Silk.NET.OpenGL
         public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+
+        [NativeApi(EntryPoint = "glCompressedTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetCompressedTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
+
+        [NativeApi(EntryPoint = "glGetCompressedTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSampleCoverage", Convention = CallingConvention.Winapi)]
         public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
@@ -9203,85 +10088,169 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+
+        [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+
+        [NativeApi(EntryPoint = "glDrawRangeElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage3D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBindTexture", Convention = CallingConvention.Winapi)]
         public partial void BindTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint texture);
@@ -9347,13 +10316,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+
+        [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+
+        [NativeApi(EntryPoint = "glDrawElements", Convention = CallingConvention.Winapi)]
+        public partial void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGenTextures", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
@@ -9377,49 +10358,97 @@ namespace Silk.NET.OpenGL
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexSubImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBlendFunc", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(FlowDirection.In)] GLEnum sfactor, [Flow(FlowDirection.In)] GLEnum dfactor);
@@ -9568,25 +10597,49 @@ namespace Silk.NET.OpenGL
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glGetTexImage", Convention = CallingConvention.Winapi)]
+        public partial void GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
@@ -9748,13 +10801,25 @@ namespace Silk.NET.OpenGL
         public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+
+        [NativeApi(EntryPoint = "glReadPixels", Convention = CallingConvention.Winapi)]
+        public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glScissor", Convention = CallingConvention.Winapi)]
         public partial void Scissor([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
@@ -9796,97 +10861,193 @@ namespace Silk.NET.OpenGL
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage1D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+
+        [NativeApi(EntryPoint = "glTexImage2D", Convention = CallingConvention.Winapi)]
+        public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] in T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexParameterf", Convention = CallingConvention.Winapi)]
         public partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
@@ -10015,6 +11176,42 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             SpecializeShader(shader, pEntryPoint, (uint) pConstantValue.Length, in pConstantIndex.GetPinnableReference(), in pConstantValue.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage1D(texture, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
         }
 
         public unsafe uint CreateBuffer()
@@ -10248,6 +11445,228 @@ namespace Silk.NET.OpenGL
             CreateVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
         }
 
+        public unsafe void GetCompressedTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetCompressedTextureImage(texture, level, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetCompressedTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedBufferSubData(buffer, offset, (nuint) data.Length, out data.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) table.Length, out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnCompressedTexImage(target, lod, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnCompressedTexImage(target, lod, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) image.Length, out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) values.Length, out values.GetPinnableReference());
+        }
+
         public unsafe byte GetnPolygonStipple()
         {
             const uint bufSize = 1;
@@ -10269,6 +11688,342 @@ namespace Silk.NET.OpenGL
             GetnPolygonStipple((uint) pattern.Length, out pattern.GetPinnableReference());
         }
 
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) row.Length, out row.GetPinnableReference(), (uint) column.Length, out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
         public unsafe double GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
         {
             const uint bufSize = 1;
@@ -10281,25 +12036,73 @@ namespace Silk.NET.OpenGL
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize", Expression = " / 8"), Flow(FlowDirection.Out)] Span<double> @params)
         {
             // ImplicitCountSpanOverloader
-            GetnUniform(program, location, (uint) @params.Length / 8, out @params.GetPinnableReference());
+            GetnUniform(program, location, (uint) @params.Length*8, out @params.GetPinnableReference());
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // ImplicitCountSpanOverloader
-            GetnUniform(program, location, (uint) @params.Length / 4, out @params.GetPinnableReference());
+            GetnUniform(program, location, (uint) @params.Length*4, out @params.GetPinnableReference());
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
-            GetnUniform(program, location, (uint) @params.Length / 4, out @params.GetPinnableReference());
+            GetnUniform(program, location, (uint) @params.Length*4, out @params.GetPinnableReference());
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<uint> @params)
         {
             // ImplicitCountSpanOverloader
-            GetnUniform(program, location, (uint) @params.Length / 4, out @params.GetPinnableReference());
+            GetnUniform(program, location, (uint) @params.Length*4, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureImage(texture, level, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
+        }
+
+        public unsafe void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (uint) pixels.Length, out pixels.GetPinnableReference());
         }
 
         public unsafe void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<GLEnum> attachments)
@@ -10326,6 +12129,36 @@ namespace Silk.NET.OpenGL
             InvalidateNamedFramebufferSubData(framebuffer, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
+        public unsafe void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferData(buffer, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferData(buffer, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferStorage(buffer, (nuint) data.Length, in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void NamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferSubData(buffer, offset, (nuint) data.Length, in data.GetPinnableReference());
+        }
+
         public unsafe void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<GLEnum> bufs)
         {
             // ImplicitCountSpanOverloader
@@ -10336,6 +12169,30 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             NamedFramebufferDrawBuffers(framebuffer, (uint) bufs.Length, in bufs.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) data.Length, out data.GetPinnableReference());
         }
 
         public unsafe void VertexArrayVertexBuffers([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
@@ -10732,6 +12589,30 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             BindVertexBuffers(first, (uint) strides.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferStorage(target, (nuint) data.Length, in data.GetPinnableReference(), flags);
         }
 
         public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
@@ -15534,6 +17415,30 @@ namespace Silk.NET.OpenGL
             GetObjectPtrLabel(ptr, (uint) label.Length, out length, out label.GetPinnableReference());
         }
 
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -15790,6 +17695,54 @@ namespace Silk.NET.OpenGL
             InvalidateSubFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
+        public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+        }
+
+        public unsafe void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            DrawElementsInstancedBaseVertexBaseInstance(mode, (uint) indices.Length, type, in indices.GetPinnableReference(), instancecount, basevertex, baseinstance);
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
@@ -15897,6 +17850,30 @@ namespace Silk.NET.OpenGL
             GenProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
         }
 
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) binary.Length, length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) binary.Length, length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) binary.Length, out length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) binary.Length, out length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
         public unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> infoLog)
         {
             // ImplicitCountSpanOverloader
@@ -15919,6 +17896,12 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             GetProgramPipelineInfoLog(pipeline, (uint) infoLog.Length, out length, out infoLog.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
@@ -15948,181 +17931,187 @@ namespace Silk.NET.OpenGL
         public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform2(program, location, (uint) value.Length*2, in value.GetPinnableReference());
+            ProgramUniform2(program, location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform2(program, location, (uint) value.Length*2, in value.GetPinnableReference());
+            ProgramUniform2(program, location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform2(program, location, (uint) value.Length*2, in value.GetPinnableReference());
+            ProgramUniform2(program, location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform2(program, location, (uint) value.Length*2, in value.GetPinnableReference());
+            ProgramUniform2(program, location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform3(program, location, (uint) value.Length*3, in value.GetPinnableReference());
+            ProgramUniform3(program, location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform3(program, location, (uint) value.Length*3, in value.GetPinnableReference());
+            ProgramUniform3(program, location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform3(program, location, (uint) value.Length*3, in value.GetPinnableReference());
+            ProgramUniform3(program, location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform3(program, location, (uint) value.Length*3, in value.GetPinnableReference());
+            ProgramUniform3(program, location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform4(program, location, (uint) value.Length*4, in value.GetPinnableReference());
+            ProgramUniform4(program, location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform4(program, location, (uint) value.Length*4, in value.GetPinnableReference());
+            ProgramUniform4(program, location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform4(program, location, (uint) value.Length*4, in value.GetPinnableReference());
+            ProgramUniform4(program, location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniform4(program, location, (uint) value.Length*4, in value.GetPinnableReference());
+            ProgramUniform4(program, location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2(program, location, (uint) value.Length*4, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2(program, location, (uint) value.Length/4, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2(program, location, (uint) value.Length*4, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2(program, location, (uint) value.Length/4, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x3(program, location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2x3(program, location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x3(program, location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2x3(program, location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x4(program, location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2x4(program, location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix2x4(program, location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix2x4(program, location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3(program, location, (uint) value.Length*9, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3(program, location, (uint) value.Length/9, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3(program, location, (uint) value.Length*9, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3(program, location, (uint) value.Length/9, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x2(program, location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3x2(program, location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x2(program, location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3x2(program, location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x4(program, location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3x4(program, location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix3x4(program, location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix3x4(program, location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4(program, location, (uint) value.Length*16, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4(program, location, (uint) value.Length/16, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4(program, location, (uint) value.Length*16, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4(program, location, (uint) value.Length/16, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x2(program, location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4x2(program, location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x2(program, location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4x2(program, location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x3(program, location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4x3(program, location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            ProgramUniformMatrix4x3(program, location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            ProgramUniformMatrix4x3(program, location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
@@ -16131,10 +18120,34 @@ namespace Silk.NET.OpenGL
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // ImplicitCountSpanOverloader
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
@@ -16143,10 +18156,28 @@ namespace Silk.NET.OpenGL
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // ImplicitCountSpanOverloader
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
@@ -16287,79 +18318,79 @@ namespace Silk.NET.OpenGL
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform1(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform1(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform2(location, (uint) value.Length*2, in value.GetPinnableReference());
+            Uniform2(location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform3(location, (uint) value.Length*3, in value.GetPinnableReference());
+            Uniform3(location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform4(location, (uint) value.Length*4, in value.GetPinnableReference());
+            Uniform4(location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2(location, (uint) value.Length*4, transpose, in value.GetPinnableReference());
+            UniformMatrix2(location, (uint) value.Length/4, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2x3(location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            UniformMatrix2x3(location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2x4(location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            UniformMatrix2x4(location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3(location, (uint) value.Length*9, transpose, in value.GetPinnableReference());
+            UniformMatrix3(location, (uint) value.Length/9, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3x2(location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            UniformMatrix3x2(location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3x4(location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            UniformMatrix3x4(location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4(location, (uint) value.Length*16, transpose, in value.GetPinnableReference());
+            UniformMatrix4(location, (uint) value.Length/16, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4x2(location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            UniformMatrix4x2(location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4x3(location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            UniformMatrix4x3(location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformSubroutines([Flow(FlowDirection.In)] GLEnum shadertype, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> indices)
@@ -17017,61 +19048,61 @@ namespace Silk.NET.OpenGL
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform1(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform1(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform2(location, (uint) value.Length*2, in value.GetPinnableReference());
+            Uniform2(location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform3(location, (uint) value.Length*3, in value.GetPinnableReference());
+            Uniform3(location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform4(location, (uint) value.Length*4, in value.GetPinnableReference());
+            Uniform4(location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2x3(location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            UniformMatrix2x3(location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2x4(location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            UniformMatrix2x4(location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*6"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3x2(location, (uint) value.Length*6, transpose, in value.GetPinnableReference());
+            UniformMatrix3x2(location, (uint) value.Length/6, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3x4(location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            UniformMatrix3x4(location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*8"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4x2(location, (uint) value.Length*8, transpose, in value.GetPinnableReference());
+            UniformMatrix4x2(location, (uint) value.Length/8, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*12"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4x3(location, (uint) value.Length*12, transpose, in value.GetPinnableReference());
+            UniformMatrix4x3(location, (uint) value.Length/12, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<GLEnum> bufs)
@@ -17599,67 +19630,103 @@ namespace Silk.NET.OpenGL
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform1(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform1(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*1"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform1(location, (uint) value.Length*1, in value.GetPinnableReference());
+            Uniform1(location, (uint) value.Length/1, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform2(location, (uint) value.Length*2, in value.GetPinnableReference());
+            Uniform2(location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform2(location, (uint) value.Length*2, in value.GetPinnableReference());
+            Uniform2(location, (uint) value.Length/2, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform3(location, (uint) value.Length*3, in value.GetPinnableReference());
+            Uniform3(location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform3(location, (uint) value.Length*3, in value.GetPinnableReference());
+            Uniform3(location, (uint) value.Length/3, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform4(location, (uint) value.Length*4, in value.GetPinnableReference());
+            Uniform4(location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // ImplicitCountSpanOverloader
-            Uniform4(location, (uint) value.Length*4, in value.GetPinnableReference());
+            Uniform4(location, (uint) value.Length/4, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix2(location, (uint) value.Length*4, transpose, in value.GetPinnableReference());
+            UniformMatrix2(location, (uint) value.Length/4, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix3(location, (uint) value.Length*9, transpose, in value.GetPinnableReference());
+            UniformMatrix3(location, (uint) value.Length/9, transpose, in value.GetPinnableReference());
         }
 
         public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // ImplicitCountSpanOverloader
-            UniformMatrix4(location, (uint) value.Length*16, transpose, in value.GetPinnableReference());
+            UniformMatrix4(location, (uint) value.Length/16, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) data.Length, in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferSubData(target, offset, (nuint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferSubData(target, offset, (nuint) data.Length, in data.GetPinnableReference());
         }
 
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint buffers)
@@ -17738,6 +19805,18 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             GenQueries((uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void GetBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetBufferSubData(target, offset, (nuint) data.Length, out data.GetPinnableReference());
+        }
+
+        public unsafe void GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetBufferSubData(target, offset, (nuint) data.Length, out data.GetPinnableReference());
         }
 
         public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
@@ -17822,6 +19901,150 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length);
+        }
+
+        public unsafe void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage1D(target, level, internalformat, width, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage2D(target, level, internalformat, width, height, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexImage3D(target, level, internalformat, width, height, depth, border, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage1D(target, level, xoffset, width, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
+        }
+
+        public unsafe void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) data.Length, in data.GetPinnableReference());
         }
 
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
@@ -18004,6 +20227,20 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetCompressedTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTextureImage(texture, level, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetCompressedTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe int GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname)
         {
             // NonKhrReturnTypeOverloader
@@ -18029,6 +20266,13 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetNamedBufferPointer(buffer, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedBufferSubData(buffer, offset, size, out T0 silkRet);
             return silkRet;
         }
 
@@ -18088,6 +20332,188 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnColorTable(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnCompressedTexImage(target, lod, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnCompressedTexImage(target, lod, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnConvolutionFilter(target, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnHistogram(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe double GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize)
         {
             // NonKhrReturnTypeOverloader
@@ -18116,6 +20542,62 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnMinmax(target, reset, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe float GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize)
         {
             // NonKhrReturnTypeOverloader
@@ -18137,10 +20619,318 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T0 column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] out T1 column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, out row, columnBufSize, out column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnTexImage(target, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe double GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize)
         {
             // NonKhrReturnTypeOverloader
             GetnUniform(program, location, bufSize, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureImage(texture, level, format, type, bufSize, out T0 silkRet);
             return silkRet;
         }
 
@@ -18183,6 +20973,34 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetTextureParameterI(texture, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, out T0 silkRet);
             return silkRet;
         }
 
@@ -18267,6 +21085,34 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetVertexArrayIndexed64(vaobj, index, pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadnPixels(x, y, width, height, format, type, bufSize, out T0 silkRet);
             return silkRet;
         }
 
@@ -18393,6 +21239,20 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(ptr, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(in ptr, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);
             return silkRet;
         }
 
@@ -18610,6 +21470,34 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetFloat(target, index, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, length, out binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, binaryFormat, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramBinary(program, bufSize, out length, out binaryFormat, out T0 silkRet);
             return silkRet;
         }
 
@@ -19768,6 +22656,20 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferSubData(target, offset, size, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferSubData(target, offset, size, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe int GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname)
         {
             // NonKhrReturnTypeOverloader
@@ -19796,10 +22698,80 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
+        public unsafe T0 GetCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTexImage(target, level, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTexImage(target, level, out T0 silkRet);
+            return silkRet;
+        }
+
         public unsafe uint GenTextures([Flow(FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenTextures(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexImage(target, level, format, type, out T0 silkRet);
             return silkRet;
         }
 
@@ -19856,6 +22828,202 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetTexParameter(target, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadPixels(x, y, width, height, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadPixels(x, y, width, height, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadPixels(x, y, width, height, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ReadPixels(x, y, width, height, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, columnBufSize, column, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T2 GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetnSeparableFilter(target, format, type, row, column, out T2 silkRet);
             return silkRet;
         }
 

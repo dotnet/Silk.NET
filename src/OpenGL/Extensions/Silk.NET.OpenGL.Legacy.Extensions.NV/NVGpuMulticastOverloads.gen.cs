@@ -16,6 +16,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVGpuMulticastOverloads
     {
+        public static unsafe void MulticastBufferSubData<T0>(this NVGpuMulticast thisApi, [Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MulticastBufferSubData(gpuMask, buffer, offset, size, in data.GetPinnableReference());
+        }
+
         public static unsafe void MulticastFramebufferSampleLocations(this NVGpuMulticast thisApi, [Flow(FlowDirection.In)] uint gpu, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader

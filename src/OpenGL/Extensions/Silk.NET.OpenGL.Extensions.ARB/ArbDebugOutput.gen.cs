@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glDebugMessageCallbackARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcArb callback, [Count(Computed = "callback"), Flow(FlowDirection.In)] void* userParam);
 
+        [NativeApi(EntryPoint = "glDebugMessageCallbackARB", Convention = CallingConvention.Winapi)]
+        public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcArb callback, [Count(Computed = "callback"), Flow(FlowDirection.In)] in T0 userParam) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glDebugMessageControlARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 

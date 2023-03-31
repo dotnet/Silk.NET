@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe void FogFunc([Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
-            FogFunc((uint) points.Length*2, in points.GetPinnableReference());
+            FogFunc((uint) points.Length/2, in points.GetPinnableReference());
         }
 
         public unsafe float GetFogFunc()

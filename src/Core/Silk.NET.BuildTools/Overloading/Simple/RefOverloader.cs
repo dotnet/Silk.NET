@@ -12,7 +12,7 @@ namespace Silk.NET.BuildTools.Overloading
     {
         public bool TryGetParameterVariant(Parameter parameter, out Parameter varied, Profile _)
         {
-            if (parameter.Type.IsPointer && !(parameter.Type.Name == "void" && parameter.Type.IndirectionLevels == 1))
+            if (parameter.Type.IsPointer)
             {
                 varied = new ParameterSignatureBuilder(parameter).WithType
                     (
@@ -21,6 +21,7 @@ namespace Silk.NET.BuildTools.Overloading
                             .WithByRef(parameter.Flow != FlowDirection.In && parameter.Flow != FlowDirection.Out)
                             .WithIsIn(parameter.Flow == FlowDirection.In)
                             .WithIsOut(parameter.Flow == FlowDirection.Out)
+                            .WithIsGenericType(parameter.Type.IsSinglePointerTo("void"))
                             .Build()
                     )
                     .Build();

@@ -16,6 +16,12 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
 {
     public static class KhrDebugOverloads
     {
+        public static unsafe void DebugMessageCallback<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] ReadOnlySpan<T0> userParam) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DebugMessageCallback(callback, in userParam.GetPinnableReference());
+        }
+
         public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
         {
             // SpanOverloader
@@ -4702,39 +4708,70 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.GetObjectLabel(identifier, name, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
         }
 
-        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : struct
+        public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
         }
 
-        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : struct
+        public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, length, out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, length, out label.GetPinnableReference());
         }
 
-        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : struct
+        public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), label);
+            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), label);
         }
 
-        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : struct
+        public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
         }
 
-        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : struct
+        public static unsafe void GetObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.GetObjectPtrLabel(ptrSpp, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+            thisApi.GetObjectPtrLabel(ptr, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, length, label);
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, length, out label.GetPinnableReference());
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, length, out label.GetPinnableReference());
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, out length.GetPinnableReference(), label);
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+        }
+
+        public static unsafe void GetObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetObjectPtrLabel(in ptr.GetPinnableReference(), bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
         }
 
         public static unsafe void ObjectLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
@@ -4749,18 +4786,28 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.ObjectLabel(identifier, name, length, in label.GetPinnableReference());
         }
 
-        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label) where T0 : struct
+        public static unsafe void ObjectPtrLabel(this KhrDebug thisApi, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.ObjectPtrLabel(ptrSpp, length, in label.GetPinnableReference());
+            thisApi.ObjectPtrLabel(ptr, length, in label.GetPinnableReference());
         }
 
-        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : struct
+        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* ptrSpp = ptr)
-                thisApi.ObjectPtrLabel(ptrSpp, length, label);
+            thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, label);
+        }
+
+        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, in label.GetPinnableReference());
+        }
+
+        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, label);
         }
 
         public static unsafe void PushDebugGroup(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message)

@@ -16,52 +16,184 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
 {
     public static class AppleContextLoggingFunctionsOverloads
     {
-        public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, private_info, cb, out user_data.GetPinnableReference());
         }
 
-        public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStderr(errstr, private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, user_data);
         }
 
-        public static unsafe void LogMessagesToStdout<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
         }
 
-        public static unsafe void LogMessagesToStdout<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToStdout(errstr, private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_info, cb, user_data);
         }
 
-        public static unsafe void LogMessagesToSystemLog<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), private_info, cb, out user_data.GetPinnableReference());
         }
 
-        public static unsafe void LogMessagesToSystemLog<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : struct where T1 : struct
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* private_infoSpp = private_info)
-            fixed (void* user_dataSpp = user_data)
-                thisApi.LogMessagesToSystemLog(errstr, private_infoSpp, cb, user_dataSpp);
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStderr(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStderr(errstr, private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStderr<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStderr<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStderr(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStdout<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data)
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), private_info, cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStdout<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToStdout<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToStdout<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToStdout(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data)
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), private_info, cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(in errstr.GetPinnableReference(), in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, private_info, cb, out user_data.GetPinnableReference());
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, in private_info.GetPinnableReference(), cb, user_data);
+        }
+
+        public static unsafe void LogMessagesToSystemLog<T0, T1>(this AppleContextLoggingFunctions thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] ReadOnlySpan<T0> private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LogMessagesToSystemLog(errstr, in private_info.GetPinnableReference(), cb, out user_data.GetPinnableReference());
         }
 
     }

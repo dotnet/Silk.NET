@@ -129,10 +129,32 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void* Realloc<T0>(ref T0 pv, nuint cb) where T0 : unmanaged
+        {
+            var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, nuint, void*>)@this->LpVtbl[4])(@this, pvPtr, cb);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void Free(void* pv)
         {
             var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IMalloc*, void*, void>)@this->LpVtbl[5])(@this, pv);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Free<T0>(ref T0 pv) where T0 : unmanaged
+        {
+            var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pvPtr = &pv)
+            {
+                ((delegate* unmanaged[Cdecl]<IMalloc*, void*, void>)@this->LpVtbl[5])(@this, pvPtr);
+            }
         }
 
         /// <summary>To be documented.</summary>
@@ -145,11 +167,35 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        public readonly nuint GetSize<T0>(ref T0 pv) where T0 : unmanaged
+        {
+            var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            nuint ret = default;
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, nuint>)@this->LpVtbl[6])(@this, pvPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int DidAlloc(void* pv)
         {
             var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, int>)@this->LpVtbl[7])(@this, pv);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DidAlloc<T0>(ref T0 pv) where T0 : unmanaged
+        {
+            var @this = (IMalloc*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pvPtr = &pv)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMalloc*, void*, int>)@this->LpVtbl[7])(@this, pvPtr);
+            }
             return ret;
         }
 

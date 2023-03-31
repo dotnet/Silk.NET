@@ -28,6 +28,12 @@ namespace Silk.NET.WGL.Extensions.AMD
             return thisApi.GetGpuids(maxCount, out ids.GetPinnableReference());
         }
 
+        public static unsafe int GetGpuinfo<T0>(this AmdGpuAssociation thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] int property, [Flow(FlowDirection.In)] AMD dataType, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetGpuinfo(id, property, dataType, size, out data.GetPinnableReference());
+        }
+
     }
 }
 

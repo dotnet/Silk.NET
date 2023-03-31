@@ -191,49 +191,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParametersI4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParametersI4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe int GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)

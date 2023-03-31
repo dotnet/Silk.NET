@@ -123,6 +123,18 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int RegisterSoftwareDevice<T0>(ref T0 pInitializeFunction) where T0 : unmanaged
+        {
+            var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pInitializeFunctionPtr = &pInitializeFunction)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunctionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly uint GetAdapterCount()
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

@@ -27,10 +27,22 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
         public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
         public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
@@ -42,11 +54,27 @@ namespace Silk.NET.OpenCL.Extensions.ARM
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
         public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
         public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum, ARM) are deprecated in favour of the \"grouped\" enums (MemFlags, ImportProperties). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clImportMemoryARM", Convention = CallingConvention.Winapi)]
+        public partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         public ArmImportMemory(INativeContext ctx)
             : base(ctx)

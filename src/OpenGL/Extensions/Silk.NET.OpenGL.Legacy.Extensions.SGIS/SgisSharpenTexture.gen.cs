@@ -63,13 +63,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
-            SharpenTexFunc(target, (uint) points.Length*2, in points.GetPinnableReference());
+            SharpenTexFunc(target, (uint) points.Length/2, in points.GetPinnableReference());
         }
 
         public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
-            SharpenTexFunc(target, (uint) points.Length*2, in points.GetPinnableReference());
+            SharpenTexFunc(target, (uint) points.Length/2, in points.GetPinnableReference());
         }
 
         public SgisSharpenTexture(INativeContext ctx)

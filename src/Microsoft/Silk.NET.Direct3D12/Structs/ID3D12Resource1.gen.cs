@@ -132,6 +132,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -144,6 +156,21 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -151,6 +178,21 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -171,11 +213,41 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
+                {
+                    fixed (void* pDataPtr = &pData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+            }
             return ret;
         }
 
@@ -187,6 +259,21 @@ namespace Silk.NET.Direct3D12
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -414,6 +501,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, uint, Box*, void*, uint, uint, int>)@this->LpVtbl[12])(@this, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -421,6 +520,21 @@ namespace Silk.NET.Direct3D12
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, uint, Box*, void*, uint, uint, int>)@this->LpVtbl[12])(@this, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int WriteToSubresource<T0>(uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, uint, Box*, void*, uint, uint, int>)@this->LpVtbl[12])(@this, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
             }
             return ret;
         }
@@ -442,6 +556,33 @@ namespace Silk.NET.Direct3D12
             fixed (Box* pSrcBoxPtr = &pSrcBox)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, void*, uint, uint, uint, Box*, int>)@this->LpVtbl[13])(@this, pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBoxPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, void*, uint, uint, uint, Box*, int>)@this->LpVtbl[13])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDstDataPtr = &pDstData)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, void*, uint, uint, uint, Box*, int>)@this->LpVtbl[13])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBoxPtr);
+                }
             }
             return ret;
         }

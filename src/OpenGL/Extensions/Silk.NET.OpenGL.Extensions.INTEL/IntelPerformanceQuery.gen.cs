@@ -917,6 +917,12 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] out uint bytesWritten);
 
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* queryId);
 
@@ -4211,6 +4217,13 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         {
             // NonKhrReturnTypeOverloader
             GetPerfQueryData(queryHandle, flags, dataSize, data, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfQueryData(queryHandle, flags, dataSize, out data, out uint silkRet);
             return silkRet;
         }
 

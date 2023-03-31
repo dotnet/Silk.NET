@@ -94,6 +94,18 @@ public unsafe static class D2D1GdiMetafileSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* recordDataPtr = &recordData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink1*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -116,6 +128,14 @@ public unsafe static class D2D1GdiMetafileSink1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ProcessRecord<T0>(this ComPtr<ID2D1GdiMetafileSink1> thisVtbl, uint recordType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> recordData, uint recordDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ProcessRecord(recordType, in recordData.GetPinnableReference(), recordDataSize);
     }
 
     /// <summary>To be documented.</summary>

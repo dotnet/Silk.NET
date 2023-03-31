@@ -650,25 +650,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            ProgramParameters4(target, index, (uint) v.Length*4, in v.GetPinnableReference());
+            ProgramParameters4(target, index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void RequestResidentProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
@@ -704,61 +704,61 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length/2, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length/2, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs2(index, (uint) v.Length*2, in v.GetPinnableReference());
+            VertexAttribs2(index, (uint) v.Length/2, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length/3, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length/3, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*3"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs3(index, (uint) v.Length*3, in v.GetPinnableReference());
+            VertexAttribs3(index, (uint) v.Length/3, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
         {
             // ImplicitCountSpanOverloader
-            VertexAttribs4(index, (uint) v.Length*4, in v.GetPinnableReference());
+            VertexAttribs4(index, (uint) v.Length/4, in v.GetPinnableReference());
         }
 
         public unsafe uint GenProgram([Flow(FlowDirection.In)] uint n)

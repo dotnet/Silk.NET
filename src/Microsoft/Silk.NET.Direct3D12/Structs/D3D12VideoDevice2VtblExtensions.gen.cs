@@ -94,6 +94,18 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, FeatureVideo FeatureVideo, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, FeatureVideo, void*, uint, int>)@this->LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, Guid* riid, void** ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
@@ -2146,6 +2158,138 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCreationParametersPtr = &pCreationParameters)
+        {
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
@@ -2278,11 +2422,206 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
+        {
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)@this->LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int ExecuteExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pOutputDataPtr = &pOutputData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+        {
+            fixed (void* pOutputDataPtr = &pOutputData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+            }
+        }
         return ret;
     }
 
@@ -2294,6 +2633,54 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
         fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+        {
+            fixed (void* pOutputDataPtr = &pOutputData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+        {
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ref ID3D12VideoExtensionCommand pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+        {
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
+            {
+                fixed (void* pOutputDataPtr = &pOutputData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDevice2*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)@this->LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                }
+            }
         }
         return ret;
     }
@@ -2321,6 +2708,14 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, FeatureVideo FeatureVideo, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CheckFeatureSupport(FeatureVideo, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>
@@ -3805,15 +4200,6 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoExtensionCommand<TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -3822,12 +4208,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3839,12 +4224,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3856,12 +4240,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3874,39 +4257,141 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(pDesc, pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0, TI1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, out ComPtr<TI1> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppVideoExtensionCommand = default;
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppVideoExtensionCommand = default;
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(pDesc, in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3919,12 +4404,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3936,12 +4420,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3953,12 +4436,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3970,12 +4452,11 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -3988,30 +4469,133 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] Span<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : struct
+    public static unsafe int CreateVideoExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pCreationParametersSpp = pCreationParameters)
-            return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParametersSpp, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVideoExtensionCommand<T0, TI0, TI1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, out ComPtr<TI1> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppVideoExtensionCommand = default;
+        return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, SilkMarshal.GuidPtrOf<TI1>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, void** ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, ID3D12ProtectedResourceSession* pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, pProtectedResourceSession, ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession, ref Guid riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, (ID3D12ProtectedResourceSession*) pProtectedResourceSession.Handle, ref riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession, out ComPtr<TI0> ppVideoExtensionCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppVideoExtensionCommand = default;
+        return @this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppVideoExtensionCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Guid* riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), riid, ref ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, void** ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ppVideoExtensionCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VideoExtensionCommandDesc> pDesc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pCreationParameters, nuint CreationParametersDataSizeInBytes, Span<ID3D12ProtectedResourceSession> pProtectedResourceSession, Span<Guid> riid, ref void* ppVideoExtensionCommand) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVideoExtensionCommand(in pDesc.GetPinnableReference(), in pCreationParameters.GetPinnableReference(), CreationParametersDataSizeInBytes, ref pProtectedResourceSession.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppVideoExtensionCommand);
     }
 
     /// <summary>To be documented.</summary>
@@ -4023,13 +4607,83 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, [Flow(FlowDirection.In)] Span<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : struct where T1 : struct
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pExecutionParametersSpp = pExecutionParameters)
-        fixed (void* pOutputDataSpp = pOutputData)
-            return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), pExecutionParametersSpp, ExecutionParametersSizeInBytes, pOutputDataSpp, OutputDataSizeInBytes);
+        return @this->ExecuteExtensionCommand(pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T0 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(pExtensionCommand, in pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, in pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ID3D12VideoExtensionCommand* pExtensionCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(pExtensionCommand, in pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ExecuteExtensionCommand<T0, T1, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, ComPtr<TI0> pExtensionCommand, [Flow(FlowDirection.In)] in T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes, ref T1 pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12VideoExtensionCommand>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->ExecuteExtensionCommand((ID3D12VideoExtensionCommand*) pExtensionCommand.Handle, in pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), pExecutionParameters, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, [Flow(FlowDirection.In)] void* pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T0> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), pExecutionParameters, ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ExecuteExtensionCommand<T0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, void* pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), in pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ExecuteExtensionCommand<T0, T1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, Span<ID3D12VideoExtensionCommand> pExtensionCommand, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pExecutionParameters, nuint ExecutionParametersSizeInBytes, Span<T1> pOutputData, nuint OutputDataSizeInBytes) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->ExecuteExtensionCommand(ref pExtensionCommand.GetPinnableReference(), in pExecutionParameters.GetPinnableReference(), ExecutionParametersSizeInBytes, ref pOutputData.GetPinnableReference(), OutputDataSizeInBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -4348,6 +5002,24 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI1> CreateVideoExtensionCommand<T0, TI0, TI1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI1> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] VideoExtensionCommandDesc* pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe ComPtr<TI1> CreateVideoExtensionCommand<TI0, TI1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] void* pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
@@ -4362,6 +5034,24 @@ public unsafe static class D3D12VideoDevice2VtblExtensions
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI1> CreateVideoExtensionCommand<T0, TI0, TI1>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ComPtr<TI0> pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12ProtectedResourceSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, pProtectedResourceSession, out ComPtr<TI1> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateVideoExtensionCommand<T0, TI0>(this ComPtr<ID3D12VideoDevice2> thisVtbl, [Flow(FlowDirection.In)] in VideoExtensionCommandDesc pDesc, [Flow(FlowDirection.In)] in T0 pCreationParameters, nuint CreationParametersDataSizeInBytes, ref ID3D12ProtectedResourceSession pProtectedResourceSession) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateVideoExtensionCommand(in pDesc, in pCreationParameters, CreationParametersDataSizeInBytes, ref pProtectedResourceSession, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

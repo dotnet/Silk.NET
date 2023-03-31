@@ -120,6 +120,18 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int ProcessRecord<T0>(uint recordType, [Flow(FlowDirection.In)] in T0 recordData, uint recordDataSize) where T0 : unmanaged
+        {
+            var @this = (ID2D1GdiMetafileSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* recordDataPtr = &recordData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1GdiMetafileSink*, uint, void*, uint, int>)@this->LpVtbl[3])(@this, recordType, recordDataPtr, recordDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID2D1GdiMetafileSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

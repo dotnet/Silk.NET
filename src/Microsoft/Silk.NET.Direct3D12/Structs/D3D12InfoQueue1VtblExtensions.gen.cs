@@ -620,6 +620,33 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int RegisterMessageCallback<T0>(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, ref T0 pContext, uint* pCallbackCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pContextPtr = &pContext)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)@this->LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookie);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterMessageCallback<T0>(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, ref T0 pContext, ref uint pCallbackCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pContextPtr = &pContext)
+        {
+            fixed (uint* pCallbackCookiePtr = &pCallbackCookie)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)@this->LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookiePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int UnregisterMessageCallback(this ComPtr<ID3D12InfoQueue1> thisVtbl, uint CallbackCookie)
     {
         var @this = thisVtbl.Handle;
@@ -774,12 +801,27 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterMessageCallback<T0>(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, Span<T0> pContext, Span<uint> pCallbackCookie) where T0 : struct
+    public static unsafe int RegisterMessageCallback(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, void* pContext, Span<uint> pCallbackCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pContextSpp = pContext)
-            return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, pContextSpp, ref pCallbackCookie.GetPinnableReference());
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, pContext, ref pCallbackCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterMessageCallback<T0>(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, Span<T0> pContext, uint* pCallbackCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, ref pContext.GetPinnableReference(), pCallbackCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterMessageCallback<T0>(this ComPtr<ID3D12InfoQueue1> thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, Span<T0> pContext, Span<uint> pCallbackCookie) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, ref pContext.GetPinnableReference(), ref pCallbackCookie.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

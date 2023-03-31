@@ -140,6 +140,18 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -152,6 +164,21 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -159,6 +186,21 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -179,11 +221,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
+                {
+                    fixed (void* pDataPtr = &pData)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)@this->LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            }
             return ret;
         }
 
@@ -195,6 +267,21 @@ namespace Silk.NET.Direct3D11
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, Guid*, uint, void*, int>)@this->LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                }
             }
             return ret;
         }
@@ -756,6 +843,18 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int GetData<T0>(ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetData(ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -763,6 +862,21 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pData, DataSize, GetDataFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetData<T0>(ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)@this->LpVtbl[29])(@this, pAsyncPtr, pDataPtr, DataSize, GetDataFlags);
+                }
             }
             return ret;
         }
@@ -1419,12 +1533,35 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
                 ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
             }
         }
 
@@ -1439,6 +1576,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (void* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1447,6 +1597,22 @@ namespace Silk.NET.Direct3D11
                 fixed (Box* pDstBoxPtr = &pDstBox)
                 {
                     ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    fixed (void* pSrcDataPtr = &pSrcData)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)@this->LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                    }
                 }
             }
         }
@@ -3875,6 +4041,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int GetData<T0, TI0>(ComPtr<TI0> pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Asynchronous>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetData((ID3D11Asynchronous*) pAsync.Handle, ref pData, DataSize, GetDataFlags);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly void SetPredication<TI0>(ComPtr<TI0> pPredicate, Silk.NET.Core.Bool32 PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4187,11 +4361,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateSubresource<T0, TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->UpdateSubresource((ID3D11Resource*) pDstResource.Handle, DstSubresource, in pDstBox, in pSrcData, SrcRowPitch, SrcDepthPitch);
         }
 
         /// <summary>To be documented.</summary>

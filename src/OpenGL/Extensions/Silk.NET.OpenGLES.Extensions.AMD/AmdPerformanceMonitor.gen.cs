@@ -53,6 +53,9 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
         [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounterInfo([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] void* data);
 
+        [NativeApi(EntryPoint = "glGetPerfMonitorCounterInfoAMD", Convention = CallingConvention.Winapi)]
+        public partial void GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPerfMonitorCountersAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Flow(FlowDirection.In)] uint counterSize, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] uint* counters);
 
@@ -155,13 +158,13 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
         public unsafe void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten)
         {
             // ImplicitCountSpanOverloader
-            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length / 4, out data.GetPinnableReference(), bytesWritten);
+            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length*4, out data.GetPinnableReference(), bytesWritten);
         }
 
         public unsafe void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] out int bytesWritten)
         {
             // ImplicitCountSpanOverloader
-            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length / 4, out data.GetPinnableReference(), out bytesWritten);
+            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length*4, out data.GetPinnableReference(), out bytesWritten);
         }
 
         public unsafe uint GetPerfMonitorCounter([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters)
@@ -297,6 +300,13 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
         {
             // NonKhrReturnTypeOverloader
             GetPerfMonitorCounterData(monitor, pname, dataSize, out data, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetPerfMonitorCounterInfo<T0>([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Flow(FlowDirection.In)] AMD pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPerfMonitorCounterInfo(group, counter, pname, out T0 silkRet);
             return silkRet;
         }
 

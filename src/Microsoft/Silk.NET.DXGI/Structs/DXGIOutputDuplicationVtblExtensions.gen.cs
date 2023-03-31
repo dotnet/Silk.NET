@@ -94,6 +94,18 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -101,6 +113,21 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
         fixed (Guid* NamePtr = &Name)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -163,6 +190,18 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -170,6 +209,21 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
         fixed (uint* pDataSizePtr = &pDataSize)
         {
             ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+            }
         }
         return ret;
     }
@@ -187,6 +241,21 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -196,6 +265,24 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* NamePtr = &Name)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                }
             }
         }
         return ret;
@@ -459,6 +546,66 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)@this->LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+        {
+            fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)@this->LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequired, pPointerShapeInfoPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+        {
+            fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)@this->LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfo);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+        {
+            fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+            {
+                fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)@this->LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfoPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MapDesktopSurface(this ComPtr<IDXGIOutputDuplication> thisVtbl, MappedRect* pLockedRect)
     {
         var @this = thisVtbl.Handle;
@@ -523,12 +670,27 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pDataSpp);
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -572,30 +734,59 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -712,30 +903,59 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo) where T0 : struct
+    public static unsafe int GetFramePointerShape(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, void* pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pPointerShapeBufferSpp = pPointerShapeBuffer)
-            return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBufferSpp, pPointerShapeBufferSizeRequired, ref pPointerShapeInfo.GetPinnableReference());
+        return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, ref pPointerShapeInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : struct
+    public static unsafe int GetFramePointerShape(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, void* pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pPointerShapeBufferSpp = pPointerShapeBuffer)
-            return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBufferSpp, ref pPointerShapeBufferSizeRequired.GetPinnableReference(), pPointerShapeInfo);
+        return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBuffer, ref pPointerShapeBufferSizeRequired.GetPinnableReference(), pPointerShapeInfo);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo) where T0 : struct
+    public static unsafe int GetFramePointerShape(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, void* pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pPointerShapeBufferSpp = pPointerShapeBuffer)
-            return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBufferSpp, ref pPointerShapeBufferSizeRequired.GetPinnableReference(), ref pPointerShapeInfo.GetPinnableReference());
+        return @this->GetFramePointerShape(PointerShapeBufferSize, pPointerShapeBuffer, ref pPointerShapeBufferSizeRequired.GetPinnableReference(), ref pPointerShapeInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFramePointerShape(PointerShapeBufferSize, ref pPointerShapeBuffer.GetPinnableReference(), pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFramePointerShape(PointerShapeBufferSize, ref pPointerShapeBuffer.GetPinnableReference(), pPointerShapeBufferSizeRequired, ref pPointerShapeInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFramePointerShape(PointerShapeBufferSize, ref pPointerShapeBuffer.GetPinnableReference(), ref pPointerShapeBufferSizeRequired.GetPinnableReference(), pPointerShapeInfo);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFramePointerShape<T0>(this ComPtr<IDXGIOutputDuplication> thisVtbl, uint PointerShapeBufferSize, Span<T0> pPointerShapeBuffer, Span<uint> pPointerShapeBufferSizeRequired, Span<OutduplPointerShapeInfo> pPointerShapeInfo) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetFramePointerShape(PointerShapeBufferSize, ref pPointerShapeBuffer.GetPinnableReference(), ref pPointerShapeBufferSizeRequired.GetPinnableReference(), ref pPointerShapeInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

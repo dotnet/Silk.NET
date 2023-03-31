@@ -81,30 +81,72 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // ImplicitCountSpanOverloader
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
@@ -113,16 +155,46 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // ImplicitCountSpanOverloader
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
+        }
+
         public unsafe void ShaderBinary([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // ImplicitCountSpanOverloader
             ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public unsafe void ShaderBinary<T0>([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ShaderBinary((uint) shaders.Length, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), (uint) binary.Length);
         }
 
         public unsafe int GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range)

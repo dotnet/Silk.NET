@@ -235,27 +235,43 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.EnqueueWaitSemaphores(command_queue, num_sema_objects, in sema_objects.GetPinnableReference(), in sema_payload_list.GetPinnableReference(), num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
-        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
+        public static unsafe int GetSemaphoreInfo(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
+        }
+
+        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
+        }
+
+        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] SemaphoreInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : struct
+        public static unsafe int GetSemaphoreInfo(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, param_valueSpp, param_value_size_ret);
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
-        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : struct
+        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* param_valueSpp = param_value)
-                return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, param_valueSpp, out param_value_size_ret.GetPinnableReference());
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (SemaphoreInfo). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetSemaphoreInfo<T0>(this KhrSemaphore thisApi, [Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] KHR param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreInfo(sema_object, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
     }

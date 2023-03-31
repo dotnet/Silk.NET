@@ -1986,6 +1986,18 @@ public unsafe static class D2D1EffectContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID2D1EffectContext1> thisVtbl, Feature feature, ref T0 featureSupportData, uint featureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* featureSupportDataPtr = &featureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, Feature, void*, uint, int>)@this->LpVtbl[22])(@this, feature, featureSupportDataPtr, featureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static Silk.NET.Core.Bool32 IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext1> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
@@ -3584,6 +3596,14 @@ public unsafe static class D2D1EffectContext1VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->CreateColorContextFromWicColorContext(ref wicColorContext.GetPinnableReference(), ref colorContext);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID2D1EffectContext1> thisVtbl, Feature feature, Span<T0> featureSupportData, uint featureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CheckFeatureSupport(feature, ref featureSupportData.GetPinnableReference(), featureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>

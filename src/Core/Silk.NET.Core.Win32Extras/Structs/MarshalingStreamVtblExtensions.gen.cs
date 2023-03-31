@@ -106,6 +106,33 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, ref T0 pv, uint cb, uint* pcbRead) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbRead);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, ref T0 pv, uint cb, ref uint pcbRead) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (uint* pcbReadPtr = &pcbRead)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[3])(@this, pvPtr, cb, pcbReadPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
     {
         var @this = thisVtbl.Handle;
@@ -122,6 +149,33 @@ public unsafe static class MarshalingStreamVtblExtensions
         fixed (uint* pcbWrittenPtr = &pcbWritten)
         {
             ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pv, cb, pcbWrittenPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWritten);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pvPtr = &pv)
+        {
+            fixed (uint* pcbWrittenPtr = &pcbWritten)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IMarshalingStream*, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, pvPtr, cb, pcbWrittenPtr);
+            }
         }
         return ret;
     }
@@ -389,21 +443,51 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : struct
+    public static unsafe int Read(this ComPtr<IMarshalingStream> thisVtbl, void* pv, uint cb, Span<uint> pcbRead)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-            return @this->Read(pvSpp, cb, ref pcbRead.GetPinnableReference());
+        return @this->Read(pv, cb, ref pcbRead.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : struct
+    public static unsafe int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, uint* pcbRead) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pvSpp = pv)
-            return @this->Write(pvSpp, cb, ref pcbWritten.GetPinnableReference());
+        return @this->Read(ref pv.GetPinnableReference(), cb, pcbRead);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Read<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, Span<uint> pcbRead) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->Read(ref pv.GetPinnableReference(), cb, ref pcbRead.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->Write(pv, cb, ref pcbWritten.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->Write(in pv.GetPinnableReference(), cb, pcbWritten);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->Write(in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

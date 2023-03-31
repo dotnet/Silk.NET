@@ -47,25 +47,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe void ProgramEnvParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParameters4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParameters4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramEnvParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramEnvParameters4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramEnvParameters4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParameters4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParameters4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public unsafe void ProgramLocalParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count", Expression = "*4"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // ImplicitCountSpanOverloader
-            ProgramLocalParameters4(target, index, (uint) @params.Length*4, in @params.GetPinnableReference());
+            ProgramLocalParameters4(target, index, (uint) @params.Length/4, in @params.GetPinnableReference());
         }
 
         public ExtGpuProgramParameters(INativeContext ctx)

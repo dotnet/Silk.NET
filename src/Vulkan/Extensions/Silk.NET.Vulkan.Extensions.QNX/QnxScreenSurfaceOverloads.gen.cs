@@ -65,6 +65,13 @@ namespace Silk.NET.Vulkan.Extensions.QNX
             return thisApi.CreateScreenSurfaceQnx(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
         }
 
+        /// <summary>To be documented.</summary>
+        public static unsafe Bool32 GetPhysicalDeviceScreenPresentationSupportQnx<T0>(this QnxScreenSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Span<T0> window) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetPhysicalDeviceScreenPresentationSupportQnx(physicalDevice, queueFamilyIndex, out window.GetPinnableReference());
+        }
+
     }
 }
 

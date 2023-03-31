@@ -73,11 +73,24 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : struct
+        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.GetValidationCacheData(device, validationCache, ref pDataSize.GetPinnableReference(), pDataSpp);
+            return thisApi.GetValidationCacheData(device, validationCache, pDataSize, ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetValidationCacheData(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] void* pData)
+        {
+            // SpanOverloader
+            return thisApi.GetValidationCacheData(device, validationCache, ref pDataSize.GetPinnableReference(), pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetValidationCacheData(device, validationCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

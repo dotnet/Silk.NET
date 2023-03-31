@@ -26,7 +26,15 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryRemoteAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV", Convention = CallingConvention.Winapi)]
+        public partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
 
         public NVExternalMemoryRdma(INativeContext ctx)
             : base(ctx)

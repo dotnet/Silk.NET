@@ -142,6 +142,18 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int RegisterVideoProcessorSoftwareDevice<T0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, ref T0 pCallbacks) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pCallbacksPtr = &pCallbacks)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoProcessorService*, void*, int>)@this->LpVtbl[4])(@this, pCallbacksPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetVideoProcessorDeviceGuids(this ComPtr<IDirectXVideoProcessorService> thisVtbl, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, uint* pCount, Guid** pGuids)
     {
         var @this = thisVtbl.Handle;
@@ -1184,6 +1196,14 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterVideoProcessorSoftwareDevice<T0>(this ComPtr<IDirectXVideoProcessorService> thisVtbl, Span<T0> pCallbacks) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->RegisterVideoProcessorSoftwareDevice(ref pCallbacks.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

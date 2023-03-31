@@ -970,6 +970,33 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+        {
+            fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateInputLayout(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout)
     {
         var @this = thisVtbl.Handle;
@@ -991,6 +1018,39 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (InputElementDesc* pInputElementDescsPtr = &pInputElementDescs)
+        {
+            fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (InputElementDesc* pInputElementDescsPtr = &pInputElementDescs)
+        {
+            fixed (void* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
+            {
+                fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)@this->LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+                }
             }
         }
         return ret;
@@ -1045,6 +1105,66 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)@this->LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateGeometryShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
@@ -1087,6 +1207,66 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+                }
             }
         }
         return ret;
@@ -1333,6 +1513,294 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (uint* pBufferStridesPtr = &pBufferStrides)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (uint* pBufferStridesPtr = &pBufferStrides)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (uint* pBufferStridesPtr = &pBufferStrides)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (uint* pBufferStridesPtr = &pBufferStrides)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
+            {
+                fixed (uint* pBufferStridesPtr = &pBufferStrides)
+                {
+                    fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+                    {
+                        fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)@this->LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePixelShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
     {
         var @this = thisVtbl.Handle;
@@ -1375,6 +1843,66 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)@this->LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+                }
             }
         }
         return ret;
@@ -1429,6 +1957,66 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)@this->LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDomainShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader)
     {
         var @this = thisVtbl.Handle;
@@ -1477,6 +2065,66 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)@this->LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateComputeShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader)
     {
         var @this = thisVtbl.Handle;
@@ -1519,6 +2167,66 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShader);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShader);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pShaderBytecodePtr = &pShaderBytecode)
+        {
+            fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
+            {
+                fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)@this->LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+                }
             }
         }
         return ret;
@@ -1945,6 +2653,66 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (void** ppResourcePtr = &ppResource)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResource, ReturnedInterfacePtr, ppResourcePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResource);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (void** ppResourcePtr = &ppResource)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterface, ppResourcePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResource);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[28])(@this, hResourcePtr, ReturnedInterfacePtr, ppResourcePtr);
+                }
             }
         }
         return ret;
@@ -41763,11 +42531,35 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11Device1> thisVtbl, Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Feature, void*, uint, int>)@this->LpVtbl[33])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pData);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSize, pDataPtr);
+        }
         return ret;
     }
 
@@ -41784,6 +42576,21 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guid, pDataSizePtr, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -41791,6 +42598,21 @@ public unsafe static class D3D11Device1VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -41811,11 +42633,41 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint*, void*, int>)@this->LpVtbl[34])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guid, DataSize, pData);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guid, DataSize, pDataPtr);
+        }
         return ret;
     }
 
@@ -41827,6 +42679,21 @@ public unsafe static class D3D11Device1VtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guidPtr, DataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, Guid*, uint, void*, int>)@this->LpVtbl[35])(@this, guidPtr, DataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -42358,6 +43225,66 @@ public unsafe static class D3D11Device1VtblExtensions
             fixed (void** ppResourcePtr = &ppResource)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResource, returnedInterfacePtr, ppResourcePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* returnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResource);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, Guid* returnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (void** ppResourcePtr = &ppResource)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResourcePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid returnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResource);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, ref Guid returnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* hResourcePtr = &hResource)
+        {
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, void*, Guid*, void**, int>)@this->LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResourcePtr);
+                }
             }
         }
         return ret;
@@ -43265,21 +44192,35 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] Span<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : struct
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeWithInputSignatureSpp = pShaderBytecodeWithInputSignature)
-            return @this->CreateInputLayout(pInputElementDescs, NumElements, pShaderBytecodeWithInputSignatureSpp, BytecodeLength, ref ppInputLayout);
+        return @this->CreateInputLayout(pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature.GetPinnableReference(), BytecodeLength, ppInputLayout);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] Span<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : struct
+    public static unsafe int CreateInputLayout<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ComPtr<TI0> ppInputLayout) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateInputLayout(pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature, BytecodeLength, (ID3D11InputLayout**) ppInputLayout.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] InputElementDesc* pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeWithInputSignatureSpp = pShaderBytecodeWithInputSignature)
-            return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, pShaderBytecodeWithInputSignatureSpp, BytecodeLength, ppInputLayout);
+        return @this->CreateInputLayout(pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature.GetPinnableReference(), BytecodeLength, ref ppInputLayout);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
     }
 
     /// <summary>To be documented.</summary>
@@ -43291,12 +44232,35 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] Span<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : struct
+    public static unsafe int CreateInputLayout(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeWithInputSignatureSpp = pShaderBytecodeWithInputSignature)
-            return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, pShaderBytecodeWithInputSignatureSpp, BytecodeLength, ref ppInputLayout);
+        return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ref ppInputLayout);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, in pShaderBytecodeWithInputSignature.GetPinnableReference(), BytecodeLength, ppInputLayout);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateInputLayout<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in InputElementDesc pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] in T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ComPtr<TI0> ppInputLayout) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11InputLayout>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateInputLayout(in pInputElementDescs, NumElements, in pShaderBytecodeWithInputSignature, BytecodeLength, (ID3D11InputLayout**) ppInputLayout.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInputLayout<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InputElementDesc> pInputElementDescs, uint NumElements, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateInputLayout(in pInputElementDescs.GetPinnableReference(), NumElements, in pShaderBytecodeWithInputSignature.GetPinnableReference(), BytecodeLength, ref ppInputLayout);
     }
 
     /// <summary>To be documented.</summary>
@@ -43308,15 +44272,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateVertexShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppVertexShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateVertexShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43325,12 +44280,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : struct
+    public static unsafe int CreateVertexShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11VertexShader** ppVertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateVertexShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppVertexShader);
+        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppVertexShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43342,12 +44296,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : struct
+    public static unsafe int CreateVertexShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11VertexShader* ppVertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateVertexShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppVertexShader);
+        return @this->CreateVertexShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVertexShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVertexShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVertexShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVertexShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppVertexShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVertexShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppVertexShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateVertexShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11VertexShader**) ppVertexShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateVertexShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppVertexShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43359,15 +44368,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppGeometryShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateGeometryShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43376,12 +44376,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43393,12 +44392,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        return @this->CreateGeometryShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateGeometryShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateGeometryShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43410,15 +44464,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateGeometryShaderWithStreamOutput<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43427,12 +44472,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43444,21 +44488,19 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43470,12 +44512,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43487,12 +44528,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43504,21 +44544,19 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43530,12 +44568,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43547,12 +44584,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43564,21 +44600,19 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43590,12 +44624,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43607,12 +44640,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43624,12 +44656,235 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : struct
+    public static unsafe int CreateGeometryShaderWithStreamOutput(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecodeSpp, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+        return @this->CreateGeometryShaderWithStreamOutput(pShaderBytecode, BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] SODeclarationEntry* pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pSODeclaration, NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] uint* pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateGeometryShaderWithStreamOutput<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, pClassLinkage, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ComPtr<TI0> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ppGeometryShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateGeometryShaderWithStreamOutput<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] in SODeclarationEntry pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] in uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppGeometryShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode, BytecodeLength, in pSODeclaration, NumEntries, in pBufferStrides, NumStrides, RasterizedStream, ref pClassLinkage, (ID3D11GeometryShader**) ppGeometryShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGeometryShaderWithStreamOutput<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, [Flow(FlowDirection.In)] ReadOnlySpan<SODeclarationEntry> pSODeclaration, uint NumEntries, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pBufferStrides, uint NumStrides, uint RasterizedStream, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateGeometryShaderWithStreamOutput(in pShaderBytecode.GetPinnableReference(), BytecodeLength, in pSODeclaration.GetPinnableReference(), NumEntries, in pBufferStrides.GetPinnableReference(), NumStrides, RasterizedStream, ref pClassLinkage.GetPinnableReference(), ref ppGeometryShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43641,15 +44896,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreatePixelShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppPixelShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreatePixelShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43658,12 +44904,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : struct
+    public static unsafe int CreatePixelShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11PixelShader** ppPixelShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreatePixelShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppPixelShader);
+        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppPixelShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43675,12 +44920,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : struct
+    public static unsafe int CreatePixelShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11PixelShader* ppPixelShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreatePixelShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppPixelShader);
+        return @this->CreatePixelShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreatePixelShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreatePixelShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreatePixelShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreatePixelShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppPixelShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreatePixelShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppPixelShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreatePixelShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11PixelShader**) ppPixelShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreatePixelShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppPixelShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43692,15 +44992,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateHullShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppHullShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateHullShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11HullShader* ppHullShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43709,12 +45000,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : struct
+    public static unsafe int CreateHullShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11HullShader** ppHullShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateHullShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppHullShader);
+        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppHullShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43726,12 +45016,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : struct
+    public static unsafe int CreateHullShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11HullShader* ppHullShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateHullShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppHullShader);
+        return @this->CreateHullShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateHullShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateHullShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateHullShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateHullShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppHullShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateHullShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppHullShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateHullShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11HullShader**) ppHullShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHullShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateHullShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppHullShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43743,15 +45088,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateDomainShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppDomainShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateDomainShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43760,12 +45096,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : struct
+    public static unsafe int CreateDomainShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11DomainShader** ppDomainShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateDomainShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppDomainShader);
+        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppDomainShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43777,12 +45112,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : struct
+    public static unsafe int CreateDomainShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11DomainShader* ppDomainShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateDomainShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppDomainShader);
+        return @this->CreateDomainShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateDomainShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDomainShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateDomainShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateDomainShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppDomainShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDomainShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppDomainShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateDomainShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11DomainShader**) ppDomainShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDomainShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateDomainShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppDomainShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43794,15 +45184,6 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : struct
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateComputeShader(pShaderBytecodeSpp, BytecodeLength, pClassLinkage, ref ppComputeShader);
-    }
-
-    /// <summary>To be documented.</summary>
     public static unsafe int CreateComputeShader<TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -43811,12 +45192,11 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : struct
+    public static unsafe int CreateComputeShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11ComputeShader** ppComputeShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateComputeShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppComputeShader);
+        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppComputeShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -43828,12 +45208,67 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] Span<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : struct
+    public static unsafe int CreateComputeShader(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] void* pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pShaderBytecodeSpp = pShaderBytecode)
-            return @this->CreateComputeShader(pShaderBytecodeSpp, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppComputeShader);
+        return @this->CreateComputeShader(pShaderBytecode, BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateComputeShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateComputeShader<T0, TI0, TI1>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ComPtr<TI1> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI1>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateComputeShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, pClassLinkage, ref ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ComPtr<TI0> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, (ID3D11ClassLinkage*) pClassLinkage.Handle, ref ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateComputeShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ppComputeShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateComputeShader<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] in T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ComPtr<TI0> ppComputeShader) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateComputeShader(in pShaderBytecode, BytecodeLength, ref pClassLinkage, (ID3D11ComputeShader**) ppComputeShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputeShader<T0>(this ComPtr<ID3D11Device1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pShaderBytecode, nuint BytecodeLength, Span<ID3D11ClassLinkage> pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateComputeShader(in pShaderBytecode.GetPinnableReference(), BytecodeLength, ref pClassLinkage.GetPinnableReference(), ref ppComputeShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -44086,30 +45521,60 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, void** ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource(hResourceSpp, ReturnedInterface, ref ppResource);
+        return @this->OpenSharedResource(hResource, ref ReturnedInterface.GetPinnableReference(), ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, void** ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> ReturnedInterface, ref void* ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource(hResourceSpp, ref ReturnedInterface.GetPinnableReference(), ppResource);
+        return @this->OpenSharedResource(hResource, ref ReturnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, ref void* ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource(hResourceSpp, ref ReturnedInterface.GetPinnableReference(), ref ppResource);
+        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ReturnedInterface, ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppResource = default;
+        return @this->OpenSharedResource(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ReturnedInterface, ref ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ref ReturnedInterface.GetPinnableReference(), ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> ReturnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource(ref hResource.GetPinnableReference(), ref ReturnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -57897,39 +59362,91 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D11Device1> thisVtbl, Feature Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -58246,30 +59763,60 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, ref void* ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource1(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> returnedInterface, void** ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource1(hResourceSpp, returnedInterface, ref ppResource);
+        return @this->OpenSharedResource1(hResource, ref returnedInterface.GetPinnableReference(), ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, void** ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource1(this ComPtr<ID3D11Device1> thisVtbl, void* hResource, Span<Guid> returnedInterface, ref void* ppResource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource1(hResourceSpp, ref returnedInterface.GetPinnableReference(), ppResource);
+        return @this->OpenSharedResource1(hResource, ref returnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, ref void* ppResource) where T0 : struct
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, void** ppResource) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* hResourceSpp = hResource)
-            return @this->OpenSharedResource1(hResourceSpp, ref returnedInterface.GetPinnableReference(), ref ppResource);
+        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), returnedInterface, ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OpenSharedResource1<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource, out ComPtr<TI0> ppResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppResource = default;
+        return @this->OpenSharedResource1(ref hResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Guid* returnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), returnedInterface, ref ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, void** ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), ref returnedInterface.GetPinnableReference(), ppResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedResource1<T0>(this ComPtr<ID3D11Device1> thisVtbl, Span<T0> hResource, Span<Guid> returnedInterface, ref void* ppResource) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedResource1(ref hResource.GetPinnableReference(), ref returnedInterface.GetPinnableReference(), ref ppResource);
     }
 
     /// <summary>To be documented.</summary>
@@ -58382,11 +59929,29 @@ public unsafe static class D3D11Device1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResource<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource(ref hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe ComPtr<TI0> OpenSharedResource1<TI0>(this ComPtr<ID3D11Device1> thisVtbl, void* hResource) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->OpenSharedResource1(hResource, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedResource1<T0, TI0>(this ComPtr<ID3D11Device1> thisVtbl, ref T0 hResource) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedResource1(ref hResource, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

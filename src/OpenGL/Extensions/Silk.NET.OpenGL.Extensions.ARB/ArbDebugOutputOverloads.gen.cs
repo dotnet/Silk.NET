@@ -16,6 +16,12 @@ namespace Silk.NET.OpenGL.Extensions.ARB
 {
     public static class ArbDebugOutputOverloads
     {
+        public static unsafe void DebugMessageCallback<T0>(this ArbDebugOutput thisApi, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcArb callback, [Count(Computed = "callback"), Flow(FlowDirection.In)] ReadOnlySpan<T0> userParam) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DebugMessageCallback(callback, in userParam.GetPinnableReference());
+        }
+
         public static unsafe void DebugMessageControl(this ArbDebugOutput thisApi, [Flow(FlowDirection.In)] ARB source, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ARB severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
         {
             // SpanOverloader

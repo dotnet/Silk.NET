@@ -245,6 +245,16 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
+        public readonly void DebugServerRelease<T0>(ref T0 pv) where T0 : unmanaged
+        {
+            var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void* pvPtr = &pv)
+            {
+                ((delegate* unmanaged[Cdecl]<IRpcStubBuffer*, void*, void>)@this->LpVtbl[9])(@this, pvPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IRpcStubBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

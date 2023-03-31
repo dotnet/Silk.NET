@@ -229,6 +229,33 @@ public unsafe static class DCompositionDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurfaceFromHandle<T0>(this ComPtr<IDCompositionDevice> thisVtbl, ref T0 handle, Silk.NET.Core.Native.IUnknown** surface) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* handlePtr = &handle)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, void*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, handlePtr, surface);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurfaceFromHandle<T0>(this ComPtr<IDCompositionDevice> thisVtbl, ref T0 handle, ref Silk.NET.Core.Native.IUnknown* surface) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* handlePtr = &handle)
+        {
+            fixed (Silk.NET.Core.Native.IUnknown** surfacePtr = &surface)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, void*, Silk.NET.Core.Native.IUnknown**, int>)@this->LpVtbl[10])(@this, handlePtr, surfacePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSurfaceFromHwnd(this ComPtr<IDCompositionDevice> thisVtbl, nint hwnd, Silk.NET.Core.Native.IUnknown** surface)
     {
         var @this = thisVtbl.Handle;
@@ -692,12 +719,27 @@ public unsafe static class DCompositionDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurfaceFromHandle<T0>(this ComPtr<IDCompositionDevice> thisVtbl, Span<T0> handle, ref Silk.NET.Core.Native.IUnknown* surface) where T0 : struct
+    public static unsafe int CreateSurfaceFromHandle<T0>(this ComPtr<IDCompositionDevice> thisVtbl, Span<T0> handle, Silk.NET.Core.Native.IUnknown** surface) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* handleSpp = handle)
-            return @this->CreateSurfaceFromHandle(handleSpp, ref surface);
+        return @this->CreateSurfaceFromHandle(ref handle.GetPinnableReference(), surface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateSurfaceFromHandle<T0, TI0>(this ComPtr<IDCompositionDevice> thisVtbl, ref T0 handle, ref ComPtr<TI0> surface) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateSurfaceFromHandle(ref handle, (Silk.NET.Core.Native.IUnknown**) surface.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurfaceFromHandle<T0>(this ComPtr<IDCompositionDevice> thisVtbl, Span<T0> handle, ref Silk.NET.Core.Native.IUnknown* surface) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateSurfaceFromHandle(ref handle.GetPinnableReference(), ref surface);
     }
 
     /// <summary>To be documented.</summary>

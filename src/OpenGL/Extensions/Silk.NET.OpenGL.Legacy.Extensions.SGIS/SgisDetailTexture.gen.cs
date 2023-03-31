@@ -47,13 +47,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
-            DetailTexFunc(target, (uint) points.Length*2, in points.GetPinnableReference());
+            DetailTexFunc(target, (uint) points.Length/2, in points.GetPinnableReference());
         }
 
         public unsafe void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
-            DetailTexFunc(target, (uint) points.Length*2, in points.GetPinnableReference());
+            DetailTexFunc(target, (uint) points.Length/2, in points.GetPinnableReference());
         }
 
         public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target)

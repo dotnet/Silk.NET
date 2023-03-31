@@ -2361,11 +2361,62 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pVertexStreamZeroDataPtr = &pVertexStreamZeroData)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Primitivetype, uint, void*, uint, int>)@this->LpVtbl[83])(@this, PrimitiveType, PrimitiveCount, pVertexStreamZeroDataPtr, VertexStreamZeroStride);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int DrawIndexedPrimitiveUP(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Primitivetype, uint, uint, uint, void*, Format, void*, uint, int>)@this->LpVtbl[84])(@this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pVertexStreamZeroDataPtr = &pVertexStreamZeroData)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Primitivetype, uint, uint, uint, void*, Format, void*, uint, int>)@this->LpVtbl[84])(@this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, pVertexStreamZeroDataPtr, VertexStreamZeroStride);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pIndexDataPtr = &pIndexData)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Primitivetype, uint, uint, uint, void*, Format, void*, uint, int>)@this->LpVtbl[84])(@this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexDataPtr, IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] in T1 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pIndexDataPtr = &pIndexData)
+        {
+            fixed (void* pVertexStreamZeroDataPtr = &pVertexStreamZeroData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Primitivetype, uint, uint, uint, void*, Format, void*, uint, int>)@this->LpVtbl[84])(@this, PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexDataPtr, IndexDataFormat, pVertexStreamZeroDataPtr, VertexStreamZeroStride);
+            }
+        }
         return ret;
     }
 
@@ -4495,6 +4546,38 @@ public unsafe static class Direct3DDevice9VtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->GetScissorRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->DrawPrimitiveUP(PrimitiveType, PrimitiveCount, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, in pIndexData.GetPinnableReference(), IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] ReadOnlySpan<T1> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, in pIndexData.GetPinnableReference(), IndexDataFormat, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
     }
 
     /// <summary>To be documented.</summary>

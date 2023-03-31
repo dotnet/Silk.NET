@@ -180,11 +180,24 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteMicromapsProperties<T0>(this ExtOpacityMicromap thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapEXT> pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : struct
+        public static unsafe Result WriteMicromapsProperties<T0>(this ExtOpacityMicromap thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] MicromapEXT* pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* pDataSpp = pData)
-                return thisApi.WriteMicromapsProperties(device, micromapCount, in pMicromaps.GetPinnableReference(), queryType, dataSize, pDataSpp, stride);
+            return thisApi.WriteMicromapsProperties(device, micromapCount, pMicromaps, queryType, dataSize, ref pData.GetPinnableReference(), stride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result WriteMicromapsProperties(this ExtOpacityMicromap thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapEXT> pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
+        {
+            // SpanOverloader
+            return thisApi.WriteMicromapsProperties(device, micromapCount, in pMicromaps.GetPinnableReference(), queryType, dataSize, pData, stride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result WriteMicromapsProperties<T0>(this ExtOpacityMicromap thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(FlowDirection.In)] ReadOnlySpan<MicromapEXT> pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteMicromapsProperties(device, micromapCount, in pMicromaps.GetPinnableReference(), queryType, dataSize, ref pData.GetPinnableReference(), stride);
         }
 
     }

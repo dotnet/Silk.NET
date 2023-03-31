@@ -32,6 +32,7 @@ namespace Silk.NET.BuildTools.Overloading
             new StringOverloader()
         };
 
+        // If the overloads you want aren't lighting up try playing around with the below.
         public static IComplexFunctionOverloader[][] FunctionOverloaders { get; } =
         {
             new IComplexFunctionOverloader[]

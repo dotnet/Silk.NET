@@ -94,6 +94,18 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, ref uint pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -106,6 +118,21 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (uint* pDataSizePtr = &pDataSize)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPrivateData(this ComPtr<ID3D12Device> thisVtbl, ref Guid guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
@@ -113,6 +140,21 @@ public unsafe static class D3D12DeviceVtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -133,11 +175,41 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                fixed (void* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pDataPtr = &pData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+        }
         return ret;
     }
 
@@ -149,6 +221,21 @@ public unsafe static class D3D12DeviceVtblExtensions
         fixed (Guid* guidPtr = &guid)
         {
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Guid* guidPtr = &guid)
+        {
+            fixed (void* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+            }
         }
         return ret;
     }
@@ -864,6 +951,18 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12Device> thisVtbl, Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Feature, void*, uint, int>)@this->LpVtbl[13])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDescriptorHeap(this ComPtr<ID3D12Device> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
     {
         var @this = thisVtbl.Handle;
@@ -1023,6 +1122,66 @@ public unsafe static class D3D12DeviceVtblExtensions
             fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+        {
+            fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, uint, void*, nuint, Guid*, void**, int>)@this->LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
+                }
             }
         }
         return ret;
@@ -3342,6 +3501,66 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* NTHandlePtr = &NTHandle)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* NTHandlePtr = &NTHandle)
+        {
+            fixed (void** ppvObjPtr = &ppvObj)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle, ref Guid riid, void** ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* NTHandlePtr = &NTHandle)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle, ref Guid riid, ref void* ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (void* NTHandlePtr = &NTHandle)
+        {
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvObjPtr = &ppvObj)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, void*, Guid*, void**, int>)@this->LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenSharedHandleByName(this ComPtr<ID3D12Device> thisVtbl, [Flow(FlowDirection.In)] char* Name, uint Access, void** pNTHandle)
     {
         var @this = thisVtbl.Handle;
@@ -5395,39 +5614,83 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pDataSpp);
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] Span<T0> pData) where T0 : struct
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pDataSpp = pData)
-            return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pDataSpp);
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5922,6 +6185,14 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0>(this ComPtr<ID3D12Device> thisVtbl, Feature Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDescriptorHeap<TI0>(this ComPtr<ID3D12Device> thisVtbl, [Flow(FlowDirection.In)] DescriptorHeapDesc* pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -5997,30 +6268,60 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : struct
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pBlobWithRootSignatureSpp = pBlobWithRootSignature)
-            return @this->CreateRootSignature(nodeMask, pBlobWithRootSignatureSpp, blobLengthInBytes, riid, ref ppvRootSignature);
+        return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, ref riid.GetPinnableReference(), ppvRootSignature);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where T0 : struct
+    public static unsafe int CreateRootSignature(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pBlobWithRootSignatureSpp = pBlobWithRootSignature)
-            return @this->CreateRootSignature(nodeMask, pBlobWithRootSignatureSpp, blobLengthInBytes, ref riid.GetPinnableReference(), ppvRootSignature);
+        return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, ref riid.GetPinnableReference(), ref ppvRootSignature);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where T0 : struct
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* pBlobWithRootSignatureSpp = pBlobWithRootSignature)
-            return @this->CreateRootSignature(nodeMask, pBlobWithRootSignatureSpp, blobLengthInBytes, ref riid.GetPinnableReference(), ref ppvRootSignature);
+        return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, riid, ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppvRootSignature = default;
+        return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature, blobLengthInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvRootSignature.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, riid, ref ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, ref riid.GetPinnableReference(), ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, in pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, ref riid.GetPinnableReference(), ref ppvRootSignature);
     }
 
     /// <summary>To be documented.</summary>
@@ -7591,30 +7892,60 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Guid* riid, ref void* ppvObj) where T0 : struct
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device> thisVtbl, void* NTHandle, Span<Guid> riid, void** ppvObj)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* NTHandleSpp = NTHandle)
-            return @this->OpenSharedHandle(NTHandleSpp, riid, ref ppvObj);
+        return @this->OpenSharedHandle(NTHandle, ref riid.GetPinnableReference(), ppvObj);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, void** ppvObj) where T0 : struct
+    public static unsafe int OpenSharedHandle(this ComPtr<ID3D12Device> thisVtbl, void* NTHandle, Span<Guid> riid, ref void* ppvObj)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* NTHandleSpp = NTHandle)
-            return @this->OpenSharedHandle(NTHandleSpp, ref riid.GetPinnableReference(), ppvObj);
+        return @this->OpenSharedHandle(NTHandle, ref riid.GetPinnableReference(), ref ppvObj);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, ref void* ppvObj) where T0 : struct
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        fixed (void* NTHandleSpp = NTHandle)
-            return @this->OpenSharedHandle(NTHandleSpp, ref riid.GetPinnableReference(), ref ppvObj);
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), riid, ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OpenSharedHandle<T0, TI0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle, out ComPtr<TI0> ppvObj) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        ppvObj = default;
+        return @this->OpenSharedHandle(ref NTHandle, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObj.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), riid, ref ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, void** ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0>(this ComPtr<ID3D12Device> thisVtbl, Span<T0> NTHandle, Span<Guid> riid, ref void* ppvObj) where T0 : unmanaged
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
     }
 
     /// <summary>To be documented.</summary>
@@ -9080,6 +9411,15 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> CreateRootSignature<T0, TI0>(this ComPtr<ID3D12Device> thisVtbl, uint nodeMask, [Flow(FlowDirection.In)] in T0 pBlobWithRootSignature, nuint blobLengthInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->CreateRootSignature(nodeMask, in pBlobWithRootSignature, blobLengthInBytes, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe ComPtr<TI0> CreateCommittedResource<TI0>(this ComPtr<ID3D12Device> thisVtbl, [Flow(FlowDirection.In)] HeapProperties* pHeapProperties, HeapFlags HeapFlags, [Flow(FlowDirection.In)] ResourceDesc* pDesc, ResourceStates InitialResourceState, [Flow(FlowDirection.In)] ClearValue* pOptimizedClearValue) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
@@ -9283,6 +9623,15 @@ public unsafe static class D3D12DeviceVtblExtensions
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
         SilkMarshal.ThrowHResult(@this->OpenSharedHandle(NTHandle, out ComPtr<TI0> silkRet));
+        return silkRet;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ComPtr<TI0> OpenSharedHandle<T0, TI0>(this ComPtr<ID3D12Device> thisVtbl, ref T0 NTHandle) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // NonKhrReturnTypeOverloader
+        SilkMarshal.ThrowHResult(@this->OpenSharedHandle(ref NTHandle, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

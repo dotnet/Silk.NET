@@ -16,60 +16,64 @@ namespace Silk.NET.OpenGL.Extensions.ARB
 {
     public static class ArbRobustnessOverloads
     {
-        public static unsafe void GetnCompressedTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnCompressedTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnCompressedTexImage(target, lod, bufSize, imgSpp);
+            thisApi.GetnCompressedTexImage(target, lod, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnCompressedTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnCompressedTexImage(target, lod, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
-        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : struct
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* imgSpp = img)
-                thisApi.GetnTexImage(target, level, format, type, bufSize, imgSpp);
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
+        }
+
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
+        }
+
+        public static unsafe void GetnTexImage<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnTexImage(target, level, format, type, bufSize, out img.GetPinnableReference());
         }
 
         public static unsafe void GetnUniform(this ArbRobustness thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize", Expression = " / 4"), Flow(FlowDirection.Out)] Span<float> @params)
@@ -96,25 +100,28 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             thisApi.GetnUniform(program, location, bufSize, out @params.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
-        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : struct
+        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* dataSpp = data)
-                thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, dataSpp);
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
+        }
+
+        public static unsafe void ReadnPixels<T0>(this ArbRobustness thisApi, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ReadnPixels(x, y, width, height, format, type, bufSize, out data.GetPinnableReference());
         }
 
     }
