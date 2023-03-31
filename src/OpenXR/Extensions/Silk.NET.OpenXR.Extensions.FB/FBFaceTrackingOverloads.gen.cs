@@ -17,42 +17,42 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBFaceTrackingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FaceTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<FaceTrackerFB> faceTracker)
+        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<FaceTrackerFB> faceTracker)
         {
             // SpanOverloader
             return thisApi.CreateFaceTrackerFB(session, createInfo, ref faceTracker.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FaceTrackerCreateInfoFB> createInfo, [Count(Count = 0)] FaceTrackerFB* faceTracker)
+        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FaceTrackerCreateInfoFB> createInfo, [Count(Count = 0)] FaceTrackerFB* faceTracker)
         {
             // SpanOverloader
             return thisApi.CreateFaceTrackerFB(session, in createInfo.GetPinnableReference(), faceTracker);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FaceTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<FaceTrackerFB> faceTracker)
+        public static unsafe Result CreateFaceTrackerFB(this FBFaceTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FaceTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<FaceTrackerFB> faceTracker)
         {
             // SpanOverloader
             return thisApi.CreateFaceTrackerFB(session, in createInfo.GetPinnableReference(), ref faceTracker.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(FlowDirection.In)] FaceExpressionInfoFB* expressionInfo, [Count(Count = 0)] Span<FaceExpressionWeightsFB> expressionWeights)
+        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FaceExpressionInfoFB* expressionInfo, [Count(Count = 0)] Span<FaceExpressionWeightsFB> expressionWeights)
         {
             // SpanOverloader
             return thisApi.GetFaceExpressionWeightsFB(faceTracker, expressionInfo, ref expressionWeights.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FaceExpressionInfoFB> expressionInfo, [Count(Count = 0)] FaceExpressionWeightsFB* expressionWeights)
+        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FaceExpressionInfoFB> expressionInfo, [Count(Count = 0)] FaceExpressionWeightsFB* expressionWeights)
         {
             // SpanOverloader
             return thisApi.GetFaceExpressionWeightsFB(faceTracker, in expressionInfo.GetPinnableReference(), expressionWeights);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FaceExpressionInfoFB> expressionInfo, [Count(Count = 0)] Span<FaceExpressionWeightsFB> expressionWeights)
+        public static unsafe Result GetFaceExpressionWeightsFB(this FBFaceTracking thisApi, [Count(Count = 0)] FaceTrackerFB faceTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FaceExpressionInfoFB> expressionInfo, [Count(Count = 0)] Span<FaceExpressionWeightsFB> expressionWeights)
         {
             // SpanOverloader
             return thisApi.GetFaceExpressionWeightsFB(faceTracker, in expressionInfo.GetPinnableReference(), ref expressionWeights.GetPinnableReference());

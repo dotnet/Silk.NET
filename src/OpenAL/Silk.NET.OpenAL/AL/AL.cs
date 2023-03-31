@@ -29,8 +29,7 @@ namespace Silk.NET.OpenAL
         public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public SearchPathContainer SearchPaths => _searchPaths ??= (_soft
-             ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer());
+        public SearchPathContainer SearchPaths => _searchPaths ??= new OpenALLibraryNameContainer(_soft);
 
         /// <inheritdoc />
         public partial nint GetProcAddress(string name);
@@ -333,13 +332,14 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
-        /// <param name="soft">Use OpenAL Soft libraries.</param>
+        /// <param name="soft">Prefer OpenAL Soft libraries.</param>
         /// <returns>The instance.</returns>
         public static AL GetApi(bool soft = false)
         {
-            SearchPathContainer searchPaths = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
+            SearchPathContainer searchPaths = new OpenALLibraryNameContainer(soft);
+            
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(searchPaths.GetLibraryName()), null);
+                (CreateDefaultContext(searchPaths.GetLibraryNames()), null);
             var ret = new AL(ctx);
             ret._soft = soft;
             ret._searchPaths = searchPaths;

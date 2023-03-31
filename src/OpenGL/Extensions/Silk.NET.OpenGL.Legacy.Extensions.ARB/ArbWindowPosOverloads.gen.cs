@@ -16,49 +16,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbWindowPosOverloads
     {
-        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.WindowPos2(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.WindowPos2(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.WindowPos2(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.WindowPos2(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.WindowPos3(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.WindowPos3(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.WindowPos3(in v.GetPinnableReference());
         }
 
-        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.WindowPos3(in v.GetPinnableReference());

@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_FILL_MODE")]
     public enum FillMode : int
     {
-        [Obsolete("Deprecated in favour of \"Alternate\"")]
-        [NativeName("Name", "D2D1_FILL_MODE_ALTERNATE")]
-        FillModeAlternate = 0x0,
-        [Obsolete("Deprecated in favour of \"Winding\"")]
-        [NativeName("Name", "D2D1_FILL_MODE_WINDING")]
-        FillModeWinding = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_FILL_MODE_FORCE_DWORD")]
-        FillModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_FILL_MODE_ALTERNATE")]
         Alternate = 0x0,
         [NativeName("Name", "D2D1_FILL_MODE_WINDING")]

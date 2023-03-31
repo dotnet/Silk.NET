@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS")]
     public enum ImageSourceLoadingOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE")]
-        ImageSourceLoadingOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"ReleaseSource\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE")]
-        ImageSourceLoadingOptionsReleaseSource = 0x1,
-        [Obsolete("Deprecated in favour of \"CacheOnDemand\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND")]
-        ImageSourceLoadingOptionsCacheOnDemand = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_FORCE_DWORD")]
-        ImageSourceLoadingOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE")]

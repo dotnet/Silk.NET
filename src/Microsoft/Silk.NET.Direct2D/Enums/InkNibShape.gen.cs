@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_INK_NIB_SHAPE")]
     public enum InkNibShape : int
     {
-        [Obsolete("Deprecated in favour of \"Round\"")]
-        [NativeName("Name", "D2D1_INK_NIB_SHAPE_ROUND")]
-        InkNibShapeRound = 0x0,
-        [Obsolete("Deprecated in favour of \"Square\"")]
-        [NativeName("Name", "D2D1_INK_NIB_SHAPE_SQUARE")]
-        InkNibShapeSquare = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_INK_NIB_SHAPE_FORCE_DWORD")]
-        InkNibShapeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_INK_NIB_SHAPE_ROUND")]
         Round = 0x0,
         [NativeName("Name", "D2D1_INK_NIB_SHAPE_SQUARE")]

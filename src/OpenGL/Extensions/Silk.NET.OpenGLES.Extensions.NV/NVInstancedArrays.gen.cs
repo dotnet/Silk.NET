@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_instanced_arrays";
         [NativeApi(EntryPoint = "glVertexAttribDivisorNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+        public partial void VertexAttribDivisor([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint divisor);
 
         public NVInstancedArrays(INativeContext ctx)
             : base(ctx)

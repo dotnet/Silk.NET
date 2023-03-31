@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     {
         public const string ExtensionName = "AMD_interleaved_elements";
         [NativeApi(EntryPoint = "glVertexAttribParameteriAMD", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribParameter([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] int param);
+        public partial void VertexAttribParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         public AmdInterleavedElements(INativeContext ctx)
             : base(ctx)

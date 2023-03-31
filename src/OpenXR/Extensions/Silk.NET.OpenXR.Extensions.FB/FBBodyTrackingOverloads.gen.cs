@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBBodyTrackingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BodyTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<BodyTrackerFB> bodyTracker)
+        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BodyTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<BodyTrackerFB> bodyTracker)
         {
             // SpanOverloader
             return thisApi.CreateBodyTrackerFB(session, createInfo, ref bodyTracker.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BodyTrackerCreateInfoFB> createInfo, [Count(Count = 0)] BodyTrackerFB* bodyTracker)
+        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BodyTrackerCreateInfoFB> createInfo, [Count(Count = 0)] BodyTrackerFB* bodyTracker)
         {
             // SpanOverloader
             return thisApi.CreateBodyTrackerFB(session, in createInfo.GetPinnableReference(), bodyTracker);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BodyTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<BodyTrackerFB> bodyTracker)
+        public static unsafe Result CreateBodyTrackerFB(this FBBodyTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BodyTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<BodyTrackerFB> bodyTracker)
         {
             // SpanOverloader
             return thisApi.CreateBodyTrackerFB(session, in createInfo.GetPinnableReference(), ref bodyTracker.GetPinnableReference());
@@ -45,21 +45,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(FlowDirection.In)] BodyJointsLocateInfoFB* locateInfo, [Count(Count = 0)] Span<BodyJointLocationsFB> locations)
+        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BodyJointsLocateInfoFB* locateInfo, [Count(Count = 0)] Span<BodyJointLocationsFB> locations)
         {
             // SpanOverloader
             return thisApi.LocateBodyJointsFB(bodyTracker, locateInfo, ref locations.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BodyJointsLocateInfoFB> locateInfo, [Count(Count = 0)] BodyJointLocationsFB* locations)
+        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BodyJointsLocateInfoFB> locateInfo, [Count(Count = 0)] BodyJointLocationsFB* locations)
         {
             // SpanOverloader
             return thisApi.LocateBodyJointsFB(bodyTracker, in locateInfo.GetPinnableReference(), locations);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BodyJointsLocateInfoFB> locateInfo, [Count(Count = 0)] Span<BodyJointLocationsFB> locations)
+        public static unsafe Result LocateBodyJointsFB(this FBBodyTracking thisApi, [Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BodyJointsLocateInfoFB> locateInfo, [Count(Count = 0)] Span<BodyJointLocationsFB> locations)
         {
             // SpanOverloader
             return thisApi.LocateBodyJointsFB(bodyTracker, in locateInfo.GetPinnableReference(), ref locations.GetPinnableReference());

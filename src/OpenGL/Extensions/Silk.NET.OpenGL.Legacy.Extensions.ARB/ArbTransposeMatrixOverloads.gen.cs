@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbTransposeMatrixOverloads
     {
-        public static unsafe void LoadTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(FlowDirection.In)] ReadOnlySpan<float> m)
+        public static unsafe void LoadTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> m)
         {
             // SpanOverloader
             thisApi.LoadTransposeMatrix(in m.GetPinnableReference());
         }
 
-        public static unsafe void LoadTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(FlowDirection.In)] ReadOnlySpan<double> m)
+        public static unsafe void LoadTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> m)
         {
             // SpanOverloader
             thisApi.LoadTransposeMatrix(in m.GetPinnableReference());
         }
 
-        public static unsafe void MultTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(FlowDirection.In)] ReadOnlySpan<float> m)
+        public static unsafe void MultTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> m)
         {
             // SpanOverloader
             thisApi.MultTransposeMatrix(in m.GetPinnableReference());
         }
 
-        public static unsafe void MultTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(FlowDirection.In)] ReadOnlySpan<double> m)
+        public static unsafe void MultTransposeMatrix(this ArbTransposeMatrix thisApi, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> m)
         {
             // SpanOverloader
             thisApi.MultTransposeMatrix(in m.GetPinnableReference());

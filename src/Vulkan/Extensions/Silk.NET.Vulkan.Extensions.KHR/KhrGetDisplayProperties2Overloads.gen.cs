@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
-        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
+        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties2(physicalDevice, display, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties)
+        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayModeProperties2KHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties2(physicalDevice, display, ref pPropertyCount.GetPinnableReference(), pProperties);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
-        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
+        public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties2(physicalDevice, display, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());
@@ -41,14 +41,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
-        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
+        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneCapabilities2(physicalDevice, pDisplayPlaneInfo, out pCapabilities.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DisplayPlaneInfo2KHR> pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities)
+        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DisplayPlaneInfo2KHR> pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneCapabilities2(physicalDevice, in pDisplayPlaneInfo.GetPinnableReference(), pCapabilities);
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
-        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DisplayPlaneInfo2KHR> pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
+        public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DisplayPlaneInfo2KHR> pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneCapabilities2(physicalDevice, in pDisplayPlaneInfo.GetPinnableReference(), out pCapabilities.GetPinnableReference());
@@ -64,14 +64,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties2(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties2(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
@@ -79,7 +79,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties2(physicalDevice, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());
@@ -87,14 +87,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
-        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties2(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayProperties2KHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties2(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
@@ -102,7 +102,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
-        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties2(physicalDevice, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());

@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.MNDX
         public const string ExtensionName = "XR_MNDX_force_feedback_curl";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyForceFeedbackCurlMNDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ForceFeedbackCurlApplyLocationsMNDX* locations);
+        public unsafe partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ForceFeedbackCurlApplyLocationsMNDX* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyForceFeedbackCurlMNDX", Convention = CallingConvention.Winapi)]
-        public partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in ForceFeedbackCurlApplyLocationsMNDX locations);
+        public partial Result ApplyForceFeedbackCurlMndx([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ForceFeedbackCurlApplyLocationsMNDX locations);
 
         public MndxForceFeedbackCurl(INativeContext ctx)
             : base(ctx)

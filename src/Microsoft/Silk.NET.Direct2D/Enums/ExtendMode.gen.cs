@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_EXTEND_MODE")]
     public enum ExtendMode : int
     {
-        [Obsolete("Deprecated in favour of \"Clamp\"")]
-        [NativeName("Name", "D2D1_EXTEND_MODE_CLAMP")]
-        ExtendModeClamp = 0x0,
-        [Obsolete("Deprecated in favour of \"Wrap\"")]
-        [NativeName("Name", "D2D1_EXTEND_MODE_WRAP")]
-        ExtendModeWrap = 0x1,
-        [Obsolete("Deprecated in favour of \"Mirror\"")]
-        [NativeName("Name", "D2D1_EXTEND_MODE_MIRROR")]
-        ExtendModeMirror = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_EXTEND_MODE_FORCE_DWORD")]
-        ExtendModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_EXTEND_MODE_CLAMP")]
         Clamp = 0x0,
         [NativeName("Name", "D2D1_EXTEND_MODE_WRAP")]

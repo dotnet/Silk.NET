@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     public static class QComFramebufferFoveatedOverloads
     {
-        public static unsafe void FramebufferFoveationConfig(this QComFramebufferFoveated thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> providedFeatures)
+        public static unsafe void FramebufferFoveationConfig(this QComFramebufferFoveated thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numLayers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint focalPointsPerLayer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> providedFeatures)
         {
             // SpanOverloader
             thisApi.FramebufferFoveationConfig(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, out providedFeatures.GetPinnableReference());

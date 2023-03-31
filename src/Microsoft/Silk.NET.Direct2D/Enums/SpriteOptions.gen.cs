@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_SPRITE_OPTIONS")]
     public enum SpriteOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_SPRITE_OPTIONS_NONE")]
-        SpriteOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"ClampToSourceRectangle\"")]
-        [NativeName("Name", "D2D1_SPRITE_OPTIONS_CLAMP_TO_SOURCE_RECTANGLE")]
-        SpriteOptionsClampToSourceRectangle = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SPRITE_OPTIONS_FORCE_DWORD")]
-        SpriteOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SPRITE_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_SPRITE_OPTIONS_CLAMP_TO_SOURCE_RECTANGLE")]

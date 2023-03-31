@@ -22,79 +22,79 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_debug_report";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugReportCallbackCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
+        public unsafe partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugReportCallbackEXT* pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
+        public partial Result CreateDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugReportCallbackCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugReportCallbackEXT pCallback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] byte* pMessage);
+        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] in byte pMessage);
+        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerPrefix, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
+        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pLayerPrefix, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] byte* pMessage);
+        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] in byte pMessage);
+        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerPrefix, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
+        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pLayerPrefix, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] byte* pMessage);
+        public unsafe partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] in byte pMessage);
+        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugReportMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
+        public partial void DebugReportMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportCallbackEXT callback, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportCallbackEXT callback, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugReportCallbackEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportCallbackEXT callback, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+        public partial void DestroyDebugReportCallback([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportCallbackEXT callback, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         public ExtDebugReport(INativeContext ctx)
             : base(ctx)

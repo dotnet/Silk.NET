@@ -17,7 +17,7 @@ namespace Silk.NET.Direct2D
     {
         public static D2D GetApi()
         {
-             return new(CreateDefaultContext(new D2DLibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new D2DLibraryNameContainer().GetLibraryNames()));
         }
 
         public bool TryGetExtension<T>(out T ext)

@@ -85,14 +85,14 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(FlowDirection.In)] Request* request)
+    public static unsafe void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Request* request)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, Request*, void>)@this->LpVtbl[3])(@this, request);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(FlowDirection.In)] in Request request)
+    public static void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Request request)
     {
         var @this = thisVtbl.Handle;
         fixed (Request* requestPtr = &request)
@@ -242,7 +242,7 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Request> request)
+    public static void EnqueueRequest(this ComPtr<IDStorageQueue1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Request> request)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

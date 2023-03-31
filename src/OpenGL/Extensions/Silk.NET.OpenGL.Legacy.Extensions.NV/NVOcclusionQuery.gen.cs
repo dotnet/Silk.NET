@@ -21,57 +21,57 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_occlusion_query";
         [NativeApi(EntryPoint = "glBeginOcclusionQueryNV", Convention = CallingConvention.Winapi)]
-        public partial void BeginOcclusionQuery([Flow(FlowDirection.In)] uint id);
+        public partial void BeginOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        public unsafe partial void DeleteOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
+        public partial void DeleteOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint ids);
 
         [NativeApi(EntryPoint = "glEndOcclusionQueryNV", Convention = CallingConvention.Winapi)]
         public partial void EndOcclusionQuery();
 
         [NativeApi(EntryPoint = "glGenOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void GenOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glGenOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
-        public partial void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
+        public partial void GenOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint ids);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        public partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
-        public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        public partial void GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glIsOcclusionQueryNV", Convention = CallingConvention.Winapi)]
-        public partial bool IsOcclusionQuery([Flow(FlowDirection.In)] uint id);
+        public partial bool IsOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);
 
-        public unsafe void DeleteOcclusionQuery([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
+        public unsafe void DeleteOcclusionQuery([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint ids)
         {
             // ArrayParameterOverloader
             DeleteOcclusionQueries(1, &ids);
         }
 
-        public unsafe void DeleteOcclusionQueries([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        public unsafe void DeleteOcclusionQueries([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> ids)
         {
             // ImplicitCountSpanOverloader
             DeleteOcclusionQueries((uint) ids.Length, in ids.GetPinnableReference());
@@ -86,27 +86,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public unsafe void GenOcclusionQueries([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        public unsafe void GenOcclusionQueries([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> ids)
         {
             // ImplicitCountSpanOverloader
             GenOcclusionQueries((uint) ids.Length, out ids.GetPinnableReference());
         }
 
-        public unsafe uint GenOcclusionQueries([Flow(FlowDirection.In)] uint n)
+        public unsafe uint GenOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenOcclusionQueries(n, out uint silkRet);
             return silkRet;
         }
 
-        public unsafe int GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname)
+        public unsafe int GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
         {
             // NonKhrReturnTypeOverloader
             GetOcclusionQuery(id, pname, out int silkRet);
             return silkRet;
         }
 
-        public unsafe int GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname)
+        public unsafe int GetOcclusionQuery([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OcclusionQueryParameterNameNV pname)
         {
             // NonKhrReturnTypeOverloader
             GetOcclusionQuery(id, pname, out int silkRet);

@@ -16,49 +16,49 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     public static class QComDriverControlOverloads
     {
-        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
+        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> driverControls)
         {
             // SpanOverloader
             thisApi.GetDriverControl(num, size, out driverControls.GetPinnableReference());
         }
 
-        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(FlowDirection.Out)] Span<int> num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls)
+        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* driverControls)
         {
             // SpanOverloader
             thisApi.GetDriverControl(out num.GetPinnableReference(), size, driverControls);
         }
 
-        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(FlowDirection.Out)] Span<int> num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
+        public static unsafe void GetDriverControl(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> num, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> driverControls)
         {
             // SpanOverloader
             thisApi.GetDriverControl(out num.GetPinnableReference(), size, out driverControls.GetPinnableReference());
         }
 
-        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> driverControlString)
+        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> driverControlString)
         {
             // SpanOverloader
             thisApi.GetDriverControlString(driverControl, bufSize, length, out driverControlString.GetPinnableReference());
         }
 
-        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> driverControlString)
+        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> driverControlString)
         {
             // SpanOverloader
             thisApi.GetDriverControlString(driverControl, bufSize, length, out driverControlString.GetPinnableReference());
         }
 
-        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* driverControlString)
+        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* driverControlString)
         {
             // SpanOverloader
             thisApi.GetDriverControlString(driverControl, bufSize, out length.GetPinnableReference(), driverControlString);
         }
 
-        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> driverControlString)
+        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> driverControlString)
         {
             // SpanOverloader
             thisApi.GetDriverControlString(driverControl, bufSize, out length.GetPinnableReference(), out driverControlString.GetPinnableReference());
         }
 
-        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> driverControlString)
+        public static unsafe void GetDriverControlString(this QComDriverControl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint driverControl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> driverControlString)
         {
             // SpanOverloader
             thisApi.GetDriverControlString(driverControl, bufSize, out length.GetPinnableReference(), out driverControlString.GetPinnableReference());

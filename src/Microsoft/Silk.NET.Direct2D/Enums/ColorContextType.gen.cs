@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE")]
     public enum ColorContextType : int
     {
-        [Obsolete("Deprecated in favour of \"Icc\"")]
-        [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_ICC")]
-        ColorContextTypeIcc = 0x0,
-        [Obsolete("Deprecated in favour of \"Simple\"")]
-        [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_SIMPLE")]
-        ColorContextTypeSimple = 0x1,
-        [Obsolete("Deprecated in favour of \"Dxgi\"")]
-        [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_DXGI")]
-        ColorContextTypeDxgi = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD")]
-        ColorContextTypeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_ICC")]
         Icc = 0x0,
         [NativeName("Name", "D2D1_COLOR_CONTEXT_TYPE_SIMPLE")]

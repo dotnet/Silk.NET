@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE")]
     public enum StrokeTransformType : int
     {
-        [Obsolete("Deprecated in favour of \"Normal\"")]
-        [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_NORMAL")]
-        StrokeTransformTypeNormal = 0x0,
-        [Obsolete("Deprecated in favour of \"Fixed\"")]
-        [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_FIXED")]
-        StrokeTransformTypeFixed = 0x1,
-        [Obsolete("Deprecated in favour of \"Hairline\"")]
-        [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_HAIRLINE")]
-        StrokeTransformTypeHairline = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_FORCE_DWORD")]
-        StrokeTransformTypeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_NORMAL")]
         Normal = 0x0,
         [NativeName("Name", "D2D1_STROKE_TRANSFORM_TYPE_FIXED")]

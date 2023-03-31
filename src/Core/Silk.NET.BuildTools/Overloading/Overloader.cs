@@ -50,7 +50,7 @@ namespace Silk.NET.BuildTools.Overloading
             }
         };
 
-        private static IEnumerable<T> Filter<T>
+        internal static IEnumerable<T> Filter<T>
         (
             this IEnumerable<T> elements,
             Function function,

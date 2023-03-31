@@ -17,7 +17,7 @@ namespace Silk.NET.OpenXR.Extensions.ALMALENCE
     public static class AlmalenceDigitalLensControlOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result SetDigitalLensControlAlmalence(this AlmalenceDigitalLensControl thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DigitalLensControlALMALENCE> digitalLensControl)
+        public static unsafe Result SetDigitalLensControlAlmalence(this AlmalenceDigitalLensControl thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DigitalLensControlALMALENCE> digitalLensControl)
         {
             // SpanOverloader
             return thisApi.SetDigitalLensControlAlmalence(session, in digitalLensControl.GetPinnableReference());

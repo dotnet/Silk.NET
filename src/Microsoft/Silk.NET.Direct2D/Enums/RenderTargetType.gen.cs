@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_RENDER_TARGET_TYPE")]
     public enum RenderTargetType : int
     {
-        [Obsolete("Deprecated in favour of \"Default\"")]
-        [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_DEFAULT")]
-        RenderTargetTypeDefault = 0x0,
-        [Obsolete("Deprecated in favour of \"Software\"")]
-        [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_SOFTWARE")]
-        RenderTargetTypeSoftware = 0x1,
-        [Obsolete("Deprecated in favour of \"Hardware\"")]
-        [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_HARDWARE")]
-        RenderTargetTypeHardware = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_FORCE_DWORD")]
-        RenderTargetTypeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_DEFAULT")]
         Default = 0x0,
         [NativeName("Name", "D2D1_RENDER_TARGET_TYPE_SOFTWARE")]

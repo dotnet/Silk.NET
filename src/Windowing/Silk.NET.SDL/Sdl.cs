@@ -628,7 +628,7 @@ namespace Silk.NET.SDL
             return new SdlException(str);
         }
 
-        public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
+        public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryNames()));
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
     }
 }

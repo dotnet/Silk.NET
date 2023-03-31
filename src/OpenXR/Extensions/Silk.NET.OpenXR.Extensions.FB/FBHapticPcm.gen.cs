@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_haptic_pcm";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDeviceSampleRateFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate);
+        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDeviceSampleRateFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] ref DevicePcmSampleRateGetInfoFB deviceSampleRate);
+        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] ref DevicePcmSampleRateGetInfoFB deviceSampleRate);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDeviceSampleRateFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate);
+        public unsafe partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDeviceSampleRateFB", Convention = CallingConvention.Winapi)]
-        public partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0)] ref DevicePcmSampleRateGetInfoFB deviceSampleRate);
+        public partial Result GetDeviceSampleRateFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0)] ref DevicePcmSampleRateGetInfoFB deviceSampleRate);
 
         public FBHapticPcm(INativeContext ctx)
             : base(ctx)

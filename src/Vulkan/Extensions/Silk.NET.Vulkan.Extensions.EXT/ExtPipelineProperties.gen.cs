@@ -22,19 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_pipeline_properties";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelinePropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] BaseOutStructure* pPipelineProperties);
+        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BaseOutStructure* pPipelineProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelinePropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out BaseOutStructure pPipelineProperties);
+        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BaseOutStructure pPipelineProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelinePropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoEXT pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] BaseOutStructure* pPipelineProperties);
+        public unsafe partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineInfoEXT pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BaseOutStructure* pPipelineProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelinePropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoEXT pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out BaseOutStructure pPipelineProperties);
+        public partial Result GetPipelineProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PipelineInfoEXT pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BaseOutStructure pPipelineProperties);
 
         public ExtPipelineProperties(INativeContext ctx)
             : base(ctx)

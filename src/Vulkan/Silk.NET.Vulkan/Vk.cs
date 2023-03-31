@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         public static Vk GetApi()
         {
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryNames()), null);
             var ret = new Vk(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
             (

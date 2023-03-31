@@ -17,42 +17,42 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrCopyCommands2Overloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBlitImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BlitImageInfo2> pBlitImageInfo)
+        public static unsafe void CmdBlitImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlitImageInfo2> pBlitImageInfo)
         {
             // SpanOverloader
             thisApi.CmdBlitImage2(commandBuffer, in pBlitImageInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdCopyBuffer2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyBufferInfo2> pCopyBufferInfo)
+        public static unsafe void CmdCopyBuffer2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyBufferInfo2> pCopyBufferInfo)
         {
             // SpanOverloader
             thisApi.CmdCopyBuffer2(commandBuffer, in pCopyBufferInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdCopyBufferToImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyBufferToImageInfo2> pCopyBufferToImageInfo)
+        public static unsafe void CmdCopyBufferToImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyBufferToImageInfo2> pCopyBufferToImageInfo)
         {
             // SpanOverloader
             thisApi.CmdCopyBufferToImage2(commandBuffer, in pCopyBufferToImageInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdCopyImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyImageInfo2> pCopyImageInfo)
+        public static unsafe void CmdCopyImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageInfo2> pCopyImageInfo)
         {
             // SpanOverloader
             thisApi.CmdCopyImage2(commandBuffer, in pCopyImageInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdCopyImageToBuffer2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyImageToBufferInfo2> pCopyImageToBufferInfo)
+        public static unsafe void CmdCopyImageToBuffer2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToBufferInfo2> pCopyImageToBufferInfo)
         {
             // SpanOverloader
             thisApi.CmdCopyImageToBuffer2(commandBuffer, in pCopyImageToBufferInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdResolveImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ResolveImageInfo2> pResolveImageInfo)
+        public static unsafe void CmdResolveImage2(this KhrCopyCommands2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResolveImageInfo2> pResolveImageInfo)
         {
             // SpanOverloader
             thisApi.CmdResolveImage2(commandBuffer, in pResolveImageInfo.GetPinnableReference());

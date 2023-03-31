@@ -21,25 +21,25 @@ namespace Silk.NET.WGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_pbuffer";
         [NativeApi(EntryPoint = "wglCreatePbufferEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreatePbuffer([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iPixelFormat, [Flow(FlowDirection.In)] int iWidth, [Flow(FlowDirection.In)] int iHeight, [Flow(FlowDirection.In)] int* piAttribList);
+        public unsafe partial nint CreatePbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
         [NativeApi(EntryPoint = "wglCreatePbufferEXT", Convention = CallingConvention.Winapi)]
-        public partial nint CreatePbuffer([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iPixelFormat, [Flow(FlowDirection.In)] int iWidth, [Flow(FlowDirection.In)] int iHeight, [Flow(FlowDirection.In)] in int piAttribList);
+        public partial nint CreatePbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piAttribList);
 
         [NativeApi(EntryPoint = "wglDestroyPbufferEXT", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DestroyPbuffer([Flow(FlowDirection.In)] nint hPbuffer);
+        public partial Silk.NET.Core.Bool32 DestroyPbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer);
 
         [NativeApi(EntryPoint = "wglGetPbufferDCEXT", Convention = CallingConvention.Winapi)]
-        public partial nint GetPbufferDC([Flow(FlowDirection.In)] nint hPbuffer);
+        public partial nint GetPbufferDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer);
 
         [NativeApi(EntryPoint = "wglQueryPbufferEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryPbuffer([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] int* piValue);
+        public unsafe partial Silk.NET.Core.Bool32 QueryPbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
 
         [NativeApi(EntryPoint = "wglQueryPbufferEXT", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryPbuffer([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] out int piValue);
+        public partial Silk.NET.Core.Bool32 QueryPbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         [NativeApi(EntryPoint = "wglReleasePbufferDCEXT", Convention = CallingConvention.Winapi)]
-        public partial int ReleasePbufferDC([Flow(FlowDirection.In)] nint hPbuffer, [Flow(FlowDirection.In)] nint hDC);
+        public partial int ReleasePbufferDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC);
 
         public ExtPbuffer(INativeContext ctx)
             : base(ctx)

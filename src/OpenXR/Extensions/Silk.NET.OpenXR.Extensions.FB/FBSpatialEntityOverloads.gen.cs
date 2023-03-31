@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBSpatialEntityOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.CreateSpatialAnchorFB(session, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpatialAnchorCreateInfoFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpatialAnchorCreateInfoFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.CreateSpatialAnchorFB(session, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpatialAnchorCreateInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result CreateSpatialAnchorFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpatialAnchorCreateInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.CreateSpatialAnchorFB(session, in info.GetPinnableReference(), ref requestId.GetPinnableReference());
@@ -73,21 +73,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.SetSpaceComponentStatusFB(space, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceComponentStatusSetInfoFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceComponentStatusSetInfoFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.SetSpaceComponentStatusFB(space, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceComponentStatusSetInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result SetSpaceComponentStatusFB(this FBSpatialEntity thisApi, [Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceComponentStatusSetInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.SetSpaceComponentStatusFB(space, in info.GetPinnableReference(), ref requestId.GetPinnableReference());

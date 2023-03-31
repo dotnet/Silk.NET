@@ -17,42 +17,42 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBSpatialEntityStorageOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.EraseSpaceFB(session, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceEraseInfoFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceEraseInfoFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.EraseSpaceFB(session, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceEraseInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result EraseSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceEraseInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.EraseSpaceFB(session, in info.GetPinnableReference(), ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.SaveSpaceFB(session, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceSaveInfoFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceSaveInfoFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.SaveSpaceFB(session, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceSaveInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result SaveSpaceFB(this FBSpatialEntityStorage thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceSaveInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.SaveSpaceFB(session, in info.GetPinnableReference(), ref requestId.GetPinnableReference());

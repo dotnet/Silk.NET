@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -49,6 +49,35 @@ namespace Silk.NET.SilkTouch
                                     IdentifierName("n")))))
             );
 
+            StatementSyntax arrLast = IfStatement
+            (
+                InvocationExpression
+                (
+                    ParseName("Silk.NET.Core.Contexts.DefaultNativeContext.TryCreate"),
+                    ArgumentList
+                    (
+                        SeparatedList
+                        (
+                            new []
+                            {
+                                Argument(IdentifierName("name")),
+                                Argument
+                                (
+                                    null,
+                                    Token(SyntaxKind.OutKeyword),
+                                    DeclarationExpression
+                                    (
+                                        IdentifierName("DefaultNativeContext"),
+                                        SingleVariableDesignation(Identifier("context"))
+                                    )
+                                )
+                            }
+                        )
+                    )
+                ),
+                ReturnStatement(IdentifierName("context"))
+            );
+
             foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
             {
                 var name = NameGenerator.Name($"OVERRIDE_{attId}");
@@ -61,6 +90,17 @@ namespace Silk.NET.SilkTouch
                         var matchId = (int) x2.ConstructorArguments[0].Value!;
                         return matchId != attId;
                     })).ToArray(), comp.SyntaxTrees?.FirstOrDefault()?.IsNet5OrGreater() ?? false)));
+
+                arrLast = IfStatement
+                (
+                    BinaryExpression
+                    (
+                        SyntaxKind.EqualsExpression, IdentifierName("name"),
+                        LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
+                    ), ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
+                    ElseClause(arrLast)
+                );
+
                 last = IfStatement
                 (
                     BinaryExpression
@@ -85,6 +125,78 @@ namespace Silk.NET.SilkTouch
                         )
                     )
                     .WithBody(Block(last))
+                .WithAttributeLists(
+                    SingletonList
+                    (
+                        AttributeList
+                        (
+                            SingletonSeparatedList
+                            (
+                                Attribute
+                                (
+                                    ParseName("System.ObsoleteAttribute"),
+                                    AttributeArgumentList
+                                    (
+                                        SingletonSeparatedList
+                                        (
+                                            AttributeArgument
+                                            (
+                                                LiteralExpression(SyntaxKind.StringLiteralExpression,
+                                                Literal("This function is obsolete! Please use the string[] overload!")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ))
+            );
+
+            //wrap arrLast into its foreach loop
+            //eg `foreach(string name in n)`
+            arrLast = ForEachStatement(PredefinedType(Token(SyntaxKind.StringKeyword)), Identifier("name"), IdentifierName("n"), Block(arrLast));
+
+            members.Add
+            (
+                MethodDeclaration(IdentifierName("INativeContext"), Identifier("CreateDefaultContext"))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SingletonSeparatedList
+                            (Parameter(Identifier("n")).WithType(ArrayType(PredefinedType(Token(SyntaxKind.StringKeyword)), SingletonList(ArrayRankSpecifier()))))
+                        )
+                    )
+                .WithBody
+                (
+                    Block
+                    (
+                        arrLast,
+                        ThrowStatement
+                        (
+                            ObjectCreationExpression(IdentifierName("System.IO.FileNotFoundException"))
+                                .WithArgumentList
+                                (
+                                    ArgumentList
+                                    (
+                                        SingletonSeparatedList
+                                        (
+                                            Argument
+                                            (
+                                                LiteralExpression
+                                                (
+                                                    SyntaxKind.StringLiteralExpression,
+                                                    Literal("Could not load from any of the possible library names! Please make sure that the library is installed and in the right place!")
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                        )
+                    )
+                )
             );
         }
 
@@ -94,7 +206,7 @@ namespace Silk.NET.SilkTouch
             foreach (var attribute in attributes)
             {
                 if (attribute.AttributeClass is null) continue;
-                
+
                 if (_nativeContextAttributes.TryGetValue(attribute.AttributeClass, out var f))
                 {
                     var v = f(attribute.ConstructorArguments);

@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_CAP_STYLE")]
     public enum CapStyle : int
     {
-        [Obsolete("Deprecated in favour of \"Flat\"")]
-        [NativeName("Name", "D2D1_CAP_STYLE_FLAT")]
-        CapStyleFlat = 0x0,
-        [Obsolete("Deprecated in favour of \"Square\"")]
-        [NativeName("Name", "D2D1_CAP_STYLE_SQUARE")]
-        CapStyleSquare = 0x1,
-        [Obsolete("Deprecated in favour of \"Round\"")]
-        [NativeName("Name", "D2D1_CAP_STYLE_ROUND")]
-        CapStyleRound = 0x2,
-        [Obsolete("Deprecated in favour of \"Triangle\"")]
-        [NativeName("Name", "D2D1_CAP_STYLE_TRIANGLE")]
-        CapStyleTriangle = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_CAP_STYLE_FORCE_DWORD")]
-        CapStyleForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_CAP_STYLE_FLAT")]
         Flat = 0x0,
         [NativeName("Name", "D2D1_CAP_STYLE_SQUARE")]

@@ -21,90 +21,90 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_pixel_transform";
         [NativeApi(EntryPoint = "glGetPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetPixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetPixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetPixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetPixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] float param);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+        public partial void PixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformTargetEXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float @params);
 
-        public unsafe int GetPixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        public unsafe int GetPixelTransformParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname)
         {
             // NonKhrReturnTypeOverloader
             GetPixelTransformParameter(target, pname, out int silkRet);

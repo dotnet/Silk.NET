@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS")]
     public enum CompatibleRenderTargetOptions : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE")]
-        CompatibleRenderTargetOptionsNone = 0x0,
-        [Obsolete("Deprecated in favour of \"GdiCompatible\"")]
-        [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_GDI_COMPATIBLE")]
-        CompatibleRenderTargetOptionsGdiCompatible = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_FORCE_DWORD")]
-        CompatibleRenderTargetOptionsForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS_GDI_COMPATIBLE")]

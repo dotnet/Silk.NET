@@ -50,6 +50,30 @@ namespace Silk.NET.Core.Loader
         }
 
         /// <summary>
+        ///     Constructs a new UnmanagedLibrary with only a loader and handle specified
+        /// </summary>
+        private UnmanagedLibrary(LibraryLoader loader, nint handle)
+        {
+            _loader = loader;
+            Handle = handle;
+        }
+
+        /// <summary>
+        ///     Tries to create a new UnmanagedLibrary, safely failing
+        /// </summary>
+        public static bool TryCreate(string name, LibraryLoader loader, PathResolver pathResolver, out UnmanagedLibrary library)
+        {
+            if(!loader.TryLoadNativeLibrary(name, pathResolver, out nint handle))
+            {
+                library = null;
+                return false;
+            }
+
+            library = new UnmanagedLibrary(loader, handle);
+            return true;
+        }
+
+        /// <summary>
         ///     Constructs a new NativeLibrary using the specified library loader.
         /// </summary>
         /// <param name="name">The name of the library to load.</param>

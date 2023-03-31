@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_provoking_vertex";
         [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
-        public partial void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
+        public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode);
 
         [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
-        public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
+        public partial void ProvokingVertex([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexProvokingMode mode);
 
         public ArbProvokingVertex(INativeContext ctx)
             : base(ctx)

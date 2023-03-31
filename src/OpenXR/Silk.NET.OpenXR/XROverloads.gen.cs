@@ -17,126 +17,126 @@ namespace Silk.NET.OpenXR
     public static class XROverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainImageAcquireInfo* acquireInfo, [Count(Count = 0)] Span<uint> index)
+        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainImageAcquireInfo* acquireInfo, [Count(Count = 0)] Span<uint> index)
         {
             // SpanOverloader
             return thisApi.AcquireSwapchainImage(swapchain, acquireInfo, ref index.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainImageAcquireInfo> acquireInfo, [Count(Count = 0)] uint* index)
+        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainImageAcquireInfo> acquireInfo, [Count(Count = 0)] uint* index)
         {
             // SpanOverloader
             return thisApi.AcquireSwapchainImage(swapchain, in acquireInfo.GetPinnableReference(), index);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainImageAcquireInfo> acquireInfo, [Count(Count = 0)] Span<uint> index)
+        public static unsafe Result AcquireSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainImageAcquireInfo> acquireInfo, [Count(Count = 0)] Span<uint> index)
         {
             // SpanOverloader
             return thisApi.AcquireSwapchainImage(swapchain, in acquireInfo.GetPinnableReference(), ref index.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticBaseHeader> hapticFeedback)
+        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticBaseHeader> hapticFeedback)
         {
             // SpanOverloader
             return thisApi.ApplyHapticFeedback(session, hapticActionInfo, in hapticFeedback.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] HapticBaseHeader* hapticFeedback)
+        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticBaseHeader* hapticFeedback)
         {
             // SpanOverloader
             return thisApi.ApplyHapticFeedback(session, in hapticActionInfo.GetPinnableReference(), hapticFeedback);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticBaseHeader> hapticFeedback)
+        public static unsafe Result ApplyHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticBaseHeader> hapticFeedback)
         {
             // SpanOverloader
             return thisApi.ApplyHapticFeedback(session, in hapticActionInfo.GetPinnableReference(), in hapticFeedback.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result AttachSessionActionSets(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SessionActionSetsAttachInfo> attachInfo)
+        public static unsafe Result AttachSessionActionSets(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SessionActionSetsAttachInfo> attachInfo)
         {
             // SpanOverloader
             return thisApi.AttachSessionActionSets(session, in attachInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result BeginFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FrameBeginInfo> frameBeginInfo)
+        public static unsafe Result BeginFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FrameBeginInfo> frameBeginInfo)
         {
             // SpanOverloader
             return thisApi.BeginFrame(session, in frameBeginInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result BeginSession(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SessionBeginInfo> beginInfo)
+        public static unsafe Result BeginSession(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SessionBeginInfo> beginInfo)
         {
             // SpanOverloader
             return thisApi.BeginSession(session, in beginInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] ActionCreateInfo* createInfo, [Count(Count = 0)] Span<Action> action)
+        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionCreateInfo* createInfo, [Count(Count = 0)] Span<Action> action)
         {
             // SpanOverloader
             return thisApi.CreateAction(actionSet, createInfo, ref action.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionCreateInfo> createInfo, [Count(Count = 0)] Action* action)
+        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionCreateInfo> createInfo, [Count(Count = 0)] Action* action)
         {
             // SpanOverloader
             return thisApi.CreateAction(actionSet, in createInfo.GetPinnableReference(), action);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionCreateInfo> createInfo, [Count(Count = 0)] Span<Action> action)
+        public static unsafe Result CreateAction(this XR thisApi, [Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionCreateInfo> createInfo, [Count(Count = 0)] Span<Action> action)
         {
             // SpanOverloader
             return thisApi.CreateAction(actionSet, in createInfo.GetPinnableReference(), ref action.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ActionSetCreateInfo* createInfo, [Count(Count = 0)] Span<ActionSet> actionSet)
+        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionSetCreateInfo* createInfo, [Count(Count = 0)] Span<ActionSet> actionSet)
         {
             // SpanOverloader
             return thisApi.CreateActionSet(instance, createInfo, ref actionSet.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionSetCreateInfo> createInfo, [Count(Count = 0)] ActionSet* actionSet)
+        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionSetCreateInfo> createInfo, [Count(Count = 0)] ActionSet* actionSet)
         {
             // SpanOverloader
             return thisApi.CreateActionSet(instance, in createInfo.GetPinnableReference(), actionSet);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionSetCreateInfo> createInfo, [Count(Count = 0)] Span<ActionSet> actionSet)
+        public static unsafe Result CreateActionSet(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionSetCreateInfo> createInfo, [Count(Count = 0)] Span<ActionSet> actionSet)
         {
             // SpanOverloader
             return thisApi.CreateActionSet(instance, in createInfo.GetPinnableReference(), ref actionSet.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionSpaceCreateInfo* createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionSpaceCreateInfo* createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateActionSpace(session, createInfo, ref space.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionSpaceCreateInfo> createInfo, [Count(Count = 0)] Space* space)
+        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionSpaceCreateInfo> createInfo, [Count(Count = 0)] Space* space)
         {
             // SpanOverloader
             return thisApi.CreateActionSpace(session, in createInfo.GetPinnableReference(), space);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionSpaceCreateInfo> createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateActionSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionSpaceCreateInfo> createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateActionSpace(session, in createInfo.GetPinnableReference(), ref space.GetPinnableReference());
@@ -144,7 +144,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] Span<Instance> instance)
+        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] Span<Instance> instance)
         {
             // SpanOverloader
             return thisApi.CreateInstance(createInfo, ref instance.GetPinnableReference());
@@ -152,7 +152,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Instance* instance)
+        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Instance* instance)
         {
             // SpanOverloader
             return thisApi.CreateInstance(in createInfo.GetPinnableReference(), instance);
@@ -160,77 +160,77 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Span<Instance> instance)
+        public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Span<Instance> instance)
         {
             // SpanOverloader
             return thisApi.CreateInstance(in createInfo.GetPinnableReference(), ref instance.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReferenceSpaceCreateInfo* createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReferenceSpaceCreateInfo* createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateReferenceSpace(session, createInfo, ref space.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ReferenceSpaceCreateInfo> createInfo, [Count(Count = 0)] Space* space)
+        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReferenceSpaceCreateInfo> createInfo, [Count(Count = 0)] Space* space)
         {
             // SpanOverloader
             return thisApi.CreateReferenceSpace(session, in createInfo.GetPinnableReference(), space);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ReferenceSpaceCreateInfo> createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateReferenceSpace(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReferenceSpaceCreateInfo> createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateReferenceSpace(session, in createInfo.GetPinnableReference(), ref space.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SessionCreateInfo* createInfo, [Count(Count = 0)] Span<Session> session)
+        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SessionCreateInfo* createInfo, [Count(Count = 0)] Span<Session> session)
         {
             // SpanOverloader
             return thisApi.CreateSession(instance, createInfo, ref session.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SessionCreateInfo> createInfo, [Count(Count = 0)] Session* session)
+        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SessionCreateInfo> createInfo, [Count(Count = 0)] Session* session)
         {
             // SpanOverloader
             return thisApi.CreateSession(instance, in createInfo.GetPinnableReference(), session);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SessionCreateInfo> createInfo, [Count(Count = 0)] Span<Session> session)
+        public static unsafe Result CreateSession(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SessionCreateInfo> createInfo, [Count(Count = 0)] Span<Session> session)
         {
             // SpanOverloader
             return thisApi.CreateSession(instance, in createInfo.GetPinnableReference(), ref session.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* createInfo, [Count(Count = 0)] Span<Swapchain> swapchain)
+        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfo* createInfo, [Count(Count = 0)] Span<Swapchain> swapchain)
         {
             // SpanOverloader
             return thisApi.CreateSwapchain(session, createInfo, ref swapchain.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfo> createInfo, [Count(Count = 0)] Swapchain* swapchain)
+        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfo> createInfo, [Count(Count = 0)] Swapchain* swapchain)
         {
             // SpanOverloader
             return thisApi.CreateSwapchain(session, in createInfo.GetPinnableReference(), swapchain);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfo> createInfo, [Count(Count = 0)] Span<Swapchain> swapchain)
+        public static unsafe Result CreateSwapchain(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfo> createInfo, [Count(Count = 0)] Span<Swapchain> swapchain)
         {
             // SpanOverloader
             return thisApi.CreateSwapchain(session, in createInfo.GetPinnableReference(), ref swapchain.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EndFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FrameEndInfo> frameEndInfo)
+        public static unsafe Result EndFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FrameEndInfo> frameEndInfo)
         {
             // SpanOverloader
             return thisApi.EndFrame(session, in frameEndInfo.GetPinnableReference());
@@ -258,49 +258,49 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, sourceCountOutput, ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, sourceCountOutput, sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, sourceCountOutput, ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), ref sources.GetPinnableReference());
@@ -328,70 +328,70 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, propertyCountOutput, properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
@@ -503,84 +503,84 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateBoolean> state)
+        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateBoolean> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateBoolean(session, getInfo, ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateBoolean* state)
+        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateBoolean* state)
         {
             // SpanOverloader
             return thisApi.GetActionStateBoolean(session, in getInfo.GetPinnableReference(), state);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateBoolean> state)
+        public static unsafe Result GetActionStateBoolean(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateBoolean> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateBoolean(session, in getInfo.GetPinnableReference(), ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateFloat> state)
+        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateFloat> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateFloat(session, getInfo, ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateFloat* state)
+        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateFloat* state)
         {
             // SpanOverloader
             return thisApi.GetActionStateFloat(session, in getInfo.GetPinnableReference(), state);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateFloat> state)
+        public static unsafe Result GetActionStateFloat(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateFloat> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateFloat(session, in getInfo.GetPinnableReference(), ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStatePose> state)
+        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStatePose> state)
         {
             // SpanOverloader
             return thisApi.GetActionStatePose(session, getInfo, ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStatePose* state)
+        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStatePose* state)
         {
             // SpanOverloader
             return thisApi.GetActionStatePose(session, in getInfo.GetPinnableReference(), state);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStatePose> state)
+        public static unsafe Result GetActionStatePose(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStatePose> state)
         {
             // SpanOverloader
             return thisApi.GetActionStatePose(session, in getInfo.GetPinnableReference(), ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateVector2f> state)
+        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] Span<ActionStateVector2f> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateVector2(session, getInfo, ref state.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateVector2f* state)
+        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] ActionStateVector2f* state)
         {
             // SpanOverloader
             return thisApi.GetActionStateVector2(session, in getInfo.GetPinnableReference(), state);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateVector2f> state)
+        public static unsafe Result GetActionStateVector2(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionStateGetInfo> getInfo, [Count(Count = 0)] Span<ActionStateVector2f> state)
         {
             // SpanOverloader
             return thisApi.GetActionStateVector2(session, in getInfo.GetPinnableReference(), ref state.GetPinnableReference());
@@ -594,98 +594,98 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] Span<PfnVoidFunction> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, name, ref function.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] PfnVoidFunction* function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] PfnVoidFunction* function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, in name.GetPinnableReference(), function);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] Span<PfnVoidFunction> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, in name.GetPinnableReference(), ref function.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] Span<PfnVoidFunction> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, name, ref function.GetPinnableReference());
@@ -706,21 +706,21 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SystemGetInfo* getInfo, [Count(Count = 0)] Span<ulong> systemId)
+        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SystemGetInfo* getInfo, [Count(Count = 0)] Span<ulong> systemId)
         {
             // SpanOverloader
             return thisApi.GetSystem(instance, getInfo, ref systemId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SystemGetInfo> getInfo, [Count(Count = 0)] ulong* systemId)
+        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SystemGetInfo> getInfo, [Count(Count = 0)] ulong* systemId)
         {
             // SpanOverloader
             return thisApi.GetSystem(instance, in getInfo.GetPinnableReference(), systemId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SystemGetInfo> getInfo, [Count(Count = 0)] Span<ulong> systemId)
+        public static unsafe Result GetSystem(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SystemGetInfo> getInfo, [Count(Count = 0)] Span<ulong> systemId)
         {
             // SpanOverloader
             return thisApi.GetSystem(instance, in getInfo.GetPinnableReference(), ref systemId.GetPinnableReference());
@@ -748,105 +748,105 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
@@ -888,7 +888,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ReleaseSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainImageReleaseInfo> releaseInfo)
+        public static unsafe Result ReleaseSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainImageReleaseInfo> releaseInfo)
         {
             // SpanOverloader
             return thisApi.ReleaseSwapchainImage(swapchain, in releaseInfo.GetPinnableReference());
@@ -902,35 +902,35 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StopHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo)
+        public static unsafe Result StopHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo)
         {
             // SpanOverloader
             return thisApi.StopHapticFeedback(session, in hapticActionInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pathString, [Count(Count = 0)] Span<ulong> path)
+        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pathString, [Count(Count = 0)] Span<ulong> path)
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, pathString, ref path.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pathString, [Count(Count = 0)] ulong* path)
+        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pathString, [Count(Count = 0)] ulong* path)
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, in pathString.GetPinnableReference(), path);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pathString, [Count(Count = 0)] Span<ulong> path)
+        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pathString, [Count(Count = 0)] Span<ulong> path)
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, in pathString.GetPinnableReference(), ref path.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] Span<ulong> path)
+        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] Span<ulong> path)
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, pathString, ref path.GetPinnableReference());
@@ -944,42 +944,42 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SuggestInteractionProfileBinding(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InteractionProfileSuggestedBinding> suggestedBindings)
+        public static unsafe Result SuggestInteractionProfileBinding(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InteractionProfileSuggestedBinding> suggestedBindings)
         {
             // SpanOverloader
             return thisApi.SuggestInteractionProfileBinding(instance, in suggestedBindings.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SyncAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ActionsSyncInfo> syncInfo)
+        public static unsafe Result SyncAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ActionsSyncInfo> syncInfo)
         {
             // SpanOverloader
             return thisApi.SyncAction(session, in syncInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FrameWaitInfo* frameWaitInfo, [Count(Count = 0)] Span<FrameState> frameState)
+        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FrameWaitInfo* frameWaitInfo, [Count(Count = 0)] Span<FrameState> frameState)
         {
             // SpanOverloader
             return thisApi.WaitFrame(session, frameWaitInfo, ref frameState.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FrameWaitInfo> frameWaitInfo, [Count(Count = 0)] FrameState* frameState)
+        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FrameWaitInfo> frameWaitInfo, [Count(Count = 0)] FrameState* frameState)
         {
             // SpanOverloader
             return thisApi.WaitFrame(session, in frameWaitInfo.GetPinnableReference(), frameState);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FrameWaitInfo> frameWaitInfo, [Count(Count = 0)] Span<FrameState> frameState)
+        public static unsafe Result WaitFrame(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FrameWaitInfo> frameWaitInfo, [Count(Count = 0)] Span<FrameState> frameState)
         {
             // SpanOverloader
             return thisApi.WaitFrame(session, in frameWaitInfo.GetPinnableReference(), ref frameState.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WaitSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainImageWaitInfo> waitInfo)
+        public static unsafe Result WaitSwapchainImage(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapchainImageWaitInfo> waitInfo)
         {
             // SpanOverloader
             return thisApi.WaitSwapchainImage(swapchain, in waitInfo.GetPinnableReference());

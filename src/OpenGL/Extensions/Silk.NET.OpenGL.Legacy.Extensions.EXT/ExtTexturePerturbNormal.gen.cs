@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_texture_perturb_normal";
         [NativeApi(EntryPoint = "glTextureNormalEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureNormal([Flow(FlowDirection.In)] EXT mode);
+        public partial void TextureNormal([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glTextureNormalEXT", Convention = CallingConvention.Winapi)]
-        public partial void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode);
+        public partial void TextureNormal([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureNormalModeEXT mode);
 
         public ExtTexturePerturbNormal(INativeContext ctx)
             : base(ctx)

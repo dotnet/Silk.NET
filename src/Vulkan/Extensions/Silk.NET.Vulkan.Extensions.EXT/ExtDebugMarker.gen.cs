@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_debug_marker";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public unsafe partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugMarkerMarkerInfoEXT pMarkerInfo);
+        public partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugMarkerMarkerInfoEXT pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerEndEXT", Convention = CallingConvention.Winapi)]
@@ -34,27 +34,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public unsafe partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugMarkerMarkerInfoEXT pMarkerInfo);
+        public partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugMarkerMarkerInfoEXT pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
+        public unsafe partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT", Convention = CallingConvention.Winapi)]
-        public partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugMarkerObjectNameInfoEXT pNameInfo);
+        public partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugMarkerObjectNameInfoEXT pNameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
+        public unsafe partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT", Convention = CallingConvention.Winapi)]
-        public partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugMarkerObjectTagInfoEXT pTagInfo);
+        public partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in DebugMarkerObjectTagInfoEXT pTagInfo);
 
         public ExtDebugMarker(INativeContext ctx)
             : base(ctx)

@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
 {
     public static class OesSinglePrecisionOverloads
     {
-        public static unsafe void ClipPlane(this OesSinglePrecision thisApi, [Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> equation)
+        public static unsafe void ClipPlane(this OesSinglePrecision thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES plane, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> equation)
         {
             // SpanOverloader
             thisApi.ClipPlane(plane, in equation.GetPinnableReference());
         }
 
-        public static unsafe void ClipPlane(this OesSinglePrecision thisApi, [Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> equation)
+        public static unsafe void ClipPlane(this OesSinglePrecision thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> equation)
         {
             // SpanOverloader
             thisApi.ClipPlane(plane, in equation.GetPinnableReference());
         }
 
-        public static unsafe void GetClipPlane(this OesSinglePrecision thisApi, [Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation)
+        public static unsafe void GetClipPlane(this OesSinglePrecision thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES plane, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> equation)
         {
             // SpanOverloader
             thisApi.GetClipPlane(plane, out equation.GetPinnableReference());
         }
 
-        public static unsafe void GetClipPlane(this OesSinglePrecision thisApi, [Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation)
+        public static unsafe void GetClipPlane(this OesSinglePrecision thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> equation)
         {
             // SpanOverloader
             thisApi.GetClipPlane(plane, out equation.GetPinnableReference());

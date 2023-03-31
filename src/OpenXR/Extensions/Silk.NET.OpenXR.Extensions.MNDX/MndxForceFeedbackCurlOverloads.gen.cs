@@ -17,7 +17,7 @@ namespace Silk.NET.OpenXR.Extensions.MNDX
     public static class MndxForceFeedbackCurlOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result ApplyForceFeedbackCurlMndx(this MndxForceFeedbackCurl thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ForceFeedbackCurlApplyLocationsMNDX> locations)
+        public static unsafe Result ApplyForceFeedbackCurlMndx(this MndxForceFeedbackCurl thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ForceFeedbackCurlApplyLocationsMNDX> locations)
         {
             // SpanOverloader
             return thisApi.ApplyForceFeedbackCurlMndx(handTracker, in locations.GetPinnableReference());

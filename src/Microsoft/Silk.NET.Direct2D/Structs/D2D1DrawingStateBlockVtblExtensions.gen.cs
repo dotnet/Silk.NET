@@ -119,14 +119,14 @@ public unsafe static class D2D1DrawingStateBlockVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* stateDescription)
+    public static unsafe void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawingStateDescription* stateDescription)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DrawingStateBlock*, DrawingStateDescription*, void>)@this->LpVtbl[5])(@this, stateDescription);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription stateDescription)
+    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in DrawingStateDescription stateDescription)
     {
         var @this = thisVtbl.Handle;
         fixed (DrawingStateDescription* stateDescriptionPtr = &stateDescription)
@@ -211,7 +211,7 @@ public unsafe static class D2D1DrawingStateBlockVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> stateDescription)
+    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> stateDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

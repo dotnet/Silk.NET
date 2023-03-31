@@ -159,7 +159,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetInputSignature([Flow(FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
+        public readonly unsafe int SetInputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -168,7 +168,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetInputSignature([Flow(FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
+        public readonly unsafe int SetInputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetInputSignature([Flow(FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
+        public readonly unsafe int SetInputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -192,7 +192,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetInputSignature([Flow(FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
+        public readonly unsafe int SetInputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -207,7 +207,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputSignature([Flow(FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
+        public readonly unsafe int SetOutputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -216,7 +216,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputSignature([Flow(FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
+        public readonly unsafe int SetOutputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -228,7 +228,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputSignature([Flow(FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
+        public readonly unsafe int SetOutputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -240,7 +240,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputSignature([Flow(FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
+        public readonly unsafe int SetOutputSignature([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -255,7 +255,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -276,7 +276,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -288,7 +288,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -303,7 +303,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -314,7 +314,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -328,7 +328,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -340,7 +340,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -355,7 +355,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -370,7 +370,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -388,7 +388,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -402,7 +402,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -419,7 +419,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -446,7 +446,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -461,7 +461,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -479,7 +479,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -493,7 +493,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -510,7 +510,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -525,7 +525,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -543,7 +543,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -561,7 +561,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -582,7 +582,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -599,7 +599,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -619,7 +619,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -630,7 +630,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -644,7 +644,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -658,7 +658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -675,7 +675,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -688,7 +688,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -704,7 +704,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -718,7 +718,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -735,7 +735,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -752,7 +752,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -772,7 +772,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -788,7 +788,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -855,7 +855,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -864,7 +864,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -876,7 +876,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -887,7 +887,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -899,7 +899,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -914,7 +914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -928,7 +928,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -940,7 +940,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -955,7 +955,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -969,7 +969,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -984,7 +984,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1002,7 +1002,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1030,7 +1030,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1044,7 +1044,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1057,7 +1057,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1071,7 +1071,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1088,7 +1088,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1104,7 +1104,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1116,7 +1116,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1131,7 +1131,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1145,7 +1145,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1160,7 +1160,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1178,7 +1178,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1195,7 +1195,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1210,7 +1210,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1228,7 +1228,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1245,7 +1245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1263,7 +1263,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1284,7 +1284,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1304,7 +1304,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1318,7 +1318,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1335,7 +1335,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1351,7 +1351,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1368,7 +1368,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1388,7 +1388,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1482,7 +1482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetInputSignature<TI0>([Flow(FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ref ComPtr<TI0> ppInputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int SetInputSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pInputParameters, uint cInputParameters, ref ComPtr<TI0> ppInputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1490,7 +1490,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetInputSignature<TI0>([Flow(FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ref ComPtr<TI0> ppInputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int SetInputSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pInputParameters, uint cInputParameters, ref ComPtr<TI0> ppInputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1498,7 +1498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputSignature<TI0>([Flow(FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ref ComPtr<TI0> ppOutputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int SetOutputSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ParameterDesc* pOutputParameters, uint cOutputParameters, ref ComPtr<TI0> ppOutputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1506,7 +1506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputSignature<TI0>([Flow(FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ref ComPtr<TI0> ppOutputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int SetOutputSignature<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ParameterDesc pOutputParameters, uint cOutputParameters, ref ComPtr<TI0> ppOutputNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1514,7 +1514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1522,7 +1522,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1530,7 +1530,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1538,7 +1538,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1546,7 +1546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1554,7 +1554,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1562,7 +1562,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1570,7 +1570,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1578,7 +1578,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1586,7 +1586,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1594,7 +1594,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1602,7 +1602,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1610,7 +1610,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1618,7 +1618,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0, TI1>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1626,7 +1626,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1634,7 +1634,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1642,7 +1642,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1650,7 +1650,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0>([Flow(FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1658,7 +1658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0, TI1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1666,7 +1666,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1674,7 +1674,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0, TI1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1682,7 +1682,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1690,7 +1690,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0, TI1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int CallFunction<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI1> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1698,7 +1698,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ComPtr<TI0> pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11Module>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1706,7 +1706,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1714,7 +1714,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1722,7 +1722,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CallFunction<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int CallFunction<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ComPtr<TI0> ppCallNode) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1754,7 +1754,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1762,7 +1762,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1770,7 +1770,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1778,7 +1778,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1786,7 +1786,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1794,7 +1794,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1802,7 +1802,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1810,7 +1810,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1818,7 +1818,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1826,7 +1826,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1834,7 +1834,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1842,7 +1842,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1850,7 +1850,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly unsafe int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1858,7 +1858,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1866,7 +1866,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
+        public readonly int PassValueWithSwizzle<TI0, TI1>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI1> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI1>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1874,7 +1874,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1882,7 +1882,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ComPtr<TI0> pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1898,7 +1898,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1906,7 +1906,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1914,7 +1914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1922,7 +1922,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1930,7 +1930,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1938,7 +1938,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1946,7 +1946,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly unsafe int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1954,7 +1954,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1962,7 +1962,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
+        public readonly int PassValueWithSwizzle<TI0>(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ComPtr<TI0> pDstNode, int DstParameterIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle) where TI0 : unmanaged, IComVtbl<ID3D11LinkingNode>, IComVtbl<TI0>
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

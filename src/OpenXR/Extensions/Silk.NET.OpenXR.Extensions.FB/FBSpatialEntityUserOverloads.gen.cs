@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBSpatialEntityUserOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] Span<SpaceUserFB> user)
+        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] Span<SpaceUserFB> user)
         {
             // SpanOverloader
             return thisApi.CreateSpaceUserFB(session, info, ref user.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceUserCreateInfoFB> info, [Count(Count = 0)] SpaceUserFB* user)
+        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceUserCreateInfoFB> info, [Count(Count = 0)] SpaceUserFB* user)
         {
             // SpanOverloader
             return thisApi.CreateSpaceUserFB(session, in info.GetPinnableReference(), user);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceUserCreateInfoFB> info, [Count(Count = 0)] Span<SpaceUserFB> user)
+        public static unsafe Result CreateSpaceUserFB(this FBSpatialEntityUser thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceUserCreateInfoFB> info, [Count(Count = 0)] Span<SpaceUserFB> user)
         {
             // SpanOverloader
             return thisApi.CreateSpaceUserFB(session, in info.GetPinnableReference(), ref user.GetPinnableReference());

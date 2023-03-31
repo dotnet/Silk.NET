@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     {
         public const string ExtensionName = "ATI_pn_triangles";
         [NativeApi(EntryPoint = "glPNTrianglesiATI", Convention = CallingConvention.Winapi)]
-        public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param);
+        public partial void Pntriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPNTrianglesiATI", Convention = CallingConvention.Winapi)]
-        public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param);
+        public partial void Pntriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPNTrianglesfATI", Convention = CallingConvention.Winapi)]
-        public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
+        public partial void Pntriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPNTrianglesfATI", Convention = CallingConvention.Winapi)]
-        public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);
+        public partial void Pntriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
 
         public AtiPnTriangles(INativeContext ctx)
             : base(ctx)

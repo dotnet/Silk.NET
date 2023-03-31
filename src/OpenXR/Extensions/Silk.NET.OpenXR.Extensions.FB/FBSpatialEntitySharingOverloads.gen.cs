@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBSpatialEntitySharingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceShareInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceShareInfoFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.ShareSpacesFB(session, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceShareInfoFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceShareInfoFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.ShareSpacesFB(session, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceShareInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result ShareSpacesFB(this FBSpatialEntitySharing thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceShareInfoFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.ShareSpacesFB(session, in info.GetPinnableReference(), ref requestId.GetPinnableReference());

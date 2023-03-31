@@ -21,25 +21,25 @@ namespace Silk.NET.OpenGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_debug_marker";
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public unsafe partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte marker);
+        public partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
+        public partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
 
         [NativeApi(EntryPoint = "glPopGroupMarkerEXT", Convention = CallingConvention.Winapi)]
         public partial void PopGroupMarker();
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public unsafe partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte marker);
+        public partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
+        public partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
 
         public ExtDebugMarker(INativeContext ctx)
             : base(ctx)

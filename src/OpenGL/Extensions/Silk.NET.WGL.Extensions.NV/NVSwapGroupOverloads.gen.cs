@@ -16,43 +16,43 @@ namespace Silk.NET.WGL.Extensions.NV
 {
     public static class NVSwapGroupOverloads
     {
-        public static unsafe Silk.NET.Core.Bool32 QueryFrameCount(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Span<uint> count)
+        public static unsafe Silk.NET.Core.Bool32 QueryFrameCount(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> count)
         {
             // SpanOverloader
             return thisApi.QueryFrameCount(hDC, out count.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* maxGroups, [Flow(FlowDirection.Out)] Span<uint> maxBarriers)
+        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> maxBarriers)
         {
             // SpanOverloader
             return thisApi.QueryMaxSwapGroups(hDC, maxGroups, out maxBarriers.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Span<uint> maxGroups, [Flow(FlowDirection.Out)] uint* maxBarriers)
+        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* maxBarriers)
         {
             // SpanOverloader
             return thisApi.QueryMaxSwapGroups(hDC, out maxGroups.GetPinnableReference(), maxBarriers);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Span<uint> maxGroups, [Flow(FlowDirection.Out)] Span<uint> maxBarriers)
+        public static unsafe Silk.NET.Core.Bool32 QueryMaxSwapGroups(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> maxGroups, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> maxBarriers)
         {
             // SpanOverloader
             return thisApi.QueryMaxSwapGroups(hDC, out maxGroups.GetPinnableReference(), out maxBarriers.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* group, [Flow(FlowDirection.Out)] Span<uint> barrier)
+        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> barrier)
         {
             // SpanOverloader
             return thisApi.QuerySwapGroup(hDC, group, out barrier.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Span<uint> group, [Flow(FlowDirection.Out)] uint* barrier)
+        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* barrier)
         {
             // SpanOverloader
             return thisApi.QuerySwapGroup(hDC, out group.GetPinnableReference(), barrier);
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Span<uint> group, [Flow(FlowDirection.Out)] Span<uint> barrier)
+        public static unsafe Silk.NET.Core.Bool32 QuerySwapGroup(this NVSwapGroup thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> group, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> barrier)
         {
             // SpanOverloader
             return thisApi.QuerySwapGroup(hDC, out group.GetPinnableReference(), out barrier.GetPinnableReference());

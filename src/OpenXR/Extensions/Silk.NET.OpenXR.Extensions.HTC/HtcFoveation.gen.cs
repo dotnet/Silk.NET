@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.HTC
         public const string ExtensionName = "XR_HTC_foveation";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyFoveationHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FoveationApplyInfoHTC* applyInfo);
+        public unsafe partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FoveationApplyInfoHTC* applyInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyFoveationHTC", Convention = CallingConvention.Winapi)]
-        public partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in FoveationApplyInfoHTC applyInfo);
+        public partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in FoveationApplyInfoHTC applyInfo);
 
         public HtcFoveation(INativeContext ctx)
             : base(ctx)

@@ -22,14 +22,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_clip_space_w_scaling";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
+        public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in ViewportWScalingNV pViewportWScalings);
+        public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ViewportWScalingNV pViewportWScalings);
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
+        public unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
         {
             // ImplicitCountSpanOverloader
             CmdSetViewportWScaling(commandBuffer, firstViewport, (uint) pViewportWScalings.Length, in pViewportWScalings.GetPinnableReference());

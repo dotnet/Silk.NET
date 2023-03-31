@@ -21,31 +21,31 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_gpu_affinity";
         [NativeApi(EntryPoint = "wglCreateAffinityDCNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateAffinityDC([Flow(FlowDirection.In)] nint* phGpuList);
+        public unsafe partial nint CreateAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* phGpuList);
 
         [NativeApi(EntryPoint = "wglCreateAffinityDCNV", Convention = CallingConvention.Winapi)]
-        public partial nint CreateAffinityDC([Flow(FlowDirection.In)] in nint phGpuList);
+        public partial nint CreateAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] in nint phGpuList);
 
         [NativeApi(EntryPoint = "wglDeleteDCNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DeleteDC([Flow(FlowDirection.In)] nint hdc);
+        public partial Silk.NET.Core.Bool32 DeleteDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc);
 
         [NativeApi(EntryPoint = "wglEnumGpusNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 EnumGp([Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] nint* phGpu);
+        public unsafe partial Silk.NET.Core.Bool32 EnumGp([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phGpu);
 
         [NativeApi(EntryPoint = "wglEnumGpusNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 EnumGp([Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] out nint phGpu);
+        public partial Silk.NET.Core.Bool32 EnumGp([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint phGpu);
 
         [NativeApi(EntryPoint = "wglEnumGpuDevicesNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(FlowDirection.In)] nint hGpu, [Flow(FlowDirection.In)] uint iDeviceIndex, [Flow(FlowDirection.In)] GpuDevice* lpGpuDevice);
+        public unsafe partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GpuDevice* lpGpuDevice);
 
         [NativeApi(EntryPoint = "wglEnumGpuDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(FlowDirection.In)] nint hGpu, [Flow(FlowDirection.In)] uint iDeviceIndex, [Flow(FlowDirection.In)] in GpuDevice lpGpuDevice);
+        public partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GpuDevice lpGpuDevice);
 
         [NativeApi(EntryPoint = "wglEnumGpusFromAffinityDCNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 EnumGpusFromAffinityDC([Flow(FlowDirection.In)] nint hAffinityDC, [Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] nint* hGpu);
+        public unsafe partial Silk.NET.Core.Bool32 EnumGpusFromAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hAffinityDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* hGpu);
 
         [NativeApi(EntryPoint = "wglEnumGpusFromAffinityDCNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 EnumGpusFromAffinityDC([Flow(FlowDirection.In)] nint hAffinityDC, [Flow(FlowDirection.In)] uint iGpuIndex, [Flow(FlowDirection.Out)] out nint hGpu);
+        public partial Silk.NET.Core.Bool32 EnumGpusFromAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hAffinityDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint hGpu);
 
         public NVGpuAffinity(INativeContext ctx)
             : base(ctx)

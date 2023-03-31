@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_swapchain_maintenance1";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseSwapchainImagesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReleaseSwapchainImagesInfoEXT* pReleaseInfo);
+        public unsafe partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReleaseSwapchainImagesInfoEXT* pReleaseInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseSwapchainImagesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ReleaseSwapchainImagesInfoEXT pReleaseInfo);
+        public partial Result ReleaseSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ReleaseSwapchainImagesInfoEXT pReleaseInfo);
 
         public ExtSwapchainMaintenance1(INativeContext ctx)
             : base(ctx)

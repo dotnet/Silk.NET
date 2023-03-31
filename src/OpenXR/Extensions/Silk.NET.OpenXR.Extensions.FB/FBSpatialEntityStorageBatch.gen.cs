@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_spatial_entity_storage_batch";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceListFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceListSaveInfoFB* info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceListSaveInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceListFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceListSaveInfoFB* info, [Count(Count = 0)] ref ulong requestId);
+        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceListSaveInfoFB* info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceListFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceListSaveInfoFB info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceListSaveInfoFB info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceListFB", Convention = CallingConvention.Winapi)]
-        public partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceListSaveInfoFB info, [Count(Count = 0)] ref ulong requestId);
+        public partial Result SaveSpaceListFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceListSaveInfoFB info, [Count(Count = 0)] ref ulong requestId);
 
         public FBSpatialEntityStorageBatch(INativeContext ctx)
             : base(ctx)

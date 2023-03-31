@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_passthrough_keyboard_hands";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPassthroughLayerSetKeyboardHandsIntensityFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(FlowDirection.In)] PassthroughKeyboardHandsIntensityFB* intensity);
+        public unsafe partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PassthroughKeyboardHandsIntensityFB* intensity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPassthroughLayerSetKeyboardHandsIntensityFB", Convention = CallingConvention.Winapi)]
-        public partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(FlowDirection.In)] in PassthroughKeyboardHandsIntensityFB intensity);
+        public partial Result PassthroughLayerSetKeyboardHandsIntensityFB([Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in PassthroughKeyboardHandsIntensityFB intensity);
 
         public FBPassthroughKeyboardHands(INativeContext ctx)
             : base(ctx)

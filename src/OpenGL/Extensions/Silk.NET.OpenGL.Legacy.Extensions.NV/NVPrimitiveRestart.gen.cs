@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void PrimitiveRestart();
 
         [NativeApi(EntryPoint = "glPrimitiveRestartIndexNV", Convention = CallingConvention.Winapi)]
-        public partial void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
+        public partial void PrimitiveRestartIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index);
 
         public NVPrimitiveRestart(INativeContext ctx)
             : base(ctx)

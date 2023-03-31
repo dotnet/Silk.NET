@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
     {
         public const string ExtensionName = "OES_query_matrix";
         [NativeApi(EntryPoint = "glQueryMatrixxOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] out int exponent);
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES", Convention = CallingConvention.Winapi)]
-        public partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] out int exponent);
+        public partial uint QueryMatrixx([Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int exponent);
 
         public OesQueryMatrix(INativeContext ctx)
             : base(ctx)

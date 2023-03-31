@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_spatial_entity_user";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpaceUserFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] SpaceUserFB* user);
+        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] SpaceUserFB* user);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpaceUserFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] ref SpaceUserFB user);
+        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceUserCreateInfoFB* info, [Count(Count = 0)] ref SpaceUserFB user);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpaceUserFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceUserCreateInfoFB info, [Count(Count = 0)] SpaceUserFB* user);
+        public unsafe partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceUserCreateInfoFB info, [Count(Count = 0)] SpaceUserFB* user);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpaceUserFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceUserCreateInfoFB info, [Count(Count = 0)] ref SpaceUserFB user);
+        public partial Result CreateSpaceUserFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceUserCreateInfoFB info, [Count(Count = 0)] ref SpaceUserFB user);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroySpaceUserFB", Convention = CallingConvention.Winapi)]

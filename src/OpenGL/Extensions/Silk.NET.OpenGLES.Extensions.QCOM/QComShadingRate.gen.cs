@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_shading_rate";
         [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
+        public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] QCOM rate);
 
         [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
+        public partial void ShadingRate([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShadingRateQCOM rate);
 
         public QComShadingRate(INativeContext ctx)
             : base(ctx)

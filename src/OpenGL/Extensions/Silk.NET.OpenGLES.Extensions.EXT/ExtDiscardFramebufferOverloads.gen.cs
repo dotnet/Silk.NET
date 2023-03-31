@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     public static class ExtDiscardFramebufferOverloads
     {
-        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> attachments)
+        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> attachments)
         {
             // SpanOverloader
             thisApi.DiscardFramebuffer(target, numAttachments, in attachments.GetPinnableReference());
         }
 
-        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
         {
             // SpanOverloader
             thisApi.DiscardFramebuffer(target, numAttachments, in attachments.GetPinnableReference());
         }
 
-        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> attachments)
+        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EXT> attachments)
         {
             // SpanOverloader
             thisApi.DiscardFramebuffer(target, numAttachments, in attachments.GetPinnableReference());
         }
 
-        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        public static unsafe void DiscardFramebuffer(this ExtDiscardFramebuffer thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
         {
             // SpanOverloader
             thisApi.DiscardFramebuffer(target, numAttachments, in attachments.GetPinnableReference());

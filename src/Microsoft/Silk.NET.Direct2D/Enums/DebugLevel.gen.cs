@@ -12,21 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_DEBUG_LEVEL")]
     public enum DebugLevel : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_DEBUG_LEVEL_NONE")]
-        DebugLevelNone = 0x0,
-        [Obsolete("Deprecated in favour of \"Error\"")]
-        [NativeName("Name", "D2D1_DEBUG_LEVEL_ERROR")]
-        DebugLevelError = 0x1,
-        [Obsolete("Deprecated in favour of \"Warning\"")]
-        [NativeName("Name", "D2D1_DEBUG_LEVEL_WARNING")]
-        DebugLevelWarning = 0x2,
-        [Obsolete("Deprecated in favour of \"Information\"")]
-        [NativeName("Name", "D2D1_DEBUG_LEVEL_INFORMATION")]
-        DebugLevelInformation = 0x3,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_DEBUG_LEVEL_FORCE_DWORD")]
-        DebugLevelForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_DEBUG_LEVEL_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_DEBUG_LEVEL_ERROR")]

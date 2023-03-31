@@ -16,25 +16,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     public static class AppleVertexArrayObjectOverloads
     {
-        public static unsafe void DeleteVertexArrays(this AppleVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+        public static unsafe void DeleteVertexArrays(this AppleVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> arrays)
         {
             // SpanOverloader
             thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
         }
 
-        public static unsafe void DeleteVertexArrays(this AppleVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        public static unsafe void DeleteVertexArrays(this AppleVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
         }
 
-        public static unsafe void GenVertexArrays(this AppleVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        public static unsafe void GenVertexArrays(this AppleVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> arrays)
         {
             // SpanOverloader
             thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
         }
 
-        public static unsafe void GenVertexArrays(this AppleVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        public static unsafe void GenVertexArrays(this AppleVertexArrayObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());

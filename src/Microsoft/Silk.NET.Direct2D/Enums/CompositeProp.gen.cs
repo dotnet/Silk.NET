@@ -12,12 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_COMPOSITE_PROP")]
     public enum CompositeProp : int
     {
-        [Obsolete("Deprecated in favour of \"Mode\"")]
-        [NativeName("Name", "D2D1_COMPOSITE_PROP_MODE")]
-        CompositePropMode = 0x0,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_COMPOSITE_PROP_FORCE_DWORD")]
-        CompositePropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_COMPOSITE_PROP_MODE")]
         Mode = 0x0,
         [NativeName("Name", "D2D1_COMPOSITE_PROP_FORCE_DWORD")]

@@ -11,21 +11,21 @@ namespace Silk.NET.DirectComposition
     internal class DCompLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libDComp.so";
+        public override string[] Linux => new[] { "libDComp.so" };
 
         /// <inheritdoc />
-        public override string MacOS => "libDComp.dylib";
+        public override string[] MacOS => new[] { "libDComp.dylib" };
 
         /// <inheritdoc />
-        public override string Android => "libDComp.so";
+        public override string[] Android => new[] { "libDComp.so" };
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string Windows64 => "DComp.dll";
+        public override string[] Windows64 => new[] { "DComp.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "DComp.dll";
+        public override string[] Windows86 => new[] { "DComp.dll" };
     }
 }

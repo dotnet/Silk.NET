@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrDynamicRenderingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBeginRendering(this KhrDynamicRendering thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<RenderingInfo> pRenderingInfo)
+        public static unsafe void CmdBeginRendering(this KhrDynamicRendering thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInfo> pRenderingInfo)
         {
             // SpanOverloader
             thisApi.CmdBeginRendering(commandBuffer, in pRenderingInfo.GetPinnableReference());

@@ -17,56 +17,56 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtValidationCacheOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, pCreateInfo, pAllocator, out pValidationCache.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), pValidationCache);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pValidationCache.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, pValidationCache);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pValidationCache.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ValidationCacheEXT* pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pValidationCache);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
+        public static unsafe Result CreateValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ValidationCacheCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ValidationCacheEXT> pValidationCache)
         {
             // SpanOverloader
             return thisApi.CreateValidationCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pValidationCache.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        public static unsafe void DestroyValidationCache(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyValidationCache(device, validationCache, in pAllocator.GetPinnableReference());
@@ -94,7 +94,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result MergeValidationCaches(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheEXT> pSrcCaches)
+        public static unsafe Result MergeValidationCaches(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ValidationCacheEXT> pSrcCaches)
         {
             // SpanOverloader
             return thisApi.MergeValidationCaches(device, dstCache, srcCacheCount, in pSrcCaches.GetPinnableReference());

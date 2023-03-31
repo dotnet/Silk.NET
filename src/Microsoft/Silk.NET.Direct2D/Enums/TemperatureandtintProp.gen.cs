@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP")]
     public enum TemperatureandtintProp : int
     {
-        [Obsolete("Deprecated in favour of \"Temperature\"")]
-        [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_TEMPERATURE")]
-        TemperatureandtintPropTemperature = 0x0,
-        [Obsolete("Deprecated in favour of \"Tint\"")]
-        [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_TINT")]
-        TemperatureandtintPropTint = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_FORCE_DWORD")]
-        TemperatureandtintPropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_TEMPERATURE")]
         Temperature = 0x0,
         [NativeName("Name", "D2D1_TEMPERATUREANDTINT_PROP_TINT")]

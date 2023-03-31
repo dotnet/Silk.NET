@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     public static class AppleObjectPurgeableOverloads
     {
-        public static unsafe void GetObjectParameter(this AppleObjectPurgeable thisApi, [Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetObjectParameter(this AppleObjectPurgeable thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetObjectParameter(objectType, name, pname, out @params.GetPinnableReference());

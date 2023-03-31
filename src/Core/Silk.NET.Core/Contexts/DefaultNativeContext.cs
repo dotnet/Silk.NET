@@ -11,6 +11,18 @@ namespace Silk.NET.Core.Contexts
     /// </summary>
     public class DefaultNativeContext : INativeContext
     {
+        public static bool TryCreate(string name, out DefaultNativeContext context)
+        {
+            if(!UnmanagedLibrary.TryCreate(name, LibraryLoader.GetPlatformDefaultLoader(), PathResolver.Default, out UnmanagedLibrary library))
+            {
+                context = null;
+                return false;
+            }
+
+            context = new DefaultNativeContext(library);
+            return true;
+        }
+
         /// <summary>
         /// Creates a new native context for the given underlying library.
         /// </summary>

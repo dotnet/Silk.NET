@@ -52,7 +52,7 @@ namespace Silk.NET.OpenXR.Extensions.META
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result SetPerformanceMetricsStateMeta(this MetaPerformanceMetrics thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PerformanceMetricsStateMETA> state)
+        public static unsafe Result SetPerformanceMetricsStateMeta(this MetaPerformanceMetrics thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PerformanceMetricsStateMETA> state)
         {
             // SpanOverloader
             return thisApi.SetPerformanceMetricsStateMeta(session, in state.GetPinnableReference());

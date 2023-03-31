@@ -17,42 +17,42 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBEyeTrackingSocialOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] EyeTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<EyeTrackerFB> eyeTracker)
+        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeTrackerCreateInfoFB* createInfo, [Count(Count = 0)] Span<EyeTrackerFB> eyeTracker)
         {
             // SpanOverloader
             return thisApi.CreateEyeTrackerFB(session, createInfo, ref eyeTracker.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<EyeTrackerCreateInfoFB> createInfo, [Count(Count = 0)] EyeTrackerFB* eyeTracker)
+        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EyeTrackerCreateInfoFB> createInfo, [Count(Count = 0)] EyeTrackerFB* eyeTracker)
         {
             // SpanOverloader
             return thisApi.CreateEyeTrackerFB(session, in createInfo.GetPinnableReference(), eyeTracker);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<EyeTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<EyeTrackerFB> eyeTracker)
+        public static unsafe Result CreateEyeTrackerFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EyeTrackerCreateInfoFB> createInfo, [Count(Count = 0)] Span<EyeTrackerFB> eyeTracker)
         {
             // SpanOverloader
             return thisApi.CreateEyeTrackerFB(session, in createInfo.GetPinnableReference(), ref eyeTracker.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(FlowDirection.In)] EyeGazesInfoFB* gazeInfo, [Count(Count = 0)] Span<EyeGazesFB> eyeGazes)
+        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EyeGazesInfoFB* gazeInfo, [Count(Count = 0)] Span<EyeGazesFB> eyeGazes)
         {
             // SpanOverloader
             return thisApi.GetEyeGazesFB(eyeTracker, gazeInfo, ref eyeGazes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<EyeGazesInfoFB> gazeInfo, [Count(Count = 0)] EyeGazesFB* eyeGazes)
+        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EyeGazesInfoFB> gazeInfo, [Count(Count = 0)] EyeGazesFB* eyeGazes)
         {
             // SpanOverloader
             return thisApi.GetEyeGazesFB(eyeTracker, in gazeInfo.GetPinnableReference(), eyeGazes);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<EyeGazesInfoFB> gazeInfo, [Count(Count = 0)] Span<EyeGazesFB> eyeGazes)
+        public static unsafe Result GetEyeGazesFB(this FBEyeTrackingSocial thisApi, [Count(Count = 0)] EyeTrackerFB eyeTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EyeGazesInfoFB> gazeInfo, [Count(Count = 0)] Span<EyeGazesFB> eyeGazes)
         {
             // SpanOverloader
             return thisApi.GetEyeGazesFB(eyeTracker, in gazeInfo.GetPinnableReference(), ref eyeGazes.GetPinnableReference());

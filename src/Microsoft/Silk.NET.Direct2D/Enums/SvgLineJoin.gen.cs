@@ -15,18 +15,6 @@ namespace Silk.NET.Direct2D
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Bevel\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_JOIN_BEVEL")]
-        SvgLineJoinBevel = 0x1,
-        [Obsolete("Deprecated in favour of \"Miter\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_JOIN_MITER")]
-        SvgLineJoinMiter = 0x3,
-        [Obsolete("Deprecated in favour of \"Round\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_JOIN_ROUND")]
-        SvgLineJoinRound = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_SVG_LINE_JOIN_FORCE_DWORD")]
-        SvgLineJoinForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_SVG_LINE_JOIN_BEVEL")]
         Bevel = 0x1,
         [NativeName("Name", "D2D1_SVG_LINE_JOIN_MITER")]

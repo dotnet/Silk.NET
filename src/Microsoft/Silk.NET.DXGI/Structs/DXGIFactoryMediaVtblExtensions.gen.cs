@@ -85,7 +85,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -325,7 +325,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,7 +337,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -367,7 +367,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -385,7 +385,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -400,7 +400,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -436,7 +436,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -457,7 +457,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -472,7 +472,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,7 +490,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -508,7 +508,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -529,7 +529,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -547,7 +547,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -568,7 +568,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -589,7 +589,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1790,7 +1790,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1798,7 +1798,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1806,7 +1806,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1814,7 +1814,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1822,7 +1822,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1830,7 +1830,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1838,7 +1838,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1846,7 +1846,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1854,7 +1854,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1862,7 +1862,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1870,7 +1870,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1878,7 +1878,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1886,7 +1886,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1894,7 +1894,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1902,7 +1902,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1910,7 +1910,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1918,7 +1918,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1926,7 +1926,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1934,7 +1934,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1942,7 +1942,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1950,7 +1950,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1958,7 +1958,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1966,7 +1966,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1974,7 +1974,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1, TI2>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1982,7 +1982,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1990,7 +1990,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1998,7 +1998,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2006,7 +2006,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2014,7 +2014,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2022,7 +2022,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ComPtr<TI0> pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2030,7 +2030,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2038,7 +2038,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2046,7 +2046,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2054,7 +2054,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2062,7 +2062,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2070,7 +2070,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2078,7 +2078,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2086,7 +2086,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2094,7 +2094,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2102,7 +2102,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2110,7 +2110,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2118,7 +2118,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2126,7 +2126,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2134,7 +2134,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2142,7 +2142,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2150,7 +2150,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2158,7 +2158,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2166,7 +2166,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2174,7 +2174,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2182,7 +2182,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2190,7 +2190,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2198,7 +2198,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2206,7 +2206,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0, TI1>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2214,7 +2214,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2222,7 +2222,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2230,7 +2230,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2238,7 +2238,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static int CreateSwapChainForCompositionSurfaceHandle<T0, TI0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2246,7 +2246,7 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(this ComPtr<IDXGIFactoryMedia> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

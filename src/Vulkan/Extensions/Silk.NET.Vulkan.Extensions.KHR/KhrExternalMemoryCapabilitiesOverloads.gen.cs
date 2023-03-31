@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
-        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
+        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalBufferProperties(physicalDevice, pExternalBufferInfo, out pExternalBufferProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties)
+        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalBufferProperties(physicalDevice, in pExternalBufferInfo.GetPinnableReference(), pExternalBufferProperties);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
-        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
+        public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalBufferProperties(physicalDevice, in pExternalBufferInfo.GetPinnableReference(), out pExternalBufferProperties.GetPinnableReference());

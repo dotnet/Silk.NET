@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBHapticPcmOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] Span<DevicePcmSampleRateGetInfoFB> deviceSampleRate)
+        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0)] Span<DevicePcmSampleRateGetInfoFB> deviceSampleRate)
         {
             // SpanOverloader
             return thisApi.GetDeviceSampleRateFB(session, hapticActionInfo, ref deviceSampleRate.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate)
+        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0)] DevicePcmSampleRateGetInfoFB* deviceSampleRate)
         {
             // SpanOverloader
             return thisApi.GetDeviceSampleRateFB(session, in hapticActionInfo.GetPinnableReference(), deviceSampleRate);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0)] Span<DevicePcmSampleRateGetInfoFB> deviceSampleRate)
+        public static unsafe Result GetDeviceSampleRateFB(this FBHapticPcm thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo, [Count(Count = 0)] Span<DevicePcmSampleRateGetInfoFB> deviceSampleRate)
         {
             // SpanOverloader
             return thisApi.GetDeviceSampleRateFB(session, in hapticActionInfo.GetPinnableReference(), ref deviceSampleRate.GetPinnableReference());

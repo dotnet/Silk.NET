@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE")]
     public enum HdrtonemapDisplayMode : int
     {
-        [Obsolete("Deprecated in favour of \"Sdr\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE_SDR")]
-        HdrtonemapDisplayModeSdr = 0x0,
-        [Obsolete("Deprecated in favour of \"Hdr\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE_HDR")]
-        HdrtonemapDisplayModeHdr = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD")]
-        HdrtonemapDisplayModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE_SDR")]
         Sdr = 0x0,
         [NativeName("Name", "D2D1_HDRTONEMAP_DISPLAY_MODE_HDR")]

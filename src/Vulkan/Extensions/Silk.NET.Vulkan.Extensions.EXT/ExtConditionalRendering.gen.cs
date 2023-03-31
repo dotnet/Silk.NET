@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_conditional_rendering";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
+        public unsafe partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
+        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT", Convention = CallingConvention.Winapi)]

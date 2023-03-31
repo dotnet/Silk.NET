@@ -127,7 +127,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -136,7 +136,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -148,7 +148,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -187,7 +187,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -217,7 +217,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -247,7 +247,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -277,7 +277,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -295,7 +295,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -328,7 +328,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -420,7 +420,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TI2>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
+    public static unsafe int RunOptimizer<TI0, TI1, TI2>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -428,7 +428,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -440,7 +440,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -448,7 +448,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -460,7 +460,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -468,7 +468,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -480,7 +480,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -488,7 +488,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1, TI2>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
+    public static unsafe int RunOptimizer<TI0, TI1, TI2>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -496,7 +496,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -504,7 +504,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -512,7 +512,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -520,7 +520,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -532,7 +532,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -540,7 +540,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -548,7 +548,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -560,7 +560,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -568,7 +568,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -576,7 +576,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -588,7 +588,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -596,7 +596,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -604,7 +604,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -616,7 +616,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -624,7 +624,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -632,7 +632,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+    public static unsafe int RunOptimizer<TI0, TI1>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -640,7 +640,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -648,7 +648,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -656,7 +656,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -664,7 +664,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static unsafe int RunOptimizer<TI0>(this ComPtr<IDxcOptimizer> thisVtbl, ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -672,7 +672,7 @@ public unsafe static class DxcOptimizerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+    public static unsafe int RunOptimizer(this ComPtr<IDxcOptimizer> thisVtbl, Span<IDxcBlob> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

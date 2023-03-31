@@ -12,15 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_TURBULENCE_NOISE")]
     public enum TurbulenceNoise : int
     {
-        [Obsolete("Deprecated in favour of \"FractalSum\"")]
-        [NativeName("Name", "D2D1_TURBULENCE_NOISE_FRACTAL_SUM")]
-        TurbulenceNoiseFractalSum = 0x0,
-        [Obsolete("Deprecated in favour of \"Turbulence\"")]
-        [NativeName("Name", "D2D1_TURBULENCE_NOISE_TURBULENCE")]
-        TurbulenceNoiseTurbulence = 0x1,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_TURBULENCE_NOISE_FORCE_DWORD")]
-        TurbulenceNoiseForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_TURBULENCE_NOISE_FRACTAL_SUM")]
         FractalSum = 0x0,
         [NativeName("Name", "D2D1_TURBULENCE_NOISE_TURBULENCE")]

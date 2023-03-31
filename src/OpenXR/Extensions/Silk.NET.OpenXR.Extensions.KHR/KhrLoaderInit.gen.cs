@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_loader_init";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrInitializeLoaderKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result InitializeLoader([Count(Count = 0), Flow(FlowDirection.In)] LoaderInitInfoBaseHeaderKHR* loaderInitInfo);
+        public unsafe partial Result InitializeLoader([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] LoaderInitInfoBaseHeaderKHR* loaderInitInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrInitializeLoaderKHR", Convention = CallingConvention.Winapi)]
-        public partial Result InitializeLoader([Count(Count = 0), Flow(FlowDirection.In)] in LoaderInitInfoBaseHeaderKHR loaderInitInfo);
+        public partial Result InitializeLoader([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in LoaderInitInfoBaseHeaderKHR loaderInitInfo);
 
         public KhrLoaderInit(INativeContext ctx)
             : base(ctx)

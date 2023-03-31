@@ -26,19 +26,19 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPersistedNameMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorFromPersistedAnchorCreateInfoMSFT* spatialAnchorCreateInfo, [Count(Count = 0)] SpatialAnchorMSFT* spatialAnchor);
+        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorFromPersistedAnchorCreateInfoMSFT* spatialAnchorCreateInfo, [Count(Count = 0)] SpatialAnchorMSFT* spatialAnchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPersistedNameMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorFromPersistedAnchorCreateInfoMSFT* spatialAnchorCreateInfo, [Count(Count = 0)] ref SpatialAnchorMSFT spatialAnchor);
+        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorFromPersistedAnchorCreateInfoMSFT* spatialAnchorCreateInfo, [Count(Count = 0)] ref SpatialAnchorMSFT spatialAnchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPersistedNameMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorFromPersistedAnchorCreateInfoMSFT spatialAnchorCreateInfo, [Count(Count = 0)] SpatialAnchorMSFT* spatialAnchor);
+        public unsafe partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorFromPersistedAnchorCreateInfoMSFT spatialAnchorCreateInfo, [Count(Count = 0)] SpatialAnchorMSFT* spatialAnchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPersistedNameMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorFromPersistedAnchorCreateInfoMSFT spatialAnchorCreateInfo, [Count(Count = 0)] ref SpatialAnchorMSFT spatialAnchor);
+        public partial Result CreateSpatialAnchorFromPersistedNameMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorFromPersistedAnchorCreateInfoMSFT spatialAnchorCreateInfo, [Count(Count = 0)] ref SpatialAnchorMSFT spatialAnchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorStoreConnectionMSFT", Convention = CallingConvention.Winapi)]
@@ -70,19 +70,19 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPersistSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result PersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorPersistenceInfoMSFT* spatialAnchorPersistenceInfo);
+        public unsafe partial Result PersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorPersistenceInfoMSFT* spatialAnchorPersistenceInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPersistSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result PersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorPersistenceInfoMSFT spatialAnchorPersistenceInfo);
+        public partial Result PersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorPersistenceInfoMSFT spatialAnchorPersistenceInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUnpersistSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result UnpersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorPersistenceNameMSFT* spatialAnchorPersistenceName);
+        public unsafe partial Result UnpersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorPersistenceNameMSFT* spatialAnchorPersistenceName);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUnpersistSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result UnpersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorPersistenceNameMSFT spatialAnchorPersistenceName);
+        public partial Result UnpersistSpatialAnchorMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorPersistenceNameMSFT spatialAnchorPersistenceName);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumeratePersistedSpatialAnchorNamesMsft([Count(Count = 0)] SpatialAnchorStoreConnectionMSFT spatialAnchorStore, [Count(Count = 0)] uint* spatialAnchorNamesCountOutput, [Count(Parameter = "spatialAnchorNamesCapacityInput")] Span<SpatialAnchorPersistenceNameMSFT> persistedAnchorNames)

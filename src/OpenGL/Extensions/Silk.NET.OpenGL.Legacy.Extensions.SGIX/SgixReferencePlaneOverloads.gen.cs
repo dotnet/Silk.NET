@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     public static class SgixReferencePlaneOverloads
     {
-        public static unsafe void ReferencePlane(this SgixReferencePlane thisApi, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> equation)
+        public static unsafe void ReferencePlane(this SgixReferencePlane thisApi, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> equation)
         {
             // SpanOverloader
             thisApi.ReferencePlane(in equation.GetPinnableReference());

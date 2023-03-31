@@ -21,18 +21,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     {
         public const string ExtensionName = "SGIS_fog_function";
         [NativeApi(EntryPoint = "glFogFuncSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void FogFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glFogFuncSGIS", Convention = CallingConvention.Winapi)]
-        public partial void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] in float points);
+        public partial void FogFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in float points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
+        public unsafe partial void GetFogFunc([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS", Convention = CallingConvention.Winapi)]
-        public partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);
+        public partial void GetFogFunc([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float points);
 
-        public unsafe void FogFunc([Count(Parameter = "n", Expression = "*2"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        public unsafe void FogFunc([Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> points)
         {
             // ImplicitCountSpanOverloader
             FogFunc((uint) points.Length/2, in points.GetPinnableReference());

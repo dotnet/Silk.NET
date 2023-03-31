@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_shader_storage_buffer_object";
         [NativeApi(EntryPoint = "glShaderStorageBlockBinding", Convention = CallingConvention.Winapi)]
-        public partial void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
+        public partial void ShaderStorageBlockBinding([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageBlockIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint storageBlockBinding);
 
         public ArbShaderStorageBufferObject(INativeContext ctx)
             : base(ctx)

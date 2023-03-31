@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_POSTERIZE_PROP")]
     public enum PosterizeProp : int
     {
-        [Obsolete("Deprecated in favour of \"RedValueCount\"")]
-        [NativeName("Name", "D2D1_POSTERIZE_PROP_RED_VALUE_COUNT")]
-        PosterizePropRedValueCount = 0x0,
-        [Obsolete("Deprecated in favour of \"GreenValueCount\"")]
-        [NativeName("Name", "D2D1_POSTERIZE_PROP_GREEN_VALUE_COUNT")]
-        PosterizePropGreenValueCount = 0x1,
-        [Obsolete("Deprecated in favour of \"BlueValueCount\"")]
-        [NativeName("Name", "D2D1_POSTERIZE_PROP_BLUE_VALUE_COUNT")]
-        PosterizePropBlueValueCount = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_POSTERIZE_PROP_FORCE_DWORD")]
-        PosterizePropForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_POSTERIZE_PROP_RED_VALUE_COUNT")]
         RedValueCount = 0x0,
         [NativeName("Name", "D2D1_POSTERIZE_PROP_GREEN_VALUE_COUNT")]

@@ -21,19 +21,19 @@ namespace Silk.NET.WGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_display_color_table";
         [NativeApi(EntryPoint = "wglBindDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public partial bool BindDisplayColorTable([Flow(FlowDirection.In)] ushort id);
+        public partial bool BindDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort id);
 
         [NativeApi(EntryPoint = "wglCreateDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public partial bool CreateDisplayColorTable([Flow(FlowDirection.In)] ushort id);
+        public partial bool CreateDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort id);
 
         [NativeApi(EntryPoint = "wglDestroyDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDisplayColorTable([Flow(FlowDirection.In)] ushort id);
+        public partial void DestroyDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort id);
 
         [NativeApi(EntryPoint = "wglLoadDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial bool LoadDisplayColorTable([Flow(FlowDirection.In)] ushort* table, [Flow(FlowDirection.In)] uint length);
+        public unsafe partial bool LoadDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "wglLoadDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public partial bool LoadDisplayColorTable([Flow(FlowDirection.In)] in ushort table, [Flow(FlowDirection.In)] uint length);
+        public partial bool LoadDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length);
 
         public ExtDisplayColorTable(INativeContext ctx)
             : base(ctx)

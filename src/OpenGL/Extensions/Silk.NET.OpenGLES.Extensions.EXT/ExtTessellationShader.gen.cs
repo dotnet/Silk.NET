@@ -21,10 +21,10 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_tessellation_shader";
         [NativeApi(EntryPoint = "glPatchParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameteriEXT", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
 
         public ExtTessellationShader(INativeContext ctx)
             : base(ctx)

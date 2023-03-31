@@ -210,7 +210,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -219,7 +219,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -279,7 +279,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,7 +306,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,7 +315,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -327,7 +327,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -339,7 +339,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -354,7 +354,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -365,7 +365,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -379,7 +379,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -388,7 +388,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -400,7 +400,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -427,7 +427,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -438,7 +438,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -541,7 +541,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -549,7 +549,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -557,7 +557,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -565,7 +565,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -573,7 +573,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -581,7 +581,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -589,7 +589,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -597,7 +597,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D11ClassLinkage> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -605,7 +605,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static unsafe int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -613,7 +613,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -621,7 +621,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -629,7 +629,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int GetClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -637,7 +637,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static int GetClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -645,7 +645,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static unsafe int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -653,7 +653,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -661,7 +661,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -669,7 +669,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+    public static unsafe int CreateClassInstance(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -677,7 +677,7 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
+    public static int CreateClassInstance<TI0>(this ComPtr<ID3D11ClassLinkage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

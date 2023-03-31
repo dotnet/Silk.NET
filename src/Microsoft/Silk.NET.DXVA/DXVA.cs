@@ -17,7 +17,7 @@ namespace Silk.NET.DXVA
     {
         public static DXVA GetApi()
         {
-             return new(CreateDefaultContext(new DXVA2LibraryNameContainer().GetLibraryName()));
+             return new(CreateDefaultContext(new DXVA2LibraryNameContainer().GetLibraryNames()));
         }
     
         public bool TryGetExtension<T>(out T ext)

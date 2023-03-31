@@ -11,21 +11,21 @@ namespace Silk.NET.OpenCL
     internal class OpenCLLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libOpenCL.so.1";
+        public override string[] Linux => new[] { "libOpenCL.so.1" };
 
         /// <inheritdoc />
-        public override string MacOS => "/System/Library/Frameworks/OpenCL.framework/OpenCL";
+        public override string[] MacOS => new[] { "/System/Library/Frameworks/OpenCL.framework/OpenCL" };
 
         /// <inheritdoc />
-        public override string Android => "libOpenCL.so";
+        public override string[] Android => new[] { "libOpenCL.so" };
 
         /// <inheritdoc />
-        public override string IOS => "/System/Library/Frameworks/OpenCL.framework/OpenCL";
+        public override string[] IOS => new[] { "/System/Library/Frameworks/OpenCL.framework/OpenCL" };
 
         /// <inheritdoc />
-        public override string Windows64 => "opencl.dll";
+        public override string[] Windows64 => new[] { "opencl.dll" };
 
         /// <inheritdoc />
-        public override string Windows86 => "opencl.dll";
+        public override string[] Windows86 => new[] { "opencl.dll" };
     }
 }

@@ -21,18 +21,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_object_purgeable";
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glObjectPurgeableAPPLE", Convention = CallingConvention.Winapi)]
-        public partial APPLE ObjectPurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
+        public partial APPLE ObjectPurgeable([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE option);
 
         [NativeApi(EntryPoint = "glObjectUnpurgeableAPPLE", Convention = CallingConvention.Winapi)]
-        public partial APPLE ObjectUnpurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
+        public partial APPLE ObjectUnpurgeable([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE option);
 
-        public unsafe int GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname)
+        public unsafe int GetObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE objectType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE pname)
         {
             // NonKhrReturnTypeOverloader
             GetObjectParameter(objectType, name, pname, out int silkRet);

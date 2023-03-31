@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_clip_control";
         [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
-        public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ARB depth);
+        public partial void ClipControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB depth);
 
         [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
-        public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
+        public partial void ClipControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipControlDepth depth);
 
         [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
-        public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ARB depth);
+        public partial void ClipControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipControlOrigin origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB depth);
 
         [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
-        public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
+        public partial void ClipControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipControlOrigin origin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ClipControlDepth depth);
 
         public ArbClipControl(INativeContext ctx)
             : base(ctx)

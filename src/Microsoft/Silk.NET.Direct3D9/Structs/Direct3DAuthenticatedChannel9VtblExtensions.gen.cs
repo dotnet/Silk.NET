@@ -159,7 +159,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
+    public static unsafe int Query(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -168,7 +168,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
+    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -180,7 +180,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -207,7 +207,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedchannelConfigureOutput* pOutput)
+    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, AuthenticatedchannelConfigureOutput* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -216,7 +216,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedchannelConfigureOutput pOutput)
+    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, ref AuthenticatedchannelConfigureOutput pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -228,7 +228,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -240,7 +240,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedchannelConfigureOutput pOutput) where T0 : unmanaged
+    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pInput, ref AuthenticatedchannelConfigureOutput pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
+    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -312,7 +312,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int Query<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -320,7 +320,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static int Query<T0, T1>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -328,7 +328,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] void* pInput, Span<AuthenticatedchannelConfigureOutput> pOutput)
+    public static unsafe int Configure(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pInput, Span<AuthenticatedchannelConfigureOutput> pOutput)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -336,7 +336,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -344,7 +344,7 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : unmanaged
+    public static int Configure<T0>(this ComPtr<IDirect3DAuthenticatedChannel9> thisVtbl, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

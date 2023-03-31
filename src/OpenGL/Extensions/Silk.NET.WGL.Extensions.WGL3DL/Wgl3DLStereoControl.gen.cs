@@ -21,7 +21,7 @@ namespace Silk.NET.WGL.Extensions.WGL3DL
     {
         public const string ExtensionName = "3DL_stereo_control";
         [NativeApi(EntryPoint = "wglSetStereoEmitterState3DL", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetStereoEmitterState3DL([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint uState);
+        public partial Silk.NET.Core.Bool32 SetStereoEmitterState3DL([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uState);
 
         public Wgl3DLStereoControl(INativeContext ctx)
             : base(ctx)

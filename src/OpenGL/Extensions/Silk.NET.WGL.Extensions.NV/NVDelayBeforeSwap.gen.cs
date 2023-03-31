@@ -21,7 +21,7 @@ namespace Silk.NET.WGL.Extensions.NV
     {
         public const string ExtensionName = "NV_delay_before_swap";
         [NativeApi(EntryPoint = "wglDelayBeforeSwapNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DelayBeforeSwap([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] float seconds);
+        public partial Silk.NET.Core.Bool32 DelayBeforeSwap([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float seconds);
 
         public NVDelayBeforeSwap(INativeContext ctx)
             : base(ctx)

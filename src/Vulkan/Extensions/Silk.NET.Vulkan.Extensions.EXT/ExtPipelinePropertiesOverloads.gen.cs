@@ -17,21 +17,21 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtPipelinePropertiesOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<BaseOutStructure> pPipelineProperties)
+        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineInfoEXT* pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BaseOutStructure> pPipelineProperties)
         {
             // SpanOverloader
             return thisApi.GetPipelineProperties(device, pPipelineInfo, out pPipelineProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineInfoEXT> pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] BaseOutStructure* pPipelineProperties)
+        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineInfoEXT> pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BaseOutStructure* pPipelineProperties)
         {
             // SpanOverloader
             return thisApi.GetPipelineProperties(device, in pPipelineInfo.GetPinnableReference(), pPipelineProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineInfoEXT> pPipelineInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<BaseOutStructure> pPipelineProperties)
+        public static unsafe Result GetPipelineProperties(this ExtPipelineProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineInfoEXT> pPipelineInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BaseOutStructure> pPipelineProperties)
         {
             // SpanOverloader
             return thisApi.GetPipelineProperties(device, in pPipelineInfo.GetPinnableReference(), out pPipelineProperties.GetPinnableReference());

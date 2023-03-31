@@ -16,145 +16,145 @@ namespace Silk.NET.OpenGL.Extensions.ARB
 {
     public static class ArbES2CompatibilityOverloads
     {
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, range, out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), precision);
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, range, out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), precision);
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, range, out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), precision);
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, range, out precision.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), precision);
         }
 
-        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> precision)
+        public static unsafe void GetShaderPrecisionFormat(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType shadertype, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> precision)
         {
             // SpanOverloader
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), out precision.GetPinnableReference());
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Shader* shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length)
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);

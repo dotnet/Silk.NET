@@ -12,18 +12,6 @@ namespace Silk.NET.Direct2D
     [NativeName("Name", "D2D1_LAYER_OPTIONS1")]
     public enum LayerOptions1 : int
     {
-        [Obsolete("Deprecated in favour of \"None\"")]
-        [NativeName("Name", "D2D1_LAYER_OPTIONS1_NONE")]
-        LayerOptions1None = 0x0,
-        [Obsolete("Deprecated in favour of \"InitializeFromBackground\"")]
-        [NativeName("Name", "D2D1_LAYER_OPTIONS1_INITIALIZE_FROM_BACKGROUND")]
-        LayerOptions1InitializeFromBackground = 0x1,
-        [Obsolete("Deprecated in favour of \"IgnoreAlpha\"")]
-        [NativeName("Name", "D2D1_LAYER_OPTIONS1_IGNORE_ALPHA")]
-        LayerOptions1IgnoreAlpha = 0x2,
-        [Obsolete("Deprecated in favour of \"ForceDword\"")]
-        [NativeName("Name", "D2D1_LAYER_OPTIONS1_FORCE_DWORD")]
-        LayerOptions1ForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D2D1_LAYER_OPTIONS1_NONE")]
         None = 0x0,
         [NativeName("Name", "D2D1_LAYER_OPTIONS1_INITIALIZE_FROM_BACKGROUND")]
