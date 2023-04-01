@@ -409,720 +409,518 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemProperties* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            fixed (void* host_ptrSpp = host_ptr)
-                return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptrSpp, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, properties, flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateBufferWithProperties(context, in properties.GetPinnableReference(), flags, size, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
             return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemProperties* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<MemProperties> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemFlags flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageFormat* image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageDesc* image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] void* host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum* properties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CLEnum flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> host_ptr, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
         }
 
         [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
@@ -1271,417 +1069,10 @@ namespace Silk.NET.OpenCL
         public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, properties, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ImageFormat* image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, image_format, in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), image_desc, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), host_ptr, out errcode_ret.GetPinnableReference());
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), errcode_ret);
-        }
-
-        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemProperties, MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
-        public static unsafe nint CreateImageWithProperties<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] ReadOnlySpan<ImageFormat> image_format, [Flow(FlowDirection.In)] ReadOnlySpan<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateImageWithProperties(context, in properties.GetPinnableReference(), flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe int SetContextDestructorCallback<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetContextDestructorCallback(context, pfn_notify, out user_data.GetPinnableReference());
-        }
-
-        public static unsafe int SetProgramReleaseCallback<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetProgramReleaseCallback(program, pfn_notify, out user_data.GetPinnableReference());
-        }
-
-        public static unsafe int SetProgramSpecializationConstant<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] nuint spec_size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> spec_value) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetProgramSpecializationConstant(program, spec_id, spec_size, in spec_value.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateProgramWithIL(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] void* il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateProgramWithIL(context, il, length, out errcode_ret.GetPinnableReference());
-        }
-
-        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
-        {
-            // SpanOverloader
             return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, errcode_ret);
         }
 
-        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateProgramWithIL<T0>(this CL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateProgramWithIL(context, in il.GetPinnableReference(), length, out errcode_ret.GetPinnableReference());

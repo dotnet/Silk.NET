@@ -15697,8 +15697,8 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext4> thisVtbl, Span<ID3D11Resource> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        @this->UpdateTiles((ID3D11Resource*) pDestTiledResource.Handle, in pDestTileRegionStartCoordinate, in pDestTileRegionSize, in pSourceTileData, Flags);
+        // SpanOverloader
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -15706,7 +15706,7 @@ public unsafe static class D3D11DeviceContext4VtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, pSourceTileData, Flags);
+        @this->UpdateTiles(ref pDestTiledResource.GetPinnableReference(), pDestTileRegionStartCoordinate, pDestTileRegionSize, in pSourceTileData.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>

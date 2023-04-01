@@ -26,9 +26,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glDebugMessageCallbackAMD", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 userParam) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDebugMessageCallbackAMD", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcAmd callback, [Flow(FlowDirection.Out)] out T0 userParam) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glDebugMessageEnableAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageEnable([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD category, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 

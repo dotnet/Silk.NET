@@ -50,21 +50,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             PixelDataRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
         }
 
-        [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
-        public partial void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        public unsafe void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            PixelDataRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
-        }
-
-        public unsafe void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            PixelDataRange(target, (uint) pointer.Length, in pointer.GetPinnableReference());
-        }
-
         public NVPixelDataRange(INativeContext ctx)
             : base(ctx)
         {

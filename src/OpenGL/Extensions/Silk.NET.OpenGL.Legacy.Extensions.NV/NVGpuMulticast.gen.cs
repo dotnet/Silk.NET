@@ -35,9 +35,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glMulticastBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void MulticastBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMulticastBufferSubDataNV", Convention = CallingConvention.Winapi)]
-        public partial void MulticastBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glMulticastCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void MulticastCopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint readGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint writeGpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint readBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint writeBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
 

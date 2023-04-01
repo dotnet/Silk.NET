@@ -36,16 +36,6 @@ namespace Silk.NET.WGL.Extensions.NV
             return silkRet;
         }
 
-        [NativeApi(EntryPoint = "wglFreeMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void FreeMemory<T0>([Flow(FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
-
-        public unsafe T0 FreeMemory<T0>() where T0 : unmanaged
-        {
-            // NonKhrReturnTypeOverloader
-            FreeMemory(out T0 silkRet);
-            return silkRet;
-        }
-
         public NVVertexArrayRange(INativeContext ctx)
             : base(ctx)
         {

@@ -116,9 +116,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         [NativeApi(EntryPoint = "glColorTableSGI", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InternalFormat internalformat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableSGI", Convention = CallingConvention.Winapi)]
-        public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTableParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
@@ -226,9 +223,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
 
         [NativeApi(EntryPoint = "glGetColorTableSGI", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ColorTableTargetSGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat format, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 table) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetColorTableSGI", Convention = CallingConvention.Winapi)]
-        public partial void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);

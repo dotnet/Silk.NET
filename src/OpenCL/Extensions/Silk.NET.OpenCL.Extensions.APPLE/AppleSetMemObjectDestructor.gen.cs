@@ -26,9 +26,6 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE", Convention = CallingConvention.Winapi)]
         public partial int SetMemObjectDestructor<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint memobj, [Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE", Convention = CallingConvention.Winapi)]
-        public partial int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] ObjectNotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
-
         public AppleSetMemObjectDestructor(INativeContext ctx)
             : base(ctx)
         {

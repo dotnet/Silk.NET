@@ -407,12 +407,8 @@ public unsafe static class D3DIncludeVtblExtensions
     public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (void* pDataPtr = &pData)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3DInclude*, void*, int>)@this->LpVtbl[1])(@this, pDataPtr);
-        }
-        return ret;
+        // SpanOverloader
+        return @this->Open(IncludeType, pFileName, pParentData, ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -420,7 +416,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, pParentData, ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, pParentData, in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -428,7 +424,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, pParentData, in ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -436,7 +432,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -444,7 +440,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -452,7 +448,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -460,7 +456,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -468,7 +464,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -476,7 +472,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
@@ -484,7 +480,7 @@ public unsafe static class D3DIncludeVtblExtensions
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, in ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

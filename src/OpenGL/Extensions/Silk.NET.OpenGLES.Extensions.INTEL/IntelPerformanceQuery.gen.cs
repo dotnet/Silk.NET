@@ -923,12 +923,6 @@ namespace Silk.NET.OpenGLES.Extensions.INTEL
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
         public partial void GetPerfQueryData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint queryHandle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint dataSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL", Convention = CallingConvention.Winapi)]
-        public partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPerfQueryIdByName([Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* queryName, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* queryId);
 

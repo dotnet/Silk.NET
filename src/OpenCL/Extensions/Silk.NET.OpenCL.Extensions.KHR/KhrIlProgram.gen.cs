@@ -32,12 +32,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clCreateProgramWithILKHR", Convention = CallingConvention.Winapi)]
         public partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCreateProgramWithILKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateProgramWithIL<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in T0 il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clCreateProgramWithILKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateProgramWithIL<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in T0 il, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
         public KhrIlProgram(INativeContext ctx)
             : base(ctx)
         {

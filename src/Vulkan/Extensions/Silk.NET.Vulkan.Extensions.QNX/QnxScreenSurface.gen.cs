@@ -60,10 +60,6 @@ namespace Silk.NET.Vulkan.Extensions.QNX
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX", Convention = CallingConvention.Winapi)]
         public partial Bool32 GetPhysicalDeviceScreenPresentationSupportQnx<T0>([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out T0 window) where T0 : unmanaged;
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceScreenPresentationSupportQNX", Convention = CallingConvention.Winapi)]
-        public partial Bool32 GetPhysicalDeviceScreenPresentationSupportQnx<T0>([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 window) where T0 : unmanaged;
-
         public QnxScreenSurface(INativeContext ctx)
             : base(ctx)
         {
