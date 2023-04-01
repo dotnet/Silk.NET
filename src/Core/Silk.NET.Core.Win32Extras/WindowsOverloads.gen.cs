@@ -11426,26 +11426,10 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, Span<EventFilterDescriptor> EnableFilterDesc)
-        {
-            // SpanOverloader
-            return thisApi.EnableTraceEx(ProviderId, SourceId, TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, ref EnableFilterDesc.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
         public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, EventFilterDescriptor* EnableFilterDesc)
         {
             // SpanOverloader
             return thisApi.EnableTraceEx(ProviderId, in SourceId.GetPinnableReference(), TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, EnableFilterDesc);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, Span<EventFilterDescriptor> EnableFilterDesc)
-        {
-            // SpanOverloader
-            return thisApi.EnableTraceEx(ProviderId, in SourceId.GetPinnableReference(), TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, ref EnableFilterDesc.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -11458,26 +11442,10 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, Span<EventFilterDescriptor> EnableFilterDesc)
-        {
-            // SpanOverloader
-            return thisApi.EnableTraceEx(in ProviderId.GetPinnableReference(), SourceId, TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, ref EnableFilterDesc.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
         public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, EventFilterDescriptor* EnableFilterDesc)
         {
             // SpanOverloader
             return thisApi.EnableTraceEx(in ProviderId.GetPinnableReference(), in SourceId.GetPinnableReference(), TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, EnableFilterDesc);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1946, Column 1 in evntrace.h")]
-        public static unsafe uint EnableTraceEx(this Windows thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> ProviderId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> SourceId, ulong TraceHandle, uint IsEnabled, byte Level, ulong MatchAnyKeyword, ulong MatchAllKeyword, uint EnableProperty, Span<EventFilterDescriptor> EnableFilterDesc)
-        {
-            // SpanOverloader
-            return thisApi.EnableTraceEx(in ProviderId.GetPinnableReference(), in SourceId.GetPinnableReference(), TraceHandle, IsEnabled, Level, MatchAnyKeyword, MatchAllKeyword, EnableProperty, ref EnableFilterDesc.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

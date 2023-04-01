@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Silk.NET.Direct2D\Silk.NET.Direct2D.csproj" />
-    <ProjectReference Include="..\Silk.NET.DXGI\Silk.NET.DXGI.csproj" />
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

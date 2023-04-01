@@ -20,12 +20,12 @@ namespace Silk.NET.DirectWrite
         public override string[] Android => new[] { "libdwrite.so" };
 
         /// <inheritdoc />
-        public override string[] IOS => { "__Internal" };
+        public override string[] IOS => new[] { "__Internal" };
 
         /// <inheritdoc />
-        public override string[] Windows64 => { "DWrite.dll" };
+        public override string[] Windows64 => new[] { "DWrite.dll" };
 
         /// <inheritdoc />
-        public override string[] Windows86 => { "DWrite.dll" };
+        public override string[] Windows86 => new[] { "DWrite.dll" };
     }
 }

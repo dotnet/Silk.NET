@@ -18,11 +18,9 @@ namespace Silk.NET.BuildTools.Overloading
                 //if its an opaque pointer, dont do ref overloads
                 if(parameter.Type.IndirectionLevels == 1)
                 {
-                    var baseType = new TypeSignatureBuilder(parameter.Type).WithIndirectionLevel(0).Build();
-
                     foreach (var project in profile.Projects)
                     {
-                        if(project.Value.Structs.FirstOrDefault(x => x.Name == baseType.Name)?.IsOpaque ?? false)
+                        if(project.Value.Structs.FirstOrDefault(x => x.Name == parameter.Type.Name)?.IsOpaque ?? false)
                         {
                             varied = null;
                             return false;

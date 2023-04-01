@@ -51,16 +51,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 191, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(ref Device device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WrappedSubmissionIndex* wrappedSubmissionIndex);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 191, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public partial Silk.NET.Core.Bool32 DevicePoll(ref Device device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in WrappedSubmissionIndex wrappedSubmissionIndex);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 193, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuSetLogCallback")]
         public unsafe partial void SetLogCallback(PfnLogCallback callback, void* userdata);
@@ -99,16 +89,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Src", "Line 201, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
         public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 201, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants(ref RenderPassEncoder encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 201, Column 6 in wgpu.h")]
-        [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public partial void RenderPassEncoderSetPushConstants<T0>(ref RenderPassEncoder encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 6 in wgpu.h")]
