@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
-        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
+        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, pToolCount, out pToolProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties)
+        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, ref pToolCount.GetPinnableReference(), pToolProperties);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
-        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
+        public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, ref pToolCount.GetPinnableReference(), out pToolProperties.GetPinnableReference());

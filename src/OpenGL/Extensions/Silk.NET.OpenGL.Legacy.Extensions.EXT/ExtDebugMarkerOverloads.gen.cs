@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtDebugMarkerOverloads
     {
-        public static unsafe void InsertEventMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
+        public static unsafe void InsertEventMarker(this ExtDebugMarker thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> marker)
         {
             // SpanOverloader
             thisApi.InsertEventMarker(length, in marker.GetPinnableReference());
         }
 
-        public static unsafe void PushGroupMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
+        public static unsafe void PushGroupMarker(this ExtDebugMarker thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> marker)
         {
             // SpanOverloader
             thisApi.PushGroupMarker(length, in marker.GetPinnableReference());

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_compiled_vertex_array";
         [NativeApi(EntryPoint = "glLockArraysEXT", Convention = CallingConvention.Winapi)]
-        public partial void LockArrays([Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void LockArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] int first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glUnlockArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void UnlockArrays();

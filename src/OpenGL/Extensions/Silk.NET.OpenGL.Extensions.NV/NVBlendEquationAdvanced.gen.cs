@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public partial void BlendBarrier();
 
         [NativeApi(EntryPoint = "glBlendParameteriNV", Convention = CallingConvention.Winapi)]
-        public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
+        public partial void BlendParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int value);
 
         public NVBlendEquationAdvanced(INativeContext ctx)
             : base(ctx)

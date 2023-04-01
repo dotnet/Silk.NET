@@ -21,7 +21,7 @@ namespace Silk.NET.BuildTools.Overloading
                             .WithByRef(parameter.Flow != FlowDirection.In && parameter.Flow != FlowDirection.Out)
                             .WithIsIn(parameter.Flow == FlowDirection.In)
                             .WithIsOut(parameter.Flow == FlowDirection.Out)
-                            .WithIsGenericType(parameter.Type.IndirectionLevels == 1 && parameter.Type.Name == "void")
+                            .WithIsGenericType(parameter.Type.IsSinglePointerTo("void"))
                             .Build()
                     )
                     .Build();

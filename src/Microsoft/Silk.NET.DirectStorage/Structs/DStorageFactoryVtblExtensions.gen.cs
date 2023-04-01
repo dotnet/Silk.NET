@@ -85,7 +85,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Guid* riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Guid* riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, ref Guid riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, ref Guid riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, Guid* riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, Guid* riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, ref Guid riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, ref Guid riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, Guid* riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, Guid* riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, ref Guid riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, ref Guid riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path, Guid* riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path, Guid* riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path, ref Guid riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path, ref Guid riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -301,7 +301,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Guid* riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -312,7 +312,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Guid* riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -326,7 +326,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, ref Guid riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -340,7 +340,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, ref Guid riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -357,7 +357,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, Guid* riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -366,7 +366,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, Guid* riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, ref Guid riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, ref Guid riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -405,7 +405,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name, Guid* riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,7 +417,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name, Guid* riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -432,7 +432,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name, ref Guid riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -447,7 +447,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name, ref Guid riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -465,7 +465,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Guid* riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,7 +476,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Guid* riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,7 +490,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref Guid riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -504,7 +504,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref Guid riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -562,7 +562,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -571,7 +571,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -579,7 +579,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -587,7 +587,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -595,7 +595,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -604,7 +604,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -612,7 +612,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, void** ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -620,7 +620,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, ref void* ppv)
+    public static unsafe int CreateQueue(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -628,7 +628,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -637,7 +637,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, Span<Guid> riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -645,7 +645,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path, Span<Guid> riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -653,7 +653,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> path, Guid* riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> path, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -661,7 +661,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -670,7 +670,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> path, Guid* riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> path, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -678,7 +678,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> path, Span<Guid> riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> path, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -686,7 +686,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> path, Span<Guid> riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> path, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -694,7 +694,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -703,7 +703,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, void** ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -711,7 +711,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, ref void* ppv)
+    public static unsafe int OpenFile(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -719,7 +719,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -728,7 +728,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, Span<Guid> riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -736,7 +736,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name, Span<Guid> riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -744,7 +744,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Guid* riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -752,7 +752,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -761,7 +761,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Guid* riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -769,7 +769,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<Guid> riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -777,7 +777,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, Span<Guid> riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -785,7 +785,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -794,7 +794,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, void** ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -802,7 +802,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, ref void* ppv)
+    public static unsafe int CreateStatusArray(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -819,7 +819,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] QueueDesc* desc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -828,7 +828,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateQueue<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in QueueDesc desc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -837,7 +837,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] char* path) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* path) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -846,7 +846,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In)] in char path) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char path) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -855,7 +855,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenFile<TI0>(this ComPtr<IDStorageFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -864,7 +864,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] byte* name) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -873,7 +873,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In)] in byte name) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte name) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -882,7 +882,7 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateStatusArray<TI0>(this ComPtr<IDStorageFactory> thisVtbl, uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

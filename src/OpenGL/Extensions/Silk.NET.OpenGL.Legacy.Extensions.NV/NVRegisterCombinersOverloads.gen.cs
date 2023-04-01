@@ -16,361 +16,361 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVRegisterCombinersOverloads
     {
-        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.CombinerParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.CombinerParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.CombinerParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void CombinerParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.CombinerParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerInputParameter(stage, portion, variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetCombinerOutputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerStageNV stage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerPortionNV portion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetCombinerOutputParameter(stage, portion, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetFinalCombinerInputParameter(this NVRegisterCombiners thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerVariableNV variable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetFinalCombinerInputParameter(variable, pname, out @params.GetPinnableReference());

@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_convert_timespec_time";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] ref long time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] ref long time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] ref long time);
+        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Timespec timespecTime, [Count(Count = 0)] ref long time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR", Convention = CallingConvention.Winapi)]

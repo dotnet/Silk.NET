@@ -26,14 +26,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToImageIndirectNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint copyCount, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(FlowDirection.In)] ImageSubresourceLayers* pImageSubresources);
+        public unsafe partial void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint copyCount, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceLayers* pImageSubresources);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToImageIndirectNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint copyCount, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(FlowDirection.In)] in ImageSubresourceLayers pImageSubresources);
+        public partial void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint copyCount, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ImageSubresourceLayers pImageSubresources);
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(FlowDirection.In)] ReadOnlySpan<ImageSubresourceLayers> pImageSubresources)
+        public unsafe void CmdCopyMemoryToImageIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong copyBufferAddress, [Count(Count = 0)] uint stride, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "copyCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceLayers> pImageSubresources)
         {
             // ImplicitCountSpanOverloader
             CmdCopyMemoryToImageIndirect(commandBuffer, copyBufferAddress, (uint) pImageSubresources.Length, stride, dstImage, dstImageLayout, in pImageSubresources.GetPinnableReference());

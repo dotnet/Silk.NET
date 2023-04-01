@@ -193,7 +193,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] in char Name)
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -369,7 +369,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,14 +417,14 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pWrittenRange)
+    public static unsafe void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Range* pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Resource*, uint, Range*, void>)@this->LpVtbl[9])(@this, Subresource, pWrittenRange);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pWrittenRange)
+    public static void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Range pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         fixed (Range* pWrittenRangePtr = &pWrittenRange)
@@ -454,7 +454,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -463,7 +463,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -475,7 +475,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -487,7 +487,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -511,7 +511,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -523,7 +523,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -535,7 +535,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -679,7 +679,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -687,7 +687,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -695,7 +695,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -703,7 +703,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -711,7 +711,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -719,7 +719,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -727,7 +727,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int SetPrivateDataInterface<TI0>(this ComPtr<ID3D12Resource> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -735,7 +735,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12Resource> thisVtbl, Span<Guid> guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -743,7 +743,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
+    public static int SetName(this ComPtr<ID3D12Resource> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -776,7 +776,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Range> pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -784,7 +784,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Range> pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -792,7 +792,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pWrittenRange)
+    public static void Unmap(this ComPtr<ID3D12Resource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Range> pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -800,7 +800,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -808,7 +808,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -816,7 +816,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -824,7 +824,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -832,7 +832,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -840,7 +840,7 @@ public unsafe static class D3D12ResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox) where T0 : unmanaged
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Box> pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

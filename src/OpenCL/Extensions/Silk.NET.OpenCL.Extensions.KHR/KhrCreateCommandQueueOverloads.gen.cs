@@ -16,19 +16,19 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrCreateCommandQueueOverloads
     {
-        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* properties, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateCommandQueueWithProperties(context, device, properties, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> properties, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> properties, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), out errcode_ret.GetPinnableReference());

@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.VARJO
     public static class VarjoMarkerTrackingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateMarkerSpaceVarjo(session, createInfo, ref space.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MarkerSpaceCreateInfoVARJO> createInfo, [Count(Count = 0)] Space* space)
+        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MarkerSpaceCreateInfoVARJO> createInfo, [Count(Count = 0)] Space* space)
         {
             // SpanOverloader
             return thisApi.CreateMarkerSpaceVarjo(session, in createInfo.GetPinnableReference(), space);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MarkerSpaceCreateInfoVARJO> createInfo, [Count(Count = 0)] Span<Space> space)
+        public static unsafe Result CreateMarkerSpaceVarjo(this VarjoMarkerTracking thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MarkerSpaceCreateInfoVARJO> createInfo, [Count(Count = 0)] Span<Space> space)
         {
             // SpanOverloader
             return thisApi.CreateMarkerSpaceVarjo(session, in createInfo.GetPinnableReference(), ref space.GetPinnableReference());

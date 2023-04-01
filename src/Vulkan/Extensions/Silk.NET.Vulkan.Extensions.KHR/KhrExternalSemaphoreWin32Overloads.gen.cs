@@ -17,28 +17,28 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrExternalSemaphoreWin32Overloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pHandle)
+        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> pHandle)
         {
             // SpanOverloader
             return thisApi.GetSemaphoreWin32Handle(device, pGetWin32HandleInfo, out pHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pHandle)
+        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle)
         {
             // SpanOverloader
             return thisApi.GetSemaphoreWin32Handle(device, in pGetWin32HandleInfo.GetPinnableReference(), pHandle);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pHandle)
+        public static unsafe Result GetSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SemaphoreGetWin32HandleInfoKHR> pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> pHandle)
         {
             // SpanOverloader
             return thisApi.GetSemaphoreWin32Handle(device, in pGetWin32HandleInfo.GetPinnableReference(), out pHandle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result ImportSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo)
+        public static unsafe Result ImportSemaphoreWin32Handle(this KhrExternalSemaphoreWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImportSemaphoreWin32HandleInfoKHR> pImportSemaphoreWin32HandleInfo)
         {
             // SpanOverloader
             return thisApi.ImportSemaphoreWin32Handle(device, in pImportSemaphoreWin32HandleInfo.GetPinnableReference());

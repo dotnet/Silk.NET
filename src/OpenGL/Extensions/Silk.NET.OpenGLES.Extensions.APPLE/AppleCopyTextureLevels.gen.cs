@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_copy_texture_levels";
         [NativeApi(EntryPoint = "glCopyTextureLevelsAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void CopyTextureLevel([Flow(FlowDirection.In)] uint destinationTexture, [Flow(FlowDirection.In)] uint sourceTexture, [Flow(FlowDirection.In)] int sourceBaseLevel, [Flow(FlowDirection.In)] uint sourceLevelCount);
+        public partial void CopyTextureLevel([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint destinationTexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint sourceTexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int sourceBaseLevel, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint sourceLevelCount);
 
         public AppleCopyTextureLevels(INativeContext ctx)
             : base(ctx)

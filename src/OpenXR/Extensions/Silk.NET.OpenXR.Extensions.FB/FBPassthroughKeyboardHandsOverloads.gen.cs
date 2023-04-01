@@ -17,7 +17,7 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBPassthroughKeyboardHandsOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result PassthroughLayerSetKeyboardHandsIntensityFB(this FBPassthroughKeyboardHands thisApi, [Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PassthroughKeyboardHandsIntensityFB> intensity)
+        public static unsafe Result PassthroughLayerSetKeyboardHandsIntensityFB(this FBPassthroughKeyboardHands thisApi, [Count(Count = 0)] PassthroughLayerFB layer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PassthroughKeyboardHandsIntensityFB> intensity)
         {
             // SpanOverloader
             return thisApi.PassthroughLayerSetKeyboardHandsIntensityFB(layer, in intensity.GetPinnableReference());

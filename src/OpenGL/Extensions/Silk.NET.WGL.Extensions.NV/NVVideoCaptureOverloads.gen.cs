@@ -16,13 +16,13 @@ namespace Silk.NET.WGL.Extensions.NV
 {
     public static class NVVideoCaptureOverloads
     {
-        public static unsafe uint EnumerateVideoCaptureDevices(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.Out)] Span<nint> phDeviceList)
+        public static unsafe uint EnumerateVideoCaptureDevices(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> phDeviceList)
         {
             // SpanOverloader
             return thisApi.EnumerateVideoCaptureDevices(hDc, out phDeviceList.GetPinnableReference());
         }
 
-        public static unsafe Silk.NET.Core.Bool32 QueryVideoCaptureDevice(this NVVideoCapture thisApi, [Flow(FlowDirection.In)] nint hDc, [Flow(FlowDirection.In)] nint hDevice, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] Span<int> piValue)
+        public static unsafe Silk.NET.Core.Bool32 QueryVideoCaptureDevice(this NVVideoCapture thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> piValue)
         {
             // SpanOverloader
             return thisApi.QueryVideoCaptureDevice(hDc, hDevice, iAttribute, out piValue.GetPinnableReference());

@@ -21,156 +21,156 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_multi_draw_arrays";
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount);
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length);
         }
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length);
         }
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
         }
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length);
         }
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length);
         }
 
-        public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        public unsafe void MultiDrawArrays([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count)
         {
             // ImplicitCountSpanOverloader
             MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void** indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length);
         }
 
-        public unsafe void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices)
+        public unsafe void MultiDrawElements([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in void* indices)
         {
             // ImplicitCountSpanOverloader
             MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length);

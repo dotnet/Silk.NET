@@ -21,22 +21,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     {
         public const string ExtensionName = "ATI_element_array";
         [NativeApi(EntryPoint = "glDrawElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawElementArray([Flow(FlowDirection.In)] ATI mode, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawRangeElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] ATI mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawRangeElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawRangeElementArrayATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawRangeElementArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint end, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glElementPointerATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ElementPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerATI", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ElementPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         public AtiElementArray(INativeContext ctx)
             : base(ctx)

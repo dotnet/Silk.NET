@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceBufferMemoryRequirements(device, pInfo, out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
+        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceBufferMemoryRequirements(device, in pInfo.GetPinnableReference(), pMemoryRequirements);
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        public static unsafe void GetDeviceBufferMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceBufferMemoryRequirements(device, in pInfo.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
@@ -41,14 +41,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageMemoryRequirements(device, pInfo, out pMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
+        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageMemoryRequirements(device, in pInfo.GetPinnableReference(), pMemoryRequirements);
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        public static unsafe void GetDeviceImageMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageMemoryRequirements(device, in pInfo.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
@@ -64,14 +64,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, pSparseMemoryRequirementCount, out pSparseMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, ref pSparseMemoryRequirementCount.GetPinnableReference(), pSparseMemoryRequirements);
@@ -79,14 +79,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, ref pSparseMemoryRequirementCount.GetPinnableReference(), out pSparseMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), pSparseMemoryRequirementCount, pSparseMemoryRequirements);
@@ -94,14 +94,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), pSparseMemoryRequirementCount, out pSparseMemoryRequirements.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), ref pSparseMemoryRequirementCount.GetPinnableReference(), pSparseMemoryRequirements);
@@ -109,7 +109,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this KhrMaintenance4 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
             thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), ref pSparseMemoryRequirementCount.GetPinnableReference(), out pSparseMemoryRequirements.GetPinnableReference());

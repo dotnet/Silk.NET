@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_spatial_entity";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] ref ulong requestId);
+        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpatialAnchorCreateInfoFB* info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorCreateInfoFB info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorCreateInfoFB info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialAnchorCreateInfoFB info, [Count(Count = 0)] ref ulong requestId);
+        public partial Result CreateSpatialAnchorFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpatialAnchorCreateInfoFB info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateSpaceSupportedComponentsFB", Convention = CallingConvention.Winapi)]
@@ -70,19 +70,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetSpaceComponentStatusFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetSpaceComponentStatusFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] ref ulong requestId);
+        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceComponentStatusSetInfoFB* info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetSpaceComponentStatusFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceComponentStatusSetInfoFB info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceComponentStatusSetInfoFB info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetSpaceComponentStatusFB", Convention = CallingConvention.Winapi)]
-        public partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceComponentStatusSetInfoFB info, [Count(Count = 0)] ref ulong requestId);
+        public partial Result SetSpaceComponentStatusFB([Count(Count = 0)] Space space, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceComponentStatusSetInfoFB info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateSpaceSupportedComponentsFB([Count(Count = 0)] Space space, [Count(Count = 0)] uint* componentTypeCountOutput, [Count(Parameter = "componentTypeCapacityInput")] Span<SpaceComponentTypeFB> componentTypes)

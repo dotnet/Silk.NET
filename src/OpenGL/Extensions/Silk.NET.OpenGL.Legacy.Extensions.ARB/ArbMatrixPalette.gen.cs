@@ -21,48 +21,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_matrix_palette";
         [NativeApi(EntryPoint = "glCurrentPaletteMatrixARB", Convention = CallingConvention.Winapi)]
-        public partial void CurrentPaletteMatrix([Flow(FlowDirection.In)] int index);
+        public partial void CurrentPaletteMatrix([Flow(Silk.NET.Core.Native.FlowDirection.In)] int index);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* indices);
+        public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in byte indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexusvARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* indices);
+        public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexusvARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in ushort indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ushort indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* indices);
+        public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in uint indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexPointerARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MatrixIndexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void MatrixIndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glMatrixIndexPointerARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void MatrixIndexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] MatrixIndexPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void MatrixIndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MatrixIndexPointerTypeARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
-        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<byte> indices)
+        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> indices)
         {
             // ImplicitCountSpanOverloader
             MatrixIndex((int) indices.Length, in indices.GetPinnableReference());
         }
 
-        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<ushort> indices)
+        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ushort> indices)
         {
             // ImplicitCountSpanOverloader
             MatrixIndex((int) indices.Length, in indices.GetPinnableReference());
         }
 
-        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<uint> indices)
+        public unsafe void MatrixIndex([Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> indices)
         {
             // ImplicitCountSpanOverloader
             MatrixIndex((int) indices.Length, in indices.GetPinnableReference());

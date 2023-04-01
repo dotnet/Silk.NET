@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.VARJO
         public const string ExtensionName = "XR_VARJO_marker_tracking";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] ref Space space);
+        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
-        public partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetMarkerSizeVARJO", Convention = CallingConvention.Winapi)]

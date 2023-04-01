@@ -21,64 +21,64 @@ namespace Silk.NET.WGL.Extensions.I3D
     {
         public const string ExtensionName = "I3D_genlock";
         [NativeApi(EntryPoint = "wglDisableGenlockI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 DisableGenlockI3D([Flow(FlowDirection.In)] nint hDC);
+        public partial Silk.NET.Core.Bool32 DisableGenlockI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC);
 
         [NativeApi(EntryPoint = "wglEnableGenlockI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 EnableGenlockI3D([Flow(FlowDirection.In)] nint hDC);
+        public partial Silk.NET.Core.Bool32 EnableGenlockI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC);
 
         [NativeApi(EntryPoint = "wglGenlockSampleRateI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GenlockSampleRateI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint uRate);
+        public partial Silk.NET.Core.Bool32 GenlockSampleRateI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uRate);
 
         [NativeApi(EntryPoint = "wglGenlockSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GenlockSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint uDelay);
+        public partial Silk.NET.Core.Bool32 GenlockSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uDelay);
 
         [NativeApi(EntryPoint = "wglGenlockSourceEdgeI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GenlockSourceEdgeI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint uEdge);
+        public partial Silk.NET.Core.Bool32 GenlockSourceEdgeI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uEdge);
 
         [NativeApi(EntryPoint = "wglGenlockSourceI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GenlockSourceI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] uint uSource);
+        public partial Silk.NET.Core.Bool32 GenlockSourceI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uSource);
 
         [NativeApi(EntryPoint = "wglGetGenlockSampleRateI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSampleRateI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uRate);
+        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSampleRateI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uRate);
 
         [NativeApi(EntryPoint = "wglGetGenlockSampleRateI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetGenlockSampleRateI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uRate);
+        public partial Silk.NET.Core.Bool32 GetGenlockSampleRateI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uRate);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uDelay);
+        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uDelay);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetGenlockSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uDelay);
+        public partial Silk.NET.Core.Bool32 GetGenlockSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uDelay);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceEdgeI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceEdgeI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uEdge);
+        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceEdgeI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uEdge);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceEdgeI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetGenlockSourceEdgeI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uEdge);
+        public partial Silk.NET.Core.Bool32 GetGenlockSourceEdgeI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uEdge);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uSource);
+        public unsafe partial Silk.NET.Core.Bool32 GetGenlockSourceI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uSource);
 
         [NativeApi(EntryPoint = "wglGetGenlockSourceI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetGenlockSourceI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uSource);
+        public partial Silk.NET.Core.Bool32 GetGenlockSourceI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uSource);
 
         [NativeApi(EntryPoint = "wglIsEnabledGenlockI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 IsEnabledGenlockI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] Silk.NET.Core.Bool32* pFlag);
+        public unsafe partial Silk.NET.Core.Bool32 IsEnabledGenlockI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Silk.NET.Core.Bool32* pFlag);
 
         [NativeApi(EntryPoint = "wglIsEnabledGenlockI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 IsEnabledGenlockI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out Silk.NET.Core.Bool32 pFlag);
+        public partial Silk.NET.Core.Bool32 IsEnabledGenlockI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Silk.NET.Core.Bool32 pFlag);
 
         [NativeApi(EntryPoint = "wglQueryGenlockMaxSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uMaxLineDelay, [Flow(FlowDirection.Out)] uint* uMaxPixelDelay);
+        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uMaxLineDelay, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uMaxPixelDelay);
 
         [NativeApi(EntryPoint = "wglQueryGenlockMaxSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] uint* uMaxLineDelay, [Flow(FlowDirection.Out)] out uint uMaxPixelDelay);
+        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uMaxLineDelay, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uMaxPixelDelay);
 
         [NativeApi(EntryPoint = "wglQueryGenlockMaxSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uMaxLineDelay, [Flow(FlowDirection.Out)] uint* uMaxPixelDelay);
+        public unsafe partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uMaxLineDelay, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uMaxPixelDelay);
 
         [NativeApi(EntryPoint = "wglQueryGenlockMaxSourceDelayI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.Out)] out uint uMaxLineDelay, [Flow(FlowDirection.Out)] out uint uMaxPixelDelay);
+        public partial Silk.NET.Core.Bool32 QueryGenlockMaxSourceDelayI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uMaxLineDelay, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uMaxPixelDelay);
 
         public I3DGenlock(INativeContext ctx)
             : base(ctx)

@@ -16,19 +16,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbMatrixPaletteOverloads
     {
-        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<byte> indices)
+        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> indices)
         {
             // SpanOverloader
             thisApi.MatrixIndex(size, in indices.GetPinnableReference());
         }
 
-        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<ushort> indices)
+        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ushort> indices)
         {
             // SpanOverloader
             thisApi.MatrixIndex(size, in indices.GetPinnableReference());
         }
 
-        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<uint> indices)
+        public static unsafe void MatrixIndex(this ArbMatrixPalette thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> indices)
         {
             // SpanOverloader
             thisApi.MatrixIndex(size, in indices.GetPinnableReference());

@@ -16,49 +16,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbVertexBlendOverloads
     {
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<sbyte> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<short> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<int> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<double> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<byte> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<ushort> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ushort> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());
         }
 
-        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<uint> weights)
+        public static unsafe void Weight(this ArbVertexBlend thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> weights)
         {
             // SpanOverloader
             thisApi.Weight(size, in weights.GetPinnableReference());

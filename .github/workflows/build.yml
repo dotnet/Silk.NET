@@ -78,7 +78,7 @@ jobs:
         retention-days: 1
     - name: Sign Packages
       if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
-      run: .\build.cmd SignPackages --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+      run: .\build.cmd SignPackages --akv-certificate ${{ secrets.AKV_CERTIFICATE }} --akv-client-id ${{ secrets.AKV_CLIENT_ID }} --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }} --akv-tenant ${{ secrets.AKV_TENANT }} --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
     - name: Push to Azure Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az

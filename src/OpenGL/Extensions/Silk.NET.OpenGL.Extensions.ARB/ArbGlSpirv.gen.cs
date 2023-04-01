@@ -21,40 +21,40 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_gl_spirv";
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] in byte pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] in byte pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] in byte pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] in byte pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShaderARB", Convention = CallingConvention.Winapi)]
-        public partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] in uint pConstantIndex, [Flow(FlowDirection.In)] in uint pConstantValue);
+        public partial void SpecializeShader([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numSpecializationConstants, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in uint pConstantValue);
 
         public ArbGlSpirv(INativeContext ctx)
             : base(ctx)

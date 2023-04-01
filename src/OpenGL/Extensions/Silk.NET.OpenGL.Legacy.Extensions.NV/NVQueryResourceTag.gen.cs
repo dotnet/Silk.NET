@@ -21,33 +21,33 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_query_resource_tag";
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* tagIds);
+        public unsafe partial void DeleteQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* tagIds);
 
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int tagIds);
+        public partial void DeleteQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int tagIds);
 
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] int* tagIds);
+        public unsafe partial void GenQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* tagIds);
 
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out int tagIds);
+        public partial void GenQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int tagIds);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] byte* tagString);
+        public unsafe partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] in byte tagString);
+        public partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagString);
+        public partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagString);
 
-        public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.In)] int tagIds)
+        public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagIds)
         {
             // ArrayParameterOverloader
             DeleteQueryResourceTag(1, &tagIds);
         }
 
-        public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> tagIds)
+        public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> tagIds)
         {
             // ImplicitCountSpanOverloader
             DeleteQueryResourceTag((uint) tagIds.Length, in tagIds.GetPinnableReference());
@@ -62,13 +62,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public unsafe void GenQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds)
+        public unsafe void GenQueryResourceTag([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> tagIds)
         {
             // ImplicitCountSpanOverloader
             GenQueryResourceTag((uint) tagIds.Length, out tagIds.GetPinnableReference());
         }
 
-        public unsafe int GenQueryResourceTag([Flow(FlowDirection.In)] uint n)
+        public unsafe int GenQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
             GenQueryResourceTag(n, out int silkRet);

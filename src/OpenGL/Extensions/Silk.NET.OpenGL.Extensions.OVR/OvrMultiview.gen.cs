@@ -21,16 +21,16 @@ namespace Silk.NET.OpenGL.Extensions.OVR
     {
         public const string ExtensionName = "OVR_multiview";
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        public partial void FramebufferTextureMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
 
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        public partial void FramebufferTextureMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
 
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        public partial void FramebufferTextureMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OVR attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
 
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        public partial void FramebufferTextureMultiview([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferAttachment attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int level, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int baseViewIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numViews);
 
         public OvrMultiview(INativeContext ctx)
             : base(ctx)

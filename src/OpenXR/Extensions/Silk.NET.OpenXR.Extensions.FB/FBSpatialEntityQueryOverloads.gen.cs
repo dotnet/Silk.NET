@@ -17,21 +17,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public static class FBSpatialEntityQueryOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceQueryInfoBaseHeaderFB* info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceQueryInfoBaseHeaderFB* info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.QuerySpacesFB(session, info, ref requestId.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceQueryInfoBaseHeaderFB> info, [Count(Count = 0)] ulong* requestId)
+        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceQueryInfoBaseHeaderFB> info, [Count(Count = 0)] ulong* requestId)
         {
             // SpanOverloader
             return thisApi.QuerySpacesFB(session, in info.GetPinnableReference(), requestId);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SpaceQueryInfoBaseHeaderFB> info, [Count(Count = 0)] Span<ulong> requestId)
+        public static unsafe Result QuerySpacesFB(this FBSpatialEntityQuery thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SpaceQueryInfoBaseHeaderFB> info, [Count(Count = 0)] Span<ulong> requestId)
         {
             // SpanOverloader
             return thisApi.QuerySpacesFB(session, in info.GetPinnableReference(), ref requestId.GetPinnableReference());

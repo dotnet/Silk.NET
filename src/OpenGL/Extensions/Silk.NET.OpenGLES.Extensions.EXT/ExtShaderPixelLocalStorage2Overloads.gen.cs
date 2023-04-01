@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     public static class ExtShaderPixelLocalStorage2Overloads
     {
-        public static unsafe void ClearPixelLocalStorage(this ExtShaderPixelLocalStorage2 thisApi, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> values)
+        public static unsafe void ClearPixelLocalStorage(this ExtShaderPixelLocalStorage2 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> values)
         {
             // SpanOverloader
             thisApi.ClearPixelLocalStorage(offset, n, in values.GetPinnableReference());

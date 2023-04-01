@@ -21,10 +21,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_gl_event";
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateEventFromGLsync([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sync, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public partial nint CreateEventFromGLsync([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint sync, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret);
 
         public KhrGlEvent(INativeContext ctx)
             : base(ctx)

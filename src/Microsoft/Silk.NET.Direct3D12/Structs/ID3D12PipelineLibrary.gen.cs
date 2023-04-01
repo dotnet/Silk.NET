@@ -225,7 +225,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -246,7 +246,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -273,7 +273,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -306,7 +306,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
+        public readonly unsafe int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -342,7 +342,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -401,7 +401,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] char* pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -410,7 +410,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] char* pName, ref ID3D12PipelineState pPipeline)
+        public readonly unsafe int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -422,7 +422,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] in char pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -434,7 +434,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline([Flow(FlowDirection.In)] in char pName, ref ID3D12PipelineState pPipeline)
+        public readonly int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -449,7 +449,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -460,7 +460,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
+        public readonly int StorePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -474,7 +474,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -483,7 +483,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -495,7 +495,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -507,7 +507,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -522,7 +522,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -534,7 +534,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -549,7 +549,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -564,7 +564,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -582,7 +582,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -594,7 +594,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -609,7 +609,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -624,7 +624,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -642,7 +642,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -657,7 +657,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -675,7 +675,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -693,7 +693,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -714,7 +714,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -725,7 +725,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -739,7 +739,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -753,7 +753,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -770,7 +770,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -784,7 +784,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -801,7 +801,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -818,7 +818,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -838,7 +838,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -847,7 +847,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -859,7 +859,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -871,7 +871,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -886,7 +886,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -898,7 +898,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -913,7 +913,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -928,7 +928,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -946,7 +946,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -958,7 +958,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -973,7 +973,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -988,7 +988,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1006,7 +1006,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1021,7 +1021,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1039,7 +1039,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1057,7 +1057,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1078,7 +1078,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1089,7 +1089,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1103,7 +1103,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1117,7 +1117,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1134,7 +1134,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1148,7 +1148,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1165,7 +1165,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1182,7 +1182,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1241,7 +1241,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1249,7 +1249,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1266,7 +1266,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline<TI0>([Flow(FlowDirection.In)] char* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        public readonly unsafe int StorePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1274,7 +1274,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline<TI0>([Flow(FlowDirection.In)] in char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        public readonly int StorePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1282,7 +1282,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        public readonly int StorePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1290,7 +1290,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1299,7 +1299,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1308,7 +1308,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1317,7 +1317,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1326,7 +1326,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1335,7 +1335,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1344,7 +1344,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1353,7 +1353,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1362,7 +1362,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1371,7 +1371,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1380,7 +1380,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1389,7 +1389,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1416,7 +1416,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1425,7 +1425,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1434,7 +1434,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1443,7 +1443,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1452,7 +1452,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1461,7 +1461,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1470,7 +1470,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1479,7 +1479,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1488,7 +1488,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1497,7 +1497,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1506,7 +1506,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1515,7 +1515,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

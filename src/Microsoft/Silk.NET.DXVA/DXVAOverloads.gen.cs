@@ -18,7 +18,7 @@ namespace Silk.NET.DXVA
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(pD3DDevice, in pContentDesc.GetPinnableReference(), Usage, pPlugin, ppDevice);
@@ -26,7 +26,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(pD3DDevice, in pContentDesc.GetPinnableReference(), Usage, pPlugin, ref ppDevice);
@@ -34,7 +34,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(ref pD3DDevice.GetPinnableReference(), pContentDesc, Usage, pPlugin, ppDevice);
@@ -42,7 +42,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(ref pD3DDevice.GetPinnableReference(), pContentDesc, Usage, pPlugin, ref ppDevice);
@@ -50,7 +50,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(ref pD3DDevice.GetPinnableReference(), in pContentDesc.GetPinnableReference(), Usage, pPlugin, ppDevice);
@@ -58,7 +58,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
+        public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
             return thisApi.HDCreateDevice(ref pD3DDevice.GetPinnableReference(), in pContentDesc.GetPinnableReference(), Usage, pPlugin, ref ppDevice);

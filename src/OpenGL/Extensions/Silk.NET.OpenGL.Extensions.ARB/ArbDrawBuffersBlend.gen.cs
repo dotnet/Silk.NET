@@ -21,82 +21,82 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_draw_buffers_blend";
         [NativeApi(EntryPoint = "glBlendEquationiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB mode);
 
         [NativeApi(EntryPoint = "glBlendEquationiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        public partial void BlendEquation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT mode);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB modeRGB, [Flow(FlowDirection.In)] ARB modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] ARB modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        public partial void BlendEquationSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
         [NativeApi(EntryPoint = "glBlendFunciARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB src, [Flow(FlowDirection.In)] ARB dst);
+        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dst);
 
         [NativeApi(EntryPoint = "glBlendFunciARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB src, [Flow(FlowDirection.In)] BlendingFactor dst);
+        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dst);
 
         [NativeApi(EntryPoint = "glBlendFunciARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] ARB dst);
+        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dst);
 
         [NativeApi(EntryPoint = "glBlendFunciARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst);
+        public partial void BlendFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor src, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dst);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB dstAlpha);
 
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB", Convention = CallingConvention.Winapi)]
-        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        public partial void BlendFuncSeparate([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buf, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstRGB, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor srcAlpha, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BlendingFactor dstAlpha);
 
         public ArbDrawBuffersBlend(INativeContext ctx)
             : base(ctx)

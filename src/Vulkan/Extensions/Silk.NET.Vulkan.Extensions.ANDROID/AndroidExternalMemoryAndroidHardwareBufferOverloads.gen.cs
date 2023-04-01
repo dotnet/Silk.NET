@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
     {
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.AndroidHardwareBufferPropertiesAndroid);")]
-        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] nint* buffer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
+        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
         {
             // SpanOverloader
             return thisApi.GetAndroidHardwareBufferProperties(device, buffer, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<nint> buffer, [Count(Count = 0), Flow(FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties)
+        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties)
         {
             // SpanOverloader
             return thisApi.GetAndroidHardwareBufferProperties(device, in buffer.GetPinnableReference(), pProperties);
@@ -33,21 +33,21 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.AndroidHardwareBufferPropertiesAndroid);")]
-        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<nint> buffer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
+        public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<nint> buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
         {
             // SpanOverloader
             return thisApi.GetAndroidHardwareBufferProperties(device, in buffer.GetPinnableReference(), out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryAndroidHardwareBuffer(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint** pBuffer)
+        public static unsafe Result GetMemoryAndroidHardwareBuffer(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint** pBuffer)
         {
             // SpanOverloader
             return thisApi.GetMemoryAndroidHardwareBuffer(device, in pInfo.GetPinnableReference(), pBuffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetMemoryAndroidHardwareBuffer(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint* pBuffer)
+        public static unsafe Result GetMemoryAndroidHardwareBuffer(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryGetAndroidHardwareBufferInfoANDROID> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint* pBuffer)
         {
             // SpanOverloader
             return thisApi.GetMemoryAndroidHardwareBuffer(device, in pInfo.GetPinnableReference(), out pBuffer);

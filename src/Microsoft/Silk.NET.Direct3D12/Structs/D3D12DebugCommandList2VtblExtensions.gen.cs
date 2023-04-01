@@ -124,7 +124,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] void* pData, uint DataSize)
+    public static unsafe int SetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pData, uint DataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -207,7 +207,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint DataSize) where T0 : unmanaged
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pData, uint DataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

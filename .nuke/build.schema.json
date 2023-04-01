@@ -6,6 +6,26 @@
     "build": {
       "type": "object",
       "properties": {
+        "AkvCertificate": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault certificate"
+        },
+        "AkvClientId": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault client ID"
+        },
+        "AkvClientSecret": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault client secret"
+        },
+        "AkvTenant": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault tenant ID"
+        },
+        "AkvVaultUrl": {
+          "type": "string",
+          "description": "Code-signing service Azure Key Vault URL"
+        },
         "All": {
           "type": "boolean",
           "description": "If specified, ignores any generated solution present and builds the entire project"
@@ -116,14 +136,6 @@
           "type": "string",
           "description": "Root directory during build execution"
         },
-        "SignPassword": {
-          "type": "string",
-          "description": "Code-signing service password"
-        },
-        "SignUsername": {
-          "type": "string",
-          "description": "Code-signing service username"
-        },
         "Skip": {
           "type": "array",
           "description": "List of targets to be skipped. Empty list skips all dependencies",
@@ -152,7 +164,8 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
-              "VulkanLoader"
+              "VulkanLoader",
+              "Wgpu"
             ]
           }
         },
@@ -188,7 +201,8 @@
               "SwiftShader",
               "Test",
               "ValidateSolution",
-              "VulkanLoader"
+              "VulkanLoader",
+              "Wgpu"
             ]
           }
         },

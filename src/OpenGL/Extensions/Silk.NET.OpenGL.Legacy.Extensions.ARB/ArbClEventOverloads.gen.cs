@@ -16,19 +16,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbClEventOverloads
     {
-        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(FlowDirection.Out)] nint* context, [Flow(FlowDirection.Out)] Span<nint> @event, [Flow(FlowDirection.In)] uint flags)
+        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags)
         {
             // SpanOverloader
             return thisApi.CreateSyncFromCLevent(context, out @event.GetPinnableReference(), flags);
         }
 
-        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(FlowDirection.Out)] Span<nint> context, [Flow(FlowDirection.Out)] nint* @event, [Flow(FlowDirection.In)] uint flags)
+        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags)
         {
             // SpanOverloader
             return thisApi.CreateSyncFromCLevent(out context.GetPinnableReference(), @event, flags);
         }
 
-        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(FlowDirection.Out)] Span<nint> context, [Flow(FlowDirection.Out)] Span<nint> @event, [Flow(FlowDirection.In)] uint flags)
+        public static unsafe nint CreateSyncFromCLevent(this ArbClEvent thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> context, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<nint> @event, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags)
         {
             // SpanOverloader
             return thisApi.CreateSyncFromCLevent(out context.GetPinnableReference(), out @event.GetPinnableReference(), flags);

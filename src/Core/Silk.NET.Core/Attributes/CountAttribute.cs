@@ -25,5 +25,11 @@ namespace Silk.NET.Core.Attributes
         /// Gets or sets the computed count.
         /// </summary>
         public string Computed { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mathematical expression corresponding with this count. Used in conjunction with
+        /// <see cref="Parameter"/>.
+        /// </summary>
+        public string Expression { get; set; }
     }
 }

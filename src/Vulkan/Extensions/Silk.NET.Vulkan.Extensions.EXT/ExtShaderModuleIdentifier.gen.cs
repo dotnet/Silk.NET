@@ -22,34 +22,34 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_shader_module_identifier";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetShaderModuleCreateInfoIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
+        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
         [NativeApi(EntryPoint = "vkGetShaderModuleCreateInfoIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
+        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetShaderModuleCreateInfoIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
+        public unsafe partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
         [NativeApi(EntryPoint = "vkGetShaderModuleCreateInfoIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
+        public partial void GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetShaderModuleIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
+        public unsafe partial void GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModuleIdentifierEXT* pIdentifier);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
         [NativeApi(EntryPoint = "vkGetShaderModuleIdentifierEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
+        public partial void GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
-        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo)
+        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo)
         {
             // NonKhrReturnTypeOverloader
             GetShaderModuleCreateInfoIdentifier(device, pCreateInfo, out ShaderModuleIdentifierEXT silkRet);
@@ -58,7 +58,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
-        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo)
+        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo)
         {
             // NonKhrReturnTypeOverloader
             GetShaderModuleCreateInfoIdentifier(device, in pCreateInfo, out ShaderModuleIdentifierEXT silkRet);

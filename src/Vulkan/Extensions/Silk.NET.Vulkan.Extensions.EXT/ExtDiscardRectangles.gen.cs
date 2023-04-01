@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_discard_rectangles";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] Rect2D* pDiscardRectangles);
+        public unsafe partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect2D* pDiscardRectangles);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] in Rect2D pDiscardRectangles);
+        public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in Rect2D pDiscardRectangles);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEnableEXT", Convention = CallingConvention.Winapi)]
@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public partial void CmdSetDiscardRectangleMode([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DiscardRectangleModeEXT discardRectangleMode);
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pDiscardRectangles)
+        public unsafe void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Parameter = "discardRectangleCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pDiscardRectangles)
         {
             // ImplicitCountSpanOverloader
             CmdSetDiscardRectangle(commandBuffer, firstDiscardRectangle, (uint) pDiscardRectangles.Length, in pDiscardRectangles.GetPinnableReference());

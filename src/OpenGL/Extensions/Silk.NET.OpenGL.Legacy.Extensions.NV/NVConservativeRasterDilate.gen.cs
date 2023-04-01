@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_conservative_raster_dilate";
         [NativeApi(EntryPoint = "glConservativeRasterParameterfNV", Convention = CallingConvention.Winapi)]
-        public partial void ConservativeRasterParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] float value);
+        public partial void ConservativeRasterParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float value);
 
         public NVConservativeRasterDilate(INativeContext ctx)
             : base(ctx)

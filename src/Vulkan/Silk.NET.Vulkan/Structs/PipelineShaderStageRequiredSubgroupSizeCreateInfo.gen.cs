@@ -17,8 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfo")]
-    [NativeName("Aliases", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT")]
-    public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfo : IExtendsChain<PipelineShaderStageCreateInfo>
+    [NativeName("Aliases", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT, VkShaderRequiredSubgroupSizeCreateInfoEXT")]
+    public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfo : IExtendsChain<PipelineShaderStageCreateInfo>, IExtendsChain<ShaderCreateInfoEXT>
     {
         public PipelineShaderStageRequiredSubgroupSizeCreateInfo
         (

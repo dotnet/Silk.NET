@@ -21,22 +21,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_point_sprite";
         [NativeApi(EntryPoint = "glPointParameteriNV", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameteriNV", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] int param);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameterivNV", Convention = CallingConvention.Winapi)]
-        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void PointParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] in int @params);
 
         public NVPointSprite(INativeContext ctx)
             : base(ctx)

@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbTessellationShaderOverloads
     {
-        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
+        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> values)
         {
             // SpanOverloader
             thisApi.PatchParameter(pname, in values.GetPinnableReference());
         }
 
-        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
+        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> values)
         {
             // SpanOverloader
             thisApi.PatchParameter(pname, in values.GetPinnableReference());

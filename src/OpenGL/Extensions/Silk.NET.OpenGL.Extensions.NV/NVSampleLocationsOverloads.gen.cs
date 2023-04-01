@@ -16,19 +16,19 @@ namespace Silk.NET.OpenGL.Extensions.NV
 {
     public static class NVSampleLocationsOverloads
     {
-        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
         }
 
-        public static unsafe void NamedFramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void NamedFramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.NamedFramebufferSampleLocations(framebuffer, start, count, in v.GetPinnableReference());

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_instanced_arrays";
         [NativeApi(EntryPoint = "glVertexAttribDivisorARB", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+        public partial void VertexAttribDivisor([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint divisor);
 
         public ArbInstancedArrays(INativeContext ctx)
             : base(ctx)

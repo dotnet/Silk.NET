@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     public static class ExtFogCoordOverloads
     {
-        public static unsafe void FogCoord(this ExtFogCoord thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<float> coord)
+        public static unsafe void FogCoord(this ExtFogCoord thisApi, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> coord)
         {
             // SpanOverloader
             thisApi.FogCoord(in coord.GetPinnableReference());
         }
 
-        public static unsafe void FogCoord(this ExtFogCoord thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<double> coord)
+        public static unsafe void FogCoord(this ExtFogCoord thisApi, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<double> coord)
         {
             // SpanOverloader
             thisApi.FogCoord(in coord.GetPinnableReference());

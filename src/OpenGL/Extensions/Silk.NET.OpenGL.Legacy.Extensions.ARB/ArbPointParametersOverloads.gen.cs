@@ -16,13 +16,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbPointParametersOverloads
     {
-        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.PointParameter(pname, in @params.GetPinnableReference());

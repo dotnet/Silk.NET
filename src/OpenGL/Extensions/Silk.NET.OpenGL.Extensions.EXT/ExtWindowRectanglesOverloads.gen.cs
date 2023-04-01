@@ -16,7 +16,7 @@ namespace Silk.NET.OpenGL.Extensions.EXT
 {
     public static class ExtWindowRectanglesOverloads
     {
-        public static unsafe void WindowRectangles(this ExtWindowRectangles thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> box)
+        public static unsafe void WindowRectangles(this ExtWindowRectangles thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> box)
         {
             // SpanOverloader
             thisApi.WindowRectangles(mode, count, in box.GetPinnableReference());

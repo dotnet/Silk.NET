@@ -34,6 +34,8 @@ namespace Silk.NET.OpenXR
         SpatialGraphNodeBindingMsft = 1000049000,
         [NativeName("Name", "XR_OBJECT_TYPE_HAND_TRACKER_EXT")]
         HandTrackerExt = 1000051000,
+        [NativeName("Name", "XR_OBJECT_TYPE_BODY_TRACKER_FB")]
+        BodyTrackerFB = 1000076000,
         [NativeName("Name", "XR_OBJECT_TYPE_SCENE_OBSERVER_MSFT")]
         SceneObserverMsft = 1000097000,
         [NativeName("Name", "XR_OBJECT_TYPE_SCENE_MSFT")]
@@ -52,6 +54,12 @@ namespace Silk.NET.OpenXR
         GeometryInstanceFB = 1000118004,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_FB")]
+        FaceTrackerFB = 1000201000,
+        [NativeName("Name", "XR_OBJECT_TYPE_EYE_TRACKER_FB")]
+        EyeTrackerFB = 1000202000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPACE_USER_FB")]
+        SpaceUserFB = 1000241000,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
     }

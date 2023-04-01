@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     {
         public const string ExtensionName = "ARB_polygon_offset_clamp";
         [NativeApi(EntryPoint = "glPolygonOffsetClamp", Convention = CallingConvention.Winapi)]
-        public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
+        public partial void PolygonOffsetClamp([Flow(Silk.NET.Core.Native.FlowDirection.In)] float factor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float units, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float clamp);
 
         public ArbPolygonOffsetClamp(INativeContext ctx)
             : base(ctx)

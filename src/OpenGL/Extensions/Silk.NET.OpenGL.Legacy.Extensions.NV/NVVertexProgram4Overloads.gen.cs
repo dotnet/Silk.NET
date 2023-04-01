@@ -16,97 +16,97 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     public static class NVVertexProgram4Overloads
     {
-        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetVertexAttribI(index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetVertexAttribI(index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> @params)
+        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> @params)
         {
             // SpanOverloader
             thisApi.GetVertexAttribI(index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> @params)
+        public static unsafe void GetVertexAttribI(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> @params)
         {
             // SpanOverloader
             thisApi.GetVertexAttribI(index, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI1(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void VertexAttribI1(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI1(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI1(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> v)
+        public static unsafe void VertexAttribI1(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI1(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI2(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void VertexAttribI2(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI2(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI2(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<uint> v)
+        public static unsafe void VertexAttribI2(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI2(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI3(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void VertexAttribI3(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI3(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI3(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<uint> v)
+        public static unsafe void VertexAttribI3(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI3(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<uint> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<sbyte> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<short> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<ushort> v)
+        public static unsafe void VertexAttribI4(this NVVertexProgram4 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ushort> v)
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());

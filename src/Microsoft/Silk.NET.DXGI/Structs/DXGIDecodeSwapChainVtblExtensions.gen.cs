@@ -94,7 +94,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -103,7 +103,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -124,7 +124,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -278,7 +278,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -286,7 +286,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

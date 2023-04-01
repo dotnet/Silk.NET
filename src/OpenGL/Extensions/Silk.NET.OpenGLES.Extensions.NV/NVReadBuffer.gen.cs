@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_read_buffer";
         [NativeApi(EntryPoint = "glReadBufferNV", Convention = CallingConvention.Winapi)]
-        public partial void ReadBuffer([Flow(FlowDirection.In)] NV mode);
+        public partial void ReadBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode);
 
         public NVReadBuffer(INativeContext ctx)
             : base(ctx)

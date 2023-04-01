@@ -22,35 +22,35 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_spatial_entity_storage";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEraseSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEraseSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] ref ulong requestId);
+        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceEraseInfoFB* info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEraseSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceEraseInfoFB info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceEraseInfoFB info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEraseSpaceFB", Convention = CallingConvention.Winapi)]
-        public partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceEraseInfoFB info, [Count(Count = 0)] ref ulong requestId);
+        public partial Result EraseSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceEraseInfoFB info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] ref ulong requestId);
+        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SpaceSaveInfoFB* info, [Count(Count = 0)] ref ulong requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceSaveInfoFB info, [Count(Count = 0)] ulong* requestId);
+        public unsafe partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceSaveInfoFB info, [Count(Count = 0)] ulong* requestId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSaveSpaceFB", Convention = CallingConvention.Winapi)]
-        public partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpaceSaveInfoFB info, [Count(Count = 0)] ref ulong requestId);
+        public partial Result SaveSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] in SpaceSaveInfoFB info, [Count(Count = 0)] ref ulong requestId);
 
         public FBSpatialEntityStorage(INativeContext ctx)
             : base(ctx)

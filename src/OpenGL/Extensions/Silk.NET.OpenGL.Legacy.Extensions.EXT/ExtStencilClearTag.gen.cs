@@ -21,7 +21,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_stencil_clear_tag";
         [NativeApi(EntryPoint = "glStencilClearTagEXT", Convention = CallingConvention.Winapi)]
-        public partial void StencilClearTag([Flow(FlowDirection.In)] uint stencilTagBits, [Flow(FlowDirection.In)] uint stencilClearTag);
+        public partial void StencilClearTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stencilTagBits, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stencilClearTag);
 
         public ExtStencilClearTag(INativeContext ctx)
             : base(ctx)

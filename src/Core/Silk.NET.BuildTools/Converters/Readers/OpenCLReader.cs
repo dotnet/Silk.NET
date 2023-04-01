@@ -466,7 +466,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     valueReferenceExpression = new string(expression);
 
                     hasValueReference = true;
-                    return new Count(valueReferenceName);
+                    return new Count(valueReferenceName) { Expression = valueReferenceExpression };
                 }
             }
             

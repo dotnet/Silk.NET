@@ -21,16 +21,16 @@ namespace Silk.NET.WGL.Extensions.I3D
     {
         public const string ExtensionName = "I3D_digital_video_control";
         [NativeApi(EntryPoint = "wglGetDigitalVideoParametersI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] int* piValue);
+        public unsafe partial Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* piValue);
 
         [NativeApi(EntryPoint = "wglGetDigitalVideoParametersI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.Out)] out int piValue);
+        public partial Silk.NET.Core.Bool32 GetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int piValue);
 
         [NativeApi(EntryPoint = "wglSetDigitalVideoParametersI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.In)] int* piValue);
+        public unsafe partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piValue);
 
         [NativeApi(EntryPoint = "wglSetDigitalVideoParametersI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(FlowDirection.In)] nint hDC, [Flow(FlowDirection.In)] int iAttribute, [Flow(FlowDirection.In)] in int piValue);
+        public partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] in int piValue);
 
         public I3DDigitalVideoControl(INativeContext ctx)
             : base(ctx)
